@@ -1,0 +1,3 @@
+<head><title>10.0.0.12 - /colegio/gifs/fotoscolegio/</title></head><body><H1>10.0.0.12 - /colegio/gifs/fotoscolegio/</H1><hr>
+
+<pre><A HREF="/Colegio/gifs/">[To Parent Directory]</A><br><br>      Tuesday, April 24, 2001  6:58 PM        32688 <A HREF="/Colegio/gifs/fotoscolegio/bio.gif">bio.gif</A><br>      Tuesday, April 24, 2001  6:57 PM        35115 <A HREF="/Colegio/gifs/fotoscolegio/ita.gif">ita.gif</A><br>      Tuesday, April 24, 2001  6:58 PM        32456 <A HREF="/Colegio/gifs/fotoscolegio/pat.gif">pat.gif</A><br>      Tuesday, April 24, 2001  6:58 PM        29103 <A HREF="/Colegio/gifs/fotoscolegio/patio.gif">patio.gif</A><br>      Tuesday, April 24, 2001  6:57 PM        29592 <A HREF="/Colegio/gifs/fotoscolegio/pre.gif">pre.gif</A><br></pre><hr></body>

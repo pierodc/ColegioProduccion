@@ -1,0 +1,868 @@
+.body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+	color: #336699;
+}
+
+a {
+	color:inherit;
+	text-decoration: none;
+	padding: 2px;
+	
+}
+
+form {
+}
+
+
+table.position_fixed{
+	position: fixed;
+	left: 5px;
+	box-shadow:5px 5px 5px grey;
+	}
+
+
+
+
+
+.CampoNombre {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #D8E9EB;
+	color: #000099;
+	padding: 3px;
+	background-position: right;
+	letter-spacing: normal;
+	line-height: normal;
+}
+.CampoContenido {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #E6E6E6;
+	padding: 3px;
+	border-color: white;
+	font-size: 12px;
+	line-height: normal;
+}
+
+
+
+
+.NavegacionTop{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #D8E9EB;
+	color: #000099;
+	padding-right: 5px;
+	padding-top: 5px;
+	background-position: right;
+	letter-spacing: normal;
+	line-height: 11px;
+	
+}
+
+
+.title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+  	font-size: 24px;
+	line-height: 30px;
+  	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	background-color: #006666;
+  color: #DCDCDC;
+}
+
+.navXXX {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+  font-weight: bold;
+	background-color: #CCCCCC;
+}
+
+.navLink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #DEDECA;
+	text-decoration:none
+}
+
+.navLinkAct {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #33FF00;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.sidebar {
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 2px 10px 2px 3px;
+	color: #00CCFF;
+	text-align: right;
+	background-color: #000066;
+	margin: 3px 0px 0px;
+	font-style: normal;
+	font-weight: bolder;
+	border-top-width: 0px;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+}
+
+.sidebarHeader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #FFFFFF;
+	background-color: #339999;
+}
+
+.sidebarFooter {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	background-color: #CCCCCC;
+}
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 22px;
+	color: #333333;
+	background-color: #CCCCCC;
+}
+
+.legal {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #333333;
+}
+
+.box1 {
+	border-color: #CCCCCC #333333 #333333 #CCCCCC;
+	border-width: medium;
+  border-style: ridge;
+}
+
+.promo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000033;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #FFFFFF;
+}
+
+.titlebar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	font-weight: bold;
+}
+
+.dingbat {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #99CC99;
+  color: #006666; 
+	font-weight: bolder;
+	font-size: medium;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+input.big {
+	width: 100px;
+}
+
+input.small {
+	width: 50px;
+}
+.NavHTML {
+	font-size: 10px;
+	line-height: normal;
+	color: #00CCFF;
+	text-decoration: none;
+	text-align: center;
+}
+.TituloPagina {
+	font-family: "Courier New", Courier, mono;
+	font-size: 36px;
+	color: #000066;
+	background-color: #CCCCFF;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 10px;
+	left: 50px;
+	padding: 0px 0px 5px;
+	margin: 10px 35px;
+	text-align: right;
+}
+.PlanillaSubTitulo {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #000000;
+}
+.PlanillaNomCampo {
+	font-size: 10px;
+	font-weight: bold;
+}
+.PlanillaCampo {
+	font-size: 10px;
+	font-weight: bold;
+}
+
+
+.subtitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: bold;
+	color: #0099FF;
+	background-color: #000066;
+	padding-left: 8px;
+}
+.NombreCampo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #D8E9EB;
+	color: #000099;
+	padding-right: 5px;
+	padding-top: 5px;
+	background-position: right;
+	letter-spacing: normal;
+	line-height: 11px;
+}
+.NombreCampoBIG {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #D8E9EB;
+	color: #000099;
+	background-position: right;
+	letter-spacing: normal;
+	line-height: 11px;
+	padding: 8px;
+}
+.NombreCampoPRINT {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #D8E9EB;
+	color: #000099;
+	vertical-align: top;
+	text-align: right;
+	background-position: right;
+	letter-spacing: normal;
+	line-height: 10px;
+	padding: 0px;
+}
+.FondoCampo {
+	background-color: #E6E6E6;
+	padding: 3px;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	line-height: normal;
+}
+.FondoCampoInput {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	line-height: normal;
+	font-weight: normal;
+	padding: 0px;
+}
+.FondoCampoPRINT {
+	background-color: #E6E6E6;
+	padding: 0px 3px;
+	font-size: 11px;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	line-height: 11px;
+}
+.FondoCampoVerde {
+	background-color: #33FF66;
+	padding: 3px;
+	font-size: 10px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 10px;
+}
+.FondoCampoVerdeGde {
+	background-color: #33FF66;
+	padding: 3px;
+	font-size: 14px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 10px;
+}
+.FondoCampoRojo {
+	background-color: #990000;
+	padding: 3px;
+	font-size: 10px;
+	color: #000000;
+	line-height: 10px;
+}
+.FondoCampoAmarillo {
+	background-color: #FFFF99;
+	padding: 3px;
+	font-size: 10px;
+	color: #000000;
+	line-height: 10px;
+}
+.FondoCampoAzul {
+	background-color: #33CCFF;
+	padding: 3px;
+	font-size: 10px;
+	text-align: left;
+	color: #000000;
+	line-height: 10px;
+}
+.FondoCampoNaranja {
+	background-color: #FF9900;
+	padding: 3px;
+	font-size: 10px;
+	text-align: left;
+	color: #000000;
+	line-height: 10px;
+}
+.NombreCampoTITULO {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #006699;
+	color: #FFFFFF;
+	vertical-align: middle;
+	text-align: left;
+	background-position: left;
+	padding: 3px;
+}
+.ListadoPar {
+	background-color: #D8D8D8;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+	font-style: normal;
+	margin: 2px;
+	padding: 2px;
+}
+.ListadoInPar {
+	background-color: #ECECEC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+	font-style: normal;
+	margin: 2px;
+	padding: 2px;
+}
+.ListadoVerde {
+	background-color: #33FF66;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+	font-style: normal;
+	margin: 2px;
+	padding: 2px;
+}
+.ListadoPar12 {
+	background-color: #D8D8D8;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+	font-style: normal;
+}
+.ListadoInPar12 {
+	background-color: #ECECEC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+	font-style: normal;
+}
+.ListadoPar12Verde {
+	background-color: #33FF66;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+	font-style: normal;
+}
+.ListadoInPar12Verde {
+	background-color: #33FF66;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+	font-style: normal;
+}
+.ListadoParAzul {
+	background-color: #c5c5c5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 10px;
+	font-style: normal;
+	color: #000099;
+}
+.ListadoInParAzul {
+	background-color: #F0F0F0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 10px;
+	font-style: normal;
+	color: #000099;
+}
+.ConflictoHorario{
+	background-color: #FFFF00;
+	color: #CC0000;
+	}
+.MensajeDeError {
+	background-color: #FFFF00;
+	font-size: 18px;
+	color: #CC0000;
+	line-height:18px;
+	font-weight: bolder;
+}
+.MensajeDeOK {
+	background-color: #CCCCCC;
+	padding: 3px;
+	font-size: 14px;
+	color: #009900;
+}
+.Texto {
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+	border-color: #CCCCCC #666666 #666666 #CCCCCC;
+	background-color: #FFFFFF;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.bodystyle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 11px;
+	text-align: justify;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 40px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+.small {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+.big {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.expanded {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 11px;
+	letter-spacing: 0px;
+}
+
+.justified {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+
+.footer {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 9px;
+	color: #999999;
+}
+.SubMenu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.TextoItalic {
+	font-style: italic;
+	word-spacing: 2pt;
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+}
+.TituloLeftWindow {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000099;
+	background-color: #D8E9EB;
+	text-align: left;
+	font-weight: bold;
+	padding: 2px;
+}
+.NombreCampoTopeWin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #D8E9EB;
+	color: #000099;
+	padding: 0px 0px 0px 5px;
+}
+.TextosSimples {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 10px;
+}
+.TextosSimples12 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 11px;
+	padding: 0px;
+	top: 0px;
+}
+.NombreCampoTitMes {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #006699;
+	color: #FFFFFF;
+	vertical-align: middle;
+	text-align: left;
+	background-position: left;
+	padding: 1px 1px 1px 3px;
+}
+.TextoListado {
+	padding: 3px;
+	background-color: #CCCCCC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	border: #FFFFFF;
+}
+.RTitulo {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+.TextoListadoPeq {
+	padding: 3px;
+	background-color: #CCCCCC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	border: #FFFFFF;
+}
+.FondoCampoTextRojo {
+	background-color: #E6E6E6;
+	padding: 3px;
+	font-size: 10px;
+	text-align: left;
+	vertical-align: top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #CC0033;
+}
+.NombreCampoTITULO12 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #006699;
+	color: #FFFFFF;
+	vertical-align: middle;
+	text-align: center;
+	padding: 3px;
+	margin: 0px;
+}
+.TextoListadoPeqBold {
+	padding: 3px;
+	background-color: #E6E6E6;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	border: #FFFFFF;
+	color: #000000;
+}
+.FondoCampoRight {
+	background-color: #E6E6E6;
+	padding: 3px;
+	font-size: 10px;
+	text-align: right;
+	vertical-align: top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+.NombreCampoTITULOSeparador {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #006699;
+	color: #FFFFFF;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0px;
+}
+.itemMenuLeft {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+}
+.itemMenuLeftTitulo {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #000099;
+	padding: 3px;
+}
+.Boton {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: right;
+	padding: 5px;
+}
+.CampoEntrada {
+	padding: 3px;
+	font-size: 10px;
+	text-align: left;
+	vertical-align: top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+.EncabezadoPagina {
+	font-size: 24px;
+	font-weight: bold;
+	color: #FFCC33;
+	background-color: #6699FF;
+	background-position: center;
+}
+.ReciboRenglon {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+}
+.ReciboRenglonMini {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 10px;
+	text-decoration: none;
+}
+.ReciboDatosPers {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	line-height: 14px;
+}
+.ReciboTitulos {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12px;
+	line-height: 10px;
+	color: #FFFFFF;
+	background-color: #666666;
+	font-weight: bold;
+}
+.RenglonTablaPrint {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 10px;
+}
+.ListadoNotas {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.ListadoNotasDef09 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #990000;
+	font-weight: bold;
+}
+.ListadoNotasDef10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000066;
+	font-weight: bold;
+}
+.ListadoNotasBC2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+.ListadoNotasBC1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+}
+.ListadoNotasNeg {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+	background-color: #FFFFFF;
+	font-style: italic;
+}
+.BoletaNota {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 12px;
+	font-weight: bolder;
+}
+.BoletaMateria {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: bold;
+}
+.BoletaPosInas {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+.SW_Verde {
+	background-color: #33FF66;
+	padding: 3px;
+	font-size: 12px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 10px;
+}
+.SW_Amarillo {
+	background-color: #FF0;
+	padding: 3px;
+	font-size: 12px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 10px;
+}
+.SW_Rojo {
+	background-color: #FF3333;
+	padding: 3px;
+	font-size: 12px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 12px;
+}
+
+
+
+
+
+
+
+
+div.blueTable {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 90%;
+  text-align: left;
+  border-collapse: collapse;
+  align-items:center;
+}
+.divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+.divTable.blueTable .divTableBody .divTableCell {
+  font-size: 13px;
+}
+.divTable.blueTable .divTableRow:nth-child(even) {
+  background: #D0E4F5;
+}
+.divTable.blueTable .divTableHeading {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+.divTable.blueTable .divTableHeading .divTableHead {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+.divTable.blueTable .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.blueTable .tableFootStyle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+.blueTable .tableFootStyle {
+  font-size: 14px;
+}
+.blueTable .tableFootStyle .links {
+	 text-align: right;
+}
+.blueTable .tableFootStyle .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.blueTable.outerTableFooter {
+  border-top: none;
+}
+.blueTable.outerTableFooter .tableFootStyle {
+  padding: 3px 5px; 
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
+
+
+
+
+
+
+
+
+
+
