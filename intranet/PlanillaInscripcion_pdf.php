@@ -1,7 +1,7 @@
 <?php 
 
 
-$MM_authorizedUsers = "2,91";
+$MM_authorizedUsers = "2,91,secre";
 require_once('../inc_login_ck.php'); 
 require_once('../Connections/bd.php'); 
 require_once('a/archivo/Variables.php'); 

@@ -6,6 +6,8 @@ require_once('../../archivo/Variables.php');
 require_once('../../../../inc/rutinas.php'); 
 require_once('../../../../inc/fpdf.php');
 
+//echo "Cambio_Dolar $Cambio_Dolar <br>" . ++$ii;
+	
 
 //P_IVA_1
 if ($Facturacion_Activa or $MM_Username == 'piero'){
@@ -38,6 +40,9 @@ $row_RS_Alumno = $RS_Alumno->fetch_assoc();
 //echo $query_RS_Alumno;
 extract($row_RS_Alumno);
 
+//echo "Cambio_Dolar $Cambio_Dolar <br>" . ++$ii;
+	
+
 // Busca RECIBO (seniat O no formal)
 $Codigo_Recibo = "-1";
 if (isset($_GET['Codigo'])) {
@@ -62,10 +67,24 @@ $query_RS_Mov_Contable_haber = "SELECT * FROM ContableMov, ContableCuenta
 								AND CodigoPropietario = $CodigoAlumno 
 								AND (MontoHaber > 0 OR MontoHaber_Dolares > 0)
 								AND CodigoRecibo = ".$_GET['Codigo'];
+
+$query_RS_Mov_Contable_haber = "SELECT * FROM ContableMov 
+								WHERE CodigoPropietario = $CodigoAlumno 
+								AND (MontoHaber > 0 OR MontoHaber_Dolares > 0)
+								AND CodigoRecibo = ".$_GET['Codigo'];
+//echo $query_RS_Mov_Contable_haber;
+
 $RS_Mov_Contable_haber =  $mysqli->query($query_RS_Mov_Contable_haber);
 $row_RS_Mov_Contable_haber = $RS_Mov_Contable_haber->fetch_assoc();
 
-$Cambio_Dolar = $row_RS_Mov_Contable_haber['Cambio_Dolar'];
+//echo "Cambio_Dolar $Cambio_Dolar <br>" . ++$ii;
+	
+if ( $row_RS_Mov_Contable_haber['Cambio_Dolar'] > 8000 )	{
+	$Cambio_Dolar = $row_RS_Mov_Contable_haber['Cambio_Dolar'];
+	//echo "cambio de haber";
+}
+//echo "Cambio_Dolar $Cambio_Dolar <br>" . ++$ii;
+	
 
 // DATOS CLIENTE	
 if($row_RS_Mov_Contable_haber['CodigoReciboCliente'] > 0){
@@ -131,10 +150,12 @@ $NumeroFactura = $row_RS_Recibo['NumeroFactura'];
 
  
 $total=0;
-	
+	//echo "Cambio_Dolar $Cambio_Dolar <br>" . ++$ii;
 // Llena Matriz factura	
 while ($row_RS_Mov_Contable_debe = $RS_Mov_Contable_debe->fetch_assoc()) { 
 	$Num_Renglones++;
+	
+	//echo "Cambio_Dolar $Cambio_Dolar <br>" . ++$ii;
 	
 	$Renglon[$Num_Renglones]['Descripcion'] = $row_RS_Mov_Contable_debe['Descripcion']; 
 	$Renglon[$Num_Renglones]['ReferenciaMesAno'] = Mes_Ano ($row_RS_Mov_Contable_debe['ReferenciaMesAno']);  
@@ -344,7 +365,7 @@ foreach ($Pag as $Pagina){
 	$pdf->Cell(60 , $Ln , "Firma " , 'T' , 0 , 'C'); 
 	
 	$pdf->SetFont('Arial','',7);
-	$pdf->Cell(125 , $Ln , "$Codigo_Recibo ".date('d-m-Y h:i a')." $MM_Username" , '' , 0 , 'R'); 
+	$pdf->Cell(125 , $Ln , "$Codigo_Recibo " . Fnum($Cambio_Dolar) . " " . date('d-m-Y h:i a')." $MM_Username" , '' , 0 , 'R'); 
 	$pdf->SetFont('Arial','',10);
 
 

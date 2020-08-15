@@ -1,0 +1,541 @@
+[13-Jun-2019 21:49:49 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:51:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:51:44 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:53:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:53:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:53:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:53:47 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:54:15 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:55:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:55:39 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:55:39 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:56:02 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:56:19 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:56:20 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:56:34 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:56:59 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:57:53 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:58:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:58:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:58:55 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 21:59:20 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:01:08 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:01:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:01:50 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:01:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:01:59 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:02:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:02:50 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[13-Jun-2019 22:03:08 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:08:22 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:08:22 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:08:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:08:46 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:08:50 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:09:07 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:09:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:09:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:09:30 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:11:06 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:11:17 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:11:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:11:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:12:33 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:12:41 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Jun-2019 08:12:41 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:12:42 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Jun-2019 08:12:42 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:12:54 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:12:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:13:32 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:13:41 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:13:47 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:13:48 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:13:48 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:13:49 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Jun-2019 08:13:55 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 05:32:33 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 05:33:09 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[28-Jun-2019 05:33:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:42:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:45:57 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:46:20 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:46:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:46:38 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:46:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:46:52 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:47:05 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:48:02 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:52:39 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:53:56 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[28-Jun-2019 07:53:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:53:56 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[28-Jun-2019 07:53:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:54:39 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[28-Jun-2019 07:54:39 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:55:16 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:55:55 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 07:55:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:04:28 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:04:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:05:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:05:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:06:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:07:08 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:07:28 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:07:36 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:07:36 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:07:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:08:50 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:09:10 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:09:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:09:35 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:09:45 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:10:40 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:11:47 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:12:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:22:54 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:28:59 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:29:49 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:29:49 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:29:57 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:30:20 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:30:28 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:30:49 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:30:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:31:17 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:31:18 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:31:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:31:46 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:31:46 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:31:53 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:32:00 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:32:05 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:32:14 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:32:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:32:28 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:32:35 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:32:47 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:33:01 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:33:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:04 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:36 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:42 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:53 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:34:53 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:35:01 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:35:16 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:35:17 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:40:30 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:40:40 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:40:50 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:40:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:41:03 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:41:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:41:18 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:41:18 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:44:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:44:42 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:44:55 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:45:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:45:59 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:46:00 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:46:14 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:46:37 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:46:59 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:47:33 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:47:41 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:47:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:48:03 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:48:03 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:48:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:48:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:48:39 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:48:43 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:49:02 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:49:03 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:49:22 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:49:44 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:51:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:52:08 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:52:38 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:52:42 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:52:57 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:53:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:53:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:53:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:53:36 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:54:48 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:54:57 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:55:10 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:55:15 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:55:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:56:14 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:56:15 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:56:34 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:57:33 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:57:55 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 08:58:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 09:01:52 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 09:02:07 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 09:02:07 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 09:02:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 09:02:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 09:02:45 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[28-Jun-2019 09:03:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 08:59:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 08:59:33 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:02:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:02:28 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:04:06 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:04:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:06:22 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:07:00 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:07:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:07:30 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:07:44 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Jul-2019 11:07:47 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Aug-2019 18:23:03 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Aug-2019 18:47:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[06-Sep-2019 15:12:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[06-Sep-2019 15:13:14 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[06-Sep-2019 15:13:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[06-Sep-2019 15:13:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[20-Sep-2019 18:37:13 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[20-Sep-2019 18:40:04 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[23-Sep-2019 16:17:56 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[15-Oct-2019 18:00:11 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[28-Oct-2019 09:38:08 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[28-Oct-2019 11:35:27 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[28-Oct-2019 11:38:02 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[28-Oct-2019 11:40:13 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[28-Oct-2019 11:41:27 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[28-Oct-2019 12:25:10 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 235
+[03-Dec-2019 10:55:08 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[03-Dec-2019 10:55:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[03-Dec-2019 10:58:37 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[12-Dec-2019 19:46:03 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[05-Feb-2020 08:44:58 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/inc/rutinas.php on line 244
+[05-Feb-2020 08:30:39 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/colegio/public_html/inc/rutinas.php on line 55
+[05-Feb-2020 08:30:45 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/colegio/public_html/inc/rutinas.php on line 55
+[05-Feb-2020 08:30:46 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/colegio/public_html/inc/rutinas.php on line 55
+[14-Feb-2020 11:39:57 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:41:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:42:50 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:42:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:43:04 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:43:22 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:43:22 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:43:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:43:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:43:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:44:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:44:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:44:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:44:37 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Feb-2020 11:44:37 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:44:37 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Feb-2020 11:44:37 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:44:45 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Feb-2020 11:44:45 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:44:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Feb-2020 11:44:53 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:45:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:45:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 11:45:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 12:02:31 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Feb-2020 12:02:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 12:02:32 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 400
+[14-Feb-2020 12:02:32 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 12:02:52 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 12:02:52 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 12:55:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 12:59:32 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 12:59:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 13:00:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 13:01:05 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 13:01:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 13:01:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 13:01:37 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[14-Feb-2020 13:01:54 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 08:22:16 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 08:22:40 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 08:50:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 08:52:35 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 08:52:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 09:04:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 09:04:15 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 09:04:15 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 09:04:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 09:04:39 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 16:49:40 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 16:50:05 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 16:50:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 16:50:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 16:53:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 16:53:54 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[27-Feb-2020 16:54:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[05-Mar-2020 13:20:22 America/Caracas] PHP Warning:  mktime() expects parameter 1 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/MarcaTarjeta.php on line 29
+[30-Mar-2020 14:27:43 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:28:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:30:35 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:31:15 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:31:55 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:32:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:33:08 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:33:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:33:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:33:39 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:33:40 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:33:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:33:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:34:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Mar-2020 14:34:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:10:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:11:01 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:12:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:13:00 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:13:28 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:15:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:15:52 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:16:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Apr-2020 14:16:21 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:21:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:21:59 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:22:34 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:22:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:23:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:23:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:23:52 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:24:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:24:10 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:24:29 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[30-Apr-2020 12:24:50 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 09:54:10 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:07:51 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:08:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:08:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:41:01 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:44:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:51:23 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:51:34 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:51:34 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:53:30 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:53:57 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:54:19 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-May-2020 10:55:12 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:22:55 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:24:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:25:14 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:25:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:25:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:25:43 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:26:33 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[29-May-2020 13:27:09 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:05:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:06:38 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:06:59 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:07:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:07:34 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:07:53 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:08:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:08:48 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[15-Jun-2020 17:09:13 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[17-Jun-2020 08:39:33 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[17-Jun-2020 08:39:46 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[17-Jun-2020 08:39:49 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[17-Jun-2020 08:41:05 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 712
+[17-Jun-2020 08:45:53 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 714
+[17-Jun-2020 08:45:56 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 714
+[17-Jun-2020 12:53:09 UTC] PHP Fatal error:  Call to undefined function TieneAcceso() in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 13
+[17-Jun-2020 08:55:11 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc_BK.php on line 714
+[17-Jun-2020 08:55:43 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc_BK.php on line 714
+[17-Jun-2020 09:29:27 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc_BK.php on line 714
+[17-Jun-2020 09:29:43 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc_BK.php on line 714
+[17-Jun-2020 10:40:45 America/Caracas] PHP Warning:  date() expects parameter 2 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:40:45 America/Caracas] PHP Warning:  date() expects parameter 2 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:40:45 America/Caracas] PHP Warning:  date() expects parameter 2 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:40:45 America/Caracas] PHP Warning:  date() expects parameter 2 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:40:45 America/Caracas] PHP Warning:  date() expects parameter 2 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:40:45 America/Caracas] PHP Warning:  date() expects parameter 2 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:40:45 America/Caracas] PHP Warning:  date() expects parameter 2 to be long, string given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:41:25 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 493
+[17-Jun-2020 10:52:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:81) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 84
+[17-Jun-2020 10:52:29 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:81) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 84
+[17-Jun-2020 10:59:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:10 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:12 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:14 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:24 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:71) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 10:59:53 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php:91) in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 94
+[17-Jun-2020 11:15:39 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 475
+[19-Jun-2020 13:14:52 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 269
+[19-Jun-2020 13:14:57 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 269
+[19-Jun-2020 17:44:15 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 110
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[22-Jun-2020 12:08:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Empleado/Ficha_PagoDeduc.php on line 462
+[23-Jun-2020 15:49:51 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/colegio/public_html/inc/rutinas.php on line 1820
+[23-Jun-2020 15:49:57 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/colegio/public_html/inc/rutinas.php on line 1820
+[24-Jun-2020 09:48:26 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/colegio/public_html/inc/rutinas.php on line 1820
+[24-Jun-2020 10:00:42 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/colegio/public_html/inc/rutinas.php on line 1820
+[24-Jun-2020 10:01:13 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/colegio/public_html/inc/rutinas.php on line 1820
+[24-Jun-2020 10:01:35 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/colegio/public_html/inc/rutinas.php on line 1821
+[24-Jun-2020 10:17:48 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 1602
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:33 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358
+[31-Jul-2020 09:31:53 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Empleado/Archivos_txt.php on line 358

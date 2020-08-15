@@ -72,7 +72,7 @@ while ($row = $RS->fetch_assoc()) {
 			$txt = "pago";
 			}
 		else{
-			$txt = Fnum($row_RS_['MontoDebe']);
+			$txt = Fnum($row_RS_['MontoDebe_Dolares']);
 		}
 
 		$pdf->Cell(90 , $Ln , $txt , $borde , 0 , 'L'); 

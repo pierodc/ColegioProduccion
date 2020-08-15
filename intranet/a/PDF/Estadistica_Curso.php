@@ -1,107 +1,38 @@
 <?php 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
+require_once('../../../Connections/bd.php'); 
+require_once('../archivo/Variables.php'); 
+require_once('../../../inc/rutinas.php'); 
+require_once('../../../inc/fpdf.php'); 
 
 $mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 
-$Curso = new Curso();
+if(isset($_GET['AnoEscolar']))
+	$AnoEscolar = $_GET['AnoEscolar'];
 
-$Cursos_todos = $Curso->view_all();
+$sql = "SELECT * FROM Curso 
+		WHERE SW_activo = '1'
+		ORDER BY NivelCurso, Seccion";
+$RS = $mysqli->query($sql);
 
-$Status = array("Inscrito","Solicitando");
-$Anos = array($AnoEscolar,$AnoEscolarProx);
+//$RS->data_seek(0);
 
-echo "<pre>";
-
-
-foreach( $Cursos_todos as $Cr ){
-	//echo $Cr["NombreCompleto"].": ";
-	
-	$MatrizCurso[$Cr["CodigoCurso"]][NombreCompleto] = $Cr["NombreCompleto"];
-	
-	foreach($Anos as $Ano){
-		foreach($Status as $St){
-			$MatrizCurso[$Cr["CodigoCurso"]][$Ano][$St] += $Curso->Cuenta($Ano, $Cr["CodigoCurso"] , $St);			
-		}
-	}
-	
-	
-	
-	
-	
-	
-	
-	//$MatrizCurso[] = $Resultado;
-	
-	
-	//echo "<br>";
-}
-
-function td ($txt){
-	
-	echo "<td>".$txt."</td>";
-	
-}
-
-echo '<table border="1">';
-foreach( $Cursos_todos as $Cr ){
-	echo "<tr>";
-	echo td($Cr["NombreCompleto"]) ;
-	
-	
-	foreach($Anos as $Ano ){
-		foreach($Status as $St){
-			echo td($Cr["CodigoCurso"]);
-			echo td($Ano);
-			echo td($St);
-			
-			
-			echo td($Cr["CodigoCurso"][$Ano][$St]) ;
-		}
-	}
-	
-	
-	echo "</tr>";
-}
-echo "</table>";
-
-
-
-var_dump($MatrizCurso);
-
-
-
+$TituloPag = "TituloPag";
 
 $borde=1;
 $Ln = 4.25;
 
-$pdf = new FPDF('P', 'mm', 'Letter');
+$pdf=new FPDF('P', 'mm', 'Letter');
 $pdf->SetFillColor(255);
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
-
-
-foreach($ResultadosCursos as $arr){
-	// Para cada Nivel
-	var_dump($arr);
-	
-	$pdf->AddPage();
-	$pdf->Image($_SERVER['DOCUMENT_ROOT'].'/img/solcolegio.jpg', 10, 5, 0, 16);
-	$pdf->Image($_SERVER['DOCUMENT_ROOT'].'/img/NombreCol.jpg' , 30, 5, 0, 12);
-	$pdf->SetY( 22 );
-	$pdf->Cell(50 , $Ln , $TituloPag , 0 , 1 , 'L'); 
-	$pdf->SetFont('Arial','',10);
-	$pdf->SetY( 30 );
-	$pdf->Cell(30 , $Ln*1.5 , $arr[] , 0 , 0 , 'L'); 
-		
-	
-}
-
-
-
-/*
-
-
+$pdf->AddPage();
+//$pdf->SetMargins(5,5,5);
+$pdf->Image('../../../img/solcolegio.jpg', 10, 5, 0, 16);
+$pdf->Image('../../../img/NombreCol.jpg' , 30, 5, 0, 12);
+$pdf->SetY( 22 );
+$pdf->Cell(50 , $Ln , $TituloPag , 0 , 1 , 'L'); 
+$pdf->SetFont('Arial','',10);
+$pdf->SetY( 30 );
 
 $NivelMencionAnte = $row_Curso['NivelMencion'];
 
@@ -110,34 +41,7 @@ while ($row_Curso = $RS->fetch_assoc()) { // Para cada Curso
 	$NivelCurso = $row_Curso['NivelCurso'];
 	$NombreNivel = $row_Curso['NombreCompleto'];
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//Cierre de Pagina Total_Nivel -> NivelMencion
+	//Cierre de Total_Nivel -> NivelMencion
 	if(($n_en_pag == 10  
 		or ($NivelMencionAnte != $row_Curso['NivelMencion']) and $NivelMencionAnte > '')
 		or ($row_Curso['Curso'] == 4 and $row_Curso['Seccion'] == "A")){
@@ -146,8 +50,7 @@ while ($row_Curso = $RS->fetch_assoc()) { // Para cada Curso
 		if($NivelMencionAnte != $row_Curso['NivelMencion'] and $NivelMencionAnte > '')
 			$pdf->Cell(60 , $Ln, "Total_Nivel: ".$Total_Nivel[$NivelMencionAnte] , 1 , 1 , 'L'); 
 		//$pdf->Cell(60 , $Ln, "Sumatoria Global: ".$Total_Global_Alumnos , 1 , 0 , 'L'); 
-		$pdf->AddPage();
-	}
+		$pdf->AddPage();}
 	
 	
 	// Separador doble linea "Nivel Curso"
@@ -592,6 +495,6 @@ $pdf->Ln($Ln*2);
 }
 
 $pdf->Output();
-*/
+
 
 ?>	

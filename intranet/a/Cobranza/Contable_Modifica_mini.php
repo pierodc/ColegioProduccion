@@ -114,25 +114,27 @@ $Tipo = $row_RS_Contable_Mov['Tipo'];
 
 
 if($row_RS_Contable_Mov['Referencia'] > ""){					
-$query_RS_Banco_Mov_aux = " SELECT * FROM Contable_Imp_Todo 
-        										WHERE Referencia = ".$row_RS_Contable_Mov['Referencia']." 
-        										AND CodigoCuenta = $CodigoCuenta 
-        										AND MontoHaber = '$MontoHaber'
-        										ORDER BY CodigoCuenta, Fecha DESC"; //echo $query_RS_Banco_Mov_Disponible;
-$RS_Banco_Mov_aux = mysql_query($query_RS_Banco_Mov_aux, $bd) or die(mysql_error());
-$row_RS_Banco_Mov_aux = mysql_fetch_assoc($RS_Banco_Mov_aux);
+	$query_RS_Banco_Mov_aux = " SELECT * FROM Contable_Imp_Todo 
+													WHERE Referencia = ".$row_RS_Contable_Mov['Referencia']." 
+													AND CodigoCuenta = $CodigoCuenta 
+													AND MontoHaber = '$MontoHaber'
+													ORDER BY CodigoCuenta, Fecha DESC"; //echo $query_RS_Banco_Mov_Disponible;
+	$RS_Banco_Mov_aux = mysql_query($query_RS_Banco_Mov_aux, $bd) or die(mysql_error());
+	$row_RS_Banco_Mov_aux = mysql_fetch_assoc($RS_Banco_Mov_aux);
 }
 
 ?>
     <option value="<?php echo $row_RS_Contable_Mov['Referencia']; ?>"><?php echo $row_RS_Contable_Mov['Referencia'].' '.$row_RS_Banco_Mov_aux['Descripcion']; ?></option>
     <?php
-echo '<option value="">-</option>';
+	
+	
+echo '<option value="">-.-</option>';
 							
 do { 
 
 $DIf_Fechas = dateDif( $row_RS_Banco_Mov_Disponible['Fecha'] , $row_RS_Contable_Mov['Fecha'] )*1;
 if ( $DIf_Fechas > 5) // mas de 5 dias en el pasado 
-break;
+	break;
 
 if($DIf_Fechas > -5){
 
@@ -153,7 +155,7 @@ $TimeStam = dddDDMMAAAA($row_RS_Banco_Mov_Disponible['Fecha']);
 ++$Conteo;
 $SignoDiferenciaActual = Signo($Diferencia);
 if($SignoDiferenciaAnterior <> $SignoDiferenciaActual and $Conteo <> 1)
-echo '<option value=""> ........ </option>';
+	echo '<option value=""> ........ </option>';
 
 
 if ($Diferencia < 45) {
@@ -170,8 +172,17 @@ foreach($Cedulas as $Ced){
   }
 }	
 	
-	
-if($Privilegios == 91)	{
+	 $Localizado = false;
+	foreach($Cedulas as $Ced){
+	  if (($Ced > ' ' and strpos($row_RS_Banco_Mov_Disponible['Descripcion'],$Ced )) or 
+		 ($CiRifEmisor > ' ' and strpos($row_RS_Banco_Mov_Disponible['Descripcion'],$CiRifEmisor ))
+		 and !$Localizado){
+		  //echo " <-";
+		  $Localizado = true;}
+	}
+
+
+if($Privilegios == 91 or $Localizado)	{
 	
 	
 	echo '<option value="' . $Opcion_Referencia . '"';
@@ -190,14 +201,8 @@ if($Privilegios == 91)	{
 	echo $row_RS_Banco_Mov_Disponible['Descripcion']; 
 	echo '  Ref:' . $row_RS_Banco_Mov_Disponible['Referencia']; 
 
-	 $Localizado = false;
-	foreach($Cedulas as $Ced){
-	  if (($Ced > ' ' and strpos($row_RS_Banco_Mov_Disponible['Descripcion'],$Ced )) or 
-		 ($CiRifEmisor > ' ' and strpos($row_RS_Banco_Mov_Disponible['Descripcion'],$CiRifEmisor ))
-		 and !$Localizado){
-		  echo " <-";
-		  $Localizado = true;}
-	}
+	if($Localizado){
+		echo " <-";}
 
 	if (strpos($row_RS_Banco_Mov_Disponible['Descripcion'],"CH" )){
 	  echo " * OJO CHEQUE * ";}

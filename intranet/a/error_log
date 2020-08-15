@@ -1,0 +1,172 @@
+[03-Jun-2019 09:52:41 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Agrega_Mensualidad.php on line 160
+[03-Jun-2019 10:02:50 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 83
+[07-Jun-2019 17:09:56 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 83
+[18-Jun-2019 14:16:29 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/colegio/public_html/Models/Alumno.php on line 151
+[21-Jun-2019 10:55:03 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[25-Jun-2019 13:12:55 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[25-Jun-2019 14:48:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[01-Jul-2019 07:33:26 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[01-Jul-2019 13:46:19 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[03-Jul-2019 11:49:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[12-Jul-2019 09:18:50 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[15-Jul-2019 11:41:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[16-Jul-2019 09:14:29 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[25-Jul-2019 14:57:08 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Connections/bd.php on line 16
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 162
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 163
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 164
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 165
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 166
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 167
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 168
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/inc_login_ck.php on line 257
+[25-Jul-2019 10:57:08 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/inc/Footer_info.php on line 14
+[25-Jul-2019 10:57:08 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/inc/Footer_info.php on line 15
+[25-Jul-2019 11:15:05 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[26-Jul-2019 08:12:27 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[29-Jul-2019 08:21:37 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[09-Aug-2019 11:34:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[09-Aug-2019 12:20:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[15-Aug-2019 08:48:01 America/New_York] PHP Warning:  mysql_pconnect(): Connection refused in /home/colegio/public_html/Connections/bd.php on line 12
+[23-Sep-2019 16:02:16 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[26-Sep-2019 14:10:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[07-Oct-2019 07:36:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[18-Oct-2019 13:45:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[21-Oct-2019 08:13:07 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[22-Oct-2019 07:49:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[05-Nov-2019 01:25:18 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Agrega_Mensualidad.php on line 163
+[26-Nov-2019 08:55:51 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[26-Nov-2019 14:43:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[27-Nov-2019 07:59:04 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[13-Jan-2020 10:06:56 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[14-Jan-2020 08:40:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[20-Jan-2020 09:30:18 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[11-Feb-2020 08:14:51 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[18-Feb-2020 15:12:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[02-Mar-2020 09:46:17 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Agrega_Mensualidad.php on line 163
+[04-Mar-2020 10:11:02 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Observacion.php on line 86
+[21-Apr-2020 18:54:33 America/New_York] PHP Fatal error:  Call to undefined function Fnum() in /home/colegio/public_html/intranet/a/sms_caja.php on line 20
+[21-Apr-2020 18:54:35 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or '$' in /home/colegio/public_html/inc/rutinas.php on line 223
+[21-Apr-2020 18:54:37 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or '$' in /home/colegio/public_html/inc/rutinas.php on line 223
+[21-Apr-2020 18:54:37 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or '$' in /home/colegio/public_html/inc/rutinas.php on line 223
+[21-Apr-2020 18:54:37 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or '$' in /home/colegio/public_html/inc/rutinas.php on line 223
+[21-Apr-2020 18:54:37 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or '$' in /home/colegio/public_html/inc/rutinas.php on line 223
+[21-Apr-2020 18:54:38 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/colegio/public_html/inc/rutinas.php on line 284
+[21-Apr-2020 18:54:38 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/colegio/public_html/inc/rutinas.php on line 284
+[21-Apr-2020 18:54:38 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/colegio/public_html/inc/rutinas.php on line 284
+[01-May-2020 19:09:14 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Agrega_Mensualidad.php on line 163
+[11-May-2020 14:44:17 America/Caracas] PHP Fatal error:  Call to a member function form_edit() on null in /home/colegio/public_html/intranet/a/index.php on line 411
+[11-May-2020 14:44:23 America/Caracas] PHP Fatal error:  Call to a member function form_edit() on null in /home/colegio/public_html/intranet/a/index.php on line 411
+[11-May-2020 14:45:05 America/Caracas] PHP Fatal error:  Call to a member function form_edit() on null in /home/colegio/public_html/intranet/a/index.php on line 413
+[19-May-2020 11:54:23 America/Caracas] PHP Warning:  copy(../../FotoEmp/300/419.jpg): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Sube_Foto.php on line 44
+[09-Jun-2020 15:37:14 America/Caracas] PHP Fatal error:  Call to a member function NombreApellido() on null in /home/colegio/public_html/intranet/a/_Template/NavBar.php on line 13
+[09-Jun-2020 15:37:22 America/Caracas] PHP Fatal error:  Call to a member function NombreApellido() on null in /home/colegio/public_html/intranet/a/_Template/NavBar.php on line 13
+[12-Jun-2020 14:56:42 America/Caracas] PHP Fatal error:  Class 'Alumno' not found in /home/colegio/public_html/intranet/a/_Template/NavBar.php on line 4
+[15-Jun-2020 13:25:01 UTC] PHP Fatal error:  Call to undefined function DDMMAAAA() in /home/colegio/public_html/intranet/a/PlanillaAlumno.php on line 52
+[15-Jun-2020 09:34:13 America/Caracas] PHP Fatal error:  Call to undefined method Alumno::CodigoAlumno() in /home/colegio/public_html/intranet/a/PlanillaAlumno.php on line 11
+[15-Jun-2020 21:58:36 America/Caracas] PHP Fatal error:  Class 'Representante' not found in /home/colegio/public_html/intranet/a/PlanillaAlumno.php on line 182
+[15-Jun-2020 21:59:29 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/Connection.php on line 43
+[15-Jun-2020 22:00:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/Connection.php on line 43
+[15-Jun-2020 22:00:27 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/Connection.php on line 43
+[15-Jun-2020 22:01:36 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/Connection.php on line 43
+[15-Jun-2020 22:01:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/Connection.php on line 43
+[16-Jun-2020 09:32:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/Connection.php on line 43
+[16-Jun-2020 09:33:26 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/Connection.php on line 43
+[30-Jun-2020 13:06:24 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Agrega_Mensualidad.php on line 163
+[09-Jul-2020 04:52:29 UTC] PHP Fatal error:  Call to undefined function MenuCurso() in /home/colegio/public_html/intranet/a/index.php on line 167
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[16-Jul-2020 16:11:22 America/Caracas] PHP Warning:  explode(): Empty delimiter in /home/colegio/public_html/intranet/a/Sube_notas.php on line 238
+[03-Aug-2020 01:09:14 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Busca.php on line 32
+[03-Aug-2020 01:09:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Busca.php on line 36
+[03-Aug-2020 01:12:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Busca.php on line 37
+[03-Aug-2020 01:13:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Busca.php on line 37
+[03-Aug-2020 01:14:18 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Busca.php on line 37
+[03-Aug-2020 01:28:21 America/New_York] PHP Parse error:  syntax error, unexpected ']' in /home/colegio/public_html/intranet/a/Busca.php on line 36
+[03-Aug-2020 01:30:12 America/Caracas] PHP Fatal error:  Call to a member function NombreApellido() on array in /home/colegio/public_html/intranet/a/Busca.php on line 38
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[03-Aug-2020 01:31:32 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/Models/Connection.php on line 43
+[03-Aug-2020 01:31:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/Models/Connection.php on line 44
+[08-Aug-2020 02:09:24 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:09:54 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:10:25 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:10:34 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:41:50 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:42:46 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:42:53 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:43:09 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 02:53:18 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:03:17 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:03:25 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:03:40 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:03:53 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:04:53 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:05:25 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:05:33 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:06:07 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:06:13 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:06:18 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:06:22 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:06:27 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:06:45 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:07:01 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:07:09 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:07:23 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:07:30 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:07:35 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:07:40 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:07:52 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
+[08-Aug-2020 04:08:02 UTC] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12

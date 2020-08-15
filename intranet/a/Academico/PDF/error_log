@@ -538,3 +538,5 @@
 [17-Jul-2020 09:45:16 America/Caracas] PHP Warning:  getimagesize(/img/solcolegio.jpg): failed to open stream: No such file or directory in /home/colegio/public_html/inc/fpdf.php on line 1202
 [20-Jul-2020 19:45:06 America/Caracas] PHP Warning:  getimagesize(/img/LogoME2018.jpg): failed to open stream: No such file or directory in /home/colegio/public_html/inc/fpdf.php on line 1202
 [20-Jul-2020 19:45:36 America/Caracas] PHP Warning:  getimagesize(/img/LogoME2018.jpg): failed to open stream: No such file or directory in /home/colegio/public_html/inc/fpdf.php on line 1202
+[20-Jul-2020 22:59:29 America/New_York] PHP Fatal error:  Cannot redeclare oi() (previously declared in /home/colegio/public_html/intranet/a/Academico/PDF/Resumen_Final_Bach_b2.php:8) in /home/colegio/public_html/inc/rutinas.php on line 2675
+[20-Jul-2020 23:00:10 America/New_York] PHP Fatal error:  Cannot redeclare oi() (previously declared in /home/colegio/public_html/intranet/a/Academico/PDF/Resumen_Final_Bach_b.php:8) in /home/colegio/public_html/inc/rutinas.php on line 2675

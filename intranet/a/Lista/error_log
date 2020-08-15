@@ -1,0 +1,65 @@
+[30-May-2019 15:20:11 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/FotosFamilias.php on line 38
+[11-Jun-2019 09:57:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 443
+[11-Jun-2019 09:57:04 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 458
+[11-Jun-2019 09:57:04 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:443) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[11-Jun-2019 09:57:09 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 443
+[11-Jun-2019 09:57:09 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 458
+[11-Jun-2019 09:57:09 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:443) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[11-Jun-2019 13:46:27 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 443
+[11-Jun-2019 13:46:27 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 458
+[11-Jun-2019 13:46:27 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:443) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[18-Jun-2019 09:30:50 America/Caracas] PHP Fatal error:  Class 'Alumno' not found in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 444
+[18-Jun-2019 09:35:21 America/Caracas] PHP Fatal error:  Call to a member function Foto() on string in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 723
+[18-Jun-2019 10:19:00 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[18-Jun-2019 10:19:00 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 462
+[18-Jun-2019 10:19:00 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:445) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[18-Jun-2019 10:19:57 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[18-Jun-2019 10:19:57 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 462
+[18-Jun-2019 10:19:57 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:445) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[08-Jul-2019 15:31:30 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[08-Jul-2019 15:31:30 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 462
+[08-Jul-2019 15:31:30 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:445) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[17-Jul-2019 20:01:43 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[17-Jul-2019 20:01:43 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[17-Jul-2019 20:02:00 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[17-Jul-2019 20:02:00 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[18-Jul-2019 08:22:58 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[18-Jul-2019 08:22:58 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[19-Jul-2019 11:43:15 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[19-Jul-2019 11:43:15 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 462
+[19-Jul-2019 11:43:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:445) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[14-Aug-2019 11:58:05 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[14-Aug-2019 11:58:05 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[18-Sep-2019 20:54:07 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[18-Sep-2019 20:54:23 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[30-Sep-2019 07:37:15 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[01-Oct-2019 08:40:24 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[01-Oct-2019 08:40:30 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[01-Oct-2019 08:40:36 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[01-Oct-2019 08:40:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[01-Oct-2019 08:43:08 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[01-Oct-2019 08:43:13 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[01-Oct-2019 08:43:19 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[02-Oct-2019 08:47:09 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[04-Oct-2019 07:20:00 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[04-Oct-2019 07:20:00 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[04-Oct-2019 07:20:38 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[04-Oct-2019 07:20:38 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[04-Oct-2019 07:21:01 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[04-Oct-2019 07:21:01 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[04-Oct-2019 07:21:22 America/Caracas] PHP Warning:  require_once(../../../xls/excel.php): failed to open stream: No such file or directory in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[04-Oct-2019 07:21:22 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../xls/excel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 423
+[07-Oct-2019 10:36:53 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[29-Jan-2020 11:15:45 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[29-Jan-2020 11:15:45 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 462
+[29-Jan-2020 11:15:45 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:445) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[09-Mar-2020 11:37:26 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[09-Mar-2020 11:37:26 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 462
+[09-Mar-2020 11:37:26 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:445) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Apr-2020 17:39:37 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/FotosFamilias.php on line 38
+[08-Apr-2020 11:16:09 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/FotosFamilias.php on line 38
+[13-Apr-2020 13:44:17 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/FotosFamilias.php on line 38
+[24-Jul-2020 15:11:24 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 445
+[24-Jul-2020 15:11:24 America/Caracas] PHP Warning:  Division by zero in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 462
+[24-Jul-2020 15:11:24 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php:445) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[12-Aug-2020 20:33:00 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Lista/Curso_pdf.php on line 464

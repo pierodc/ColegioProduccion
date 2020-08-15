@@ -157,7 +157,7 @@ $totalRows_RS_Repre = mysql_num_rows($RS_Repre);
 
 
 
- ?><a href="../../PlanillaImprimirADM.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"><?php echo  $row_RS_Alumno['CodigoAlumno'] ?></a><a name="lista" id="<?php if($i > 15 ) {echo $i-1;} ?>"></a> 
+ ?><a href="../../PlanillaImprimirADM.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"><?php echo  $row_RS_Alumno['CodigoAlumno'] ?></a><a href="../PDF/Titulo_Bachiller.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"> | Titulo</a><a name="lista" id="<?php if($i > 15 ) {echo $i-1;} ?>"></a> 
               <input name="CodigoAlumno" type="hidden" id="hiddenField" value="<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" />
               <input name="Actualizar_FMP" type="hidden" id="hiddenField" value="1" />
               <input name="Actualizado_el" type="hidden" id="hiddenField" value="<?php echo  date('Y-m-d'); ?>" />

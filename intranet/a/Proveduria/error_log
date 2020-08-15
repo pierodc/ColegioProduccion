@@ -1,0 +1,65 @@
+[25-Jun-2020 18:17:27 America/New_York] PHP Parse error:  syntax error, unexpected '$RS' (T_VARIABLE) in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 41
+[25-Jun-2020 22:56:41 UTC] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/colegio/public_html/inc/rutinas.php on line 2693
+[25-Jun-2020 22:56:44 UTC] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/colegio/public_html/inc/rutinas.php on line 2693
+[25-Jun-2020 18:58:09 America/Caracas] PHP Fatal error:  Call to undefined function onoff() in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 91
+[27-Jun-2020 03:05:56 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 56
+[27-Jun-2020 03:18:44 America/New_York] PHP Parse error:  syntax error, unexpected '$resultado' (T_VARIABLE) in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 31
+[27-Jun-2020 03:22:11 America/New_York] PHP Parse error:  syntax error, unexpected 'es' (T_STRING) in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 64
+[27-Jun-2020 03:33:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 143
+[27-Jun-2020 22:35:29 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting ',' or ';' in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 161
+[29-Jul-2020 02:53:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 186
+[29-Jul-2020 02:53:41 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 186
+[29-Jul-2020 02:53:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 186
+[29-Jul-2020 02:53:55 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 186
+[29-Jul-2020 02:54:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 186
+[29-Jul-2020 02:55:14 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 189
+[29-Jul-2020 02:55:19 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 189
+[29-Jul-2020 02:56:19 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 190
+[29-Jul-2020 02:56:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 190
+[29-Jul-2020 02:57:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 189
+[29-Jul-2020 02:57:54 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 189
+[29-Jul-2020 02:58:05 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 190
+[29-Jul-2020 02:59:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 194
+[29-Jul-2020 02:59:51 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 194
+[29-Jul-2020 03:00:27 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 194
+[29-Jul-2020 03:00:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 194
+[29-Jul-2020 03:01:52 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 194
+[29-Jul-2020 03:01:55 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 194
+[29-Jul-2020 03:02:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 199
+[29-Jul-2020 03:03:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 199
+[29-Jul-2020 03:03:03 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 199
+[29-Jul-2020 03:19:12 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php:11) in /home/colegio/public_html/intranet/a/Proveduria/Inventario_BK.php on line 57
+[29-Jul-2020 03:38:26 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 151
+[29-Jul-2020 03:38:51 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 152
+[29-Jul-2020 03:39:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Proveduria/Inventario.php on line 151
+[04-Aug-2020 01:16:31 America/Caracas] PHP Fatal error:  Call to undefined function AlumnosDelUsuario() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 158
+[04-Aug-2020 01:17:19 America/Caracas] PHP Fatal error:  Call to a member function AlumnosDelUsuario() on null in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 158
+[04-Aug-2020 01:18:00 America/Caracas] PHP Warning:  Attempt to assign property of non-object in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 149
+[04-Aug-2020 01:18:00 America/Caracas] PHP Fatal error:  Call to a member function view() on string in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 157
+[04-Aug-2020 01:18:34 America/Caracas] PHP Warning:  Attempt to assign property of non-object in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 149
+[04-Aug-2020 01:18:34 America/Caracas] PHP Fatal error:  Call to a member function view() on string in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 157
+[04-Aug-2020 01:18:34 America/Caracas] PHP Warning:  Attempt to assign property of non-object in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 149
+[04-Aug-2020 01:18:34 America/Caracas] PHP Fatal error:  Call to a member function view() on string in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 157
+[04-Aug-2020 01:25:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 160
+[04-Aug-2020 01:26:41 America/New_York] PHP Parse error:  syntax error, unexpected '$Alumno' (T_VARIABLE) in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 160
+[04-Aug-2020 01:41:14 America/Caracas] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/colegio/public_html/Models/Alumno.php on line 279
+[04-Aug-2020 01:41:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on array in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 162
+[06-Aug-2020 13:13:37 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[06-Aug-2020 13:17:13 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[06-Aug-2020 13:53:20 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[06-Aug-2020 14:02:17 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[07-Aug-2020 08:59:31 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[07-Aug-2020 20:14:06 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[10-Aug-2020 22:09:44 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[10-Aug-2020 22:26:01 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[10-Aug-2020 22:27:17 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[11-Aug-2020 00:12:35 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[11-Aug-2020 00:14:00 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[11-Aug-2020 00:18:23 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[11-Aug-2020 00:24:25 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[11-Aug-2020 00:25:38 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[12-Aug-2020 00:29:05 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[12-Aug-2020 00:42:53 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[13-Aug-2020 22:37:54 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[14-Aug-2020 09:41:35 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164
+[15-Aug-2020 00:31:53 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Proveduria/Ordenes.php on line 164

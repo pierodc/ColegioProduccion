@@ -2,7 +2,7 @@
 // CAMBIO DOLAR
 $Cambio_Dolar = "NO USAR / ACTUALIZAR EN EDO DE CUENTA ALUMNO";
 $Cambio_Dolar_Forzado = "";
-$Cambio_Paralelo = "290000";
+$Cambio_Paralelo = "320000";
 // Datos Colegio
 $Colegio_Nombre = "U.E.P. Colegio San Francisco de Asís";
 $Colegio_Codigo = "S0934D1507";

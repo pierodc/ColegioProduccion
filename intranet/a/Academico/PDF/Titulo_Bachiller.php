@@ -72,7 +72,7 @@ $pdf->SetY( $Titulo_y ); //65
 
 $pdf->SetFont('Helvetica','B',12);
 
-$pdf->Cell(60+$x); $pdf->Cell(150 , $Ln , Titulo_('Unidad Educativa Privada Colegio San Francisco de Asís') , $borde , 1 , 'L'); 
+$pdf->Cell(60+$x); $pdf->Cell(150 , $Ln , Titulo_('Unidad Educativa Privada Colegio San Francisco de Asis') , $borde , 1 , 'L'); 
 $pdf->Cell(24+$x); $pdf->Cell(164 , $Ln , 'S0934D1507' , $borde , 1 , 'L'); 
 $pdf->Cell(28+$x); $pdf->Cell(20 , $Ln , $Titulo_Bach , $borde , 1 , 'L'); 
 $pdf->Cell(70+$x); $pdf->Cell(150 , $Ln , '31059' , $borde , 1 , 'L'); 
@@ -83,7 +83,7 @@ $Alumno = 	$row_RS_Alumno['Nombres'].' '.$row_RS_Alumno['Nombres2'].' '.
 $pdf->Cell(43+$x); $pdf->Cell(97 , $Ln , Titulo_($Alumno ) , $borde , 1 , 'L'); 
 
 //$pdf->Cell(65+$x); $pdf->Cell(50 , $Ln , 'P-'.$row_RS_Alumno['Cedula'] , $borde , 1 , 'L'); 
-$pdf->Cell(65+$x); $pdf->Cell(50 , $Ln , $row_RS_Alumno['CedulaLetra'].''.$row_RS_Alumno['Cedula'] , $borde , 1 , 'L'); 
+$pdf->Cell(65+$x); $pdf->Cell(50 , $Ln , $row_RS_Alumno['CedulaLetra'].' '.$row_RS_Alumno['Cedula'] , $borde , 1 , 'L'); 
 
 $NacidoEn = "";
 

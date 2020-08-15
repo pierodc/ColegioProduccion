@@ -365,9 +365,9 @@ foreach(array(1,2) as $grupo){
 			$pdf->Cell(35  , $Ln , ' Miranda ' , 'B' , 1 , 'L');
 			
 			$pdf->Cell(20  , $Ln , 'Director(a): ' , 0 , 0 , 'L');
-			$pdf->Cell(116.25  , $Ln , ' Vita María Di Campo ' , 'B' , 0 , 'L');
+			$pdf->Cell(116.25  , $Ln , ' ' . ucwords( $Director_Nombre ) , 'B' , 0 , 'L');
 			$pdf->Cell(10  , $Ln , ' C.I.: ' , 0 , 0 , 'L');
-			$pdf->Cell(55  , $Ln , ' V 6973243 ' , 'B' , 1 , 'L');
+			$pdf->Cell(55  , $Ln , ' '. $Director_CI , 'B' , 1 , 'L');
 			
 			$pdf->SetFont('Arial','',8);
 			$pdf->Cell(132  , $Ln , 'III. Identificación del Estudiante: ' , 1 , 0 , 'L');
