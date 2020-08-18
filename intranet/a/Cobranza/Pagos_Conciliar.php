@@ -94,22 +94,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
 
-<div class="container-fluid">
-	<div class="row">
 	
+          
+             
+<table class="sombra">
 
 
-<table width="100%" border="0" align="center">
-  
-  <tr>
-    <td colspan="2" align="center"><table width="100%" border="0" align="center">
-        <tr>
-          <td><table width="100%" border="0" class="table table-striped table-hover">
+             
               <tr>
-                <td colspan="12" ><a href="Pagos_Conciliar.php"><img src="../../img/Reload.png" width="31" height="27" border="0"></a> | <a href="Pagos_Conciliar.php?Oculto=1">Ocultos</a> | <a href="Conciliar_Tarj.php">Tarjetas</a> | 
+                <td colspan="12" ><a href="Pagos_Conciliar.php"><img src="/img/Reload.png" width="31" height="27" border="0"></a> | <a href="Pagos_Conciliar.php?Oculto=1">Ocultos</a> | <a href="Conciliar_Tarj.php">Tarjetas</a> | 
                 
  <form id="form1" name="form1" method="post" action="">
-      <label> <a href="../index.php"><img src="../../../../img/home.png" width="25" height="27" border="0" /></a> Fecha:
+      <label> <a href="../index.php"><img src="/img/home.png" width="25" height="27" border="0" /></a> Fecha:
       </label>
       <label><input name="Fecha_" type="date" value="<?php echo $Fecha_ ?>" onchange="form.submit();" />
         <input type="submit" name="button" id="button" value="Buscar" />
@@ -125,6 +121,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
                     </select>
                 </form><?php } ?></td>
               </tr>
+              
+             
+
+</table>
+             
+<table class="sombra">
+             
+              
+              
             <tr>
                 <td align="center" class="TituloLeftWindow">No</td>
               <td align="center" class="TituloLeftWindow">&nbsp;</td>
@@ -309,15 +314,11 @@ do {
 
 
 
-          </table></td>
-        </tr>
-    </table></td>
-  </tr>
-</table>
+          </table>
+          
+          
 
 
-	</div>	
-</div>
 
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>
