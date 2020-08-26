@@ -103,13 +103,20 @@ Resources
 
 <body>
 <h1>Floating labels demo</h1>
-      <input type="text" name="fullname" id="fullname" placeholder="Jane Appleseed">
-    <label for="fullname">Name</label>
    
   <div class="field">
-    <input type="email" name="email" id="email" placeholder="jane.appleseed@example.com">
-    <label for="email">Email</label>
+    <label for="fullname">Name</label>  
+    <input type="text" name="fullname" id="fullname" placeholder="Jane Appleseed">
   </div>
+   
+  <div class="field">
+    
+   <input type="email" name="email" id="email" placeholder="jane.appleseed@example.com">
+   <label for="email">Email</label> 
+  </div>
+  
+  
+  
   </form>
   
   <p>Will probably work crap in lots of browsers. Works OK in recent Chrome, WebKit/Safari. See the <a href="http://thatemil.com/blog/2016/01/23/floating-label-no-js-pure-css/">accompanying blog post</a></p>

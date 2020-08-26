@@ -28,12 +28,12 @@ if ($totalRows_RS_ContableMov_Procesando > 0) { // Show if recordset not empty
 ?><table width="100%" border="0" align="center">
      <caption>Pagos Procesando | <a href="Recibo_Crea_Cliente.php?CodigoAlumno=<?php echo $CodigoAlumno ?>&amp;CodigoPropietario=<?php echo $_GET['CodigoPropietario'] ?>">crea Nombre</a></caption>
       
-<tr>
+<!--tr>
 <td align="center" class="NombreCampoTopeWin">&nbsp;</td>
 <td width="90%" colspan="2" align="center" class="NombreCampoTopeWin">Resumen</td>
 <td align="center" nowrap="nowrap" class="NombreCampoTopeWin"> Banco</td>
 <td width="10%" align="center" class="NombreCampoTopeWin"><strong>Un solo click</strong><?php $formi=20; ?></td>
-</tr>
+</tr-->
 <?php 
 do { 
 
@@ -73,28 +73,9 @@ if( $row_RS_ContableMov_Procesando['Referencia']>" ") {
 
 ?>
 <tr>
-  <td align="center" valign="middle" nowrap="nowrap" class="FondoCampo"><?php 
-
-
-if ( $row_RS_ContableMov['MontoAbono'] < 1 or $MM_Username=="piero") { ?>
-  <iframe src="Procesa.php?bot_EliminarMov=1&Codigo=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" seamless width="25" height="25" frameborder="0" ></iframe>
-  <?php }
-
-
-if ($row_RS_ContableMov_Procesando['Fecha']==date('Y-m-d')){ 
-?><img src="http://<?= $_SERVER['SERVER_NAME'] ?>/i/calculator_error.png" width="32" height="32" border="0" align="middle" /><?php 
-} 
-
-
-?></td>
+  <td align="center" valign="middle" nowrap="nowrap" class="FondoCampo"></td>
   <td colspan="2" align="right" valign="middle" nowrap="nowrap" class="FondoCampo"><table width="800" border="1" align="center">
-    <tr>
-      <td><img src="../../../i/b.png" width="10" height="1" alt=""/></td>
-      <td align="left"><img src="../../../i/b.png" width="100" height="1" alt=""/></td>
-      <td align="left"><img src="../../../i/b.png" width="490" height="1" alt=""/></td>
-      <td align="right"><img src="../../../i/b.png" width="100" height="1" alt=""/></td>
-      <td align="right"><img src="../../../i/b.png" width="100" height="1" alt=""/></td>
-    </tr>
+  
     <tr>
     <td>&nbsp;</td>
   <td align="left">
@@ -157,7 +138,20 @@ if( $Privilegios == 91 ){
   </tr>
   <?php } ?>
   <tr  bgcolor="#CCCCCC">
-    <td>&nbsp;</td>
+    <td><?php 
+
+
+if ( $row_RS_ContableMov['MontoAbono'] < 1 or $MM_Username=="piero") { ?>
+  <iframe src="Procesa.php?bot_EliminarMov=1&Codigo=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" seamless width="25" height="25" frameborder="0" ></iframe>
+  <?php }
+
+
+if ($row_RS_ContableMov_Procesando['Fecha']==date('Y-m-d')){ 
+?><img src="http://<?= $_SERVER['SERVER_NAME'] ?>/i/calculator_error.png" width="32" height="32" border="0" align="middle" /><?php 
+} 
+
+
+?></td>
   <td><strong>Actual</strong></td>
   <td align="left">&nbsp;
       <table width="100%" border="1">
@@ -195,9 +189,18 @@ echo Banco ($row_RS_ContableMov_Procesando['CodigoCuenta']);
                   
                  &nbsp;</td>
                   <td><? 
+	
+	 if($row_RS_ContableMov_Procesando['Observaciones'] > "")
+					echo "<b>".$row_RS_ContableMov_Procesando['Observaciones']."</b><br>";
+	
+	
+	
 	  if($Monto_Dolares_Pago > 0){ ?>
                       <a href="ProcesaPago_Dolares.php?Procesar_Codigo=<?= $row_RS_ContableMov_Procesando['Codigo'] ?>&time=<?= time() ?>">Procesa Dolares <?= Fnum($row_RS_ContableMov_Procesando['MontoHaber_Dolares']) ?></a>
-                      <? } ?>                  </td>
+                      <? } 
+				 ?> 
+                 
+                 </td>
                   </tr>
           </tbody>
       </table>
@@ -301,23 +304,19 @@ if ($Facturacion_Activa and $valido and false ){  //  and $MM_Username == "piero
         
 <button type="submit" class="btn btn-<?= $Color ?> btn-sm"  onclick="this.disabled=true;this.form.submit();"> <?= $Value ?></button>
         
-        
-        
-        
-      <!--input type="submit" name="BotonRecibo" id="BotonRecibo" value="<?= $Value ?>" onclick="this.disabled=true;this.form.submit();" /-->
-      
-      
       
       <?php } else { ?>
       Forma de Pago no válida
       <?php } 
 
-} else { echo "Monto superior a la deuda pendiente";} ?>
+} 
+	elseif($row_RS_ContableMov_Procesando['MontoHaber_Dolares'] < 1) { 
+	
+	echo "Monto superior a la deuda pendiente";
+
+} ?>
       <?php echo substr($row_RS_ContableMov_Procesando['RegistradoPor'],0,15); ?><br>
-      <?php 
-if($row_RS_ContableMov_Procesando['Observaciones'] > "")
-	echo "<br><b>".$row_RS_ContableMov_Procesando['Observaciones']."</b>";	  
-	   ?>
+      
       </p>
   </form>
   <?php //} ?>
