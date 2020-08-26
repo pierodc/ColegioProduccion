@@ -35,7 +35,7 @@ $query_RS_Alumnos = "SELECT * FROM ContableMov, Alumno, AlumnoXCurso, Curso
 			AND ContableMov.Referencia = '$CodigoAsignacion' 
 			AND AlumnoXCurso.CodigoCurso = Curso.CodigoCurso 
 			GROUP BY Alumno.CodigoAlumno 
-			ORDER BY Curso.NivelCurso, Curso.Seccion, Alumno.Apellidos, Alumno.Apellidos2 ";
+			ORDER BY Alumno.Apellidos, Alumno.Apellidos2, Curso.NivelCurso, Curso.Seccion ";
 //echo $query_RS_Alumnos;
 $RS_Alumnos = $mysqli->query($query_RS_Alumnos);
 

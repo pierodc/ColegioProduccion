@@ -16,6 +16,7 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/ContableMov.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Compra.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Rif.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Inventario.php");
+require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/ShopCart.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Banco.php");
 
 //require_once( $_SERVER['DOCUMENT_ROOT'] . "/inc/Login_ck.php");

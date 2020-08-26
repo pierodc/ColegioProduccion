@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php');
 
 $_var = new Variable();
 
-// ACTUALIZA CAMBIO BCV
+/*/ ACTUALIZA CAMBIO BCV
 $Variable = new Variable();
 $Var_Name = "Cambio_Dolar";
 $Var = $Variable->view_row($Var_Name);
@@ -17,7 +17,7 @@ if( Dif_Tiempo($Var['Fecha_Modificacion']) > 60 ){
 	$Var_Value = $cambio_BCV;
 }
 // FIN ACTUALIZA CAMBIO BCV
-
+*/
 
 $query_RS_Asignacion = "SELECT * FROM Asignacion 
 						WHERE (Periodo = 'M' or Periodo = 'X' or Periodo = 'E')

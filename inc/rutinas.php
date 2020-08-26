@@ -51,7 +51,6 @@ function cambio_BCV(){
 	return $txt;
 	
 	
-	
 }
 
 

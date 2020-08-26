@@ -49,7 +49,9 @@ class Alumno{
 		$datos = $this->con->consultaRetorno_row($sql);
 		return $datos['Nombres'].' '.substr($datos['Nombres2'],0,1).' '.$datos['Apellidos'].' '.substr($datos['Apellidos2'],0,1);
 		}
-		
+	
+	
+	
 	public function NombreApellidoCodigo(){
 		$sql = "SELECT * FROM Alumno WHERE CodigoAlumno = '{$this->id}'";
 		//echo $sql;
@@ -269,7 +271,7 @@ class Alumno{
 			return $datos['CodigoRepresentante'];
 		}
 	
-		
+	
 		
 		
 		

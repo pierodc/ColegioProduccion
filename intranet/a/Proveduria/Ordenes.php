@@ -15,6 +15,7 @@ $TituloPantalla = "Ordenes"; // Titulo contenido
 
 $Usuario = new Usuario($Usuario = "");
 $Alumno = new Alumno("");
+$ShopCart = new ShopCart($id = "");
 /*
 if(isset($_POST["time"])){
 	if(isset($_POST['id'])){ // UPDATE
@@ -120,15 +121,12 @@ SPAN.td
  <div class="table">
  <div class="tr CampoNombre">
 	<span class="td">No</span>
-	<span class="td">Nivel_Curso</span>
-	<span class="td">Cat1</span>
-	<span class="td">Cat2</span>
-	<span class="td">Cat3</span>
-	<span class="td">Descripcion</span>
-	<span class="td">Autor</span>
-	<span class="td">Editorial</span>
-	<span class="td">Costo_Dolares</span>
-	<span class="td">Precio_Dolares</span>
+	<span class="td">Usuario</span>
+	<span class="td">Pedido</span>
+	<span class="td">Pagado</span>
+	<span class="td">Pend</span>
+	<span class="td">Status</span>
+	<span class="td">Alumnos</span>
 </div>
  
  <? 
@@ -159,16 +157,41 @@ SPAN.td
 			   <?= $Usuario->view()["Usuario"]; ?>
             </a>
         </span>
+        
+        
+        
+		<span class="td"><?
+				$pedido = $ShopCart->view_pedidos( 0 , $Usuario->id);
+				if($pedido->num_rows > 0)
+					echo $pedido->num_rows;
+		?></span>
+        <span class="td"><?
+				$pagados = $ShopCart->view_pedidos(1 , $Usuario->id);
+				if($pagados->num_rows > 0)
+					echo $pagados->num_rows;
+		?></span>
+       <span class="td"><?
+				$pagados = $ShopCart->view_pedidos(1 , $Usuario->id);
+				if($pedido->num_rows - $pagados->num_rows > 0)
+					echo $pedido->num_rows - $pagados->num_rows;
+		?></span>
+       
+        
         <span class="td <?= $Fondo ?>"><? 
-		$Alumnos = 	$Usuario->Alumnos();
+		$Alumnos = $Usuario->Alumnos();
+		
+		//if(array_count_values($Alumnos) > 0)
 		foreach($Alumnos as $id_alumno){
 			$Alumno->id = $id_alumno;
-			
+			echo "<a href=\"/intranet/a/PlanillaImprimirADM.php?CodigoAlumno=". $Alumno->id ."\" target=\"_blank\">";
 			echo $Alumno->NombreApellidoCodigo();
 			echo " ";
 			//echo '</span><span class="td">';
 			echo $Alumno->Status($AnoEscolar);
-			echo " // ";
+			echo "</a> / ";
+			
+			
+			
 		} ?></span>
         
     </form>

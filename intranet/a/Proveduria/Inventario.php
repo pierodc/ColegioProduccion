@@ -12,6 +12,8 @@ $TituloPantalla = "Inventario"; // Titulo contenido
 //var_dump($_POST);
 
 $Curso = new Curso($_GET['CodigoCurso']);
+$ShopCart = new ShopCart();
+
 
 if(isset($_POST["time"])){
 	if(isset($_POST['id'])){ // UPDATE
@@ -126,6 +128,10 @@ SPAN.td
 	<span class="td">Editorial</span>
 	<span class="td">Costo_Dolares</span>
 	<span class="td">Precio_Dolares</span>
+	<span class="td">&nbsp;</span>
+	<span class="td">Pedidos</span>
+	<span class="td">Pagados</span>
+	<span class="td">Pendiente</span>
 </div>
  
  <? 
@@ -168,6 +174,26 @@ SPAN.td
         <span class="td <?= $Fondo ?>"><? Campo("Costo_Dolares","n",$Costo_Dolares,$Largo=3,$extra="") ; ?></span>
         <span class="td <?= $Fondo ?>"><? Campo("Precio_Dolares","n",$Precio_Dolares,$Largo=3,$extra="") ; ?></span>
         <span class="td <?= $Fondo ?>"><? Campo("id","h",$id,$Largo=8,$extra="") ; Boton_Submit() ; ?></span>
+        
+        <span class="td <?= $Fondo ?>"><? 
+			// Pedidos
+				$ShopCart->id_inventario = $id;
+				$pedidos = $ShopCart->view_pedidos(0);
+				echo $pedidos->num_rows;
+			?></span>
+        
+       	<span class="td <?= $Fondo ?>"><? 
+			// pagados
+				$ShopCart->id_inventario = $id;
+				$pagados = $ShopCart->view_pedidos(1);
+				echo $pagados->num_rows;
+			?></span>
+        
+        <span class="td <?= $Fondo ?>"><? 
+			// por pagar
+				echo $pedidos->num_rows - $pagados->num_rows;
+			?></span>
+        
         
     </form>
 

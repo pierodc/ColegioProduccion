@@ -109,11 +109,18 @@ class Usuario{
 					//AND AlumnoXCurso.Ano LIKE '%".date("Y")."%'
 			$RS = $this->con->consultaRetorno($sql);
 			$i = 0;
-			while($row = $RS->fetch_assoc()){
-				$datos[$i++] = $row["CodigoAlumno"];
+			if($RS->num_rows > 0){
+				while($row = $RS->fetch_assoc()){
+					$datos[$i++] = $row["CodigoAlumno"];
+				}
+				return $datos;
 			}
-			return $datos;
+			else{
+				return 0;	
+				}
+			//return $datos;
 		}
+	
 	
 	
 
