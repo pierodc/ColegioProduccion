@@ -13,6 +13,7 @@ $TituloPantalla = "Inventario"; // Titulo contenido
 
 $Curso = new Curso($_GET['CodigoCurso']);
 $ShopCart = new ShopCart();
+$Inventario = new Inventario();
 
 
 if(isset($_POST["time"])){
@@ -112,9 +113,11 @@ SPAN.td
 <? require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/_Template/NavBar.php');  ?>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
     
- <div  >   
+<div>  
+<a href="PDF/pedido_proveedor.php" target="_blank">Pedido Proveedor</a> 
+ |      
 <? Ir_a_Curso($_GET['CodigoCurso'],$php_self."?CodigoCurso=", $MM_UserGroup ="" , $MM_Username="") ?>    
-	</div>
+</div>
     
  <div class="table">
  <div class="tr CampoNombre">
@@ -125,7 +128,7 @@ SPAN.td
 	<span class="td">Cat3</span>
 	<span class="td">Descripcion</span>
 	<span class="td">Autor</span>
-	<span class="td">Editorial</span>
+	<span class="td"><a href="<?= $_SERVER['PHP_SELF']  ?>?Sort=Editorial">Editorial</a></span>
 	<span class="td">Costo_Dolares</span>
 	<span class="td">Precio_Dolares</span>
 	<span class="td">&nbsp;</span>
@@ -143,17 +146,22 @@ SPAN.td
 		 $Sort = "Nivel_Curso,";
 	 }
 	
-	 if(isset($_GET["CodigoCurso"])){
-		 $add_sql = "WHERE Nivel_Curso = '".$Curso->NivelCurso."'";
+	 if(isset($_GET["CodigoCurso"]) and $_GET["CodigoCurso"] > ""){
+		 $where = "WHERE Nivel_Curso = '".$Curso->NivelCurso."'";
 	 }
 	 	
-	 
+	/* 
 	$sql = "SELECT * FROM Inventario 
 			$add_sql
 			ORDER BY $Sort Cat1, Cat2, Cat3";
 	//echo $sql;
-	 $RS = $mysqli->query($sql);
-	
+	//$RS = $mysqli->query($sql);
+	*/
+	 
+	 
+	$RS = $Inventario->view_all($where , $Sort . " Cat1, Cat2, Cat3");
+	 
+	 
 	while ($row = $RS->fetch_assoc()){
 		extract($row);	
 		$Fondo = "";

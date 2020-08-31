@@ -41,10 +41,22 @@ if(isset($_GET['Agregar'])){
 
 if(isset($_GET['Eliminar'])){
 	$id_eliminar = $_GET['Eliminar'];
+	
 	$sql = "DELETE FROM ShopCart
 			WHERE id_user = $Usuario->id
 			AND id_inventario = '$id_eliminar'
 			AND id_cart = 0";
+	if($MM_Username == "piero"){
+		
+		$id_eliminar = $_GET['Codigo'];
+		$sql = "DELETE FROM ShopCart
+				WHERE id = '$id_eliminar'";
+	
+		
+	}
+	
+	
+	
 	//echo $sql;
 	$mysqli->query($sql);
 }
@@ -125,7 +137,9 @@ $RS = $mysqli->query($sql);
 				<td align="right"><?= Fnum($Precio*$Cambio_Paralelo*$Cantidad) ?></td>
 				<td align="right">
 				<? if(!$SW_pagado) { ?>
-				<a href="Carrito.php?Eliminar=<?= $id ?>"><img src="/img/b_drop.png" width="16"  height="16"  alt="Eliminar"/></a>
+				
+				<a href="Carrito.php?Eliminar=<?= $id ?>&Codigo=<?= $idshop ?>"><img src="/img/b_drop.png" width="16"  height="16"  alt="Eliminar"/></a>
+					
 				<?
  					}
 				else{

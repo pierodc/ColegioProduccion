@@ -22,6 +22,25 @@ class Inventario{
 		return $datos;
 	}
 	
+	function view_all($where = "" , $order = ""){
+	// view basic data
+		if($order > ""){
+			$add_sql .= "  $where ";
+		}
+		
+		if($order > ""){
+			$add_sql .= " ORDER BY $order ";
+		}
+		
+		$sql = "SELECT * FROM Inventario 
+				$add_sql ";
+		//echo $sql;
+		$datos = $this->con->consultaRetorno($sql);
+		return $datos;
+	}
+	
+	
+	
 	
 	
 	

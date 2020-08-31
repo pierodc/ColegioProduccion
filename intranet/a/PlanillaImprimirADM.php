@@ -1,5 +1,5 @@
 <?php
-$MM_authorizedUsers = "99,91,95,89,secre,secreAcad,AsistDireccion,Contable";
+//$MM_authorizedUsers = "99,91,95,89,secre,secreAcad,AsistDireccion,Contable";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 require_once('../../inc_login_ck.php'); 
