@@ -80,7 +80,8 @@ $CambioParalelo = $Cambio_Paralelo;
       <? if (!isset($_GET["CodigoCurso"])) { ?>
        <p class="ConflictoHorario">Seleccione el curso</p>
        <? } ?>
-        Curso:  <? Ir_a_Curso($_GET['CodigoCurso'],$php_self."?CodigoCurso=", $MM_UserGroup ="" , $MM_Username="") ?></td>
+       <p>
+        Curso:  <? Ir_a_Curso($_GET['CodigoCurso'],$php_self."?CodigoCurso=", $MM_UserGroup ="" , $MM_Username="") ?></p></td>
     <td width="50%" align="center"  class="ListadoNotasBC2"><img src="../../img/shopping-cart-icon-vector-12712570.jpg" width="45" height="40" alt=""/></td>
   </tr>
   

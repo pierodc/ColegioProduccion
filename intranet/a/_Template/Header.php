@@ -32,7 +32,7 @@
 <div class="row ">
 		<div class="col-md-12">
 			<div >
-            	<?= session_id() ?>
+            	<? //session_id() ?>
             </div>
 		</div>
 	</div>

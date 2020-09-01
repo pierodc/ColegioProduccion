@@ -114,8 +114,8 @@ SPAN.td
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
     
 <div>  
-<a href="PDF/pedido_proveedor.php" target="_blank">Pedido Proveedor</a> 
- |      
+<a href="PDF/pedido_proveedor.php" target="_blank" class="button">Pedido Proveedor</a> 
+       
 <? Ir_a_Curso($_GET['CodigoCurso'],$php_self."?CodigoCurso=", $MM_UserGroup ="" , $MM_Username="") ?>    
 </div>
     

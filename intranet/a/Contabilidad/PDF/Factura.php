@@ -296,10 +296,10 @@ foreach ($Pag as $Pagina){
 	$pdf->SetY($pos_y);
 	$pdf->SetFont('Arial','B',10);
 	$pdf->SetX(95);	
-	$pdf->Cell(60 , $Ln , "Concepto" , $borde , 0 , 'L'); 
-	$pdf->Cell(20 , $Ln , 'Mes' , $borde , 0 , 'C'); 
+	$pdf->Cell(50 , $Ln , "Concepto" , $borde , 0 , 'L'); 
+	$pdf->Cell(25 , $Ln , 'Mes' , $borde , 0 , 'C'); 
 	$pdf->Cell(10 , $Ln , 'iva' , $borde , 0 , 'C'); 
-	$pdf->Cell(20 , $Ln , 'Monto' , $borde , 0 , 'R'); 
+	$pdf->Cell(25 , $Ln , 'Monto' , $borde , 0 , 'R'); 
 	$pdf->Ln($Ln);
 	
 	if($Num_Renglones <= 10){
@@ -316,7 +316,7 @@ foreach ($Pag as $Pagina){
 			$pdf->SetFont('Arial','',7.5);
 			}
 		
-		$pdf->Cell(60 , $LnRenglon , $Renglon[$i]['Descripcion'] , $borde , 0 , 'L'); 
+		$pdf->Cell(50 , $LnRenglon , $Renglon[$i]['Descripcion'] , $borde , 0 , 'L'); 
 		
 		if($Num_Renglones <= 10){
 				$pdf->SetFont('Arial','',10);
@@ -325,9 +325,9 @@ foreach ($Pag as $Pagina){
 				$pdf->SetFont('Arial','',7.5);
 				$LnRenglon = $Ln*.7; }
 
-		$pdf->Cell(20 , $LnRenglon , $Renglon[$i]['ReferenciaMesAno'] , $borde , 0 , 'C'); 
+		$pdf->Cell(25 , $LnRenglon , $Renglon[$i]['ReferenciaMesAno'] , $borde , 0 , 'C'); 
 		$pdf->Cell(10 , $LnRenglon , Reconv( $Renglon[$i]['P_IVA'] ) , $borde , 0 , 'C'); 
-		$pdf->Cell(20 , $LnRenglon , Format( Reconv( $Renglon[$i]['Monto'])) , $borde , 0 , 'R'); 		
+		$pdf->Cell(25 , $LnRenglon , Format( Reconv( $Renglon[$i]['Monto'])) , $borde , 0 , 'R'); 		
 		$pdf->Ln();
 	} 
 	 

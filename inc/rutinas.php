@@ -1618,10 +1618,14 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 		
 	} while ($row_RS_Cur = mysql_fetch_assoc($RS_Cur));
 	$txt.= "</select>.";
+
 	
-echo '<table width="50">
+	
+	
+/*echo '<table width="50">
 <tr>
 <td>';
+	*/
 	if ($KesimoActual > 1){
 		echo '<a href="'.$extraOpcion.$CodigosCursos[$KesimoActual-1].
 			'"><img src="http://www.colegiosanfrancisco.com/i/control_rewind_blue.png" width="32" height="32" border=0 /></a>';}
@@ -1635,9 +1639,12 @@ echo '<table width="50">
 			'"><img src="http://www.colegiosanfrancisco.com/i/control_fastforward_blue.png" width="32" height="32" border=0 /></a>';}
 	else
 		echo '<img src="http://www.colegiosanfrancisco.com/i/control_fastforward.png" width="32" height="32" border=0 />';
+
+/*
 echo '</td>
 </tr>
-</table>';	
+</table>';	*/
+	
 } 
 
 
