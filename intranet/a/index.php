@@ -7,16 +7,23 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php');
 
 $_var = new Variable();
 
-/*/ ACTUALIZA CAMBIO BCV
+
+
+// ACTUALIZA CAMBIO BCV
 $Variable = new Variable();
 $Var_Name = "Cambio_Dolar";
 $Var = $Variable->view_row($Var_Name);
-if( Dif_Tiempo($Var['Fecha_Modificacion']) > 60 ){
+if( Dif_Tiempo($Var['Fecha_Modificacion']) > 90 ){
 	$cambio_BCV = trim(coma_punto(cambio_BCV()));
-	$Variable->edit($Var_Name, $cambio_BCV,"auto intra");
+	$Variable->edit($Var_Name, $cambio_BCV,"auto intran");
 	$Var_Value = $cambio_BCV;
 }
 // FIN ACTUALIZA CAMBIO BCV
+
+/*
+$Variable->Nombre = "Cambio_Dolar";
+$xxx = object_to_array($Variable);
+var_dump($xxx);
 */
 
 $query_RS_Asignacion = "SELECT * FROM Asignacion 
