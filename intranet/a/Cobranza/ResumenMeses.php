@@ -85,6 +85,9 @@ if ($totalRows_RS_>0){
         <td align="center">Ago <?php echo $Ano2 ?><br />
           <iframe src="Agrega_Mensualidad_iFr.php<?php echo "?CodigoAlumno=".$CodigoAlumno.'&Mes=08&Ano='.$Ano2; ?>" width="30" height="23" seamless frameborder="0" scrolling="no"></iframe>
           </td>
+        <td align="center">Sep <?php echo $Ano2 ?><br />
+          <iframe src="Agrega_Mensualidad_iFr.php<?php echo "?CodigoAlumno=".$CodigoAlumno.'&Mes=09&Ano='.$Ano2; ?>" width="30" height="23" seamless frameborder="0" scrolling="no"></iframe>
+          </td>
       </tr>
       <tr class="ListadoInPar">
         <td valign="top" class="ReciboRenglonMini"><?php
@@ -105,7 +108,8 @@ if ($totalRows_RS_>0){
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "05-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "06-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "07-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
-        <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "08-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td><?php } ?>
+        <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "08-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
+        <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "09-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); echo $ReferenciaMesAno; ?></td><?php } ?>
       </tr>
      
     </table>

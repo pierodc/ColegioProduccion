@@ -843,7 +843,7 @@ if($StatusAnoProx == "Solicitando" ){
 	
 	
 	
-elseif($StatusAnoProx == "Aceptado" or $StatusAnoActual == "Aceptado" or $StatusAnoActual == "Inscrito"){
+elseif($StatusAnoProx == "Aceptado" or $StatusAnoProx == "Inscrito" or $StatusAnoActual == "Aceptado" or $StatusAnoActual == "Inscrito"){
 			
 				 ?>
         

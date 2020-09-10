@@ -1,14 +1,15 @@
 <?php 
 $MM_authorizedUsers = "91,99,admin,secreAcad,Contable";
-require_once('../../../inc/Login_check.php'); 
-require_once('../../../Connections/bd.php'); 
-require_once('../../../inc/rutinas.php'); 
- 
-mysql_select_db($database_bd, $bd);
+$TituloPagina   = "Libro de Ventas"; // <title>
+$TituloPantalla = "Libro de Ventas"; // Titulo contenido
 
-$TituloPantalla = "Libro de Ventas";
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-//echo $TituloPantalla;
+header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
+
+
+//$Alumno = new Alumno($CodigoAlumno);
 
 
 // Activa Inspeccion
@@ -65,7 +66,7 @@ elseif(isset($_GET['Control'])){
 else{
 
 	$sql = "SELECT * FROM Factura_Control 
-			ORDER BY Factura_Numero DESC ";
+			ORDER BY FechaRegistro DESC ";
 	$RS_ = mysql_query($sql, $bd) or die(mysql_error());
 	$row_ = mysql_fetch_assoc($RS_);
 	$Control_Max = $row_['Control_Numero']-1;
@@ -87,27 +88,23 @@ $sql = "SELECT * FROM  Factura_Control
 $RS_ = mysql_query($sql, $bd) or die(mysql_error());
 //$totalRows_ = mysql_num_rows($RS_);
 
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Libro de Ventas</title>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<script src="../../../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-<link href="../../../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<link href="../../../SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
-<script src="../../../SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
-<link href="../../../estilos.css" rel="stylesheet" type="text/css" />
-<link href="../../../SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
-<link href="../../../estilos2.css" rel="stylesheet" type="text/css" />
-<link href="../../../SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+
+
+
+require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
+?><!doctype html>
+<html lang="es">
+  <head>
+	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
+    <title><?php echo $TituloPagina; ?></title>
 </head>
-<body <?php 
-echo 'OnLoad="document.form'. $_GET['Control'] .'.Factura_Numero.focus();"'; ?>>
+<body <?php echo 'OnLoad="document.form'. $_GET['Control'] .'.Factura_Numero.focus();"'; ?> <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
+
+
+ 
 <table width="100%" border="0" align="center">
-  <tr>
-    <td colspan="2"><?php require_once('../TitAdmin.php'); ?></td>
-  </tr>
   <tr>
     <td align="left"><form action="" method="POST">Control: 
       <input type="text" name="Control" size="8"> 
@@ -116,9 +113,7 @@ echo 'OnLoad="document.form'. $_GET['Control'] .'.Factura_Numero.focus();"'; ?>>
       </td>
     <td align="right"><span style="font-weight: bold"><a href="Libro_Ventas_out.php">excel</a>&nbsp;</span></td>
   </tr>
-  <tr>
-    <td colspan="2" align="center">
- 
+</table>
  
 <table width="100%" border="0" align="center" bordercolor="#333333">
   <tr valign="baseline">
@@ -184,8 +179,7 @@ if($Control_Numero == $_GET['Control'])
             
            
 </table>
-    </td>
-  </tr>
-</table>
+   
+   
 </body>
 </html>

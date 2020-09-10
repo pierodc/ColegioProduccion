@@ -1,10 +1,9 @@
 <?
 $MM_authorizedUsers = "99,91";
-require_once('../../../../inc_login_ck.php'); 
-require_once('../../../../Connections/bd.php'); 
-require_once('../../archivo/Variables.php'); 
-require_once('../../../../inc/rutinas.php'); 
-require_once('../../../../inc/fpdf.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
 
 //echo "Cambio_Dolar $Cambio_Dolar <br>" . ++$ii;
 	
@@ -138,6 +137,7 @@ if($row_RS_Recibo['NumeroFactura'] == 0){
 							RegistroPor = '$MM_Username', 
 							FechaRegistro = NOW()
 							WHERE Control_Numero = '$NumeroControlProx'";
+	//echo $sql_Factura_Control ;
 	$mysqli->query($sql_Factura_Control);
 	
 	
@@ -340,26 +340,26 @@ foreach ($Pag as $Pagina){
 	
 	$pdf->SetFont('Arial','',10);
 	$pdf->SetX(95);	
-	$pdf->Cell(35 , $Ln , "Base Exenta " , $borde , 0 , 'R'); 
+	$pdf->Cell(35 , $Ln , "Base Exenta " , $borde , 0 , 'L'); 
 	$pdf->Cell(20 , $Ln , Format($Factura_Total_MontoBaseExcenta) , $borde , 0 , 'R'); 
 	
-	$pdf->Cell(35 , $Ln , "SubTotal " , $borde , 0 , 'R'); 
-	$pdf->Cell(20 , $Ln , Format($Factura_SubTotal) , $borde , 0 , 'R'); 
+	$pdf->Cell(30 , $Ln , "SubTotal" , $borde , 0 , 'R'); 
+	$pdf->Cell(25 , $Ln , Format($Factura_SubTotal) , $borde , 0 , 'R'); 
 	$pdf->Ln($Ln);
 
 	
 	$pdf->SetX(95);	
-	$pdf->Cell(35 , $Ln , "Base Imponible " , $borde , 0 , 'R'); 
+	$pdf->Cell(35 , $Ln , "Base Imponible    " , $borde , 0 , 'L'); 
 	$pdf->Cell(20 , $Ln , Format($Factura_Total_MontoBaseImponible) , $borde , 0 , 'R'); 
 	
-	$pdf->Cell(35 , $Ln , "IVA ".$P_IVA_Factura."% " , $borde , 0 , 'R'); 
-	$pdf->Cell(20 , $Ln , Format($Factura_Total_IVA) , $borde , 0 , 'R'); 
+	$pdf->Cell(30 , $Ln , "IVA ".$P_IVA_1."% " , $borde , 0 , 'R'); 
+	$pdf->Cell(25 , $Ln , Format($Factura_Total_IVA) , $borde , 0 , 'R'); 
 	$pdf->Ln($Ln);
 	
 	
 	$pdf->SetX(95);	
-	$pdf->Cell(90 , $Ln , "Total Factura " , $borde , 0 , 'R'); 
-	$pdf->Cell(20 , $Ln , Format($Factura_Total) , $borde , 0 , 'R'); 
+	$pdf->Cell(85 , $Ln , "Total Factura    " , $borde , 0 , 'R'); 
+	$pdf->Cell(25 , $Ln , Format($Factura_Total) , $borde , 0 , 'R'); 
 	
 	$pdf->SetXY(20 ,  $No * $Espacio_EntrePag + 115 );
 	$pdf->Cell(60 , $Ln , "Firma " , 'T' , 0 , 'C'); 
