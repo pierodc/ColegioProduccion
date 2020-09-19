@@ -250,7 +250,7 @@ else
     <?php //} ?>
         <td align="right">&nbsp;</td>
         <td align="right">&nbsp;</td>
-        <td align="right">&nbsp;</td>
+        <td align="right"><a href="Nota_Final.php?CodigoAlumno=<?php echo $CodigoAlumno ?>" target="_blank">calc def </a></td>
         <td align="right"><a href="Nota_Certificada.php?CodigoAlumno=<?= $CodigoAlumno ?>&Cursos=123">123</a> | <a href="Nota_Certificada.php?CodigoAlumno=<?= $CodigoAlumno ?>&Cursos=45">IV V</a></td>
         </tr>
             </table>
@@ -303,7 +303,7 @@ foreach ($CodigoMaterias as $CodigoMate){
 		AND Grado = '".$CodigoMate.$n."'
 		AND Orden < 20
 		ORDER BY Orden"; 
-		//echo $sql.' 11<br>';
+		echo $sql.' 11<br>';
 $RS = $mysqli->query($sql);
 if ($RS->num_rows == 0) {
 	 $sql = "SELECT * FROM Notas_Certificadas 

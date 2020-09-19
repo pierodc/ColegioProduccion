@@ -124,6 +124,7 @@ SPAN.td
 	<span class="td">Usuario</span>
 	<span class="td">Pedido</span>
 	<span class="td">Pagado</span>
+	<span class="td">En Proceso</span>
 	<span class="td">Pend</span>
 	<span class="td">Status</span>
 	<span class="td">Alumnos</span>
@@ -144,8 +145,8 @@ SPAN.td
 		/*$Fondo = "";
 		if($_POST["id"] == $id) {
 			$Fondo = "verde"; }*/
-		$Usuario->id = $id_user;
-		$Usuario->Email = $Usuario->view()["Usuario"];
+		$Usuario->id = $id_user; 
+		$Usuario->Email = $Usuario->view()["Usuario"]; 
 		
 		?>
 
@@ -170,10 +171,19 @@ SPAN.td
 				if($pagados->num_rows > 0)
 					echo $pagados->num_rows;
 		?></span>
+        <span class="td"><?
+				$enProceso = $ShopCart->view_pedidos(2 , $Usuario->id);
+				if($enProceso->num_rows > 0)
+					echo $enProceso->num_rows;
+		?></span>
        <span class="td"><?
-				$pagados = $ShopCart->view_pedidos(1 , $Usuario->id);
-				if($pedido->num_rows - $pagados->num_rows > 0)
-					echo $pedido->num_rows - $pagados->num_rows;
+				if($pedido->num_rows - $pagados->num_rows - $enProceso->num_rows > 0)
+					echo $pedido->num_rows - $pagados->num_rows - $enProceso->num_rows;
+		?></span>
+       
+       <span class="td"> <a href="PDF/pedido_Representante.php?Usuario=<?= $Usuario->view()["Usuario"]; ?>" target="_blank">Imprimir</a>
+<?
+				
 		?></span>
        
         

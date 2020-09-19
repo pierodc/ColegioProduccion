@@ -1,5 +1,5 @@
 <?php 
-$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
@@ -32,6 +32,16 @@ $pdf->SetFillColor(255,255,255);
 //$pdf->SetXY( 30,10 );
 $pdf->SetFont('Arial','',10);
 
+$pdf->Cell(10 , $Ln , "n" , $borde , 0 , 'L'); 
+$pdf->Cell(80 , $Ln , "Descripcion" , $borde , 0 , 'L'); 
+$pdf->Cell(30 , $Ln , "Autor" , $borde , 0 , 'L',1); 
+$pdf->Cell(30 , $Ln , "Editorial" , $borde , 0 , 'L',1); 
+$pdf->Cell(15 , $Ln , "Costo_Dolares" , $borde , 0 , 'R',1); 
+$pdf->Cell(15 , $Ln , "Tot" , $borde , 0 , 'R',1); 
+$pdf->Cell(15 , $Ln , "pago" , $borde , 0 , 'R',1); 
+$pdf->Cell(15 , $Ln , "Edit" , $borde , 0 , 'R',1); 
+$pdf->Cell(15 , $Ln , " ? " , $borde , 0 , 'R',1); 
+$pdf->Ln($Ln);
 
 $RS = $Inventario->view_all($where , "Editorial");
 while ($row = $RS->fetch_assoc()){
@@ -53,11 +63,26 @@ while ($row = $RS->fetch_assoc()){
 		$ShopCart->id_inventario = $id;
 		$pagados = $ShopCart->view_pedidos(1);
 	//	echo $pagados->num_rows;
-	$pdf->Cell(15 , $Ln , $pagados->num_rows , $borde , 0 , 'R',1); 
+	$Num = $pagados->num_rows;
+	if($Num == 0)
+		$Num = "";
+	$pdf->Cell(15 , $Ln , $Num , $borde , 0 , 'R',1); 
+	
+	//enProceso
+	$enProceso = $ShopCart->view_pedidos(2);
+	$Num = $enProceso->num_rows;
+	if($Num == 0)
+		$Num = "";
+	$pdf->Cell(15 , $Ln , $Num , $borde , 0 , 'R',1); 
+	//
+	
 	
 	// por pagar
 	//	echo $pedidos->num_rows - $pagados->num_rows;
-	$pdf->Cell(15 , $Ln , $pedidos->num_rows - $pagados->num_rows , $borde , 0 , 'R',1); 
+	$Num = $pedidos->num_rows - $pagados->num_rows - $enProceso->num_rows;
+	if($Num == 0)
+		$Num = "";
+	$pdf->Cell(15 , $Ln , $Num , $borde , 0 , 'R',1); 
 	
 	
 	

@@ -257,6 +257,7 @@ function NoAcentos($txt){
 	$txt = str_replace( "ó", "o",$txt);
 	$txt = str_replace( "ú", "u",$txt);
 	$txt = str_replace( "ñ", "n",$txt);
+	$txt = str_replace( "Ñ", "n",$txt);
 	return $txt;
 }
 
@@ -1738,7 +1739,7 @@ function NombreNivelCurso($NivelCurso) {
 		return "";
 }
 
-function NivelCurso($CodigoCurso) { 
+function NivelCurso($CodigoCurso) {
 	$hostname_bd = "localhost";
 	$database_bd = "colegio_db";
 	$username_bd = "colegio_colegio";
@@ -1748,6 +1749,7 @@ function NivelCurso($CodigoCurso) {
 	
 	$sql = "SELECT * FROM Curso 
 			WHERE CodigoCurso = '$CodigoCurso'";
+	//echo $sql;
 	$RS_Cur = mysql_query($sql, $bd) or die(mysql_error());
 	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
 	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);

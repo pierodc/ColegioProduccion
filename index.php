@@ -1,5 +1,4 @@
 <?php 
-/*
 $MM_authorizedUsers = "";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
@@ -20,13 +19,12 @@ if( isset($_GET['doLogout']) and $_GET['doLogout']='true'){
 	unset($_SESSION['PrevUrl']);
 	header("Location: index.php?Login=".$_GET['Login']."&Psw=".$_GET['Psw']."");
 }
-*/
+
 ?><html>
 <head>
-<meta name="google-site-verification" content="pMzCmmHmuQEtVzWPVGoAEUOK5tT1F_nRnwXYpfQb5yc" />
 <title>Colegio San Francisco de As&iacute;s</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="google-site-verification" content="uCJ89hMiFA3PQcDx27Y2aAfIrDaon9rzD_jNGEEmc3w" />
+<meta name="google-site-verification" content="3tZ1g5zh9pPNkKS9BNtKDuFPFrA_g_kGKvOLC-Qd9H0" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">

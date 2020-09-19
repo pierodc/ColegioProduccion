@@ -107,9 +107,12 @@ while ($row = $RS->fetch_assoc()) {
     <td align="right"><?php echo ++$No; ?>&nbsp;</td>
     <td align="right"><?php echo strtoupper("$CedulaLetra"); ?></td>
     <td align="right"><?php echo strtoupper("$Cedula"); ?></td>
-    <td align="left"><?php echo substr(strtoupper("$Apellidos"),0,13); ?></td>
-    <td><?php echo strtoupper("$Apellido2"); ?></td>
-    <td><?php echo substr(strtoupper("$Nombres $Nombre2"),0,13); ?></td>
+    <td><?php echo ucfirst("$Nombres $Nombre2"); ?></td>
+    <td align="left"><?php echo ucfirst("$Apellidos"); ?></td>
+    <td><?php echo ucfirst("$Apellido2"); ?></td>
+    <td><?php echo strtolower($Nombres.$Apellidos)."@sanfrancisco.e12.ve"; ?></td>
+    
+    <td align="right"><?php echo $Cedula."sfa"; ?></td>
     <td><?php echo DiaN($FechaNac); ?></td>
     <td><?php echo MesN($FechaNac); ?></td>
     <td><?php echo AnoN($FechaNac); ?></td>

@@ -55,6 +55,10 @@ $borde=0;
 $Ln = 8;
 
 $pdf->Image('../img/solcolegio.jpg', 10, 10, 0, 25);
+$pdf->Image('../img/SelloCol.jpg', 140, 200, 0, 25);
+$pdf->Image('../img/Firma_Direc.jpg', 90, 210, 0, 10);
+
+
 
 $pdf->SetFont('Arial','I',14);
 $pdf->Ln(1); 
@@ -65,7 +69,7 @@ $pdf->Cell(170 , 9 , 'San Francisco de Asís' , $borde , 1 , 'C');
 
 $pdf->SetFont('Arial','B',9);
 $pdf->Cell(170 , 3.5 , 'Inscrito en el MPPE con el Código No. S0934D1507' , $borde , 1 , 'C'); 
-$pdf->Cell(170 , 3.5 , 'Teléfonos/Fax: (0212) 283.25.75 / 283.62.79 / 284.05.20' , $borde , 1 , 'C'); 
+$pdf->Cell(170 , 3.5 , 'Teléfonos/Fax: (0212) 283.25.75 / 0412.303.44.44' , $borde , 1 , 'C'); 
 $pdf->Cell(170 , 3.5 , '7ma. Transversal, entre 4ta y 5ta Ave., Los Palos Grandes' , $borde , 1 , 'C'); 
 $pdf->Cell(170 , 3.5 , 'www.ColegioSanFrancisco.com  |  colegio@ColegioSanFrancisco.com' , $borde , 1 , 'C'); 
 
@@ -171,6 +175,21 @@ if($ConstanciaDe == "Retiro" and $row_Ante){
 	$pdf->Cell(170 , $Ln , "     Ha sido $ETQ_retirado por su representante" , $borde , 1 , 'L');  $pdf->Ln($Ln/2);
 	$pdf->SetFont('Times','B',16);
 	$pdf->Cell(170 , $Ln , 'Voluntariamente' , $borde , 1 , 'C');  $pdf->Ln($Ln/2); 
+	}
+
+
+if($ConstanciaDe == "PromoPreescolar"){
+	$pdf->Cell(170 , $Ln , '     Estudió en este plantel cursando el:' , $borde ,1, 'J');  $pdf->Ln($Ln/2);
+	$pdf->SetFont('Times','B',16);
+	$pdf->Cell(170 , $Ln , "Tercer Grupo de Educación Inicial" , $borde , 1 , 'C');  $pdf->Ln($Ln/2);
+	$pdf->SetFont('Times','',14);
+	$pdf->Cell(170 , $Ln , '     En el año escolar: ' , $borde , 1 , 'L');  $pdf->Ln($Ln/2);
+	$pdf->SetFont('Times','B',16);
+	$pdf->Cell(170 , $Ln , $AnoEscolar , $borde , 1 , 'C');  $pdf->Ln($Ln/2); 
+	$pdf->SetFont('Times','',14);
+	$pdf->Cell(170 , $Ln , " Habiendo sido promovido al "    , $borde , 1 , 'L');  $pdf->Ln($Ln/2);
+	$pdf->SetFont('Times','B',16);
+	$pdf->Cell(170 , $Ln , "Primer Grado de Educacíon Básica" , $borde , 1 , 'C');  $pdf->Ln($Ln/2); 
 	}
 
 

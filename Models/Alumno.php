@@ -5,7 +5,7 @@ $Alumno = new Alumno($CodigoAlumno, $AnoEscolar);
 
 class Alumno{
 	public $id;
-	public $AnoEscolar = "2019-2020";
+	public $AnoEscolar = "2020-2021";
 	public $AnoEscolarProx = "2020-2021";
 	public $Inscrito;
 	public $id_Curso;
@@ -82,11 +82,21 @@ class Alumno{
 		$datos = $this->con->consultaRetorno_row($sql);
 		return $datos['Nombres'].' '.$datos['Nombres2'];
 		}
+	public function Nombre(){
+		$sql = "SELECT * FROM Alumno WHERE CodigoAlumno = '{$this->id}'";
+		$datos = $this->con->consultaRetorno_row($sql);
+		return $datos['Nombres'];
+		}
 		
 	public function Apellidos(){
 		$sql = "SELECT * FROM Alumno WHERE CodigoAlumno = '{$this->id}'";
 		$datos = $this->con->consultaRetorno_row($sql);
 		return $datos['Apellidos'].' '.$datos['Apellidos2'];
+		}
+	public function Apellido(){
+		$sql = "SELECT * FROM Alumno WHERE CodigoAlumno = '{$this->id}'";
+		$datos = $this->con->consultaRetorno_row($sql);
+		return $datos['Apellidos'];
 		}
 		
 	public function FechaNac(){

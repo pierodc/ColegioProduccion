@@ -54,6 +54,15 @@ class Curso{
 		$datos = $this->con->consultaRetorno_row($sql);
 		return $datos['NivelCurso'];
 		}	
+	
+	public function Curso(){
+		$sql = "SELECT * FROM Curso WHERE CodigoCurso = '{$this->id}'";
+		$datos = $this->con->consultaRetorno_row($sql);
+		return $datos['Curso'];
+		}	
+	
+	
+	
 	public function NombreCurso( $Codigo = "" ){
 		if($Codigo > "")
 			$sql = "SELECT * FROM Curso WHERE CodigoCurso = '$Codigo'";

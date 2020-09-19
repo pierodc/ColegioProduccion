@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/xls/excel.php'); 
-
+//echo "aaaa";
 
 $export_file = "xlsfile://tmp/example.xls";
 header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
@@ -15,6 +15,9 @@ header ("Pragma: no-cache");
 header ("Content-type: application/x-msexcel");
 header ("Content-Disposition: attachment; filename=\"" . basename($export_file) . "\"" );
 header ("Content-Description: PHP/INTERBASE Generated Data" );
+
+if($_GET["AnoEscolar"] > "")
+	$AnoEscolar = $_GET["AnoEscolar"];
 
 // Todos
 $sql = "SELECT * FROM AlumnoXCurso , Alumno
@@ -116,8 +119,8 @@ while ($row_RS_AlumnoXCurso = $RS_AlumnoXCurso->fetch_assoc()) {
 									AND Alumno.CodigoAlumno <> '".$row_RS_Alumno['CodigoAlumno']."'
 									AND Alumno.CodigoAlumno = AlumnoXCurso.CodigoAlumno 
 									AND AlumnoXCurso.CodigoCurso = Curso.CodigoCurso 
-									AND (AlumnoXCurso.Ano = '$AnoEscolarProx')
-									AND AlumnoXCurso.Tipo_Inscripcion  = 'Rg'
+									AND (AlumnoXCurso.Ano = '$AnoEscolar')
+									AND AlumnoXCurso.Tipo_Inscripcion  <> 'Mp'
 									AND AlumnoXCurso.Status = 'Inscrito' 
 									ORDER BY Alumno.Creador";
 				$RS_Hermanos = mysql_query($sql_Hermanos, $bd) or die(mysql_error());

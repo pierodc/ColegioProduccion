@@ -134,6 +134,7 @@ SPAN.td
 	<span class="td">&nbsp;</span>
 	<span class="td">Pedidos</span>
 	<span class="td">Pagados</span>
+	<span class="td">En Proceso</span>
 	<span class="td">Pendiente</span>
 </div>
  
@@ -197,9 +198,15 @@ SPAN.td
 				echo $pagados->num_rows;
 			?></span>
         
+          <span class="td"><?
+				$enProceso = $ShopCart->view_pedidos(2);
+				if($enProceso->num_rows > 0)
+					echo $enProceso->num_rows;
+		  ?></span>
+        
         <span class="td <?= $Fondo ?>"><? 
 			// por pagar
-				echo $pedidos->num_rows - $pagados->num_rows;
+				echo $pedidos->num_rows - $pagados->num_rows - $enProceso->num_rows;
 			?></span>
         
         

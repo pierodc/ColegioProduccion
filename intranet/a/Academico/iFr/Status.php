@@ -29,8 +29,25 @@ if(	isset($_GET['NewStatus']) and ( $MM_UserGroup == "91" or $MM_UserGroup == "9
 	//echo $sql;
 	$mysqli->query($sql);
 	
+	
+	if($_GET['NewStatus'] == "Inscrito"){
+		$Fecha = " Fecha_Inscrito ";
+	}elseif($_GET['NewStatus'] == "Retirado"){
+		$Fecha = " Fecha_Retiro ";
+	}elseif($_GET['NewStatus'] == "Aceptado"){
+		$Fecha = " Fecha_Aceptado ";
+	}else{
+		$Fecha = " Fecha_Registro ";
+	}
+	
+	$Fecha .= " = '".date("Y-m-d")."', ";
+	
+	
+	
+	
 	$sql = "UPDATE AlumnoXCurso
 			SET Status = '".$_GET['NewStatus']."',
+			$Fecha
 			Status_por = '$MM_Username'
 			WHERE Codigo = '".$_GET['Codigo']."'
 			AND CodigoAlumno = '".$_GET['CodigoAlumno']."'";

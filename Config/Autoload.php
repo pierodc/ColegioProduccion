@@ -8,6 +8,7 @@ $MM_Username = "";
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Connection.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Usuario.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Alumno.php");
+require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/AlumnoXCurso.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Representante.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Curso.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Var.php");

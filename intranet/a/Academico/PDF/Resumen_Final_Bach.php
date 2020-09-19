@@ -120,6 +120,7 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 							WHERE CodigoAlumno = 1 
 							AND Grado = '$Grado'
 							ORDER BY Orden";
+	//echo $sql_base;
 	$RSnotas_base = mysql_query($sql_base, $bd) or die(mysql_error());
 	$row_notas_base = mysql_fetch_assoc($RSnotas_base);
 	unset($NotaCertificada);

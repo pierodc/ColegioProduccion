@@ -547,7 +547,7 @@ $rows = $RS_Asignacion->num_rows;
   <div class="row">	
 	<div class="col-md-3">
     	<img src="/i/b.png" alt="" width="32" height="32" />
-        <a href="Lista/Email_Excel.php">Lista Excel Email Repres</a>
+        <a href="Lista/Email_Excel.php?AnoEscolar=<?= $AnoEscolar ?>">Email Repres <? $AnoEscolar ?> </a> | <a href="Lista/Email_Excel.php?AnoEscolar=<?= $AnoEscolarProx ?>"><?= $AnoEscolarProx ?> </a> 
 	</div>
   </div>
   

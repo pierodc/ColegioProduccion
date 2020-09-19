@@ -196,7 +196,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 <tbody>
 <tr>
 	<th colspan="5"><? 
-		MenuEmpleado ($_GET['CodigoEmpleado'], $_SERVER['PHP_SELF']."?BC=1" , "ApeNom"); ?>
+		MenuEmpleado ($_GET['CodigoEmpleado'], $_SERVER['PHP_SELF']."?BC=1" , "Cargo"); //ApeNom  ?>
 	</th>
 </tr>
 	

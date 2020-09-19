@@ -104,6 +104,7 @@ class Usuario{
 					WHERE Alumno.CodigoAlumno = AlumnoXCurso.CodigoAlumno
 					AND Alumno.Creador = '{$this->Email}'
 					GROUP BY AlumnoXCurso.CodigoAlumno
+					
 					";  
 					//AND AlumnoXCurso.Status = 'Inscrito'
 					//AND AlumnoXCurso.Ano LIKE '%".date("Y")."%'
@@ -116,7 +117,7 @@ class Usuario{
 				return $datos;
 			}
 			else{
-				return 0;	
+				return array();	
 				}
 			//return $datos;
 		}

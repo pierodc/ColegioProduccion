@@ -116,7 +116,7 @@ $RS = $mysqli->query($sql);
 				
 				
 				<?
-					if($MM_UserGroup == 2 and !$SW_pagado){
+					if($MM_UserGroup == 2 and $SW_pagado == 0){
 						
 					?>
 				<a href="Carrito.php?id=<?= $idshop ?>&Cantidad=-1"><img src="../../i/delete.png" width="16" height="16" alt=""/></a>
@@ -136,7 +136,7 @@ $RS = $mysqli->query($sql);
 				<td align="right"><? echo $Precio*$Cantidad; $Total_Dolares += $Precio*$Cantidad; ?>&nbsp;</td>
 				<td align="right"><?= Fnum($Precio*$Cambio_Paralelo*$Cantidad) ?></td>
 				<td align="right">
-				<? if(!$SW_pagado) { ?>
+				<? if($SW_pagado == 0) { ?>
 				
 				<a href="Carrito.php?Eliminar=<?= $id ?>&Codigo=<?= $idshop ?>"><img src="/img/b_drop.png" width="16"  height="16"  alt="Eliminar"/></a>
 					

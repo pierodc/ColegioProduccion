@@ -20,4 +20,4 @@
 <!--p class="Menu_Niv_2"><a href="/Horario.php" class="Menu_Link">Horarios de Clase</a></p-->
 <p class="Menu_Niv_2"><a href="/Calendario.php" class="Menu_Link">Calendarios</a></p>
 <p class="Menu_Niv_1"><a href="/Eventos.php" class="Menu_Link">Eventos</a></p>
-<p class="Menu_Niv_1"><a href="https://www.google.com/a/sanfrancisco.e12.ve" class="Menu_Link">Correo Interno</a></p>
+<p class="Menu_Niv_1"><a href="http://correo.sanfrancisco.e12.ve" class="Menu_Link">Correo Interno</a></p>

@@ -178,7 +178,7 @@ $pdf->Cell(100);	 $pdf->Cell(46  , $Ln , 'Código del Plan de Estudio:  ' , 0 , 0
 //$pdf->Cell(100);  $pdf->Cell(17  , $Ln , 'Mención: ' , 0 , 0 , 'L');
 //				 $pdf->Cell(88  , $Ln , ' '. $Mencion , 'B' , 0 , 'L');
 $pdf->Cell(100); $pdf->Cell(48  , $Ln , 'Lugar y Fecha de Expedición:' , 0 , 0 , 'L');
-				 $pdf->Cell(57  , $Ln , ' Caracas: '. date('d-m-Y') , 'B' , 0 , 'L');
+				 $pdf->Cell(57  , $Ln , ' Caracas: 30-07-2020' , 'B' , 0 , 'L'); // . date('d-m-Y')
 $pdf->Ln($Ln);
 			
 			
@@ -637,9 +637,9 @@ $_y = $pdf->GetY();
 $pdf->MultiCell($AnchoCurso-$AnchoA , $Ln*7 , "SELLO DEL PLANTEL" , 1 , 'C');
 
 $pdf->SetXY($_x,$_y+$Ln); $pdf->Cell($AnchoA , $Ln , "Apellidos y Nombres:" , 1 , 1 , 'L');
-$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , $Director_Nombre , 1 , 1 , 'R');
+$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "VITA MARIA DI CAMPO" , 1 , 1 , 'R'); //$Director_Nombre
 $pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "Número de C.I.:" , 1 , 1 , 'L');
-$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , $Director_CI , 1 , 1 , 'R');
+$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln ,"V-6973243" , 1 , 1 , 'R'); // $Director_CI
 $pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "Firma:" , 1 , 1 , 'L');
 $pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "Para efecto de su validéz Nacional" , 1 , 1 , 'C');
 
@@ -681,13 +681,17 @@ $pdf->AddPage();
 $pdf->SetY(20);
 
 $pdf->SetFont('Arial','B', 14);
-$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Verificado por:' , '',1 , 'L');
+$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Verificado y Revisado por:' , '',1 , 'L');
+/*
 $pdf->SetFont('Arial','', 12);
 $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Omaira J. Fernández G.' , '',1 , 'L');
 $pdf->SetX(15); $pdf->Cell(20 , 6 , 'C.I.5.223.338' , '',1 , 'L');
 $pdf->Ln(6);
+
 $pdf->SetFont('Arial','B', 12);
 $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Revisado por:' , '',1 , 'L');
+*/
+	
 $pdf->SetFont('Arial','', 12);
 
 $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Lic. Angela J. Reale H.' , '',1 , 'L');
@@ -696,7 +700,8 @@ $pdf->SetX(15); $pdf->Cell(20 , 6 , 'C.I.5.220.494' , '',1 , 'L');
 //$pdf->SetX(15); $pdf->Cell(20 , 6 , 'C.I.14.018.534' , '',1 , 'L');
 
 $pdf->Ln(6);
-$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Caracas, ' .date(d).' de '.Mes(date(m)).' de '.date(Y) , '',1 , 'L');
+$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Caracas, 30 de Julio de 2020' , '',1 , 'L');
+// $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Caracas, ' .date(d).' de '.Mes(date(m)).' de '.date(Y) , '',1 , 'L');
 		
 		
 }

@@ -126,7 +126,7 @@ $MM_UserGroup  = $_COOKIE['MM_UserGroup'];
            
             <li><a href="<?php echo $URLadmin ?>PDF/Estadistica_Curso.php" target="_blank">Estad. Alumnos</a> </li>
               
-                <li><a href="<?php echo $URLadmin ?>PDF/Estadistica_Curso.php?AnoEscolar=<?php echo $AnoEscolarAnte ?>" target="_blank">Estad. Alumnos<?php echo $AnoEscolarAnte ?></a></li>
+                <li><a href="<?php echo $URLadmin ?>PDF/Estadistica_Curso.php?AnoEscolar=<?php echo $AnoEscolarProx ?>" target="_blank">Estad. Alumnos<?php echo $AnoEscolarProx ?></a></li>
               
            
             
