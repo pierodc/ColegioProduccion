@@ -21,6 +21,9 @@ $Factor_Bono = round($Factor_Bono /100 ,2);
 $Concepto_Pedido = "Bono Alimentacion Marzo 2020";
 	
 $DiaAbono = date('d');
+if( date("G") > 19 ){
+	$DiaAbono += 1;
+}
 //$DiaAbono = "05";
 $FechaAbono = date('Ym').$DiaAbono;
 //$FechaAbono = date('Ym'.'15');

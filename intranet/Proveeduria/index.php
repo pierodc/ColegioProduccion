@@ -73,9 +73,11 @@ $CambioParalelo = $Cambio_Paralelo;
 <img src="/img/b.gif" width="740" height="1"><br>
 <table width="98%"  border="0" align="center" cellspacing="5" cellpadding="2">
   <tr>
-    <td width="100%" colspan="2" align="center" class="NombreCampoBIG" >Proveeduria</td>
+    <td width="100%" colspan="2" align="center" class="NombreCampoBIG" >Proveeduria Limite de tiempo agotado</td>
   </tr>
-  <tr>
+  
+  
+  <!--tr>
     <td width="50%" align="center"  class="ListadoNotasBC2">
       <? if (!isset($_GET["CodigoCurso"])) { ?>
        <p class="ConflictoHorario">Seleccione el curso</p>
@@ -84,6 +86,9 @@ $CambioParalelo = $Cambio_Paralelo;
         Curso:  <? Ir_a_Curso($_GET['CodigoCurso'],$php_self."?CodigoCurso=", $MM_UserGroup ="" , $MM_Username="") ?></p></td>
     <td width="50%" align="center"  class="ListadoNotasBC2"><img src="../../img/shopping-cart-icon-vector-12712570.jpg" width="45" height="40" alt=""/></td>
   </tr>
+  
+  
+  
   
   
   <tr>
@@ -140,7 +145,10 @@ $CambioParalelo = $Cambio_Paralelo;
         <? } ?>
         </td>
     <td align="center" valign="top" ><iframe src="Carrito.php?Usuario=<?= $_GET["Usuario"] ?>" width="100%" height="400" id="Carrito"  name="Carrito" frameborder="0"></iframe></td>
-  </tr>
+  </tr-->
+  
+  
+  
   <tr>
     <td colspan="2" align="center">
 		<iframe src="/inc/Observacion.php?Area=Proveeduria&Codigo=<?= $Usuario->id ?>" width="100%"></iframe>

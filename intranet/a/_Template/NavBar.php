@@ -73,6 +73,7 @@ $MM_UserGroup  = $_COOKIE['MM_UserGroup'];
                     
                    <li><a href="<?php echo $URLadmin ?>Empleado/Feriados.php">Feriados</a></li>
                    <li><a href="<?php echo $URLadmin ?>Empleado/Lista_Excel.php">Lista Excel</a></li>
+                   <li><a href="<?php echo $URLadmin ?>Empleado/excel/Lista_Email.php">Lista Email</a></li>
                    
                     <li class="divider"></li>
             
@@ -206,6 +207,20 @@ $MM_UserGroup  = $_COOKIE['MM_UserGroup'];
     </div>
 </nav>
 
-
+ 
+<div class="row">
+    <div class="col-md-12">
+       &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+       &nbsp;
+    </div>
+</div><div class="row">
+    <div class="col-md-12">
+       &nbsp;
+    </div>
+</div>
 
 

@@ -2,6 +2,8 @@
 //echo "SISTEMA EN MANTENIMIENTO";
 //exit;
 
+if(isset($_GET["AnoEscolar"]))
+	$AnoEscolar = $_GET["AnoEscolar"];
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/Classes.php'); 
 
@@ -1431,7 +1433,7 @@ function Titulo_Mm($aux) {
 }
   
 
-function MenuCurso($actual,$extraScript) { 
+function MenuCurso( $actual = 0 , $extraScript="" ) { 
 	$hostname_bd = "localhost";
 	$database_bd = "colegio_db";
 	$username_bd = "colegio_colegio";
@@ -1502,7 +1504,7 @@ function MenuCurso($actual,$extraScript) {
 } 
 
 
-function MenuCurso2($actual,$extraScript) { 
+function MenuCurso2($actual = 0 ,$extraScript="") { 
 	/*$hostname_bd = "localhost";
 	$database_bd = "colegio_db";
 	$username_bd = "colegio_colegio";
@@ -1575,7 +1577,7 @@ function MenuCurso2($actual,$extraScript) {
 
 
 
-function Ir_a_Curso($actual,$extraOpcion, $MM_UserGroup ="" , $MM_Username="") {
+function Ir_a_Curso($actual = 0 , $extraOpcion = "" , $MM_UserGroup ="" , $MM_Username="") {
 echo '	
 <script type="text/javascript">
 <!--
@@ -2082,7 +2084,8 @@ $query_RS_Mov_Mes = "SELECT * FROM ContableMov
 					AND Descripcion NOT LIKE '%ABONO%'
 					ORDER BY Codigo ASC"; 
 $RS_Mov_Mes = $mysqli->query($query_RS_Mov_Mes);
-
+//echo $query_RS_Mov_Mes;
+	
 //echo "Resumen2";
 
 	if ( $RS_Mov_Mes ) {

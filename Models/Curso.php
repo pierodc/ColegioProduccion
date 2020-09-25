@@ -28,7 +28,7 @@ class Curso{
 	}	
 	
 	
-	public function Cuenta($AnoEscolar , $CodigoCurso, $Status){
+	public function Cuenta($AnoEscolar, $CodigoCurso, $Status){
 		$sql = "SELECT COUNT(*) AS Cantidad FROM AlumnoXCurso 
 				WHERE Ano = '$AnoEscolar' 
 				AND CodigoCurso = '$CodigoCurso' 

@@ -104,6 +104,20 @@ class Alumno{
 		$datos = $this->con->consultaRetorno_row($sql);
 		return $datos['FechaNac'];
 		}
+	public function Email(){
+		$sql = "SELECT * FROM Alumno WHERE CodigoAlumno = '{$this->id}'";
+		$datos = $this->con->consultaRetorno_row($sql);
+		if($datos['Email'] > "")
+			return $datos['Email'];
+		else{
+			
+			$Usuario = noAcentos($this->Nombre()).noAcentos($this->Apellido());
+			$Usuario = str_replace(" ","",$Usuario);
+			return $Usuario."@colegiosanfrancisco.com" ."";
+			
+		}
+		
+		}
 	public function Nacionalidad(){
 		$sql = "SELECT * FROM Alumno WHERE CodigoAlumno = '{$this->id}'";
 		$datos = $this->con->consultaRetorno_row($sql);

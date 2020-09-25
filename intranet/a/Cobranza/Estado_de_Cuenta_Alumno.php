@@ -6,6 +6,8 @@ $MM_authorizedUsers = "99,91,95,90,Contable";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
+
+
 $Alumno = new Alumno($_GET["CodigoPropietario"], $AnoEscolar);
 
 $TituloPantalla = $Alumno->CodigoNombreApellido(); // Titulo contenido

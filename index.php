@@ -118,14 +118,28 @@ if( isset($_GET['doLogout']) and $_GET['doLogout']='true'){
 <?php include('inc_menu.php'); ?></td>
             <td rowspan="3" align="center" valign="top" class="box1">
 <p>&nbsp;</p>
+<p><strong>N&uacute;meros de tel&eacute;fono activos: <br>
+0412.303.44.44<br>
+0414.303.44.44<br>
+<!-- (0212) 285.78.72 / 285.69.33 / 286.04.37 / 284.05.20  -->
+</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="https://www.dropbox.com/s/1a3o9sbx8qzbyo7/PasosParaIngresarEnElProceso.pdf?dl=0" class="xbig" target="_blank">Correo institucional Alumno <br>
+</a>Las cuentas las crea el servidor del colegio, <strong>no debe crearla</strong><br>
+    Debe ingresar a la siguiente direcci&oacute;n:<br>
+    <a href="https://correo.colegiosanfrancisco.com">correo.colegiosanfrancisco.com</a><br>
+    Usuario: NombreApellido@ColegioSanFrancisco.com<br>
+    Clave: DDMMAAAAsfa    (dia mes a&ntilde;o de naciemiento del alumno seguido de &quot;sfa&quot;)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p><a href="https://www.dropbox.com/s/1a3o9sbx8qzbyo7/PasosParaIngresarEnElProceso.pdf?dl=0" class="xbig" target="_blank">Proceso de Ingreso de Nuevos Alumnos</a><br>
-  (a partir del Lunes 22 de Enero)
-</p>
-<p class="navLinkAct"><strong>N&uacute;meros de tel&eacute;fono activos: 0412.303.44.44 / 0414.303.44.44<br>
-  <!-- (0212) 285.78.72 / 285.69.33 / 286.04.37 / 284.05.20  --></strong></p>
-<p>Haga click sobre los eventos para ver m&aacute;s detalles</p>
-<p><a href="https://calendar.google.com/calendar/ical/4jbg2b5gv8s8msitgibfbhbkis@group.calendar.google.com/public/basic.ics">Subscribirse al calendario</a></p>
-<iframe src="https://www.google.com/calendar/embed?showTabs=0&height=400&wkst=1&bgcolor=%23FFFFFF&src=4jbg2b5gv8s8msitgibfbhbkis%40group.calendar.google.com&color=%23060D5E&ctz=America%2FCaracas" style=" border-width:0 " width="650" height="400" frameborder="0" scrolling="no"></iframe>            </td>
+Para solicitar cupo: debe registrarse y llenar los datos del alumno y la familia.         <br>
+    En el trascurso de 5 d&iacute;as h&aacute;biles sera contactado.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></td>
             <td width="31" bgcolor="#FFF8E8">&nbsp;</td>
           </tr>
           <tr>
@@ -147,10 +161,10 @@ if( isset($_GET['doLogout']) and $_GET['doLogout']='true'){
            </td>
             <td width="31" rowspan="4" bgcolor="#FFF8E8">&nbsp;</td>
           </tr>
-          <tr>
+          <!--tr>
             <td align="center">&nbsp;<a class="twitter-timeline" width="300" height="300" href="https://twitter.com/colegiosfa" data-widget-id="329810306194866176">Tweets por @colegiosfa</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
-          </tr>
+          </tr-->
           <tr>
             <td align="center"></td>
           </tr>

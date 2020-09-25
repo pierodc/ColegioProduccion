@@ -56,7 +56,16 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 while ($row_RS_Alumnos = $RS_Alumno->fetch_assoc()) {
 	
 	
-	$Emails .= $row_RS_Alumnos['Nombres'] . $row_RS_Alumnos['Apellidos'] . "@colegiosanfrancisco.com, ";
+	if($row_RS_Alumnos['Email'] > ""){
+		//echo $row_RS_Alumnos['Email'].",";
+		$Emails .= $row_RS_Alumnos['Email'].",";
+	}
+	else{
+		$Emails .= $row_RS_Alumnos['Nombres'] . $row_RS_Alumnos['Apellidos'] . "@colegiosanfrancisco.com, ";
+	}
+	
+	
+	//$Emails .= $row_RS_Alumnos['Nombres'] . $row_RS_Alumnos['Apellidos'] . "@colegiosanfrancisco.com, ";
 	
 	
 	//extract($row_RS_Alumnos);
@@ -126,7 +135,7 @@ foreach ($arr as $value) {
 	
 	echo '  -  '.substr($value,0,1).' '.$telefono;
 
-	if($telefono>'' and strpos($todos_tel , $telefono)) echo '</b>';
+	if($telefono > '' and strpos($todos_tel , $telefono)) echo '</b>';
 
 	$todos_tel .= $todos_tel . '   ' . $telefono;
 }

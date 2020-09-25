@@ -46,7 +46,12 @@ do{
 		
 		// Busca las asignaciones del alumno
 		$query_RS_Asign_Alum = sprintf("SELECT * FROM AsignacionXAlumno, Asignacion 
-										WHERE AsignacionXAlumno.Ano_Escolar = '$AnoEscolar' 
+										WHERE 
+										
+										(AsignacionXAlumno.Ano_Escolar = '2019-2020' 
+									 or  AsignacionXAlumno.Ano_Escolar = '2020-2021') 
+										
+										
 										AND AsignacionXAlumno.CodigoAlumno = %s 
 										AND AsignacionXAlumno.CodigoAsignacion = Asignacion.Codigo 
 										ORDER BY Asignacion.Orden, AsignacionXAlumno.Codigo", GetSQLValueString($CodigoAlumno, "int"));
@@ -112,7 +117,13 @@ do{
 				Asignacion.SWiva 
 				
 				FROM  AsignacionXAlumno, Asignacion 
-				WHERE AsignacionXAlumno.Ano_Escolar = '$AnoEscolar' 
+				WHERE 
+				
+				
+				(AsignacionXAlumno.Ano_Escolar = '2019-2020' 
+			 or  AsignacionXAlumno.Ano_Escolar = '2020-2021') 
+
+										
 				AND AsignacionXAlumno.CodigoAlumno = $CodigoAlumno 
 				AND AsignacionXAlumno.CodigoAsignacion = Asignacion.Codigo 
 				AND AsignacionXAlumno.CodigoAsignacion = $Referencia  
