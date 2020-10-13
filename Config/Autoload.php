@@ -19,6 +19,7 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Rif.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Inventario.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/ShopCart.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Banco.php");
+require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Observaciones.php");
 
 //require_once( $_SERVER['DOCUMENT_ROOT'] . "/inc/Login_ck.php");
 //require_once( $_SERVER['DOCUMENT_ROOT'] . "/inc/rutinas.php");
@@ -34,6 +35,8 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Banco.php");
 //require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/worker.php");
 //require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/time_event.php");
 //require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/pay_time.php");
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/GetVar.php'); 
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 

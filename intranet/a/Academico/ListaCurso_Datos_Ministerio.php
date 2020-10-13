@@ -1,5 +1,5 @@
 <?php
-$MM_authorizedUsers = "91,95,AsistDireccion,secreAcad";
+$MM_authorizedUsers = "91,95,AsistDireccion,secreAcad,secreBach";
 require_once('../../../inc_login_ck.php'); 
 
 require_once('../../../Connections/bd.php'); 
@@ -163,7 +163,7 @@ a:active {
 </head>
 
 <body>
-<table width="1500" border="0" align="center">
+<table width="100%" border="0" align="center">
   <tr>
     <td><?php 
 	$TituloPantalla = $row_RS_Curso['NombreCompleto'];

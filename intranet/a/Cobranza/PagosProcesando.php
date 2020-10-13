@@ -74,7 +74,9 @@ if( $row_RS_ContableMov_Procesando['Referencia']>" ") {
 ?>
 <tr>
   <td align="center" valign="middle" nowrap="nowrap" class="FondoCampo"></td>
-  <td colspan="2" align="right" valign="middle" nowrap="nowrap" class="FondoCampo"><table width="800" border="1" align="center">
+  <td colspan="2" align="right" valign="middle" nowrap="nowrap" class="FondoCampo">
+  
+  <table width="800" border="1" align="left">
   
     <tr>
     <td>&nbsp;</td>
@@ -120,13 +122,19 @@ echo " ".$row_RS_del_Banco['Descripcion']." "; // Desc Banco
 
 if( $Privilegios == 91 ){
 	
-?>	<a href="Contable_Modifica.php?Codigo=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" target="_blank"><?php echo "Ref: ".$row_RS_ContableMov_Procesando['Referencia'] ?></a><? 
-	  
+?>	<a href="Contable_Modifica.php?Codigo=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" target="_blank"><?php echo "Ref: ".$row_RS_ContableMov_Procesando['Referencia'] ?></a> | <? 
+	
+?>	<a href="Concilia.php?id=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" target="_blank">TEST</a><? 
+	
+		
 }
 	  ?></td>
   <td align="right">&nbsp;<?php echo Fnum($MontoEnBanco); ?></td>
   <td align="right">&nbsp;</td>
   </tr>
+  
+  
+  
   <?php if ($MontoUsado > 0) {?>
   <tr>
   <td>&nbsp;</td>
@@ -137,6 +145,8 @@ if( $Privilegios == 91 ){
   <td align="right">&nbsp;</td>
   </tr>
   <?php } ?>
+  
+  
   <tr  bgcolor="#CCCCCC">
     <td><?php 
 
@@ -153,8 +163,11 @@ if ($row_RS_ContableMov_Procesando['Fecha']==date('Y-m-d')){
 
 ?></td>
   <td><strong>Actual</strong></td>
-  <td align="left">&nbsp;
-      <table width="100%" border="1">
+  <td>
+    
+         
+           
+<table >
           <tbody>
               <tr>
                   <td colspan="5"><?php 
@@ -190,8 +203,6 @@ echo Banco ($row_RS_ContableMov_Procesando['CodigoCuenta']);
                  &nbsp;</td>
                   <td><? 
 	
-	 if($row_RS_ContableMov_Procesando['Observaciones'] > "")
-					echo "<b>".$row_RS_ContableMov_Procesando['Observaciones']."</b><br>";
 	
 	
 	
@@ -203,7 +214,9 @@ echo Banco ($row_RS_ContableMov_Procesando['CodigoCuenta']);
                  </td>
                   </tr>
           </tbody>
-      </table>
+</table>
+      
+      
       </td>
   <td align="right" bgcolor="#CCCCCC"><strong><?php 
 	 
@@ -222,6 +235,15 @@ $SumaDePagos += $MontoIngresado;
 						</button>
   </form></td>
   </tr>
+  
+  <tr><td colspan="5" align="center"><?
+	  
+	   if($row_RS_ContableMov_Procesando['Observaciones'] > "")
+					echo "<b>".substr($row_RS_ContableMov_Procesando['Observaciones'],0,100)."</b>";
+	
+	  
+	  ?></td></tr>
+  
   <?php if ($MontoRestante <> 0  and $MontoIngresado <> -$MontoRestante) {?>
   <tr>
   <td>&nbsp;</td>

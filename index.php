@@ -128,7 +128,7 @@ if( isset($_GET['doLogout']) and $_GET['doLogout']='true'){
 <p><a href="https://www.dropbox.com/s/1a3o9sbx8qzbyo7/PasosParaIngresarEnElProceso.pdf?dl=0" class="xbig" target="_blank">Correo institucional Alumno <br>
 </a>Las cuentas las crea el servidor del colegio, <strong>no debe crearla</strong><br>
     Debe ingresar a la siguiente direcci&oacute;n:<br>
-    <a href="https://correo.colegiosanfrancisco.com">correo.colegiosanfrancisco.com</a><br>
+    <a href="http://correo.colegiosanfrancisco.com">correo.colegiosanfrancisco.com</a><br>
     Usuario: NombreApellido@ColegioSanFrancisco.com<br>
     Clave: DDMMAAAAsfa    (dia mes a&ntilde;o de naciemiento del alumno seguido de &quot;sfa&quot;)</p>
 <p>&nbsp;</p>

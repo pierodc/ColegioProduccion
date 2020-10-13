@@ -46,6 +46,27 @@ class ShopCart{
 	}
 	
 	
+	function cantidad_pedido($SW_pagado = "" , $id_inventario = "" , $id_user = ""){ // Pedidos = 0 //// Pagados = 1
+		
+		if($id_user > ""){
+			$add_sql = "AND id_user = '$id_user' ";
+		}
+		$sql = "SELECT * FROM ShopCart 
+				WHERE SW_pagado = '$SW_pagado'
+				AND id_inventario = '$id_inventario' 
+				$add_sql";
+		//echo $sql."<br>";
+		$datos = $this->con->consultaRetorno($sql);
+		
+		while($row = $row = $datos->fetch_assoc()){
+			$total += $row['Cantidad'];
+		}
+			
+		return $total;
+	}
+	
+	
+	
 	
 	
 	

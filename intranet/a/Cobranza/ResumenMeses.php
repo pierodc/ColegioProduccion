@@ -47,9 +47,6 @@ if ($totalRows_RS_>0){
           <iframe src="Agrega_Mensualidad_iFr.php<?php echo "?CodigoAlumno=".$CodigoAlumno.'&Mes=08&Ano='.$Ano1; ?>" width="30" height="23" seamless frameborder="0" scrolling="no"></iframe>
          </td>
         <td align="center">Sep <?php echo $Ano1 ?><br />
-          ins
-          </td>
-        <td align="center">Sep <?php echo $Ano1 ?><br />
           <iframe src="Agrega_Mensualidad_iFr.php<?php echo "?CodigoAlumno=".$CodigoAlumno.'&Mes=09&Ano='.$Ano1; ?>" width="30" height="23" seamless frameborder="0" scrolling="no"></iframe>
           </td>
         <td align="center">Oct <?php echo $Ano1 ?><br />
@@ -97,10 +94,16 @@ if ($totalRows_RS_>0){
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "06-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "07-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "08-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
-        <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "Ins 18"; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td><td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "09-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
+        
+        
+        <!--td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "Ins 18"; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td-->
+        
+        
+        <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "09-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "10-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "11-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "12-".$Ano1; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
+        
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "01-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "02-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>
         <td valign="top" class="ReciboRenglonMini"><?php $ReferenciaMesAno = "03-".$Ano2; Resumen2($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $row_RS_Alumno['SWAgostoFraccionado'], $Mensualidad, $BB); ?></td>

@@ -13,6 +13,9 @@ $Usuario = new Usuario($Usuario = $_GET['Usuario']);
 $Alumno = new Alumno("" , $AnoEscolar);
 $Inventario = new Inventario($id = "");
 $ShopCart = new ShopCart($id = "");
+$Observaciones = new Observaciones();
+
+
 
 $mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 
@@ -53,9 +56,6 @@ foreach($Alumnos as $id_alumno){
 		$pdf->Cell(100 , $Ln , "" . $Alumno->NombreApellidoCodigo() . " " . $Alumno->Status($AnoEscolar), $borde , 0 , "L" ,1); 
 		$pdf->Cell(30 , $Ln , "" . $Alumno->AnoEscolar , $borde , 0 , "C" ,1); 
 		$pdf->Cell(30 , $Ln , "" .  Curso($Alumno->CodigoCurso()) , $borde , 0 , "C" ,1); 
-
-
-
 		$pdf->Ln($Ln);
 } }
 
@@ -63,14 +63,17 @@ foreach($Alumnos as $id_alumno){
 $pdf->Ln($Ln);
 
 $pdf->Cell(10 , $Ln , "No" , $borde , 0 , 'C'); 
-$pdf->Cell(100 , $Ln , "Descripcion" , $borde , 0 , 'L'); 
+$pdf->Cell(70 , $Ln , "Descripcion" , $borde , 0 , 'L'); 
+$pdf->Cell(20 , $Ln , "Cantidad" , $borde , 0 , 'L'); 
+$pdf->Cell(20 , $Ln , "Precio" , $borde , 0 , 'L'); 
+$pdf->Cell(20 , $Ln , "Total" , $borde , 0 , 'L'); 
 $pdf->Cell(20 , $Ln , "Entregado" , $borde , 0 , 'L'); 
 $pdf->Ln($Ln);
 
 
 
 
-$RS = $ShopCart->view_pedidos("2" , $Usuario->id);
+$RS = $ShopCart->view_pedidos("1" , $Usuario->id); // 11 Pedido a proveed
 
 while ($row = $RS->fetch_assoc()){
 	extract($row);	
@@ -82,68 +85,52 @@ while ($row = $RS->fetch_assoc()){
 	
 	
 	$pdf->Cell(10 , $Ln , ++$n , $borde , 0 , 'C'); 
-	$pdf->Cell(100 , $Ln , $Articulo["Descripcion"] , $borde , 0 , 'L',1); 
+	$pdf->Cell(70 , $Ln , $Articulo["Descripcion"] , $borde , 0 , 'L',1,1); 
+	
+	//$Cantidad = $Articulo["Cantidad"];
+	
+	$pdf->Cell(20 , $Ln , $Cantidad , $borde , 0 , 'C',1,1); 
+	$pdf->Cell(20 , $Ln , $Precio , $borde , 0 , 'C',1,1); 
+	$pdf->Cell(20 , $Ln , $Cantidad*$Precio , $borde , 0 , 'C',1,1); 
+	$TotalOrden += $Cantidad*$Precio;
 	$pdf->Cell(20 , $Ln , "" , $borde , 0 , 'L'); 
 
-	
-	
 	
 	$pdf->Ln($Ln);
 
 }
 
+
+$pdf->Cell(120 , $Ln , "TotalOrden" , 0 , 0 , 'R'); 
+$pdf->Cell(20 , $Ln , $TotalOrden , $borde , 0 , 'C',1,1 ); 
 $pdf->Ln($Ln);
 
-$query_Observaciones = "SELECT * FROM Observaciones 
-						WHERE Codigo_Propietario = ".$Usuario->id." 
-						AND Area = 'Proveeduria'
-						AND (Codigo_Padre < 1 OR Codigo_Padre IS NULL)
-						ORDER BY Fecha_Creacion DESC
-						";
 
-$Observaciones = $mysqli->query($query_Observaciones);
-if($Observaciones->num_rows){
-	while ($row = $Observaciones->fetch_assoc()){
-		
-		extract($row);	
-		$pdf->Cell(20 , $Ln , DDMMAAAA($Fecha_Creacion) , $borde , 0 , 'L',1); 
-		$pdf->Cell(20 , $Ln , $Por , $borde , 0 , 'L',1); 
-	
-		$pdf->Cell(150 , $Ln , $Observacion , $borde , 0 , 'L',1); 
-	
-		$pdf->Ln($Ln);
-		
-		
-		
-		
-		$query_Observaciones_HIJAS = "SELECT * FROM Observaciones 
-									WHERE Codigo_Padre = '". $Codigo_Observ ."'
-									AND Codigo_Propietario = $Usuario->id 
-									ORDER BY Fecha_Creacion DESC";
-		$Observaciones_HIJAS = $mysqli->query($query_Observaciones_HIJAS);
-		$totalRows_Observaciones_HIJAS = $Observaciones_HIJAS->num_rows;
-		if($totalRows_Observaciones_HIJAS > 0) {
-		
-			while ($row_Observaciones_HIJAS = $Observaciones_HIJAS->fetch_assoc()){ 
-				
-				$pdf->Cell(20 , $Ln , " >> " , $borde , 0 , 'L',1); 
-				$pdf->Cell(20 , $Ln , DDMMAAAA($Fecha_Creacion) , $borde , 0 , 'L',1); 
-				$pdf->Cell(20 , $Ln , $Por , $borde , 0 , 'L',1); 
-				$pdf->Cell(130 , $Ln , $Observacion , $borde , 0 , 'L',1); 
-	
-				
-				
-				$pdf->Ln($Ln);
-			}
-		}
-		
-		
-		
-		
-		
-		
+$pdf->Ln($Ln);
+
+
+
+$Matriz = $Observaciones->view($Usuario->id , "Proveeduria");
+/*echo "<pre>";
+var_dump($Matriz);
+*/
+
+$Ln = 6;
+foreach($Matriz as $row){
+	$ajuste = 0;
+	extract($row);	
+	$pdf->Cell(20 , $Ln , DDMMAAAA($Fecha_Creacion) , $borde , 0 , 'L',1); 
+	if($Codigo_Padre){
+		$pdf->Cell(20 , $Ln , ">>" , $borde , 0 , 'L',1); 
+		$ajuste = -20;
 	}
+	$pdf->Cell(150+$ajuste , $Ln , $Observacion , $borde , 0 , 'L',1);
+	
+	$pdf->Cell(20 , $Ln , substr( $Por,0,10 ) , $borde , 0 , 'L',1); 
+	$pdf->Ln($Ln);
+	
 }
+$pdf->Ln($Ln);
 
 
 

@@ -1,6 +1,4 @@
 <?php 
-header("Location: \Docente\Curso");
-
 //$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
 $TituloPagina   = "Lista Curso"; // <title>
 $TituloPantalla = "Lista Curso"; // Titulo contenido
@@ -9,12 +7,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 //require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/GetVar.php');
 
+$Alumno = new Alumno($_id_Alumno);
 
-$Alumno = new Alumno($CodigoAlumno);
 $AlumnoXCurso = new AlumnoXCurso();
-
-$CodigoAlumnos = $AlumnoXCurso->view($CodigoCurso = $_GET[CodigoCurso] , $Sort = "");
+$CodigoAlumnos = $AlumnoXCurso->view( $_id_Curso );
 
 
 require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
@@ -23,35 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
   <head>
 	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
     <title><?php echo $TituloPag; ?></title>
-<style>
-DIV.table 
-{
-    display:table;
-}
-DIV.tr:hover {	background-color: #EFEFEF;
-}
-DIV.tr
-{
-    display:table-row;
-	/*background-color: #F5F5F5;*/
-}
-DIV.tr:nth-child(even) {
-	background-color: #F5F5F5;
-}	
-DIV.tr:nth-child(odd) {
-	background-color: #DBDBDB;
-}	   
-DIV.tr:hover {	background-color: #FFF3CC;
-}	   
-	   
-SPAN.td
-{
-    display:table-cell;
-}
-.verde{
-   background: #C6FFC6;
-}	   
-</style> 
+
 <script>
 function CopyToClipboard(containerid) {
   if (document.selection) {
@@ -73,56 +43,85 @@ function CopyToClipboard(containerid) {
 <? //require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
 
-<div class="subtitle">
-	Curso
-</div>
-    <div class="row">
-		<div class="col-md-12">
-			<? Ir_a_Curso($_GET[CodigoCurso] , "index.php?CodigoCurso=" ); ?>  
-        </div>
-	</div>
+	
 
+
+
+<table>	
+	<tbody>
+		<tr>
+			<td>
+				<? Boton_Cursos($_id_Curso ); ?>
+			</td>
+			<? if($CodigoAlumnos->num_rows > 0)	{ ?>
+			<td>	
+			<a href="Curso_pdf.php" class="button" target="_blank">Imprimir</a>
+			<button id="button1" class="button" onclick="CopyToClipboard('Emails')">Copiar Emails</button >
+			</td>
+			<? } ?>
+		</tr>
+	</tbody>
+</table>	
 
 <? if($CodigoAlumnos->num_rows > 0)	{ ?>
-
-<div class="subtitle">
-	Listado
-</div>
-
-<div class="table">
-
-
- <div class="tr CampoNombre">
-	<span class="td CampoNombre">No</span>
-	<span class="td CampoNombre">Codigo</span>
-	<span class="td CampoNombre">Alumno</span>
-</div>
-	
-	
+<table  class="sombra" >
+<caption >Listado</caption>
+<thead>
+	 <tr>
+		<th>No</th>
+		<th>Codigo</th>
+		<th>Alumno</th>
+		<th>Asistencia</th>
+		<th>Edad</th>
+		<th>Tel</th>
+	</tr>
+</thead>	
+<tbody>	
 <?
 	
-while ( $row = $CodigoAlumnos->fetch_assoc() )
-{
+while ( $row = $CodigoAlumnos->fetch_assoc() ){
 	extract($row);
 	$Alumno->id = $CodigoAlumno;
 	
 ?>	
-<div class="tr">
-	<span class="td"><? echo ++$No ?></span>
-	<span class="td"><? echo $CodigoAlumno; ?></span>
-	<span class="td"><? echo $Alumno->Apellido() ." ". $Alumno->Nombre(); ?></span>
-</div>
+<tr class="hover <?php if($_id_Alumno == $CodigoAlumno) echo "seleccionado"; ?>" >
+	<td><? echo ++$No ?></td>
+	<td><? echo $CodigoAlumno; ?></td>
+	<td><a href="<? echo $php_self . "?id_Alumno=" . $CodigoAlumno; ?>"><? echo $Alumno->Apellido() ." ". $Alumno->Nombre(); ?></a></td>
+	<td align="center"><? Frame_Asistencia ($CodigoAlumno); ?></td>
+	<td><? echo Edad_Dif($Alumno->FechaNac() , date("Y-m-d")); ?></td>
+	<td>
+	<?
+	echo 'Al: '.TelLimpia($TelCel); 
+	
+	$arr = array('Padre','Madre');
+	foreach ($arr as $value) {
+
+		$query_RS_Repre = "SELECT * FROM RepresentanteXAlumno , Representante 
+									WHERE RepresentanteXAlumno.CodigoRepresentante = Representante.CodigoRepresentante
+									AND RepresentanteXAlumno.Nexo = '$value'
+									AND RepresentanteXAlumno.CodigoAlumno = '".$CodigoAlumno."'";
+		//echo '<br>'.$query_RS_Repre.'<br>';
+		$RS_Repre = mysql_query($query_RS_Repre, $bd) or die(mysql_error());
+		$row_RS_Repre = mysql_fetch_assoc($RS_Repre);
+
+		echo '  -  '.substr($value,0,1).' '.TelLimpia($row_RS_Repre['TelCel']);
+
+	}
+	 
+	 ?>
+	
+	</td>
+	
+</tr>
 
 <?
 	$Emails .= $Alumno->Email().", ";
-	
-	
 }
 	
 ?>
-		
-</div>
-
+</tbody>
+</table>
 
 <div class="subtitle">
 	Emails para el Classroom:
@@ -131,10 +130,10 @@ while ( $row = $CodigoAlumnos->fetch_assoc() )
 	<? echo $Emails; ?>
 </div>
 
-<button id="button1" class="button" onclick="CopyToClipboard('Emails')">Copiar Emails</button>
+<button id="button1" class="button" onclick="CopyToClipboard('Emails')">Copiar Emails</button >
+
 
 <? } ?>
-
 
 <?php // require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
 <?php // require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>

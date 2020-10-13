@@ -37,10 +37,10 @@ $pdf->Cell(80 , $Ln , "Descripcion" , $borde , 0 , 'L');
 $pdf->Cell(30 , $Ln , "Autor" , $borde , 0 , 'L',1); 
 $pdf->Cell(30 , $Ln , "Editorial" , $borde , 0 , 'L',1); 
 $pdf->Cell(15 , $Ln , "Costo_Dolares" , $borde , 0 , 'R',1); 
-$pdf->Cell(15 , $Ln , "Tot" , $borde , 0 , 'R',1); 
-$pdf->Cell(15 , $Ln , "pago" , $borde , 0 , 'R',1); 
-$pdf->Cell(15 , $Ln , "Edit" , $borde , 0 , 'R',1); 
-$pdf->Cell(15 , $Ln , " ? " , $borde , 0 , 'R',1); 
+//$pdf->Cell(15 , $Ln , "" , $borde , 0 , 'R',1); 
+$pdf->Cell(25 , $Ln , "Ped nuevo" , $borde , 0 , 'L',1); 
+$pdf->Cell(25 , $Ln , "Ped anterior" , $borde , 0 , 'L',1); 
+//$pdf->Cell(15 , $Ln , " ? " , $borde , 0 , 'R',1); 
 $pdf->Ln($Ln);
 
 $RS = $Inventario->view_all($where , "Editorial");
@@ -56,24 +56,45 @@ while ($row = $RS->fetch_assoc()){
 	// Pedidos
 		$ShopCart->id_inventario = $id;
 		$pedidos = $ShopCart->view_pedidos(0);
+					
 	//	echo $pedidos->num_rows;
-	$pdf->Cell(15 , $Ln , $pedidos->num_rows , $borde , 0 , 'R',1); 
+	//$pdf->Cell(15 , $Ln , "".$pedidos->num_rows . " => ". $ShopCart->cantidad_pedido(0,$id), $borde , 0 , 'R',1); 
 	
+	
+	
+	
+	$ShopCart->id_inventario = $id;
+	
+	
+		
 	// pagados
-		$ShopCart->id_inventario = $id;
-		$pagados = $ShopCart->view_pedidos(1);
-	//	echo $pagados->num_rows;
+	$pagados = $ShopCart->view_pedidos(1);
 	$Num = $pagados->num_rows;
 	if($Num == 0)
 		$Num = "";
-	$pdf->Cell(15 , $Ln , $Num , $borde , 0 , 'R',1); 
+	
+	
+	
+	$pagadosReal = $ShopCart->cantidad_pedido(1,$id);
+	
+	//	echo $pagados->num_rows;
+	
+	
+	
+	
+	
+	$Num = $pagados->num_rows;
+	if($Num == 0)
+		$Num = "";
+	$pdf->Cell(25 , $Ln , "".$Num . " => ". $ShopCart->cantidad_pedido(1,$id) , $borde , 0 , 'R',1); 
+	
 	
 	//enProceso
 	$enProceso = $ShopCart->view_pedidos(2);
 	$Num = $enProceso->num_rows;
 	if($Num == 0)
 		$Num = "";
-	$pdf->Cell(15 , $Ln , $Num , $borde , 0 , 'R',1); 
+	$pdf->Cell(25 , $Ln , "".$Num  . " => ". $ShopCart->cantidad_pedido(11,$id), $borde , 0 , 'R',1); 
 	//
 	
 	
@@ -82,7 +103,7 @@ while ($row = $RS->fetch_assoc()){
 	$Num = $pedidos->num_rows - $pagados->num_rows - $enProceso->num_rows;
 	if($Num == 0)
 		$Num = "";
-	$pdf->Cell(15 , $Ln , $Num , $borde , 0 , 'R',1); 
+	//$pdf->Cell(15 , $Ln , $Num , $borde , 0 , 'R',1); 
 	
 	
 	

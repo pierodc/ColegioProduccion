@@ -26,7 +26,8 @@ if(isset($_GET['Agregar'])){
 	
 	$sql = "SELECT * FROM ShopCart 
 			WHERE id_user = '$Usuario->id'
-			AND id_inventario = '$id_inventario'";
+			AND id_inventario = '$id_inventario'
+			AND SW_pagado = 0"; // Omite registros en transito
 	$RS = $mysqli->query($sql);
 	$row = $RS->fetch_assoc();
 	

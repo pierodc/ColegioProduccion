@@ -135,19 +135,8 @@ if(Acceso($Acceso_US,$Reuqerido_Pag)){
 <title><?php echo $TituloPantalla; ?></title>
 <link href="/estilos.css" rel="stylesheet" type="text/css" />
 <link href="/estilos2.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">
-<!--
-function MM_jumpMenu(targ,selObj,restore){ //v3.0
-  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-  if (restore) selObj.selectedIndex=0;
-}
-//-->
-</script>
-
-<script src="/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-<link href="/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<link href="/SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
-
+<link href="/css/tabla.css" rel="stylesheet" type="text/css" />
+	
 
 <script>
 $( "#Def_Mat2" ).load( "Boleta_nota_pri_pre.php?Promedio=34443",  function() {  alert( "Load was performed." ) });
@@ -165,9 +154,7 @@ table.position_fixed{
 </head>
 <body>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="3" align="center"><?php require_once('TituloPag.php'); ?></td>
-  </tr>
+
     <tr>
     <td colspan="2" align="left" valign="top" width="150"><?php 
    $actual = $_GET['CodigoCurso'];

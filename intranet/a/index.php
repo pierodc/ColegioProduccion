@@ -1,5 +1,5 @@
 <?php
-$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,admin,AsistDireccion,Contable,ce,provee";
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,admin,AsistDireccion,Contable,ce,provee,secreBach";
 $TituloPagina   = "INTRANET / SFA"; // <title>
 $TituloPantalla = "INTRANET"; // Titulo contenido
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 

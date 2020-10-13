@@ -73,11 +73,12 @@ $CambioParalelo = $Cambio_Paralelo;
 <img src="/img/b.gif" width="740" height="1"><br>
 <table width="98%"  border="0" align="center" cellspacing="5" cellpadding="2">
   <tr>
-    <td width="100%" colspan="2" align="center" class="NombreCampoBIG" >Proveeduria Limite de tiempo agotado</td>
+    <td width="100%" colspan="2" align="center" class="NombreCampoBIG" ><p>Proveeduria</p>
+        <p>La fecha estimada de proxima entrega es el 20 de octubre</p></td>
   </tr>
   
   
-  <!--tr>
+  <tr>
     <td width="50%" align="center"  class="ListadoNotasBC2">
       <? if (!isset($_GET["CodigoCurso"])) { ?>
        <p class="ConflictoHorario">Seleccione el curso</p>
@@ -93,7 +94,7 @@ $CambioParalelo = $Cambio_Paralelo;
   
   <tr>
     <td align="center" valign="top" >
-       <? if (isset($_GET["CodigoCurso"])) { ?>
+       <? if (isset($_GET["CodigoCurso"]) and false) { ?>
         <table width="100%" border="0">
             <tbody>
                 <tr class="subtitle">
@@ -145,7 +146,7 @@ $CambioParalelo = $Cambio_Paralelo;
         <? } ?>
         </td>
     <td align="center" valign="top" ><iframe src="Carrito.php?Usuario=<?= $_GET["Usuario"] ?>" width="100%" height="400" id="Carrito"  name="Carrito" frameborder="0"></iframe></td>
-  </tr-->
+  </tr>
   
   
   

@@ -1,5 +1,5 @@
 <?php 
-$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,secreBach";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
@@ -152,7 +152,7 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 								WHERE CodigoAlumno = '1'  
 								AND Grado = '".$Grado."n'
 								AND Orden < 20
-								ORDER BY Orden"; 
+								ORDER BY Orden"; //
 	$RS_Materias = $mysqli->query($sql_Materias);
 	$i = 0;
 	for ($i = 1; $i <= 15;$i++){
@@ -198,7 +198,10 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 	
 	
 	if($Grado == "V"){
-		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '3250116'";
+		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '12470147'";
+		}
+	elseif($Grado == "IV"){
+		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '5217757'";
 		}
 	elseif($Grado == "8"){
 		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '7884498'";
@@ -206,8 +209,8 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 	elseif($Grado == "9"){
 		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '7884498'";
 		}
-	else{
-		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '12470147'";
+	else{ // 7
+		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '7884498'";
 		}
 	
 	
@@ -671,9 +674,9 @@ foreach(array(1,2) as $grupo){
 				
 				
 				$sql_Notas_Certificadas = "SELECT * FROM Nota 
-											WHERE CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."' AND 
-											Lapso = '$Lapso' AND 
-											Ano_Escolar = '$Ano_Escolar'"; 
+											WHERE CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."' 
+											AND Lapso = '$Lapso' 
+											AND Ano_Escolar = '$Ano_Escolar'"; 
 											//echo $sql_Notas_Certificadas.' 11<br>';
 											
 				$RS_Notas_Certificadas = $mysqli->query($sql_Notas_Certificadas);

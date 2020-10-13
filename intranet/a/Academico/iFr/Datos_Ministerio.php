@@ -1,5 +1,5 @@
 <?php
-$MM_authorizedUsers = "91,95,secreAcad,AsistDireccion";
+$MM_authorizedUsers = "91,95,secreAcad,AsistDireccion,secreBach";
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
@@ -74,9 +74,6 @@ else
                        GetSQLValueString(trim($_POST['Datos_Observaciones']), "text"),
                        GetSQLValueString(trim($_POST['Datos_Observaciones_Planilla']), "text"),
 					   GetSQLValueString(trim($_POST['EscolaridadObserv']), "text"),
-					   
-					   
-					   
 					   
 					   
                        GetSQLValueString($_POST['CodigoAlumno'], "int"));
@@ -213,12 +210,12 @@ $totalRows_RS_Repre = mysql_num_rows($RS_Repre);
               <input type="submit" name="Guardar" id="Guardar" value="G" />
               </label>
 
- <?php if ( $MM_UserGroup == 91 or $MM_UserGroup == 95 or $MM_UserGroup == "secreAcad" ){ ?>
+ <?php if ( $MM_UserGroup == 91 or $MM_UserGroup == 95 or $MM_UserGroup == "secreAcad" or $MM_UserGroup == "secreBach" ){ ?>
           <input type="hidden" name="MM_update" value="form2" />
 		  <?php } ?>
               
               <?php 
-			  if($MM_Username == "piero"){
+			  if($MM_Username == "piero" and false){
 				  
 				  	$sql = "SELECT * FROM AlumnoXCurso WHERE
 				  			CodigoAlumno = '".$row_RS_Alumno['CodigoAlumno']."' AND

@@ -1,7 +1,9 @@
 <?php 
-require_once('../Connections/bd.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
+header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
+header("Pragma: no-cache"); //HTTP 1.0  
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Fecha en el pasado
 
 if(isset($_GET['Tabla']) and isset($_GET['Campo']) and isset($_GET['Valor'])){
 	$Tabla = $_GET['Tabla'];
@@ -35,7 +37,7 @@ body {
 }
 </style>
 <?php //echo $Campo ?>
-<a href="http://www.colegiosanfrancisco.com/inc/onoff.php?<?php 
+<a href="/inc/onoff.php?<?php 
 echo "ClaveCampo=$ClaveCampo&ClaveValor=$ClaveValor&SW=$ValorInverso";
 echo "&Tabla=$Tabla&Campo=$Campo&Valor=$ValorInverso"; 
-?>" ><img src="http://www.colegiosanfrancisco.com/i/accept_<?php echo $Valor; ?>.png" width="16" height="16" /></a>
+?>" ><img src="/i/accept_<?php echo $Valor; ?>.png" width="16" height="16" /></a>

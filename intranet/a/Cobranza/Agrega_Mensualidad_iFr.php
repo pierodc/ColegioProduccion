@@ -138,7 +138,7 @@ do{
 				Asignacion.SWiva 
 				
 				FROM  AsignacionXAlumno, Asignacion 
-				WHERE AsignacionXAlumno.Ano_Escolar = '$AnoEscolar' 
+				WHERE (AsignacionXAlumno.Ano_Escolar = '2019-2020' or AsignacionXAlumno.Ano_Escolar = '2020-2021' )
 				AND AsignacionXAlumno.CodigoAlumno = $CodigoAlumno 
 				AND AsignacionXAlumno.CodigoAsignacion = Asignacion.Codigo 
 				AND AsignacionXAlumno.CodigoAsignacion = $Referencia  

@@ -1,7 +1,7 @@
 <?php 
-$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,secreBach";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
-if($MM_Username != "piero")
+if($MM_Username != "piero" AND $MM_Username != "mariangelaguevara36@gmail.com" )
 	exit;
 
 
@@ -193,10 +193,10 @@ $pdf->SetFont('Arial','B',10);
 $pdf->Cell(20  , $Ln , ' Nombre: ' , $borde , 0 , 'L');
 $pdf->SetFont('Arial','',10);
 $pdf->Cell(101  , $Ln , $Colegio_Nombre , $borde , 0 , 'L');
-$pdf->SetFont('Arial','B',10);
-$pdf->Cell(20  , $Ln , ' Dtto.Esc.: ' , $borde , 0 , 'L');
-$pdf->SetFont('Arial','',10);
-$pdf->Cell(10  , $Ln , ' 7 ' , $borde , 0 , 'L');
+//$pdf->SetFont('Arial','B',10);
+//$pdf->Cell(20  , $Ln , ' Dtto.Esc.: ' , $borde , 0 , 'L');
+//$pdf->SetFont('Arial','',10);
+//$pdf->Cell(10  , $Ln , ' 7 ' , $borde , 0 , 'L');
 $pdf->Ln($Ln);
 
 $pdf->SetFont('Arial','B',10);
@@ -234,7 +234,7 @@ $pdf->Cell(68  , $Ln , $CedulaLetra.$Cedula  ,$borde, 0 , 'L');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(40  , $Ln , ' Fecha de Nacimiento: ' , $borde , 0 , 'L');
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(40  , $Ln , DDMMAAAA($FechaNac)  , $borde , 0 , 'L');
+$pdf->Cell(40  , $Ln , DDMMMMAAAA($FechaNac)  , $borde , 0 , 'L');
 $pdf->Ln($Ln);
 
 $pdf->SetFont('Arial','B',10);
@@ -696,6 +696,7 @@ $pdf->SetFont('Arial','', 12);
 
 $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Lic. Angela J. Reale H.' , '',1 , 'L');
 $pdf->SetX(15); $pdf->Cell(20 , 6 , 'C.I.5.220.494' , '',1 , 'L');
+$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Dpto. de Control de Estudio y Evaluación' , '',1 , 'L');
 //$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Lic. Ronald E. Rincón P.' , '',1 , 'L');
 //$pdf->SetX(15); $pdf->Cell(20 , 6 , 'C.I.14.018.534' , '',1 , 'L');
 

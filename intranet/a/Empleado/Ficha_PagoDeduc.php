@@ -202,12 +202,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 	
 	
 <tr>
-	<th >No</td>
-	<th colspan="4">Nombre</td>
+	<th >No</th>
+	<th colspan="4">Nombre</th>
 </tr>
 <?
 
-if(false){		
+if(true){		
 $query = "SELECT * FROM Empleado 
 			WHERE SW_activo = 1 
 			ORDER BY TipoEmpleado, TipoDocente, Apellidos, Nombres";			

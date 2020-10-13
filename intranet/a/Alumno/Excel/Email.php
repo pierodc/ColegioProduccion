@@ -28,7 +28,8 @@ $AlumnoXCurso = new AlumnoXCurso();
 $Curso = new Curso();
 
 
-$Alumnos = $AlumnoXCurso->all("Fecha_Inscrito DESC");
+$Alumnos = $AlumnoXCurso->all("Fecha_Inscrito DESC, Nombres, Apellidos");
+
 /*
 echo "<pre>";	
 var_dump($Alumnos);

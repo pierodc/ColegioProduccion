@@ -14,7 +14,7 @@ function LimpiaStr($str){
 	$Letras = " qwertyuioplkjhgfdsazxcvbnmñ QWERTYUIOPLKJHGFDSAZXCVBNMÑ ";
 	$Resultado = "";
 	for ($i = 0 ; $i < 50 ; $i++){
-		if($str[$i]>"" and (array_search($str[$i] , $CharValidos) or strpos($Letras , $str[$i]))){
+		if($str[$i] > "" and (array_search($str[$i] , $CharValidos) or strpos($Letras , $str[$i]))){
 			$Resultado .= $str[$i];
 			}
 		}
@@ -294,6 +294,7 @@ if($NombreArchivo > "" and $NombreBanco > "" ){
 	
 <?
 	$i = 1;	
+	if(is_array($Transaccion))
 	foreach($Transaccion as $num => $Tr){
 		$i++;	
 		$Verde = 0;

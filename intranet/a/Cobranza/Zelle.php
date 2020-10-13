@@ -5,38 +5,22 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php');
 
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 
-$TituloPagina   = "Inventario"; // <title>
-$TituloPantalla = "Inventario"; // Titulo contenido
-
-//echo "<br><br><br><br><br>";
-//var_dump($_POST);
-
-$Curso = new Curso($_GET['CodigoCurso']);
-$ShopCart = new ShopCart();
-$Inventario = new Inventario();
-
+$TituloPagina   = "Zelle"; // <title>
+$TituloPantalla = "Zelle"; // Titulo contenido
+$Banco = new Banco();
 
 if(isset($_POST["time"])){
 	if(isset($_POST['id'])){ // UPDATE
-	
-		$sql = "UPDATE Inventario SET ";
-		
+		$sql = "UPDATE Banco SET "; // Convertir generico
 		foreach($_POST as $clave => $valor) {
-			//$resultado .= "$clave = $valor <br>";	
-
 			if($clave != "id" and $clave != "time"){
 				$sql .= " $clave = '$valor',"; 
 			}
 			elseif($clave == "id"){
 				$sql .= " WHERE id = '$valor'";
-				
 			}
-						
-			
 		}
-		
 		$sql = str_replace(", WHERE"," WHERE ",$sql);
-		
 		//$resultado .= $sql;
 		
 	}  // UPDATE
@@ -53,11 +37,11 @@ if(isset($_POST["time"])){
 			}
 			$Claves = substr($Claves,0,strlen($Claves)-1);
 			$Valores = substr($Valores,0,strlen($Valores)-1);
-			$sql = "INSERT INTO Inventario ($Claves) VALUES ($Valores)";
+			$sql = "INSERT INTO Banco ($Claves) VALUES ($Valores)";
 			//$resultado .= $sql;
 		}// INSERT
 		
-		
+		//echo "<br><br><br><br><br>".$sql;
 		$mysqli->query($sql);
 		//header("Location: ".$php_self);
 	} 
@@ -114,53 +98,25 @@ SPAN.td
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
     
 <div>  
-<a href="PDF/pedido_proveedor.php" target="_blank" class="button">Pedido Proveedor</a> 
-       
-<? Ir_a_Curso($_GET['CodigoCurso'],$php_self."?CodigoCurso=", $MM_UserGroup ="" , $MM_Username="") ?>    
 </div>
     
  <div class="table">
  <div class="tr CampoNombre">
 	<span class="td">No</span>
-	<span class="td">Nivel_Curso</span>
-	<span class="td">Cat1</span>
-	<span class="td">Cat2</span>
-	<span class="td">Cat3</span>
+	<span class="td" nowrap >Fecha</span>
+	<span class="td">Referencia</span>
+	<span class="td">Tipo</span>
 	<span class="td">Descripcion</span>
-	<span class="td">Autor</span>
-	<span class="td"><a href="<?= $_SERVER['PHP_SELF']  ?>?Sort=Editorial">Editorial</a></span>
-	<span class="td">Costo_Dolares</span>
-	<span class="td">Precio_Dolares</span>
-	<span class="td">&nbsp;</span>
-	<span class="td">Pedidos</span>
-	<span class="td">Pagados</span>
-	<span class="td">En Proceso</span>
-	<span class="td">Pendiente</span>
+	<span class="td">Haber</span>
+	<span class="td">Debe</span>
+    <span class="td">Propietario</span>
+	<span class="td">Observaciones</span>
 </div>
  
  <? 
 	
-	if ($Sort > ""){
-		$Sort = "$Sort , Nivel_Curso,";
-	}
-	 else{
-		 $Sort = "Nivel_Curso,";
-	 }
-	
-	 if(isset($_GET["CodigoCurso"]) and $_GET["CodigoCurso"] > ""){
-		 $where = "WHERE Nivel_Curso = '".$Curso->NivelCurso."'";
-	 }
-	 	
-	/* 
-	$sql = "SELECT * FROM Inventario 
-			$add_sql
-			ORDER BY $Sort Cat1, Cat2, Cat3";
-	//echo $sql;
-	//$RS = $mysqli->query($sql);
-	*/
 	 
-	 
-	$RS = $Inventario->view_all($where , $Sort . " Cat1, Cat2, Cat3");
+	$RS = $Banco->view_tipo($tipo = "ZLL");
 	 
 	 
 	while ($row = $RS->fetch_assoc()){
@@ -170,45 +126,26 @@ SPAN.td
 			$Fondo = "verde"; }
 		?>
 
-    <form class="tr FondoCampo" method="post" action="#<?= $id ?>">
+    <form class="tr FondoCampo" method="post" action="#<?= $Ln ?>">
        
-        <span class="td <?= $Fondo ?>"><?= ++$Ln ; ?><a href="#" name="<?= $id ?>"></a></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Nivel_Curso","t",$Nivel_Curso,$Largo=4,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Cat1","t",$Cat1,$Largo=5,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Cat2","t",$Cat2,$Largo=5,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Cat3","t",$Cat3,$Largo=5,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Descripcion","t",$Descripcion,$Largo=50,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Autor","t",$Autor,$Largo=8,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Editorial","t",$Editorial,$Largo=8,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Costo_Dolares","n",$Costo_Dolares,$Largo=3,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Precio_Dolares","n",$Precio_Dolares,$Largo=3,$extra="") ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("id","h",$id,$Largo=8,$extra="") ; Boton_Submit() ; ?></span>
-        
-        <!--span class="td <?= $Fondo ?>"><? 
-			// Pedidos
-				$ShopCart->id_inventario = $id;
-				$pedidos = $ShopCart->view_pedidos(0);
-				echo $pedidos->num_rows;
-			?></span>
-        
-       	<span class="td <?= $Fondo ?>"><? 
-			// pagados
-				$ShopCart->id_inventario = $id;
-				$pagados = $ShopCart->view_pedidos(1);
-				echo $pagados->num_rows;
-			?></span>
-        
-          <span class="td"><?
-				$enProceso = $ShopCart->view_pedidos(2);
-				if($enProceso->num_rows > 0)
-					echo $enProceso->num_rows;
-		  ?></span>
-        
+        <span class="td <?= $Fondo ?>"><?= ++$Ln ; ?><a href="#" name="<?= $Ln+5 ?>"></a></span>
+        <span class="td <?= $Fondo ?>"><? echo DDMMAAAA($Fecha) ; ?></span>
+        <span class="td <?= $Fondo ?>"><? echo $Referencia ; ?></span>
+        <span class="td <?= $Fondo ?>"><? echo $Tipo ; ?></span>
+        <span class="td <?= $Fondo ?>"><? echo substr($Descripcion,0,80) ; ?></span>
+        <span class="td <?= $Fondo ?>"><? echo Fnum($Haber) ; ?></span>
+        <span class="td <?= $Fondo ?>"><? echo Fnum($Debe) ; ?></span>
+        <span class="td <?= $Fondo ?>"><? Campo("Propietario","t",$Propietario,$Largo=20,$extra="") ; ?></span>
+        <span class="td <?= $Fondo ?>"><? Campo("Observaciones","t",$Observaciones,$Largo=20,$extra="") ; ?></span>
+        <span class="td <?= $Fondo ?>"><? echo $Registro_Por ; ?></span>
         <span class="td <?= $Fondo ?>"><? 
-			// por pagar
-				echo $pedidos->num_rows - $pagados->num_rows - $enProceso->num_rows;
-			?></span-->
+		
+		Campo("Registro_Por","h",$MM_Username,$Largo=8,$extra="") ; 
+		Campo("id","h",$id,$Largo=8,$extra="") ; 
+		
+		Boton_Submit() ; ?></span>
         
+       
         
     </form>
 
@@ -216,7 +153,7 @@ SPAN.td
    
    
    
-   <form class="tr FondoCampo" method="post" action="#<? $id ?>">
+   <!--form class="tr FondoCampo" method="post" action="#<? $id ?>">
         <span class="td <?= $Fondo ?>">Agregar</span>
         <span class="td <?= $Fondo ?>"><? Campo("Nivel_Curso","t",$Curso->NivelCurso,$Largo=4,$extra="") ; ?></span>
         <span class="td <?= $Fondo ?>"><? Campo("Cat1","t","",$Largo=5,$extra="") ; ?></span>
@@ -228,7 +165,7 @@ SPAN.td
         <span class="td <?= $Fondo ?>"><? Campo("Costo_Dolares","n","",$Largo=3,$extra="") ; ?></span>
         <span class="td <?= $Fondo ?>"><? Campo("Precio_Dolares","n","",$Largo=3,$extra="") ; ?></span>
         <span class="td <?= $Fondo ?>"><? Boton_Submit() ; ?></span>
-    </form>
+    </form-->
    
 </div>	   
    

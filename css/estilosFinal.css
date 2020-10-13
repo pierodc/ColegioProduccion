@@ -2,7 +2,7 @@
 table {
   border-collapse: collapse;
   border: 1px solid #D1D1D1;	
- width: 95%;
+  /*width: 95%;*/
   margin: 20px; 
   align: center;
 	/*-webkit-box-shadow: 10px 10px 10px 1px rgba(171,171,171,0.52);

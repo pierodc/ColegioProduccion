@@ -264,12 +264,18 @@ function NoAcentos($txt){
 }
 
 function TelLimpia($Telefono){
-	$Telefono = str_replace( " ", "",$Telefono);
-	$Telefono = str_replace( ".", "",$Telefono);
-	$Telefono = str_replace( "-", "",$Telefono);
-	$Telefono = str_replace( ")", "",$Telefono);
-	$Telefono = str_replace( "(", "",$Telefono);
+	
+	$Telefono = str_replace ('.','',$Telefono);
+	$Telefono = str_replace ('(','',$Telefono);
+	$Telefono = str_replace (')','',$Telefono);
+	$Telefono = str_replace (',','',$Telefono);
+	$Telefono = str_replace ('-','',$Telefono);
+	$Telefono = str_replace (' ','',$Telefono);
+	$Telefono = str_replace ('/04',' . 04',$Telefono);
+	$Telefono = str_replace ('/','',$Telefono);
+	
 	return $Telefono;
+	
 	}
 	
 function TelFormat($Telefono){
@@ -1002,6 +1008,12 @@ function DDMM ($fecha){
 
 }
 
+function DDMMMMAAAA ($fecha){
+	if ($fecha != '0000-00-00' )
+		return substr($fecha, 8, 2).' de '.mes(substr($fecha, 5, 2)).' de '.substr($fecha,0,4) ; 
+
+}
+
 function DMAtoAMD ($fecha){ 
 	return substr($fecha,6,4).'-'.substr($fecha, 3, 2).'-'.substr($fecha, 0, 2) ; 
 }
@@ -1639,10 +1651,10 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 	
 	
 	
-/*echo '<table width="50">
+echo '<table>
 <tr>
 <td>';
-	*/
+	
 	if ($KesimoActual > 1){
 		echo '<a href="'.$extraOpcion.$CodigosCursos[$KesimoActual-1].
 			'"><img src="http://www.colegiosanfrancisco.com/i/control_rewind_blue.png" width="32" height="32" border=0 /></a>';}
@@ -1657,14 +1669,97 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 	else
 		echo '<img src="http://www.colegiosanfrancisco.com/i/control_fastforward.png" width="32" height="32" border=0 />';
 
-/*
+
 echo '</td>
 </tr>
-</table>';	*/
+</table>';	
 	
 } 
 
 
+
+function Boton_Cursos( $actual = 0 ) {
+	
+	$php_self = $_SERVER['PHP_SELF'] . "?id_Curso=";
+	
+	echo '	
+	<script type="text/javascript">
+	<!--
+	function MM_jumpMenu(targ,selObj,restore){ //v3.0
+	  eval(targ+".location=\'"+selObj.options[selObj.selectedIndex].value+"\'");
+	  if (restore) selObj.selectedIndex=0;
+	}
+	//-->
+	</script>
+	';
+	$hostname_bd = "localhost";
+	$database_bd = "colegio_db";
+	$username_bd = "colegio_colegio";
+	$password_bd = "kepler1971";
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	$sql = "SELECT * FROM Curso 
+			 WHERE SW_activo = 1 
+			 ORDER BY NivelMencion , NivelCurso , Curso, Seccion";
+	
+	$RS = $mysqli->query($sql);
+	$row = $RS->fetch_assoc();
+	extract($row);
+	//$NivelMencionAnterior = $NivelMencion;
+	
+	$txt= '
+	<select name="CodigoCurso"  onchange="MM_jumpMenu(\'parent\',this,0)" >
+	<option value="">Seleccione...</option>';
+	do {
+		$i++;
+		extract($row);
+	
+		if ($NivelMencionAnterior != $NivelMencion){ // Separador en blanco
+			$txt.= '<option value="" > </option>
+		';}
+		
+		$txt.= '<option value="'.$php_self.$CodigoCurso. '" '; // Opcion base
+		if (!(strcmp($CodigoCurso , $actual ))) // Seleccionar actual
+			$txt .= " SELECTED "; 
+		$txt .= ">" . $NombreCompleto ."</option> 
+		"; //Etiqueta Opcion
+		
+		if ($CodigoCurso == $actual) //Marca en matriz del curso actual 
+			$KesimoActual = $i; 
+		
+		$CodigosCursos[$i] = $CodigoCurso;
+		$NivelMencionAnterior = $NivelMencion;
+	}	while ($row = $RS->fetch_assoc()) ;
+	$txt .= "</select>";
+
+	
+	
+	
+echo '<table class="sombra" width="10">
+<caption class="RTitulo">Curso</caption>
+<tr><td>';
+	
+	if ($KesimoActual > 1){
+		echo '<a href="'.$php_self.$CodigosCursos[$KesimoActual-1].
+			'"><img src="/i/control_rewind_blue.png" width="32" height="32" border=0 /></a>';}
+	else
+		echo '<img src="/i/control_rewind.png" width="32" height="32" border=0 />';
+	
+	echo '</td><td>';
+	echo $txt; // incorpora el select
+	echo '</td><td>'; 
+	
+	if ($KesimoActual < $i){
+		echo '<a href="'.$php_self.$CodigosCursos[$KesimoActual+1].
+			'"><img src="http://www.colegiosanfrancisco.com/i/control_fastforward_blue.png" width="32" height="32" border=0 /></a>';}
+	else
+		echo '<img src="http://www.colegiosanfrancisco.com/i/control_fastforward.png" width="32" height="32" border=0 />';
+
+
+echo '</td>
+</tr>
+</table>';
+	
+} 
 
 
 
@@ -1677,7 +1772,7 @@ function SelectMenuCurso($NombreSelect,$actual,$extraScript) {
 	$password_bd = "kepler1971";
 	$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
 	mysql_select_db($database_bd, $bd);
-	$query_RS_Cur = "SELECT * FROM Curso WHERE SW_activo=1 ORDER BY NivelMencion ASC, Curso.Curso, Curso.Seccion";
+	$query_RS_Cur = "SELECT * FROM Curso WHERE SW_activo = 1 ORDER BY NivelMencion ASC, Curso.Curso, Curso.Seccion";
 	$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
 	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
 	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);
@@ -2416,6 +2511,10 @@ function SueldoIntDia($FechaIngreso , $FechaObjAntiguedad , $SueldoBase){
 function Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,$Campo,$Valor) {
 	if ($Valor < 1){$Valor = 0;}
 echo "<iframe width=\"20\" height=\"20\" src=\"http://www.colegiosanfrancisco.com/inc/onoff.php?ClaveCampo=$ClaveCampo&ClaveValor=$ClaveValor&Tabla=$Tabla&Campo=$Campo&Valor=$Valor\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
+"; }
+	
+function Frame_Asistencia ($id_Alumno) {
+echo "<iframe width=\"32\" height=\"32\" src=\"/inc/plantilla/asistencia.php?CodigoAlumno=$id_Alumno\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
 "; }
 	
 

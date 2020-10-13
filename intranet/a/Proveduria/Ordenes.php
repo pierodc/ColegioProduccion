@@ -16,67 +16,7 @@ $TituloPantalla = "Ordenes"; // Titulo contenido
 $Usuario = new Usuario($Usuario = "");
 $Alumno = new Alumno("");
 $ShopCart = new ShopCart($id = "");
-/*
-if(isset($_POST["time"])){
-	if(isset($_POST['id'])){ // UPDATE
-	
-		$sql = "UPDATE Inventario SET ";
-		
-		foreach($_POST as $clave => $valor) {
-			//$resultado .= "$clave = $valor <br>";	
 
-			if($clave != "id" and $clave != "time"){
-				$sql .= " $clave = '$valor',"; 
-			}
-			elseif($clave == "id"){
-				$sql .= " WHERE id = '$valor'";
-				
-			}
-						
-			
-		}
-		
-		$sql = str_replace(", WHERE"," WHERE ",$sql);
-		
-		//$resultado .= $sql;
-		
-	}  // UPDATE
-	else { // INSERT
-		
-		foreach($_POST as $clave => $valor) {
-				//$resultado .= "$clave = $valor <br>";	
-				
-				if($clave != "id" and $clave != "time") {
-					$Claves .= "$clave,";
-					$Valores .= "'$valor',";
-				}
-			
-			}
-			$Claves = substr($Claves,0,strlen($Claves)-1);
-			$Valores = substr($Valores,0,strlen($Valores)-1);
-			$sql = "INSERT INTO Inventario ($Claves) VALUES ($Valores)";
-			//$resultado .= $sql;
-		}// INSERT
-		
-		
-		$mysqli->query($sql);
-		//header("Location: ".$php_self);
-	} 
-	
-	
-	$col = array(2,2,2,6 ,6,3,3, 2,9,1);
-	
-if(isset($_GET['Sort'])){
-	$Sort = $_GET['Sort'];
-	setcookie("Sort", $Sort, time()+3600 ,"/");
-	header("Location: ".$php_self);
-}
-if($_COOKIE['Sort'] > ''){
-		$Sort  = $_COOKIE['Sort'];
-}
-//echo "<br><br><br><br>".$Sort;
-//$Alumno = new Alumno($CodigoAlumno);
-*/
 require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -125,7 +65,7 @@ SPAN.td
 	<span class="td">Pedido</span>
 	<span class="td">Pagado</span>
 	<span class="td">En Proceso</span>
-	<span class="td">Pend</span>
+	<span class="td"></span>
 	<span class="td">Status</span>
 	<span class="td">Alumnos</span>
 </div>
@@ -136,7 +76,7 @@ SPAN.td
 	 
 	$sql = "SELECT * FROM ShopCart 
 			GROUP BY id_user
-			ORDER BY id_user";
+			ORDER BY id";
 	//echo $sql;
 	 $RS = $mysqli->query($sql);
 	
@@ -172,13 +112,14 @@ SPAN.td
 					echo $pagados->num_rows;
 		?></span>
         <span class="td"><?
-				$enProceso = $ShopCart->view_pedidos(2 , $Usuario->id);
+				
+				$enProceso = $ShopCart->view_pedidos(11 , $Usuario->id);
 				if($enProceso->num_rows > 0)
 					echo $enProceso->num_rows;
 		?></span>
        <span class="td"><?
-				if($pedido->num_rows - $pagados->num_rows - $enProceso->num_rows > 0)
-					echo $pedido->num_rows - $pagados->num_rows - $enProceso->num_rows;
+				/*if($pedido->num_rows - $pagados->num_rows - $enProceso->num_rows > 0)
+					echo $pedido->num_rows - $pagados->num_rows - $enProceso->num_rows;*/
 		?></span>
        
        <span class="td"> <a href="PDF/pedido_Representante.php?Usuario=<?= $Usuario->view()["Usuario"]; ?>" target="_blank">Imprimir</a>

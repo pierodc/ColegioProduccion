@@ -138,7 +138,7 @@ $query_RS_Nota_Al = "SELECT * FROM Nota WHERE
 						Lapso= 'Def' AND 
 						Ano_Escolar='2019-2020'";
 $RS_Nota = $mysqli->query($query_RS_Nota_Al);
-echo $query_RS_Nota_Al ."<br>";
+echo $query_RS_Nota_Al ." 11 <br>";
 $row_Nota = $RS_Nota->fetch_assoc(); 
 unset($Nota_);
 $i = -4;
@@ -155,6 +155,8 @@ $Nota_[5] = $Nota_[6];
 $Nota_[6] = $Nota_[7];
 $Nota_[7] = $Nota_[8];
 
+$CodigoCurso = 	$row_Nota['CodigoCurso'];
+	
 if($CodigoCurso == 35 or $CodigoCurso == 36){ // 7mo
 	//$Nota_[12] = $Nota_[12];
 	$Nota_[13] = round( (($Nota_[9] + $Nota_[10] + $Nota_[11])/3) , 0);

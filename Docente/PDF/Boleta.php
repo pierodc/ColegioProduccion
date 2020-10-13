@@ -398,8 +398,23 @@ foreach($Listado as $Alumno) 	{
 				$Promedio_Anual = round($Sumatoria_Anual / $cuenta_Anual , 0);
 				$pdf->SetFont('Arial','B',14);
 				$pdf->SetX(25);
-				$pdf->Cell(140,$linea, "Definitiva del Año Escolar" ,$Borde,0,'R');
-				$pdf->Cell(30,$linea, $Promedio_Anual  ,$Borde,0,'C');
+				$pdf->Cell(140,$linea*2, "Definitiva del Año Escolar" ,$Borde,0,'R');
+				$pdf->Cell(30,$linea*2, $Promedio_Anual  ,$Borde,0,'C');
+				
+				
+				$sql = "DELETE * FROM Nota
+						WHERE CodigoAlumno = '$Alumno->id'
+						AND CodigoCurso = '$Curso->id'
+						AND Ano_Escolar = '$AnoEscolar'
+						AND Lapso = 'Def_Ministerio'";
+				$mysqli->query($sql);
+				
+				$sql = "INSERT INTO Nota
+						(CodigoAlumno, CodigoCurso, Ano_Escolar, Lapso, n01)
+						VALUES
+						('$Alumno->id','$Curso->id', '$AnoEscolar', 'Def_Ministerio', '$Promedio_Anual')";
+				$mysqli->query($sql);	
+				
 				}
 					
 			
