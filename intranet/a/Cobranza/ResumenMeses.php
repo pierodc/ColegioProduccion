@@ -10,7 +10,7 @@ $CodigoAlumno = $CodigoAlumno;
 ?>
 
 
-<table width="100%" border="0" cellspacing="1" cellpadding="1">
+<table class="sombra" >
       <tr class="ListadoInPar">
         <td width="100" rowspan="2" align="center"><a href="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>&Resumen2=<?php echo $_COOKIE['Resumen2']==1?0:1; ?>"><img src="http://<?= $_SERVER['SERVER_NAME'] ?>/i/order32.png" width="32" height="32"  /></a></td>
         <td rowspan="2" valign="top"><?php 

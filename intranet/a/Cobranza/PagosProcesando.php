@@ -25,7 +25,7 @@ $totalRows_RS_ContableMov_Procesando = $RS_ContableMov_Procesando->num_rows;
 if ($totalRows_RS_ContableMov_Procesando > 0) { // Show if recordset not empty 
 
 
-?><table width="100%" border="0" align="center">
+?><table >
      <caption>Pagos Procesando | <a href="Recibo_Crea_Cliente.php?CodigoAlumno=<?php echo $CodigoAlumno ?>&amp;CodigoPropietario=<?php echo $_GET['CodigoPropietario'] ?>">crea Nombre</a></caption>
       
 <!--tr>
@@ -73,10 +73,10 @@ if( $row_RS_ContableMov_Procesando['Referencia']>" ") {
 
 ?>
 <tr>
-  <td align="center" valign="middle" nowrap="nowrap" class="FondoCampo"></td>
-  <td colspan="2" align="right" valign="middle" nowrap="nowrap" class="FondoCampo">
+  <td  ></td>
+  <td colspan="2" bgcolor="#FFFFFF">
   
-  <table width="800" border="1" align="left">
+  <table class="sombra" >
   
     <tr>
     <td>&nbsp;</td>
@@ -124,8 +124,9 @@ if( $Privilegios == 91 ){
 	
 ?>	<a href="Contable_Modifica.php?Codigo=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" target="_blank"><?php echo "Ref: ".$row_RS_ContableMov_Procesando['Referencia'] ?></a> | <? 
 	
+		if($MM_Username == "piero"){
 ?>	<a href="Concilia.php?id=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" target="_blank">TEST</a><? 
-	
+								   }
 		
 }
 	  ?></td>
@@ -147,7 +148,7 @@ if( $Privilegios == 91 ){
   <?php } ?>
   
   
-  <tr  bgcolor="#CCCCCC">
+  <tr bgcolor="#FFFFFF">
     <td><?php 
 
 
@@ -167,10 +168,10 @@ if ($row_RS_ContableMov_Procesando['Fecha']==date('Y-m-d')){
     
          
            
-<table >
+<table class="sombra" >
           <tbody>
               <tr>
-                  <td colspan="5"><?php 
+                  <td colspan="4"><?php 
 
 if($row_RS_del_Banco['Fecha'] <> $row_RS_ContableMov_Procesando['Fecha'])	
 	echo "<b>".DDMMAAAA($row_RS_ContableMov_Procesando['Fecha'])."</b> "; 
@@ -188,37 +189,40 @@ echo Banco ($row_RS_ContableMov_Procesando['CodigoCuenta']);
                   <td nowrap="nowrap">Moneda&nbsp;</td>
                   <td nowrap="nowrap">Monto $&nbsp;</td>
                   <td nowrap="nowrap">Cambio&nbsp;</td>
-                  <td nowrap="nowrap">Tot Bs</td>
                   <td nowrap="nowrap">&nbsp;</td>
                   </tr>
               <tr>
-                  <td><? echo $row_RS_ContableMov_Procesando['SW_Moneda'] ?>&nbsp;</td>
-                  <td><? Campo_Edit ("ContableMov",$row_RS_ContableMov_Procesando['Codigo'],"MontoHaber_Dolares");  ?>&nbsp;</td>
-                  <td><? Campo_Edit ("ContableMov",$row_RS_ContableMov_Procesando['Codigo'],"Cambio_Dolar"); ?>&nbsp;</td>
-                   <td><?
-				  $Monto_Dolares_Pago = $row_RS_ContableMov_Procesando['MontoHaber_Dolares'] * $row_RS_ContableMov_Procesando['Cambio_Dolar'];
-					echo Fnum($Monto_Dolares_Pago);
+                  <td rowspan="2" valign="top"><? echo $row_RS_ContableMov_Procesando['SW_Moneda'] ?></td>
+                  <td valign="top"><? Campo_Edit ("ContableMov",$row_RS_ContableMov_Procesando['Codigo'],"MontoHaber_Dolares");  ?>&nbsp;</td>
+                  <td valign="top"><? Campo_Edit ("ContableMov",$row_RS_ContableMov_Procesando['Codigo'],"Cambio_Dolar"); ?>&nbsp;</td>
+                   <td valign="top"><?
+	
+				 
 				  ?>
-                  
-                 &nbsp;</td>
-                  <td><? 
+                       <? 
 	
 	
-	
+	$Monto_Dolares_Pago = $row_RS_ContableMov_Procesando['MontoHaber_Dolares'] * $row_RS_ContableMov_Procesando['Cambio_Dolar'];
 	
 	  if($Monto_Dolares_Pago > 0){ ?>
-                      <a href="ProcesaPago_Dolares.php?Procesar_Codigo=<?= $row_RS_ContableMov_Procesando['Codigo'] ?>&time=<?= time() ?>">Procesa Dolares <?= Fnum($row_RS_ContableMov_Procesando['MontoHaber_Dolares']) ?></a>
-                      <? } 
+                       <a href="ProcesaPago_Dolares.php?Procesar_Codigo=<?= $row_RS_ContableMov_Procesando['Codigo'] ?>&time=<?= time() ?>" class="button" >Procesa $ <?= Fnum($row_RS_ContableMov_Procesando['MontoHaber_Dolares']) ?></a>
+                       <? } 
 				 ?> 
-                 
-                 </td>
+                   </td>
+                  </tr>
+              <tr>
+                  <td colspan="3" align="right">&nbsp;Bs.<?
+					  
+echo Fnum($Monto_Dolares_Pago);
+					  
+					  ?></td>
                   </tr>
           </tbody>
 </table>
       
       
       </td>
-  <td align="right" bgcolor="#CCCCCC"><strong><?php 
+  <td ><strong><?php 
 	 
 echo "Bs ". Fnum($MontoIngresado); 
 if($row_RS_ContableMov_Procesando['Cambio_Dolar'] > 0)	
@@ -236,7 +240,7 @@ $SumaDePagos += $MontoIngresado;
   </form></td>
   </tr>
   
-  <tr><td colspan="5" align="center"><?
+  <tr><td colspan="5" align="center" bgcolor="#FFDFAD" ><?
 	  
 	   if($row_RS_ContableMov_Procesando['Observaciones'] > "")
 					echo "<b>".substr($row_RS_ContableMov_Procesando['Observaciones'],0,100)."</b>";
@@ -269,10 +273,8 @@ if ($row_RS_ContableMov_Procesando['Tipo']==1 or $row_RS_ContableMov_Procesando[
 	 } else { echo "."; } ?></td>
     <td colspan="3"><iframe src="Contable_Modifica_mini.php?Codigo=<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" height="25" width="100%" seamless scrolling="no" frameborder="0"></iframe>
     </td>
-    <td align="right"><a href="../Email/index.php?CodigoAlumno=<?= $Alumno->Codigo(); ?>&CodigoPago=<?= $row_RS_ContableMov_Procesando['Codigo']; ?>&Email=Pagos_a_Provincial" target="_blank">Email <br>
-      Pago a Prov</a><br><?  
-	  echo DDMM($row_RS_ContableMov_Procesando['FechaSolicitud']); 
-	  ?></td>
+    <td align="right"><a href="../Email/index.php?CodigoAlumno=<?= $Alumno->Codigo(); ?>&CodigoPago=<?= $row_RS_ContableMov_Procesando['Codigo']; ?>&Email=Pagos_a_Provincial" target="_blank">Email 
+      Pago a Prov</a></td>
     </tr>
 
 </table></td>
@@ -351,9 +353,9 @@ if ($Facturacion_Activa and $valido and false ){  //  and $MM_Username == "piero
     <img src="../../../i/card_debit.png" width="32" height="32" alt=""/>
     <?php } ?></td>
 </tr>
-<tr>
+<!--tr>
   <td colspan="5" class="NombreCampoTopeWin"><img src="../../../i/b.png" width="1" height="4" alt=""/></td>
-  </tr>
+  </tr-->
 <?php } while ($row_RS_ContableMov_Procesando = $RS_ContableMov_Procesando->fetch_assoc()); ?>
 
 <tr><td>&nbsp;</td><td align="right">&nbsp;<?= Fnum($SumaDePagos) ?></td>

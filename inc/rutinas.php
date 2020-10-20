@@ -277,7 +277,17 @@ function TelLimpia($Telefono){
 	return $Telefono;
 	
 	}
+
+function Whatsapp($Telefono , $Mensaje = ""){
+	$Telefono = TelLimpia($Telefono);
+	$Telefono = substr($Telefono,1,100);
 	
+	$Mensaje = str_replace(" ","%20",$Mensaje);
+	
+	echo "<a href=\"https://wa.me/58$Telefono?text=$Mensaje\" target=\"_blank\"> <img src=\"/i/whatsapp.png\"> </a>";
+	
+	//return $Whatsapp;
+}
 function TelFormat($Telefono){
 	$Telefono = TelLimpia($Telefono);
 	$Telefono = "(".substr($Telefono,0,4).") ".substr($Telefono,4,3)."-".substr($Telefono,7,2)."-".substr($Telefono,9,2);

@@ -1,5 +1,5 @@
 <form action="<?php echo $editFormAction; ?>#Pendiente" method="post" name="form1" id="form1">
-         <table width="100%" border="0" align="center" bordercolor="#333333">
+         <table class="sombra" >
           <caption>Registrar Pago</caption>
                <tr valign="baseline">
               <td width="10%" align="right" nowrap="nowrap" class="NombreCampo">

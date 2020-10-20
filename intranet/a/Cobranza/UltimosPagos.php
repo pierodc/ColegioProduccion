@@ -23,7 +23,7 @@ $RS = $mysqli->query($sql);
 if ($RS->num_rows > 0) { // Show if recordset not empty 
 
 
-?><table width="100%" border="1" align="center">
+?><table class="sombra">
 <tr>
   <td  colspan="8" class="subtitle">Últimos Pagos</td>
 </tr>

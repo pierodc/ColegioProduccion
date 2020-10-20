@@ -64,7 +64,7 @@ body {
 </head>
 
 <body><form action="<?php echo $editFormAction; ?>" method="post" name="form2" id="form2">
-  <table width="100%" border="0">
+<table width="90%" border="0">
 <caption>Asignaciones</caption>
             <tr>
               <td class="TituloLeftWindow">&nbsp;</td>

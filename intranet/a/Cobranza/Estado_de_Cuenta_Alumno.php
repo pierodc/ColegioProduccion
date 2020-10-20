@@ -664,7 +664,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 
 
 
-      <table width="100%" border="0">
+      <table class="sombra">
         <? if($SW_PantallaCompleta){ ?>
         <tr>
         <td width="15%" align="center" valign="top">
@@ -685,19 +685,28 @@ foreach($Familia as $id){ ?>
   		<? } ?>    
   <tr align="center" valign="top">        
        <td><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" target="_blank"><?php echo $row_RS_Alumno['Nombres']; ?> <?php echo $row_RS_Alumno['Nombres2']; ?><br />
-          <?php echo $row_RS_Alumno['Apellidos']; ?> <?php echo $row_RS_Alumno['Apellidos2']; ?></a></td>   
+        <?php echo $row_RS_Alumno['Apellidos']; ?> <?php echo $row_RS_Alumno['Apellidos2']; ?></a></td>   
       
-     <? if($SW_PantallaCompleta){ ?> 
+     <? if($SW_PantallaCompleta){ 
+	  
+	$Mensaje = "Estimado Sr. Representante, Le contacto de la administracion del colegio";
+	
+	  
+	  ?> 
       <td>&nbsp;<?php 
 		  $Repre = Repre($row_RS_Alumno['CodigoAlumno'] , "Padre");
 		  //echo "<div title=\"".$Repre['TelCel']."\">";
 		  echo Titulo_Mm($Repre['Nombres']).'<br>'.Titulo_Mm($Repre['Apellidos']);
+		  echo "<br>";
+		  echo Whatsapp($Repre['TelCel'],$Mensaje);
 		 // echo "</div>";
 		  ?></td>   
        <td>&nbsp;<?php 
 		  $Repre = Repre($row_RS_Alumno['CodigoAlumno'] , "Madre");
 		  //echo "<div title=\"".$Repre['TelCel']."\">";
 		  echo Titulo_Mm($Repre['Nombres']).'<br>'.Titulo_Mm($Repre['Apellidos']);
+		  echo "<br>";
+		  echo Whatsapp($Repre['TelCel'],$Mensaje);
 		  //echo "</div>";
 		  ?></td>   
        <td>&nbsp;<?php 
@@ -713,10 +722,10 @@ foreach($Familia as $id){ ?>
   </table>
     
 
-      <table width="100%">
+      <table class="sombra">
       <tr>
-        <td width="2%" rowspan="2"><a href="<?= $php_self ?>?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>"><img src="http://www.colegiosanfrancisco.com/img/Reload.png" width="31" height="27" border="0" align="absmiddle" /></a></td>
-        <td width="3%" rowspan="2"><span class="RTitulo"><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" target="_blank"><?php echo $row_RS_Alumno['CodigoAlumno']; ?></a></span></td>
+        <td rowspan="2"><a href="<?= $php_self ?>?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>"><img src="http://www.colegiosanfrancisco.com/img/Reload.png" width="31" height="27" border="0" align="absmiddle" /></a></td>
+        <td  rowspan="2"><span class="RTitulo"><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" target="_blank"><?php echo $row_RS_Alumno['CodigoAlumno']; ?></a></span></td>
         <td rowspan="2"></td>
         <td rowspan="2" align="center"><iframe src="../sms_caja.php?CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" width="600" height="50" frameborder="0"></iframe></td>
         <td align="right"><form id="form4" name="form4" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -738,10 +747,10 @@ foreach($Familia as $id){ ?>
  ?>
 
 
-<table width="100%" border="0">
+<table >
 
    
-     <tr>
+     <!--tr>
     <td nowrap="nowrap">&nbsp;</td>
     <td nowrap="nowrap">Anterior</td>
     <td nowrap="nowrap">2015-2016</td>
@@ -758,35 +767,17 @@ echo Curso($row_Curso_Actual['CodigoCurso']);
 
 
 	?></td>
-    <td align="left" nowrap="nowrap"><?
-    
-$ClaveCampo = 'CodigoAlumno';
-$ClaveValor = $CodigoAlumno;
-$Tabla = 'Alumno';
-
-
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Factura_Empresa',$row_RS_Alumno['SW_Factura_Empresa']);
-	
-	
-	?>
-      Factura Empresa | 
-      
-      <? if ($_COOKIE['PantallaCompleta'] == 1){ ?>
-     <a href="<?= $php_self ?>?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>&PantallaCompleta=0" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-th"></span> Pantalla Reducida</a>
-      <? }else{ ?>
-      <a href="<?= $php_self ?>?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>&PantallaCompleta=1" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-th"></span> Pantalla Completa</a>
-	  <? } ?>
-     
+    <td colspan="2" align="left" nowrap="nowrap">
       </td>
     <td align="center" nowrap="nowrap">&nbsp;</td>
     <td colspan="-2" align="right" nowrap>&nbsp;</td>
-  </tr>
+  </tr-->
   <tr>
-    <td width="7%" nowrap="nowrap">Curso</td>
-    <td width="6%" nowrap="nowrap">Actual</td>
-    <td width="6%" nowrap="nowrap"><?php echo $AnoEscolar.':'; ?>&nbsp;</td>
+    <td>Curso</td>
+    <td>Actual</td>
+    <td><?php echo $AnoEscolar.':'; ?>&nbsp;</td>
    
-<td width="24%" align="left" nowrap="nowrap"><form id="form6" name="form6" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>">
+<td ><form id="form6" name="form6" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>">
   <?php 
 
 $sql = "SELECT * FROM AlumnoXCurso 
@@ -829,7 +820,7 @@ if($CodigoCursoActual <> ''){
 	//}
 	echo ' '.$row_Curso_Actual['Status'].'';} ?>
 	</form></td>
-<td width="37%" align="left" nowrap="nowrap"><?php 
+<td ><?php 
 if($MM_UserGroup == 91 or $MM_UserGroup == 99 or $MM_UserGroup == 95)
 if($AnoEscolar == $AnoEscolarProx)
 if($SWinscrito_Actual){
@@ -850,11 +841,30 @@ if($SWinscrito_Actual){
 	?>
    <?php echo $AnoEscolar ?></a><a href="../Procesa.php?<?php echo 'Inscribir=1&CodigoAlumno='.$row_RS_Alumno['CodigoAlumno'].'&AnoEscolar='.$AnoEscolar; ?>" target="_blank">Inscribir <?php echo $AnoEscolar ?></a>
   <?php } ?></td>
+<td ><?
+    
+$ClaveCampo = 'CodigoAlumno';
+$ClaveValor = $CodigoAlumno;
+$Tabla = 'Alumno';
+
+
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Factura_Empresa',$row_RS_Alumno['SW_Factura_Empresa']);
+	
+	
+	?>
+      Factura Empresa | 
+      
+      <? if ($_COOKIE['PantallaCompleta'] == 1){ ?>
+     <a href="<?= $php_self ?>?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>&PantallaCompleta=0" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-th"></span> Pantalla Reducida</a>
+      <? }else{ ?>
+      <a href="<?= $php_self ?>?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>&PantallaCompleta=1" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-th"></span> Pantalla Completa</a>
+	  <? } ?>
+     </td>
       
       
       
       
-    <td width="16%" align="center" nowrap="nowrap">
+    <td >
  <?php 
 $_sql = "SELECT * FROM ContableMov 
  		 WHERE CodigoPropietario = $CodigoAlumno 
@@ -871,8 +881,10 @@ if($_totalRows==0 ){
         <?php } ?>
         
         </td>
-    <td width="4%" colspan="-2" align="right" nowrap>&nbsp;</td>
+    <td align="right" nowrap>Mercantil <?php echo round((time()-$FechaBanco["merc"]) / 3600 , 2 ) ?><br>Provincial <?php echo round((time()-$FechaBanco["prov"]) / 3600 , 2 ) ?>
+        </td>
   </tr>
+  <!--
   <tr>
     <td nowrap="nowrap">&nbsp;</td>
     <td nowrap="nowrap">Prox</td>
@@ -908,7 +920,7 @@ if($totalRows_RS_ > 0){
       <input type="submit" name="button4" id="button4" value="Cambiar" /><?php 	
 	  echo ' '.$row_Curso_Prox['Status'].'';} ?>
     </form><?php } ?></td>
-    <td align="left" nowrap="nowrap"><?php 
+    <td colspan="2" align="left" nowrap="nowrap"><?php 
 if($MM_UserGroup == 91 or $MM_UserGroup == 99)	
 if($AnoEscolar != $AnoEscolarProx )
 if($SWinscrito_Prox){
@@ -931,16 +943,13 @@ if($SWinscrito_Prox){
       <?php }}
 	  
 	   ?></td>
-    <td colspan="2" align="right" nowrap="nowrap">Mercantil <?php echo round((time()-$FechaBanco["merc"]) / 3600 , 2 ) ?><br>Provincial <?php echo round((time()-$FechaBanco["prov"]) / 3600 , 2 ) ?>
-    
-    
+    <td colspan="2" align="right" nowrap="nowrap">
+        
     </td>
     </tr>
-  <tr>
-    <td colspan="7" align="center">
-    
-    </td>
-  </tr>
+  -->
+   
+ 
 </table>
 
 
@@ -951,7 +960,7 @@ if($SWinscrito_Prox){
 
 
  <form id="form5" name="form5" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>">          
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <table>
       <caption>Agregar Factura</caption>
       
   
@@ -959,7 +968,7 @@ if($SWinscrito_Prox){
           <td rowspan="2" nowrap="nowrap" class="NombreCampo">Fecha:</td>
           <td rowspan="2" nowrap="nowrap" class="FondoCampo"><input name="FechaActividad" type="date" value="<?php echo date('Y-m-d') ?>" /></td>
         <td rowspan="2" nowrap="nowrap" class="NombreCampo"> Eventual: Descripci&oacute;n:</td>
-          <td width="38%" nowrap="nowrap" class="FondoCampo" ><span id="sprytextfield3">
+          <td  nowrap="nowrap" class="FondoCampo" ><span id="sprytextfield3">
             <label>
               <input name="Descripcion" type="text" id="Descripcion" value="<? echo $_POST['Descripcion']!="Abono a cuenta"?$_POST['Descripcion']:""; ?>" size="20" />
               </label>
@@ -993,17 +1002,17 @@ foreach($ReferenciaMesAno_array as $ReferenciaMesAno){
 
                 
                 
-          <td width="4%" rowspan="2" class="NombreCampo">IVA</td>
-          <td width="5%" rowspan="2" class="FondoCampo"><label>
+          <td  rowspan="2" class="NombreCampo">IVA</td>
+          <td  rowspan="2" class="FondoCampo"><label>
             <input name="SWiva" type="checkbox" id="SWiva" value="1"   />
           </label></td>
-          <td width="9%" rowspan="2" class="NombreCampo">Monto</td>
-          <td width="16%" rowspan="2" align="right" nowrap="nowrap" class="FondoCampo" >
+          <td  rowspan="2" class="NombreCampo">Monto</td>
+          <td  rowspan="2" align="right" nowrap="nowrap" class="FondoCampo" >
             Bs
               <input name="Monto" type="text" id="Monto" size="10" /><br>
               $<input name="MontoDebe_Dolares" type="text" id="MontoDebe_Dolares" size="10" />
             </td>
-          <td width="14%" rowspan="2" class="FondoCampo"><label>
+          <td  rowspan="2" class="FondoCampo"><label>
             <input type="submit" name="button3" id="button3" value="Agregar" onclick="this.disabled=true;this.form.submit();"  />
           </label></td>
         </tr>
@@ -1056,7 +1065,7 @@ $row_RS_Asignaciones_Curso = $RS_Asignaciones_Curso->fetch_assoc();
 <?php include("Pendiente.php"); 
 	
 if ($MM_Username == "piero"){
-	include("PagosProcesando2.php"); 
+	//include("PagosProcesando2.php"); 
 }
 	include("PagosProcesando.php"); 
 	include("RegistrarPago.php"); ?>
@@ -1073,7 +1082,7 @@ if ($MM_Username == "piero"){
 
 
 <?php if($SW_PantallaCompleta){ // Observacion_EdoCuenta ?>
-	 <iframe src="Observacion_EdoCuenta.php?CodigoAlumno=<?php echo $CodigoAlumno ?>" width="100%"></iframe>
+	 <iframe src="Observacion_EdoCuenta.php?CodigoAlumno=<?php echo $CodigoAlumno ?>" width="80%" seamless frameborder="0"></iframe>
 <? } ?>
 
 
@@ -1084,7 +1093,7 @@ if ($MM_Username == "piero"){
 
 
 <?php if($SW_PantallaCompleta){ // Asignacioens ?>
-<iframe src="Asignaciones_EdoCuenta.php?CodigoAlumno=<?php echo $CodigoAlumno ?>" width="100%"></iframe>
+<iframe src="Asignaciones_EdoCuenta.php?CodigoAlumno=<?php echo $CodigoAlumno ?>" width="80%" seamless frameborder="0"></iframe>
 <?php } ?>
 
 <p><a href="Historial_de_Pagos.php?CodigoPropietario=<?php echo $row_RS_Alumno['CodigoClave'] ?>&amp;CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank">Ver Historial de Pagos</a></p>

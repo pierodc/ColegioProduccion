@@ -115,9 +115,9 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
                  
                 <?php }
 				
-				if ($MM_Username == "piero"){ ?>
+				if ($MM_Username == "piero"){ ?>eeee
                 <a href="Procesa_Reversa_Factura.php?Procesar_Codigo=<?php echo $row_Recibos['CodigoRecibo']; ?>" target="_blank">Reversar</a>
-                <?php }?>
+                <?php } echo ".." . $MM_Username.".."; ?>
               </b></td>
             </tr> 
 
