@@ -222,6 +222,13 @@ if($NombreArchivo > "" and $NombreBanco > "" ){
 		//echo "<b>Fecha: $_Fecha <br>Ref: $_Ref <br>Tipo: $_Tipo <br>Descripcion: $_Descripcion <br>Monto: $_Monto </b><br><br>";
 		
 		
+		$_Descripcion = str_replace("QuickPay with Zelle payment from ","",$_Descripcion);
+		$_Descripcion = str_replace("QUICKPAY WITH ZELLE PAYMENT FROM ","",$_Descripcion);
+		$_Descripcion = str_replace("Zelle Transfer Conf# ","",$_Descripcion);
+		$_Descripcion = str_replace($_Ref,"",$_Descripcion);
+		
+		
+		
 		if($_Fecha > "2000-01-01"){
 			$Transaccion[++$i] = array("Cuenta_id"=>$Cuenta_id,
 									   "Fecha"=>$_Fecha,

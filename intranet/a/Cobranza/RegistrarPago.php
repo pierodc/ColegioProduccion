@@ -4,14 +4,28 @@
                <tr valign="baseline">
               <td width="10%" align="right" nowrap="nowrap" class="NombreCampo">
 Fecha</td>
-              <td width="40%" rowspan="2" align="left" nowrap="nowrap" class="FondoCampo"><input name="Fecha" type="date" id="Fecha" value="<?php echo date('Y-m-d') ?>" />
-              <span onClick="document.form1.FD_Fecha2.selectedIndex=<?php echo date('d')*1 ?>"> <-- hoy</span></td>
+              <td width="40%" align="left" nowrap="nowrap" class="FondoCampo"><input name="Fecha" type="date" id="Fecha" value="<?php echo date('Y-m-d') ?>" />
+              </td>
               <td width="10%" align="right" class="NombreCampo">Cash $</td>
               <td width="25%" class="FondoCampo"><input type="text" name="MontoHaber_Dolares" value="" size="15"  />
               <input type="hidden" name="Cambio_Dolar" value="<? echo $Cambio_Dolar_Hoy ?>" size="15"  /></td>
             </tr>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">&nbsp;</td>
+              <td width="40%" align="left" nowrap="nowrap" class="FondoCampo">
+              	<select name="RefZelle">
+              	
+              	<?
+				
+              	$Zelles = $Banco->view_tipo($tipo = "ZLL");
+				while($row = $Zelles->fetch_assoc()){
+					echo "<option value='".$row['Referencia']."'>";
+					echo $row['Referencia']." | ".$row['Haber']." | ".substr($row['Descripcion'],0,30)."  ";
+					echo "</option>";
+				}																 
+              	?>
+              	</select>
+              </td>
               <td width="10%" align="right" class="NombreCampo">Zelle $</td>
               <td width="40%" class="FondoCampo"><input type="text" name="MontoHaber_Dolares_Zelle" value="" size="15"  /></td>
             </tr>

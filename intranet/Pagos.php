@@ -497,7 +497,7 @@ if($totalRows >= 1){
     
     <tr <?= $Etiqueta_Class ?>>
 
-<td nowrap ><?php if ($row_Pendiente['RegistradoPor'] == $MM_Username){ ?>
+<td nowrap ><?php if ( $row_Pendiente['RegistradoPor'] == $MM_Username ){ ?>
 <a href="Pagos.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']."&EliminarMov=1&Codigo=".$row_Pendiente['Codigo'] ?>"><img src="../img/b_drop.png" alt="" width="16" height="16"></a>
 <?php }?></td>
 

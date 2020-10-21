@@ -116,7 +116,7 @@ SPAN.td
  <? 
 	
 	 
-	$RS = $Banco->view_tipo($tipo = "ZLL");
+	$RS = $Banco->view_tipo($tipo = "ZLL"); // ZLL NC TR
 	 
 	 
 	while ($row = $RS->fetch_assoc()){
@@ -124,6 +124,25 @@ SPAN.td
 		$Fondo = "";
 		if($_POST["id"] == $id) {
 			$Fondo = "verde"; }
+		
+		
+		// Coloca propietario a los mov del Zelle
+		/*
+		$sql = "SELECT * FROM `ContableMov` 
+				WHERE Observaciones LIKE '%$Referencia%'
+				OR Referencia LIKE '%$Referencia%'";
+		$RS2 = $mysqli->query($sql);
+		$row2 = $RS2->fetch_assoc();
+		$Conteo2 = $RS2->num_rows;
+		if($Conteo2 > 0){
+			$sql = "UPDATE Banco SET Propietario = '".$row2['CodigoPropietario']."'
+					WHERE id = '$id'";
+			$mysqli->query($sql);
+		}
+		else{$sql = "";}
+		*/
+		
+		
 		?>
 
     <form class="tr FondoCampo" method="post" action="#<?= $Ln ?>">
@@ -135,7 +154,7 @@ SPAN.td
         <span class="td <?= $Fondo ?>"><? echo substr($Descripcion,0,80) ; ?></span>
         <span class="td <?= $Fondo ?>"><? echo Fnum($Haber) ; ?></span>
         <span class="td <?= $Fondo ?>"><? echo Fnum($Debe) ; ?></span>
-        <span class="td <?= $Fondo ?>"><? Campo("Propietario","t",$Propietario,$Largo=20,$extra="") ; ?></span>
+        <span class="td <?= $Fondo ?>"><? Campo("Propietario","t",$Propietario,$Largo=20,$extra="") ; echo $sql; ?></span>
         <span class="td <?= $Fondo ?>"><? Campo("Observaciones","t",$Observaciones,$Largo=20,$extra="") ; ?></span>
         <span class="td <?= $Fondo ?>"><? echo $Registro_Por ; ?></span>
         <span class="td <?= $Fondo ?>"><? 
@@ -143,7 +162,12 @@ SPAN.td
 		Campo("Registro_Por","h",$MM_Username,$Largo=8,$extra="") ; 
 		Campo("id","h",$id,$Largo=8,$extra="") ; 
 		
-		Boton_Submit() ; ?></span>
+		Boton_Submit() ;
+		
+		$monto_usar = 100;
+		$Banco->Usar($id, $monto_usar ,1);	
+			
+			?></span>
         
        
         

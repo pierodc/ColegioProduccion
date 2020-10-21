@@ -7,8 +7,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 
-
 $Alumno = new Alumno($_GET["CodigoPropietario"], $AnoEscolar);
+$Banco = new Banco();
 
 $TituloPantalla = $Alumno->CodigoNombreApellido(); // Titulo contenido
 $TituloPagina   = $Alumno->CodigoNombreApellido(); // <title>

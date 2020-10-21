@@ -18,6 +18,15 @@ class Banco{
 				
 		}
 	
+	public function view_tipo($tipo = "", $disponible){ // ZLL NC
+		$sql = "SELECT * FROM Banco 
+				WHERE tipo = '$tipo' 
+				AND MontoUsado < Haber
+				ORDER BY Fecha DESC, id DESC";
+		$datos = $this->con->consultaRetorno($sql);
+		return $datos;
+	}
+	
 	public function view_all(){
 		$sql = "SELECT * FROM Banco WHERE Cuenta_id = '{$this->id}'";
 		$datos = $this->con->consultaRetorno($sql);
@@ -27,22 +36,46 @@ class Banco{
 		$sql = "SELECT * FROM Banco WHERE Cuenta_id = '{$this->id}' and Haber > 0";
 		$datos = $this->con->consultaRetorno($sql);
 		return $datos;
-		}
+	}
 	
 	public function Status(){
 		$sql = "SELECT * FROM Banco WHERE id = '{$this->id}'";
 		$datos = $this->con->consultaRetorno_row($sql);
 		return $datos['Status'];
-		}
+	}
 	
-	public function Busca($Referencia = "" , $Monto = ""){
+	public function Busca($Referencia = "" , $Monto = "" ){
 		$sql = "SELECT * FROM Banco 
 				WHERE Referencia LIKE '%$Referencia%'";
 		$datos = $this->con->consultaRetorno($sql);
 		return $datos;
-		}
+	}
 	
-	public function Existe($Tr){
+	public function Usar($id = "", $monto_usar = "", $SW_ejecuta = ""){
+		/*
+		Verifica si se puede aplicar el monto solicitado y ejecuta si SW_ejecuta = 1
+		*/
+		$sql = "SELECT * FROM Banco 
+				WHERE id = '$id'";
+		$datos = $this->con->consultaRetorno_row($sql);
+
+		$disponible = $datos['Haber'] - $datos['MontoUsado'];
+
+		if( $disponible >= $monto_usar ){
+			echo "Si se puede aplicar $monto_usar ";
+			echo $SW_ejecuta;
+		}
+		else{
+			echo "NOOO... quedan $disponible";
+
+		}
+
+	}
+	
+	
+	
+	
+	public function Existe($Tr){ // busca el mov, si no existe lo crea ... devuelve el id
 				
 		$sql = "SELECT * FROM Banco 
 				WHERE Cuenta_id = '".$Tr['Cuenta_id']."'
@@ -65,10 +98,10 @@ class Banco{
 			$datos = $this->con->consultaSimple($sql);
 			//echo  $sql . "<br>";
 			//echo "id: " . $datos->insert_id . "<br>";
-			return $this->Existe($Tr);
+			return $this->Existe($Tr); // Recurrente ... luego de crearlo
 		}
 			
-		}
+	}
 	
 	
 		
