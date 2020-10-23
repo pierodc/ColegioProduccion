@@ -932,7 +932,7 @@ foreach(array(1,2) as $grupo){
 			$pdf->SetFont('Arial','',8);
 			
 			$pdf->SetX($x);
-			$pdf->Cell(27.5 , $Ln , $num_Alum_Seccion , 1 , 0 , 'C' ); 
+			$pdf->Cell(27.5 , $Ln , $num_Alum_Pagina , 1 , 0 , 'C' ); // $num_Alum_Seccion
 			$pdf->Cell(27.5 , $Ln , $num_Alum_Pagina , 1 , 1 , 'C' ); //$num_Alum_Pag
 			
 			$num_Alum_Pagina = 0;
@@ -960,12 +960,12 @@ foreach(array(1,2) as $grupo){
 			$pdf->Cell(50 , $Ln , 'Director(a)' , $borde , 1 , 'C');
 			$pdf->Cell(50 , $Ln , 'Apellidos y Nombres:' , $borde , 1 , 'L');
 			
-			$pdf->Cell(50 , $Ln , '  ' . $Director_Nombre , $borde , 0 , 'L');
+			$pdf->Cell(50 , $Ln , ' ' . $Director_Nombre , $borde , 0 , 'L');
 			$pdf->Cell(53.5 , $Ln*4 , 'PLANTEL' , 'LRB' , 0 , 'C');
 			$pdf->Ln($Ln);
 			
 			$pdf->Cell(50 , $Ln , 'Número de C.I.:' , $borde , 1 , 'L');
-			$pdf->Cell(50 , $Ln , '  V '. $Director_CI , $borde , 1 , 'L');
+			$pdf->Cell(50 , $Ln , ' '. $Director_CI , $borde , 1 , 'L');
 			$pdf->Cell(50 , $Ln , 'Firma:' , $borde , 1 , 'L');
 			
 				

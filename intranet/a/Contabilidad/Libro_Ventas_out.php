@@ -2,7 +2,7 @@
 require_once('../../../Connections/bd.php'); 
 require_once('../../../inc/rutinas.php'); 
 //require_once('../../../inc/xls/excel.php'); 
-//echo "<pre>";
+////echo "<pre>";
 //var_dump($_POST);
 
 //$MM_authorizedUsers = "91;admin;Contable";
@@ -11,7 +11,7 @@ require_once('../../../inc/rutinas.php');
 function Decimal($Num , $Punto){	
 	if($Punto == "coma")
 		$Num = str_replace(".",",",$Num);
-	echo $Num;
+	return $Num;
 }
 
 $Ano = date('Y');
@@ -32,39 +32,41 @@ if (isset($_POST['MesAno'])) {
 		
 	$MesAno = $_POST['MesAno'];
 	
-	$query_RS_Control = "SELECT * FROM Recibo
-							WHERE Recibo.Fecha >= '".$MesAno."-01' 
+	$query_RS_Control = "SELECT * FROM Factura_Control, Recibo 
+							WHERE Factura_Control.Factura_Numero = Recibo.NumeroFactura
+							AND Recibo.Fecha >= '".$MesAno."-01' 
 							AND Recibo.Fecha <= '".$MesAno."-31' 
 							AND NumeroFactura > 0 
-							ORDER BY Recibo.Fecha, NumeroFactura";
+							ORDER BY Control_Numero"; //Recibo.Fecha,
 	//echo "1) ".$query_RS_Control.'<br>';					
 	$RS = $mysqli->query($query_RS_Control);
 	$row = $RS->fetch_assoc();
-	$NumeroFactura_0 = $row['NumeroFactura'];
-	//echo "2) ".$NumeroFactura_0.'<br>';
+	$Control_Numero_0 = $row['Control_Numero'];
+	//echo "2)Control_Numero_0 ".$Control_Numero_0.'<br>';
 	
 	
-	$query_RS_Control = "SELECT * FROM Recibo
-							WHERE Recibo.Fecha >= '".$MesAno."-01' 
+	$query_RS_Control = "SELECT * FROM Factura_Control, Recibo 
+							WHERE Factura_Control.Factura_Numero = Recibo.NumeroFactura
+							AND Recibo.Fecha >= '".$MesAno."-01' 
 							AND Recibo.Fecha <= '".$MesAno."-31'  
 							AND NumeroFactura > 0
-							ORDER BY NumeroFactura DESC";
+							ORDER BY Control_Numero DESC";
 	//echo "3) ".$query_RS_Control.'<br>';						
 	$RS = $mysqli->query($query_RS_Control);
 	$row = $RS->fetch_assoc();
-	$NumeroFactura_1 = $row['NumeroFactura'];
-	//echo "4) ".$NumeroFactura_1.'<br>';
+	$Control_Numero_1 = $row['Control_Numero'];
+	//echo "4)Control_Numero_1 ".$Control_Numero_1.'<br>';
 	
 	
 	$query_RS_Control = "SELECT * FROM Factura_Control
-							WHERE Factura_Numero >= $NumeroFactura_0
-							AND Factura_Numero <= $NumeroFactura_1 
+							WHERE Control_Numero >= $Control_Numero_0
+							AND Control_Numero <= $Control_Numero_1 
 							ORDER BY Control_Numero";
-		
+	/*	
 	$query_RS_Control_xx = "SELECT * FROM Factura_Control
 							WHERE Factura_Numero = $NumeroFactura_0
 							ORDER BY Control_Numero ASC";
-							
+	*/						
 							
 	//echo "5) ".$query_RS_Control.'<br>';					
 	$RS = $mysqli->query($query_RS_Control);
@@ -72,7 +74,7 @@ if (isset($_POST['MesAno'])) {
 	$Control_Numero_0 = $row['Control_Numero'];
 	
 	$query_RS_Control = "SELECT * FROM Factura_Control
-							WHERE Factura_Numero = $NumeroFactura_1
+							WHERE Control_Numero = $Control_Numero_1
 							ORDER BY Control_Numero DESC";
 	//echo "6) ".$query_RS_Control.'<br>';					
 	$RS = $mysqli->query($query_RS_Control);
@@ -80,10 +82,10 @@ if (isset($_POST['MesAno'])) {
 	$Control_Numero_1 = $row['Control_Numero'];
 	
 	
-	
+	/*
 	$Control_Numero_0 = $_POST['ControlInicial'];
 	$Control_Numero_1 = $_POST['ControlFinal'];
-							
+		*/					
 	$query_RS_Control = "SELECT * FROM Factura_Control
 							WHERE Control_Numero >= $Control_Numero_0
 							AND Control_Numero <= $Control_Numero_1 
@@ -91,8 +93,8 @@ if (isset($_POST['MesAno'])) {
 							
 	
 	$query_RS_Control = "SELECT * FROM Factura_Control
-							WHERE Factura_Numero >= $NumeroFactura_0
-							AND Factura_Numero <= $NumeroFactura_1 
+							WHERE Control_Numero >= $Control_Numero_0
+							AND Control_Numero <= $Control_Numero_1 
 							ORDER BY Control_Numero";
 	
 	
@@ -101,7 +103,7 @@ if (isset($_POST['MesAno'])) {
 	//echo "7) ".$query_RS_Control.'<br>';					
 							
 	$RS = $mysqli->query($query_RS_Control);
-	//echo $query_RS_Control;
+	////echo $query_RS_Control;
 }
 //
 
@@ -180,26 +182,29 @@ else { ?>
   
   $Punto = $_POST['Decimal'];
   
-  while ($row = $RS->fetch_assoc()) { 
-  
+  while ($row = $RS->fetch_assoc()) { // Factura_Control
+  	
+	/*  
 	$query_RS_Recibo = "SELECT * FROM Recibo
 						WHERE Fac_Num_Control = '".$row['Control_Numero']."'";
-	
+	*/
 	$query_RS_Recibo = "SELECT * FROM Recibo
 						WHERE NumeroFactura = '".$row['Factura_Numero']."'";
 						
-						
-	//echo $query_RS_Recibo;						
+	//print "NULA:". $SW_Nula .';';					
+	
+	  
+	  
 	$RS_Factura = $mysqli->query($query_RS_Recibo);
 	$row_RS_Recibos = $RS_Factura->fetch_assoc();
 
 
-    if ($row['SW_Nula'] == '0')
+    if ($row['SW_Nula'] == '1')
 	 	$SW_Nula = true;
 	else
 	 	$SW_Nula = false;
 
-
+	  
 	print ';';
 	if($row_RS_Recibos['Fecha'] > "2016-01-01")
 		print DDMMAAAA($row_RS_Recibos['Fecha']).';';
@@ -207,13 +212,15 @@ else { ?>
 		print DDMMAAAA("0000-00-00").';';
 		
 	if($SW_Nula) 
-		print $row_RS_Recibos['Fac_Rif'].';';
-	else 
 		print ';';
-	if($SW_Nula) 
-		print utf8_encode(ucwords(sinAcento(strtolower($row_RS_Recibos['Fac_Nombre'])) )) .';'; 
 	else 
+	    print $row_RS_Recibos['Fac_Rif'].';';
+	  
+	if($SW_Nula) 
 		print 'NULA;';
+	else 
+	    print utf8_encode(ucwords(sinAcento(strtolower($row_RS_Recibos['Fac_Nombre'])) )) .';'; 
+	  
 	print ';;;;';
 	
 	print $row['Factura_Numero'].';';
@@ -221,30 +228,38 @@ else { ?>
 	print ';;';
 	print '01-Reg;';
 	print ';';
-	if($SW_Nula) {
-			print Decimal($row_RS_Recibos['Base_Exe']+$row_RS_Recibos['Base_Imp']+$row_RS_Recibos['Monto_IVA'],$Punto).';'; }
-	else 
-			print '0;';		
+	if($SW_Nula) 
+		print '0;';
+	else
+		print Decimal($row_RS_Recibos['Base_Exe']+$row_RS_Recibos['Base_Imp']+$row_RS_Recibos['Monto_IVA'],$Punto).';'; 
+					
+		
 	print '0;';
-	if($SW_Nula) {
-			print Decimal($row_RS_Recibos['Base_Exe'],$Punto).';'; $Excento+=$row_RS_Recibos['Base_Exe'];}
-		else 
-			print '0;';		
+	  
+	if($SW_Nula) 
+		print "0;" ;
+	else
+		print Decimal($row_RS_Recibos['Base_Exe'],$Punto).';'; 
+	
+	$Excento+=$row_RS_Recibos['Base_Exe'];
+	
+		
 	print '0;';	
 	print '0;';
 
 
-if($SW_Nula) {
-		print Decimal($row_RS_Recibos['Base_Imp'],$Punto).';'; $Imponible+=$row_RS_Recibos['Base_Imp'];}
-	else 
-		print '0;';		
-	
+if($SW_Nula) 
+	print '0;';		
+else	
+	print Decimal($row_RS_Recibos['Base_Imp'],$Punto).';'; $Imponible+=$row_RS_Recibos['Base_Imp'];
+		
 	print '12%;';
 	
-if($SW_Nula) {
-		print Decimal($row_RS_Recibos['Monto_IVA'],$Punto).';'; $Iva+=$row_RS_Recibos['Monto_IVA'];}
-	else 
-		print '0;';		
+if($SW_Nula) 
+print '0;';	
+	  else
+		print Decimal($row_RS_Recibos['Monto_IVA'],$Punto).';'; $Iva+=$row_RS_Recibos['Monto_IVA']; 
+		
 	
 print ";0;8%;0;0;22%;0;0;0;;;;;;;;;;;;;;;;;;;";
 print "\n";	

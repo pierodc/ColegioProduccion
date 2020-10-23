@@ -1,17 +1,20 @@
 <div id="PagosProcesando"><?php 
-
+/*
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
+*/
 //header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 
-
+$Banco = new Banco($id);
+	
 $query_RS_ContableMov_Procesando = "SELECT * FROM ContableMov 
 									WHERE CodigoPropietario = '$CodigoAlumno' 
-									AND (MontoHaber > 0 or MontoHaber_Dolares > 0 )
+									AND (MontoHaber > 0 or MontoHaber_Dolares > 0  )
+									
 									AND CodigoRecibo = 0 
-									ORDER BY Fecha ASC, Codigo ASC";
+									ORDER BY Fecha ASC, Codigo ASC"; //AND id_Banco < 1
 											
 echo $Insp ?  $query_RS_ContableMov_Procesando." (11)<br>" : "";
 
@@ -182,7 +185,9 @@ echo FormaDePago($row_RS_ContableMov_Procesando['Tipo']).' '.$row_RS_ContableMov
 
 echo Banco ($row_RS_ContableMov_Procesando['CodigoCuenta']);
 
- 
+$Banco_row = $Banco->view($row_RS_ContableMov_Procesando['id_Banco']);
+echo $Banco_row['Referencia'];	
+	
  ?>&nbsp;</td>
                   </tr>
               <tr>

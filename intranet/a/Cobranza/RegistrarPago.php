@@ -13,18 +13,9 @@ Fecha</td>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">&nbsp;</td>
               <td width="40%" align="left" nowrap="nowrap" class="FondoCampo">
-              	<select name="RefZelle">
               	
-              	<?
-				
-              	$Zelles = $Banco->view_tipo($tipo = "ZLL");
-				while($row = $Zelles->fetch_assoc()){
-					echo "<option value='".$row['Referencia']."'>";
-					echo $row['Referencia']." | ".$row['Haber']." | ".substr($row['Descripcion'],0,30)."  ";
-					echo "</option>";
-				}																 
-              	?>
-              	</select>
+              	<? $Banco->Select_movimientos ($tipo = "ZLL"); ?>
+              	
               </td>
               <td width="10%" align="right" class="NombreCampo">Zelle $</td>
               <td width="40%" class="FondoCampo"><input type="text" name="MontoHaber_Dolares_Zelle" value="" size="15"  /></td>

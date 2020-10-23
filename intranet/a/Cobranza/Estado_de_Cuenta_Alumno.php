@@ -20,7 +20,7 @@ $TituloPagina   = $Alumno->CodigoNombreApellido(); // <title>
 $Ano1 = $AnoA = substr($AnoEscolar , 2 , 2);
 $Ano2 = $AnoB = substr($AnoEscolar , 7 , 2);
 
-
+ 
 // Activa Inspeccion
 $Insp = false ;
 $UltimoTipo = $_COOKIE['UltimoTipo'];
@@ -149,11 +149,12 @@ if ($CodidoBuscando > 0){
 
 
 // Apuntador misma pagina
+/*
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']); 
 }
-
+*/
 
 
 
@@ -180,7 +181,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 		$Tipo = "9";
 		$MontoHaber_Dolares = $_POST['MontoHaber_Dolares'];
 		}					
-	elseif ($_POST['MontoHaber_Dolares_Zelle'] > 0) {
+	elseif ($_POST['MontoHaber_Dolares_Zelle'] > 0 or $id_Banco > 0) {
 		$SW_Moneda = "D";
 		$CodigoCuenta = "6";
 		$Tipo = "8";
@@ -198,11 +199,12 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 	
 	
 	
-	$insertSQL = sprintf("INSERT INTO ContableMov (Observaciones, CodigoCuenta, CodigoPropietario, CodigoReciboCliente, Tipo, Fecha, Referencia, ReferenciaOriginal, ReferenciaBanco, Descripcion, MontoDebe_Dolares, MontoDebe, MontoHaber, MontoHaber_Dolares, Cambio_Dolar, RegistradoPor, MontoDocOriginal, SW_Moneda) 
+	$insertSQL = sprintf("INSERT INTO ContableMov (id_Banco, Observaciones, CodigoCuenta, CodigoPropietario, CodigoReciboCliente, Tipo, Fecha, Referencia, ReferenciaOriginal, ReferenciaBanco, Descripcion, MontoDebe_Dolares, MontoDebe, MontoHaber, MontoHaber_Dolares, Cambio_Dolar, RegistradoPor, MontoDocOriginal, SW_Moneda) 
 	
-	VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+	VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
     
 						 
+	                   GetSQLValueString($_POST['id_Banco'], "int"),
 	                   GetSQLValueString($_POST['Observaciones'], "text"),
                        GetSQLValueString($CodigoCuenta, "int"),
                        GetSQLValueString($_POST['CodigoPropietario'], "int"),
@@ -221,7 +223,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 					   GetSQLValueString($_POST['RegistradoPor'], "text"),
 					   GetSQLValueString($_POST['MontoDocOriginal'], "double"),
 					   GetSQLValueString($SW_Moneda, "text"));
-	//echo "<br><br><br><br><br>" . $insertSQL;
+	echo "<br><br><br><br><br>" . $insertSQL;
 	$mysqli->query($insertSQL);
 	$mensaje = "";
 }
@@ -1064,10 +1066,14 @@ $row_RS_Asignaciones_Curso = $RS_Asignaciones_Curso->fetch_assoc();
                  
 <?php include("Pendiente.php"); 
 	
-if ($MM_Username == "piero"){
-	//include("PagosProcesando2.php"); 
-}
 	include("PagosProcesando.php"); 
+	
+if ($MM_Username == "piero"){
+	include("PagosProcesando2.php"); 
+}
+	
+	
+	
 	include("RegistrarPago.php"); ?>
 
 

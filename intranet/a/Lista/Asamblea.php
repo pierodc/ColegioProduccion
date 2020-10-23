@@ -136,12 +136,12 @@ if( $_GET['Todo']==1 ){ // Asigna numero a las familias Y ASigna '1' a Principal
 		
 }
 
-
+/*
 if(isset($_GET['Todo'])){
 	$add_SQL_5 = " AND Curso.NivelCurso <= '45' ";}
 else{
 	$add_SQL_5 = " AND Curso.NivelCurso <= '44' ";}
-
+*/
 
 $sql = "SELECT * FROM Alumno , AlumnoXCurso, Curso 
 		WHERE Alumno.CodigoAlumno = AlumnoXCurso.CodigoAlumno 
@@ -156,6 +156,8 @@ $RS = mysql_query($sql, $bd) or die(mysql_error());
 $row = mysql_fetch_assoc($RS);
 //	AND AlumnoXCurso.CodigoCurso <= 42 
  
+
+
 do{
 	extract($row);
 	$pdf->SetFont('Arial','',12);

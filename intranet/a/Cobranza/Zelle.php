@@ -127,6 +127,7 @@ SPAN.td
 		
 		
 		// Coloca propietario a los mov del Zelle
+		// Activar en timpo de transicion
 		/*
 		$sql = "SELECT * FROM `ContableMov` 
 				WHERE Observaciones LIKE '%$Referencia%'

@@ -18,7 +18,7 @@ class Banco{
 				
 		}
 	
-	public function view_tipo($tipo = "", $disponible){ // ZLL NC
+	public function view_tipo($tipo = ""){ // ZLL NC
 		$sql = "SELECT * FROM Banco 
 				WHERE tipo = '$tipo' 
 				AND MontoUsado < Haber
@@ -32,6 +32,12 @@ class Banco{
 		$datos = $this->con->consultaRetorno($sql);
 		return $datos;
 		}
+	public function view($id){
+		$sql = "SELECT * FROM Banco WHERE id = '$id'";
+		$datos = $this->con->consultaRetorno_row($sql);
+		return $datos;
+		}
+	
 	public function view_all_Haber(){
 		$sql = "SELECT * FROM Banco WHERE Cuenta_id = '{$this->id}' and Haber > 0";
 		$datos = $this->con->consultaRetorno($sql);
@@ -104,6 +110,19 @@ class Banco{
 	}
 	
 	
+	
+	public function Select_movimientos ($tipo = "ZLL"){
+		echo '<select name="id_Banco">';
+		$Zelles = $this->view_tipo($tipo);
+		echo '<option value="0">Seleccione ...</option>';
+		echo '<option value="0"></option>';
+		while($row = $Zelles->fetch_assoc()){
+			echo "<option value='".$row['id']."'>";
+			echo DDMMAAAA($row['Fecha'])." | ".$row['Referencia']." | ".substr($row['Descripcion'],0,30)." | ".$row['Haber']."  ";
+			echo "</option>";
+		}					
+		echo '</select>';
+	}
 		
 
 		

@@ -124,9 +124,8 @@ if( isset($_GET['doLogout']) and $_GET['doLogout']='true'){
 <!-- (0212) 285.78.72 / 285.69.33 / 286.04.37 / 284.05.20  -->
 </strong></p>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><a href="https://www.dropbox.com/s/1a3o9sbx8qzbyo7/PasosParaIngresarEnElProceso.pdf?dl=0" class="xbig" target="_blank">Correo institucional Alumno <br>
-</a>Las cuentas las crea el servidor del colegio, <strong>no debe crearla</strong><br>
+<p class="xbig " >Correo institucional Alumno </p>
+<p >    Las cuentas las crea el servidor del colegio, <strong>no debe crearla</strong><br>
     Debe ingresar a la siguiente direcci&oacute;n:<br>
     <a href="http://correo.colegiosanfrancisco.com">correo.colegiosanfrancisco.com</a><br>
     Usuario: NombreApellido@ColegioSanFrancisco.com<br>
