@@ -1,8 +1,6 @@
 <?php 
 $MM_authorizedUsers = "";
-require_once('../inc_login_ck.php'); 
-require_once('../Connections/bd.php'); 
-require_once('../inc/rutinas.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 // *** Redirect if username exists
 $MM_flag="MM_insert";
@@ -58,9 +56,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form")) {
                        GetSQLValueString($ComoLlego, "text"),
                        GetSQLValueString($ActividadesExtra, "text"));
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
-
+  //mysql_select_db($database_bd, $bd);
+  //$Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+	$Result1 = $mysqli->query($insertSQL);
+	
+	
   $insertGoTo = "../index.php?registroOK=1";
   if (isset($_SERVER['QUERY_STRING'])) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
@@ -114,39 +114,35 @@ body {
 <table width="1025" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
 <tr>
 		<td bgcolor="#FFF8E8">
-			<img src="../n/images/index_01.jpg" width="31" height="191" alt=""></td>
+			<img src="/img/index_01.jpg" width="31" height="191" alt=""></td>
 		<td bgcolor="#FFFFFF">
-			<img src="../n/images/TitSol.jpg" width="197" height="191" alt=""></td>
+			<img src="/img/TitSol.jpg" width="197" height="191" alt=""></td>
 		<td bgcolor="#0A1B69">
-			<img src="../n/images/TituloAzul.jpg" width="766" height="191" alt="Colegio San Francisco de Asis"></td>
+			<img src="/img/TituloAzul.jpg" width="766" height="191" alt="Colegio San Francisco de Asis"></td>
 		<td bgcolor="#FFF8E8">
-			<img src="../n/images/index_04.jpg" width="31" height="191" alt=""></td>
+			<img src="/img/index_04.jpg" width="31" height="191" alt=""></td>
   </tr>
 	<tr>
 		<td colspan="4">
-			<img src="../n/images/index_05.jpg" width="1025" height="7" alt=""></td>
+			<img src="/img/index_05.jpg" width="1025" height="7" alt=""></td>
 	</tr>
 	<tr>
 		<td>
-			<img src="../n/images/index_06.jpg" width="31" height="68" alt=""></td>
+			<img src="/img/index_06.jpg" width="31" height="68" alt=""></td>
 		<td bgcolor="#F3F3F3">&nbsp;</td>
-		<td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="765" height="67">
-          <param name="movie" value="../n/flash/botonera-principal.swf">
-          <param name="quality" value="high">
-          <embed src="../n/flash/botonera-principal.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="765" height="67"></embed>
-	    </object></td>
+		<td>&nbsp;</td>
   <td bgcolor="#FFF8E8">
-			<img src="../n/images/index_09.jpg" width="31" height="68" alt=""></td>
+			<img src="/img/index_09.jpg" width="31" height="68" alt=""></td>
 	</tr>
 	<tr>
 		<td colspan="4">
-			<img src="../n/images/index_10.jpg" width="1025" height="6" alt=""></td>
+			<img src="/img/index_10.jpg" width="1025" height="6" alt=""></td>
 	</tr>
 	<tr>
 		<td colspan="4" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="31" bgcolor="#FFF8E8">&nbsp;</td>
-            <td colspan="2"><?php include('../inc_login.php'); ?></td>
+            <td colspan="2"><?php //include('../inc_login.php'); ?></td>
             <td width="31" bgcolor="#FFF8E8">&nbsp;</td>
           </tr>
           <tr>
@@ -342,14 +338,14 @@ var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {validat
   </tr>
 	<tr>
 		<td colspan="4" bgcolor="#FFFFFF">
-			<img src="../n/images/Pie1.jpg" width="1025" height="9" alt=""></td>
+			<img src="/img/Pie1.jpg" width="1025" height="9" alt=""></td>
 	</tr>
 	<tr>
 		<td bgcolor="#0A1B69">
-			<img src="../n/images/PieA.jpg" width="31" height="58" alt=""></td>
+			<img src="/img/PieA.jpg" width="31" height="58" alt=""></td>
 		<td colspan="2" align="center" bgcolor="#0A1B69"><strong class="medium"><font color="#FFFFFF">Todos los derechos reservados Colegio San Francisco de As&iacute;s &copy; 2010</font></strong></td>
 <td bgcolor="#0A1B69">
-			<img src="../n/images/PieB.jpg" width="31" height="58" alt=""></td>
+			<img src="/img/PieB.jpg" width="31" height="58" alt=""></td>
 	</tr>
 </table>
 <!-- End ImageReady Slices -->

@@ -1,23 +1,26 @@
 <?php 
 $MM_authorizedUsers = "";
-require_once('../inc_login_ck.php'); 
-require_once('../Connections/bd.php'); 
-require_once('a/archivo/Variables.php'); 
-require_once('../inc/rutinas.php'); 
-
-require_once('../inc/fpdf.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
+//require_once('../inc/fpdf.php'); 
 
 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 $colname_RS_Alumno = "1";
 if (isset($_GET['CodigoAlumno'])) {
-  $colname_RS_Alumno = (get_magic_quotes_gpc()) ? $_GET['CodigoAlumno'] : addslashes($_GET['CodigoAlumno']);
+  $colname_RS_Alumno = $_GET['CodigoAlumno'] ;
 }
 
 $query_RS_Alumno = sprintf("SELECT * FROM Alumno WHERE CodigoClave = '%s' ", $colname_RS_Alumno);
-$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
-$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
+$RS_Alumno = $mysqli->query($query_RS_Alumno); //
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+//$Conteo = $RS_Alumno->num_rows;
+
+
+//$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
+//$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 $MM_Username = $row_RS_Alumno['Creador'];
 $CodigoAlumno = $row_RS_Alumno['CodigoAlumno'];
 
@@ -25,12 +28,12 @@ $CodigoAlumno = $row_RS_Alumno['CodigoAlumno'];
 extract($row_RS_Alumno);
 
 // Cambia planilla impresa 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query = "UPDATE Alumno SET 
 			Fecha_Planilla_Impresa = '".date('Y-m-d')."',
 			SW_Planilla_Impresa = '1'  
 			WHERE CodigoClave = $CodigoAlumno";
-$rs = mysql_query($query, $bd) or die(mysql_error());
+$rs = $mysqli->query($query); //mysql_query($query, $bd) or die(mysql_error());
 // fin Cambia  planilla impresa
 
 
@@ -48,9 +51,14 @@ $totalRows_RS_Curso = mysql_num_rows($RS_Curso);
 $sql = "SELECT * FROM AlumnoXCurso 
 		WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
 		AND Ano='".$AnoEscolarProx."' ";
-$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-$row_RS = mysql_fetch_assoc($RS_sql);
-$totalRows_RS = mysql_num_rows($RS_sql);
+$RS_sql = $mysqli->query($sql); //
+$row_RS = $RS_sql->fetch_assoc();
+$totalRows_RS = $RS_sql->num_rows;
+
+
+//$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
+//$row_RS = mysql_fetch_assoc($RS_sql);
+//$totalRows_RS = mysql_num_rows($RS_sql);
 
 /*
 if($row_RS['Status'] == 'Solicitando'){
@@ -65,15 +73,23 @@ $sql_AlumnoXCurso = "SELECT * FROM AlumnoXCurso WHERE
 					Ano = '$AnoEscolarProx'
 					
 					";
-$RS_AlumnoXCurso = mysql_query($sql_AlumnoXCurso, $bd) or die(mysql_error());
-$row_RS_AlumnoXCurso = mysql_fetch_assoc($RS_AlumnoXCurso);
+
+$RS_AlumnoXCurso = $mysqli->query($sql_AlumnoXCurso); //
+$row_RS_AlumnoXCurso = $RS_AlumnoXCurso->fetch_assoc();
+
+
+//$RS_AlumnoXCurso = mysql_query($sql_AlumnoXCurso, $bd) or die(mysql_error());
+//$row_RS_AlumnoXCurso = mysql_fetch_assoc($RS_AlumnoXCurso);
 
 $sql_Curso_Alum = "SELECT * FROM Curso WHERE 
 					CodigoCurso = '".$row_RS_AlumnoXCurso['CodigoCurso']."' ";
+$RS_Curso_al = $mysqli->query($sql_Curso_Alum); //
+$row_RS_Curso_al = $RS_Curso_al->fetch_assoc();
+/*
 $RS_Curso_al = mysql_query($sql_Curso_Alum, $bd) or die(mysql_error());
 $row_RS_Curso_al = mysql_fetch_assoc($RS_Curso_al);
 
-
+*/
 
 
 $pdf=new FPDF('P', 'mm', 'Letter');
@@ -228,9 +244,16 @@ $sql_hnos = "SELECT * FROM AlumnoXCurso, Alumno
 				AND AlumnoXCurso.Ano = '$AnoEscolar' 
 				AND AlumnoXCurso.Status = 'Inscrito' 
 				";
+
+$RS_sql_hnos = $mysqli->query($sql_hnos); //
+$row_RS_hnos = $RS_sql_hnos->fetch_assoc();
+$totalRows_RS_hnos = $RS_sql_hnos->num_rows;
+
+
+/*
 $RS_sql_hnos = 	mysql_query($sql_hnos, $bd) or die(mysql_error());
 $row_RS_hnos = mysql_fetch_assoc($RS_sql_hnos);
-$totalRows_RS_hnos = mysql_num_rows($RS_sql_hnos);
+$totalRows_RS_hnos = mysql_num_rows($RS_sql_hnos);*/
 $hnos='';
 if($totalRows_RS_hnos>0){
 	do{
@@ -300,14 +323,18 @@ $query_RS_Padre = "SELECT * FROM RepresentanteXAlumno, Representante
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Representante.CodigoRepresentante
 					AND RepresentanteXAlumno.Nexo = '$Padre'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumno['CodigoAlumno']."'";
-					
+
+
+$RS_Padre = $mysqli->query($query_RS_Padre); //
+$row_RS_Padre = $RS_Padre->fetch_assoc();	
+	/*
 $RS_Padre = mysql_query($query_RS_Padre, $bd) or die(mysql_error());
 $row_RS_Padre = mysql_fetch_assoc($RS_Padre);
-
+*/
 
 LetraTit($pdf);
 $pdf->Cell(85 , $Ln2+$Ln1 , 'Datos del '.$Padre , 0 , 0 , 'L'); 
-if(strpos('s',$row_RS_Padre['SWrepre'])>=0) {
+if(strpos("s", "  ".$row_RS_Padre["SWrepre"] )>=0) {
 	$Repre = 'SI'; 
     } else $Repre = 'NO';
 
@@ -385,10 +412,16 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Representante
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND Representante.Creador = '$MM_Username'";
 					//echo $query_RS_Rp;
+	
+
+$RS_Rp = $mysqli->query($query_RS_Rp); //
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;
+	/*
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
 $totalRows_RS_Rp = mysql_num_rows($RS_Rp);
-
+*/
 if ($totalRows_RS_Rp > 0) {
 		LetraPeq($pdf);
 		$pdf->Cell(160 , $Ln1 , $Nexo , $borde1 , 1 , 'L'); 
@@ -421,9 +454,13 @@ $query_RS_Abu = "SELECT * FROM RepresentanteXAlumno, Abuelos
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Abuelos.CodigoAbuelo
 					AND RepresentanteXAlumno.Nexo = '$abu'
 					AND Abuelos.Creador = '$MM_Username'";
+
+$RS_Abu = $mysqli->query($query_RS_Abu); //
+$row_RS_Abu = $RS_Abu->fetch_assoc();	
+	/*
 $RS_Abu = mysql_query($query_RS_Abu, $bd) or die(mysql_error());
 $row_RS_Abu = mysql_fetch_assoc($RS_Abu);
-
+*/
 $pdf->Cell(60 , $Ln1+1 , T_Tit($row_RS_Abu['Apellidos']).' '.T_Tit($row_RS_Abu['Nombres']) , $borde , 0 , 'L'); 
 $pdf->Cell(40 , $Ln1+1 , T_Tit($row_RS_Abu['LugarDeNacimiento']).' ('.T_Tit($row_RS_Abu['PaisDeNacimiento']).')' , $borde , 0 , 'L'); 
 $pdf->Cell(8 , $Ln1+1 , $row_RS_Abu['Vive'] , $borde , 0 , 'C'); 
@@ -557,7 +594,7 @@ Una vez que haya superado el proceso de ingreso se le notificará por teléfono, U
 
 $pdf->Output();
 
-
+/*
 mysql_free_result($RS_Alumnos);
 
 mysql_free_result($RS_Representante);
@@ -578,5 +615,5 @@ mysql_free_result($RS_AbuelaMaterna);
 
 mysql_free_result($RS_Alumno);
 
-mysql_free_result($RS_Curso);
+mysql_free_result($RS_Curso);*/
 ?>

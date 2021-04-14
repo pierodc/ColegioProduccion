@@ -9,6 +9,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php');
 
 $Alumno = new Alumno($_GET["CodigoPropietario"], $AnoEscolar);
 $Banco = new Banco();
+$Curso = new Curso($Alumno->CodigoCurso());
+
+$MM_Username = $_COOKIE['MM_Username'];
 
 $TituloPantalla = $Alumno->CodigoNombreApellido(); // Titulo contenido
 $TituloPagina   = $Alumno->CodigoNombreApellido(); // <title>
@@ -171,59 +174,73 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 					
 	$Tipo = $_POST['Tipo'];
 	$CodigoCuenta = $_POST['CodigoCuenta'];
-					
+	$Referencia = $_POST['Referencia'];
+	$MontoDocOriginal = $_POST['MontoDocOriginal'];
+	$MontoHaber_Dolares = $_POST['MontoHaber_Dolares_Zelle'];		
+	$id_Banco = $_POST['id_Banco'];
+	$Observaciones = $_POST['Observaciones'];
+	$Fecha = $_POST['Fecha'];
+	
 	if ($_POST['MontoHaber'] > 0) {
 		$SW_Moneda = "B";
-		}	
+	}	
 	elseif ($_POST['MontoHaber_Dolares'] > 0) {
 		$SW_Moneda = "D";
 		$CodigoCuenta = "7";
 		$Tipo = "9";
 		$MontoHaber_Dolares = $_POST['MontoHaber_Dolares'];
-		}					
+	}					
 	elseif ($_POST['MontoHaber_Dolares_Zelle'] > 0 or $id_Banco > 0) {
 		$SW_Moneda = "D";
 		$CodigoCuenta = "6";
 		$Tipo = "8";
-		$MontoHaber_Dolares = $_POST['MontoHaber_Dolares_Zelle'];
-		}					
-	
+		if($id_Banco > 0){
+			$zelle = $Banco->view($id_Banco);
+			$Referencia = $zelle['Referencia'];
+			$MontoDocOriginal = $zelle['MontoDocOriginal'];
+			$Fecha = $zelle['Fecha'];
+			$Observaciones .= $zelle['Referencia'] . " " . $zelle['Descripcion'];
+			if($_POST['MontoHaber_Dolares_Zelle'] < 1){
+				$MontoHaber_Dolares = $zelle['Haber'];	
+			}
+		}
+		
+		
+		
+		
+	}				
 	
 	$MontoHaber = coma_punto($_POST['MontoHaber']);			 
 	if ($MontoHaber == ""){
 		$MontoHaber = $MontoHaber * $_POST['Cambio_Dolar'];
-		
 	}					 
 	
 	
 	
 	
+	$insertSQL = sprintf("INSERT INTO ContableMov (id_Banco, Observaciones, CodigoCuenta, CodigoPropietario, CodigoReciboCliente, Tipo, Fecha, Referencia, ReferenciaOriginal, ReferenciaBanco, Descripcion, MontoHaber, MontoHaber_Dolares, Cambio_Dolar, RegistradoPor, MontoDocOriginal, SW_Moneda) 
 	
-	$insertSQL = sprintf("INSERT INTO ContableMov (id_Banco, Observaciones, CodigoCuenta, CodigoPropietario, CodigoReciboCliente, Tipo, Fecha, Referencia, ReferenciaOriginal, ReferenciaBanco, Descripcion, MontoDebe_Dolares, MontoDebe, MontoHaber, MontoHaber_Dolares, Cambio_Dolar, RegistradoPor, MontoDocOriginal, SW_Moneda) 
-	
-	VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+	VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
     
 						 
-	                   GetSQLValueString($_POST['id_Banco'], "int"),
-	                   GetSQLValueString($_POST['Observaciones'], "text"),
+	                   GetSQLValueString($id_Banco, "int"),
+	                   GetSQLValueString($Observaciones, "text"),
                        GetSQLValueString($CodigoCuenta, "int"),
                        GetSQLValueString($_POST['CodigoPropietario'], "int"),
                        GetSQLValueString($_POST['CodigoReciboCliente'], "text"),
                        GetSQLValueString($Tipo, "text"),
-                       GetSQLValueString($_POST['Fecha'], "date"),
-                       GetSQLValueString($_POST['Referencia'], "text"),
-                       GetSQLValueString($_POST['Referencia'], "text"),
-                       GetSQLValueString($_POST['ReferenciaBanco'], "text"),
+                       GetSQLValueString($Fecha, "date"),
+                       GetSQLValueString($Referencia, "text"),
+                       GetSQLValueString($Referencia, "text"),
+                       GetSQLValueString($Referencia, "text"),
                        GetSQLValueString($_POST['Descripcion'], "text"),
-                       GetSQLValueString(coma_punto($_POST['MontoDebe_Dolares']), "double"),
-                       GetSQLValueString(coma_punto($_POST['MontoDebe']), "double"),
                        GetSQLValueString($MontoHaber, "double"),
                        GetSQLValueString(coma_punto($MontoHaber_Dolares), "double"),
                        GetSQLValueString(coma_punto($_POST['Cambio_Dolar']), "double"),
-					   GetSQLValueString($_POST['RegistradoPor'], "text"),
+					   GetSQLValueString($MM_Username, "text"),
 					   GetSQLValueString($_POST['MontoDocOriginal'], "double"),
 					   GetSQLValueString($SW_Moneda, "text"));
-	echo "<br><br><br><br><br>" . $insertSQL;
+	//echo "<br><br><br><br><br>" . $insertSQL;
 	$mysqli->query($insertSQL);
 	$mensaje = "";
 }
@@ -234,7 +251,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
 
 // Divide_Pago
-
+/*
 if ((isset($_POST["Divide_Pago"])) && ($_POST["Divide_Pago"] == "Divide_Pago")) {
 
       $sql = "SELECT * FROM ContableMov WHERE Codigo = '".$_POST["Codigo"]."'";
@@ -274,7 +291,7 @@ if ((isset($_POST["Divide_Pago"])) && ($_POST["Divide_Pago"] == "Divide_Pago")) 
       }
 				
 }
-
+*/
 
 
 
@@ -349,10 +366,9 @@ $sqlAux = "SELECT NivelCurso , CodigoCurso
 			WHERE CodigoCurso = '$CodigoCurso' ";
 $RS_sql_Aux = $mysqli->query($sqlAux);
 $Aux = $RS_sql_Aux->fetch_assoc();
-$NivelCursoActual  = $Aux['NivelCurso'];
+//$NivelCursoActual  = $Aux['NivelCurso'];
 	
-	
-	
+$NivelCurso = $Curso->NivelCurso;
 
 
 
@@ -687,7 +703,7 @@ foreach($Familia as $id){ ?>
   		<? } ?>    
   <tr align="center" valign="top">        
        <td><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" target="_blank"><?php echo $row_RS_Alumno['Nombres']; ?> <?php echo $row_RS_Alumno['Nombres2']; ?><br />
-        <?php echo $row_RS_Alumno['Apellidos']; ?> <?php echo $row_RS_Alumno['Apellidos2']; ?></a></td>   
+    <?php echo $row_RS_Alumno['Apellidos']; ?> <?php echo $row_RS_Alumno['Apellidos2']; ?></a></td>   
       
      <? if($SW_PantallaCompleta){ 
 	  
@@ -724,7 +740,7 @@ foreach($Familia as $id){ ?>
   </table>
     
 
-      <table class="sombra">
+      <table class="">
       <tr>
         <td rowspan="2"><a href="<?= $php_self ?>?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>"><img src="http://www.colegiosanfrancisco.com/img/Reload.png" width="31" height="27" border="0" align="absmiddle" /></a></td>
         <td  rowspan="2"><span class="RTitulo"><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" target="_blank"><?php echo $row_RS_Alumno['CodigoAlumno']; ?></a></span></td>
@@ -732,7 +748,7 @@ foreach($Familia as $id){ ?>
         <td rowspan="2" align="center"><iframe src="../sms_caja.php?CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" width="600" height="50" frameborder="0"></iframe></td>
         <td align="right"><form id="form4" name="form4" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
           <input name="Buscar" type="text" id="Buscar" value="<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" size="15" onfocus="this.value=''" />
-          <input type="submit" name="button2" id="button2" value="Buscar" />
+          <input type="submit" name="button2" id="button2" value="Buscar"  class="button" />
         </form>  
            </td>
         </tr>
@@ -775,7 +791,7 @@ echo Curso($row_Curso_Actual['CodigoCurso']);
     <td colspan="-2" align="right" nowrap>&nbsp;</td>
   </tr-->
   <tr>
-    <td>Curso</td>
+    <td rowspan="2">Curso</td>
     <td>Actual</td>
     <td><?php echo $AnoEscolar.':'; ?>&nbsp;</td>
    
@@ -822,7 +838,11 @@ if($CodigoCursoActual <> ''){
 	//}
 	echo ' '.$row_Curso_Actual['Status'].'';} ?>
 	</form></td>
-<td ><?php 
+	
+	
+	
+	
+<td rowspan="2" ><?php 
 if($MM_UserGroup == 91 or $MM_UserGroup == 99 or $MM_UserGroup == 95)
 if($AnoEscolar == $AnoEscolarProx)
 if($SWinscrito_Actual){
@@ -838,12 +858,14 @@ if($SWinscrito_Actual){
 	$RS_ = $mysqli->query($sql);
 	$row_ = $RS_->fetch_assoc();
 	$CodigoCursoProxAno = $row_['CodigoCursoProxAno'];
-	$NivelCurso = $row_['NivelCurso'];
+	//$NivelCurso = $row_['NivelCurso'];
+	
+	
 	
 	?>
    <?php echo $AnoEscolar ?></a><a href="../Procesa.php?<?php echo 'Inscribir=1&CodigoAlumno='.$row_RS_Alumno['CodigoAlumno'].'&AnoEscolar='.$AnoEscolar; ?>" target="_blank">Inscribir <?php echo $AnoEscolar ?></a>
   <?php } ?></td>
-<td ><?
+<td rowspan="2" ><?
     
 $ClaveCampo = 'CodigoAlumno';
 $ClaveValor = $CodigoAlumno;
@@ -866,7 +888,7 @@ Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Factura_Empresa',$row_RS_Alumno['SW
       
       
       
-    <td >
+    <td rowspan="2" >
  <?php 
 $_sql = "SELECT * FROM ContableMov 
  		 WHERE CodigoPropietario = $CodigoAlumno 
@@ -883,8 +905,61 @@ if($_totalRows==0 ){
         <?php } ?>
         
         </td>
-    <td align="right" nowrap>Mercantil <?php echo round((time()-$FechaBanco["merc"]) / 3600 , 2 ) ?><br>Provincial <?php echo round((time()-$FechaBanco["prov"]) / 3600 , 2 ) ?>
+    <td rowspan="2" align="right" nowrap>Mercantil <?php echo round((time()-$FechaBanco["merc"]) / 3600 , 2 ) ?><br>Provincial <?php echo round((time()-$FechaBanco["prov"]) / 3600 , 2 ) ?>
         </td>
+  </tr>
+  <tr>
+      <td>Prox</td>
+       <td><?php echo $AnoEscolarProx.':'; ?>&nbsp;</td>
+      
+	  
+	<td ><form id="form6" name="form6" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>">
+  <?php 
+
+$sql = "SELECT * FROM AlumnoXCurso 
+		WHERE CodigoAlumno = '".$row_RS_Alumno['CodigoAlumno']."' 
+		AND Ano='$AnoEscolarProx'"; //echo $sql;
+$RS_ = $mysqli->query($sql);
+$row_Curso_Prox = $RS_->fetch_assoc();
+
+if( $row_Curso_Actual['Status'] =='Inscrito' ) 
+	$SWinscrito_Prox = 1; 
+else 
+	$SWinscrito_Prox = 0;
+
+if($row_Curso_Prox['CodigoCurso'] < '0'){
+	$CodigoCursoProx = '0';
+	$AnoProx = $AnoEscolarProx;
+	
+	
+}else{
+	$CodigoCursoProx = $row_Curso_Prox['CodigoCurso'];
+	$AnoProx = $row_Curso_Prox['Ano'];
+		
+}
+
+
+if($CodigoCursoProx <> ''){
+	
+	MenuCurso($CodigoCursoProx,''); 
+	//echo "$AnoEscolar == $AnoEscolarProx";
+	//if($AnoEscolar == $AnoEscolarProx){
+
+	?>
+	
+	<input name="CodigoAlumno" type="hidden" id="hiddenField" value="<?php echo $row_RS_Alumno['CodigoAlumno']; ?>" />
+	<input name="Ano" type="hidden" id="Ano" value="<?php echo $AnoProx; ?>" />
+	<input name="CambiarCurso" type="hidden" id="CambiarCurso" value="1" />
+    <input type="submit" name="button4" id="button4" value="Cambiar" />
+	
+	<?php 
+	//}
+	echo ' '.$row_Curso_Prox['Status'].'';} ?>
+	</form></td>
+	  
+	  
+	  
+	  
   </tr>
   <!--
   <tr>
@@ -961,27 +1036,26 @@ if($SWinscrito_Prox){
 
 
 
- <form id="form5" name="form5" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>">          
-      <table>
+ <form id="form5" name="form5" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>" class="">          
+      <table class="sombra">
       <caption>Agregar Factura</caption>
       
   
         <tr>
           <td rowspan="2" nowrap="nowrap" class="NombreCampo">Fecha:</td>
           <td rowspan="2" nowrap="nowrap" class="FondoCampo"><input name="FechaActividad" type="date" value="<?php echo date('Y-m-d') ?>" /></td>
-        <td rowspan="2" nowrap="nowrap" class="NombreCampo"> Eventual: Descripci&oacute;n:</td>
+        <td rowspan="2" nowrap="nowrap" class="NombreCampo"> Descripci&oacute;n:</td>
           <td  nowrap="nowrap" class="FondoCampo" ><span id="sprytextfield3">
             <label>
               <input name="Descripcion" type="text" id="Descripcion" value="<? echo $_POST['Descripcion']!="Abono a cuenta"?$_POST['Descripcion']:""; ?>" size="20" />
               </label>
-            <span class="textfieldRequiredMsg">A value is required.</span></span>
-                Cod
-                  <input name="Referencia" type="text" id="Referencia" size="6" />
-                  <input type="hidden" name="AgregaFactura" value="1" id="textfield" />
+           </span>
+            <input name="Referencia" type="hidden" id="Referencia" size="6" />
+			<input type="hidden" name="AgregaFactura" value="1" id="textfield" />
                 </td>
                 
 
- <td rowspan="2" nowrap="nowrap" class="NombreCampo">Mensualidad</td>
+ <td rowspan="2" nowrap="nowrap" class="NombreCampo">Mes:</td>
           <td rowspan="2" nowrap="nowrap" class="FondoCampo"><select name="ReferenciaMesAno" id="ReferenciaMesAno">
 <option value="0">Seleccione...</option>
 <?php 
@@ -1004,19 +1078,16 @@ foreach($ReferenciaMesAno_array as $ReferenciaMesAno){
 
                 
                 
-          <td  rowspan="2" class="NombreCampo">IVA</td>
-          <td  rowspan="2" class="FondoCampo"><label>
-            <input name="SWiva" type="checkbox" id="SWiva" value="1"   />
-          </label></td>
-          <td  rowspan="2" class="NombreCampo">Monto</td>
           <td  rowspan="2" align="right" nowrap="nowrap" class="FondoCampo" >
             Bs
               <input name="Monto" type="text" id="Monto" size="10" /><br>
               $<input name="MontoDebe_Dolares" type="text" id="MontoDebe_Dolares" size="10" />
             </td>
           <td  rowspan="2" class="FondoCampo"><label>
-            <input type="submit" name="button3" id="button3" value="Agregar" onclick="this.disabled=true;this.form.submit();"  />
-          </label></td>
+            <input type="submit" name="button3" class="button" id="button3" value="Agregar" onclick="this.disabled=true;this.form.submit();"  />
+            <br>
+            <input name="SWiva" type="checkbox" id="SWiva" value="1"   />
+          iva </label></td>
         </tr>
         <tr>
           <td nowrap="nowrap" class="FondoCampo" >
@@ -1025,7 +1096,7 @@ foreach($ReferenciaMesAno_array as $ReferenciaMesAno){
 $query_RS_Asignaciones_Curso = "SELECT * FROM Asignacion 
 								WHERE (Periodo = 'E' or Periodo = 'X')
 								AND SWActiva = 1 
-								AND (NivelCurso < '10' OR NivelCurso LIKE '%".$NivelCursoActual."%') 
+								AND (NivelCurso < '10' OR NivelCurso LIKE '%".$NivelCurso."%') 
 								ORDER BY Periodo DESC, Orden, NivelCurso, Descripcion";
 //echo $query_RS_Asignaciones_Curso;								
 $RS_Asignaciones_Curso = $mysqli->query($query_RS_Asignaciones_Curso);
@@ -1037,7 +1108,7 @@ $totalRows_RS_Asignaciones_Curso = $RS_Asignaciones_Curso->num_rows;
 <?
 do {  
 ?>
-            <option value="<?php echo $row_RS_Asignaciones_Curso['Codigo']?>" <?php if($UltimoCodigoAsignacion3 == $row_RS_Asignaciones_Curso['Codigo']) echo ' selected="selected" '; ?> ><?php echo $row_RS_Asignaciones_Curso['Descripcion']?> --> <?php echo "(".$row_RS_Asignaciones_Curso['Monto_Dolares'].") ".$row_RS_Asignaciones_Curso['Monto']?> <?
+            <option value="<?php echo $row_RS_Asignaciones_Curso['Codigo']?>" <?php if($UltimoCodigoAsignacion3 == $row_RS_Asignaciones_Curso['Codigo']) echo ' selected="selected" '; ?> ><?php echo $row_RS_Asignaciones_Curso['Descripcion']?> --> <?php echo "($".Fnum($row_RS_Asignaciones_Curso['Monto_Dolares']).") ".$row_RS_Asignaciones_Curso['Monto']?> <?
             
 			if ($row_RS_Asignaciones_Curso['MesAno'] > 0){
 				
@@ -1052,10 +1123,10 @@ do {
 $RS_Asignaciones_Curso = $mysqli->query($query_RS_Asignaciones_Curso);
 $row_RS_Asignaciones_Curso = $RS_Asignaciones_Curso->fetch_assoc();
 ?>
-          </select></td>
+          </select><? //echo $NivelCurso; ?></td>
         </tr>
 </table>
- </form> 
+</form> 
 
 
 
@@ -1064,17 +1135,19 @@ $row_RS_Asignaciones_Curso = $RS_Asignaciones_Curso->fetch_assoc();
            
              
                  
-<?php include("Pendiente.php"); 
+<?php 
 	
-	include("PagosProcesando.php"); 
+include("Pendiente.php"); 
+	
+include("PagosProcesando.php"); 
 	
 if ($MM_Username == "piero"){
-	include("PagosProcesando2.php"); 
+	//include("PagosProcesando2.php"); 
 }
 	
 	
 	
-	include("RegistrarPago.php"); ?>
+include("RegistrarPago.php"); ?>
 
 
 

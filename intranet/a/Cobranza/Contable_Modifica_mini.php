@@ -1,14 +1,14 @@
 <?php
 $MM_authorizedUsers = "99,91,95,90";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
+/*
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-
+*/
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
 	$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
@@ -20,8 +20,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 		GetSQLValueString($_POST['Referencia']*1, "text"),
 		GetSQLValueString($_POST['Codigo'], "int"));
 
-	mysql_select_db($database_bd, $bd);
-	$Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+	//mysql_select_db($database_bd, $bd);
+	$Result1 = $mysqli->query($updateSQL); //mysql_query($updateSQL, $bd) or die(mysql_error());
 
 	$updateGoTo = "Contable_Modifica.php";
 	if (isset($_SERVER['QUERY_STRING'])) {
@@ -39,6 +39,11 @@ $sql = sprintf("SELECT * FROM ContableMov
 					WHERE Codigo = %s", GetSQLValueString($colname_RS_Contable_Mov, "int"));
 $RS_Contable_Mov = $mysqli->query($sql);
 $row_RS_Contable_Mov = $RS_Contable_Mov->fetch_assoc();
+//$Conteo = $RS_Contable_Mov->num_rows;
+
+
+//$RS_Contable_Mov = $mysqli->query($sql);
+//$row_RS_Contable_Mov = $RS_Contable_Mov->fetch_assoc();
 
 $ReferenciaActual = $row_RS_Contable_Mov['Referencia'];
 $CodigoAlumno = $row_RS_Contable_Mov['CodigoPropietario'];
@@ -61,10 +66,16 @@ $query_RS_Banco_Mov_Disponible = "SELECT * FROM Contable_Imp_Todo
 									WHERE MontoHaber = $MontoHaber 
 									AND CodigoCuenta = $CodigoCuenta 
 									ORDER BY CodigoCuenta, Fecha DESC"; //echo $query_RS_Banco_Mov_Disponible;
+$RS_Banco_Mov_Disponible = $mysqli->query($query_RS_Banco_Mov_Disponible);
+$row_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->fetch_assoc();
+$totalRows_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->num_rows;
+
+
+/*
 $RS_Banco_Mov_Disponible = mysql_query($query_RS_Banco_Mov_Disponible, $bd) or die(mysql_error());
 $row_RS_Banco_Mov_Disponible = mysql_fetch_assoc($RS_Banco_Mov_Disponible);
 $totalRows_RS_Banco_Mov_Disponible = mysql_num_rows($RS_Banco_Mov_Disponible);
-
+*/
 
 
 $query_RS_Alumno_PPMM = "SELECT * FROM Representante 
@@ -119,8 +130,12 @@ if($row_RS_Contable_Mov['Referencia'] > ""){
 													AND CodigoCuenta = $CodigoCuenta 
 													AND MontoHaber = '$MontoHaber'
 													ORDER BY CodigoCuenta, Fecha DESC"; //echo $query_RS_Banco_Mov_Disponible;
-	$RS_Banco_Mov_aux = mysql_query($query_RS_Banco_Mov_aux, $bd) or die(mysql_error());
-	$row_RS_Banco_Mov_aux = mysql_fetch_assoc($RS_Banco_Mov_aux);
+	$RS_Banco_Mov_aux = $mysqli->query($query_RS_Banco_Mov_aux);
+	$row_RS_Banco_Mov_aux = $RS_Banco_Mov_aux->fetch_assoc();
+	
+	
+	//$RS_Banco_Mov_aux = mysql_query($query_RS_Banco_Mov_aux, $bd) or die(mysql_error());
+	//$row_RS_Banco_Mov_aux = mysql_fetch_assoc($RS_Banco_Mov_aux);
 }
 
 ?>
@@ -140,9 +155,14 @@ if($DIf_Fechas > -5){
 
 
 $sql = "SELECT * FROM ContableMov WHERE Referencia = '". $row_RS_Banco_Mov_Disponible['Referencia']."'";
+$RS_sql = $mysqli->query($sql);
+$row_RS_sql = $RS_sql->fetch_assoc();
+$totalRows_RS_sql = $RS_sql->num_rows;
+
+	/*
 $RS_sql = mysql_query($sql, $bd) or die(mysql_error());
 $row_RS_sql = mysql_fetch_assoc($RS_sql);
-$totalRows_RS_sql = mysql_num_rows($RS_sql);
+$totalRows_RS_sql = mysql_num_rows($RS_sql);*/
 
 if( $totalRows_RS_sql == 0 ) {
 
@@ -225,12 +245,18 @@ else break;
 
 
 } // if($DIf_Fechas > -5){
-} while ($row_RS_Banco_Mov_Disponible = mysql_fetch_assoc($RS_Banco_Mov_Disponible));
-$rows = mysql_num_rows($RS_Banco_Mov_Disponible);
+} while ($row_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->fetch_assoc());
+$rows = $RS_Banco_Mov_Disponible->num_rows;
 
 if($rows > 0) {
-	mysql_data_seek($RS_Banco_Mov_Disponible, 0);
-	$row_RS_Banco_Mov_Disponible = mysql_fetch_assoc($RS_Banco_Mov_Disponible);
+	
+	$RS_Banco_Mov_Disponible = $mysqli->query($query_RS_Banco_Mov_Disponible);
+	//$row_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->fetch_assoc();
+
+	//mysql_data_seek($RS_Banco_Mov_Disponible, 0);
+	
+	
+	$row_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->fetch_assoc();
 }
 	  
 	  

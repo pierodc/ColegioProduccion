@@ -18,12 +18,13 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['LugarDeNacimiento'], "text"),
                        GetSQLValueString($_POST['PaisDeNacimiento'], "text"),
                        GetSQLValueString($_POST['Vive'], "text"));
+//echo   $insertSQL ."<br><br>"; 
+ // mysql_select_db($database_bd, $bd);
+  $Result1 = $mysqli->query($insertSQL); // mysql_query($insertSQL, $bd) or die(mysql_error());
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
-
+$CodigoRepresentante = $mysqli->insert_id; // mysql_insert_id();
+	
 $CodigoAlumno = $_POST['CodigoAlumno'];
-$CodigoRepresentante = mysql_insert_id();
 $Nexo = $_POST['Nexo'];	
 $SWrepre='0';
  
@@ -31,7 +32,8 @@ $sql_insert = "INSERT INTO RepresentanteXAlumno
 				(CodigoAlumno, CodigoRepresentante, Nexo, SW_Representante) 
 				VALUES 
 				('$CodigoAlumno', '$CodigoRepresentante', '$Nexo', '$SWrepre')";
-$Result1 = mysql_query($sql_insert, $bd) or die(mysql_error());
+//echo   $sql_insert ."<br><br>";	
+$Result1 = $mysqli->query($sql_insert); // mysql_query($sql_insert, $bd) or die(mysql_error());
 
 
   $insertGoTo = "index.php";
@@ -53,8 +55,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['Vive'], "text"),
                        GetSQLValueString($_POST['CodigoAbuelo'], "int"));
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+ // mysql_select_db($database_bd, $bd);
+  $Result1 =  $Result1 = $mysqli->query($updateSQL); // mysql_query($updateSQL, $bd) or die(mysql_error());
 
   $updateGoTo = "index.php";
   /*if (isset($_SERVER['QUERY_STRING'])) {
@@ -66,18 +68,25 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
 $Creador_RS_Abuelo = "0";
 if (isset($_COOKIE['MM_Username'])) {
-  $Creador_RS_Abuelo = (get_magic_quotes_gpc()) ? $_COOKIE['MM_Username'] : addslashes($_COOKIE['MM_Username']);
+  $Creador_RS_Abuelo = $_COOKIE['MM_Username'];
 }
 $colname_RS_Abuelo = "0";
 if (isset($_GET['CodigoRepresentante'])) {
-  $colname_RS_Abuelo = (get_magic_quotes_gpc()) ? $_GET['CodigoRepresentante'] : addslashes($_GET['CodigoRepresentante']);
+  $colname_RS_Abuelo = $_GET['CodigoRepresentante'];
 }
-mysql_select_db($database_bd, $bd);
+
 $query_RS_Abuelo = sprintf("SELECT * FROM Abuelos WHERE CodigoAbuelo = '%s' AND Creador = '%s'", $colname_RS_Abuelo,$Creador_RS_Abuelo);
+
+$RS_Abuelo = $mysqli->query($query_RS_Abuelo);
+$row_RS_Abuelo = $RS_Abuelo->fetch_assoc();
+$totalRows_RS_Abuelo = $RS_Abuelo->num_rows;
+
+
+/*
 $RS_Abuelo = mysql_query($query_RS_Abuelo, $bd) or die(mysql_error());
 $row_RS_Abuelo = mysql_fetch_assoc($RS_Abuelo);
 $totalRows_RS_Abuelo = mysql_num_rows($RS_Abuelo);
-
+*/
 ?>
 <html>
 <head>
@@ -150,7 +159,7 @@ body {
 <?php $subDir = '../'; ?><?php include('../inc_menu.php'); ?></td>
             <td rowspan="3" align="center" valign="top" class="box1">
             <p><img src="../img/b.gif" width="740" height="1"></p>
-            <p class="Tit_Pagina">Datos de <?php echo $_GET[Nexo]; ?></p>
+            <p class="Tit_Pagina">Datos de <?php echo $_GET["Nexo"]; ?></p>
             
 
 
@@ -159,14 +168,14 @@ body {
       <form method="post" name="form1" action=<?php echo $editFormAction; ?>>
         <table width="600" align="center">
         <tr valign="baseline">
-          <td colspan="2" align="right" nowrap><div align="left" class="MensajeDeError"><strong>Indique los datos de: <?php echo $_GET[Nexo]; ?>
+          <td colspan="2" align="right" nowrap><div align="left" class="MensajeDeError"><strong>Indique los datos de: <?php echo $_GET["Nexo"]; ?>
             </strong></div></td>
           </tr>
         <tr valign="baseline">
           <td align="right" nowrap class="NombreCampo">
             <input name="CodigoAlumno" value="<?php echo $_GET['CodigoAlumno'] ?>" type="hidden" >
             <input name="Creador" type="hidden" id="Creador" value="<?php echo $_COOKIE['MM_Username']; ?>">
-            <input name="Nexo" type="hidden" id="Nexo" value="<?php echo $_GET[Nexo]; ?>">
+            <input name="Nexo" type="hidden" id="Nexo" value="<?php echo $_GET["Nexo"]; ?>">
             <input name="CodigoAbuelo" type="hidden" id="CodigoAbuelo" value="<?php echo $row_RS_Abuelo['CodigoAbuelo'];   ?>">
             Vive</td><td class="FondoCampo">
               <input type="radio" name="Vive" value="Si" <?php if ($row_RS_Abuelo['Vive']=='Si') echo checked;  ?>>
@@ -244,6 +253,3 @@ body {
 </body>
 </html>
   
-<?php
-mysql_free_result($RS_Abuelo);
-?>

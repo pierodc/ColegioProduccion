@@ -6,11 +6,12 @@ $Curso->id = $_GET['CodigoCurso'];
 
 class Curso{
 	public $id_Curso;
-	public $Ano;
+	public $Ano = '2020-2021';
 	public $Status = 'Inscrito';
 	
 	function __construct($CodigoCurso = 0){
 		$this->con = new Conexion();
+		
 		if($CodigoCurso > 0){
 			$this->id = $CodigoCurso;
 			$this->NivelCurso = $this->NivelCurso();

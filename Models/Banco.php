@@ -18,10 +18,15 @@ class Banco{
 				
 		}
 	
-	public function view_tipo($tipo = ""){ // ZLL NC
+	public function view_tipo($tipo = "" , $FechaMax = ""){ // ZLL NC
+		if($FechaMax > ""){
+			$add_sql = " AND Fecha >= '$FechaMax' ";
+		}
+
 		$sql = "SELECT * FROM Banco 
 				WHERE tipo = '$tipo' 
 				AND MontoUsado < Haber
+				$add_sql
 				ORDER BY Fecha DESC, id DESC";
 		$datos = $this->con->consultaRetorno($sql);
 		return $datos;
@@ -111,9 +116,9 @@ class Banco{
 	
 	
 	
-	public function Select_movimientos ($tipo = "ZLL"){
+	public function Select_movimientos ($tipo = "ZLL" ){
 		echo '<select name="id_Banco">';
-		$Zelles = $this->view_tipo($tipo);
+		$Zelles = $this->view_tipo($tipo , $FechaMax = "2020-10-20");
 		echo '<option value="0">Seleccione ...</option>';
 		echo '<option value="0"></option>';
 		while($row = $Zelles->fetch_assoc()){

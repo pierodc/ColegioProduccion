@@ -1,4 +1,5 @@
 <?php 
+$SW_omite_trace = true;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1

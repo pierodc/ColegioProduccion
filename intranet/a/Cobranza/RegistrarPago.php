@@ -1,4 +1,9 @@
-<form action="<?php echo $editFormAction; ?>#Pendiente" method="post" name="form1" id="form1">
+<?  
+if ($totalRows_RS_ContableMov > 0){
+?>
+        
+
+        <form action="<?php echo $editFormAction; ?>#Pendiente" method="post" name="form1" id="form1">
          <table class="sombra" >
           <caption>Registrar Pago</caption>
                <tr valign="baseline">
@@ -111,3 +116,5 @@ Fecha</td>
               </tr>
           </table>
           </form>
+          
+         <? } ?>

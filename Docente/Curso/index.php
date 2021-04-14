@@ -10,7 +10,7 @@ header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/GetVar.php');
 
 $Alumno = new Alumno($_id_Alumno);
-
+$ContableMov = new ContableMov($_id_Alumno);
 $AlumnoXCurso = new AlumnoXCurso();
 $CodigoAlumnos = $AlumnoXCurso->view( $_id_Curso );
 
@@ -72,8 +72,8 @@ function CopyToClipboard(containerid) {
 		<th>Codigo</th>
 		<th>Alumno</th>
 		<th>Asistencia</th>
-		<th>Edad</th>
-		<th>Tel</th>
+		<th>Meses Pend</th>
+		
 	</tr>
 </thead>	
 <tbody>	
@@ -82,13 +82,21 @@ function CopyToClipboard(containerid) {
 while ( $row = $CodigoAlumnos->fetch_assoc() ){
 	extract($row);
 	$Alumno->id = $CodigoAlumno;
-	
+	$ContableMov->id_Alumno = $CodigoAlumno;
 ?>	
 <tr class="hover <?php if($_id_Alumno == $CodigoAlumno) echo "seleccionado"; ?>" >
 	<td><? echo ++$No ?></td>
 	<td><? echo $CodigoAlumno; ?></td>
 	<td><a href="<? echo $php_self . "?id_Alumno=" . $CodigoAlumno; ?>"><? echo $Alumno->Apellido() ." ". $Alumno->Nombre(); ?></a></td>
 	<td align="center"><? Frame_Asistencia ($CodigoAlumno); ?></td>
+	<td align="left"><? 
+	
+	foreach($ContableMov->PendienteXX() as $mes){
+		echo $mes . " / ";
+		
+	} ?></td>
+	
+	<? /*
 	<td><? echo Edad_Dif($Alumno->FechaNac() , date("Y-m-d")); ?></td>
 	<td>
 	<?
@@ -112,7 +120,7 @@ while ( $row = $CodigoAlumnos->fetch_assoc() ){
 	 ?>
 	
 	</td>
-	
+	*/ ?>
 </tr>
 
 <?

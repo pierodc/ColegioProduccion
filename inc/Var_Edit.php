@@ -59,7 +59,7 @@ body {
        <input name="Var_Value" type="text" value="<? echo $Var_Value; ?>" id="Var_Value" size="15">
        <input name="Var_Descripcion" type="hidden" value="<? echo $Var_Descripcion; ?>" id="Var_Descripcion" >
        <input name="Fecha_Modificacion" type="hidden" value="<? echo $Fecha_Modificacion; ?>" id="Fecha_Modificacion" >
-       <input type="submit" name="G" id="button" value="G" onClick="this.value='..'" />
+       <input type="submit" name="G" class="button" id="button" value="G" onClick="this.value='..'"  />
       </td>
     </tr>
 </table>

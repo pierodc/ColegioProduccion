@@ -88,9 +88,9 @@ $sql_UPDATE = "UPDATE RepresentanteXAlumno
 				SET SW_Representante = '$SWrepre'
 				WHERE CodigoRepresentante = '".$_POST['CodigoRepresentante']."'
 				AND CodigoAlumno = '".$_POST['CodigoAlumno']."'";
-				
-$Result1 = mysql_query($sql_UPDATE, $bd) or die(mysql_error());
-echo  $sql_UPDATE; 
+ $mysqli->query($sql_UPDATE);				
+//$Result1 = mysql_query($sql_UPDATE, $bd) or die(mysql_error());
+//echo  $sql_UPDATE; 
 }
 
 
@@ -224,7 +224,7 @@ if(file_exists($Firma)){
                 <td align="left" valign="top"  class="FondoCampo"><strong><?php echo $row_RS_Alumno['Nombres']; ?> - <?php echo $row_RS_Alumno['Nombres2']; ?></strong></td>
                 <td align="right" valign="top"  class="NombreCampo">Fecha de Nacimiento</td>
                 <td align="left" valign="top"  class="FondoCampo"><?php echo substr($row_RS_Alumno['FechaNac'], 8, 2).'-'.substr($row_RS_Alumno['FechaNac'], 5, 2).'-'.substr($row_RS_Alumno['FechaNac'],0,4) ; 
-				echo "  (".Edad_Dif($row_RS_Alumno['FechaNac'],date(Y)."-09-16").")"; ?></td>
+				echo "  (".Edad_Dif($row_RS_Alumno['FechaNac'],date("Y")."-09-16").")"; ?></td>
               </tr>
               <tr valign="baseline">
                 <td align="right" valign="top"  class="NombreCampo">Apellidos</td>
@@ -479,7 +479,12 @@ Nexo</td>
               </tr>
             <tr>
               <td align="right"  class="NombreCampo">C&eacute;dula</td>
-              <td class="FondoCampo"><?php echo $row_RS_Repre['Cedula']; $cedula_aseg = $row_RS_Repre['Cedula'];?></td>
+              <td class="FondoCampo"><?php echo $row_RS_Repre['Cedula']; 
+	
+				$cedula_aseg = TelLimpia($row_RS_Repre['Cedula']);
+				  
+				  
+				  ?></td>
               </tr>
             <tr>
               <td align="right"  class="NombreCampo">Nacionalidad</td>

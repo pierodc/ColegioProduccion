@@ -1,5 +1,6 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90";
+$SW_omite_trace = true;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
@@ -36,7 +37,7 @@ if(isset($_GET['Ejecutar'])){
 $_Mes = $_GET['Mes'];
 $_Ano = $_GET['Ano'];
 $FechaValor = $_GET['Ano'].$_GET['Mes']."01";
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 if(isset($_GET['CodigoAlumno'])){
 	$query_RS_Alumno = "SELECT * FROM Alumno, AlumnoXCurso, Curso 
@@ -49,9 +50,15 @@ if(isset($_GET['CodigoAlumno'])){
 
 //echo $query_RS_Alumno;
 
+
+$RS_Alumno = $mysqli->query($query_RS_Alumno);
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+$totalRows_RS_Alumno = $RS_Alumno->num_rows;	
+	
+	/*
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
-$totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
+$totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);*/
 
 $CodigoAlumno = $row_RS_Alumno['CodigoAlumno'];
 	
@@ -68,9 +75,15 @@ do{
 						AND AsignacionXAlumno.CodigoAsignacion = Asignacion.Codigo 
 						ORDER BY Asignacion.Orden, AsignacionXAlumno.Codigo",         
                                                                       GetSQLValueString($CodigoAlumno, "int"));
+		
+		$RS_Asign_Alum = $mysqli->query($query_RS_Asign_Alum);
+		$row_RS_Asign_Alum = $RS_Asign_Alum->fetch_assoc();
+		$totalRows_RS_Asign_Alum = $RS_Asign_Alum->num_rows;
+	
+	/*
 		$RS_Asign_Alum = mysql_query($query_RS_Asign_Alum, $bd) or die(mysql_error());
 		$row_RS_Asign_Alum = mysql_fetch_assoc($RS_Asign_Alum);
-		$totalRows_RS_Asign_Alum = mysql_num_rows($RS_Asign_Alum);
+		$totalRows_RS_Asign_Alum = mysql_num_rows($RS_Asign_Alum);*/
 		//echo "1 ".$query_RS_Asign_Alum.$totalRows_RS_Asign_Alum."<br>";
 		
 		
@@ -103,9 +116,15 @@ do{
 								AND Referencia = $Referencia
 								AND MontoDebe > 0"; 
 								
+			
+			$RS_Factura = $mysqli->query($query_RS_Factura);
+			$row_RS_Factura = $RS_Factura->fetch_assoc();
+			$totalRows_RS_Factura = $RS_Factura->num_rows;
+			
+			/*
 			$RS_Factura = mysql_query($query_RS_Factura, $bd) or die(mysql_error());
 			$row_RS_Factura = mysql_fetch_assoc($RS_Factura);
-			$totalRows_RS_Factura = mysql_num_rows($RS_Factura);
+			$totalRows_RS_Factura = mysql_num_rows($RS_Factura);*/
 			//echo $query_RS_Factura.$totalRows_RS_Factura."<br>";
 		
 			if($totalRows_RS_Factura == 0){ // si no existe la asignacion entonces se crea
@@ -147,21 +166,23 @@ do{
 				
 				
 				//echo $sql;
-				$RS_sql = mysql_query($sql, $bd) or die(mysql_error());
+				//$RS_sql = mysql_query($sql, $bd) or die(mysql_error());
+				$mysqli->query($sql);
+				
 			}
 			
 			else{
 				//echo "existe";
 			}
 		
-		} while ($row_RS_Asign_Alum = mysql_fetch_assoc($RS_Asign_Alum)); 
+		} while ($row_RS_Asign_Alum = $RS_Asign_Alum->fetch_assoc()); 
 		
 		
 		
 	
 	
 	
-} while ($row_RS_Alumno = mysql_fetch_assoc($RS_Alumno));
+} while ($row_RS_Alumno = $RS_Alumno->fetch_assoc());
 
 
 

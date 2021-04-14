@@ -9,8 +9,14 @@ require_once('../../inc/rutinas.php');
 require_once('../../inc/notas.php'); 
 require_once('../../inc/fpdf.php');
 
-//$AnoEscolar = "2018-2019";
+
+if(isset($_GET['$AnoEscolar'])){
+	$AnoEscolar = $_GET['$AnoEscolar'];
+	//$AnoEscolar = "2018-2019";
+}
 $Lapso = $_GET['Lapso'];
+
+
 
 class PDF extends FPDF
 {

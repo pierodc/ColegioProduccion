@@ -1,13 +1,7 @@
 <?php 
 if(true){
 $MM_authorizedUsers = "2,91,docente";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
 if($MM_UserGroup == 'docente')
 	header("Location: "."http://www.colegiosanfrancisco.com/Docente/index.php");
@@ -25,18 +19,18 @@ if( Dif_Tiempo($Var['Fecha_Modificacion']) > 90 ){
 
 
 // actualiza codigos md5
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query = "UPDATE Alumno set CodigoClave = left(md5(CodigoAlumno),16) WHERE CodigoClave = '0'";
-$rs = mysql_query($query, $bd) or die(mysql_error());
+$mysqli->query($query);
 $query = "UPDATE Alumno set CodigoCreador = left(md5(Creador),16) WHERE CodigoCreador = '0'";
-$rs = mysql_query($query, $bd) or die(mysql_error());
+$mysqli->query($query);
 $query = "UPDATE Usuario set CodigoCreador = left(md5(Usuario),16) WHERE CodigoCreador = 'a'";
-$rs = mysql_query($query, $bd) or die(mysql_error());
+$mysqli->query($query);
 // fin actualiza codigos md5
 
 
 if (isset($_COOKIE['MM_Username'])) {
-  $MM_Username = (get_magic_quotes_gpc()) ? $_COOKIE['MM_Username'] : addslashes($_COOKIE['MM_Username']);
+  $MM_Username =  $_COOKIE['MM_Username'];
   $colname_RS_Alumnos = $_COOKIE['MM_Username'];
 }
 
@@ -48,7 +42,8 @@ if(isset($_GET['noAutorizano'])){
 			SET Nexo = 'ExAutorizado' 
 			WHERE CodigoRepresentante = '$CodigoRepresentante' 
 			AND CodigoAlumno =  '$CodigoAlumno'"; //	AND Creador = '$MM_Username'
-	$Resultado = mysql_query($sql, $bd) or die(mysql_error());
+	$Resultado = $mysqli->query($sql);
+
 }
 // fin
 
@@ -61,7 +56,7 @@ if(isset($_GET['EliminaRep'])){
 			SET Nexo = 'ExConyu' 
 			WHERE CodigoRepresentante = '$CodigoRepresentante' 
 			AND CodigoAlumno =  '$CodigoAlumno'"; //	AND Creador = '$MM_Username'
-	$Resultado = mysql_query($sql, $bd) or die(mysql_error());
+	$Resultado = $mysqli->query($sql);
 }
 // fin
 
@@ -75,7 +70,7 @@ if(isset($_GET['Crear']) and isset($_GET['Nexo'])){
 			(CodigoRepresentante, CodigoAlumno, Nexo, SW_Representante)
 			VALUES
 			('$CodigoRepresentante', '$CodigoAlumno', '$Nexo', '$SW_Representante')";
-	$Resultado = mysql_query($sql, $bd) or die(mysql_error());
+	$Resultado = $mysqli->query($sql);
 	header("Location: ".$_SERVER['PHP_SELF']);
 
 }
@@ -168,9 +163,15 @@ body {
 
 
 $query_RS_Alumnos = "SELECT * FROM Alumno WHERE Creador = '$MM_Username' ORDER BY FechaNac ASC";
+
+$RS_Alumnos = $mysqli->query($query_RS_Alumnos);
+$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+	
+/*	
 $RS_Alumnos = mysql_query($query_RS_Alumnos, $bd) or die(mysql_error());
 $row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
-$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
+$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);*/
 
 
 if($totalRows_RS_Alumnos>0)
@@ -287,12 +288,19 @@ $Curso = new Curso($row_Status['CodigoCurso']);
 	 
 	 
 				
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_Pendiente = "SELECT * FROM ContableMov 
 					WHERE CodigoPropietario = '".$row_RS_Alumnos['CodigoAlumno']."'"; 
+
+
+$Pendiente = $mysqli->query($query_Pendiente);
+$row_Pendiente = $Pendiente->fetch_assoc();
+$totalRows_Pendiente = $Pendiente->num_rows;	 
+	 
+	/* 
 $Pendiente = mysql_query($query_Pendiente, $bd) or die(mysql_error());
 $row_Pendiente = mysql_fetch_assoc($Pendiente);
-$totalRows_Pendiente = mysql_num_rows($Pendiente);
+$totalRows_Pendiente = mysql_num_rows($Pendiente);*/
 
 					
 if($AnoEscolar != $AnoEscolarProx){	
@@ -305,7 +313,7 @@ if($AnoEscolar != $AnoEscolarProx){
 	if($row_Status = $RS_Status->fetch_assoc()){
 		echo ' <br><span><p class=" RTitulo">('.$AnoEscolarProx.': '.$row_Status['Status'].' '. Curso($row_Status['CodigoCurso']) .')</p>';
 		if($totalRows_Pendiente == 0)
-			echo '<p class="SW_Verde RTitulo">COMPLETE TODOS LOS DATOS FALTANTE luego <br>Espere ser notificado por email (aprox en 5 días) para registrar el pago. En caso de no ser notificado su solicitud queda en espera de liberación de cupo.</p>';
+			echo '<p class="SW_Verde RTitulo">LUEGO DE COMPLETAR TODOS LOS DATOS <br>Espere ser notificado por email (aprox en 5 días) para registrar el pago. En caso de no ser notificado su solicitud queda en espera de liberación de cupo.</p>';
 		
 		if($row_RS_Alumnos['Deuda_Actual'] > 0)
 			echo '<p class="SW_Verde RTitulo">Registre el pago en el link a la derecha --->>></p>';
@@ -353,9 +361,15 @@ if(true) {// true boletas activas / false inactivas
 							AND ReferenciaMesAno = '$MesAnoParaSolvencia'
 							AND MontoDebe > 0
 							AND SWCancelado = '0'";
-		//echo $query_Solvente;					
-		$RS_Solvente = mysql_query($query_Solvente, $bd) or die(mysql_error());
-		if($row_Solvente = mysql_fetch_assoc($RS_Solvente)){   // bypass deuda -> and false  ?>
+		//echo $query_Solvente;	
+	
+	
+		$RS_Solvente = $mysqli->query($query_Solvente);
+		//$row_Solvente = $RS_Solvente->fetch_assoc();
+		//$Conteo = $RS->num_rows;
+	
+		//$RS_Solvente = mysql_query($query_Solvente, $bd) or die(mysql_error());
+		if($row_Solvente = $RS_Solvente->fetch_assoc()){   // bypass deuda -> and false  ?>
 			<br>
 			<span class="big"> Para visualizar la boleta y otros documentos<br>
 			debe solicitar solvencia</span><?php 
@@ -405,9 +419,16 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Representante
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Representante.CodigoRepresentante
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
+	 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;	 
+	 
+	/* 
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) { // No hay el repre ?>
 <span class="MensajeDeError"> 2) <?php echo $Nexo ?> del alumno <img src="../i/user_<?php echo $Nexo ?>.png" alt="" width="32" height="32" border="0" align="absmiddle"> </span><br>
@@ -457,9 +478,17 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Representante
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Representante.CodigoRepresentante
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
+	 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;		 
+	 
+	 
+	 /*
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) { // No hay el repre ?>
 <span class="MensajeDeError"> 2) <?php echo $Nexo ?> del alumno <img src="../i/user_<?php echo $Nexo ?>.png" alt="" width="32" height="32" border="0" align="absmiddle"> </span><br>
@@ -506,10 +535,15 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Representante
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;		 
+	 /*
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
 $totalRows_RS_Rp = mysql_num_rows($RS_Rp);
-
+*/
 if ($totalRows_RS_Rp == 0) { ?>
 
 <?php 
@@ -548,9 +582,14 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Representante
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;		 
+	 /*
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) { ?>
 
@@ -600,9 +639,16 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Abuelos
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Abuelos.CodigoAbuelo
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
+	 
+	 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;		 
+	/* 
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) { // No hay el repre ?>
 <span class="MensajeDeError"><?php echo $Nexo ?> <img src="../i/user_<?php echo $img ?>.png" alt="" width="32" height="32" border="0" align="absmiddle"> </span><br>
@@ -631,9 +677,15 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Abuelos
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Abuelos.CodigoAbuelo
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
+	 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;		 
+	 /*
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) { // No hay el repre ?>
 <span class="MensajeDeError"> <img src="../i/user_<?php echo $img ?>.png" alt="" width="32" height="32" border="0" align="absmiddle"> <?php echo $Nexo ?></span><br>
@@ -664,9 +716,14 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Abuelos
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Abuelos.CodigoAbuelo
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;		 
+	/* 
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) { // No hay el repre ?>
 <span class="MensajeDeError"> <?php echo $Nexo ?><img src="../i/user_<?php echo $img ?>.png" alt="" width="32" height="32" border="0" align="absmiddle"> </span><br>
@@ -697,9 +754,15 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Abuelos
 					WHERE RepresentanteXAlumno.CodigoRepresentante = Abuelos.CodigoAbuelo
 					AND RepresentanteXAlumno.Nexo = '$Nexo'
 					AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
+	 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;	/*	 
+	 
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) { // No hay el repre ?>
 <span class="MensajeDeError"><img src="../i/user_<?php echo $img ?>.png" alt="" width="32" height="32" border="0" align="absmiddle"> <?php echo $Nexo ?> </span><br>
@@ -739,9 +802,15 @@ $query_RS_Rp = "SELECT * FROM RepresentanteXAlumno, Representante
 					AND Representante.Creador = '$MM_Username'
 					GROUP BY Representante.CodigoRepresentante";
 					//echo $query_RS_Rp;*/
+	 
+
+$RS_Rp = $mysqli->query($query_RS_Rp);
+$row_RS_Rp = $RS_Rp->fetch_assoc();
+$totalRows_RS_Rp = $RS_Rp->num_rows;	/*	 
+	 
 $RS_Rp = mysql_query($query_RS_Rp, $bd) or die(mysql_error());
 $row_RS_Rp = mysql_fetch_assoc($RS_Rp);
-$totalRows_RS_Rp = mysql_num_rows($RS_Rp);
+$totalRows_RS_Rp = mysql_num_rows($RS_Rp);*/
 
 if ($totalRows_RS_Rp == 0) {  ?>
               <span class="ConflictoHorario"> Agregue a las personas autorizadas <img src="../i/reseller_programm.png" alt="" width="32" height="32" align="absmiddle"> <a href="PlanillaInscAutorizado.php?Nexo=Autorizado&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno'] ?>">Clik Aqu&iacute;&nbsp;<img src="../i/vcard_edit.png" alt="" width="32" height="32" border="0" align="absmiddle"></a> </span>
@@ -773,8 +842,9 @@ foreach(array('Padre','Madre','Abuelo Paterno','Abuela Paterna','Abuelo Materno'
 				WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
 				AND Ano='".$AnoEscolar."' ";
 		//echo $sql."<br>";
-		$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-		if($row_RS = mysql_fetch_assoc($RS_sql))
+		
+		$RS_sql = $mysqli->query($sql);
+		if($row_RS = $RS_sql->fetch_assoc())
 			$StatusAnoActual = $row_RS['Status'];
 		//echo $StatusAnoActual."<br>";
 		
@@ -782,8 +852,8 @@ foreach(array('Padre','Madre','Abuelo Paterno','Abuela Paterna','Abuelo Materno'
 				WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
 				AND Ano='".$AnoEscolarProx."' ";
 		//echo $sql."<br>";
-		$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-		if($row_RS = mysql_fetch_assoc($RS_sql))
+		$RS_sql = $mysqli->query($sql);
+		if($row_RS = $RS_sql->fetch_assoc())
 			$StatusAnoProx = $row_RS['Status'];
 		//echo $StatusAnoProx."<br>";
 		
@@ -811,10 +881,18 @@ if($StatusAnoProx == "Solicitando" ){
 							 WHERE CodigoPropietario = '".$row_RS_Alumnos['CodigoAlumno']."'
 							 AND ReferenciaMesAno = 'Sol ".$AnoEscolarProx."'
 							";  // AND CodigoRecibo > 0
-	//echo $query_Pago_Solicitud;					 
+	//echo $query_Pago_Solicitud;	
+	
+	
+	$Pago_Solicitud = $mysqli->query($query_Pago_Solicitud);
+	$row_Pago_Solicitud = $Pago_Solicitud->fetch_assoc();
+	$totalRows_Pago_Solicitud = $Pago_Solicitud->num_rows;
+
+	
+	/*
 	$Pago_Solicitud = mysql_query($query_Pago_Solicitud, $bd) or die(mysql_error());
 	$row_Pago_Solicitud = mysql_fetch_assoc($Pago_Solicitud);
-	$totalRows_Pago_Solicitud = mysql_num_rows($Pago_Solicitud);
+	$totalRows_Pago_Solicitud = mysql_num_rows($Pago_Solicitud);*/
 			
 			
 	if($totalRows_Pago_Solicitud > 0)	{ 
@@ -887,7 +965,7 @@ foreach(array('Padre','Madre','Abuelo Paterno','Abuela Paterna','Abuelo Materno'
         <tr>
           <td colspan="4">&nbsp; </td>
         </tr>
-		<?php } while ($row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos)); ?>
+		<?php } while ($row_RS_Alumnos = $RS_Alumnos->fetch_assoc()); ?>
       <?php if(date('Y-m-d') > $Fecha_Inicio_Solicitud_Cupo ){ ?>   
          <tr>
           <td colspan="4"><a href="PlanillaInscAlum.php" class="navLinkAct">

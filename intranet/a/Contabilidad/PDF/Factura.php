@@ -89,7 +89,7 @@ if ( $row_RS_Mov_Contable_haber['Cambio_Dolar'] > 8000 )	{
 if($row_RS_Mov_Contable_haber['CodigoReciboCliente'] > 0){
 	$sql = "SELECT * FROM ReciboCliente
 			WHERE Codigo = ".$row_RS_Mov_Contable_haber['CodigoReciboCliente'];
-	//echo $sql;		
+	//echo "1. " . $sql . "<br>";		
 	$RS =  $mysqli->query($sql);
 	$row = $RS->fetch_assoc();
 	$Fac_Rif = str_replace("'","",$row['RIF']);
@@ -111,11 +111,27 @@ if($row_RS_Recibo['NumeroFactura'] == 0){
 	$query =  $mysqli->query($sql);
 	$row_query = $query->fetch_assoc();
 	$NumeroFacturaProx = $row_query['NumFacMax']+1;
+	//echo "2. " . $sql . " NumeroFacturaProx $NumeroFacturaProx<br>";		
 	
-	$sql = "SELECT MAX(Fac_Num_Control) AS NumControlMax FROM Recibo";
+	
+	
+	$sql = "SELECT Control_Numero FROM Factura_Control 
+			ORDER BY Control_Numero DESC";
 	$query =  $mysqli->query($sql);
 	$row_query = $query->fetch_assoc();
-	$NumeroControlProx = $row_query['NumControlMax']+1;
+	$NumeroControlProx = $row_query['Control_Numero']+1;
+	//echo "3. " . $sql . " NumeroControlProx $NumeroControlProx<br>";		
+	
+	
+	$sql = "INSERT INTO Factura_Control 
+			(Control_Numero, Factura_Numero, RegistroPor)
+			VALUES ($NumeroControlProx , $NumeroFacturaProx , '".$MM_Username."')";
+	$query =  $mysqli->query($sql);
+	
+	//echo "4. " . $sql . "<br>";		
+	
+	
+	
 	
 	$sql = "UPDATE Recibo SET 
 			NumeroFactura = $NumeroFacturaProx, 
@@ -132,14 +148,17 @@ if($row_RS_Recibo['NumeroFactura'] == 0){
 	$query =  $mysqli->query($sql);
 	$SW_Actualiza_Base = true;
 	
-	$sql_Factura_Control = "UPDATE Factura_Control 
+	//echo "5. " . $sql . "<br>";		
+	
+	
+	/*$sql_Factura_Control = "UPDATE Factura_Control 
 							SET Factura_Numero = '$NumeroFacturaProx' , 
 							RegistroPor = '$MM_Username', 
 							FechaRegistro = NOW()
 							WHERE Control_Numero = '$NumeroControlProx'";
-	//echo $sql_Factura_Control ;
+	echo $sql_Factura_Control ;
 	$mysqli->query($sql_Factura_Control);
-	
+	*/
 	
 	$RS_Recibo =  $mysqli->query($query_RS_Recibo);
 	$row_RS_Recibo = $RS_Recibo->fetch_assoc();

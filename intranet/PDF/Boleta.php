@@ -2,13 +2,18 @@
 
 // FACSIMIL PARA REPRES
 
-require_once('../../Connections/bd.php');  
-require_once('../a/archivo/Variables.php');  
-require_once('../../inc/rutinas.php');  
-require_once('../../inc/notas.php');  
-require_once('../../inc/rotation.php'); 
-require_once('../../inc/fpdf.php'); 
+$MM_authorizedUsers = "";
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rotation.php'); 
 
 class PDF extends PDF_Rotate
 {
@@ -35,14 +40,17 @@ $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 
 $query_Solvente = "SELECT * FROM ContableMov
 					WHERE CodigoPropietario = '$CodigoAlumno'
-					AND ReferenciaMesAno = '08-17'
+					AND ReferenciaMesAno = '$MesAnoParaSolvencia'
+					AND MontoDebe_Dolares > 0
 					AND SWCancelado = '0'";
 //echo $query_Solvente;					
 $RS_Solvente = mysql_query($query_Solvente, $bd) or die(mysql_error());
 if($row_Solvente = mysql_fetch_assoc($RS_Solvente)){
+		echo " Por favor comuníquese con soporte o administración para solucionar ";
 		$Solvente = false;
-		header("Location: ../index.php"); 
-  		exit;}
+		//header("Location: ../index.php"); 
+  		exit;
+	}
 	else
 		$Solvente = true;
 

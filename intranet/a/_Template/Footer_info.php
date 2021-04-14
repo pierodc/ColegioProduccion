@@ -1,9 +1,10 @@
-
- <table>
+<? if ($MM_Username == "piero"){
+//echo $MM_Username;
+?>
+ 
+ <table >
   <tbody>
-   
-  
-       <tr>
+     <tr>
       <td> <?php 
 			$Grupos = explode("," , $MM_authorizedUsers);
 			foreach ( $Grupos as $Grupo ){
@@ -12,7 +13,7 @@
 				$RS = $mysqli->query($sql);
 				while ($row = $RS->fetch_assoc()) {
 					extract($row);
-					echo " $Usuario ($Privilegios)  "; 
+					echo " $Usuario ($Privilegios) <br> "; 
 				}
 			}
 					?></td>
@@ -29,3 +30,4 @@
     </tr>
   </tbody>
 </table>
+<? } ?>

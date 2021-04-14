@@ -1,18 +1,18 @@
 <?php 
 $MM_authorizedUsers = "";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
+/*
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
+// */
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rotation.php'); 
-
-class PDF extends PDF_Rotate
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rotation.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
+/*
+class PDF extends FPDF_Rotate
 {
 function RotatedText($x,$y,$txt,$angle)
 {
@@ -29,7 +29,7 @@ function RotatedImage($file,$x,$y,$w,$h,$angle)
     $this->Image($file,$x,$y,$w,$h);
     $this->Rotate(0);
 }
-}
+}*/
 
 //$AnoEscolar = "2018-2019";
 
@@ -37,19 +37,19 @@ function RotatedImage($file,$x,$y,$w,$h,$angle)
 $linea = 2.7;
 $tipologia = 'Arial';
 $Borde = 1;
-$pdf=new PDF('P', 'mm', 'Letter');
+$pdf = new FPDF('P', 'mm', 'Letter');
 
 $pdf->SetAutoPageBreak(1,10);
 $pdf->SetMargins(10,10,20);
 
-$LapsoG = 3;
-$Lapso = 3;
+$LapsoG = 1;
+$Lapso = 1;
 
 $Curso = new Curso();
 $Curso->id = $_GET['CodigoCurso'];
 
 $Curso->Ano = $AnoEscolar;
-
+//echo $AnoEscolar;
 $Listado = $Curso->ListaCurso();
 $NivelCurso = $Curso->NivelCurso();
 $DocenteGuia = $Curso->DocenteGuia();
@@ -63,6 +63,29 @@ if($DocenteGuia == $MM_Username){
 
 if(isset($_GET['idAlumno'])){
 	$Listado = array(array("CodigoAlumno" => $_GET['idAlumno']));
+	
+	$_CodigoAlumno = CodigoAlumno($_GET['idAlumno']);
+	$query_Solvente = "SELECT * FROM ContableMov
+					WHERE CodigoPropietario = '".$_CodigoAlumno."'
+					AND ReferenciaMesAno = '$MesAnoParaSolvencia'
+					AND SWCancelado = '0'
+					AND MontoDebe_Dolares > 0";
+	//echo $query_Solvente;					
+	$RS_Solvente = $mysqli->query($query_Solvente); //mysql_query($query_Solvente, $bd) or die(mysql_error());
+	
+	if($row_Solvente = $RS_Solvente->fetch_assoc()){
+			//var_dump ($row_Solvente);
+			echo " Por favor comuníquese con soporte o administración para solucionar ";
+			$Solvente = false;
+			//header("Location: ../index.php"); 
+			exit;
+		}
+		else
+			$Solvente = true;
+
+	
+	
+	
 	} 
  
 foreach($Listado as $Alumno) 	{	
@@ -79,7 +102,7 @@ foreach($Listado as $Alumno) 	{
 	
 	$pdf->SetFont('Arial','B',100);
 	$pdf->SetTextColor(200);
-	$pdf->RotatedText(50,100,'Facsímil',15);
+	$pdf->Text(50,100,'Facsímil',15);
 	$pdf->SetTextColor(0);
 	
 	
@@ -132,7 +155,7 @@ foreach($Listado as $Alumno) 	{
 				ORDER BY Dimen_o_Indic, Orden_Grupo, Materia_Grupo, Orden";
 	} //AND Dimen_o_Indic = 'I'
 	
-	
+	//echo $sql;
 	
 	$RS = $mysqli->query($sql);
 	$row = $RS->fetch_assoc();

@@ -25,9 +25,9 @@ if ((isset($_POST["MM_insert"])) and ($_POST["MM_insert"] == "form2") and $_POST
 	$insertSQL = sprintf("INSERT INTO AsignacionXAlumno (CodigoAsignacion, CodigoAlumno, Descuento, Ano_Escolar, DescuentoPorciento, CreadoPor) VALUES (%s, %s, %s, %s,%s,%s)",
 					   GetSQLValueString($_POST['CodigoAsignacion'], "int"),
 					   GetSQLValueString($_POST['CodigoAlumno'], "int"),
-					   GetSQLValueString($_POST['Descuento']*1, "double"),
+					   GetSQLValueString($_POST['Descuento'], "double"),
 					   GetSQLValueString($_POST['Ano_Escolar'], "text"),
-					   GetSQLValueString($_POST['DescuentoPorciento']*1, "double"),
+					   GetSQLValueString($_POST['DescuentoPorciento'], "double"),
 					   GetSQLValueString($MM_Username , "text"));
 	$mysqli->query($insertSQL); }
 //echo $insertSQL;
@@ -64,7 +64,7 @@ body {
 </head>
 
 <body><form action="<?php echo $editFormAction; ?>" method="post" name="form2" id="form2">
-<table width="90%" border="0">
+<table width="" border="0" class="sombra">
 <caption>Asignaciones</caption>
             <tr>
               <td class="TituloLeftWindow">&nbsp;</td>

@@ -207,7 +207,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 </tr>
 <?
 
-if(true){		
+if(false){		
 $query = "SELECT * FROM Empleado 
 			WHERE SW_activo = 1 
 			ORDER BY TipoEmpleado, TipoDocente, Apellidos, Nombres";			
@@ -312,10 +312,9 @@ while ($row = $RS->fetch_assoc()) {
 
 
 <tr>
-  <td colspan="2" align="center" class="FondoCampo">&nbsp;</td>
-  <td align="center" class="FondoCampo"><select name="QuincenaCompleta" id="QuincenaCompleta">
-	<option value="0">Seleccione</option>
-	<?php 
+  <td colspan="4" align="center" class="FondoCampo"><select name="QuincenaCompleta" id="QuincenaCompleta">
+      <option value="0">Seleccione</option>
+      <?php 
 	$Selected=false; 
 	if(!isset($_POST['QuincenaCompleta'])) {
 	$QuincenaHoy = date('Y-').date('m')*1 .'-';
@@ -339,25 +338,24 @@ while ($row = $RS->fetch_assoc()) {
 
 			}}}
 	?>
-  </select></td>
-  <td class="FondoCampo"><select name="Tipo" id="Tipo">
-<option value="0">Selecc..</option>
-<option value="AQ"<?php if ($_POST['Tipo']=='AQ' or $Tipo == 'AQ') echo ' selected="selected"'; ?>  name=Adelanto onmouseup="this.form.Monto.value=100;"  >(-) Adelanto Quincena</option>
-<option value="AU"<?php if ($_POST['Tipo']=='AU' or $_GET['Tipo']=="AU" or $Tipo == 'AU') echo ' selected="selected"'; ?>>(-) Ausencia</option>
-<option value="DE"<?php if ($_POST['Tipo']=='DE' or $Tipo == 'DE') echo ' selected="selected"'; ?>>(-) Deducción</option>
-<option value="PP"<?php if ($_POST['Tipo']=='PP' or $Tipo == 'PP') echo ' selected="selected"'; ?>>(-) Pago de prestamo</option>
-<option value="BO"<?php if ($_POST['Tipo']=='BO' or $Tipo == 'BO') echo ' selected="selected"'; ?> >(+) Bonificación</option>
-<option value="PR"<?php if ($_POST['Tipo']=='PR' or $Tipo == 'PR') echo ' selected="selected"'; ?>>(+) Prestamo</option>
-<option value="RE"<?php if ($_POST['Tipo']=='RE' or $Tipo == 'RE') echo ' selected="selected"'; ?> >(+) Reintegro</option>
-<option value="PA"<?php if ($_POST['Tipo']=='PA' or $Tipo == 'PA') echo ' selected="selected"'; ?> >(+) Pago</option>
-<option value="BC"<?php if ($_POST['Tipo']=='BC' or $Tipo == 'BC' or isset($_GET['BC'])) echo ' selected="selected"'; ?> >(+) BC</option>
-
-  </select></td>
+      </select>      <select name="Tipo" id="Tipo">
+          <option value="0">Selecc..</option>
+          <option value="AQ"<?php if ($_POST['Tipo']=='AQ' or $Tipo == 'AQ') echo ' selected="selected"'; ?>  name=Adelanto onmouseup="this.form.Monto.value=100;"  >(-) Adelanto Quincena</option>
+          <option value="AU"<?php if ($_POST['Tipo']=='AU' or $_GET['Tipo']=="AU" or $Tipo == 'AU') echo ' selected="selected"'; ?>>(-) Ausencia</option>
+          <option value="DE"<?php if ($_POST['Tipo']=='DE' or $Tipo == 'DE') echo ' selected="selected"'; ?>>(-) Deducción</option>
+          <option value="PP"<?php if ($_POST['Tipo']=='PP' or $Tipo == 'PP') echo ' selected="selected"'; ?>>(-) Pago de prestamo</option>
+          <option value="BO"<?php if ($_POST['Tipo']=='BO' or $Tipo == 'BO') echo ' selected="selected"'; ?> >(+) Bonificación</option>
+          <option value="PR"<?php if ($_POST['Tipo']=='PR' or $Tipo == 'PR') echo ' selected="selected"'; ?>>(+) Prestamo</option>
+          <option value="RE"<?php if ($_POST['Tipo']=='RE' or $Tipo == 'RE') echo ' selected="selected"'; ?> >(+) Reintegro</option>
+          <option value="PA"<?php if ($_POST['Tipo']=='PA' or $Tipo == 'PA') echo ' selected="selected"'; ?> >(+) Pago</option>
+          <option value="BC"<?php if ($_POST['Tipo']=='BC' or $Tipo == 'BC' or isset($_GET['BC'])) echo ' selected="selected"'; ?> >(+) BC</option>
+          
+      </select></td>
   <td align="center" class="FondoCampo"><label for="Tipo"></label>
-  <?php if($_GET['Tipo']=="AU"){$Descripcion = $Dias_Aus;}
+      <?php if($_GET['Tipo']=="AU"){$Descripcion = $Dias_Aus;}
 		else {$Descripcion = $_POST['Descripcion'];} 
 		 ?>
-	<input name="Descripcion" type="text" id="Descripcion" value="<?php echo $Descripcion; ?>" size="25" onfocus="this.value='<?php echo $Descripcion; ?>'" /></td>
+      <input name="Descripcion" type="text" id="Descripcion" value="<?php echo $Descripcion; ?>" size="25" onfocus="this.value='<?php echo $Descripcion; ?>'" /></td>
   <td colspan="5" align="center" class="FondoCampo"><input name="Dias" type="text" id="Dias" size="5" 
   onkeyup="this.form.Monto.value=this.form.Dias.value*<?php echo $SueldoDiario ?>"
   onfocus="this.form.Monto.value=<?php echo $SueldoDiario*$N_Dias ?>;
@@ -377,10 +375,8 @@ while ($row = $RS->fetch_assoc()) {
 
 
 <tr  class="NombreCampo">
-  <td colspan="2" align="center" class="NombreCampo">&nbsp;</td>
-  <td align="center" class="NombreCampo">Quincena</td>
-	  <td class="NombreCampo">&nbsp;</td>
-	  <td class="NombreCampo">&nbsp;</td>
+  <td colspan="4" align="center" class="NombreCampo">Quincena</td>
+  <td class="NombreCampo">&nbsp;</td>
 	  <td align="right" class="NombreCampo">Deduc</td>
 	  <td align="right" class="NombreCampo">Pago</td>
 	  <td colspan="3" align="right" class="NombreCampo">Suma Mes</td>

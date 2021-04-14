@@ -212,7 +212,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString(coma_punto($_POST['Cambio_Dolar']), "double"),
 					   GetSQLValueString($_POST['RegistradoPor'], "text"),
 					   GetSQLValueString($_POST['MontoDocOriginal'], "double"),
-					   GetSQLValueString($SW_Moneda, "text"));
+					   GetSQLValueString(($SW_Moneda, "text"));
 	//echo "<br><br><br><br><br>" . $insertSQL;
 	$mysqli->query($insertSQL);
 	$mensaje = "";

@@ -9,9 +9,9 @@ $password_bd = "kepler1971";
 
 
  
-$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
+//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
 
-mysql_select_db($database_bd, $bd);
+// mysql_select_db($database_bd, $bd);
 
 $mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 

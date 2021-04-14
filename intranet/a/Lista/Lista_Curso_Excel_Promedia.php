@@ -40,15 +40,19 @@ $totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
 <?php 
 
 
-$SI = "SI";
-$CONTAR = "CONTAR";
-$SUMA = "SUMA";
 
 
 $SI = "IF";
 $CONTAR = "COUNT";
 $SUMA = "SUM";
 $SEP = ",";
+	
+
+$SI = "SI";
+$CONTAR = "CONTAR";
+$SUMA = "SUMA";	
+$SEP = ";";
+	
 ?>
 <table width="600" border="1">
   <tr>

@@ -13,6 +13,6 @@
   <tr>
     <td align="left" colspan="2">
     <?php  //require_once('../intranet/a/menu_intranet_a.php'); ?>
-    <a href="index.php">Inicio</a> - <a href="../CambioClave.php">Cambiar Clave</a> - <a href="Boleta.php">Boletas</a></td>
+    <a href="index.php">Inicio</a> - <a href="Boleta.php">Boletas</a> - <a href="/Curso.php">Lista Cursos</a></td>
   </tr>
 </table>

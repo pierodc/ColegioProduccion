@@ -62,10 +62,10 @@ function MM_showHideLayers() { //v9.0
           <td valign="top" class="NombreCampo">Lapso</td>
           <td valign="top" class="FondoCampo"><select name="Lapso" id="Lapso">
             <option value="0">Auto</option>
-            <option value="1">1ro</option>
+            <option value="1"  selected="selected">1ro</option>
             <option value="2">2do</option>
-            <option value="3"   selected="selected">3er</option>
-          </select></td>
+            <option value="3" >3er</option>
+          </select> <?= $AnoEscolar ?></td>
         </tr>
         <tr>
           <td valign="top" class="NombreCampo">Nota</td>

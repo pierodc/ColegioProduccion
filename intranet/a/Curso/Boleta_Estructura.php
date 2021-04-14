@@ -45,30 +45,46 @@ while($row = mysqli_fetch_assoc($Listado)){
 if(isset($_GET['CrearAnoNuevo'])){
 	
 	
-	$sql = "SELECT * FROM Boleta_Indicadores
-			WHERE NivelCurso = '".$Curso->NivelCurso()."'
-			AND Ano = '$AnoEscolarAnte'
-			ORDER BY Lapso, Dimen_o_Indic, Orden_Grupo, Materia_Grupo, Orden";
-	//echo $sql."<br>";
-	$RS = $mysqli->query($sql);
-	while ($row = $RS->fetch_assoc()) {
-		
-		extract($row);
-		$sqlInsert = "INSERT INTO Boleta_Indicadores 
-		( NivelCurso, Lapso, Dimen_o_Indic, Orden_Grupo, Materia_Grupo, Orden, Descripcion, EscalaNota, Responsable, Ano) 
-		VALUES 
-		( '$NivelCurso','$Lapso','$Dimen_o_Indic','$Orden_Grupo','$Materia_Grupo','$Orden','$Descripcion','$EscalaNota','$Responsable', '$AnoEscolar') 
-		";
-		//$mysqli->query($sqlInsert);
-		//echo $sqlInsert."<br>";
-		
-		
-		}
+	$_NivelCursos = array("10","11","12","13","14","21","22","23","24","25","26");
+	$_Lapsos = array("1","2","3");
+	
+		foreach($_NivelCursos as $_NivelCurso){
+			//foreach($_Lapsos as $_Lapso){
 
+				echo "<br><br>**************<br>  $_NivelCurso   $_Lapso <br>";
+				$sql = "SELECT * FROM Boleta_Indicadores
+						WHERE NivelCurso = '".$_NivelCurso."'
+						AND Ano = '$AnoEscolarAnte'
+						
+						ORDER BY Lapso, Dimen_o_Indic, Orden_Grupo, Materia_Grupo, Orden";
+						//AND Dimen_o_Indic = 'I'
+						//AND Lapso = '3'
+
+				echo $sql."<br>";
+
+				$RS = $mysqli->query($sql);
+				while ($row = $RS->fetch_assoc()) {
+
+					extract($row);
+					$sqlInsert = "INSERT INTO Boleta_Indicadores 
+					( NivelCurso, Lapso, Dimen_o_Indic, Orden_Grupo, Materia_Grupo, Orden, Descripcion, EscalaNota, Responsable, Ano) 
+					VALUES 
+					( '$NivelCurso','$Lapso','$Dimen_o_Indic','$Orden_Grupo','$Materia_Grupo','$Orden','$Descripcion','$EscalaNota','$Responsable', '$AnoEscolar') 
+					";
+					//$mysqli->query($sqlInsert);
+
+					echo $sqlInsert."<br>";
+
+
+				}// while
+
+
+			//}//foreach
+		}//foreach
 
 	header("Location: ".$php_self."?CodigoCurso=".$_GET['CodigoCurso']);
 	
-	}
+}
 
 
 

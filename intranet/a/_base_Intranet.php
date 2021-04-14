@@ -1,22 +1,9 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/xls/excel.php'); 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rotation.php'); 
-
-
 $TituloPantalla = "TituloPantalla";
-
-
-
 
 /*
 $Variable = new Variable();
@@ -24,12 +11,11 @@ $Variable->view("nombrevar");
 $Alumno = new Alumno($CodigoAlumno, $AnoEscolar);
 $Compra = new Compra(["Codigo" => 1]);
 
-
 if(!TieneAcceso($Acceso_US,"")){
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 	}
-*/
-/*
+	
+	
  onclick="this.disabled=true;this.form.submit();"
  
  <a href="delete.php?id=$res[id]"  onClick="return confirm('Esta seguro que desea eliminar?')">eliminar</a>
@@ -38,10 +24,14 @@ if(!TieneAcceso($Acceso_US,"")){
 // Ejecuta $sql
 $RS = $mysqli->query($query_RS_Alumno);
 
-$RS = $mysqli->query($sql);
+$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+
+
+$RS = $mysqli->query($sql); //
 $row = $RS->fetch_assoc();
 $Conteo = $RS->num_rows;
-
+$insert_id = $mysqli->insert_id; 
+ 
 // Ejecuta $sql y While
 $RS = $mysqli->query($sql);
 while ($row = $RS->fetch_assoc()) {

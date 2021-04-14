@@ -114,7 +114,7 @@ if(isset($_POST['FormaPlanDeEstudio'])){
 	header("Location: ".$_SERVER['PHP_SELF']."?CodigoAlumno=".$_GET['CodigoAlumno']);
 }
 
-if(isset($_POST['FormaColegio']) and ($MM_UserGroup = 91 or $MM_UserGroup = 95 or $CodigoCurso < 43)){
+if(isset($_POST['FormaColegio']) and ($MM_UserGroup = 91 or $MM_UserGroup = 95 or $MM_UserGroup = "secreBach" or $CodigoCurso < 43)){
 	do{
 		$i++;
 		if($_POST[$i.'-Colegio']>'')
@@ -844,8 +844,6 @@ while ($row = $RS->fetch_assoc()){
 </form>
 
 
-</div>
-</div>
 
 
 

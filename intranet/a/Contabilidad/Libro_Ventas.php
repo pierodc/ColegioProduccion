@@ -12,6 +12,18 @@ header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 //$Alumno = new Alumno($CodigoAlumno);
 
 
+if( isset ($_GET['CrearControl'])){ // proceso manual
+	for ($i = 50002; $i <= 100000; $i++) {
+		$sql = "INSERT INTO Factura_Control
+			(Control_Numero)
+			VALUE
+			($i)";
+		echo $sql . "<br>";	
+		mysql_query($sql, $bd) or die(mysql_error());
+	}
+}
+
+
 // Activa Inspeccion
 $Insp = false ;
 
@@ -55,6 +67,7 @@ if(isset($_GET['Nula'])){
 	}
 
 
+// Navegacion
 if(isset($_POST['Control'])){
 	$Control = $_POST['Control'];
 	header("Location: ".$auxPag."?Control=".$Control);}
@@ -72,6 +85,9 @@ else{
 	$Control_Max = $row_['Control_Numero']-1;
 	header("Location: ".$auxPag."?Control=".$Control_Max);
 }
+
+
+
 
 
 

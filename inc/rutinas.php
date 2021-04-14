@@ -437,9 +437,9 @@ function F_hum_bd($fecha){
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  //$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  //$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -861,17 +861,20 @@ function Promedia ($n1,$n2,$n3) {
 
 
 function Fnum($num){
+	$num = floatval($num);
 	if ($num<>0)
 		return number_format($num, 2, ',', '.');
 }
 
 function Redondea($num){
+	$num = floatval($num);
 	if ($num<>0)
 		return number_format($num, 0, ',', '.');
 }
 
 function Format($num){
-		return number_format($num, 2, ',', '.');
+	$num = floatval($num);
+	return number_format($num, 2, ',', '.');
 }
 
 function Fnum_dec($num){
@@ -1152,9 +1155,9 @@ function MMDDAAAA ($aaaa_mm_dd){
 
 function Edad($aaaa_mm_dd){
 
-	$anos  = date('Y') - substr($aaaa_mm_dd, 0, 4);
-	$meses = date('m') - substr($aaaa_mm_dd, 5, 2);
-	$dias  = date('d') - substr($aaaa_mm_dd, 8, 2);
+	$anos  = date('Y') - (int)substr($aaaa_mm_dd, 0, 4);
+	$meses = date('m') - (int)substr($aaaa_mm_dd, 5, 2);
+	$dias  = date('d') - (int)substr($aaaa_mm_dd, 8, 2);
 
 	if ( $meses < 0 ){
 		$Edad = $anos-1 . "";
@@ -1167,13 +1170,14 @@ function Edad($aaaa_mm_dd){
 }
 
 function Edad_Dif ($aaaa_mm_dd, $aaaa_mm_dd_obj){
+	
 	$ano_obj  = substr($aaaa_mm_dd_obj, 0, 4);
 	$mes_obj  = substr($aaaa_mm_dd_obj, 5, 2);
 	$dia_obj  = substr($aaaa_mm_dd_obj, 8, 2);
 
-	$anos  = $ano_obj - substr($aaaa_mm_dd, 0, 4);
-	$meses = $mes_obj - substr($aaaa_mm_dd, 5, 2);
-	$dias  = $dia_obj - substr($aaaa_mm_dd, 8, 2);
+	$anos  = $ano_obj - (int)substr($aaaa_mm_dd, 0, 4);
+	$meses = $mes_obj - (int)substr($aaaa_mm_dd, 5, 2);
+	$dias  = $dia_obj - (int)substr($aaaa_mm_dd, 8, 2);
 
 	if ( $meses < 0 ){
 		$meses = 12 + $meses;
@@ -1614,15 +1618,18 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 	$database_bd = "colegio_db";
 	$username_bd = "colegio_colegio";
 	$password_bd = "kepler1971";
-	$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+
+	//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
 	//mysql_select_db($database_bd, $bd);
 	//$Docente = false;
 	if ($MM_UserGroup == "docente"){
 		$query_RS_Cur = "SELECT * FROM Curso 
 						WHERE SW_activo=1 
 						AND (Cedula_Prof_Guia LIKE '%$MM_Username%'
+						OR   Cedula_Prof_Aux  LIKE '%$MM_Username%'
 						OR   Cedula_Prof_Esp  LIKE '%$MM_Username%')
-						ORDER BY NivelMencion , Curso, Seccion";
+						ORDER BY NivelMencion, NivelCurso , Curso, Seccion";
 		//$Docente = true;
 		}
 	else{
@@ -1630,9 +1637,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 						 WHERE SW_activo=1 
 						 ORDER BY NivelMencion , NivelCurso , Curso, Seccion";}
 	//echo $MM_UserGroup.$query_RS_Cur;					 
-					 
-	$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
-	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
+	
+	
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	$RS = $mysqli->query($query_RS_Cur);
+	$row_RS_Cur = $RS->fetch_assoc();
 	
 	$txt= '
 	<select name="CodigoCurso"  onchange="MM_jumpMenu(\'parent\',this,0)" >
@@ -1655,7 +1664,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 		if ($row_RS_Cur['CodigoCurso'] == $actual) //Marca en matriz del curso actual 
 			$KesimoActual = $i; 
 		
-	} while ($row_RS_Cur = mysql_fetch_assoc($RS_Cur));
+	} while ($row_RS_Cur = $RS->fetch_assoc());
 	$txt.= "</select>.";
 
 	
@@ -1873,13 +1882,22 @@ function Curso($codigo) {
 	$database_bd = "colegio_db";
 	$username_bd = "colegio_colegio";
 	$password_bd = "kepler1971";
-	$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
-	mysql_select_db($database_bd, $bd);
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+
+	//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
+	//mysql_select_db($database_bd, $bd);
 	
 	$query_RS_Cur = "SELECT * FROM Curso WHERE CodigoCurso = '$codigo' "; //echo $query_RS_Cur;
+	
+	$RS_Cur = $mysqli->query($query_RS_Cur);
+	$row_RS_Cur = $RS_Cur->fetch_assoc();
+	$totalRows_RS_Cur = $RS_Cur->num_rows;
+
+	
+	/*
 	$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
 	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
-	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);
+	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);*/
 	if ($totalRows_RS_Cur)
 		return $row_RS_Cur['NombreCompleto'];
 	else
@@ -1891,13 +1909,22 @@ function CodigoCursoProx($codigo) {
 	$database_bd = "colegio_db";
 	$username_bd = "colegio_colegio";
 	$password_bd = "kepler1971";
+	
+	
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	
+	$query_RS_Cur = "SELECT * FROM Curso WHERE CodigoCurso = $codigo "; //echo $query_RS_Cur;
+	
+	$RS_Cur = $mysqli->query($query_RS_Cur);
+	$row_RS_Cur = $RS_Cur->fetch_assoc();
+	/*
+
 	$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
 	mysql_select_db($database_bd, $bd);
 	
-	$query_RS_Cur = "SELECT * FROM Curso WHERE CodigoCurso = $codigo "; //echo $query_RS_Cur;
 	$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
 	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
-	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);
+	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);*/
 	
 	return $row_RS_Cur['CodigoCursoProxAno'];
 }
@@ -1994,14 +2021,14 @@ function MenuEmpleado ($Codigo=0, $Destino, $Sort = "Cargo" ){
 	$i = 1;
 	while ($row = $RS->fetch_assoc()) {
 		
-		$Lista[$i][Codigo] = $row['CodigoEmpleado'];
-		$Lista[$i][Ape] = $row['Apellidos'];
-		$Lista[$i][Nom] = $row['Nombres'];
+		$Lista[$i]["Codigo"] = $row['CodigoEmpleado'];
+		$Lista[$i]["Ape"] = $row['Apellidos'];
+		$Lista[$i]["Nom"] = $row['Nombres'];
 			
 		
 		
 		if (!(strcmp($row['CodigoEmpleado'], $Codigo))) {
-				$Lista[$i][selected] = "selected=\"selected\""; 
+				$Lista[$i]["selected"] = "selected=\"selected\""; 
 				$Emp_ant = $Lista_Anterior;
 				$Emp_Actual = $i;
 		}
@@ -2025,7 +2052,7 @@ function MenuEmpleado ($Codigo=0, $Destino, $Sort = "Cargo" ){
 	  
 		
 	if( $Emp_Actual > 1 ){ // anterior
-		echo '<a href="'. $Destino . '&CodigoEmpleado='. $Lista[$Emp_Actual-1][Codigo] .'"  >';
+		echo '<a href="'. $Destino . '&CodigoEmpleado='. $Lista[$Emp_Actual-1]["Codigo"] .'"  >';
 		echo '<img src="/i/control_rewind_blue.png" width="32" height="32" border=0 />';
 		echo '</a>'; 
 	}
@@ -2039,14 +2066,14 @@ function MenuEmpleado ($Codigo=0, $Destino, $Sort = "Cargo" ){
 	echo "\r\n";
 	
 	foreach($Lista as $Emp){
-		echo '<option value="'. $Destino . '&CodigoEmpleado='. $Emp[Codigo] .'" '. $Emp[selected].' >'; 
-		echo $Emp[Ape]." ".$Emp[Nom];
+		echo '<option value="'. $Destino . '&CodigoEmpleado='. $Emp["Codigo"] .'" '. $Emp["selected"].' >'; 
+		echo $Emp["Ape"]." ".$Emp["Nom"];
 		echo "</option>\r\n";
 	}
 	echo "</select>";
 	
 	if( $Emp_Actual < $i-1 ){ // siguiente
-		echo '<a href="'. $Destino . '&CodigoEmpleado='. $Lista[$Emp_Actual+1][Codigo] .'"  >';
+		echo '<a href="'. $Destino . '&CodigoEmpleado='. $Lista[$Emp_Actual+1]["Codigo"] .'"  >';
 		echo '<img src="/i/control_fastforward_blue.png" width="32" height="32" border=0 />';
 		echo '</a>'; 
 	}
@@ -2716,16 +2743,21 @@ function RutaFoto ($Codigo,$Medida){
 	$Ano = date('Y');
 	$raiz = $_SERVER['DOCUMENT_ROOT'];
 	$Ruta = $raiz.'/f/'.$Ano.'/'.$Medida.'/'.$Codigo.'.jpg';
+	$Ruta = $raiz.'/f/'.$Ano.'/'.$Codigo.'.jpg';
+	
+	
 	if (file_exists($Ruta)){
 		return $Ruta;}
 	else{
 		$Ano--;	
 		$Ruta = $raiz.'/f/'.$Ano.'/'.$Medida.'/'.$Codigo.'.jpg';
+		$Ruta = $raiz.'/f/'.$Ano.'/'.$Codigo.'.jpg';
 		if (file_exists($Ruta)){
 			return $Ruta;}
 		else{
 			$Ano--;	
 			$Ruta = $raiz.'/f/'.$Ano.'/'.$Medida.'/'.$Codigo.'.jpg';
+			$Ruta = $raiz.'/f/'.$Ano.'/'.$Codigo.'.jpg';
 			if (file_exists($Ruta)){
 				return $Ruta;}
 			else{
@@ -2793,6 +2825,20 @@ function CodigoPropietario($CodigoAlumno){
 	$row = $RS->fetch_assoc();
 	return $row['CodigoClave'];	
 	}
+
+function CodigoAlumno($CodigoAlumno){
+	$hostname_bd = "localhost";
+	$database_bd = "colegio_db";
+	$username_bd = "colegio_colegio";
+	$password_bd = "kepler1971";
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	$sql = "SELECT * FROM Alumno WHERE CodigoClave = '$CodigoAlumno'";
+	//echo $sql;
+	$RS = $mysqli->query($sql);
+	if($row = $RS->fetch_assoc())
+		return $row['CodigoAlumno'];	
+	}
+
 
 function Status($CodigoAlumno, $AnoEscolar){
 	$hostname_bd = "localhost";

@@ -1,11 +1,6 @@
 <?php 
 $MM_authorizedUsers = "";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 if($_iPhone){
 	header("Location: index_iphone.php"); }

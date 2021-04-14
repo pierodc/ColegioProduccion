@@ -235,14 +235,18 @@ if($row_RS_ContableMov_Procesando['Cambio_Dolar'] > 0)
 $SumaDePagos += $MontoIngresado;
 	
 ?></strong></td>
-  <td align="right"><form id="form_divide<?= ++$forma; ?>" name="form_divide" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>">
+  <td align="right">
+   
+   <!--form id="form_divide<?= ++$forma; ?>" name="form_divide" method="post" action="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']; ?>">
     
     <input name="Divide_Pago" type="hidden" value="Divide_Pago" />	
     <input name="Codigo" type="hidden" value="<?php echo $row_RS_ContableMov_Procesando['Codigo']; ?>" />	
     <input type="text" name="Monto_divide" value="" size="10"  onfocus="this.value=<?php echo $MontoRestante*-1; ?>"  /><button type="submit" class="btn btn-info btn-sm"  onclick="this.disabled=true;this.form.submit();">
 							Divide
 						</button>
-  </form></td>
+  </form-->
+  
+  </td>
   </tr>
   
   <tr><td colspan="5" align="center" bgcolor="#FFDFAD" ><?

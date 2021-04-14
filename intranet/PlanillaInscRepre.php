@@ -43,10 +43,10 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['DireccionTra'], "text"),
 					   GetSQLValueString(date('Y-m-d'), "date"));
 
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+  $Result1 = $mysqli->query($insertSQL) ; //mysql_query($insertSQL, $bd) or die(mysql_error());
 
 $CodigoAlumno = $_POST['CodigoAlumno'];
-$CodigoRepresentante = mysql_insert_id();
+$CodigoRepresentante = $mysqli->insert_id;
 $Nexo = $_POST['Nexo'];	
 if(strpos('   '.strtolower($_POST['SWrepre']) ,'s') >=1 )
 	 $SWrepre='1';
@@ -58,7 +58,7 @@ $sql_insert = "INSERT INTO RepresentanteXAlumno
 				VALUES 
 				('$CodigoAlumno', '$CodigoRepresentante', '$Nexo', '$SWrepre')";
 				 
-$Result1 = mysql_query($sql_insert, $bd) or die(mysql_error());
+ $Result1 = $mysqli->query($sql_insert) ;//$Result1 = mysql_query($sql_insert, $bd) or die(mysql_error());
 
   $insertGoTo = "index.php";
   /*if (isset($_SERVER['QUERY_STRING'])) {
@@ -101,8 +101,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 					   GetSQLValueString(date('Y-m-d'), "date"),
                        GetSQLValueString($_POST['CodigoRepresentante'], "int"));
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+  //mysql_select_db($database_bd, $bd);
+  $Result1 = $mysqli->query($updateSQL) ;// mysql_query($updateSQL, $bd) or die(mysql_error());
 
   $updateGoTo = "index.php";
 /*  if (isset($_SERVER['QUERY_STRING'])) {
@@ -112,30 +112,43 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   header(sprintf("Location: %s", $updateGoTo));
 }
 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_Recordset1 = "SELECT * FROM Representante";
+
+
+$Recordset1 = $mysqli->query($query_Recordset1);
+$row_Recordset1 = $Recordset1->fetch_assoc();
+$totalRows_Recordset1 = $Recordset1->num_rows;
+/*
 $Recordset1 = mysql_query($query_Recordset1, $bd) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
-
+*/
 $Creador_RS_Repre = "0";
 if (isset($_COOKIE['MM_Username'])) {
-  $Creador_RS_Repre = (get_magic_quotes_gpc()) ? $_COOKIE['MM_Username'] : addslashes($_COOKIE['MM_Username']);
+  $Creador_RS_Repre =  $_COOKIE['MM_Username'] ;
 }
 $colname_RS_Repre = "0";
 if (isset($_GET['CodigoRepresentante'])) {
-  $colname_RS_Repre = (get_magic_quotes_gpc()) ? $_GET['CodigoRepresentante'] : addslashes($_GET['CodigoRepresentante']);
+  $colname_RS_Repre = $_GET['CodigoRepresentante'] ;
 }
 if(isset($_GET['Creador'])) {
-  $Creador_RS_Repre = (get_magic_quotes_gpc()) ? $_GET['Creador'] : addslashes($_GET['Creador']);
+  $Creador_RS_Repre = $_GET['Creador'] ;
 }
 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_RS_Repre = sprintf("SELECT * FROM Representante WHERE CodigoRepresentante = '%s' AND Creador = '%s'", $colname_RS_Repre,$Creador_RS_Repre);
+
+
+$RS_Repre = $mysqli->query($query_RS_Repre);
+$row_RS_Repre = $RS_Repre->fetch_assoc();
+$totalRows_RS_Repre = $RS_Repre->num_rows;
+
+/*
 $RS_Repre = mysql_query($query_RS_Repre, $bd) or die(mysql_error());
 $row_RS_Repre = mysql_fetch_assoc($RS_Repre);
 $totalRows_RS_Repre = mysql_num_rows($RS_Repre);
-
+*/
 ?>
 <html>
 <head>
@@ -235,14 +248,14 @@ body {
     <tr>
       <td colspan="4" class="subtitle">Datos Personales
         <input name="CodigoAlumno" value="<?php echo $_GET['CodigoAlumno'] ?>" type="hidden" > 
-        <input name="CodigoRepresentante" type="hidden" value="<?php echo $_GET[CodigoRepresentante]; ?>">        </td>
+        <input name="CodigoRepresentante" type="hidden" value="<?php echo $_GET["CodigoRepresentante"]; ?>">        </td>
       </tr>
     <tr>
       <td align="right" class="NombreCampo">
         <input name="Creador" type="hidden" id="Creador" value="<?php echo $_COOKIE['MM_Username']; ?>">
       Nexo</td>
-      <td class="FondoCampo"><?php if (isset($_GET[Nexo])) {echo $_GET[Nexo]; 
-	  ?><input name="Nexo" type="hidden" value="<?php echo $_GET[Nexo]; ?>"><?php 
+      <td class="FondoCampo"><?php if (isset($_GET["Nexo"])) {echo $_GET["Nexo"]; 
+	  ?><input name="Nexo" type="hidden" value="<?php echo $_GET["Nexo"]; ?>"><?php 
 	  } else { ?><input name="Nexo" type="text" class="TextosSimples" id="Nexo" value="<?php echo $row_RS_Repre['Nexo']; ?>" size="20">
       <?php } ?></td>
       <td align="right" class="NombreCampo">Representante</td>

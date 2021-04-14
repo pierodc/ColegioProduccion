@@ -39,10 +39,10 @@ $RS_ContableMov = $mysqli->query($query_RS_ContableMov);
 
 $totalRows_RS_ContableMov = $RS_ContableMov->num_rows;
 
-
+if ($totalRows_RS_ContableMov > 0){
 ?>
 
-<table border="1" class="hoverable" >
+<table border="1" class="hoverable sombra" >
 	<caption>Pendiente</caption>
       <tbody>
             <tr>
@@ -76,7 +76,7 @@ $totalRows_RS_ContableMov = $RS_ContableMov->num_rows;
 				if($row_RS_ContableMov['SWiva'] == 1) 
 					$MontoIVA = round($MontoDebe*$P_IVA_2/100 , 2);
 				else
-					$MontoIVA = "";
+					$MontoIVA = 0;
 				
 				
 				
@@ -160,7 +160,7 @@ $Etiqueta_Class =  ' class="Listado'.$In.'Par'.$Azul.'"';
   <td <?php //echo $Etiqueta_Class ?>>&nbsp;</td>
   <td align="right" <?php //echo $Etiqueta_Class ?>><?= Fnum($MontoDebe); ?></td>
   <td align="right" <?php //echo $Etiqueta_Class ?>><?= Fnum($MontoIVA); ?></td>
-  <td align="right" <?php //echo $Etiqueta_Class ?>><?= Fnum($MontoDebe+$MontoIVA)?></td>
+  <td align="right" <?php //echo $Etiqueta_Class ?>><? echo Fnum($MontoDebe + $MontoIVA); ?></td>
   <td align="right" <?php //echo $Etiqueta_Class ?>><?php 
 		if($row_RS_ContableMov['MontoAbono'] > 0) {
 			$MontoAbonado = round($row_RS_ContableMov['MontoAbono']+($row_RS_ContableMov['SWiva']*$row_RS_ContableMov['MontoAbono']*($P_IVA_2)/100),2);
@@ -274,3 +274,6 @@ $(document).ready(function() {
 });
 </script>
 </div>
+
+
+<? } ?>

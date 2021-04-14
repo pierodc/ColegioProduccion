@@ -1,17 +1,14 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secreAcad";
-require_once('../../../../inc_login_ck.php'); 
-require_once('../../../../Connections/bd.php'); 
-require_once('../../../../inc/rutinas.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 require_once('../../../../inc/fpdf.php');
-require_once('../../archivo/Variables.php');
 
 
 
 if(!isset($_GET['CodigoEmpleado'])){
 	$sql_Pago_Extra = "UPDATE Empleado 
 						SET Pago_extra2 = ''";
-	mysql_query($sql_Pago_Extra, $bd) or die(mysql_error());
+	$mysqli->query($sql_Pago_Extra); //mysql_query($sql_Pago_Extra, $bd) or die(mysql_error());
 }	
 
 $Mes = $_GET['Mes'];
@@ -95,7 +92,7 @@ $pdf->SetFillColor(255);
 
 $pdf->SetFont('Arial','',10);
  
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $br=false;
 
 $query_RS_Empleados = "SELECT * FROM Empleado 
@@ -105,10 +102,16 @@ $query_RS_Empleados = "SELECT * FROM Empleado
 							AND FechaEgreso >= '".date('Y')."-$Mes-1'))
 						ORDER BY PaginaCT, Apellidos, Nombres ASC";
 						//echo $query_RS_Empleados;
+
+
+$RS_Empleados = $mysqli->query($query_RS_Empleados); //
+$row_RS_Empleados = $RS_Empleados->fetch_assoc();
+$totalRows_RS_Empleados = $RS_Empleados->num_rows;
+/*
 $RS_Empleados = mysql_query($query_RS_Empleados, $bd) or die(mysql_error());
 $row_RS_Empleados = mysql_fetch_assoc($RS_Empleados);
 $totalRows_RS_Empleados = mysql_num_rows($RS_Empleados);
-
+*/
 
 $PaginaCTanterior = 0;
 $SubTotGen = 0;
@@ -244,10 +247,10 @@ do {
 	$sql_Pago_Extra = "UPDATE Empleado 
 						 SET Pago_extra2 = '$Pago_extra'
 						 WHERE CodigoEmpleado = '$Codigo_Empleado'";
-	mysql_query($sql_Pago_Extra, $bd) or die(mysql_error());		
+	$mysqli->query($sql_Pago_Extra); // mysql_query($sql_Pago_Extra, $bd) or die(mysql_error());		
 			
 
-} while ($row_RS_Empleados = mysql_fetch_assoc($RS_Empleados)); 
+} while ($row_RS_Empleados = $RS_Empleados->fetch_assoc()); 
 
 
 $pdf->SetFont('Arial','B',11);
@@ -285,5 +288,5 @@ $pdf->Output();
 
 
 
-mysql_free_result($RS_Empleados);
+//mysql_free_result($RS_Empleados);
 ?>

@@ -1,15 +1,6 @@
 <?php 
 $MM_authorizedUsers = "91,Contable";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/xls/excel.php'); 
 
 //$Variable = new Variable();
 //$Variable->view("Concepto_Pedido");
@@ -53,7 +44,8 @@ $Lote = substr("0000".$Variables->view("Lote_Nomina_Mercantil") , -4);
 $CuentaPagoNomina = $Variables->view("CuentaPagoNomina");
 
 
-$Lote_prox = substr("0000". $Variables->view("Lote_Nomina_Mercantil") + 1 , -4);
+$Lote_prox = $Variables->view("Lote_Nomina_Mercantil") + 1 ;
+$Lote_prox = substr("0000". $Lote_prox  , -4);
 $Variables->edit("Lote_Nomina_Mercantil" , $Lote_prox);
 
 

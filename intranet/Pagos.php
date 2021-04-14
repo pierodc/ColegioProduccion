@@ -40,12 +40,22 @@ $query_RS_Busca_Referencia = sprintf("SELECT * FROM ContableMov
 									  AND (Tipo = 1 OR Tipo = 2)", 
 									  GetSQLValueString($colname_RS_Busca_Referencia, "int"),
 									  GetSQLValueString(coma_punto($_POST['MontoHaber']), "double"));
+
+
+$RS_Busca_Referencia = $mysqli->query($query_RS_Busca_Referencia);
+$row_RS_Busca_Referencia = $RS_Busca_Referencia->fetch_assoc();
+$totalRows_RS_Busca_Referencia = $RS_Busca_Referencia->num_rows;
+
+/*
+
 $RS_Busca_Referencia = mysql_query($query_RS_Busca_Referencia, $bd) or die(mysql_error());
 $row_RS_Busca_Referencia = mysql_fetch_assoc($RS_Busca_Referencia);
 $totalRows_RS_Busca_Referencia = mysql_num_rows($RS_Busca_Referencia);
+*/
+
 
 $mensaje = "";
-if ($_GET[mensaje]=='duplicado') {
+if ($_GET["mensaje"]=='duplicado') {
 $mensaje = "El instrumento de pago ya fue utilizado. El pago no se registr&oacute;";}
 
 
@@ -112,9 +122,18 @@ $query_RS_ContableMov = sprintf("SELECT * FROM ContableMov, Alumno
 								AND Alumno.CodigoAlumno=ContableMov.CodigoPropietario 
 								ORDER BY ContableMov.Fecha ASC, Codigo ASC"
 								, GetSQLValueString($colname_RS_ContableMov, "text"));
+
+
+$RS_ContableMov = $mysqli->query($query_RS_ContableMov);
+$row_RS_ContableMov = $RS_ContableMov->fetch_assoc();
+$totalRows_RS_ContableMov = $RS_ContableMov->num_rows;
+
+/*
+
+
 $RS_ContableMov = mysql_query($query_RS_ContableMov, $bd) or die(mysql_error());
 $row_RS_ContableMov = mysql_fetch_assoc($RS_ContableMov);
-$totalRows_RS_ContableMov = mysql_num_rows($RS_ContableMov);
+$totalRows_RS_ContableMov = mysql_num_rows($RS_ContableMov);*/
 
 $colname_RS_Alumno = "-1";
 if (isset($_GET['CodigoPropietario'])) {
@@ -122,9 +141,17 @@ if (isset($_GET['CodigoPropietario'])) {
 }
 
 $query_RS_Alumno = sprintf("SELECT * FROM Alumno WHERE CodigoClave = %s", GetSQLValueString($colname_RS_Alumno, "text"));
+
+
+$RS_Alumno = $mysqli->query($query_RS_Alumno);
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+$totalRows_RS_Alumno = $RS_Alumno->num_rows;
+
+/*
+
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
-$totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
+$totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);*/
 
 $Email_Pago = $row_RS_Alumno['Email_Pago'];
 
@@ -142,9 +169,15 @@ $query_Pendiente = sprintf("SELECT * FROM ContableMov, Alumno
 						GetSQLValueString($CodigoAlumno, "int")); 
 //echo $query_Pendiente;
 
+
+$Pendiente = $mysqli->query($query_Pendiente);
+//$$row_Pendiente = $Pendiente->fetch_assoc();
+$totalRows_Pendiente = $Pendiente->num_rows;
+
+/*
 $Pendiente = mysql_query($query_Pendiente, $bd) or die(mysql_error());
 //$row_Pendiente = mysql_fetch_assoc($Pendiente);
-$totalRows_Pendiente = mysql_num_rows($Pendiente);
+$totalRows_Pendiente = mysql_num_rows($Pendiente);*/
 
 
 
@@ -262,9 +295,9 @@ body {
             <p> a nombre de: Colegio San Francisco de As&iacute;s. RIF No. J-00137023-4</p></td>
   </tr>
 
-<?php if(isset($_GET[mensaje])){ ?>
+<?php if(isset($_GET["mensaje"])){ ?>
   <tr>
-    <td colspan="2"><span align="center" class="MensajeDe<?php if($_GET[mensaje]=='duplicado') { echo "Error";} else { echo "OK";} ?>"><?php echo $mensaje; ?></span></td>
+    <td colspan="2"><span align="center" class="MensajeDe<?php if($_GET["mensaje"]=='duplicado') { echo "Error";} else { echo "OK";} ?>"><?php echo $mensaje; ?></span></td>
   </tr>
 <?php } ?>
 
@@ -467,13 +500,13 @@ if($totalRows >= 1){
     <?php  $saldo=0; $Par = true; ?>
     <?php 
 	
-	while ($row_Pendiente = mysql_fetch_assoc($Pendiente)) { 
+	while ( $row_Pendiente = $Pendiente->fetch_assoc()) { 
 	extract($row_Pendiente);
 	
 	if($SWiva == 1) 
 		$MontoIVA = round($MontoDebe * $P_IVA_2/100 , 2);
 	else
-		$MontoIVA = "";
+		$MontoIVA = 0;
 					
 	if ($ReferenciaMesAno_Anterior <> $ReferenciaMesAno and $ReferenciaMesAno_Anterior > "") {
 		?>
@@ -497,7 +530,7 @@ if($totalRows >= 1){
     
     <tr <?= $Etiqueta_Class ?>>
 
-<td nowrap ><?php if ( $row_Pendiente['RegistradoPor'] == $MM_Username ){ ?>
+<td nowrap ><?php if ( $row_Pendiente['RegistradoPor'] == $MM_Username  and $row_Pendiente['RegistradoPor'] > ""){ ?>
 <a href="Pagos.php?CodigoPropietario=<?php echo $_GET['CodigoPropietario']."&EliminarMov=1&Codigo=".$row_Pendiente['Codigo'] ?>"><img src="../img/b_drop.png" alt="" width="16" height="16"></a>
 <?php }?></td>
 

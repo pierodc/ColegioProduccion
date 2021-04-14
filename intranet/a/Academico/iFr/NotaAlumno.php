@@ -44,8 +44,8 @@ if(isset($_POST['MM_update']) or isset($_POST['MM_insert'])){
 							   GetSQLValueString($_POST['n12'], "text"),
 							   GetSQLValueString($_POST['n13'], "text"));
 		
-		  mysql_select_db($database_bd, $bd);
-		  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+		  //mysql_select_db($database_bd, $bd);
+		  $Result1 = $mysqli->query($insertSQL); //mysql_query($insertSQL, $bd) or die(mysql_error());
 		  
 		  CalcDefinitivaLapso($_POST['CodigoAlumno'], substr($_POST['Lapso'],0,1) , $_POST['CodigoCurso'], $AnoEscolar, $database_bd, $bd);
 		}
@@ -71,8 +71,8 @@ if(isset($_POST['MM_update']) or isset($_POST['MM_insert'])){
 							   GetSQLValueString($_POST['n13'], "text"),
 							   GetSQLValueString($_POST['Codigo'], "int"));
 		
-		  mysql_select_db($database_bd, $bd);
-		  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+		  //mysql_select_db($database_bd, $bd);
+		  $Result1 = $mysqli->query($updateSQL); //mysql_query($updateSQL, $bd) or die(mysql_error());
 		  //echo $updateSQL;
 		  CalcDefinitivaLapso($_POST['CodigoAlumno'], substr($_POST['Lapso'],0,1) , $_POST['CodigoCurso'], $AnoEscolar, $database_bd, $bd);
 		}
@@ -82,17 +82,24 @@ if(isset($_POST['MM_update']) or isset($_POST['MM_insert'])){
 	}
 
 //echo 'query_RS_Alumnos '.$query_RS_Alumno.'<br>';
-
+$RS_Alumnos = $mysqli->query($query_RS_Alumno); //
+$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+/*
 $RS_Alumnos = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
 $totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
-
+*/
 $CodigoAlumno = $row_RS_Alumnos['CodigoAlumno'];
 
 $query_RS_Curso = sprintf("SELECT * FROM Curso WHERE CodigoCurso = %s", $_GET['CodigoCurso']);
+$RS_Curso = $mysqli->query($query_RS_Curso); //
+$row_RS_Curso = $RS_Curso->fetch_assoc();
+
+/*
 $RS_Curso = mysql_query($query_RS_Curso, $bd) or die(mysql_error());
 $row_RS_Curso = mysql_fetch_assoc($RS_Curso);
-
+*/
 if((strrpos($_GET['Lapso'], "mp") != 0) or (strrpos($_GET['Lapso'], "MatP") != 0))
 	{$CodigoMaterias = $row_RS_Curso['CodigoMateriasPendiente']; }
 else 
@@ -100,9 +107,13 @@ else
 
 $query_RS_Materias = "SELECT * FROM CursoMaterias WHERE CodigoMaterias = '".$CodigoMaterias."'";
 //echo $query_RS_Materias;
+$RS_Materias = $mysqli->query($query_RS_Materias); //
+$row_RS_Materias = $RS_Materias->fetch_assoc();
+
+/*
 $RS_Materias = mysql_query($query_RS_Materias, $bd) or die(mysql_error());
 $row_RS_Materias = mysql_fetch_assoc($RS_Materias);
-
+*/
 
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -121,11 +132,16 @@ $i = $i+1;
 $Linea = $Linea + 1;
 		 
 
-mysql_select_db($database_bd, $bd);
 $query_RS_Nota_Al = "SELECT * FROM Nota WHERE CodigoAlumno = '". $CodigoAlumno."' AND Lapso= '".$_GET['Lapso']."' AND Ano_Escolar='$AnoEscolar'";
+$RS_Nota_Al = $mysqli->query($query_RS_Nota_Al); //
+$row_RS_Nota_Al = $RS_Nota_Al->fetch_assoc();
+$totalRows_RS_Nota_Al = $RS_Nota_Al->num_rows;
+	
+	/*
 $RS_Nota_Al = mysql_query($query_RS_Nota_Al, $bd) or die(mysql_error());
 $row_RS_Nota_Al = mysql_fetch_assoc($RS_Nota_Al);
 $totalRows_RS_Nota_Al = mysql_num_rows($RS_Nota_Al);
+*/
 		 if($i==$_GET['Linea'])  $Verde = true; else $Verde = false; ?>
 <?php 
 	
@@ -183,7 +199,7 @@ $ClassImput = ' "class="ReciboRenglonMini"';
           <td width="2" align="center" class="ReciboRenglon"><?php  
 		  unset( $_Desac );
 		  
-		    $Pr = ($n01+$n02+$n03+$n04+$n05+$n06+$n07+$n08+$n09+$n10+$n11+$n12+$n13);
+		    $Pr = ((int)$n01+(int)$n02+(int)$n03+(int)$n04+(int)$n05+(int)$n06+(int)$n07+(int)$n08+(int)$n09+(int)$n10+(int)$n11+(int)$n12+(int)$n13);
 		   if( $Pr != 0 ){ 
 		   $Cuenta = ($n01>0?1:0)+($n02>0?1:0)+($n03>0?1:0)+($n04>0?1:0)+($n05>0?1:0)+($n06>0?1:0)+($n07>0?1:0)+($n08>0?1:0)+($n09>0?1:0)+($n10>0?1:0);
 		   $Cuenta += ($n11>0?1:0)+($n12>0?1:0)+($n13>0?1:0);

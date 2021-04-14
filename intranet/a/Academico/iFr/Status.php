@@ -1,10 +1,9 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secreAcad,secre,AsistDireccion,Contable";
-require_once('../../../../inc_login_ck.php'); 
-require_once('../../archivo/Variables.php'); 
-require_once('../../../../Connections/bd.php'); 
-require_once('../../../../inc/rutinas.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
+
+	
 ?><link href="../../../../estilos2.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body {
@@ -19,13 +18,15 @@ body {
 
 if(	isset($_GET['NewStatus']) and ( $MM_UserGroup == "91" or $MM_UserGroup == "95" or $MM_UserGroup == "AsistDireccion")){
 	
+	
 	$sql = "SELECT * FROM AlumnoXCurso WHERE Codigo = '".$_GET['Codigo']."'";
 	$RS = $mysqli->query($sql);
 	$row = $RS->fetch_assoc();
 	extract($row);
 	$CodigoAlumno = $CodigoAlumno + 90000000;
-	$sql = "INSERT INTO AlumnoXCurso (CodigoAlumno, CodigoCurso, Ano, Status, Status_Proceso_Ins, Status_por) VALUES
-	('$CodigoAlumno', '$CodigoCurso', '$Ano', '$Status', '$Status_Proceso_Ins', '$Status_por')";
+	$sql = "INSERT INTO AlumnoXCurso (CodigoAlumno, CodigoCurso, Ano, Status, Status_Proceso_Ins, Status_por, Session_id, IP) VALUES
+	('$CodigoAlumno', '$CodigoCurso', '$Ano', '$Status', '$Status_Proceso_Ins', '$Status_por', '$_Session_id', '$_IP')";
+	
 	//echo $sql;
 	$mysqli->query($sql);
 	
@@ -40,7 +41,7 @@ if(	isset($_GET['NewStatus']) and ( $MM_UserGroup == "91" or $MM_UserGroup == "9
 		$Fecha = " Fecha_Registro ";
 	}
 	
-	$Fecha .= " = '".date("Y-m-d")."', ";
+	$Fecha .= " = '".date("Y-m-d H:i:s")."', ";
 	
 	
 	
@@ -48,10 +49,14 @@ if(	isset($_GET['NewStatus']) and ( $MM_UserGroup == "91" or $MM_UserGroup == "9
 	$sql = "UPDATE AlumnoXCurso
 			SET Status = '".$_GET['NewStatus']."',
 			$Fecha
-			Status_por = '$MM_Username'
+			Status_por = '$MM_Username',
+			Session_id = '$_Session_id',
+			IP = '$_IP'
+			
 			WHERE Codigo = '".$_GET['Codigo']."'
 			AND CodigoAlumno = '".$_GET['CodigoAlumno']."'";
 	$mysqli->query($sql);
+	//echo $sql;
 }
 
 

@@ -1,10 +1,7 @@
 <?php 
 $MM_authorizedUsers = "99,95,90,91";
-require_once('../../../inc_login_ck.php'); 
-
-require_once('../../../Connections/bd.php'); 
-require_once('../../../inc/rutinas.php'); 
-$MM_donotCheckaccess = "false";
+//$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 
 $colname_RS_Representantes = "-1";
@@ -26,10 +23,13 @@ if($aux[3]!=""){$query_RS_Representantes .=  " AND CONCAT_WS(' ', Nombres, Apell
 $query_RS_Representantes .= ")  ORDER BY Apellidos ASC";
 
 //echo $query_RS_Representantes;
-
+$RS_Representantes = $mysqli->query($query_RS_Representantes); //
+$row_RS_Representantes = $RS_Representantes->fetch_assoc();
+$totalRows_RS_Representantes = $RS_Representantes->num_rows;
+/*
 $RS_Representantes = mysql_query($query_RS_Representantes, $bd) or die(mysql_error());
 $row_RS_Representantes = mysql_fetch_assoc($RS_Representantes);
-$totalRows_RS_Representantes = mysql_num_rows($RS_Representantes);
+$totalRows_RS_Representantes = mysql_num_rows($RS_Representantes);*/
 }
 
 
@@ -130,9 +130,14 @@ $query_RS_Hijos = "SELECT * FROM Alumno, AlumnoXCurso
 					AND Alumno.CodigoAlumno = AlumnoXCurso.CodigoAlumno
 					ORDER BY Alumno.CodigoAlumno, Ano DESC
 					";
+$RS_Hijos = $mysqli->query($query_RS_Hijos); //
+$row_RS_Hijos = $RS_Hijos->fetch_assoc();
+$totalRows_RS_Hijos = $RS_Hijos->num_rows;
+	
+	/*
 $RS_Hijos = mysql_query($query_RS_Hijos, $bd) or die(mysql_error());
 $row_RS_Hijos = mysql_fetch_assoc($RS_Hijos);
-$totalRows_RS_Hijos = mysql_num_rows($RS_Hijos);
+$totalRows_RS_Hijos = mysql_num_rows($RS_Hijos);*/
 	   ?>
           <tr>
             <td class="Listado<?php echo $In ?>Par12">&nbsp;</td>
@@ -154,15 +159,15 @@ $totalRows_RS_Hijos = mysql_num_rows($RS_Hijos);
 						echo "|";
 				}
 				$CodigoAlumnoAnterior = $row_RS_Hijos["CodigoAlumno"];
-			} while ($row_RS_Hijos = mysql_fetch_assoc($RS_Hijos));
+			} while ($row_RS_Hijos = $RS_Hijos->fetch_assoc());
 			
 		
 			?>&nbsp;</td>
           </tr>
         <?php $In = $In==''?'In':'';
-} while ($row_RS_Representantes = mysql_fetch_assoc($RS_Representantes)); ?>
+} while ($row_RS_Representantes = $RS_Representantes->fetch_assoc()); ?>
         </table><?php 
-mysql_free_result($RS_Hijos);
+//mysql_free_result($RS_Hijos);
 		
 		} ?></td>
   </tr>

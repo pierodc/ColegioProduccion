@@ -88,14 +88,19 @@ $sql = "SELECT * FROM Asignacion
 		AND Periodo='M' 
 		AND Orden>'02' 
 		ORDER BY Descripcion";
+$RS = $mysqli->query($sql); //
+$row = $RS->fetch_assoc();
+$Conteo = $RS->num_rows;
+							  
+	/*						  
 mysql_select_db($database_bd, $bd);
 $RS = mysql_query($sql, $bd) or die(mysql_error());
-$row = mysql_fetch_assoc($RS);
+$row = mysql_fetch_assoc($RS);*/
 do{
 	extract($row);
 echo 'KW_Asignacion_Data[KW_Asignacion_Data.length]="'.$Codigo.'|'.$Descripcion.'"
 ';
-	}while ($row = mysql_fetch_assoc($RS));		  
+	}while ($row = $RS->fetch_assoc());		  
 					  ?> 
 
 
@@ -112,16 +117,19 @@ echo 'KW_Asignacion_Data[KW_Asignacion_Data.length]="'.$Codigo.'|'.$Descripcion.
  KW_Curso_Data[KW_Curso_Data.length]="0|--"
 <?php 
 $sql = 'SELECT * FROM Curso WHERE SW_activo=1 ORDER BY NivelCurso, Seccion';
-mysql_select_db($database_bd, $bd);
+$RS = $mysqli->query($sql); //
+$row = $RS->fetch_assoc();
+
+/*mysql_select_db($database_bd, $bd);
 $RS = mysql_query($sql, $bd) or die(mysql_error());
-$row = mysql_fetch_assoc($RS);
+$row = mysql_fetch_assoc($RS);*/
 do{
 	extract($row);
 	if ($CodigoCurso>0)
 		echo ' KW_Curso_Data[KW_Curso_Data.length]="'.$CodigoCurso.'|'.$NombreCompleto.'"
 		';
 		//echo "<option value='".."'>".$NombreCompleto."</option>\r\n";	
-	}while ($row = mysql_fetch_assoc($RS));		  
+	}while ($row = $RS->fetch_assoc());		  
 		  ?>
 
 </script>
@@ -319,9 +327,13 @@ Autorizados </td>
     
 <?php 
 $sql = "SELECT * FROM Curso WHERE SW_Activo=1 ORDER BY NivelCurso, Seccion";
+$RS = $mysqli->query($sql); //
+$row = $RS->fetch_assoc();
+$Conteo = $RS->num_rows;
+/*							  
 mysql_select_db($database_bd, $bd);
 $RS = mysql_query($sql, $bd) or die(mysql_error());
-$row = mysql_fetch_assoc($RS);
+$row = mysql_fetch_assoc($RS);*/
 do{
 	extract($row);
 ?>    
@@ -329,7 +341,7 @@ do{
         <td align="center"><a href="Lista_Curso_Excel_Promedia.php?CodigoCurso=<?= $CodigoCurso; ?>" target="_blank"><?php echo $NombreCompleto; ?></a></td>
   </tr>
 <?php 
-	}while ($row = mysql_fetch_assoc($RS));		  
+	}while ($row = $RS->fetch_assoc());		  
 ?>
   </table>
 </body>
@@ -412,10 +424,13 @@ else{
 		AND Asignacion.Descripcion <> 'Actividades Extracurriculares' 
 		ORDER BY Asignacion.Descripcion, Curso.NivelCurso, Curso.Seccion, Alumno.Apellidos, Alumno. Apellidos2, Alumno.Nombres, Alumno.Nombres2 ";
 }  
-
+$RS = $mysqli->query($sql); //
+$row = $RS->fetch_assoc();
+$Conteo = $RS->num_rows;
+/*
 $RS = mysql_query($sql, $bd) or die(mysql_error());
 $row = mysql_fetch_assoc($RS);
-
+*/
 $FormatoPDF = false;
 
 //echo $sql;
@@ -475,9 +490,13 @@ do {
 					AND Ano = '$AnoEscolar' 
 					AND Status = 'Inscrito'
 					AND Tipo_Inscripcion <> 'Mp'";
+			$RS_Cantidad_Alumnos = $mysqli->query($sql); //
+			$row = $RS_Cantidad_Alumnos->fetch_assoc();
+			$Conteo = $RS_Cantidad_Alumnos->num_rows;
+			/*
 			$RS_Cantidad_Alumnos = mysql_query($sql, $bd) or die(mysql_error());
 			$row =  mysql_fetch_assoc($RS_Cantidad_Alumnos);	
-					
+			*/		
 			$h_max = $h_max_permitido / $row['Cantidad_Alumnos'];
 			//$Ln = min($Ln_Original , $h_max);
 
@@ -622,8 +641,12 @@ do {
 		if($_POST['Materias'] or $_POST['Notas']) {
 		$mm = $AnchoDisponible/13;
 		$sql2 = "SELECT * FROM CursoMaterias WHERE CodigoMaterias = '".$CodigoMaterias."n'";
+		$RS2 = $mysqli->query($sql2); //
+		$row2 = $RS2->fetch_assoc();
+
+			/*
 		$RS2 = mysql_query($sql2, $bd) or die(mysql_error());
-		$row2 = mysql_fetch_assoc($RS2);
+		$row2 = mysql_fetch_assoc($RS2);*/
 		
 		$pdf->SetXY($_x, 30-$Ln*3.5 );
 		
@@ -732,8 +755,12 @@ do {
 							Alumno.Nombres <> '$Nombres2' 
 							ORDER BY AlumnoXCurso.CodigoCurso
 						";
+			$RS2 = $mysqli->query($sql2); //
+			$row2 = $RS2->fetch_assoc();
+
+		/*
 			$RS2 = mysql_query($sql2, $bd) or die(mysql_error());
-			$row2 = mysql_fetch_assoc($RS2);
+			$row2 = mysql_fetch_assoc($RS2);*/
 			if($row2['Apellidos']>'')
 				do{
 					$pdf->Cell(40 , $Ln , substr($row2['Apellidos'],0,3).' '.$row2['Nombres'].' '.CursoSeccion($row2['CodigoCurso']).' ' , $borde , 0 , 'L');
@@ -841,6 +868,10 @@ do {
 					GROUP BY ReferenciaMesAno
 					ORDER BY Fecha";
 			//echo $sql;
+			$RS_x = $mysqli->query($sql_x); //
+			;
+
+		
 			$RS_x = $mysqli->query($sql_x);
 			while ($row_x = $RS_x->fetch_assoc()) {
 				extract($row_x);
@@ -880,8 +911,11 @@ do {
 						AND AlumnoXCurso.Ano = '$AnoEscolarAnte'  
 						AND AlumnoXCurso.Status = 'Inscrito'  
 						AND AlumnoXCurso.CodigoAlumno=".$CodigoAlumno ;
+				$RS3 = $mysqli->query($sql3); //
+				$row3 = $RS3->fetch_assoc();
+/*
 				$RS3 = mysql_query($sql3, $bd) or die(mysql_error());
-				$row3 = mysql_fetch_assoc($RS3);
+				$row3 = mysql_fetch_assoc($RS3);*/
 				$pdf->SetFont('Arial','',9);
 				$pdf->Cell(30 , $Ln , $row3['Status'] , $borde , 0 , 'C');
 				$pdf->SetFont('Arial','',10);
@@ -892,8 +926,10 @@ do {
 					AND AlumnoXCurso.Ano = '$AnoEscolar'  
 					AND AlumnoXCurso.Status = 'Inscrito'  
 					AND AlumnoXCurso.CodigoAlumno=".$CodigoAlumno ;
-			$RS3 = mysql_query($sql3, $bd) or die(mysql_error());
-			$row3 = mysql_fetch_assoc($RS3);
+			$RS3 = $mysqli->query($sql3); //
+			$row3 = $RS3->fetch_assoc();
+/*			$RS3 = mysql_query($sql3, $bd) or die(mysql_error());
+			$row3 = mysql_fetch_assoc($RS3);*/
 			$pdf->SetFont('Arial','B',10);
 			$pdf->Cell(30 , $Ln , $row3['Status'] , $borde , 0 , 'C');
 			$pdf->SetFont('Arial','',10);
@@ -904,8 +940,10 @@ do {
 						AND AlumnoXCurso.Ano = '$AnoEscolarProx'  
 						AND AlumnoXCurso.Status = 'Inscrito'  
 						AND AlumnoXCurso.CodigoAlumno=".$CodigoAlumno ;
-				$RS3 = mysql_query($sql3, $bd) or die(mysql_error());
-				$row3 = mysql_fetch_assoc($RS3);
+				$RS3 = $mysqli->query($sql3); //
+				$row3 = $RS3->fetch_assoc();
+				/*$RS3 = mysql_query($sql3, $bd) or die(mysql_error());
+				$row3 = mysql_fetch_assoc($RS3);*/
 				$pdf->SetFont('Arial','',9);
 				$pdf->Cell(30 , $Ln , $row3['Status'] , $borde , 0 , 'C');
 				$pdf->SetFont('Arial','',10);
@@ -923,10 +961,12 @@ do {
 						WHERE CodigoAlumno = '".$CodigoAlumno."'
 						AND Grado <> 'V'
 						ORDER BY Grado, Orden";
-			$RSaux = mysql_query($SQLaux, $bd) or die(mysql_error());
+			$RSaux = $mysqli->query($SQLaux); //
+			;
+			//$RSaux = mysql_query($SQLaux, $bd) or die(mysql_error());
 			$_x = $pdf->GetX();
 			$_y = $pdf->GetY();
-			while($ROWaux = mysql_fetch_assoc($RSaux)){	
+			while($ROWaux = $RSaux->fetch_assoc()){	
 				if($GradoAnterior != $ROWaux['Grado']){
 					$pdf->SetXY($_x , $_y);
 					$_x = $_x + 65;
@@ -1122,8 +1162,11 @@ do {
 			AND AlumnoXCurso.CodigoCurso = Curso.CodigoCurso 
 			AND AlumnoXCurso.Ano = '$AnoEscolar'  
 			AND Alumno.CodigoAlumno=".$CodigoAlumno ;
-		$RS3 = mysql_query($sql3, $bd) or die(mysql_error());
-		$row3 = mysql_fetch_assoc($RS3);
+		$RS3 = $mysqli->query($sql3); //
+		$row3 = $RS3->fetch_assoc();
+
+		//$RS3 = mysql_query($sql3, $bd) or die(mysql_error());
+		//$row3 = mysql_fetch_assoc($RS3);
 		$pdf->Cell(30 , $Ln , $row3['NombreCompleto'] , $borde , 0 , 'L'); }
 		
 		
@@ -1133,8 +1176,11 @@ do {
 							WHERE CodigoAlumno = '$CodigoAlumno' 
 							AND Ano_Escolar = '$AnoEscolar' 
 							AND Lapso = '".$_POST['Notas']."'";
-			$RS_Notas = mysql_query($sql_notas, $bd) or die(mysql_error());
-			$row_notas = mysql_fetch_assoc($RS_Notas);
+			$RS_Notas = $mysqli->query($sql_notas); //
+			$row_notas = $RS_Notas->fetch_assoc();
+
+			//$RS_Notas = mysql_query($sql_notas, $bd) or die(mysql_error());
+			//$row_notas = mysql_fetch_assoc($RS_Notas);
 	
 			$Aplaz = '';
 			$SumaNota=0;
@@ -1294,7 +1340,7 @@ do {
 		$TituloAnterior = $TituloPag;
 		
 		
-		if($row = mysql_fetch_assoc($RS)) // Siguiente Alumno
+		if($row = $RS->fetch_assoc()) // Siguiente Alumno
 			extract($row); 
 		
 		if($_POST['Tipo']=='Curso') 
@@ -1463,7 +1509,7 @@ do {
 		}
 		
 		
-		$row = mysql_fetch_assoc($RS); 
+		$row = $RS->fetch_assoc(); 
 	
 	}	
 		

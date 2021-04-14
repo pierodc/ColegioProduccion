@@ -2,13 +2,8 @@
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,secreBach";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$ContableMov = new ContableMov($CodigoAlumno=0);
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-$URLadmin = 'http://www.colegiosanfrancisco.com/intranet/a/';
 
 
 
@@ -57,48 +52,53 @@ if (isset($_POST['Buscar']) or isset($_GET['CodigoBuscar'])) {
 	}
 	
 	//echo "<br><br><br><br><br>".$query_RS_Alumnos;
+	
+	$RS_Alumnos = $mysqli->query($query_RS_Alumnos);
+	$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+	$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+
+	
+	/*
 	$RS_Alumnos = mysql_query($query_RS_Alumnos, $bd) or die(mysql_error());
 	$row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
-	$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
+	$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);*/
 } 
+
+
 
 $colname_RS_Alumno = "-1";
 if (isset($_GET['CodigoClave'])) {
   $colname_RS_Alumno = $_GET['CodigoClave'];
 }
-mysql_select_db($database_bd, $bd);
 $query_RS_Alumno = sprintf("SELECT * FROM Alumno WHERE CodigoAlumno = %s", GetSQLValueString($colname_RS_Alumno, "text"));
+$RS_Alumnos = $mysqli->query($query_RS_Alumnos);
+$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+/*
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
-$totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
+$totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);*/
 
 
-mysql_select_db($database_bd, $bd);
 $query_RS_Cursos = "SELECT * FROM Curso ORDER BY Curso.NivelMencion, Curso.Curso, Curso.Seccion";
+$RS_Cursos = $mysqli->query($query_RS_Alumnos);
+$row_RS_Cursos = $RS_Cursos->fetch_assoc();
+$totalRows_RS_Cursos = $RS_Cursos->num_rows;
+/*
 $RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
 $row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
-$totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);
+$totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);*/
 
+
+
+require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
 ?><!doctype html>
 <html lang="es">
   <head>
-    <meta charset="ISO-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="common.css">
-    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- AUTOFILL -->
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
-
-<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<title>Administraci&oacute;n SFDA</title>
-<link href="/estilos.css" rel="stylesheet" type="text/css" />
-<?php $ToRoot = "../../../../";?>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<script type="text/javascript">
+	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
+    <title><?php echo $TituloPag; ?></title>
+    
+    <script type="text/javascript">
 <!--
 function MM_jumpMenu(targ,selObj,restore){ //v3.0
   eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
@@ -107,27 +107,15 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 //-->
 </script>
 
-<script src="/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-<link href="/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<link href="/SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
-
-<script src="/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-<script src="/SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
-<link href="/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-<link href="/SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
-
-<script src="/SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
-<link href="/SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
-
-
-<link href="/SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+    
 </head>
-<body onLoad="Buscar.focus()">
+<body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/_Template/NavBar.php');  ?>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
 
 <div class="container-fluid">
   <div class="row">
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] .'/intranet/a/TitAdmin.php'); ?>
+    <?php //require_once($_SERVER['DOCUMENT_ROOT'] .'/intranet/a/TitAdmin.php'); ?>
   </div>
 
   <div class="row">
@@ -177,22 +165,11 @@ while ($row = $RS->fetch_assoc()) {
 
   <div class="row">
     <div class="col-lg-12">
-<table width="100%" border="0" align="center">
-  <tr>
-    <td><?php   
-	$TituloPantalla ="Alumnos";
-	//require_once('TitAdmin.php'); ?></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><div align="center">
-        <table width="100%"  border="0" align="center">
-    
-            <tr>
-            <td colspan="2"><?php if ($totalRows_RS_Alumnos > 0) { // Show if recordset not empty ?>
- <div class="row">
-    <div class="col-lg-12">
-    
-<table width="100%" border="0" cellpadding="3" cellspacing="0">
+
+			
+			<?php if ($totalRows_RS_Alumnos > 0) { // Show if recordset not empty ?>
+
+<table width="" border="0" cellpadding="3" cellspacing="0">
 <?php 
 $SWinscrito = $_POST['SWinscrito'] . $_GET['SWinscrito'];
 
@@ -200,6 +177,7 @@ do {
 
 $Alumno = new Alumno($row_RS_Alumnos['CodigoAlumno'], $AnoEscolar);
 
+$ContableMov->id = $row_RS_Alumnos['CodigoAlumno'];
 	
 $sqlStatus = "SELECT * FROM AlumnoXCurso
 				WHERE CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'
@@ -222,8 +200,15 @@ if($CodigoAlumnoAnterior != $row_RS_Alumnos['CodigoAlumno']){
 		$sql = "SELECT * FROM AlumnoXCurso 
 				WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
 				AND Ano='".$AnoEscolarProx."' ";
+		$RS_sql = $mysqli->query($sql);
+		//$row_RS_Alumnos = $RS_sql->fetch_assoc();
+		$totalRows_RS = $RS_sql->num_rows;
+
+	
+	
+	/*
 		$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-		$totalRows_RS = mysql_num_rows($RS_sql);
+		$totalRows_RS = mysql_num_rows($RS_sql);*/
 		//echo $sql.'<br>';	
 		
 		if($totalRows_RS == 0){
@@ -231,9 +216,14 @@ if($CodigoAlumnoAnterior != $row_RS_Alumnos['CodigoAlumno']){
 					WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
 					AND Ano='".$AnoEscolar."' 
 					AND Status = 'Inscrito'";
+			
+			$RS_sql = $mysqli->query($sql);
+			$row_ = $RS_sql->fetch_assoc();
+			$totalRows_RS = $RS_sql->num_rows;
+			/*
 			$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
 			$row_ = mysql_fetch_assoc($RS_sql);
-			$totalRows_RS = mysql_num_rows($RS_sql);
+			$totalRows_RS = mysql_num_rows($RS_sql);*/
 		//echo $sql.'<br>';	
 			
 			
@@ -255,7 +245,8 @@ if($CodigoAlumnoAnterior != $row_RS_Alumnos['CodigoAlumno']){
 							   GetSQLValueString($CodigoCurso, "text"),
 							   GetSQLValueString($aux_Status, "text"),
 							   GetSQLValueString($MM_Username, "text"));
-				  $Result1 = mysql_query($sql, $bd) or die(mysql_error());
+				$mysqli->query($sql);
+				//$Result1 = mysql_query($sql, $bd) or die(mysql_error());
 		//echo $sql.'<br>';	
 				  
 			}	
@@ -285,33 +276,44 @@ if($CodigoAlumnoAnterior != $row_RS_Alumnos['CodigoAlumno']){
                   
 <tr>
     <td align="left" valign="top" nowrap="nowrap">&nbsp;</td>
-    <td align="left" valign="top" nowrap="nowrap"><?php echo CursoAlumno($row_RS_Alumnos['CodigoAlumno'], $AnoEscolar ) ?>
-      <br />
+    <td align="left" valign="top" nowrap="nowrap">
       <a href="PlanillaAlumno.php?CodigoAlumno=<?= $row_RS_Alumnos['CodigoAlumno']?>">Planilla</a><br />
-      
       <?php 
     if ($MM_Username=="piero"){ echo ".";?>
       <a href="Procesa.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>&EliminaAlumno=1" target="_blank">Eliminar</a>
 <?php echo ".";} ?>
-<br />
 <?php if (($MM_UserGroup=='99' or $MM_UserGroup=='91' or $MM_UserGroup=='95' or $MM_UserGroup=='secre') and $row_RS_Alumnos['Status'] == 'Solicitando'){ ?>
       <a href="ListaAlumnos.php?Aceptar=1&amp;CodigoClave=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>"><?php echo $row_RS_Alumnos['Status'] ?> ACEPTAR</a>
       <?php } ?>
-      <br />
-      <a href="ListaAlumnos.php?Inscripcion_Condicional=<?php if($row_RS_Alumnos['SWInsCondicional']==1) echo '2'; else echo '1';  ?>&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>">Ins Cond. = <?php echo $row_RS_Alumnos['SWInsCondicional']; ?></a><br />
-      <a href="PDF/Carnet.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" target="_blank"> Carnet</a> | <a href="../PDF/Carnet.php?CodigoPropietario=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_blank">Carnet Repre</a>| <a href="Academico/Nota_Certificada.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" target="_blank">Nota Certif.</a>|
       
-        <a href="/intranet/PDF/Boleta.php?CodigoPropietario=<?= $row_RS_Alumnos['CodigoClave']; ?>" target="_blank">Boleta Bach</a>|
-        
-        <a href="/intranet/PDF/Boleta_Pr.php?CodigoCurso=<?= $CodigoCurso ?>&idAlumno=<?= $row_RS_Alumnos['CodigoClave']; ?>" target="_blank">Boleta PriPre</a>
+      <? /* ?>
+      <br />
+      <a href="ListaAlumnos.php?Inscripcion_Condicional=<?php if($row_RS_Alumnos['SWInsCondicional']==1) echo '2'; else echo '1';  ?>&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>">Ins Cond. = <?php echo $row_RS_Alumnos['SWInsCondicional']; ?></a>
+      <? */ ?>
+      <br />
+      <a href="PDF/Carnet.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" target="_blank"> Carnet</a> | <a href="../PDF/Carnet.php?CodigoPropietario=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_blank">Carnet Repre</a>| <a href="Academico/Nota_Certificada.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" target="_blank">Nota Certif.</a>|<br>
+      
+      
+<a href="/intranet/PDF/Boleta.php?CodigoPropietario=<?= $row_RS_Alumnos['CodigoClave']; ?>" target="_blank">Boleta Bach</a>|
+       
+       
+ <a href="/intranet/PDF/Boleta_Pr.php?CodigoCurso=<?= $CodigoCurso-2 ?>&idAlumno=<?= $row_RS_Alumnos['CodigoClave']; ?>&AnoEscolar=<?= $AnoEscolarAnte ?>" target="_blank">Boleta PriPre</a>
         
         
         </td>
-    <td align="left" valign="top" nowrap="nowrap"><p>Constancia de:
+    <td align="left" valign="top"><p>Constancia de:
       <?php 
-if($row_RS_Alumnos['Deuda_Actual'] > $MontoParaSolvencia){	  
+		
+$Pendiente = $ContableMov->Pendiente();
+		
+		
+if($Pendiente['resumen']['MontoDebe_Dolares'] > 20){	  
 	
-	  echo "Pedir solvencia ".$row_RS_Alumnos['Deuda_Actual'];
+	  echo "<br><p title=\"";
+	  foreach( $Pendiente['resumen']['MesAno'] as $MesAno ){
+	  		echo " > " . $MesAno ;
+	  }
+	  echo "\">Pedir solvencia $".$Pendiente['resumen']['MontoDebe_Dolares']."</p>";
 	
 	}else{ 
 		
@@ -320,9 +322,16 @@ if($row_RS_Alumnos['Deuda_Actual'] > $MontoParaSolvencia){
 			AND Ano = '$AnoEscolarProx'
 			AND (Status = 'Inscrito' OR Status = 'Aceptado')";
 	//echo $sql;
+	
+	
+	$RS_ = $mysqli->query($query_RS_Alumnos);
+	$row_Prox = $RS_->fetch_assoc();
+	
+	
+	/*
 	$RS_ = mysql_query($sql, $bd) or die(mysql_error());
 	$row_Prox = mysql_fetch_assoc($RS_);
-	
+	*/
 	
 		?>
       <form name="form" id="form">
@@ -342,8 +351,7 @@ if($row_RS_Alumnos['Deuda_Actual'] > $MontoParaSolvencia){
       <?php 
 	}
 	?>
-      <br>
-      <a href="http://<?= $_SERVER['HTTP_HOST']  ?>/Aviso_de_Cobro.php?CodigoPropietario=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_blank"> Aviso de Cobro</a><?php echo Fnum($row_RS_Alumnos['Deuda_Actual']); ?> <br />
+      <br />
       <a href="../PlanillaInscripcion_pdf.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_blank"> Planilla Inscr</a><br /></td>
     <td align="center" nowrap="nowrap">
   <a href="Cobranza/Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_self"><img src="../../i/cash_register.png" width="32" height="32" alt=""/>
@@ -419,23 +427,34 @@ if($row_RS_Alumnos['Deuda_Actual'] > $MontoParaSolvencia){
 			AND (AlumnoXCurso.Ano = '$AnoEscolar' OR AlumnoXCurso.Ano = '$AnoEscolarProx') 
 			GROUP BY AlumnoXCurso.CodigoAlumno";
 
+	
+	$RS_ = $mysqli->query($sql);
+	$row_ = $RS_->fetch_assoc();
+	$totalRows_RS_ = $RS_->num_rows;
+
+	/*
     $RS_ = mysql_query($sql, $bd) or die(mysql_error());
     $row_ = mysql_fetch_assoc($RS_);
     $totalRows_RS_ = mysql_num_rows($RS_);
+	*/
+	
     if ($totalRows_RS_>0){
 		do {
 			$nombreFoto = '../../'. $AnoEscolar.'/'.$row_['CodigoAlumno'].'.jpg';
 			if (!file_exists($nombreFoto)) { 
 				$nombreFoto = '../../'. $AnoEscolarAnte.'/150/'.$row_['CodigoAlumno'].'.jpg';}
 			?><img src="<?php echo $nombreFoto ?>" alt="" width="30" height="30" border="0" /><br><?php echo $row_['CodigoAlumno']; ?><br><?php
-		} while ($row_ = mysql_fetch_assoc($RS_)); 	
+		} while ($row_ = $RS_->fetch_assoc()); 	
     }
     ?></td>
 </tr>
+
+
+
 <tr>
   <td align="left" valign="top" nowrap="nowrap">&nbsp;</td>
-  <td colspan="2" align="left" valign="top" nowrap="nowrap"><iframe width="500" height="120" src="http://www.colegiosanfrancisco.com/intranet/a/Academico/iFr/Status.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" frameborder="1" id="SWframe"></iframe></td>
-  <td colspan="6" align="center" nowrap="nowrap"><iframe width="700" height="120" src="http://www.colegiosanfrancisco.com/intranet/a/Observacion.php?Area=Lista&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" frameborder="1" id="SWframe2"></iframe></td>
+  <td colspan="2" align="left" valign="top" nowrap="nowrap"><iframe width="300" height="60" src="http://www.colegiosanfrancisco.com/intranet/a/Academico/iFr/Status.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" frameborder="1" id="SWframe"></iframe></td>
+  <td colspan="6" align="center" valign="top" nowrap="nowrap"><iframe width="500" height="60" src="http://www.colegiosanfrancisco.com/intranet/a/Observacion.php?Area=Lista&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" frameborder="1" id="SWframe2"></iframe></td>
   </tr>
                   
                   <?php 
@@ -447,15 +466,11 @@ if($row_RS_Alumnos['Deuda_Actual'] > $MontoParaSolvencia){
 }  
 
 
-				  } while ($row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos)); ?>
+				  } while ($row_RS_Alumnos = $RS_Alumnos->fetch_assoc()); ?>
                 </table>
-	</div>
-</div>            
                 
-                </td>
-          </tr>
-       
-        </table>
+                 
+                
         <?php } ?>
     </div></td>
   </tr>

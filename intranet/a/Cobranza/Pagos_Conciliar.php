@@ -43,7 +43,6 @@ if (isset($_POST['Fecha_'])) {
 	$Fecha_ = $_POST['Fecha_'];
 	header("Location: Pagos_Conciliar.php?Fecha_=$Fecha_");
 }
-
 elseif (isset($_GET['Fecha_']) and $_GET['Fecha_'] == "todo") {
 	$Fecha_ = $_GET['Fecha_'];
 	//$add_sql = "  AND ContableMov.Fecha >= '2019-11-01' AND ContableMov.Fecha <= '2019-11-31' ";
@@ -51,18 +50,18 @@ elseif (isset($_GET['Fecha_']) and $_GET['Fecha_'] == "todo") {
 	}
 elseif (isset($_GET['Fecha_'])) {
 	$Fecha_ = $_GET['Fecha_'];
-	$add_sql = " AND ContableMov.Fecha = '$Fecha_'";
+	$add_sql = " AND ContableMov.FechaIngreso LIKE '$Fecha_%'";
 	}
 else {
 	$Fecha_ = date('Y-m-d');
-	$add_sql = " AND ContableMov.Fecha = '$Fecha_'";
+	$add_sql = " AND ContableMov.FechaIngreso LIKE '$Fecha_%'";
 }
 
 
 
 	
 	
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_RS_x_Validar = "SELECT ContableMov.*, Alumno.*, ContableCuenta.*, ContableMov.Observaciones AS Observ  
 						FROM ContableMov, Alumno, ContableCuenta 
 						WHERE ContableMov.CodigoPropietario = Alumno.CodigoAlumno 
@@ -70,17 +69,25 @@ $query_RS_x_Validar = "SELECT ContableMov.*, Alumno.*, ContableCuenta.*, Contabl
 						AND ContableMov.MontoHaber > 0 
 						AND SW_Postergado = '$Oculto' 
 						".$add_sql." 
-						AND (ContableMov.CodigoCuenta=1 or ContableMov.CodigoCuenta=2) 
+						
 						AND CodigoRecibo=0 
 						
-						ORDER BY FechaIngreso DESC LIMIT 600"; //AND Alumno.Deuda_Actual > 1
+						ORDER BY FechaIngreso DESC LIMIT 100"; 
+
+
+						//AND (ContableMov.CodigoCuenta=1 or ContableMov.CodigoCuenta=2) 
+
+						//AND Alumno.Deuda_Actual > 1
 						
 
 //echo "<br><br><br><br>".$query_RS_x_Validar;
+$RS_x_Validar = $mysqli->query($query_RS_x_Validar);
+$row_RS_x_Validar = $RS_x_Validar->fetch_assoc();
+$totalRows_RS_x_Validar = $RS_x_Validar->num_rows;
 						
-$RS_x_Validar = mysql_query($query_RS_x_Validar, $bd) or die(mysql_error());
-$row_RS_x_Validar = mysql_fetch_assoc($RS_x_Validar);
-$totalRows_RS_x_Validar = mysql_num_rows($RS_x_Validar);
+//$RS_x_Validar = mysql_query($query_RS_x_Validar, $bd) or die(mysql_error());
+//$row_RS_x_Validar = mysql_fetch_assoc($RS_x_Validar);
+//$totalRows_RS_x_Validar = mysql_num_rows($RS_x_Validar);
 
 
 require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
@@ -125,7 +132,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
              
 
 </table>
-             
+    
+    
+ <? if($totalRows_RS_x_Validar > 0){ ?>            
 <table class="sombra">
              
               
@@ -142,7 +151,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
               <td align="center" class="TituloLeftWindow">Fecha</td>
               <td colspan="2" align="center" class="TituloLeftWindow">Referencia</td>
               <td align="center" class="TituloLeftWindow">&nbsp;</td>
-              <td colspan="4" align="center" class="TituloLeftWindow"><?php if ( $_GET[SWValidado] == 0 and 1==2) { ?>
+              <td colspan="4" align="center" class="TituloLeftWindow"><?php if ( $_GET["SWValidado"] == 0 and 1==2) { ?>
                     <a href="Pagos_Conciliar.php?AutoConcilia=1&amp;SWValidado=0">Auto-Concilia</a>
                 <?php } ?></td>
               </tr>
@@ -308,14 +317,14 @@ do {
 	<?php 
 	$No +=1; 
 	
-} while ($row_RS_x_Validar = mysql_fetch_assoc($RS_x_Validar)); ?>
+} while ($row_RS_x_Validar = $RS_x_Validar->fetch_assoc()); ?>
 
 
 
 
 
           </table>
-          
+<? } ?>          
           
 
 

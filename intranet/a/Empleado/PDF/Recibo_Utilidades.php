@@ -61,7 +61,8 @@ do {
 	//echo $sql."<br>";
 
 	
-	if($MontoBase>0){
+	if($MontoBase > 0){
+		$MontoBase = 1200000;
 		$pdf->AddPage();
 		$pdf->Image('../../../../img/solcolegio.jpg', 10,10,0,20);
 		$pdf->Image('../../../../img/NombreCol.jpg' , 30,10,0,12);

@@ -1,7 +1,7 @@
 <?php 
+//$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once('../../Connections/bd.php'); 
-require_once('../../inc/rutinas.php'); 
 
 $colname_RS_Alumno = "-1";
 if (isset($_GET['CodigoAlumno'])) {

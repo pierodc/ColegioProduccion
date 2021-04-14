@@ -1,12 +1,6 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
 
 
@@ -29,11 +23,10 @@ if(isset($_GET['Email'])){
 	$DeudaCurso = 0;
 	while ($row_RS_Alumno = $RS_Alumno->fetch_assoc()) {
 		
+		$NumAlumnos++;
+		
 		$Deuda_Alumno = ActulizaEdoCuentaDolar($row_RS_Alumno['CodigoAlumno'] , $Cambio_Dolar);
 		
-		//echo $row_RS_Alumno['CodigoAlumno'] ." ". $Cambio_Dolar. "<br>";
-		
-		//echo $row_RS_Alumno['CodigoAlumno'] ." ". $Deuda_Alumno. "<br>";
 		
 		if($Deuda_Alumno > 1){
 			
@@ -104,8 +97,6 @@ if(isset($_GET['Email'])){
 				
 				$pdf .= '<h3>Esperamos esten muy bien y resguardados en casa. En el colegio estamos haciendo nuestro mayor esfuerzo para poder cumplir con el soporte de los docentes y demas personal, sin embargo no es posible cumplir a cabalidad sin el aporte de los padres.</h3>';
 				
-				$pdf .= '<p>Quedamos a su disposición por el whatsapp +58.414.303.44.44 para resolver sus situación de manera mas expedita y asi poder pasar por caja directamente a retirar su factura.</p>';
-				
 				$pdf .= "<p>Le indicamos que nuestro sistema indica para el dia de hoy que Ud tiene una deuda con la institución.</p>";
 				
 				$pdf .= '<p>El cuerpo docente y demás empleados contamos con su pago puntual para superar la difícil situación que estamos viviendo.</p>';
@@ -116,6 +107,8 @@ if(isset($_GET['Email'])){
 				
 				
 				$pdf .= '<p>Agradecemos completar exaustivamente el formulario de <b>registro de pago</b> para poder conciliar su trasacción lo antes posible.</p>';
+				
+				$pdf .= "<p>Quedamos a su disposición por el<a href=\"https://wa.me/+584143034444?text=Alumno:%20".$row_RS_Alumno['Apellidos']."%20".$row_RS_Alumno['Nombres']."%20(".$row_RS_Alumno['CodigoAlumno'].")\"> WhatsApp +58.414.303.44.44</a> para resolver sus situación de manera mas expedita y asi poder pasar por caja directamente a retirar su factura.</p>";
 				
 				
 				$pdf .= '<p>Se despide<br>';
@@ -144,8 +137,10 @@ if(isset($_GET['Email'])){
 			}
 		} // if($totalRows_Pendiente>0 and $PendienteMes>1)
 	} 
-	echo "<br>Deudores: ".$No."<br>";
-	echo 'DeudaCurso ' . Fnum($DeudaCurso);
+	
+	$_Porciento_deudores = round( $NumAlumnos / $No * 100 , 0);
+	echo "<br>Deudores: $_Porciento_deudores %  >   $No / $NumAlumnos  > ";
+	echo " DeudaCurso " . Fnum($DeudaCurso);
 	
 }
 //echo "<pre>$pdf</pre>";

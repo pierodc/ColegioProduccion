@@ -12,13 +12,18 @@ require_once('../../../inc/notas.php');
 
 $colname_RS_Curso = "0";
 if (isset($_GET['CodigoCurso'])) {
-  $colname_RS_Curso = (get_magic_quotes_gpc()) ? $_GET['CodigoCurso'] : addslashes($_GET['CodigoCurso']);
+  $colname_RS_Curso =  $_GET['CodigoCurso'] ;
 }
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_RS_Curso = sprintf("SELECT * FROM Curso WHERE CodigoCurso = %s", $colname_RS_Curso);
-$RS_Curso = mysql_query($query_RS_Curso, $bd) or die(mysql_error());
-$row_RS_Curso = mysql_fetch_assoc($RS_Curso);
-$totalRows_RS_Curso = mysql_num_rows($RS_Curso);
+$RS_Curso = $mysqli->query($query_RS_Curso); //
+$row_RS_Curso = $RS_Curso->fetch_assoc();
+$totalRows_RS_Curso = $RS_Curso->num_rows;
+
+
+//$RS_Curso = mysql_query($query_RS_Curso, $bd) or die(mysql_error());
+//$row_RS_Curso = mysql_fetch_assoc($RS_Curso);
+//$totalRows_RS_Curso = mysql_num_rows($RS_Curso);
 
 
 
@@ -69,29 +74,43 @@ if($_GET['Lapso']=='Equivalencia'){
 						 AND AlumnoXCurso.Tipo_Inscripcion = 'Eq'
 						 ORDER BY Alumno.Cedula";}
 	
+
+$RS_Alumnos = $mysqli->query($query_RS_Alumnos); //
+$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+
 //echo $query_RS_Alumnos;	
 //$query_RS_Alumnos = $query_RS_Alumno;	
-$RS_Alumnos = mysql_query($query_RS_Alumnos, $bd) or die(mysql_error());
+//$RS_Alumnos = mysql_query($query_RS_Alumnos, $bd) or die(mysql_error());
 //$row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
-$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
+//$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
 //echo $query_RS_Alumnos;
 
 $query_RS_Cursos = "SELECT * FROM Curso
 					ORDER BY NivelMencion ASC, Curso.Curso, Curso.Seccion";
+$RS_Cursos = $mysqli->query($query_RS_Cursos); //
+$row_RS_Cursos = $RS_Cursos->fetch_assoc();
+$totalRows_RS_Cursos = $RS_Cursos->num_rows;
+
+/*
 $RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
 $row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
 $totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);
-
+*/
 if((strrpos($_GET['Lapso'], "mp") != 0) or (strrpos($_GET['Lapso'], "MatP") != 0))
 	{$CodigoMaterias = $row_RS_Curso['CodigoMateriasPendiente']; }
 else 
 	{$CodigoMaterias = $row_RS_Curso['CodigoMaterias']; }
 
 $query_RS_Materias = "SELECT * FROM CursoMaterias WHERE CodigoMaterias = '".$CodigoMaterias."'"; //echo $query_RS_Materias;
+$RS_Materias = $mysqli->query($query_RS_Materias); //
+$row_RS_Materias = $RS_Materias->fetch_assoc();
+$totalRows_RS_Materias = $RS_Materias->num_rows;
+
+/*
 $RS_Materias = mysql_query($query_RS_Materias, $bd) or die(mysql_error());
 $row_RS_Materias = mysql_fetch_assoc($RS_Materias);
 $totalRows_RS_Materias = mysql_num_rows($RS_Materias);
-
+*/
 function echoNota ($nota){
 	if ($nota > '00'){ echo $nota; }
 }
@@ -206,7 +225,7 @@ foreach($Lapsos as $Lapso){
       </tr>
     </table></td>
   </tr><?php $Linea=0; 
-   while ($row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos)) { 
+   while ($row_RS_Alumnos = $RS_Alumnos->fetch_assoc()) { 
    //$i = $i+1;
    //$Linea = $Linea + 1;
    //if (  (isset($_GET['Linea']) and $i>=$_GET['Linea']-1)  or !isset($_GET['Linea'])) {
@@ -244,7 +263,4 @@ $totalRows_RS_Nota_Al = mysql_num_rows($RS_Nota_Al);
 <?php include getenv('DOCUMENT_ROOT')."/inc/Footer_info.php"; ?>
 
 </body>
-</html><?php
-mysql_free_result($RS_Materias);
-
-?>
+</html>

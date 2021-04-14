@@ -1,12 +1,6 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secreAcad,AsistDireccion,Contable";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
 $Variable = new Variable();
 
@@ -112,11 +106,11 @@ $row_RS_Empleados = $RS_Empleados->fetch_assoc();
 
 
 // Calcula Sueldo
-$Sueldo_Tabla = $Variable->view($row_RS_Empleados[TipoDocente]." SUELDO");
+$Sueldo_Tabla = $Variable->view($row_RS_Empleados["TipoDocente"]." SUELDO");
 $Sueldo_Minimo = $Variable->view("Sueldo Minimo");
-$Bono_Anos_Servicio = $Variable->view("Bono Anos Servicio") * Edad($row_RS_Empleados[FechaIngreso]);
+$Bono_Anos_Servicio = $Variable->view("Bono Anos Servicio") * Edad($row_RS_Empleados["FechaIngreso"]);
 
-$Horas = $row_RS_Empleados[HrAcad] + $row_RS_Empleados[HrAdmi];
+$Horas = $row_RS_Empleados["HrAcad"] + $row_RS_Empleados["HrAdmi"];
 
 if ($Horas > 0){
 	$FactorHoras = $Horas / 40 ;
@@ -144,12 +138,16 @@ $mysqli->query($sql_update);
 
 $RS_Empleados = $mysqli->query($query_RS_Empleados);
 $row_RS_Empleados = $RS_Empleados->fetch_assoc();
+
+
+/*
 while (list($clave, $valor) = each($row_RS_Empleados)) { // Coloca los valores del empleado en $Emp
 	$Emp[$i][$clave] = 	$valor;
+}*/
+
+foreach ($row_RS_Empleados as $clave => $valor){
+	$Emp[$i][$clave] =	$valor;
 }
-
-
-
 
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -206,38 +204,38 @@ if(TieneAcceso($Acceso_US,"Sueldo"))
       <td width="100%" class="FondoCampo"><?php 
 	  
 $ClaveCampo = 'CodigoEmpleado';
-$ClaveValor = $Emp[$i][CodigoEmpleado];
+$ClaveValor = $Emp[$i]["CodigoEmpleado"];
 $Tabla = 'Empleado';
 
 echo "Activo ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_activo',$Emp[$i][SW_activo]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_activo',$Emp[$i]["SW_activo"]); echo " | ";
 echo "Fideicomiso ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Antiguedad',$Emp[$i][SW_Antiguedad]); echo " | ";
-if( $Emp[$i][NumCuenta] > '' and	$Emp[$i][NumCuentaA] > '' ){
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Antiguedad',$Emp[$i]["SW_Antiguedad"]); echo " | ";
+if( $Emp[$i]["NumCuenta"] > '' and	$Emp[$i]["NumCuentaA"] > '' ){
 	echo "Fid incorporacion";
-	Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Antiguedad_Inc',$Emp[$i][SW_Antiguedad_Inc]); echo " | ";}
+	Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Antiguedad_Inc',$Emp[$i]["SW_Antiguedad_Inc"]); echo " | ";}
 
 echo "IVSS ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_ivss',$Emp[$i][SW_ivss]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_ivss',$Emp[$i]["SW_ivss"]); echo " | ";
 echo "LPH ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_lph',$Emp[$i][SW_lph]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_lph',$Emp[$i]["SW_lph"]); echo " | ";
 echo "SPF ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_spf',$Emp[$i][SW_spf]);echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_spf',$Emp[$i]["SW_spf"]);echo " | ";
 echo "ISLR ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_islr',$Emp[$i][SW_islr]);echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_islr',$Emp[$i]["SW_islr"]);echo " | ";
 echo "Reposo ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Reposo',$Emp[$i][SW_Reposo]);echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Reposo',$Emp[$i]["SW_Reposo"]);echo " | ";
 echo "Pago Vacaciones ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_PagoVacac',$Emp[$i][SW_PagoVacac]);echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_PagoVacac',$Emp[$i]["SW_PagoVacac"]);echo " | ";
 echo "Pago Bono Prd  ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_PagoBono',$Emp[$i][SW_PagoBono]);echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_PagoBono',$Emp[$i]["SW_PagoBono"]);echo " | ";
 echo "Pago Bono P/Hora  ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_BonoProfHora',$Emp[$i][SW_BonoProfHora]);
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_BonoProfHora',$Emp[$i]["SW_BonoProfHora"]);
 	  
 	  
 	  
 	  
-	?>&nbsp;<input name="FechaFinReposo" type="date" id="FechaFinReposo" value="<?php echo $Emp[$i][FechaFinReposo]; ?>" size="4" />
+	?>&nbsp;<input name="FechaFinReposo" type="date" id="FechaFinReposo" value="<?php echo $Emp[$i]["FechaFinReposo"]; ?>" size="4" />
 
         </td>
       </tr>
@@ -262,7 +260,7 @@ $RS = $mysqli->query($sql);
 while ($row = $RS->fetch_assoc()) {
 	extract($row);
 	echo '<option value="'.$TipoEmpleado.'"';
-	if($Emp[$i][TipoEmpleado] == $TipoEmpleado)
+	if($Emp[$i]["TipoEmpleado"] == $TipoEmpleado)
 		echo ' selected="selected"';
 	echo '>'.$TipoEmpleado.'</option>'."\r\n";
 }
@@ -277,7 +275,7 @@ while ($row = $RS->fetch_assoc()) {
 // Ejecuta $sql
 $sql = "SELECT * FROM Empleado
 		WHERE SW_activo = '1'
-		AND TipoEmpleado = '".$Emp[$i][TipoEmpleado]."'
+		AND TipoEmpleado = '".$Emp[$i]["TipoEmpleado"]."'
 		GROUP BY TipoDocente
 		ORDER BY TipoDocente";
 
@@ -286,7 +284,7 @@ $RS = $mysqli->query($sql);
 while ($row = $RS->fetch_assoc()) {
 	extract($row);
 	echo '<option value="'.$TipoDocente.'"';
-	if($Emp[$i][TipoDocente] == $TipoDocente)
+	if($Emp[$i]["TipoDocente"] == $TipoDocente)
 		echo ' selected="selected"';
 	echo '>'.$TipoDocente.'</option>'."\r\n";
 }
@@ -306,36 +304,36 @@ while ($row = $RS->fetch_assoc()) {
 <option value="7" <?php if($Emp[$i]['Pagina'] == 7) echo 'selected="selected"';  ?>>TD</option>
 </select>          
           
-Contable: <input name="TipoEmpleadoContabilidad" type="text" id="TipoEmpleadoContabilidad" value="<?php echo $Emp[$i][TipoEmpleadoContabilidad] ?>"  size="4"  />
+Contable: <input name="TipoEmpleadoContabilidad" type="text" id="TipoEmpleadoContabilidad" value="<?php echo $Emp[$i]["TipoEmpleadoContabilidad"] ?>"  size="4"  />
 <br />
         Nivel Acad&eacute;mico: 
         <select name="NivelAcademico" id="NivelAcademico">
           <option>Seleccione..</option>
-          <option value="1.Primaria" <?php if($Emp[$i][NivelAcademico] == "1.Primaria")	echo ' selected="selected"';?>>1.Primaria</option>
-          <option value="2.Bachiller" <?php if($Emp[$i][NivelAcademico] == "2.Bachiller")	echo ' selected="selected"';?>>2.Bachiller</option>
-          <option value="3.Est TSU" <?php if($Emp[$i][NivelAcademico] == "3.Est TSU")	echo ' selected="selected"';?>>3.Est TSU</option>
-          <option value="4.TSU" <?php if($Emp[$i][NivelAcademico] == "4.TSU")	echo ' selected="selected"';?>>4.TSU</option>
-          <option value="5.Est Lic" <?php if($Emp[$i][NivelAcademico] == "5.Est Lic")	echo ' selected="selected"';?>>5.Est Lic</option>
-          <option value="6.Lic" <?php if($Emp[$i][NivelAcademico] == "6.Lic")	echo ' selected="selected"';?>>6.Lic</option>
-          <option value="7.Especialización" <?php if($Emp[$i][NivelAcademico] == "7.Especialización")	echo ' selected="selected"';?>>7.Especializaci&oacute;n</option>
-          <option value="8.Master" <?php if($Emp[$i][NivelAcademico] == "8.Master")	echo ' selected="selected"';?>>8.Master</option>
-          <option value="9.Doc" <?php if($Emp[$i][NivelAcademico] == "9.Doc")	echo ' selected="selected"';?>>9.Doc</option>
+          <option value="1.Primaria" <?php if($Emp[$i]["NivelAcademico"] == "1.Primaria")	echo ' selected="selected"';?>>1.Primaria</option>
+          <option value="2.Bachiller" <?php if($Emp[$i]["NivelAcademico"] == "2.Bachiller")	echo ' selected="selected"';?>>2.Bachiller</option>
+          <option value="3.Est TSU" <?php if($Emp[$i]["NivelAcademico"] == "3.Est TSU")	echo ' selected="selected"';?>>3.Est TSU</option>
+          <option value="4.TSU" <?php if($Emp[$i]["NivelAcademico"] == "4.TSU")	echo ' selected="selected"';?>>4.TSU</option>
+          <option value="5.Est Lic" <?php if($Emp[$i]["NivelAcademico"] == "5.Est Lic")	echo ' selected="selected"';?>>5.Est Lic</option>
+          <option value="6.Lic" <?php if($Emp[$i]["NivelAcademico"] == "6.Lic")	echo ' selected="selected"';?>>6.Lic</option>
+          <option value="7.Especialización" <?php if($Emp[$i]["NivelAcademico"] == "7.Especialización")	echo ' selected="selected"';?>>7.Especializaci&oacute;n</option>
+          <option value="8.Master" <?php if($Emp[$i]["NivelAcademico"] == "8.Master")	echo ' selected="selected"';?>>8.Master</option>
+          <option value="9.Doc" <?php if($Emp[$i]["NivelAcademico"] == "9.Doc")	echo ' selected="selected"';?>>9.Doc</option>
         </select>        
         <?php 
   echo "Titulo ";
-   Campo('Titulo' , 't' , $Emp[$i][Titulo] , 30,''); 
+   Campo('Titulo' , 't' , $Emp[$i]["Titulo"] , 30,''); 
 
   echo "<br>";
 	  
 $sql_Curso = "SELECT * FROM Curso 
-				WHERE Cedula_Prof_Guia LIKE '%".$Emp[$i][Cedula]."%' ";  
+				WHERE Cedula_Prof_Guia LIKE '%".$Emp[$i]["Cedula"]."%' ";  
 $RS = $mysqli->query($sql_Curso);
 if ($row = $RS->fetch_assoc()) {
 	echo "Docente: ".$row['NombreCompleto'];
 }
 
 $sql_Curso = "SELECT * FROM Curso 
-				WHERE Cedula_Prof_Aux LIKE '%".$Emp[$i][Cedula]."%' ";  
+				WHERE Cedula_Prof_Aux LIKE '%".$Emp[$i]["Cedula"]."%' ";  
 $RS = $mysqli->query($sql_Curso);
 if ($row = $RS->fetch_assoc()) {
 	echo "Aux: ".$row['NombreCompleto'];
@@ -344,20 +342,20 @@ if ($row = $RS->fetch_assoc()) {
 	 
 
   echo "<br>Cargo Largo: ";
-   Campo('CargoLargo' , 't' , $Emp[$i][CargoLargo] , 20,''); 
+   Campo('CargoLargo' , 't' , $Emp[$i]["CargoLargo"] , 20,''); 
   echo " Cargo Corto: ";
-   Campo('CargoCorto' , 't' , $Emp[$i][CargoCorto] , 12,''); 
+   Campo('CargoCorto' , 't' , $Emp[$i]["CargoCorto"] , 12,''); 
   echo "<br>Funciones: ";
-   Campo('Funciones' , 't' , $Emp[$i][Funciones] , 20,''); 
+   Campo('Funciones' , 't' , $Emp[$i]["Funciones"] , 20,''); 
   echo " Horario Trab: ";
-   Campo('HorarioTrab' , 't' , $Emp[$i][HorarioTrab] , 20,''); 
+   Campo('HorarioTrab' , 't' , $Emp[$i]["HorarioTrab"] , 20,''); 
   
 
 
 
   ?>
         Asignaturas:
-        <?php Campo('Asignaturas' , 't' , $Emp[$i][Asignaturas] , 20,''); ?></td>
+        <?php Campo('Asignaturas' , 't' , $Emp[$i]["Asignaturas"] , 20,''); ?></td>
       </tr>
     <?php } 
 
@@ -378,7 +376,7 @@ $DiferenciaSep = 0;
     </tr>
 <?php 
 $query_RS_Empleados_Pagos = "SELECT * FROM Empleado_Pago 
-								WHERE Codigo_Empleado = '".$Emp[$i][CodigoEmpleado]."' 
+								WHERE Codigo_Empleado = '".$Emp[$i]["CodigoEmpleado"]."' 
 								AND Monto > 0
 								ORDER BY Codigo_Quincena DESC";// = '+SueldoBase'
 //echo $query_RS_Empleados_Pagos;											
@@ -404,13 +402,13 @@ $MontoAbonar = round($MontoQuincena['2017 09 2'] - $MontoQuincena['2017 07 2'],2
 //$MontoAbonar = 600;
 $insertSQL = "INSERT INTO Empleado_Deducciones 
 (Codigo_Empleado, Tipo, Quincena, Mes, Ano, Descripcion, Monto, RegistradoPor, Fecha_Registro) 
-VALUES ('".$Emp[$i][CodigoEmpleado]."', 'PA', '2', '10', '2017', 'Diferencia Cesta Ticket Octubre', $MontoAbonar, '$MM_Username', '".date('Y-m-d')."')";
+VALUES ('".$Emp[$i]["CodigoEmpleado"]."', 'PA', '2', '10', '2017', 'Diferencia Cesta Ticket Octubre', $MontoAbonar, '$MM_Username', '".date('Y-m-d')."')";
 if(true or $MontoQuincena['2017 09 2'] > 0 and $MontoQuincena['2017 07 2'] > 0 and $MontoAbonar > 0){
 	//echo $insertSQL.'<br>';
 	//$mysqli->query($insertSQL);
 	$UpdatePagoExtra = "UPDATE Empleado 
 						SET Pago_Extra2 = $MontoAbonar
-						WHERE CodigoEmpleado = '".$Emp[$i][CodigoEmpleado]."'";
+						WHERE CodigoEmpleado = '".$Emp[$i]["CodigoEmpleado"]."'";
 	//$mysqli->query($UpdatePagoExtra);
 	//echo $UpdatePagoExtra;				
 	}
@@ -463,12 +461,12 @@ if ($Dsp['Sueldo']==1) { ?>
 		//$SueldoConAumento = round($Emp[$i][SueldoBase_anterior] * 1.36 , 2);
 		//$Emp[$i][SueldoBase_1]==0?'onfocus="this.value='.$SueldoConAumento.'";onfocus="SueldoBase.value='.$SueldoConAumento.'"':
 	  	
-		$sql = "SELECT * FROM Horario WHERE Cedula_Prof = '".$Emp[$i][Cedula]."' AND Descripcion <> '200'";
+		$sql = "SELECT * FROM Horario WHERE Cedula_Prof = '".$Emp[$i]["Cedula"]."' AND Descripcion <> '200'";
 		$RS_sql = $mysqli->query($sql);
 		$row_RS_sql = $RS_sql->fetch_assoc();
 		$HrAcadHorario = $RS_sql->num_rows;
 		
-		$sql = "SELECT * FROM Horario WHERE Cedula_Prof = '".$Emp[$i][Cedula]."' AND Descripcion = '200'";
+		$sql = "SELECT * FROM Horario WHERE Cedula_Prof = '".$Emp[$i]["Cedula"]."' AND Descripcion = '200'";
 		$RS_sql = $mysqli->query($sql);
 		$row_RS_sql = $RS_sql->fetch_assoc();
 		$HrAdmiHorario = $RS_sql->num_rows;
@@ -476,7 +474,7 @@ if ($Dsp['Sueldo']==1) { ?>
 		if($HrAcadHorario>0 or $HrAdmiHorario>0){
 			for($j = 1; $j <= 5; $j++){
 				$sql = "SELECT * FROM Horario 
-						WHERE Cedula_Prof = '".$Emp[$i][Cedula]."' 
+						WHERE Cedula_Prof = '".$Emp[$i]["Cedula"]."' 
 						AND Dia_Semana ='".$j."'";
 				$RS_sql = $mysqli->query($sql);
 				$HrDia[$j] = $RS_sql->num_rows * 1; }
@@ -485,46 +483,46 @@ if ($Dsp['Sueldo']==1) { ?>
 			$HrDia = '';
 		*/
 		 ?></td>
-          <td nowrap="nowrap" class="FondoCampo"><input name="SueldoBase_Mes" type="hidden" id="SueldoBase_Mes" value="<?php echo $Emp[$i][SueldoBase_Mes]; ?>"  size="10" onclick="this.value=<?php 
+          <td nowrap="nowrap" class="FondoCampo"><input name="SueldoBase_Mes" type="text" id="SueldoBase_Mes" value="<?php echo $Emp[$i]["SueldoBase_Mes"]; ?>"  size="10" onclick="this.value=<?php 
 		  //echo $Emp[$i][SueldoBase_1] * 2.87;
-		  if($Emp[$i][SueldoBase] < $SueldoMinimoMensual/2)
+		  if($Emp[$i]["SueldoBase"] < $SueldoMinimoMensual/2)
 		  		echo $SueldoMinimoMensual 
 		  
 		  ?>"  onkeyup="SueldoBase_1.value=Number(SueldoBase_Mes.value)/2"  <?php echo $JavaSueldo ?> /></td>
           <td align="center" nowrap="nowrap" class="FondoCampo"><?php echo Fnum(round($Sueldo_Tabla * $Sueldo_Minimo * $FactorHoras ,2)); ?><input name="SueldoBase_1" type="hidden" id="SueldoBase_1" value="<?php echo $Emp[$i][SueldoBase_1]; ?>"  size="10" onclick="this.value=<?php 
 		  //echo $Emp[$i][SueldoBase_1] * 2.87;
 		  
-		  if($Emp[$i][SueldoBase_1] < $SueldoMinimoMensual/2)
+		  if($Emp[$i]["SueldoBase_1"] < $SueldoMinimoMensual/2)
 		  	echo $SueldoMinimoMensual/2 
 		  
 		  ?>" <?php echo $JavaSueldo ?> /></td>
-          <td align="center" nowrap="nowrap" class="FondoCampo"><input name="SueldoBase_2" type="hidden" id="SueldoBase_2" value="<?php echo $Emp[$i][SueldoBase_2] ?>"  size="10" <?php echo $JavaSueldo ?> /></td>
+          <td align="center" nowrap="nowrap" class="FondoCampo"><input name="SueldoBase_2" type="text" id="SueldoBase_2" value="<?php echo $Emp[$i]["SueldoBase_2"] ?>"  size="10" <?php echo $JavaSueldo ?> /></td>
           <td align="center" nowrap="nowrap" class="FondoCampo"><?php echo Fnum($Bono_Anos_Servicio); ?>
           
-          <input name="SueldoBase_3" type="hidden" id="SueldoBase_3" value="<?php echo $Emp[$i][SueldoBase_3] ?>"  size="10" <?php echo $JavaSueldo ?> onclick="if(this.value>=0 )this.value=0.5*<?php echo Edad($Emp[$i][FechaIngreso]) ?>*100<?php // 1134 -> 1674 -> 3255 -> 3255 -> 5338 ?>" /></td>
-          <td align="center" nowrap="nowrap" class="FondoCampo"><input name="HrAcad" type="text" id="HrAcad" size="5" value="<?php echo $Emp[$i][HrAcad] ?>"  <?php echo $JavaSueldo ?> /></td>
-          <td align="center" nowrap="nowrap" class="FondoCampo"><?php echo Fnum($Valor_Hora) ; ?><input name="BsHrAcad" type="hidden" id="BsHrAcad" size="5" value="<?php /*echo $BsHrProf;*/  echo $Emp[$i][BsHrAcad] ?>"  <?php echo $JavaSueldo ?>  /></td>
-          <td align="center" nowrap="nowrap" class="FondoCampo"><input name="HrAdmi" type="text" id="HrAdmi" size="5" value="<?php echo $Emp[$i][HrAdmi] ?>"  <?php echo $JavaSueldo ?>/></td>
-          <td align="center" nowrap="nowrap" class="FondoCampo"><?php echo Fnum($Valor_Hora) ; ?><input name="BsHrAdmi" type="hidden" id="BsHrAdmi" size="5" value="<?php echo $Emp[$i][BsHrAdmi] ?>"  <?php echo $JavaSueldo ?>/></td>
-          <td align="right" nowrap="nowrap" class="FondoCampo"><input name="SueldoBase" type="hidden" id="SueldoBase" value="<?php echo $Emp[$i][SueldoBase] ?>" size="15" />
-          <input name="SueldoBase_Disp" type="text" disabled="disabled" id="SueldoBase_Disp" value="<?php echo Fnum($Emp[$i][SueldoBase]) ?>" size="15" /></td>
+          <input name="SueldoBase_3" type="text" id="SueldoBase_3" value="<?php echo $Emp[$i]["SueldoBase_3"] ?>"  size="10" <?php echo $JavaSueldo ?> onclick="if(this.value>=0 )this.value=0.5*<?php echo Edad($Emp[$i]["FechaIngreso"]) ?>*100<?php // 1134 -> 1674 -> 3255 -> 3255 -> 5338 ?>" /></td>
+          <td align="center" nowrap="nowrap" class="FondoCampo"><input name="HrAcad" type="text" id="HrAcad" size="5" value="<?php echo $Emp[$i]["HrAcad"] ?>"  <?php echo $JavaSueldo ?> /></td>
+          <td align="center" nowrap="nowrap" class="FondoCampo"><?php echo Fnum($Valor_Hora) ; ?><input name="BsHrAcad" type="hidden" id="BsHrAcad" size="5" value="<?php /*echo $BsHrProf;*/  echo $Emp[$i]["BsHrAcad"] ?>"  <?php echo $JavaSueldo ?>  /></td>
+          <td align="center" nowrap="nowrap" class="FondoCampo"><input name="HrAdmi" type="text" id="HrAdmi" size="5" value="<?php echo $Emp[$i]["HrAdmi"] ?>"  <?php echo $JavaSueldo ?>/></td>
+          <td align="center" nowrap="nowrap" class="FondoCampo"><?php echo Fnum($Valor_Hora) ; ?><input name="BsHrAdmi" type="hidden" id="BsHrAdmi" size="5" value="<?php echo $Emp[$i]["BsHrAdmi"] ?>"  <?php echo $JavaSueldo ?>/></td>
+          <td align="right" nowrap="nowrap" class="FondoCampo"><input name="SueldoBase" type="hidden" id="SueldoBase" value="<?php echo $Emp[$i]["SueldoBase"] ?>" size="15" />
+          <input name="SueldoBase_Disp" type="text" disabled="disabled" id="SueldoBase_Disp" value="<?php echo Fnum($Emp[$i]["SueldoBase"]) ?>" size="15" /></td>
           <td align="right" nowrap="nowrap" class="<?php 
 		  
-		  $CantHoras = $Emp[$i][HrAdmi]+$Emp[$i][HrAcad];
+		  $CantHoras = $Emp[$i]["HrAdmi"]+$Emp[$i]["HrAcad"];
 		  if($CantHoras > 0){
 			  	$SueldoMinimoMensual = round(($CantHoras/40) * $SueldoMinimoMensual , 2);
 		  }
 		  if((($Emp[$i][SueldoBase]*2)) < $SueldoMinimoMensual){
 			  
-			   echo "SW_Amarillo"; } else { echo "FondoCampo"; } ?>">&nbsp;<?php echo Fnum(round($Emp[$i][SueldoBase]*2 , 2)) ?></td>
-          <td align="right" nowrap="nowrap" class="FondoCampo"><?php echo round($Emp[$i][SueldoBase]*24/52,2) ?></td>
-          <td align="right" nowrap="nowrap" class="FondoCampo"><?php echo round($Emp[$i][SueldoBase]*24/360,2) ?></td>
+			   echo "SW_Amarillo"; } else { echo "FondoCampo"; } ?>">&nbsp;<?php echo Fnum(round($Emp[$i]["SueldoBase"]*2 , 2)) ?></td>
+          <td align="right" nowrap="nowrap" class="FondoCampo"><?php echo round($Emp[$i]["SueldoBase"]*24/52,2) ?></td>
+          <td align="right" nowrap="nowrap" class="FondoCampo"><?php echo round($Emp[$i]["SueldoBase"]*24/360,2) ?></td>
         </tr>
 
      <?php if(true) {
 		 
 		 $sql = "SELECT * FROM Empleado_Pago 
-		 		 WHERE Codigo_Empleado = '".$Emp[$i][CodigoEmpleado]."'
+		 		 WHERE Codigo_Empleado = '".$Emp[$i]["CodigoEmpleado"]."'
 				 AND ( Codigo_Quincena = '".$Variable->view("Compara_Q_1")."' 
 				 OR Codigo_Quincena = '".$Variable->view("Compara_Q_2")."' )
 				 AND Concepto = '+SueldoBase'
@@ -567,12 +565,12 @@ if ($Dsp['Sueldo']==1) { ?>
           <td nowrap="nowrap" class="NombreCampo">Pago Extra:</td>
           <td nowrap="nowrap" class="FondoCampo"><input name="islr_porciento" type="hidden"  id="islr_porciento" value="<?php echo $Emp[$i][islr_porciento] ?>" size="10"   /></td>
           <td colspan="2" align="center" nowrap="nowrap" class="FondoCampo">
-<input name="Pago_extra" type="text"  id="Pago_extra" value="<?php echo $Emp[$i][Pago_extra] ?>" size="10" <?php  ?> onClick="this.value=(<?= $MontoDif ?>)" /> 
+<input name="Pago_extra" type="text"  id="Pago_extra" value="<?php echo $Emp[$i]["Pago_extra"] ?>" size="10" <?php  ?> onClick="this.value=(<?= $MontoDif ?>)" /> 
            -
-            <input name="Pago_extra_deduc" type="text"  id="Pago_extra_deduc" value="<?php echo $Emp[$i][Pago_extra_deduc] ?>" size="10"  onClick="this.value=(SueldoBase.value-SueldoBase_prox.value)*2*0.945"  /></td>
+            <input name="Pago_extra_deduc" type="text"  id="Pago_extra_deduc" value="<?php echo $Emp[$i]["Pago_extra_deduc"] ?>" size="10"  onClick="this.value=(SueldoBase.value-SueldoBase_prox.value)*2*0.945"  /></td>
 
-          <td colspan="2" align="center" nowrap="nowrap" class="FondoCampo"><input name="Pago_extra2" type="text"  id="Pago_extra2" value="<?php echo $Emp[$i][Pago_extra2] ?>" size="10" <?php //onClick="this.value=(SueldoBase.value-SueldoBase_prox.value)*2*0.945" ?> />            -
-            <input name="Pago_extra2_deduc" type="text"  id="Pago_extra2_deduc" value="<?php echo $Emp[$i][Pago_extra2_deduc] ?>" size="10" <?php //onClick="this.value=(SueldoBase.value-SueldoBase_prox.value)*2*0.945" ?> /></td>
+          <td colspan="2" align="center" nowrap="nowrap" class="FondoCampo"><input name="Pago_extra2" type="text"  id="Pago_extra2" value="<?php echo $Emp[$i]["Pago_extra2"] ?>" size="10" <?php //onClick="this.value=(SueldoBase.value-SueldoBase_prox.value)*2*0.945" ?> />            -
+            <input name="Pago_extra2_deduc" type="text"  id="Pago_extra2_deduc" value="<?php echo $Emp[$i]["Pago_extra2_deduc"] ?>" size="10" <?php //onClick="this.value=(SueldoBase.value-SueldoBase_prox.value)*2*0.945" ?> /></td>
           <td align="center" nowrap="nowrap" class="FondoCampo">&nbsp;</td>
           <td align="center" nowrap="nowrap" class="FondoCampo">&nbsp;</td>
           <td align="center" nowrap="nowrap" class="FondoCampo">&nbsp;</td>
@@ -587,7 +585,7 @@ if ($Dsp['Sueldo']==1) { ?>
         <!--tr>
           <td colspan="12"><?php 
 		  echo "<pre>";
-		  echo $Emp[$i][SueldoAnteriorDesglose];
+		  echo $Emp[$i]["SueldoAnteriorDesglose"];
 		  echo "</pre>";
 		  ?></td>
           </tr-->
@@ -605,33 +603,33 @@ if ($Dsp['BonoAlim']==1) { ?>
         <?php   
 		
 $ClaveCampo = "CodigoEmpleado";
-$ClaveValor = $Emp[$i][CodigoEmpleado];
+$ClaveValor = $Emp[$i]["CodigoEmpleado"];
 $Tabla = "Empleado";		
 		  
 echo "Activo ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_cestaT',$Emp[$i][SW_cestaT]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_cestaT',$Emp[$i]["SW_cestaT"]); echo " | ";
 
 echo "Adicional ".$CT_BonoAdicional;
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_cestaT_Adicional',$Emp[$i][SW_cestaT_Adicional]); echo " ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_cestaT_Adicional',$Emp[$i]["SW_cestaT_Adicional"]); echo " ";
 
 
 echo " / Emision ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_CestaTnew',$Emp[$i][SW_CestaTnew]); echo " ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_CestaTnew',$Emp[$i]["SW_CestaTnew"]); echo " ";
  ?>
         :
         
         (base <?php echo $UnidadTributaria ?> x 
-        <input name="CestaTiketPorcentaje" type="text" id="CestaTiketPorcentaje" value="<?php echo $Emp[$i][CestaTiketPorcentaje]; ?>" size="8" />
+        <input name="CestaTiketPorcentaje" type="text" id="CestaTiketPorcentaje" value="<?php echo $Emp[$i]["CestaTiketPorcentaje"]; ?>" size="8" />
         %
-        = <?php echo round($UnidadTributaria*$Emp[$i][CestaTiketPorcentaje]/100 , 2) ?>)  + 
-        <input name="BonifAdicCT" type="text" id="BonifAdicCT" value="<?php echo $Emp[$i][BonifAdicCT]; ?>" size="12" />
+        = <?php echo round($UnidadTributaria*$Emp[$i]["CestaTiketPorcentaje"]/100 , 2) ?>)  + 
+        <input name="BonifAdicCT" type="text" id="BonifAdicCT" value="<?php echo $Emp[$i]["BonifAdicCT"]; ?>" size="12" />
         
         | Inasistencias:
-<input name="DiasInasistencia" type="text" id="DiasInasistencia" value="<?php echo $Emp[$i][DiasInasistencia]; ?>" size="3" />
+<input name="DiasInasistencia" type="text" id="DiasInasistencia" value="<?php echo $Emp[$i]["DiasInasistencia"]; ?>" size="3" />
         <?php
 		
 		$sql_aux = "SELECT * FROM Empleado_EntradaSalida
-					WHERE Codigo_Empleado = '".$Emp[$i][CodigoEmpleado]."'
+					WHERE Codigo_Empleado = '".$Emp[$i]["CodigoEmpleado"]."'
 					AND Fecha >= '".date("Y-m-01")."'
 					AND Fecha <= '".date("Y-m-31")."'
 					AND Obs = 'Falto'";
@@ -644,29 +642,29 @@ Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_CestaTnew',$Emp[$i][SW_CestaTnew]);
 			}
 		
 		 ?> Observ:
-        <input name="ObservacionesCestaT" type="text" id="ObservacionesCestaT" value="<?php echo $Emp[$i][ObservacionesCestaT]; ?>" size="10" />
+        <input name="ObservacionesCestaT" type="text" id="ObservacionesCestaT" value="<?php echo $Emp[$i]["ObservacionesCestaT"]; ?>" size="10" />
         <br />
         horario: <?php 
 $ClaveCampo = "CodigoEmpleado";
-$ClaveValor = $Emp[$i][CodigoEmpleado];
+$ClaveValor = $Emp[$i]["CodigoEmpleado"];
 $Tabla = "Empleado";		
 
 echo "Lunes ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Lun',$Emp[$i][SW_Lun]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Lun',$Emp[$i]["SW_Lun"]); echo " | ";
 echo "Martes ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mar',$Emp[$i][SW_Mar]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mar',$Emp[$i]["SW_Mar"]); echo " | ";
 echo "Miercoles ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mie',$Emp[$i][SW_Mie]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mie',$Emp[$i]["SW_Mie"]); echo " | ";
 echo "Jueves ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Jue',$Emp[$i][SW_Jue]); echo " | ";
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Jue',$Emp[$i]["SW_Jue"]); echo " | ";
 echo "Viernes ";
-Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Vie',$Emp[$i][SW_Vie]); 
+Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Vie',$Emp[$i]["SW_Vie"]); 
 if($MM_Username == "piero"){
 	echo " | ";
 	echo "Sab ";
-	Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Sab',$Emp[$i][SW_Sab]); echo " | ";
+	Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Sab',$Emp[$i]["SW_Sab"]); echo " | ";
 	echo "Dom ";
-	Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Dom',$Emp[$i][SW_Dom]); echo " | ";
+	Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Dom',$Emp[$i]["SW_Dom"]); echo " | ";
 }
 		
 		?> </td>
@@ -679,12 +677,12 @@ if(TieneAcceso($Acceso_US,"Sueldo"))
 if ($Dsp['Fecha']==1) { ?>
     <tr>
       <td width="100%" class="FondoCampo">Fecha Ingreso:
-        <?php Campo('FechaIngreso' , 'd' , $Emp[$i][FechaIngreso] , 12,'');  ?>
+        <?php Campo('FechaIngreso' , 'd' , $Emp[$i]["FechaIngreso"] , 12,'');  ?>
         
-        <?php echo "(". Edad($Emp[$i][FechaIngreso]) .")"; ?>
+        <?php echo "(". Edad($Emp[$i]["FechaIngreso"]) .")"; ?>
         
         Egreso:
-        <?php Campo('FechaEgreso' , 'd' , $Emp[$i][FechaEgreso] , 12,'');  ?></td>
+        <?php Campo('FechaEgreso' , 'd' , $Emp[$i]["FechaEgreso"] , 12,'');  ?></td>
       </tr>
     <?php } 
 
@@ -712,27 +710,27 @@ if ($Dsp['Horario']==1) { ?>
   ?>
         <table border="0" cellpadding="1" cellspacing="1">
           <tr>
-            <td align="center"><a href="../Horario_Adm_Prof.php?Cedula_Prof=<?php echo $Emp[$i][Cedula] ?>" target="_blank">Horario</a></td>
+            <td align="center"><a href="../Horario_Adm_Prof.php?Cedula_Prof=<?php echo $Emp[$i]["Cedula"] ?>" target="_blank">Horario</a></td>
             <td align="center"<?php 
-		  if($HrDia[1]>0 and !$Emp[$i][SW_Lun]) 
+		  if($HrDia[1]>0 and !$Emp[$i]["SW_Lun"]) 
 		  	echo ' bgcolor="#FF0000"'; ?>>Lu</td>
             <td align="center"<?php 
-		  if($HrDia[2]>0 and !$Emp[$i][SW_Mar]) 
+		  if($HrDia[2]>0 and !$Emp[$i]["SW_Mar"]) 
 		  	echo ' bgcolor="#FF0000"'; ?>>Ma</td>
             <td align="center"<?php 
-		  if($HrDia[3]>0 and !$Emp[$i][SW_Mie])
+		  if($HrDia[3]>0 and !$Emp[$i]["SW_Mie"])
 		  	echo ' bgcolor="#FF0000"'; ?>>Mi</td>
             <td align="center"<?php 
-		  if($HrDia[4]>0 and !$Emp[$i][SW_Jue])
+		  if($HrDia[4]>0 and !$Emp[$i]["SW_Jue"])
 		  	echo ' bgcolor="#FF0000"'; ?>>Ju</td>
             <td align="center"<?php 
-		  if($HrDia[5]>0 and !$Emp[$i][SW_Vie])
+		  if($HrDia[5]>0 and !$Emp[$i]["SW_Vie"])
 		  	echo ' bgcolor="#FF0000"'; ?>>Vi</td>
             <td align="center"<?php 
-		  if($HrDia[6]>0 and !$Emp[$i][SW_Sab])
+		  if($HrDia[6]>0 and !$Emp[$i]["SW_Sab"])
 		  	echo ' bgcolor="#FF0000"'; ?>>Sa</td>
             <td align="center"<?php 
-		  if($HrDia[7]>0 and !$Emp[$i][SW_Dom])
+		  if($HrDia[7]>0 and !$Emp[$i]["SW_Dom"])
 		  	echo ' bgcolor="#FF0000"'; ?>>Do</td>
             <td>&nbsp;</td>
             </tr>
@@ -740,41 +738,41 @@ if ($Dsp['Horario']==1) { ?>
             <td align="center">&nbsp;</td>
             <td align="center"><?php
 $ClaveCampo='CodigoEmpleado';
-$ClaveValor=$Emp[$i][CodigoEmpleado];
+$ClaveValor=$Emp[$i]["CodigoEmpleado"];
 $Tabla='Empleado';
-									 Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Lun',$Emp[$i][SW_Lun]);
+									 Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Lun',$Emp[$i]["SW_Lun"]);
 			?></td>
-            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mar',$Emp[$i][SW_Mar]); ?></td>
-            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mie',$Emp[$i][SW_Mie]); ?></td>
-            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Jue',$Emp[$i][SW_Jue]); ?></td>
-            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Vie',$Emp[$i][SW_Vie]); ?></td>
-            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Sab',$Emp[$i][SW_Sab]); ?></td>
-            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Dom',$Emp[$i][SW_Dom]); ?></td>
+            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mar',$Emp[$i]["SW_Mar"]); ?></td>
+            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Mie',$Emp[$i]["SW_Mie"]); ?></td>
+            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Jue',$Emp[$i]["SW_Jue"]); ?></td>
+            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Vie',$Emp[$i]["SW_Vie"]); ?></td>
+            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Sab',$Emp[$i]["SW_Sab"]); ?></td>
+            <td align="center"><?php Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,'SW_Dom',$Emp[$i]["SW_Dom"]); ?></td>
             <td>&nbsp;</td>
             </tr>
           <?php if($tot_Semanal>0 ){ ?>
           <tr>
             <td width="40" align="center">&nbsp;</td>
             <td width="40" align="center"<?php 
-		  if($HrDia[1]>0 and !$Emp[$i][SW_Lun]) 
+		  if($HrDia[1]>0 and !$Emp[$i]["SW_Lun"]) 
 		  	echo ' bgcolor="#FF0000"'; ?>><?php echo $HrDia[1]; ?></td>
             <td width="40" align="center"<?php 
-		  if($HrDia[2]>0 and !$Emp[$i][SW_Mar]) 
+		  if($HrDia[2]>0 and !$Emp[$i]["SW_Mar"]) 
 		  	echo ' bgcolor="#FF0000"'; ?>><?php echo $HrDia[2]; ?></td>
             <td width="40" align="center"<?php 
-		  if($HrDia[3]>0 and !$Emp[$i][SW_Mie])
+		  if($HrDia[3]>0 and !$Emp[$i]["SW_Mie"])
 		  	echo ' bgcolor="#FF0000"'; ?>><?php echo $HrDia[3]; ?></td>
             <td width="40" align="center"<?php 
-		  if($HrDia[4]>0 and !$Emp[$i][SW_Jue])
+		  if($HrDia[4]>0 and !$Emp[$i]["SW_Jue"])
 		  	echo ' bgcolor="#FF0000"'; ?>><?php echo $HrDia[4]; ?></td>
             <td width="40" align="center"<?php 
-		  if($HrDia[5]>0 and !$Emp[$i][SW_Vie])
+		  if($HrDia[5]>0 and !$Emp[$i]["SW_Vie"])
 		  	echo ' bgcolor="#FF0000"'; ?>><?php echo $HrDia[5]; ?></td>
             <td width="40" align="center"<?php 
-		  if($HrDia[6]>0 and !$Emp[$i][SW_Sab])
+		  if($HrDia[6]>0 and !$Emp[$i]["SW_Sab"])
 		  	echo ' bgcolor="#FF0000"'; ?>><?php echo $HrDia[6]; ?></td>
             <td width="40" align="center"<?php 
-		  if($HrDia[7]>0 and !$Emp[$i][SW_Dom])
+		  if($HrDia[7]>0 and !$Emp[$i]["SW_Dom"])
 		  	echo ' bgcolor="#FF0000"'; ?>><?php echo $HrDia[7]; ?></td>
             <td>&nbsp;
               <?php 
@@ -791,7 +789,7 @@ if($tot_Semanal>0 and $Emp[$i][HrAcad]>0){
 <?php $HorasEntrada = explode(",",$HorasEntrada);
 		foreach ($HorasEntrada as $Hora) {
 			echo "<option value=\"$Hora:00\" ";
-			if($Emp[$i][EntraLun]==$Hora.":00") 
+			if($Emp[$i]["EntraLun"]==$Hora.":00") 
 				echo 'selected="selected"'; 
 			echo ">$Hora</option>
 		";} 
@@ -800,7 +798,7 @@ if($tot_Semanal>0 and $Emp[$i][HrAcad]>0){
             <td align="center"><select name="EntraMar" id="EntraMar">
 <?php foreach ($HorasEntrada as $Hora) {
 			echo "<option value=\"$Hora:00\" ";
-			if($Emp[$i][EntraMar]==$Hora.":00") 
+			if($Emp[$i]["EntraMar"]==$Hora.":00") 
 				echo 'selected="selected"'; 
 			echo ">$Hora</option>
 		";} 
@@ -809,7 +807,7 @@ if($tot_Semanal>0 and $Emp[$i][HrAcad]>0){
             <td align="center"><select name="EntraMie" id="EntraMie">
 <?php foreach ($HorasEntrada as $Hora) {
 			echo "<option value=\"$Hora:00\" ";
-			if($Emp[$i][EntraMie]==$Hora.":00") 
+			if($Emp[$i]["EntraMie"]==$Hora.":00") 
 				echo 'selected="selected"'; 
 			echo ">$Hora</option>
 		";} 
@@ -818,7 +816,7 @@ if($tot_Semanal>0 and $Emp[$i][HrAcad]>0){
             <td align="center"><select name="EntraJue" id="EntraJue">
 <?php foreach ($HorasEntrada as $Hora) {
 			echo "<option value=\"$Hora:00\" ";
-			if($Emp[$i][EntraJue]==$Hora.":00") 
+			if($Emp[$i]["EntraJue"]==$Hora.":00") 
 				echo 'selected="selected"'; 
 			echo ">$Hora</option>
 		";} 
@@ -827,7 +825,7 @@ if($tot_Semanal>0 and $Emp[$i][HrAcad]>0){
             <td align="center"><select name="EntraVie" id="EntraVie">
 <?php foreach ($HorasEntrada as $Hora) {
 			echo "<option value=\"$Hora:00\" ";
-			if($Emp[$i][EntraVie]==$Hora.":00") 
+			if($Emp[$i]["EntraVie"]==$Hora.":00") 
 				echo 'selected="selected"'; 
 			echo ">$Hora</option>
 		";} 
@@ -845,16 +843,16 @@ if($tot_Semanal>0 and $Emp[$i][HrAcad]>0){
 if ($Dsp['Mensaje']==1) { ?>
     <tr>
       <td width="100%" class="FondoCampo">Mensaje Marca Tarjeta: 
-        <input name="MensajeMarcaTarjeta" type="text" value="<?= $Emp[$i][MensajeMarcaTarjeta] ?>" size="100" /></td>
+        <input name="MensajeMarcaTarjeta" type="text" value="<?= $Emp[$i]["MensajeMarcaTarjeta"] ?>" size="100" /></td>
       </tr>
     <?php } 
 
 if(TieneAcceso($Acceso_US,"EditaEmpleado"))
 if ($Dsp['Contacto']==1) { ?>
     <tr>
-      <td width="100%" class="FondoCampo">CI: <?php echo $Emp[$i][Cedula] ?> 
+      <td width="100%" class="FondoCampo">CI: <?php echo $Emp[$i]["Cedula"] ?> 
         <? 
-		$sql_usuario = "SELECT * FROM Usuario WHERE Usuario = '".$Emp[$i][Cedula]."'";
+		$sql_usuario = "SELECT * FROM Usuario WHERE Usuario = '".$Emp[$i]["Cedula"]."'";
 		//echo $sql_usuario;
 		$RS_Usuario = $mysqli->query($sql_usuario);
 		echo "cl: ";
@@ -865,40 +863,40 @@ if ($Dsp['Contacto']==1) { ?>
 		
 		
 		?>
-        Cuenta: <?php echo $Emp[$i][NumCuentaA] ?><?php echo $Emp[$i][NumCuenta] ?>
- <input name="NumCuentaB" type="text" id="NumCuentaB" value="<?php echo $Emp[$i][NumCuentaB] ?>" size="40" />
+        Cuenta: <?php echo $Emp[$i]["NumCuentaA"] ?><?php echo $Emp[$i]["NumCuenta"] ?>
+ <input name="NumCuentaB" type="text" id="NumCuentaB" value="<?php echo $Emp[$i]["NumCuentaB"] ?>" size="40" />
        
         <select name="FormaDePago" id="FormaDePago">
           <option value="">Forma de Pago</option>
-          <option value="E" <?php if ($Emp[$i][FormaDePago]=="E") {echo ' selected="selected" ';}?>>Efectivo</option>
-          <option value="C" <?php if ($Emp[$i][FormaDePago]=="C") {echo ' selected="selected" ';}?>>Cheque</option>
-          <option value="T" <?php if ($Emp[$i][FormaDePago]=="T") {echo ' selected="selected" ';}?>>Transferencia</option>
+          <option value="E" <?php if ($Emp[$i]["FormaDePago"]=="E") {echo ' selected="selected" ';}?>>Efectivo</option>
+          <option value="C" <?php if ($Emp[$i]["FormaDePago"]=="C") {echo ' selected="selected" ';}?>>Cheque</option>
+          <option value="T" <?php if ($Emp[$i]["FormaDePago"]=="T") {echo ' selected="selected" ';}?>>Transferencia</option>
         </select>
         <br />
         Cel
-<input name="TelefonoCel" type="text" id="TelefonoCel" value="<?php echo $Emp[$i][TelefonoCel] ?>" size="30" />
+<input name="TelefonoCel" type="text" id="TelefonoCel" value="<?php echo $Emp[$i]["TelefonoCel"] ?>" size="30" />
         CargasFamiliares
-        <input name="CargasFamiliares" type="text" id="CargasFamiliares" value="<?php echo $Emp[$i][CargasFamiliares] ?>" size="8" />
+        <input name="CargasFamiliares" type="text" id="CargasFamiliares" value="<?php echo $Emp[$i]["CargasFamiliares"] ?>" size="8" />
         <br />
         TipoContrato
-<input name="TipoContrato" type="text" id="TipoContrato" value="<?php echo $Emp[$i][TipoContrato] ?>" size="8" title="TD - TI - OD" />
+<input name="TipoContrato" type="text" id="TipoContrato" value="<?php echo $Emp[$i]["TipoContrato"] ?>" size="8" title="TD - TI - OD" />
         Email
-        <input name="Email" type="text" id="Email" value="<?php echo $Emp[$i][Email] ?>" size="30" />
+        <input name="Email" type="text" id="Email" value="<?php echo $Emp[$i]["Email"] ?>" size="30" />
         <br /></td>
       </tr>
     <?php  }
 	else {?>
-	<input name="Email" type="hidden" id="Email" value="<?php echo $Emp[$i][Email] ?>" />
+	<input name="Email" type="hidden" id="Email" value="<?php echo $Emp[$i]["Email"] ?>" />
 	<? }
 	
 	
 //if(TieneAcceso($Acceso_US,"Sueldo"))
 if ($Dsp['Asistencia']==1) { ?>
     <tr>
-      <td width="100%" class="FondoCampo"><a href="MarcaTarjeta.php?CodigoLeido=<?php echo $Emp[$i][Cedula] ?>" target="_blank">Asistencia</a><?php 
+      <td width="100%" class="FondoCampo"><a href="MarcaTarjeta.php?CodigoLeido=<?php echo $Emp[$i]["Cedula"] ?>" target="_blank">Asistencia</a><?php 
 	  
 	$sql = "SELECT * FROM Empleado_EntradaSalida
-			WHERE Codigo_Empleado = '".$Emp[$i][CodigoEmpleado]."'
+			WHERE Codigo_Empleado = '".$Emp[$i]["CodigoEmpleado"]."'
 			GROUP BY Fecha
 			ORDER BY Fecha DESC";
 			//echo $sql.'<br>';
@@ -920,8 +918,8 @@ if ($Dsp['Asistencia']==1) { ?>
     
     
   </table></td><td align="right"><input name="Guardar" type="submit" value="G" id="Guardar"  onclick="this.value='...';this.form.submit();" />
-<input name="CodigoEmpleado" type="hidden" id="CodigoEmpleado" value="<?php echo $Emp[$i][CodigoEmpleado] ?>" />
-<input name="Cedula" type="hidden" id="Cedula" value="<?php echo $Emp[$i][Cedula] ?>" />
+<input name="CodigoEmpleado" type="hidden" id="CodigoEmpleado" value="<?php echo $Emp[$i]["CodigoEmpleado"] ?>" />
+<input name="Cedula" type="hidden" id="Cedula" value="<?php echo $Emp[$i]["Cedula"] ?>" />
 
 </td></tr></table>
 
@@ -942,7 +940,7 @@ if ($Dsp['Asistencia']==1) { ?>
       </tr>
     <tr>
       <td class="NombreCampoBIG"><?= $Emp[$i][Apellidos].', '.$Emp[$i][Nombres] ?></td>
-      <td class="NombreCampoBIG"><?= $Emp[$i][Cedula] ?></td>
+      <td class="NombreCampoBIG"><?= $Emp[$i]["Cedula"] ?></td>
       <td class="FondoCampo">
         dep 
         <input name="Monto_Fidei_Depositado" type="text" id="Monto_Fidei_Depositado" value="<?= $Emp[$i][Monto_Fidei_Depositado] ?>" size="20" />
@@ -953,7 +951,7 @@ if ($Dsp['Asistencia']==1) { ?>
       </td>
       <td align="right">&nbsp;
         <input name="Guardar" type="submit" value="G" id="Guardar"  onclick="this.value='...';this.form.submit();" />
-        <input name="CodigoEmpleado" type="hidden" id="CodigoEmpleado" value="<?php echo $Emp[$i][CodigoEmpleado] ?>" />      </td>
+        <input name="CodigoEmpleado" type="hidden" id="CodigoEmpleado" value="<?php echo $Emp[$i]["CodigoEmpleado"] ?>" />      </td>
       </tr>
   </tbody>
 </table>

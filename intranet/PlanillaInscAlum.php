@@ -8,12 +8,21 @@ require_once('a/archivo/Variables.php');
 require_once('../inc/rutinas.php'); 
 //echo $AnoEscolarProx;
 
+	
+	
+
+	
+	
+	
+	
 if(isset($_GET['CodigoAlumno'])){
 		$sql = "SELECT * FROM AlumnoXCurso 
 				WHERE CodigoAlumno='".$_GET['CodigoAlumno']."' 
 				AND Ano='".$AnoEscolarProx."' ";
+		$RS_sql = $mysqli->query($sql);
+		$totalRows_RS = $RS_sql->num_rows;/*
 		$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-		$totalRows_RS = mysql_num_rows($RS_sql);
+		$totalRows_RS = mysql_num_rows($RS_sql);*/
 		//echo $sql.'<br>';	
 		
 		if($totalRows_RS == 0){
@@ -21,9 +30,18 @@ if(isset($_GET['CodigoAlumno'])){
 					WHERE CodigoAlumno='".$_GET['CodigoAlumno']."' 
 					AND Ano='".$AnoEscolar."' 
 					AND Status = 'Inscrito'";
+			
+			
+			
+			$RS_sql = $mysqli->query($sql);
+			$row_ = $RS_sql->fetch_assoc();
+			$totalRows_RS = $RS_sql->num_rows;
+			
+			
+			/*
 			$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
 			$row_ = mysql_fetch_assoc($RS_sql);
-			$totalRows_RS = mysql_num_rows($RS_sql);
+			$totalRows_RS = mysql_num_rows($RS_sql);*/
 		//echo $sql.'<br>';	
 			
 			
@@ -45,7 +63,8 @@ if(isset($_GET['CodigoAlumno'])){
 							   GetSQLValueString($CodigoCurso, "text"),
 							   GetSQLValueString($aux_Status, "text"),
 							   GetSQLValueString($MM_Username, "text"));
-				  $Result1 = mysql_query($sql, $bd) or die(mysql_error());
+				$mysqli->query($sql);
+				 // $Result1 = mysql_query($sql, $bd) or die(mysql_error());
 		//echo $sql.'<br>';	
 				  
 			}		
@@ -108,18 +127,20 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['HijoDeExalumnoObs'], "text"),
                        GetSQLValueString($_POST['ReferenciasPersonales'], "text"),
 					   GetSQLValueString(date('Y-m-d'), "date"));
+	$Result1 = $mysqli->query($insertSQL);
+	
+	
+ // $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
 
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
-
-$CodigoAlumnoNuevo = mysql_insert_id();
+	$CodigoAlumnoNuevo = $mysqli->insert_id; //mysql_insert_id();
 
   $insertSQL = sprintf("INSERT INTO AlumnoXCurso (CodigoAlumno, Ano, CodigoCurso, Status ) VALUES (%s, %s, %s, %s)",
                        GetSQLValueString($CodigoAlumnoNuevo, "text"),
                        GetSQLValueString($AnoEscolarProx, "text"),
                        GetSQLValueString($_POST['CodigoCurso'], "text"),
                        GetSQLValueString('Solicitando', "text"));
-
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+	$Result1 = $mysqli->query($insertSQL);
+ // $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
 
 
 
@@ -184,15 +205,21 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['ReferenciasPersonales'], "text"),
 					   GetSQLValueString(date('Y-m-d'), "date"),
                        GetSQLValueString($_POST['CodigoAlumno'], "int"));
-				   
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+	$Result1 = $mysqli->query($updateSQL);			   
+ // $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
 
 
 $sql = "SELECT * FROM AlumnoXCurso 
 		WHERE CodigoAlumno='".$_POST['CodigoAlumno']."' 
 		AND Ano='".$AnoEscolarProx."' ";
+
+
+$RS_sql = $mysqli->query($sql);
+$totalRows_RS = $RS_sql->num_rows;	
+	
+	/*
 $RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-$totalRows_RS = mysql_num_rows($RS_sql);
+$totalRows_RS = mysql_num_rows($RS_sql);*/
 	
 if($totalRows_RS == 1){
 	$sql = "UPDATE AlumnoXCurso SET CodigoCurso = '".$_POST['CodigoCurso']."' 
@@ -204,9 +231,12 @@ else{
 			WHERE CodigoAlumno='".$_POST['CodigoAlumno']."' 
 			AND Ano='".$AnoEscolarAnte."' 
 			AND Status = 'Inscrito'";
-	$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-	$totalRows_RS = mysql_num_rows($RS_sql);
+	$RS_sql = $mysqli->query($sql);
+$totalRows_RS = $RS_sql->num_rows;	
 	
+	/*$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
+	$totalRows_RS = mysql_num_rows($RS_sql);
+	*/
 	if($totalRows_RS == 1){
 		$aux_Status = "Aceptado";}
 	else{
@@ -218,7 +248,7 @@ else{
 					   GetSQLValueString($_POST['CodigoCurso'], "text"),
 					   GetSQLValueString($aux_Status, "text"));
 	}		
-  $Result1 = mysql_query($sql, $bd) or die(mysql_error());
+  $Result1 = $mysqli->query($sql);			 //$Result1 = mysql_query($sql, $bd) or die(mysql_error());
 
 
   $updateGoTo = "index.php";
@@ -238,25 +268,36 @@ else{
 
 $Usuario_RS_Alumno = "0";
 if (isset($_COOKIE['MM_Username'])) {
-  $Usuario_RS_Alumno = (get_magic_quotes_gpc()) ? $_COOKIE['MM_Username'] : addslashes($_COOKIE['MM_Username']);
+  $Usuario_RS_Alumno = $_COOKIE['MM_Username'];
 }
 $CodigoAlumno = "1";
 if (isset($_GET['CodigoAlumno'])) {
-  $CodigoAlumno = (get_magic_quotes_gpc()) ? $_GET['CodigoAlumno'] : addslashes($_GET['CodigoAlumno']);
+  $CodigoAlumno = $_GET['CodigoAlumno'];
 }
 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_RS_Alumno = sprintf("SELECT * FROM Alumno WHERE CodigoAlumno = '%s' AND Creador = '$MM_Username' ", $CodigoAlumno);
+
+
+$RS_Alumno = $mysqli->query($query_RS_Alumno);
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+$totalRows_RS_Alumno = $RS_Alumno->num_rows;	
+	
+	/*
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 $totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
-
+*/
 $query_RS_Cursos = "SELECT * FROM Curso 
 					WHERE SW_activo=1 
 					ORDER BY Curso.NivelCurso, Curso.Seccion, Curso.Seccion";
+$RS_Cursos = $mysqli->query($query_RS_Cursos);
+$row_RS_Cursos = $RS_Cursos->fetch_assoc();
+$totalRows_RS_Cursos = $RS_Cursos->num_rows;	
+/*
 $RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
 $row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
-$totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);
+$totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);*/
  
 function DayNumDate ($num) {
 return substr($num, 8, 2);}
@@ -274,13 +315,17 @@ $sql = "SELECT * FROM AlumnoXCurso
 		";
 //echo $sql;
 
+$RS_sql = $mysqli->query($sql);
+$row_RS = $RS_sql->fetch_assoc();
+$totalRows_RS = $RS_sql->num_rows;
+	/*
 $RS_sql = mysql_query($sql, $bd) or die(mysql_error());
 $row_RS = mysql_fetch_assoc($RS_sql);
-$totalRows_RS = mysql_num_rows($RS_sql);
+$totalRows_RS = mysql_num_rows($RS_sql);*/
 
 if($totalRows_RS == 0 or $row_RS_Alumno['CodigoAlumno']==''){ //Modificable Datos ME
 	$SW_mod_ME = true; 
-	echo "e";
+	//echo "e";
 	}
 else{
 	$SW_mod_ME = false;}
@@ -459,9 +504,16 @@ $sql = "SELECT * FROM AlumnoXCurso
 		AND Ano='".$AnoEscolarProx."' 
 		AND (Status = 'Solicitando' OR Status = 'Aceptado')";
 		//echo $sql;
+			
+
+$RS_sql = $mysqli->query($sql);
+$row_RS = $RS_sql->fetch_assoc();
+$totalRows_RS = $RS_sql->num_rows;			
+			
+	/*		
 $RS_sql = mysql_query($sql, $bd) or die(mysql_error());
 $row_RS = mysql_fetch_assoc($RS_sql);
-$totalRows_RS = mysql_num_rows($RS_sql);
+$totalRows_RS = mysql_num_rows($RS_sql);*/
 if($totalRows_RS == 1 )
 	$CodigoCurso = $row_RS['CodigoCurso'];
 else
@@ -488,8 +540,12 @@ $sql = "SELECT * FROM AlumnoXCurso
 		WHERE CodigoAlumno='".$row_RS_Alumno['CodigoAlumno']."' 
 		AND (Ano='".$AnoEscolarProx."' ) 
 		ORDER BY Codigo";
+	
+$RS_sql = $mysqli->query($sql);
+$row_RS = $RS_sql->fetch_assoc();
+	/*
 $RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
-$row_RS = mysql_fetch_assoc($RS_sql);
+$row_RS = mysql_fetch_assoc($RS_sql);*/
 
 echo Curso($row_RS['CodigoCurso']);
 
@@ -513,7 +569,7 @@ echo Curso($row_RS['CodigoCurso']);
           <tr>
             <td class="NombreCampo">Localidad,<br> 
               Ciudad o Municipio</td>
-            <td class="FondoCampo"><?php?><input name="Localidad"  type="<?php echo $SW_mod_ME?'text':'hidden'; ?>"  class="TextosSimples"  value="<?php echo $row_RS_Alumno['Localidad']; ?>"  size="20"><?php  if($SW_mod_ME){ }else{echo $row_RS_Alumno['Localidad'];} ?></td>
+            <td class="FondoCampo"><input name="Localidad"  type="<?php if($SW_mod_ME) echo "text"; else echo "hidden"; ?>"  class="TextosSimples"  value="<?php echo $row_RS_Alumno["Localidad"]; ?>"  size="20"><?php  if($SW_mod_ME){ }else{echo $row_RS_Alumno["Localidad"];} ?></td>
           </tr>
           <tr>
             <td class="NombreCampo">Entidad o Estado</td>

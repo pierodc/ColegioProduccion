@@ -10,12 +10,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas
 
 //Cambia Nombre Factura
 if (isset($_POST['CambiaNombreFactura']) and $_POST['CambiaNombreFactura']==1) {
-		mysql_select_db($database_bd, $bd);
+		//mysql_select_db($database_bd, $bd);
 		$query = "UPDATE ContableMov 
 					SET CodigoReciboCliente = '".$_POST['CodigoReciboCliente']."'
 					WHERE Codigo = '".$_POST['Codigo']."' ";
 		//echo $query;			
-		$rs = mysql_query($query, $bd) or die(mysql_error()); 
+		$rs = $mysqli->query($query);//mysql_query($query, $bd) or die(mysql_error()); 
 		header("Location: ".$_SERVER['PHP_SELF']."?CodigoPropietario=".$_GET['CodigoPropietario']."&CodigoAlumno=".$_GET['CodigoAlumno']);}
 //
 
@@ -47,14 +47,20 @@ $row_Alumno = mysql_fetch_assoc($Alumno);
                 <?php
 // Busca todos los recibos
 //$CodigoAlumno = $_GET['CodigoAlumno'];
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_Recibos = "SELECT * FROM Recibo 
 				  WHERE CodigoPropietario = '".$Alumno->Codigo() ."'
 				  ORDER BY CodigoRecibo DESC";
 				  //echo $query_Recibos;
+	  
+$Recibos = $mysqli->query($query_Recibos);
+$row_Recibos = $Recibos->fetch_assoc();
+$totalRows_Recibos = $Recibos->num_rows;				  
+				  
+		/*		  
 $Recibos = mysql_query($query_Recibos, $bd) or die(mysql_error());
 $row_Recibos = mysql_fetch_assoc($Recibos);
-$totalRows_Recibos = mysql_num_rows($Recibos);
+$totalRows_Recibos = mysql_num_rows($Recibos);*/
 ?>Fecha</td>
               <td colspan="2" align="center" class="NombreCampoTopeWin">Descripci&oacute;n</td>
               <td align="center" class="NombreCampoTopeWin">Ref</td>
@@ -78,8 +84,15 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
               <td colspan="4" align="center" nowrap="nowrap" class="Listado<?php echo $In; ?>Par"><b>
                 <?php 
 				$sql = "SELECT MAX(NumeroFactura) AS NumFacMax FROM Recibo";
-				$query = mysql_query($sql, $bd) or die(mysql_error());
-				$row_query = mysql_fetch_assoc($query);
+				
+		   		
+				$query = $mysqli->query($sql);
+				$row_query = $query->fetch_assoc();
+				//$Conteo = $query->num_rows;
+		   
+		   
+		   		/*$query = mysql_query($sql, $bd) or die(mysql_error());
+				$row_query = mysql_fetch_assoc($query);*/
 				$NumFacMax = $row_query['NumFacMax'];
 				
 				$NumeroFactura = $row_Recibos['NumeroFactura']*1;
@@ -90,14 +103,20 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
 		   
 		   // Busca los movimientos hijos del recibo
 			$CodigoRecibo = $row_Recibos['CodigoRecibo'];
-			mysql_select_db($database_bd, $bd);
+			//mysql_select_db($database_bd, $bd);
 			$query_Recibos_Hijos = "SELECT * FROM ContableMov 
 									WHERE CodigoRecibo = $CodigoRecibo 
 									ORDER BY MontoHaber_Dolares DESC,MontoHaber DESC,  Fecha ASC, Codigo ASC";//echo $query_Recibos;
-			$Recibos_Hijos = mysql_query($query_Recibos_Hijos, $bd) or die(mysql_error());
+			
+		    $Recibos_Hijos = $mysqli->query($query_Recibos_Hijos);
+			$row_Recibos_Hijos = $Recibos_Hijos->fetch_assoc();
+			$totalRows_Recibos_Hijos = $Recibos_Hijos->num_rows;
+		   
+		   /*
+		   	$Recibos_Hijos = mysql_query($query_Recibos_Hijos, $bd) or die(mysql_error());
 			$row_Recibos_Hijos = mysql_fetch_assoc($Recibos_Hijos);
 			$totalRows_Recibos_Hijos = mysql_num_rows($Recibos_Hijos);
-
+			*/
 		   
 		   
 				if (( $row_Recibos['NumeroFactura'] == 0 or $NumeroFactura == $NumFacMax ) and $Fac_Rif > "" ){ 
@@ -149,9 +168,16 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
                   <select name="CodigoReciboCliente" id="CodigoReciboCliente"><?php 
 				$sql = "SELECT * FROM ReciboCliente
 						WHERE CodigoAlumno = '$CodigoAlumno'";
+				
+				
+				$RS = $mysqli->query($sql);
+				$row = $RS->fetch_assoc();
+				$totalRows = $RS->num_rows;										
+				
+														/*
 				$RS = mysql_query($sql, $bd) or die(mysql_error());
 				$row = mysql_fetch_assoc($RS);
-				$totalRows = mysql_num_rows($RS);
+				$totalRows = mysql_num_rows($RS);*/
 				
 				
 				
@@ -166,7 +192,7 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
 					if($row_Recibos_Hijos['CodigoReciboCliente'] == $row['Codigo']) 
 					echo ' selected="selected" ';
 					echo ">$Nombre</option>";
-				} while($row = mysql_fetch_assoc($RS));
+				} while($row = $RS->fetch_assoc());
 				
 				  ?>
                   </select>
@@ -190,13 +216,20 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
               <td class="<?php 
 				$MontoBancoAux='';
 					// Ubica si esta en banco
-					mysql_select_db($database_bd, $bd);
+					//mysql_select_db($database_bd, $bd);
 					$query_RS_del_Banco = "SELECT * FROM Contable_Imp_Todo 
 										   WHERE Referencia = '".$row_Recibos_Hijos['Referencia']."'
 										   ORDER BY Fecha DESC";
-					$RS_del_Banco = mysql_query($query_RS_del_Banco, $bd) or die(mysql_error());
+					
+		  
+					$RS_del_Banco = $mysqli->query($sql);
+					$row_RS_del_Banco = $RS_del_Banco->fetch_assoc();
+					$totalRows_RS_del_Banco = $RS_del_Banco->num_rows;
+		  
+		  				/*
+		  			$RS_del_Banco = mysql_query($query_RS_del_Banco, $bd) or die(mysql_error());
 					$row_RS_del_Banco = mysql_fetch_assoc($RS_del_Banco);
-					$totalRows_RS_del_Banco = mysql_num_rows($RS_del_Banco);
+					$totalRows_RS_del_Banco = mysql_num_rows($RS_del_Banco);*/
 
 					if($row_Recibos_Hijos['MontoHaber'] <= $row_RS_del_Banco['MontoHaber'] and
 					   $row_Recibos_Hijos['MontoHaber'] > 0) {
@@ -307,7 +340,7 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
 			  
    <?php			  
 			  
-			  } while ($row_Recibos_Hijos = mysql_fetch_assoc($Recibos_Hijos)); // Hijos del Recibo
+			  } while ($row_Recibos_Hijos = $Recibos_Hijos->fetch_assoc()); // Hijos del Recibo
 			  
 	?>	   
 	<tr>
@@ -323,7 +356,7 @@ $totalRows_Recibos = mysql_num_rows($Recibos);
 		   
 	$Tot_Pago = $Tot_Abono = $Tot_Debe = $Diferencia = 0;
 		   
-	     } while ($row_Recibos = mysql_fetch_assoc($Recibos)); 
+	     } while ($row_Recibos = $Recibos->fetch_assoc()); 
               
               
  } // fin SI Existen recibos if ($totalRows_Recibos>0) ?>

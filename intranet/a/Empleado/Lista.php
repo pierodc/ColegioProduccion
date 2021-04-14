@@ -155,7 +155,8 @@ if(isset($_POST['Buscar'])){
 			$add_Busqueda .= " AND SW_activo = '1' ";
 	}
 else {	
-	$add_Busqueda =  " SW_activo = '1' ";	}
+	//$add_Busqueda =  " SW_activo = '1' ";	
+}
 	
 
 if($TipoEmpleado > "")
@@ -176,7 +177,7 @@ $query_RS_Empleados = "SELECT * FROM Empleado
 						WHERE $add_Busqueda 
 						ORDER BY $add_Orden
 						LIMIT $Limit , $CantEmpPantalla";
-echo $query_RS_Empleados;
+//echo "<br><br><br><br><br><br><br>".$query_RS_Empleados;
 $RS_Empleados = $mysqli->query($query_RS_Empleados);
 $totalRows_RS_Empleados = $RS_Empleados->num_rows;
 
@@ -233,7 +234,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
             
             <input name="Buscar" type="text" id="Buscar" value="<?php echo $_POST['Buscar'] ?>" />
             <input name="SW_activo" type="checkbox" id="checkbox2" checked="checked" /> activo
-<input type="submit" name="button" id="button" value="Buscar" />
+<input class="button" type="submit" name="button" id="button" value="Buscar" />
           </form></td>
           <td width="50%" align="right" valign="top" nowrap="nowrap">
           <a href="<?php echo $_SERVER ['PHP_SELF'] ?>?Limit=<?php echo '0'; ?>">Primero</a> | 
@@ -337,7 +338,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 //$Desde = $_GET['Limit']; 
 //$Hasta = $Desde + $CantEmpPantalla;
 //$i=1;
-
+if($RS_Empleados->num_rows > 0)
  while ($row_RS_Empleados = $RS_Empleados->fetch_assoc()) { 
 //echo "<tr><td>$i<td><td>$Desde<td><td>$Hasta<td><tr>";		
 
@@ -363,37 +364,49 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 
 <table  class="center">
          <caption><?php echo ++$i ?>)
-		<a href="Ficha_Datos.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado]; ?>" target="_blank" >
-		<?php echo $row_RS_Empleados[Apellidos] ." ". $row_RS_Empleados[Apellido2] .", ". $row_RS_Empleados[Nombres] ." ". $row_RS_Empleados[Nombre2]; ?></a></caption>
+		<a href="Ficha_Datos.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"]; ?>" target="_blank" >
+		<?php echo $row_RS_Empleados["Apellidos"] ." ". $row_RS_Empleados["Apellido2"] .", ". $row_RS_Empleados["Nombres"] ." ". $row_RS_Empleados["Nombre2"]; ?></a></caption>
          
          
 <tr>
-  <td ><img src="../../../i/b.png" width="150" height="1" alt=""/><br><a name="<?php echo $i ?>" id="Linea2"></a>
-    <?php if ($Dsp['Foto']) { 
+  <td valign="top" ><p><img src="../../../i/b.png" width="150" height="1" alt=""/><br>
+      <a name="<?php echo $i ?>" id="Linea2"></a><a href="Ficha_PagoDeduc.php?BC=1&CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"]; ?>" target="_blank" >BC</a></p>
+      <p>
+          <?php if ($Dsp['Foto']) { 
 	
 	$raiz = $_SERVER['DOCUMENT_ROOT'];
-	$Ruta = $raiz.'/FotoEmp/150/'.$row_RS_Empleados[CodigoEmpleado].'.jpg';
+	$Ruta = $raiz.'/FotoEmp/150/'.$row_RS_Empleados["CodigoEmpleado"].'.jpg';
 	if(file_exists($Ruta)){
 	
 	?>
-    <a href="../../a/Sube_Foto.php?Tipo=Empleado150&Codigo=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>&Cedula=<?php echo $row_RS_Empleados[Cedula] ?>" target="_blank"><img src="../../../FotoEmp/150/<?php echo $row_RS_Empleados[CodigoEmpleado]; ?>.jpg" width="150"height="150" border="0" /></a>  
-	<?php }else{ ?>
-    <a href="../Sube_Foto.php?Tipo=Empleado300&Codigo=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>&Cedula=<?= $row_RS_Empleados[Cedula] ?>"><img src="../../../i/user_add.png" width="32" height="32" alt=""/></a>
-    <?php } }
+          <a href="../../a/Sube_Foto.php?Tipo=Empleado150&Codigo=<?php echo $row_RS_Empleados["CodigoEmpleado"] ?>&Cedula=<?php echo $row_RS_Empleados["Cedula"] ?>" target="_blank"><img src="../../../FotoEmp/150/<?php echo $row_RS_Empleados["CodigoEmpleado"]; ?>.jpg" width="150"height="150" border="0" /></a>  
+          <?php }else{ ?>
+          <a href="../Sube_Foto.php?Tipo=Empleado300&Codigo=<?php echo $row_RS_Empleados["CodigoEmpleado"] ?>&Cedula=<?= $row_RS_Empleados["Cedula"] ?>"><img src="../../../i/user_add.png" width="32" height="32" alt=""/></a>
+          <?php } }
 	?><br /> 
-    <?
+          <?
 	if ($Dsp['Cedula']) { 
 	$raiz = $_SERVER['DOCUMENT_ROOT'];
-	$Ruta = $raiz.'/intranet/a/archivo/ci/'.$row_RS_Empleados[Cedula].'.jpg';
+	$Ruta = $raiz.'/intranet/a/archivo/ci/'.$row_RS_Empleados["Cedula"].'.jpg';
 	if(file_exists($Ruta)){
 	?>
-   <a href="../archivo/ci/<?= $row_RS_Empleados[Cedula] ?>.jpg" target="_blank"><img src="../../../i/vcard.png" width="32" height="32" alt=""/></a>
-    <?php }else{ ?>
-    <a href="../Sube_Foto.php?Tipo=EmpleadoCedula600&Cedula=<?= $row_RS_Empleados[Cedula] ?>"><img src="../../../i/vcard_add.png" width="32" height="32" alt=""/></a><?php }
-	} ?></td>
+          <a href="../archivo/ci/<?= $row_RS_Empleados["Cedula"] ?>.jpg" target="_blank"><img src="../../../i/vcard.png" width="32" height="32" alt=""/></a>
+          <?php }else{ ?>
+          <a href="../Sube_Foto.php?Tipo=EmpleadoCedula600&Cedula=<?= $row_RS_Empleados["Cedula"] ?>"><img src="../../../i/vcard_add.png" width="32" height="32" alt=""/></a>
+          <?php }
+	} ?>
+  </p>
+      <p><br>
+          <a href="Ficha_PagoDeduc.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"]; ?>" target="_blank" >Pagos</a> <a href="PDF/Recibo_Pago.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"]; ?>&amp;Quincena=<?php if(date('d')<=15) echo '1ra'; else echo '2da'; ?>" target="_blank">Recibo N&oacute;m</a><br />
+          <a href="PDF/Recibo_Pago_Vacaciones.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"]; ?>" target="_blank">Recibo Vacaciones</a><br />
+          <a href="PDF/Recibo_Utilidades.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"] ?>&Util=1&Agui=1" target="_blank"> Recibo Utilid/Aguin</a><br />
+      </p>
+      <p><a href="PDF/Carnet.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"] ?>" target="_blank">Carnet</a><br>
+          <a href="PDF/Constancia.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"] ?>" target="_blank">Cosntancia Trab</a></p>
+      <p>&nbsp; </p></td>
   
   
-<td><iframe src="iFr_ListaEmpleado.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>" width="1200" height="300" frameborder="0" seamless></iframe></td>    
+<td valign="top"><iframe src="iFr_ListaEmpleado.php?CodigoEmpleado=<?php echo $row_RS_Empleados["CodigoEmpleado"] ?>" width="1200" height="300" frameborder="0" seamless></iframe></td>    
 
 	
   
@@ -403,26 +416,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 <?php if(TieneAcceso($Acceso_US,"Sueldo")) { ?>  
  
           <td align="right" nowrap="nowrap">
-              <p><a href="Ficha_PagoDeduc.php?BC=1&CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado]; ?>" target="_blank" >BC</a> <br>
-                  
-                  <a href="Ficha_PagoDeduc.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado]; ?>" target="_blank" >Pagos</a>
-                  
-                  
-                  <a href="PDF/Recibo_Pago.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado]; ?>&amp;Quincena=<?php if(date('d')<=15) echo '1ra'; else echo '2da'; ?>" target="_blank">Recibo N&oacute;m</a><br />
-                  <a href="PDF/Recibo_Pago_Vacaciones.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado]; ?>" target="_blank">Recibo Vacaciones</a><br />
-                  
-                  <a href="PDF/Recibo_Utilidades.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>&Util=1&Agui=1" target="_blank"> Recibo Utilid/Aguin</a><br />
-                  <a href="PDF/Recibo_Utilidades.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>&Util=1" target="_blank">Utilid</a><br />
-                  <a href="PDF/Recibo_Utilidades.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>&Agui=1" target="_blank">Aguin</a><br />
-                  <a href="PDF/Recibo_Utilidades.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>&Bono=1" target="_blank">Bono Prod</a><br />
-                  
-                  <br />
-                  
-                  <a href="ListaRetroactivo.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>" target="_blank">Retroactivo</a><br />
-              </p>
-              <p><a href="PDF/Carnet.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>" target="_blank">Carnet</a></p>
-              <p><a href="../Contabilidad/Gastos.php?Rif=<?php echo $row_RS_Empleados[Cedula] ?>&Nombre=<?php echo $row_RS_Empleados[Apellidos].' '.$row_RS_Empleados[Nombres] ?>" target="_blank">Recibo Particular</a> </p>
-              <p><a href="PDF/Constancia.php?CodigoEmpleado=<?php echo $row_RS_Empleados[CodigoEmpleado] ?>" target="_blank">Cosntancia Trab</a></p></td>
+              <p>&nbsp;</p></td>
         </tr>
 <?php } ?>        
 
@@ -467,7 +461,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
                                       Nombres:
                                       <input type="text" name="Nombres" value="" size="10" />
                                       <input type="text" name="Nombre2" value="" size="10" id="Nombre2" />
-<input type="submit" value="Crear" /></td>
+<input class="button" type="submit" value="Crear" /></td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>

@@ -199,7 +199,7 @@ $MM_UserGroup  = $_COOKIE['MM_UserGroup'];
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= substr($MM_Username,0,3); ?>  <strong class="caret"></strong></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="/index.php?LogOut=1">Salir</a>
+                        <a href="/index.php?LogOut=1">Salir <? echo session_id(); ?></a>
                     </li>
                 </ul>
             </li>

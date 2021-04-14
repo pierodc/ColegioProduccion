@@ -19,8 +19,8 @@ function LimpiaStr($str){
 }
 
 // Sube Archivo al servidor
-if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST[banco]>'') {
-	$NombreBanco = $_POST[banco];
+if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST["banco"]>'') {
+	$NombreBanco = $_POST["banco"];
 	$NombreArchivo = $_SERVER['DOCUMENT_ROOT'] ."/archivo/".$NombreBanco."/".date('Y_m_d_h_i_s').".txt";
     //echo $NombreArchivo;
 	copy($_FILES['userfile']['tmp_name'], $NombreArchivo );
@@ -147,7 +147,7 @@ $MesAnterior = 0;
 
 foreach ($lineas as $linea_num => $linea) { 
 
-if(isset($_GET[banco])){ $NombreBanco = $_GET[banco];}
+if(isset($_GET["banco"])){ $NombreBanco = $_GET["banco"];}
 
 if($NombreBanco=="merc"){ // MERCANTIL
 	//echo $linea . "<br>";
@@ -213,6 +213,8 @@ if($NombreBanco=="prov"){ // PROVINCIAL
 	$linea = str_replace(".", "", $linea) ;
 	$linea = str_replace(",", "", $linea) ;
 	$parte = explode(";", $linea);
+	$parte[3] = (int)$parte[3];
+	$parte[4] = (int)$parte[4];
 	$parte[3] = $parte[3]/100;
 	$parte[4] = $parte[4]/100;
 	$Banco = 2;
@@ -221,10 +223,10 @@ if($NombreBanco=="prov"){ // PROVINCIAL
 	$Saldo = $parte[4]*1;
 	$SaldoFinal = $Saldo;
 	$FechaSaldoInicial = date('Y').$MesAnterior.'01';
-	$Referencia  = $parte[1]*1;
+	$Referencia  = (int)$parte[1];
 	$Descripcion = $parte[2]; 
 	$Tipo  = substr($parte[2],0,2); 
-	$ChNum = substr($parte[2], -6, 6)*1;
+	$ChNum = substr((int)$parte[2], -6, 6);
 	$monto = $parte[3]; 
 	if($monto>=0) { 
 		$MontoHaber = $monto*1; 
@@ -342,13 +344,13 @@ $sql = "DELETE FROM Contable_Imp_Todo
 		AND Tipo = 'SI'
 		AND Fecha = '$FechaSaldoInicial'";	
 //echo $sql;  
-$RS_ = mysql_query($sql, $bd) or die(mysql_error());
+$RS_ = $mysqli->query($sql);//mysql_query($sql, $bd) or die(mysql_error());
  
 $sql = "INSERT INTO Contable_Imp_Todo 
 			(CodigoCuenta, Fecha, Tipo, Referencia, Descripcion, MontoDebe, MontoHaber, ChNum) 
 			VALUES 
 			('$Banco','$FechaSaldoInicial','SI','0','Saldo Inicial','0','$SaldoFinal','')";
-$RS_ = mysql_query($sql, $bd) or die(mysql_error());
+$RS = $mysqli->query($sql); // $RS_ = mysql_query($sql, $bd) or die(mysql_error());
 //echo $sql;  
   
   ?>
@@ -383,10 +385,16 @@ $query_RS_Busca_Mov = "SELECT * FROM Contable_Imp_Todo
 						AND Fecha = '$Fecha'
 						AND MontoHaber = '$MontoHaber' 
 						AND MontoDebe = '$MontoDebe'";
-//echo $query_RS_Busca_Mov;					
-$RS_Busca_Mov = mysql_query($query_RS_Busca_Mov, $bd) or die(mysql_error());
-$row_RS_Busca_Mov = mysql_fetch_assoc($RS_Busca_Mov);
-$totalRows_RS_Busca_Mov = mysql_num_rows($RS_Busca_Mov);
+//echo $query_RS_Busca_Mov;	
+	
+$RS_Busca_Mov = $mysqli->query($query_RS_Busca_Mov);
+$row_RS_Busca_Mov = $RS_Busca_Mov->fetch_assoc();
+$totalRows_RS_Busca_Mov = $RS_Busca_Mov->num_rows;
+	
+	
+//$RS_Busca_Mov = mysql_query($query_RS_Busca_Mov, $bd) or die(mysql_error());
+//$row_RS_Busca_Mov = mysql_fetch_assoc($RS_Busca_Mov);
+//$totalRows_RS_Busca_Mov = mysql_num_rows($RS_Busca_Mov);
 
 if($totalRows_RS_Busca_Mov == 0){
 	$query = "INSERT INTO Contable_Imp_Todo 
@@ -465,7 +473,7 @@ $SaldoMovAnterior = $Saldo;
           <?php } 
 
 // Cambiar nombre de archivo a fechas
-if( isset($_POST[banco])) {
+if( isset($_POST["banco"])) {
 //$ok = rename($NombreArchivo , $_SERVER['DOCUMENT_ROOT'] . "/archivo/$NombreBanco/".$FechaInicial."_al_".$FechaFinal.".txt" );
 //echo "ok = ". $ok ;
 //echo $FechaInicial."_al_".$FechaFinal.".txt";

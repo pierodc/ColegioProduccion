@@ -1,7 +1,8 @@
 <?php 
+require_once( $_SERVER['DOCUMENT_ROOT'] . "/Config/Autoload.php");
 //initialize the session
 //if (!isset($_SESSION)) {
-  session_start();
+  //session_start();
 //}
 
 require_once('Connections/bd.php'); 
@@ -42,11 +43,9 @@ if (isset($_POST['Usuario'])) {
   $MM_redirecttoReferrer = false;
   //mysql_select_db($database_bd, $bd);
   	
-  $LoginRS__query = sprintf("SELECT Codigo, Usuario, Clave, Privilegios, Iniciales 
+  $LoginRS__query = "SELECT Codigo, Usuario, Clave, Privilegios, Iniciales 
   								FROM Usuario 
-								WHERE Usuario='%s' AND Clave='%s'",
-								get_magic_quotes_gpc() ? $MM_Username : addslashes($MM_Username), 
-								get_magic_quotes_gpc() ? $password : addslashes($password)); 
+								WHERE Usuario='$MM_Username' AND Clave='$password'"; 
   //echo  $LoginRS__query;
 //  $LoginRS = mysql_query($LoginRS__query, $bd) or die(mysql_error());
 //  $row_Login = mysql_fetch_assoc($LoginRS);
@@ -83,9 +82,9 @@ $loginFoundUser = $LoginRS->num_rows;
 		
 		
 		
-		$sql_Trace = "INSERT INTO Usuario_Logs (CodigoUsuario, Usuario, Computador, IP) VALUES 
+		$sql_Trace = "INSERT INTO Usuario_Logs (CodigoUsuario, Usuario, Computador, IP, Session_id) VALUES 
 						('".$Codigo_US."' ,'".$MM_Username."' , '". $_SERVER['HTTP_USER_AGENT'] ."' ,
-						 '". $_SERVER['REMOTE_ADDR'] ."' )";
+						 '". $_IP ."', '$_Session_id' )";
 		//echo $sql_Trace;
 		$LoginRS = $mysqli->query($sql_Trace);
 		$Usuario_Logs_Codigo = $mysqli->insert_id;
@@ -241,8 +240,9 @@ if(true or $row_Login['Privilegios'] != '2' and $_SESSION['Ultima_Ruta'] != $_SE
 					 '" . $_SERVER['PHP_SELF'] . "' ,
 					 '" . $_SERVER['QUERY_STRING'] . "' )";
 		//echo $sql_Trace;	
-		if($MM_Username <> "piero")
-			$mysqli->query($sql_Trace);
+		//if($MM_Username <> "piero")
+			if(!$SW_omite_trace)
+				$mysqli->query($sql_Trace);
 
 }
 

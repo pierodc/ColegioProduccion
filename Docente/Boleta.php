@@ -1,139 +1,27 @@
 <?php 
-// area docente
 $MM_authorizedUsers = "Coordinador,docente,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+$TituloPagina   = "INTRANET"; // <title>
+$TituloPantalla = "INTRANET"; // Titulo contenido
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
+header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
+$Lapso = 1;
+$Alumno = new Alumno($_GET["idAlumno"]);
+$Curso = new Curso($_GET['CodigoCurso']);
 
-$TituloPantalla = "Formato Boleta";
+//$SW_DocenteGuia = ;
 
-$CodigoCurso = $_GET['CodigoCurso'];
-$Lapso = $_GET['Lapso'];
-
-if ( $CodigoCurso == "" or $Lapso == "" ){  //and $MM_UserGroup <> 'docente'
-	
-	if($CodigoCurso == ''){
-		$CodigoCurso = 15;
-		}
-		
-	if($Lapso == ''){
-		$Lapso = $Lapso_Actual;	}
-	
-	//setcookie("CodigoCurso",$CodigoCurso,time()+99999999);
-	//setcookie("Lapso",$Lapso,time()+99999999);
-
-	header("Location: ".$_SERVER['PHP_SELF']."?CodigoCurso=".$CodigoCurso."&Lapso=".$Lapso);
-}
-
-
-$idAlumno = $_GET['idAlumno'];
-
-
-$Curso = new Curso();
-$Curso->id = $_GET['CodigoCurso'];
-$Curso->Ano = $AnoEscolar;
-$Listado = $Curso->ListaCurso();
-$NivelCurso = $Curso->NivelCurso();
-
-$DocenteGuia = $Curso->DocenteGuia();
-$DocenteEspecialista= $Curso->DocenteEspecialista();
-
-
-
-//echo "DocenteGuia " . $DocenteGuia . " usuario  $MM_Username <br>";
-
-if($DocenteGuia == $MM_Username){
-	//echo "DOC GUIA";
-	$SW_DocenteGuia = true;
-	}
-	else {
-	//echo "no GUIA";
-	//$SW_DocenteGuia = true;
-	}
-//echo "DocenteEspecialista " . var_dump($DocenteEspecialista) . "<br>";
-
-$Alumno = new Alumno($_GET['idAlumno']);
-
-
-/*
-while($row = mysqli_fetch_assoc($Listado)){
-	echo ++$No.' '.$row['Nombres'] . '<br>';
-	}
-*/
-
-
-	
-
-/*
-if(!TieneAcceso($Acceso_US,"")){
-	header("Location: ".$_SERVER['HTTP_REFERER']);
-	}
-*/
-/*
- onclick="this.disabled=true;this.form.submit();"
- 
- <a href="delete.php?id=$res[id]"  onClick="return confirm('Esta seguro que desea eliminar?')">eliminar</a>
- 
- 
-// Ejecuta $sql
-$RS = $mysqli->query($query_RS_Alumno);
-
-$RS = $mysqli->query($sql);
-$row = $RS->fetch_assoc();
-$Conteo = $RS->num_rows;
-
-// Ejecuta $sql y While
-$RS = $mysqli->query($sql);
-while ($row = $RS->fetch_assoc()) {
-	extract($row);
-    echo "<br>";
-}
-
-$RS->data_seek(0);
-
-if(isset($_POST['button'])){
-	$sql = "INSERT INTO Table (Codigo) VALUES
-			('".$_POST['Codigo']."')";
-	$mysqli->query($sql);
-}
-
-$sw=ListaFondo($sw,$Verde); 
-
-header("Location: ".$php_self."?CodigoPropietario=".$_GET['CodigoPropietario']);
-
-if(Acceso($Acceso_US,$Reuqerido_Pag)){
-	echo "$Acceso_US permitido en Reuqerido_Pag"; }
-
-<input type="submit" name="Boton" id="Boton" value="Valor" onclick="this.disabled=true;this.form.submit();" />
-*/
- if(isset($_GET['CodigoEdita'])){
-	$sql = "SELECT * FROM Boleta_Indicadores
-			WHERE Codigo = '".$_GET['CodigoEdita']."'";
-	$RS = $mysqli->query($sql);
-	$row = $RS->fetch_assoc();
-	extract($row);
-	}
-
- 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<title><?php echo $TituloPantalla; ?></title>
-<link href="/estilos.css" rel="stylesheet" type="text/css" />
+require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
+?><!doctype html>
+<html lang="es">
+  <head>
+	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
+    <title><?php echo $TituloPag; ?></title>
+    
+    <link href="/estilos.css" rel="stylesheet" type="text/css" />
 <link href="/estilos2.css" rel="stylesheet" type="text/css" />
 <link href="/css/tabla.css" rel="stylesheet" type="text/css" />
 	
@@ -150,17 +38,32 @@ table.position_fixed{
 	}
 </style>
 
-
+    
+    
 </head>
-<body>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
+<? // require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
+<?  require_once($_SERVER['DOCUMENT_ROOT'] . "/Docente/Nav.php");  ?>
+<? //require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
+ 
+	
+<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
 
     <tr>
-    <td colspan="2" align="left" valign="top" width="150"><?php 
+    
+    
+    <td colspan="2" align="left" valign="top" width="150">
+    <? //Boton_Cursos( $_GET['CodigoCurso'] ); ?>    
+    
+    <?php 
    $actual = $_GET['CodigoCurso'];
-   $Lapso = $_GET['Lapso'];
+	if( $_GET['Lapso'] > 0)	{	
+	   $Lapso = $_GET['Lapso'];
+	}
    $extraOpcion = $_SERVER['PHP_SELF'] ."?Lapso=$Lapso&CodigoCurso=";
    Ir_a_Curso($actual,$extraOpcion,$MM_UserGroup,$MM_Username); ?></td>
+   
+   
     <td align="right" valign="top"><? if( true or $MM_UserGroup == "91" or $MM_UserGroup == "Coordinador" or $SW_DocenteGuia){ ?><a href="PDF/Boleta.php?CodigoCurso=<?= $actual?>&Lapso=<?= $Lapso ?>" target="_blank">Imprimir Boletas</a> | <a href="PDF/Boleta_Observaciones.php?CodigoCurso=<?= $actual?>" target="_blank">Observaciones</a> | 
       Lapso <? foreach (array(1,2,3) as $Lap) { ?>
       <a class="btn-sm <? 
@@ -204,10 +107,13 @@ while ($row = $RS->fetch_assoc()) {
     <tr <? 
 	if($_GET['idAlumno'] == $row['CodigoAlumno']){
 		$Verde = true;
-		}else {$Verde = false;}
-	$sw=ListaFondo($sw,$Verde); ?>>
-      <td><? echo ++$No; ?></td>
-      <td nowrap="nowrap"><a href="<?= $_SERVER['PHP_SELF']."?Lapso=".$_GET['Lapso']."&CodigoCurso=".$_GET['CodigoCurso']."&idAlumno=".$row['CodigoAlumno'] ?>"><? echo $row['Apellidos'].' '.$row['Nombres']; ?></a></td>
+		}
+	else {
+		$Verde = false;
+		  }
+	 ?>>
+      <td <? ListaFondo($sw,$Verde); ?>><? echo ++$No; ?></td>
+      <td nowrap="nowrap" <? $sw = ListaFondo($sw,$Verde); ?>><a href="<?= $_SERVER['PHP_SELF']."?Lapso=".$_GET['Lapso']."&CodigoCurso=".$_GET['CodigoCurso']."&idAlumno=".$row['CodigoAlumno'] ?>"><? echo $row['Apellidos'].' '.$row['Nombres']; ?></a></td>
     </tr>
 <? } ?>    
   </tbody>
@@ -226,11 +132,11 @@ else{ echo "<h3>Seleccione el curso</h3>";} ?>
      
 <tr>
 	<td colspan="4">
-	  <table width="100%">
+	  <table width="90%">
 	    
 	      <tr>
 	        <td scope="col" class="RTitulo">&nbsp;<?= $Alumno->NombresApellidos(); ?> </td>
-	        <td scope="col" align="right">&nbsp;<a href="PDF/Boleta.php?Lapso=<?= $_GET['Lapso'] ?>&CodigoCurso=<?= $_GET['CodigoCurso'] ?>&idAlumno=<?= $_GET['idAlumno']; ?>">Boleta</a></td>
+	        <td scope="col" align="right">&nbsp;<a href="PDF/Boleta.php?Lapso=<?= $_GET['Lapso'] ?>&CodigoCurso=<?= $_GET['CodigoCurso'] ?>&idAlumno=<?= $_GET['idAlumno']; ?>" target="_blank">Boleta</a></td>
 	        </tr>
 	    </table>
 	</td>
@@ -239,7 +145,7 @@ else{ echo "<h3>Seleccione el curso</h3>";} ?>
 <?php 
 
 if(isset($_GET['idAlumno'])){
-	
+	$idAlumno = $_GET['idAlumno'];
 	if($Curso->NivelCurso() >= "21"){
 		$sql = "SELECT * FROM Boleta_Indicadores
 				WHERE Ano = '$AnoEscolar'
@@ -272,7 +178,7 @@ if($Dimen_o_Indic_Ante != $Dimen_o_Indic){
            <td colspan="4">&nbsp;</td>
           </tr>
         <tr>
-          <td colspan="4" class="NombreCampoTITULO"><? echo $Dimen_o_Indic=="I"?"Indicador":"Dimensión"; ?></td>
+          <td colspan="4" class="NombreCampoTITULO"><? echo $Dimen_o_Indic=="I"?"Indicador":"DimensiÃ³n"; ?></td>
         </tr>
 <?php } 
 
@@ -280,7 +186,7 @@ $Materia_Grupo_array = str_replace(" ","_",NoAcentos($Materia_Grupo));
 
 if($SW_DocenteGuia or 
 	$DocenteEspecialista[$Materia_Grupo_array] == $MM_Username or
-	$MM_UserGroup == "91" or $MM_UserGroup == "Coordinador"){ 
+	$MM_UserGroup == "91" or $MM_UserGroup == "docente" or $MM_UserGroup == "Coordinador"){ 
 	
 	
 	
@@ -312,7 +218,7 @@ $Sumatoria = $cuenta = 0;
 		   echo "&Lapso=".$_GET['Lapso'];
 		    //echo "&No=" . ++$EscalaNota ;
 		   
-		   ?>" scrolling="no" frameborder="0" height="25" width="250" seamless="seamless"></iframe><? 
+		   ?>" scrolling="no" frameborder="0" height="25" width="250" seamless></iframe><? 
 		   
 			$sql_nota = "SELECT * FROM Boleta_Nota 
 						WHERE CodigoAlumno = '".$_GET['idAlumno']."'
@@ -386,7 +292,7 @@ if($Cuenta_Lapso > 0){
 
 
 } ?>
-         <? if($SW_DocenteGuia or $MM_UserGroup == 91 or $MM_UserGroup == "Coordinador"){ ?>
+         <? if($SW_DocenteGuia or $MM_UserGroup == "91" or $MM_UserGroup == "docente" or $MM_UserGroup == "Coordinador"){ ?>
         <tr><td colspan="4">
         
         <iframe src="Observacion.php?idAlumno=<?php echo $_GET['idAlumno']. "&Lapso=".$_GET['Lapso']. "&Ano=$AnoEscolar"; ?>" width="100%" height="300"></iframe></td></tr><? } ?>
@@ -397,9 +303,11 @@ if($Cuenta_Lapso > 0){
   <tr>
     <td colspan="3" align="center" valign="top">&nbsp;</td>
   </tr>
-</table>
-
-<?php //include getenv('DOCUMENT_ROOT')."/inc/Footer_info.php"; ?>
-
+</table>	
+	
+	
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
+<?php //require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>
 </body>
 </html>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/AfterHTML.php"); ?>

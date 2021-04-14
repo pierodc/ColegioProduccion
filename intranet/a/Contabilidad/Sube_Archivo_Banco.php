@@ -23,7 +23,7 @@ function LimpiaStr($str){
 
 // Sube Archivo al servidor
 if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST[time] > '') {
-	//$NombreBanco = $_POST[banco];
+	//$NombreBanco = $_POST["banco"];
 	$NombreArchivo = $_SERVER['DOCUMENT_ROOT'] ."/archivo/".date('Y_m_d_h_i_s').".txt";
     //echo $NombreArchivo;
 	

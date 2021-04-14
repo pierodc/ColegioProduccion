@@ -322,7 +322,7 @@ if($ArchivoDe == 'Pago_extra' or $ArchivoDe == 'Pago_extra2' or $ArchivoDe == 'P
 			<td width="50" align="center"><a href="iFr_ListaEmpleado.php?CodigoEmpleado=<?php echo $row_Empleados['CodigoEmpleado'] ?>" target="Movs">Ver</a></td>
 			<td>&nbsp;<?php echo $Empleado; ?></td>
             <td align="left">
-				<?php echo $row_Empleados['TipoEmpleado'].'. '.$row_Empleados['TipoDocente']; ?></td>
+				<?php echo $row_Empleados['TipoEmpleado'].'. '.$row_Empleados['TipoDocente'].'. '.$row_Empleados['HrAcad']; ?></td>
             
             <td align="left">&nbsp;........</td>
           

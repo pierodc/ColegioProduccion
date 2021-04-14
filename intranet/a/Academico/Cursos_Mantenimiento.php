@@ -1,14 +1,6 @@
 <?php 
 $MM_authorizedUsers = "91,95,AsistDireccion,secreAcad";
-require_once('../../../inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-
-require_once('../../../Connections/bd.php'); 
-require_once('../../../inc/rutinas.php'); 
-
-$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-
 
 
 
@@ -31,7 +23,7 @@ if (isset($_POST['CodigoMaterias'])){
 			Profesor13 = '". $_POST['Profesor13']."'  
 			WHERE CodigoMaterias = '".$_POST['CodigoMaterias']."'";
 	//echo $sql;
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
+	$RS = $mysqli->query($sql);//mysql_query($sql, $bd) or die(mysql_error());
 	}
 
 
@@ -61,22 +53,22 @@ if (isset($_POST['Cedula_Prof_Guia'])){
 			$add_sql 
 			WHERE CodigoCurso = '".$_POST['CodigoCurso']."'";
 	//echo $sql;
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
+	$RS =$mysqli->query($sql);// mysql_query($sql, $bd) or die(mysql_error());
 	}
 
 
 $query_CursoMaterias = "SELECT * FROM CursoMaterias";
-$CursoMaterias = mysql_query($query_CursoMaterias, $bd) or die(mysql_error());
-$row_CursoMaterias = mysql_fetch_assoc($CursoMaterias);
-$totalRows_CursoMaterias = mysql_num_rows($CursoMaterias);
+$CursoMaterias = $mysqli->query($query_CursoMaterias);//mysql_query($query_CursoMaterias, $bd) or die(mysql_error());
+$row_CursoMaterias = $CursoMaterias->fetch_assoc();
+$totalRows_CursoMaterias = $CursoMaterias->num_rows;
 
 function Profesor_($bd, $nombre_campo ,$actual){ // AND CargoLargo LIKE '%pro%' // SW_activo = 1 AND
 	$sql = "SELECT * FROM Empleado 
 			WHERE 
 			 (TipoDocente LIKE '%pro%' OR CargoLargo LIKE '%pro%') 
 			ORDER BY Apellidos, Nombres";  // (SW_activo = 1  or SW_activo = 0) 
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
-	$row_ = mysql_fetch_assoc($RS);
+	$RS = $mysqli->query($sql);//mysql_query($sql, $bd) or die(mysql_error());
+	$row_ = $RS->fetch_assoc();
 	
 	echo '
 	<select name="'.$nombre_campo.'" id="select">
@@ -88,18 +80,24 @@ function Profesor_($bd, $nombre_campo ,$actual){ // AND CargoLargo LIKE '%pro%' 
 			echo ' selected="selected" ';
 		echo ">$actual ".$row_['Apellidos']." ".$row_['Nombres']."</option>
 		";
-	} while ($row_ = mysql_fetch_assoc($RS));
+	} while ($row_ = $RS->fetch_assoc());
 	echo '</select>';
 }
 
 function Maestra_($bd, $nombre_campo ,$actual){  // 
+	global $hostname_bd;
+	global $username_bd;
+	global $password_bd;
+	global $database_bd;
 	
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+
 	$sql = "SELECT * FROM Empleado WHERE TipoEmpleado LIKE '%2.%'  ORDER BY Apellidos, Nombres";// WHERE SW_activo = 1
 	
 	
 	//echo $sql.'<br>';
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
-	$row_ = mysql_fetch_assoc($RS);
+	$RS = $mysqli->query($sql);//mysql_query($sql, $bd) or die(mysql_error());
+	$row_ = $RS->fetch_assoc();
 	
 	echo '<select name="'.$nombre_campo.'" id="select">
 	';
@@ -114,7 +112,7 @@ function Maestra_($bd, $nombre_campo ,$actual){  //
 	echo $row_['Apellidos'].' '.$row_['Nombres'];
 	echo '</option>
 	';
-	} while ($row_ = mysql_fetch_assoc($RS));
+	} while ($row_ = $RS->fetch_assoc());
 	
 	echo '</select>';
 }
@@ -172,7 +170,7 @@ while ($row_Curso = $RS->fetch_assoc()) {
 			AND Responsable = 'E'
 			GROUP BY Orden_Grupo";
 	$RS2 = $mysqli->query($sql2);
-	$Materias = "";
+	$Materias = array();
 	$NombresMaterias = "";
 	
 	while($row2 = $RS2->fetch_assoc()){
