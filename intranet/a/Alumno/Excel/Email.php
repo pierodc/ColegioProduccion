@@ -45,7 +45,7 @@ while ($row = $Alumnos->fetch_assoc()) {
 	extract($row);
 	
 	if ($Fecha_Inscrito_Anterior > "" and $Fecha_Inscrito_Anterior != $Fecha_Inscrito){
-		echo "$Fecha_Inscrit\r\n";
+		//echo "$Fecha_Inscrit\r\n";
 	}
 	
 	$Alumno->id = $CodigoAlumno;
@@ -68,7 +68,8 @@ while ($row = $Alumnos->fetch_assoc()) {
 	
 	
 	
-	echo str_replace("-","",DDMMAAAA($Alumno->FechaNac())."sfa") .",,";
+	//echo str_replace("-","",DDMMAAAA($Alumno->FechaNac())."sfa") .",,";
+	echo "****,,";
 	
 	
 	

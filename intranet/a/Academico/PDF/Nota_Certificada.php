@@ -1,23 +1,18 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,secreBach";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rotation.php'); 
+
 if($MM_Username != "piero" AND $MM_Username != "mariangelaguevara36@gmail.com" )
 	exit;
 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rotation.php'); 
 //require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 
-
+/*
 class PDF extends PDF_Rotate
 {
 function RotatedText($x,$y,$txt,$angle)
@@ -36,7 +31,7 @@ function RotatedImage($file,$x,$y,$w,$h,$angle)
     $this->Rotate(0);
 }
 }
-
+*/
 
 
 if (isset($_GET['test'])) {
@@ -51,7 +46,7 @@ $CodigoCurso_URL = "0";
  
 $Ln = 4.5;
 
-$pdf=new PDF('P', 'mm', 'Legal');
+$pdf=new FPDF('P', 'mm', 'Legal');
 
 $Alumno = new Alumno($_GET['CodigoAlumno']);
 $row_RS_Alumnos = $Alumno->view_all();
@@ -76,9 +71,9 @@ $Colegios 				= explode(':',$Colegios_Observaciones[0]);
 $Observaciones 			= explode('|',$Colegios_Observaciones[1]); 
 foreach($Colegios as $Colegio) {
 	$Cole  = explode(';',$Colegio); 
-	$Plantel[$Cole[0]][$Cole[1]][Nombre] = $Cole[2];
-	$Plantel[$Cole[0]][$Cole[1]][Localidad] = $Cole[3];
-	$Plantel[$Cole[0]][$Cole[1]][EF] = $Cole[4];
+	$Plantel[$Cole[0]][$Cole[1]]["Nombre"] = $Cole[2];
+	$Plantel[$Cole[0]][$Cole[1]]["Localidad"] = $Cole[3];
+	$Plantel[$Cole[0]][$Cole[1]]["EF"] = $Cole[4];
 }
 
 $Pagina = array(array('7','8','9'), array('IV','V',''));
@@ -98,14 +93,17 @@ foreach($CodigoMaterias as $CodigoMateria){
 			AND Grado = '$CodigoMateria'
 			ORDER BY Grado, Orden"; 
 			//echo $sql;
+	$RSnotas = $mysqli->query($sql); //
+	$row_notas = $RSnotas->fetch_assoc();
+/*
 	$RSnotas = mysql_query($sql, $bd) or die(mysql_error());
-	$row_notas = mysql_fetch_assoc($RSnotas);
+	$row_notas = mysql_fetch_assoc($RSnotas);*/
 	
 	do{	
-		if($row_notas['Mes']!='ET')
+		if($row_notas['["Mes"]']!='ET')
 			$Renglon[$CodigoMateria][$row_notas['Orden']] =	$row_notas;	
 			
-		elseif($row_notas['Mes']=='ET'){
+		elseif($row_notas['["Mes"]']=='ET'){
 			$EdTrabOrden++;
 			if($row_notas['Grado'] > 6) 
 				$GradoET = $row_notas['Grado']-6;
@@ -116,7 +114,7 @@ foreach($CodigoMaterias as $CodigoMateria){
 
 		$Renglon[$CodigoMateria][$row_notas['Orden']] =	$row_notas;	
 		
-	} while ($row_notas = mysql_fetch_assoc($RSnotas));
+	} while ($row_notas = $RSnotas->fetch_assoc());
 }
 			$EdTrabOrden++;
 			$EdTrab[$EdTrabOrden]['Grado']   = '*';
@@ -178,7 +176,7 @@ $pdf->Cell(100);	 $pdf->Cell(46  , $Ln , 'Código del Plan de Estudio:  ' , 0 , 0
 //$pdf->Cell(100);  $pdf->Cell(17  , $Ln , 'Mención: ' , 0 , 0 , 'L');
 //				 $pdf->Cell(88  , $Ln , ' '. $Mencion , 'B' , 0 , 'L');
 $pdf->Cell(100); $pdf->Cell(48  , $Ln , 'Lugar y Fecha de Expedición:' , 0 , 0 , 'L');
-				 $pdf->Cell(57  , $Ln , ' Caracas: 30-07-2020' , 'B' , 0 , 'L'); // . date('d-m-Y')
+				 $pdf->Cell(57  , $Ln , ' Caracas: ' . date('d-m-Y')  , 'B' , 0 , 'L'); // $Fecha_Nota_Certificada. 
 $pdf->Ln($Ln);
 			
 			
@@ -273,29 +271,29 @@ $pdf->Cell(10   , $Ln , 'E.F.' , 1 , 0 , 'C');
 
 $pdf->SetFont('Arial','',10);
 $pdf->Cell(7    , $Ln , '3' , 1 , 0 , 'C');
-$pdf->Cell(52   , $Ln , $Plantel[$PagNum][3][Nombre] , 1 , 0 , 'L');
-$pdf->Cell(32   , $Ln , $Plantel[$PagNum][3][Localidad] , 1 , 0 , 'C');
-$pdf->Cell(10   , $Ln , $Plantel[$PagNum][3][EF] , 1 , 0 , 'C');
+$pdf->Cell(52   , $Ln , $Plantel[$PagNum][3]["Nombre"] , 1 , 0 , 'L');
+$pdf->Cell(32   , $Ln , $Plantel[$PagNum][3]["Localidad"] , 1 , 0 , 'C');
+$pdf->Cell(10   , $Ln , $Plantel[$PagNum][3]["EF"] , 1 , 0 , 'C');
 $pdf->Ln($Ln);
 
 $pdf->Cell(7    , $Ln , '1' , 1 , 0 , 'C');
-$pdf->Cell(52   , $Ln , $Plantel[$PagNum][1][Nombre] , 1 , 0 , 'L');
-$pdf->Cell(32   , $Ln , $Plantel[$PagNum][1][Localidad] , 1 , 0 , 'C');
-$pdf->Cell(10   , $Ln , $Plantel[$PagNum][1][EF] , 1 , 0 , 'C');
+$pdf->Cell(52   , $Ln , $Plantel[$PagNum][1]["Nombre"] , 1 , 0 , 'L');
+$pdf->Cell(32   , $Ln , $Plantel[$PagNum][1]["Localidad"] , 1 , 0 , 'C');
+$pdf->Cell(10   , $Ln , $Plantel[$PagNum][1]["EF"] , 1 , 0 , 'C');
 $pdf->Cell(7    , $Ln , '4' , 1 , 0 , 'C');
-$pdf->Cell(52   , $Ln , $Plantel[$PagNum][4][Nombre] , 1 , 0 , 'L');
-$pdf->Cell(32   , $Ln , $Plantel[$PagNum][4][Localidad] , 1 , 0 , 'C');
-$pdf->Cell(10   , $Ln , $Plantel[$PagNum][4][EF] , 1 , 0 , 'C');
+$pdf->Cell(52   , $Ln , $Plantel[$PagNum][4]["Nombre"] , 1 , 0 , 'L');
+$pdf->Cell(32   , $Ln , $Plantel[$PagNum][4]["Localidad"] , 1 , 0 , 'C');
+$pdf->Cell(10   , $Ln , $Plantel[$PagNum][4]["EF"] , 1 , 0 , 'C');
 $pdf->Ln($Ln);
 
 $pdf->Cell(7    , $Ln , '2' , 1 , 0 , 'C');
-$pdf->Cell(52   , $Ln , $Plantel[$PagNum][2][Nombre] , 1 , 0 , 'L');
-$pdf->Cell(32   , $Ln , $Plantel[$PagNum][2][Localidad] , 1 , 0 , 'C');
-$pdf->Cell(10   , $Ln , $Plantel[$PagNum][2][EF] , 1 , 0 , 'C');
+$pdf->Cell(52   , $Ln , $Plantel[$PagNum][2]["Nombre"] , 1 , 0 , 'L');
+$pdf->Cell(32   , $Ln , $Plantel[$PagNum][2]["Localidad"] , 1 , 0 , 'C');
+$pdf->Cell(10   , $Ln , $Plantel[$PagNum][2]["EF"] , 1 , 0 , 'C');
 $pdf->Cell(7    , $Ln , '5' , 1 , 0 , 'C');
-$pdf->Cell(52   , $Ln , $Plantel[$PagNum][5][Nombre] , 1 , 0 , 'L');
-$pdf->Cell(32   , $Ln , $Plantel[$PagNum][5][Localidad] , 1 , 0 , 'C');
-$pdf->Cell(10   , $Ln , $Plantel[$PagNum][5][EF] , 1 , 0 , 'C');
+$pdf->Cell(52   , $Ln , $Plantel[$PagNum][5]["Nombre"] , 1 , 0 , 'L');
+$pdf->Cell(32   , $Ln , $Plantel[$PagNum][5]["Localidad"] , 1 , 0 , 'C');
+$pdf->Cell(10   , $Ln , $Plantel[$PagNum][5]["EF"] , 1 , 0 , 'C');
 $pdf->Ln($Ln);
 
 $pdf->Ln($Ln);
@@ -311,7 +309,7 @@ $_Col[0] = $AnchoCurso * .455;   // Materia
 $_Col[1] = $AnchoCurso * .070; // nota
 $_Col[2] = $AnchoCurso * .2;   // letras
 $_Col[3] = $AnchoCurso * .06;   // te
-$_Col[4] = $AnchoCurso * .065; // mes
+$_Col[4] = $AnchoCurso * .065; // ["Mes"]
 $_Col[5] = $AnchoCurso * .1; // ano
 $_Col[6] = $AnchoCurso * .05;  // plantel
 
@@ -352,41 +350,41 @@ foreach($CodigoMaterias as $CodigoMateria){
 	
 	$pdf->SetFont('Arial','',10); $pdf->SetX($_x); 
 	//$i_mat = 0;
-	//while (strlen($Renglon[$CodigoMateria][++$i_mat][Materia]) > 1){
+	//while (strlen($Renglon[$CodigoMateria][++$i_mat]["Materia"]) > 1){
 	//$i_mat++;
 	for ($i_mat = 1 ; $i_mat <= $NumMaterias[$CodigoMateria] ; $i_mat++){
 		
 		
 		$pdf->SetX($_x); 
 	
-		if (strlen($Renglon[$CodigoMateria][$i_mat][Materia]) > 35)
+		if (strlen($Renglon[$CodigoMateria][$i_mat]["Materia"]) > 35)
 			$pdf->SetFont('Arial','B',7);
-		elseif (strlen($Renglon[$CodigoMateria][$i_mat][Materia]) > 22)
+		elseif (strlen($Renglon[$CodigoMateria][$i_mat]["Materia"]) > 22)
 			$pdf->SetFont('Arial','',8);
-		$pdf->Cell($_Col[0] , $Ln , $Renglon[$CodigoMateria][$i_mat][Materia] , 1 , 0 , 'L');
+		$pdf->Cell($_Col[0] , $Ln , $Renglon[$CodigoMateria][$i_mat]["Materia"] , 1 , 0 , 'L');
 		$pdf->SetFont('Arial','',10); 
 	
 		
-		if( $Renglon[$CodigoMateria][$i_mat][Nota]<' ' or 
-			$Renglon[$CodigoMateria][$i_mat][Nota]=='*' )	{
+		if( $Renglon[$CodigoMateria][$i_mat]["Nota"]<' ' or 
+			$Renglon[$CodigoMateria][$i_mat]["Nota"]=='*' )	{
 				
-					$Renglon[$CodigoMateria][$i_mat][Nota]='*';
-					$Renglon[$CodigoMateria][$i_mat][TE]='*';
-					$Renglon[$CodigoMateria][$i_mat][Mes]='*';
-					$Renglon[$CodigoMateria][$i_mat][Ano]='*';
-					$Renglon[$CodigoMateria][$i_mat][Plantel]='*';
+					$Renglon[$CodigoMateria][$i_mat]["Nota"]='*';
+					$Renglon[$CodigoMateria][$i_mat]["TE"]='*';
+					$Renglon[$CodigoMateria][$i_mat]["Mes"]='*';
+					$Renglon[$CodigoMateria][$i_mat]["Ano"]='*';
+					$Renglon[$CodigoMateria][$i_mat]["Plantel"]='*';
 			
 			}
 		else{
-				if($Renglon[$CodigoMateria][$i_mat][Nota] >= '10' 
-						and $Renglon[$CodigoMateria][$i_mat][Nota] <= '20' 
-						and $Renglon[$CodigoMateria][$i_mat][Materia]>''){
-					$IndiceAcademico += $Renglon[$CodigoMateria][$i_mat][Nota];	
+				if($Renglon[$CodigoMateria][$i_mat]["Nota"] >= '10' 
+						and $Renglon[$CodigoMateria][$i_mat]["Nota"] <= '20' 
+						and $Renglon[$CodigoMateria][$i_mat]["Materia"]>''){
+					$IndiceAcademico += $Renglon[$CodigoMateria][$i_mat]["Nota"];	
 					$IndiceAcademicoFactor++;	}
 			}
 		
-		$NotaRenglon = $Renglon[$CodigoMateria][$i_mat][Nota];
-		if($Renglon[$CodigoMateria][$i_mat][Materia] > ''){
+		$NotaRenglon = $Renglon[$CodigoMateria][$i_mat]["Nota"];
+		if($Renglon[$CodigoMateria][$i_mat]["Materia"] > ''){
 			if($NotaRenglon >= '01' and $NotaRenglon <= '09')
 				$NotaRenglon = "P";
 			$pdf->Cell($_Col[1] , $Ln , $NotaRenglon , 1 , 0 , 'C');}
@@ -395,28 +393,28 @@ foreach($CodigoMaterias as $CodigoMateria){
 				
 		
 		
-		if($Renglon[$CodigoMateria][$i_mat][Nota]<>'Ex'){
-			if($Renglon[$CodigoMateria][$i_mat][Materia] > ''){
+		if($Renglon[$CodigoMateria][$i_mat]["Nota"]<>'Ex'){
+			if($Renglon[$CodigoMateria][$i_mat]["Materia"] > ''){
 				$pdf->Cell($_Col[2] , $Ln , EnLetras($NotaRenglon) , 1 , 0 , 'C');}
 			else
 				$pdf->Cell($_Col[2] , $Ln , '*' , 1 , 0 , 'C');
 			
-			$TE_Renglon = $Renglon[$CodigoMateria][$i_mat][TE];
-			$Renglon_Mes = $Renglon[$CodigoMateria][$i_mat][Mes];
-			$Renglon_Ano = $Renglon[$CodigoMateria][$i_mat][Ano];
+			$TE_Renglon = $Renglon[$CodigoMateria][$i_mat]["TE"];
+			$Renglon_["Mes"] = $Renglon[$CodigoMateria][$i_mat]["Mes"];
+			$Renglon_Ano = $Renglon[$CodigoMateria][$i_mat]["Ano"];
 			
 			if($NotaRenglon == 'P' or $NotaRenglon == '-' or $NotaRenglon == '--'){
 				$TE_Renglon = '*';
-				$Renglon_Mes = "";
+				$Renglon_["Mes"] = "";
 				$Renglon_Ano = "";
 				}
 			
 			$pdf->Cell($_Col[3] , $Ln , $TE_Renglon , 1 , 0 , 'C');
-			$pdf->Cell($_Col[4] , $Ln , $Renglon_Mes , 1 , 0 , 'C');
+			$pdf->Cell($_Col[4] , $Ln , $Renglon_["Mes"] , 1 , 0 , 'C');
 			$pdf->Cell($_Col[5] , $Ln , $Renglon_Ano , 1 , 0 , 'C');
 			
 			
-			$pdf->Cell($_Col[6] , $Ln , $Renglon[$CodigoMateria][$i_mat][Plantel] , 1 , 0 , 'C'); 
+			$pdf->Cell($_Col[6] , $Ln , $Renglon[$CodigoMateria][$i_mat]["Plantel"] , 1 , 0 , 'C'); 
 		}
 		else {
 			$pdf->Cell($_Col[2] , $Ln , 'Exonerada' , 1 , 0 , 'C');
@@ -476,26 +474,26 @@ foreach ($CodigoMaterias as $CodigoMateria) {
 	$PosFormacion[$CodigoMateria] = 0;
 	
 	
-	if( strpos(" ".$Renglon[$CodigoMateria][20][Materia] ,"Orientac") > 0 ){
+	if( strpos(" ".$Renglon[$CodigoMateria][20]["Materia"] ,"Orientac") > 0 ){
 		$PosOrientacion[$CodigoMateria] = 20;
 		$PosFormacion[$CodigoMateria] = 21;
 		}
-	elseif( strpos(" ".$Renglon[$CodigoMateria][21][Materia] ,"Orientac") > 0 ){
+	elseif( strpos(" ".$Renglon[$CodigoMateria][21]["Materia"] ,"Orientac") > 0 ){
 		$PosOrientacion[$CodigoMateria] = 21;
 		$PosFormacion[$CodigoMateria] = 20;
 		}
 	
 	if ($PosOrientacion[$CodigoMateria] > 0)
-		$NotaOrientacion[$CodigoMateria] = Nota_Letra($Renglon[$CodigoMateria][$PosOrientacion[$CodigoMateria]][Nota]);
-	if ($Renglon[$CodigoMateria][$PosOrientacion[$CodigoMateria]][Nota] == "--"){
+		$NotaOrientacion[$CodigoMateria] = Nota_Letra($Renglon[$CodigoMateria][$PosOrientacion[$CodigoMateria]]["Nota"]);
+	if ($Renglon[$CodigoMateria][$PosOrientacion[$CodigoMateria]]["Nota"] == "--"){
 		$NotaOrientacion[$CodigoMateria] = "Exonerada";
 	}
 	
 	
 	
 	if ($PosFormacion[$CodigoMateria] > 0){
-		$NotaFormacion[$CodigoMateria] = Nota_Letra($Renglon[$CodigoMateria][$PosFormacion[$CodigoMateria]][Nota]);
-		$MateriaFormacion[$CodigoMateria] = $Renglon[$CodigoMateria][$PosFormacion[$CodigoMateria]][Materia];
+		$NotaFormacion[$CodigoMateria] = Nota_Letra($Renglon[$CodigoMateria][$PosFormacion[$CodigoMateria]]["Nota"]);
+		$MateriaFormacion[$CodigoMateria] = $Renglon[$CodigoMateria][$PosFormacion[$CodigoMateria]]["Materia"];
 	}
 	if($MateriaFormacion[$CodigoMateria] == "Exonerada" or $MateriaFormacion[$CodigoMateria] == "*  *  *" ){
 		$NotaFormacion[$CodigoMateria] = "*";
@@ -573,18 +571,18 @@ foreach ($CodigoMaterias as $CodigoMateria) {
 		$pdf->SetX($_x + $_Col[0]); 
 		$pdf->Cell($_Col[1] , $Ln , $i."º" , 1 , 0 , 'C');
 		
-		/*if ($Renglon[$CodigoMateria][21][Nota] > "" or $Renglon[$CodigoMateria][20][Materia] == "Exonerada")
-			$materia = $Renglon[$CodigoMateria][20][Materia];
+		/*if ($Renglon[$CodigoMateria][21]["Nota"] > "" or $Renglon[$CodigoMateria][20]["Materia"] == "Exonerada")
+			$materia = $Renglon[$CodigoMateria][20]["Materia"];
 		else*/
 		
 		$materia = $MateriaFormacion[$CodigoMateria];
 		
 		$pdf->Cell($_Col[2]+$_Col[3]+$_Col[4] , $Ln , $materia."" , 1 , 0 , 'C');
 		
-		/*if ($Renglon[$CodigoMateria][21][Materia] == "Exonerada")
+		/*if ($Renglon[$CodigoMateria][21]["Materia"] == "Exonerada")
 			$Nota = "*";
-		elseif ($Nota = $Renglon[$CodigoMateria][21][Nota] > "")	
-			$Nota = Nota_Letra($Renglon[$CodigoMateria][21][Nota]);
+		elseif ($Nota = $Renglon[$CodigoMateria][21]["Nota"] > "")	
+			$Nota = Nota_Letra($Renglon[$CodigoMateria][21]["Nota"]);
 		else
 		*/
 		
@@ -637,9 +635,9 @@ $_y = $pdf->GetY();
 $pdf->MultiCell($AnchoCurso-$AnchoA , $Ln*7 , "SELLO DEL PLANTEL" , 1 , 'C');
 
 $pdf->SetXY($_x,$_y+$Ln); $pdf->Cell($AnchoA , $Ln , "Apellidos y Nombres:" , 1 , 1 , 'L');
-$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "VITA MARIA DI CAMPO" , 1 , 1 , 'R'); //$Director_Nombre
+$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "$Director_Nombre" , 1 , 1 , 'R'); //VITA MARIA DI CAMPO
 $pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "Número de C.I.:" , 1 , 1 , 'L');
-$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln ,"V-6973243" , 1 , 1 , 'R'); // $Director_CI
+$pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln ,"$Director_CI" , 1 , 1 , 'R'); // V-6973243
 $pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "Firma:" , 1 , 1 , 'L');
 $pdf->SetX($_x); $pdf->Cell($AnchoA , $Ln , "Para efecto de su validéz Nacional" , 1 , 1 , 'C');
 
@@ -701,8 +699,8 @@ $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Dpto. de Control de Estudio y Evaluación' ,
 //$pdf->SetX(15); $pdf->Cell(20 , 6 , 'C.I.14.018.534' , '',1 , 'L');
 
 $pdf->Ln(6);
-$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Caracas, 30 de Julio de 2020' , '',1 , 'L');
-// $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Caracas, ' .date(d).' de '.Mes(date(m)).' de '.date(Y) , '',1 , 'L');
+//$pdf->SetX(15); $pdf->Cell(20 , 6 , 'Caracas, 30 de Julio de 2020'  , '',1 , 'L');
+ $pdf->SetX(15); $pdf->Cell(20 , 6 , 'Caracas, ' .date('d').' de ' . Mes(date('m')) .' de '.date('Y') , '' ,1 , 'L');
 		
 		
 }

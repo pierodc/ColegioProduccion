@@ -1,0 +1,549 @@
+[29-May-2019 10:56:24 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[29-May-2019 10:56:24 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Jun-2019 17:35:55 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[16-Jun-2019 17:35:55 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Jun-2019 17:36:13 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[16-Jun-2019 17:36:13 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[20-Jul-2019 09:04:28 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 56
+[20-Jul-2019 09:04:28 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:56) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[20-Jul-2019 09:04:34 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 56
+[20-Jul-2019 09:04:34 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:56) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[20-Jul-2019 09:04:41 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 56
+[20-Jul-2019 09:04:41 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:56) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[20-Jul-2019 09:04:43 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 56
+[20-Jul-2019 09:04:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:56) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[20-Jul-2019 09:04:48 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[20-Jul-2019 09:04:48 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[22-Jul-2019 06:09:23 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[22-Jul-2019 06:09:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[22-Jul-2019 06:09:30 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[22-Jul-2019 06:09:30 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[22-Jul-2019 12:25:43 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[22-Jul-2019 12:25:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[22-Jul-2019 13:31:46 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[22-Jul-2019 13:31:46 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[25-Jul-2019 10:57:02 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[25-Jul-2019 10:57:02 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/Models/Connection.php on line 42
+[25-Jul-2019 10:57:02 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/Models/Connection.php on line 43
+[26-Jul-2019 05:48:24 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[26-Jul-2019 05:48:24 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/Models/Connection.php on line 42
+[26-Jul-2019 05:48:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/Models/Connection.php on line 43
+[26-Jul-2019 05:48:30 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[26-Jul-2019 05:48:30 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/Models/Connection.php on line 42
+[26-Jul-2019 05:48:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/Models/Connection.php on line 43
+[26-Jul-2019 05:48:31 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/Models/Connection.php on line 30
+[26-Jul-2019 05:48:31 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/Models/Connection.php on line 42
+[26-Jul-2019 05:48:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/Models/Connection.php on line 43
+[01-Aug-2019 18:05:48 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[01-Aug-2019 18:05:48 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[04-Dec-2019 12:28:08 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 100
+[04-Dec-2019 12:28:08 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Docente/PDF/Boleta.php on line 232
+[04-Dec-2019 12:28:16 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 100
+[04-Dec-2019 12:28:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:100) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[04-Dec-2019 12:29:18 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 100
+[04-Dec-2019 12:29:18 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Docente/PDF/Boleta.php on line 232
+[04-Dec-2019 12:41:31 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 104
+[04-Dec-2019 12:41:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Docente/PDF/Boleta.php on line 236
+[04-Dec-2019 12:41:54 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 104
+[04-Dec-2019 12:41:54 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Docente/PDF/Boleta.php on line 236
+[04-Dec-2019 12:43:26 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Docente/PDF/Boleta.php on line 236
+[16-Jul-2020 16:49:24 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:24 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:24 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:24 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:24 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:26 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:26 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:26 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:26 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:49:26 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:125) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:03 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 125
+[16-Jul-2020 16:50:04 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:119) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Jul-2020 16:52:02 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:120) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Oct-2020 12:44:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:42 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:43 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:44 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:44 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:44 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:44:44 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:126) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Oct-2020 12:45:01 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[05-Oct-2020 12:45:02 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:126) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Oct-2020 12:51:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:410) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Oct-2020 12:51:52 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:410) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Oct-2020 12:53:57 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:410) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Oct-2020 12:54:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:410) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[06-Oct-2020 11:00:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:04 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:05 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[06-Oct-2020 11:00:06 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:126) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[06-Oct-2020 11:21:02 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 60
+[06-Oct-2020 11:21:02 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:60) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[24-Nov-2020 09:52:19 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/colegio/public_html/Docente/PDF/Boleta.php on line 126
+[24-Nov-2020 09:52:19 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:126) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[24-Nov-2020 12:59:54 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 60
+[24-Nov-2020 12:59:54 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:60) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[24-Nov-2020 22:49:01 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 60
+[24-Nov-2020 22:49:01 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:60) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[09-Dec-2020 14:01:49 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[09-Dec-2020 14:01:49 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[09-Dec-2020 22:04:33 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[09-Dec-2020 22:04:33 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Dec-2020 10:18:38 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 60
+[16-Dec-2020 10:18:38 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:60) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Dec-2020 10:18:43 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 60
+[16-Dec-2020 10:18:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:60) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Dec-2020 10:19:05 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 60
+[16-Dec-2020 10:19:05 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:60) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[11-Feb-2021 10:02:29 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 60
+[11-Feb-2021 10:02:29 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:60) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[19-Mar-2021 15:56:10 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[19-Mar-2021 15:56:10 America/Caracas] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/colegio/public_html/inc/fpdf.php on line 1073
+[19-Mar-2021 15:56:10 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[19-Mar-2021 15:56:10 America/Caracas] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/colegio/public_html/inc/fpdf.php on line 1565
+[19-Mar-2021 15:56:10 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/fpdf.php:12) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[19-Mar-2021 15:56:13 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[19-Mar-2021 15:56:13 America/Caracas] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/colegio/public_html/inc/fpdf.php on line 1073
+[19-Mar-2021 15:56:13 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[19-Mar-2021 15:56:13 America/Caracas] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/colegio/public_html/inc/fpdf.php on line 1565
+[19-Mar-2021 15:56:13 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/fpdf.php:12) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[19-Mar-2021 18:58:52 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[19-Mar-2021 18:58:52 America/Caracas] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/colegio/public_html/inc/fpdf.php on line 1073
+[19-Mar-2021 18:59:41 America/Caracas] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/colegio/public_html/inc/fpdf.php on line 1565
+[19-Mar-2021 18:59:41 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/fpdf.php:12) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[22-Mar-2021 15:38:03 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[22-Mar-2021 15:38:03 America/Caracas] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/colegio/public_html/inc/fpdf.php on line 1073
+[22-Mar-2021 15:38:55 America/Caracas] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/colegio/public_html/inc/fpdf.php on line 1565
+[22-Mar-2021 15:38:55 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/fpdf.php:12) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[22-Mar-2021 16:33:37 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[22-Mar-2021 16:33:37 America/Caracas] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/colegio/public_html/inc/fpdf.php on line 1073
+[22-Mar-2021 16:33:37 America/Caracas] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/colegio/public_html/inc/fpdf.php on line 1565
+[22-Mar-2021 16:33:37 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/fpdf.php:12) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[22-Mar-2021 16:33:57 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[22-Mar-2021 16:33:57 America/Caracas] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/colegio/public_html/inc/fpdf.php on line 1073
+[22-Mar-2021 16:34:24 America/Caracas] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/colegio/public_html/inc/fpdf.php on line 1565
+[22-Mar-2021 16:34:24 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/fpdf.php:12) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[05-Apr-2021 06:31:15 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[05-Apr-2021 06:31:15 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[05-Apr-2021 06:31:19 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[05-Apr-2021 06:31:19 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[06-Apr-2021 17:20:01 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[06-Apr-2021 17:20:01 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[09-Apr-2021 07:55:46 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[09-Apr-2021 07:55:46 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[10-Apr-2021 12:28:00 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[10-Apr-2021 12:28:00 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[10-Apr-2021 12:28:27 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[10-Apr-2021 12:28:27 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[11-Apr-2021 11:57:28 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[11-Apr-2021 11:57:28 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[11-Apr-2021 17:42:40 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[11-Apr-2021 17:42:40 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[11-Apr-2021 17:42:52 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[11-Apr-2021 17:42:52 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[11-Apr-2021 17:43:36 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[11-Apr-2021 17:43:36 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[11-Apr-2021 17:43:52 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[11-Apr-2021 17:43:52 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[13-Apr-2021 14:19:38 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[13-Apr-2021 14:19:38 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[13-Apr-2021 14:20:08 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[13-Apr-2021 14:20:08 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[13-Apr-2021 19:35:50 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[13-Apr-2021 19:35:50 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[13-Apr-2021 19:36:01 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[13-Apr-2021 19:36:01 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[13-Apr-2021 19:36:11 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[13-Apr-2021 19:36:11 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[13-Apr-2021 19:36:20 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[13-Apr-2021 19:36:20 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[13-Apr-2021 19:36:29 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[13-Apr-2021 19:36:29 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[14-Apr-2021 16:29:01 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[14-Apr-2021 16:29:01 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[15-Apr-2021 10:35:07 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[15-Apr-2021 10:35:07 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[15-Apr-2021 10:36:26 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[15-Apr-2021 10:36:26 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 08:31:41 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[21-Apr-2021 08:31:41 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 08:32:10 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[21-Apr-2021 08:32:10 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 08:34:12 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[21-Apr-2021 08:34:12 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 08:34:14 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[21-Apr-2021 08:34:14 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 10:43:38 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 10:43:38 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 11:51:51 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[21-Apr-2021 11:51:51 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 11:51:53 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[21-Apr-2021 11:51:53 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 11:53:05 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 11:53:05 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 11:56:03 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[21-Apr-2021 11:56:03 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 12:13:40 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 12:13:40 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 12:13:42 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 12:13:42 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 12:13:46 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 12:13:46 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 12:13:47 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 12:13:47 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 12:14:58 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 12:14:58 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 12:15:00 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 12:15:00 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 18:03:18 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 18:03:18 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[21-Apr-2021 18:03:29 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[21-Apr-2021 18:03:29 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[22-Apr-2021 09:25:35 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[22-Apr-2021 09:25:35 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[22-Apr-2021 09:28:32 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[22-Apr-2021 09:28:32 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[22-Apr-2021 09:30:27 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php on line 49
+[22-Apr-2021 09:30:27 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta_Observaciones.php(82): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[23-Apr-2021 12:04:05 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[23-Apr-2021 12:04:05 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[23-Apr-2021 12:04:11 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/Docente/PDF/Boleta.php on line 66
+[23-Apr-2021 12:04:11 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/Docente/PDF/Boleta.php:66) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/Docente/PDF/Boleta.php(476): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271

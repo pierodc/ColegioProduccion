@@ -67,8 +67,12 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2") and ($MM_Us
 	
 	
 	//echo  "<br><br><br>sql:".$insertSQL;
-	mysql_select_db($database_bd, $bd);
-	$Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+	//mysql_select_db($database_bd, $bd);
+	
+	
+$RS = $mysqli->query($insertSQL);
+
+	//$Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
 
 }
 
@@ -77,7 +81,8 @@ if (isset($_GET['Elimina']) and !isset($_GET['BC']) and ($MM_UserGroup == 'Conta
   $CodigoEmpleado = $_GET['CodigoEmpleado']+10000;
   $sql = 'UPDATE Empleado_Deducciones Set Codigo_Empleado='.$CodigoEmpleado.', Registro_Por='.$MM_Username.' WHERE Codigo = '.$Elimina ;
   //echo "<br><br><br>" . $sql;
-  $Result = mysql_query($sql, $bd) or die(mysql_error());
+  $mysqli->query($sql);
+//  $Result = mysql_query($sql, $bd) or die(mysql_error());
   $GoTo = $php_self."?CodigoEmpleado=".$_GET['CodigoEmpleado'].$add_url;
   header(sprintf("Location: %s", $GoTo));
 }
@@ -87,7 +92,8 @@ if (isset($_GET['Elimina']) and isset($_GET['BC']) and ($MM_UserGroup == 'Contab
   $CodigoEmpleado = $_GET['CodigoEmpleado']+10000;
   $sql = 'UPDATE Empleado_Pago Set Codigo_Empleado='.$CodigoEmpleado.' WHERE Codigo = '.$Elimina ;
   //echo "<br><br><br>" . $sql;
-  $Result = mysql_query($sql, $bd) or die(mysql_error());
+  $mysqli->query($sql);
+//  $Result = mysql_query($sql, $bd) or die(mysql_error());
   $GoTo = $php_self."?CodigoEmpleado=".$_GET['CodigoEmpleado'].$add_url;
   header(sprintf("Location: %s", $GoTo));
 }
@@ -105,10 +111,17 @@ if (isset($_POST['Buscar'])) {
 		$query_RS_Empleados .= " AND LOWER(CONCAT_WS(' ',Apellidos,Apellido2,Nombres,Nombre2)) LIKE '%$aux[2]%'";
 		}
 
-	$RS_Empleados = mysql_query($query_RS_Empleados, $bd) or die(mysql_error());
+	
+$RS_Empleados = $mysqli->query($query_RS_Empleados);
+$row_RS_Empleados = $RS_Empleados->fetch_assoc();
+$totalRows_RS_Empleados = $RS_Empleados->num_rows;
+
+/*
+$RS_Empleados = mysql_query($query_RS_Empleados, $bd) or die(mysql_error());
 	$row_RS_Empleados = mysql_fetch_assoc($RS_Empleados);
-	$totalRows_RS_Empleados = mysql_num_rows($RS_Empleados);
-	header("Location: ".$php_self."?CodigoEmpleado=".$row_RS_Empleados[CodigoEmpleado].$add_url);
+	//$totalRows_RS_Empleados = mysql_num_rows($RS_Empleados);*/
+	
+	header("Location: ".$php_self."?CodigoEmpleado=".$row_RS_Empleados["CodigoEmpleado"].$add_url);
 
 	
 }	
@@ -123,13 +136,16 @@ $query_RS_Empleados = sprintf("SELECT * FROM Empleado
 								ORDER BY Apellidos ASC", 
 								GetSQLValueString($colname_RS_Empleados, "int"));
 										
-
+$RS_Empleados = $mysqli->query($query_RS_Empleados);
+$row_RS_Empleados = $RS_Empleados->fetch_assoc();
+$totalRows_RS_Empleados = $RS_Empleados->num_rows;
+/*
 $RS_Empleados = mysql_query($query_RS_Empleados, $bd) or die(mysql_error());
 $row_RS_Empleados = mysql_fetch_assoc($RS_Empleados);
-$totalRows_RS_Empleados = mysql_num_rows($RS_Empleados);
+$totalRows_RS_Empleados = mysql_num_rows($RS_Empleados);*/
 $Monto = $row_RS_Empleados['SueldoBase_3']*3;
 
-$colname_RS_Empleados = $row_RS_Empleados[CodigoEmpleado];
+$colname_RS_Empleados = $row_RS_Empleados["CodigoEmpleado"];
 
 $query_RS_Empleados_Deduc = sprintf("SELECT * FROM Empleado_Deducciones 
 											WHERE Codigo_Empleado = %s 
@@ -158,11 +174,15 @@ if(isset($_GET['BC'])){
 								ORDER BY Codigo_Quincena, Fecha_Registro";
  //echo $query_RS_Empleados_Deduc;
 }
-											
+				
+$RS_Empleados_Deduc = $mysqli->query($query_RS_Empleados_Deduc);
+$row_RS_Empleados_Deduc = $RS_Empleados_Deduc->fetch_assoc();
+$totalRows_RS_Empleados_Deduc = $RS_Empleados_Deduc->num_rows;
+/*											
 $RS_Empleados_Deduc = mysql_query($query_RS_Empleados_Deduc, $bd) or die(mysql_error());
 $row_RS_Empleados_Deduc = mysql_fetch_assoc($RS_Empleados_Deduc);
 $totalRows_RS_Empleados_Deduc = mysql_num_rows($RS_Empleados_Deduc);
-
+*/
 
 
 // Para calculo de dias de ausencia
@@ -391,19 +411,22 @@ while ($row = $RS->fetch_assoc()) {
 <?php do { ?>
 	<?php 
 
-	if (date('d')<=15) {
+	/*if (date('d') <= 15) {
 				$QuincenaHoy = '1';}
 		else{
 				$QuincenaHoy = '2';}
 
+
+
+
 	if($row_RS_Empleados_Deduc['Mes'] == date('m') 
 			and $row_RS_Empleados_Deduc['Ano'] == date('Y')
-			and $row_RS_Empleados_Deduc['Quincena'] == $QuincenaHoy)
+			and $row_RS_Empleados_Deduc['Quincena'] == $QuincenaHoy ) //
 		$Verde = true; 
 	else 
 		$Verde = false;
 
-
+*/
 
 
 	if($AnoAnte != $row_RS_Empleados_Deduc['Ano']){
@@ -416,11 +439,11 @@ while ($row = $RS->fetch_assoc()) {
 	<? 
 
 	$Verde = 0;
-	if( strpos(DDMMAAAA($row_RS_Empleados_Deduc['Codigo_Quincena']) , date('m')  ) > 0
-
-		 )
+	if( substr( $row_RS_Empleados_Deduc['Codigo_Quincena'] ,5,2) == date('m')  
+		and substr( $row_RS_Empleados_Deduc['Codigo_Quincena'] ,0,4) == date('Y')  ){
 		$Verde = 1;
-//DDMMAAAA($row_RS_Empleados_Deduc['Fecha_Registro']) == DDMMAAAA(date('Y-m-d'))
+	}
+
 
 
 
@@ -594,7 +617,7 @@ if(isset($_GET['BC']))
 	$QuincenaAnte = $row_RS_Empleados_Deduc['Codigo_Quincena'];
 
 $Pendiente_BC += $row_RS_Empleados['BC'];
- } while ($row_RS_Empleados_Deduc = mysql_fetch_assoc($RS_Empleados_Deduc)); ?>
+ } while ($row_RS_Empleados_Deduc = $RS_Empleados_Deduc->fetch_assoc() ); ?>
 
 
 <tr>

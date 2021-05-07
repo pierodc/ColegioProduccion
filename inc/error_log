@@ -1,0 +1,656 @@
+[14-Nov-2019 17:13:14 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 7
+[14-Nov-2019 17:13:14 America/Caracas] PHP Fatal error:  Call to undefined function view() in /home/colegio/public_html/inc/Var_Edit.php on line 12
+[14-Nov-2019 17:13:30 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 7
+[14-Nov-2019 17:13:30 America/Caracas] PHP Fatal error:  Call to undefined function view() in /home/colegio/public_html/inc/Var_Edit.php on line 12
+[14-Nov-2019 17:13:31 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 7
+[14-Nov-2019 17:13:31 America/Caracas] PHP Fatal error:  Call to undefined function view() in /home/colegio/public_html/inc/Var_Edit.php on line 12
+[14-Nov-2019 17:14:44 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 7
+[14-Nov-2019 17:14:44 America/Caracas] PHP Fatal error:  Call to undefined function view() in /home/colegio/public_html/inc/Var_Edit.php on line 12
+[14-Nov-2019 17:15:11 America/Caracas] PHP Fatal error:  Call to undefined function view() in /home/colegio/public_html/inc/Var_Edit.php on line 12
+[18-Nov-2019 07:54:30 America/Caracas] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Cell_Edit.php on line 17
+[18-Nov-2019 07:55:04 America/Caracas] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Cell_Edit.php on line 17
+[18-Nov-2019 07:58:33 America/Caracas] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Cell_Edit.php on line 17
+[18-Nov-2019 07:58:49 America/Caracas] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Cell_Edit.php on line 17
+[18-Nov-2019 07:59:17 America/Caracas] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Cell_Edit.php on line 18
+[29-Dec-2019 22:28:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:20 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:30 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:31 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:35 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:35 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:35 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:35 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:35 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:35 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:28:35 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:29:14 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:29:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:46 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:48 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:50 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:30:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:31:18 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:31:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:56 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:56 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:56 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:56 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:34:59 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:00 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[29-Dec-2019 22:35:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[11-May-2020 11:40:00 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 23
+[11-May-2020 11:51:05 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 23
+[11-May-2020 11:51:13 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 23
+[11-May-2020 12:24:25 America/Caracas] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home/colegio/public_html/inc/Var_Edit.php on line 23
+[19-Jun-2020 12:17:45 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[19-Jun-2020 12:18:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[19-Jun-2020 12:19:37 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[19-Jun-2020 12:20:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[19-Jun-2020 12:20:49 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit.php on line 20
+[19-Jun-2020 13:14:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[19-Jun-2020 17:27:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[19-Jun-2020 17:27:15 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[19-Jun-2020 21:29:09 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Jun-2020 07:54:37 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 97
+[21-Jun-2020 08:25:22 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:22) in /home/colegio/public_html/inc/Observacion.php on line 25
+[21-Jun-2020 08:32:17 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Jun-2020 08:33:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Jun-2020 08:48:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Jun-2020 08:48:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 10:05:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 10:05:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 10:05:36 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 10:05:36 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:17:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:17:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:18:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:18:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:19:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:19:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:20:28 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[24-Jun-2020 12:20:29 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[02-Jul-2020 02:14:41 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:6) in /home/colegio/public_html/inc/Observacion.php on line 8
+[02-Jul-2020 02:15:36 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:6) in /home/colegio/public_html/inc/Observacion.php on line 8
+[02-Jul-2020 02:23:18 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:24:24 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:24:26 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:37 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:40 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:42 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:44 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:45 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:46 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:25:47 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 21
+[02-Jul-2020 02:28:04 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:21) in /home/colegio/public_html/inc/Observacion.php on line 26
+[02-Jul-2020 02:28:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:21) in /home/colegio/public_html/inc/Observacion.php on line 26
+[02-Jul-2020 02:28:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:21) in /home/colegio/public_html/inc/Observacion.php on line 26
+[02-Jul-2020 02:29:12 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 26
+[02-Jul-2020 02:29:40 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 26
+[02-Jul-2020 02:29:42 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/Observacion.php:18) in /home/colegio/public_html/inc/Observacion.php on line 26
+[03-Jul-2020 12:37:04 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[03-Jul-2020 12:37:04 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[03-Jul-2020 12:37:04 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[16-Jul-2020 02:05:19 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[16-Jul-2020 02:05:19 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[16-Jul-2020 02:05:19 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[16-Jul-2020 02:05:55 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[16-Jul-2020 02:05:55 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[16-Jul-2020 02:05:55 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[16-Jul-2020 09:16:29 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[16-Jul-2020 09:16:29 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[16-Jul-2020 09:16:29 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[23-Jul-2020 11:07:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[23-Jul-2020 11:07:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[23-Jul-2020 11:07:33 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[23-Jul-2020 11:07:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[23-Jul-2020 11:07:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[23-Jul-2020 11:07:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[28-Jul-2020 12:21:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[28-Jul-2020 12:21:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[28-Jul-2020 12:21:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[30-Jul-2020 09:45:38 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[30-Jul-2020 09:45:38 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[30-Jul-2020 09:45:38 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[31-Jul-2020 18:22:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[31-Jul-2020 18:22:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[31-Jul-2020 18:22:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[01-Aug-2020 16:15:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[01-Aug-2020 16:15:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[01-Aug-2020 16:15:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[03-Aug-2020 09:38:10 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[03-Aug-2020 09:38:10 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[03-Aug-2020 09:38:10 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[03-Aug-2020 09:39:13 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[03-Aug-2020 09:39:13 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[03-Aug-2020 09:39:13 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[04-Aug-2020 12:47:28 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[04-Aug-2020 12:47:28 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[04-Aug-2020 12:47:28 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[15-Aug-2020 00:36:21 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/inc/Var_Edit.php on line 20
+[15-Aug-2020 00:36:45 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/inc/Var_Edit.php on line 20
+[15-Aug-2020 00:47:53 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/inc/Var_Edit.php on line 21
+[15-Aug-2020 00:51:49 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 62
+[15-Aug-2020 00:53:37 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 62
+[15-Aug-2020 00:55:08 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 62
+[15-Aug-2020 00:56:43 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 62
+[15-Aug-2020 00:59:37 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 00:59:40 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 00:59:43 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 00:59:44 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:00:08 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:00:10 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:00:25 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:00:26 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:00:29 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:00:31 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:00:32 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 65
+[15-Aug-2020 01:02:54 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 67
+[15-Aug-2020 01:02:57 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 67
+[15-Aug-2020 01:02:59 America/Caracas] PHP Warning:  date_diff() expects parameter 1 to be DateTimeInterface, string given in /home/colegio/public_html/inc/Var_Edit.php on line 67
+[15-Aug-2020 01:05:20 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 2196
+[15-Aug-2020 01:06:12 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 1271
+[15-Aug-2020 01:10:18 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/colegio/public_html/inc/Var_Edit.php on line 21
+[15-Aug-2020 01:10:35 America/Caracas] PHP Fatal error:  Call to undefined function edit() in /home/colegio/public_html/inc/Var_Edit.php on line 20
+[15-Aug-2020 01:10:41 America/Caracas] PHP Fatal error:  Call to undefined function edit() in /home/colegio/public_html/inc/Var_Edit.php on line 20
+[27-Aug-2020 14:35:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[27-Aug-2020 14:35:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[27-Aug-2020 14:35:24 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[21-Sep-2020 14:14:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Sep-2020 14:14:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Sep-2020 14:14:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[21-Sep-2020 14:14:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Sep-2020 14:14:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Sep-2020 14:14:34 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[21-Sep-2020 23:40:09 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Sep-2020 23:40:09 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[21-Sep-2020 23:40:09 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[23-Sep-2020 13:59:06 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[23-Sep-2020 13:59:06 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[23-Sep-2020 13:59:06 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[02-Oct-2020 11:18:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[02-Oct-2020 11:18:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[02-Oct-2020 11:18:44 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[02-Oct-2020 11:22:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[02-Oct-2020 11:22:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[02-Oct-2020 11:22:22 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[05-Oct-2020 22:24:06 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[05-Oct-2020 22:24:07 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[05-Oct-2020 22:24:07 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[05-Oct-2020 22:40:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[05-Oct-2020 22:40:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[05-Oct-2020 22:40:58 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[05-Oct-2020 22:51:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[05-Oct-2020 22:51:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[05-Oct-2020 22:51:39 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[11-Oct-2020 19:06:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[11-Oct-2020 19:06:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[11-Oct-2020 19:06:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[19-Oct-2020 13:12:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[19-Oct-2020 13:12:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[19-Oct-2020 13:12:25 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[27-Oct-2020 16:09:02 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[27-Oct-2020 16:09:03 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[27-Oct-2020 16:09:03 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[27-Oct-2020 21:53:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[27-Oct-2020 21:53:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[27-Oct-2020 21:53:11 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[05-Nov-2020 13:53:52 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[05-Nov-2020 13:53:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[05-Nov-2020 13:53:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[26-Nov-2020 12:12:28 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[26-Nov-2020 12:12:28 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[26-Nov-2020 12:12:28 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[26-Nov-2020 12:46:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[26-Nov-2020 12:46:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[26-Nov-2020 12:46:57 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[20-Jan-2021 10:43:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[20-Jan-2021 10:43:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[20-Jan-2021 10:43:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[29-Jan-2021 12:52:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[29-Jan-2021 12:52:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[29-Jan-2021 12:52:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[22-Feb-2021 12:50:17 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[22-Feb-2021 12:50:17 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[22-Feb-2021 12:50:17 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[22-Feb-2021 13:04:37 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[22-Feb-2021 13:04:37 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[22-Feb-2021 13:04:37 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[04-Mar-2021 11:49:06 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[04-Mar-2021 11:49:06 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[04-Mar-2021 11:49:06 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/inc/Observacion.php on line 124
+[17-Mar-2021 22:02:58 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:02:58 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:02:58 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[17-Mar-2021 22:04:10 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:04:10 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:04:10 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[17-Mar-2021 22:04:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:04:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:04:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[17-Mar-2021 22:05:52 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:05:53 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[17-Mar-2021 22:05:53 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:06:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:06:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:06:42 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[17-Mar-2021 22:06:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:06:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:06:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[17-Mar-2021 22:08:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:08:19 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[17-Mar-2021 22:08:19 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[08-Apr-2021 09:51:10 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124
+[08-Apr-2021 09:51:10 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[08-Apr-2021 09:51:10 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 16
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 149
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 150
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 151
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 152
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 153
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 154
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc_login_ck.php on line 155
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc/onoff.php on line 5
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc/onoff.php on line 6
+[29-Apr-2021 22:41:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Connections/bd.php:16) in /home/colegio/public_html/inc/onoff.php on line 7
+[06-May-2021 12:56:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[06-May-2021 12:56:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Cell_Edit_Empleado.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Cell_Edit_Empleado.php on line 22
+[06-May-2021 12:56:19 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/inc/Observacion.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/inc/Observacion.php on line 124

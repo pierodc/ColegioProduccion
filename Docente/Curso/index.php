@@ -3,7 +3,6 @@
 $TituloPagina   = "Lista Curso"; // <title>
 $TituloPantalla = "Lista Curso"; // Titulo contenido
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 //require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
@@ -13,6 +12,7 @@ $Alumno = new Alumno($_id_Alumno);
 $ContableMov = new ContableMov($_id_Alumno);
 $AlumnoXCurso = new AlumnoXCurso();
 $CodigoAlumnos = $AlumnoXCurso->view( $_id_Curso );
+$Consulta = new Consulta();
 
 
 require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
@@ -72,7 +72,8 @@ function CopyToClipboard(containerid) {
 		<th>Codigo</th>
 		<th>Alumno</th>
 		<th>Asistencia</th>
-		<th>Meses Pend</th>
+		<!--th>Meses Pend</th-->
+		<th>Circular</th>
 		
 	</tr>
 </thead>	
@@ -89,12 +90,15 @@ while ( $row = $CodigoAlumnos->fetch_assoc() ){
 	<td><? echo $CodigoAlumno; ?></td>
 	<td><a href="<? echo $php_self . "?id_Alumno=" . $CodigoAlumno; ?>"><? echo $Alumno->Apellido() ." ". $Alumno->Nombre(); ?></a></td>
 	<td align="center"><? Frame_Asistencia ($CodigoAlumno); ?></td>
-	<td align="left"><? 
+	<td align="center"><?= $Consulta->Respuesta($CodigoAlumno , 1); ?></td>
+	
+	
+	<!--td align="left"><? 
 	
 	foreach($ContableMov->PendienteXX() as $mes){
 		echo $mes . " / ";
 		
-	} ?></td>
+	} ?></td-->
 	
 	<? /*
 	<td><? echo Edad_Dif($Alumno->FechaNac() , date("Y-m-d")); ?></td>

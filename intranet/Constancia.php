@@ -55,8 +55,8 @@ $borde=0;
 $Ln = 8;
 
 $pdf->Image('../img/solcolegio.jpg', 10, 10, 0, 25);
-$pdf->Image('../img/SelloCol.jpg', 140, 200, 0, 25);
-$pdf->Image('../img/Firma_Direc.jpg', 90, 210, 0, 10);
+//$pdf->Image('../img/SelloCol.jpg', 140, 200, 0, 25);
+//$pdf->Image('../img/Firma_Direc.jpg', 90, 210, 0, 10);
 
 
 
@@ -94,7 +94,7 @@ else{
 	$ETQ_elAlumno = "el alumno";
 	$ETQ_retirado = "retirado";}
 
-$pdf->MultiCell(170 , $Ln , "     Quien suscribe, Lic. Vita María Di Campo C., portadora de la cédula de identidad No.V-6.973.243, en su carácter de Directora del Colegio San Francisco de Asís, por medio de la presente hace constar que $ETQ_elAlumno:" , $borde , 'J'); 
+$pdf->MultiCell(170 , $Ln , "     Quien suscribe, Lic. Angela Reale, portadora de la cédula de identidad No.V-5.220.494, en su carácter de Jefe del Dpto. de Control de Estudio y Evaluación del Colegio San Francisco de Asís, por medio de la presente hace constar que $ETQ_elAlumno:" , $borde , 'J'); 
 	 
 $pdf->Ln($Ln/2);
 	 
@@ -201,13 +201,16 @@ $pdf->MultiCell(170 , $Ln , '     Constancia que se expide a petición de la part
 //$pdf->MultiCell(170 , $Ln , '     Sin más que agregar y quedando a su disposición para verificar la presente, se despide' , $borde , 'J'); 
 //$pdf->Cell(170 , $Ln , '     Atentamente,' , $borde , 1 , 'L'); 
 $pdf->Ln($Ln*3);
-$pdf->Cell(170 , $Ln , 'Lic. Vita M. Di Campo C.' , $borde , 1 , 'C'); 
-$pdf->Cell(170 , $Ln , 'Directora' , $borde , 1 , 'C'); 
+//$pdf->Cell(170 , $Ln , 'Lic. Vita M. Di Campo C.' , $borde , 1 , 'C'); 
+//$pdf->Cell(170 , $Ln , 'Directora' , $borde , 1 , 'C'); 
+
+$pdf->Cell(170 , $Ln , 'Dpto. de Evaluación y Control de Estudio' , $borde , 1 , 'C'); 
+//$pdf->Cell(170 , $Ln , 'Directora' , $borde , 1 , 'C'); 
 
 
 $pdf->SetY(250);
 $pdf->SetFont('Arial','I',8);
-$pdf->Cell(0 , 5 , 'VMDCC / '.$MM_Iniciales ,0,0,'L');
+$pdf->Cell(0 , 5 , 'AR / '.$MM_Iniciales ,0,0,'L');
 
 
 $pdf->Output();

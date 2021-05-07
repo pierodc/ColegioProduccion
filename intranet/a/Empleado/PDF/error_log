@@ -36,3 +36,211 @@
 [02-Mar-2020 12:33:47 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/PDF/Constancia.php on line 95
 [06-Aug-2020 12:33:19 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/PDF/Constancia.php on line 95
 [11-Aug-2020 12:54:58 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/PDF/Constancia.php on line 95
+[27-Aug-2020 09:04:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/PDF/Constancia.php on line 95
+[04-Nov-2020 11:38:31 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/PDF/Constancia.php on line 95
+[01-Dec-2020 13:01:37 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/PDF/Constancia.php on line 95
+[01-Dec-2020 14:10:25 America/Caracas] PHP Warning:  mysql_free_result() expects parameter 1 to be resource, null given in /home/colegio/public_html/intranet/a/Empleado/PDF/Constancia.php on line 95
+[31-Mar-2021 12:05:16 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 14
+[31-Mar-2021 12:07:54 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php:95
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 95
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[31-Mar-2021 12:08:15 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php(287): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 157
+[03-May-2021 12:17:53 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php(287): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[03-May-2021 12:19:16 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:16 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:16 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:16 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php(287): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[03-May-2021 12:19:34 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:34 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:34 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:34 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php(287): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271
+[03-May-2021 12:19:38 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:38 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:38 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php on line 49
+[03-May-2021 12:19:38 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php:49) in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/colegio/public_html/inc/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/colegio/public_html/intranet/a/Empleado/PDF/Nomina_BonoAlim.php(287): FPDF->Output()
+#3 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271

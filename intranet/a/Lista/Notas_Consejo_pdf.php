@@ -1,14 +1,12 @@
 <?php 
-require_once('../../../Connections/bd.php');
-require_once('../archivo/Variables.php'); 
-require_once('../../../inc/rutinas.php'); 
-require_once('../../../inc/notas.php'); 
-require_once('../../../inc/fpdf.php'); 
-require_once('../../../inc/rpdf.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
+
 $Lapsos = array('1','2','3');
 $Evaluaciones = array('70','30','Def');
-mysql_select_db($database_bd, $bd);
-
+//mysql_select_db($database_bd, $bd);
+/*
 class PDF extends RPDF
 {
 	//Cabecera de página
@@ -42,9 +40,9 @@ class PDF extends RPDF
 		$this->Cell(0,5,''.$Fecha,0,0,'L');
 	}
 }
+*/
 
-
-$pdf=new PDF('L', 'mm', 'Letter');
+$pdf = new FPDF('L', 'mm', 'Letter');
 $pdf->SetFillColor(255,255,255);
 $borde=1;
 
@@ -56,8 +54,8 @@ else{
 	$add_sql = " NivelCurso ='31'" ; }
 
 $sql_Curso = "SELECT * FROM Curso WHERE $add_sql ORDER BY NivelMencion, Curso, Seccion";
-$RS_Curso = mysql_query($sql_Curso, $bd) or die(mysql_error());
-$row_Curso = mysql_fetch_assoc($RS_Curso);
+$RS_Curso = $mysqli->query($sql_Curso); // mysql_query($sql_Curso, $bd) or die(mysql_error());
+$row_Curso = $RS_Curso->fetch_assoc();
 
 
 do{
@@ -71,8 +69,8 @@ $sql="SELECT * FROM Alumno, AlumnoXCurso
 		AND AlumnoXCurso.Tipo_Inscripcion  <> 'Mp'
 		AND AlumnoXCurso.Status  = 'Inscrito'
 		ORDER BY Alumno.Apellidos, Alumno. Apellidos2, Alumno.Nombres, Alumno.Nombres2";
-$RS = mysql_query($sql, $bd) or die(mysql_error());
-$row = mysql_fetch_assoc($RS);
+$RS =$mysqli->query($sql); //  mysql_query($sql, $bd) or die(mysql_error());
+$row = $RS->fetch_assoc();
 
 $i=0;
 if($row)
@@ -139,23 +137,31 @@ do {
 
 		
 		$sql2 = "SELECT * FROM CursoMaterias WHERE CodigoMaterias = '".$CodigoMaterias."n'";
-		$RS2 = mysql_query($sql2, $bd) or die(mysql_error());
-		$row2 = mysql_fetch_assoc($RS2);
+		$RS2 = $mysqli->query($sql2); // mysql_query($sql2, $bd) or die(mysql_error());
+		$row2 = $RS2->fetch_assoc();
 		
 		$pdf->SetXY($_x, 24-$Ln*3.5 );
 		
 		$pdf->Cell($mm/1.5);
 		for ($j = 1; $j <= 12; $j++){ // Casillas en blanco para materias
-			$pdf->Cell($mm , $Ln*4.5 , '' , $borde , 0 , 'C');
-			$pdf->Cell(1);}
+			//$pdf->Cell($mm , $Ln*4.5 , '' , $borde , 0 , 'C');
+			//$pdf->Cell(1);
+		}
 		
 		$_x = $_x + $mm/2 + 2 + $mm/1.5;
-
 		//$pdf->Cell();
 		for ($j = 1; $j <= 12; $j++) { // Materias
-			$pdf->TextWithDirection($_x , 28 , $row2['Materia'.substr("0".$j, -2).''] , 'U' ); 
-			$_x = $_x + $mm + 1; }
-		
+			//$pdf->TextWithDirection($_x , 28 , $row2['Materia'.substr("0".$j, -2).''] , 'U' ); 
+			
+			//$pdf->MultiCell($mm , $Ln , $row2['Materia'.substr("0".$j, -2).''] , $borde , 'C');
+			$pdf->SetFont('Arial','',8);
+			$pdf->SetFillColor(255);
+			$pdf->SetDrawColor(0);
+			$pdf->Cell($mm , $Ln*4.5 , $row2['Materia'.substr("0".$j, -2).''] , $borde , 0 , 'L', 1 );
+			$pdf->Cell(1);
+			$_x = $_x + $mm + 1; 
+		}
+		$pdf->SetFont('Arial','',10);
 		
 		$pdf->SetY( 30 );
 		$pdf->Ln($Ln);
@@ -210,8 +216,8 @@ do {
 	$_x_ = $pdf->GetX();
 	$_y_ = $pdf->GetY();
 
-	$Notas[Definitiva] = 0;
-	$Notas[PromediaDefinitiva] = 0;
+	$Notas['Definitiva'] = 0;
+	$Notas['PromediaDefinitiva'] = 0;
 
   //Matrices de notas (rows)
   foreach($Lapsos as $Lapso)
@@ -220,8 +226,8 @@ do {
 							WHERE CodigoAlumno = '$CodigoAlumno' 
 							AND Ano_Escolar = '$AnoEscolar' 
 							AND Lapso = '$Lapso-$Evaluacion'";
-			$RS_Notas = mysql_query($sql_notas, $bd) or die(mysql_error());
-			$row_notas = mysql_fetch_assoc($RS_Notas);
+			$RS_Notas = $mysqli->query($sql_notas); // mysql_query($sql_notas, $bd) or die(mysql_error());
+			$row_notas = $RS_Notas->fetch_assoc();
 			$Notas[$Lapso.'-'.$Evaluacion] = $row_notas;
 		}
 
@@ -229,9 +235,9 @@ do {
 						WHERE CodigoAlumno = '$CodigoAlumno' 
 						AND Ano_Escolar = '$AnoEscolar' 
 						AND Lapso = 'Def'";
-			$RS_Notas = mysql_query($sql_notas, $bd) or die(mysql_error());
-			$row_notas = mysql_fetch_assoc($RS_Notas);
-			$Notas[Def] = $row_notas;
+			$RS_Notas =  $mysqli->query($sql_notas); // mysql_query($sql_notas, $bd) or die(mysql_error());
+			$row_notas = $RS_Notas->fetch_assoc();
+			$Notas['Def'] = $row_notas;
 
 	// Imprimir NOTAS Lapsos
 	foreach($Lapsos as $Lapso){ // Para cada lapso
@@ -263,7 +269,7 @@ do {
 		$id = 'n'.substr('00'.$j,-2);	
 			foreach($Evaluaciones as $Evaluacion){
 				if($Evaluacion=='Def')
-					$nota = $Notas[Def][$id];
+					$nota = $Notas['Def'][$id];
 				else
 					$nota = '';	
 				if($nota<10)
@@ -293,7 +299,7 @@ do {
 				if($Evaluacion=='70' or  $Evaluacion=='Def'){		
 					$pdf->Cell($ancho , $Ln/3 , $nota , $borde , 0 , $alinear, 1);}
 				
-				$nota=$nota*1;
+				$nota = (int)$nota*1;
 				if($nota >= 1 and $nota <= 9 ){
 					$Cant_Aplazadas_Alumno++;
 					$Aplazados[$j]++;
@@ -324,7 +330,7 @@ do {
 	
 	$TituloAnterior = $TituloPag;
 	
-	if($row = mysql_fetch_assoc($RS)) 
+	if($row = $RS->fetch_assoc()) 
 		extract($row);
 	
 	 $TituloPag = $NombreCompleto;
@@ -409,7 +415,7 @@ do {
 	
 } while ($row);
 
-}while($row_Curso = mysql_fetch_assoc($RS_Curso));
+}while($row_Curso = $RS_Curso->fetch_assoc());
 
 $pdf->Output();
 

@@ -2550,8 +2550,8 @@ function Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,$Campo,$Valor) {
 echo "<iframe width=\"20\" height=\"20\" src=\"http://www.colegiosanfrancisco.com/inc/onoff.php?ClaveCampo=$ClaveCampo&ClaveValor=$ClaveValor&Tabla=$Tabla&Campo=$Campo&Valor=$Valor\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
 "; }
 	
-function Frame_Asistencia ($id_Alumno) {
-echo "<iframe width=\"32\" height=\"32\" src=\"/inc/plantilla/asistencia.php?CodigoAlumno=$id_Alumno\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
+function Frame_Asistencia ($id_Alumno, $id_Asistencia = 0) {
+echo "<iframe width=\"32\" height=\"32\" src=\"/inc/plantilla/asistencia.php?CodigoAlumno=$id_Alumno&id_Asistencia=$id_Asistencia\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
 "; }
 	
 
@@ -2907,6 +2907,40 @@ function on_off($sw){
 	
 }
 
+
+function Matriz_tabla($Resultado){
+	
+echo "<table>";
+echo "<caption>Resultados</caption>";
+echo "<tr>";
+	echo "<th>";
+	echo " ";
+	echo "</th>";
+	
+foreach($Resultado as $clave => $valor){	
+	foreach($valor as $clave1 => $valor1){
+		echo "<th>";
+		echo $clave1=="porc"?"%":$clave1;
+		echo "</th>";
+	}
+	break;
+}
+	
+echo "</tr>";
+foreach($Resultado as $clave => $valor){
+	echo "<tr><td>";
+	echo $clave;
+	echo "</td>";
+	foreach($valor as $clave1 => $valor1){
+		echo "<td>";
+		echo $valor1;
+		echo "</td>";
+	}
+	echo "</tr>";
+	}
+echo "</table>";
+	
+	}
 
 function ($a="",$b="",$c="",$d="",$e=""){
 	

@@ -1189,7 +1189,7 @@ do {
 			for ($j = 1; $j <= 12; $j++) {  // para materias
 				if($_POST['Notas']>'0'){
 					$id = 'n'.substr('00'.$j,-2);
-					$nota = $row_notas[$id]*1;
+					$nota = (int)$row_notas[$id]*1;
 					if($nota<10)
 						$pdf->SetTextColor(255,0,0);
 	
@@ -1197,7 +1197,7 @@ do {
 					$pdf->Cell($mm , $Ln , Nota($row_notas[$id]) , $borde , 0 , 'C', 1);
 					$pdf->SetFont('Arial','',10);
 					
-					$SumaNota += $row_notas[$id];
+					$SumaNota += (int)$row_notas[$id];
 					if($row_notas[$id] >= '01' and $row_notas[$id] <= '200')
 						$CuentaNota++;
 					
@@ -1405,7 +1405,7 @@ do {
 			if($_Porcent_Aplaz>0)
 				$pdf->Rect(95+$mm*($j-1) ,$Y0_graf , 2 , $rango*$_Porcent_Aplaz/100 , 'F');
 			$pdf->SetFillColor(0,100,255); //Azul
-				$pdf->Rect(95+$mm*($j-1) ,$Y0_graf + $rango*$_Porcent_Aplaz/100 , 2 , $rango*$_Porcent_Aprob/100 , 'F');
+			//$pdf->Rect(95+$mm*($j-1) ,$Y0_graf + $rango*$_Porcent_Aplaz/100 , 2 , $rango*$_Porcent_Aprob/100 , 'F');
 	
 	
 			$pdf->SetFillColor(255);
@@ -1425,7 +1425,7 @@ do {
 			$Promedio[$j] = round($Promedio[$j] / ($Aprobados[$j]+$Aplazados[$j]) , 1);
 			if($Promedio[$j] == 0) $Promedio[$j]='';
 			$pdf->Cell($mm , $Ln/1.5 ,  $Promedio[$j]  , '1' , 0 , 'C',1);
-			$PromedioDePromedios += $Promedio[$j];
+			$PromedioDePromedios += (int)$Promedio[$j];
 			if($Promedio[$j]>0) $CuentaDePromedios++;
 		}
 		$PromedioDePromedios = round($PromedioDePromedios / $CuentaDePromedios,1);

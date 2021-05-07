@@ -75,7 +75,7 @@ if (isset($_GET['Procesar_Codigo'])) { // Cambiar OR por AND para produccion
 				$MontoPendiente = round(($row_Pendiente['MontoDebe_Dolares'] - $row_Pendiente['MontoAbono_Dolares']) , 2);
 					
 				$MontoIVA = round(  $MontoPendiente *
-									$row_Pendiente['SWiva'] * 
+									(int)$row_Pendiente['SWiva'] * 
 									$P_IVA / 100 , 2);
 				
 				$TotalPendiente = $MontoPendiente + $MontoIVA;

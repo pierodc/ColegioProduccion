@@ -1,0 +1,435 @@
+[05-Oct-2020 12:39:18 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 174
+[05-Oct-2020 12:39:18 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 174
+[05-Oct-2020 12:39:19 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 485
+[05-Oct-2020 12:39:19 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 485
+[05-Oct-2020 12:39:19 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 485
+[05-Oct-2020 12:39:19 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 485
+[05-Oct-2020 12:39:19 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 485
+[05-Oct-2020 12:39:20 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 1204
+[05-Oct-2020 12:39:20 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 1204
+[05-Oct-2020 12:39:20 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 1204
+[05-Oct-2020 12:39:20 America/Caracas] PHP Parse error:  syntax error, unexpected end of file in /home/colegio/public_html/inc/rutinas.php on line 1204
+[14-Dec-2020 22:48:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Config/Autoload.php:9) in /home/colegio/public_html/inc_login_ck.php on line 150
+[14-Dec-2020 22:48:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Config/Autoload.php:9) in /home/colegio/public_html/inc_login_ck.php on line 151
+[14-Dec-2020 22:48:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Config/Autoload.php:9) in /home/colegio/public_html/inc_login_ck.php on line 152
+[14-Dec-2020 22:48:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Config/Autoload.php:9) in /home/colegio/public_html/inc_login_ck.php on line 153
+[14-Dec-2020 22:48:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Config/Autoload.php:9) in /home/colegio/public_html/inc_login_ck.php on line 154
+[14-Dec-2020 22:48:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Config/Autoload.php:9) in /home/colegio/public_html/inc_login_ck.php on line 155
+[14-Dec-2020 22:48:15 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Config/Autoload.php:9) in /home/colegio/public_html/inc_login_ck.php on line 156
+[16-Mar-2021 12:40:25 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/colegio/public_html/inc/rutinas.php:1880
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/Status.php(78): Curso('17')
+#1 {main}
+  thrown in /home/colegio/public_html/inc/rutinas.php on line 1880
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:48 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:34:51 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:35:14 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 86
+[23-Mar-2021 00:37:58 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php:135
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 135
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:56 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:38:57 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:39:50 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[23-Mar-2021 00:40:15 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 202
+[14-Apr-2021 11:22:14 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('10625', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[14-Apr-2021 11:22:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('10625', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[19-Apr-2021 12:50:58 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('9778', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[19-Apr-2021 12:57:40 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('9778', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[19-Apr-2021 12:59:16 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('7115', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[19-Apr-2021 14:23:00 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('7115', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[19-Apr-2021 14:26:46 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('11713', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[19-Apr-2021 14:27:46 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/notas.php:123
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php(77): CalcDefinitivaLapso('11713', '1', '35', '2020-2021', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/notas.php on line 123
+[22-Apr-2021 10:53:09 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:09 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:09 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:09 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:09 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/notas.php:151) in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 81
+[22-Apr-2021 10:53:32 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:32 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:32 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:32 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:53:32 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/notas.php:151) in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 81
+[22-Apr-2021 10:54:42 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:54:42 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:54:42 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:54:42 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/inc/notas.php on line 151
+[22-Apr-2021 10:54:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/notas.php:151) in /home/colegio/public_html/intranet/a/Academico/iFr/NotaAlumno.php on line 81

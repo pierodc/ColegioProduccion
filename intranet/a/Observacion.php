@@ -89,12 +89,12 @@ $totalRows_Observaciones = $Observaciones->num_rows;
 ?>
 <tr valign="baseline">
   <td colspan="2" align="right" valign="middle" nowrap="nowrap" class="NombreCampo">Observaci&oacute;n:</td>
-  <td valign="middle" class="FondoCampo"><input name="Observacion" type="text" value="" size="60" required="required" />
+  <td valign="middle" class="FondoCampo" nowrap="nowrap"><input name="Observacion" type="text" value="" size="40" required="required" />
     <input type="hidden" name="CodigoAlumno" value="<?php echo $CodigoAlumno; ?>" />
     <input type="hidden" name="Area" value="<?php echo $_GET['Area']; ?>" />
     <input type="hidden" name="Fecha" value="<?php echo date('Y-m-d') ?>" />
     <input type="hidden" name="Hora" value="<?php echo date('H:i:s') ?>" />
-    <input type="hidden" name="MM_insert" value="form8" /><input type="submit" value="Guardar" /></td>
+    <input type="hidden" name="MM_insert" value="form8" /><input type="submit" value="G" /></td>
 </tr>
 <?php
 if ($totalRows_Observaciones > 0)

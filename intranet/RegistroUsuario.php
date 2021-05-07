@@ -8,9 +8,14 @@ if (isset($_POST[$MM_flag])) {
   $MM_dupKeyRedirect="RegistroUsuario.php?error=UsExiste";
   $loginUsername = $_POST['Usuario'];
   $LoginRS__query = "SELECT Usuario FROM Usuario WHERE Usuario='" . $loginUsername . "'";
-  mysql_select_db($database_bd, $bd);
-  $LoginRS=mysql_query($LoginRS__query, $bd) or die(mysql_error());
-  $loginFoundUser = mysql_num_rows($LoginRS);
+ // mysql_select_db($database_bd, $bd);
+	$LoginRS = $mysqli->query($LoginRS__query); //
+	//$row = $LoginRS->fetch_assoc();
+	$loginFoundUser = $LoginRS->num_rows;
+
+ 
+ // $LoginRS = mysql_query($LoginRS__query, $bd) or die(mysql_error());
+ // $loginFoundUser = mysql_num_rows($LoginRS);
 
   //if there is a row in the database, the username was found - can not add the requested username
   if($loginFoundUser){
@@ -58,7 +63,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form")) {
 
   //mysql_select_db($database_bd, $bd);
   //$Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
-	$Result1 = $mysqli->query($insertSQL);
+	$Result1 = $mysqli->query($insertSQL); //$mysqli->query($insertSQL);
 	
 	
   $insertGoTo = "../index.php?registroOK=1";

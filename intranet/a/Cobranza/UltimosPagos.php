@@ -1,4 +1,4 @@
-<div id="UltimosPagos"><?php 
+<?php 
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
@@ -24,17 +24,16 @@ if ($RS->num_rows > 0) { // Show if recordset not empty
 
 
 ?><table class="sombra">
-<tr>
-  <td  colspan="8" class="subtitle">Últimos Pagos</td>
-</tr>
+<caption>Últimos Pagos</caption>
+
 
 <? while ($row = $RS->fetch_assoc() and $No++ < 10) { 
 		extract($row);
 ?>
 	<tr <? $sw=ListaFondo($sw,$Verde);  ?>>
-	  <td width="100" nowrap="nowrap" >&nbsp;<?= DDMMAAAA($Fecha); ?></td>
-	  <td width="100" nowrap="nowrap" >&nbsp;<?= FormaDePago($Tipo); ?></td>
-	  <td width="300" nowrap="nowrap" >&nbsp;<? 
+	  <td nowrap="nowrap" >&nbsp;<?= DDMMAAAA($Fecha); ?></td>
+	  <td nowrap="nowrap" >&nbsp;<?= FormaDePago($Tipo); ?></td>
+	  <td nowrap="nowrap" >&nbsp;<? 
 	
 			echo $BancoOrigen; 
 			echo " -> "; 
@@ -45,15 +44,14 @@ if ($RS->num_rows > 0) { // Show if recordset not empty
 
 
 									 ?></td>
-	  <td width="300" nowrap="nowrap" >&nbsp;<?= $Referencia; ?></td>
-	  <td width="300" nowrap="nowrap" >&nbsp;<?= $Observaciones; ?></td>
-	  <td width="49" align="right" nowrap="nowrap" >&nbsp;<?= Fnum($MontoHaber_Dolares); ?></td>
-	  <td width="49" align="right" nowrap="nowrap" >&nbsp;<?= Fnum($MontoHaber); ?></td>
-	  <td width="49" align="right" nowrap="nowrap" >&nbsp;<?= substr($RegistradoPor,0,strpos($RegistradoPor."@","@")) ; ?></td>
+	  <td nowrap="nowrap" >&nbsp;<?= $Referencia; ?></td>
+	  <td  >&nbsp;<?= $Observaciones; ?></td>
+	  <td  align="right" nowrap="nowrap" >&nbsp;<?= Fnum($MontoHaber_Dolares); ?></td>
+	  <td  align="right" nowrap="nowrap" >&nbsp;<?= Fnum($MontoHaber); ?></td>
+	  <td  align="right" nowrap="nowrap" >&nbsp;<?= substr($RegistradoPor,0,strpos($RegistradoPor."@","@")) ; ?></td>
 	</tr>
 
 <? } ?>
 
 </table>
 <?php } // Show if recordset not empty ?><br>
-</div>

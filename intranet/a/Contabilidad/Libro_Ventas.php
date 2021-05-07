@@ -1,10 +1,10 @@
 <?php 
 $MM_authorizedUsers = "91,99,admin,secreAcad,Contable";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+
 $TituloPagina   = "Libro de Ventas"; // <title>
 $TituloPantalla = "Libro de Ventas"; // Titulo contenido
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 
@@ -33,7 +33,7 @@ if(isset($_POST['Control_Numero'])){
 	$sql = "UPDATE Factura_Control 
 			SET Factura_Numero = '".$_POST['Factura_Numero']."'
 			WHERE Control_Numero = '".$_POST['Control_Numero']."'";
-	mysql_query($sql, $bd);
+	$mysqli->query($sql); //mysql_query($sql, $bd);
 	//echo $sql."<br>";
 	
 	$sql = "SELECT * FROM Factura_Control
@@ -80,8 +80,11 @@ else{
 
 	$sql = "SELECT * FROM Factura_Control 
 			ORDER BY FechaRegistro DESC ";
-	$RS_ = mysql_query($sql, $bd) or die(mysql_error());
-	$row_ = mysql_fetch_assoc($RS_);
+	$RS_ = $mysqli->query($sql); //
+	$row_ = $RS_->fetch_assoc();
+
+	//$RS_ = mysql_query($sql, $bd) or die(mysql_error());
+	//$row_ = mysql_fetch_assoc($RS_);
 	$Control_Max = $row_['Control_Numero']-1;
 	header("Location: ".$auxPag."?Control=".$Control_Max);
 }
@@ -101,7 +104,7 @@ $sql = "SELECT * FROM  Factura_Control
 		AND Control_Numero <= '$Control_Numero_1'
 		ORDER BY Control_Numero";
 //echo $sql.'<br>';		
-$RS_ = mysql_query($sql, $bd) or die(mysql_error());
+$RS_ = $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
 //$totalRows_ = mysql_num_rows($RS_);
 
 
@@ -153,16 +156,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
   
 <?php 
 			
-while($row_ = mysql_fetch_assoc($RS_)){ 
+while($row_ = $RS_->fetch_assoc()){ 
 extract($row_);
 
 $sql_Recibo = "SELECT * FROM Recibo
 			   WHERE NumeroFactura = '$Factura_Numero'";
-//echo $sql_Recibo ;	
+//echo $sql_Recibo ;
+$RS_Recibo_ = $mysqli->query($sql_Recibo); //
+$row_Recibo = $RS_Recibo_->fetch_assoc();
+$totalRows_Recibo = $RS_Recibo_->num_rows;
+	/*
 $RS_Recibo_ = mysql_query($sql_Recibo, $bd) or die(mysql_error());
 $row_Recibo = mysql_fetch_assoc($RS_Recibo_);
 $totalRows_Recibo = mysql_num_rows($RS_Recibo_);
-
+*/
 if($Control_Numero == $_GET['Control'])	
 	$Verde = true;	else $Verde = false;	
 ?>

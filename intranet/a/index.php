@@ -1,9 +1,8 @@
 <?php
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,admin,AsistDireccion,Contable,ce,provee,secreBach";
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 $TituloPagina   = "INTRANET / SFA"; // <title>
 $TituloPantalla = "INTRANET"; // Titulo contenido
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 $_var = new Variable();
 
@@ -144,7 +143,7 @@ if (isset($_POST["CodigoRecibo"])) {
 
 
 
-
+<?  if($MM_Username == "piero") { ?>
 <div class="row ">
     	 <div class="col-md-12 subtitle">
             <img src="/i/b.png" width="32" height="32" /> TEST no usar esta seccion:
@@ -178,7 +177,7 @@ if (isset($_POST["CodigoRecibo"])) {
                 <!--input type="submit" name="Submit" value="Buscar" class="button" /-->
             </form>
 
-        
+   <? } ?>     
     
     
     
@@ -481,7 +480,9 @@ $rows = $RS_Asignacion->num_rows;
       		<img src="/i/b.png" alt="" width="32" height="32" />
       </div>
   </div>
-  
+ 
+ 
+ <?  if($MM_Username == "piero") { ?> 
   <div class="row">
       <div class="col-md-12 subtitle">
       		<img src="/i/b.png" alt="" width="32" height="32" />Ajustes
@@ -575,7 +576,7 @@ $rows = $RS_Asignacion->num_rows;
   </div>
   
  
-
+<? } ?>
 
 
 

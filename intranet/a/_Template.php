@@ -1,9 +1,10 @@
 <?php 
-//$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$MM_authorizedUsers = "2,99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-$TituloPagina   = "INTRANET"; // <title>
-$TituloPantalla = "INTRANET"; // Titulo contenido
+$TituloPagina   = "INTRANET1"; // <title>
+$TituloPantalla = "INTRANET2"; // Titulo contenido
 
 //require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
@@ -18,6 +19,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
   <head>
 	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
     <title><?php echo $TituloPag; ?></title>
+  <meta charset="ISO-8859-1">
 </head>
 <body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>

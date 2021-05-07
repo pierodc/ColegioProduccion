@@ -179,3 +179,322 @@
 [28-Jul-2020 10:39:46 America/Caracas] PHP Warning:  Illegal string offset 'Descripcion' in /home/colegio/public_html/intranet/a/Contabilidad/Banco_Movimientos.php on line 35
 [08-Aug-2020 00:03:00 America/New_York] PHP Warning:  mysql_pconnect(): No such file or directory in /home/colegio/public_html/Connections/bd.php on line 12
 [12-Aug-2020 20:32:45 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 151
+[10-Sep-2020 16:00:50 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 151
+[28-Sep-2020 22:44:45 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[28-Sep-2020 22:44:45 America/Caracas] PHP Warning:  Invalid argument supplied for foreach() in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 297
+[28-Sep-2020 22:46:44 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[28-Sep-2020 22:46:44 America/Caracas] PHP Warning:  array_count_values() expects parameter 1 to be array, null given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 297
+[28-Sep-2020 22:47:05 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[28-Sep-2020 23:43:24 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[28-Sep-2020 23:43:34 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[07-Oct-2020 09:06:07 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[07-Oct-2020 09:06:21 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[08-Oct-2020 01:30:28 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[08-Oct-2020 01:30:33 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[20-Oct-2020 09:29:37 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[20-Oct-2020 22:39:47 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[20-Oct-2020 22:41:40 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[20-Oct-2020 23:06:54 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[20-Oct-2020 23:07:01 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[21-Oct-2020 01:35:55 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 283
+[21-Oct-2020 01:39:43 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 285
+[21-Oct-2020 01:39:50 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 285
+[21-Oct-2020 01:41:06 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 286
+[21-Oct-2020 01:42:04 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 289
+[21-Oct-2020 01:42:20 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 289
+[21-Oct-2020 01:43:21 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[21-Oct-2020 01:43:46 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[22-Oct-2020 09:29:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 113
+[22-Oct-2020 09:29:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 09:29:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 116
+[22-Oct-2020 09:29:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 09:29:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 09:29:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 122
+[22-Oct-2020 09:30:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 113
+[22-Oct-2020 09:30:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 09:30:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 116
+[22-Oct-2020 09:30:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 09:30:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 09:30:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:40) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 122
+[22-Oct-2020 09:53:47 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 73
+[22-Oct-2020 09:59:53 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 73
+[22-Oct-2020 10:01:01 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 81
+[22-Oct-2020 10:01:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 10:01:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 10:01:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 118
+[22-Oct-2020 10:01:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 10:01:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 121
+[22-Oct-2020 10:01:43 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 124
+[22-Oct-2020 10:01:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 185
+[22-Oct-2020 10:02:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 10:02:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 10:02:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 118
+[22-Oct-2020 10:02:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 10:02:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 121
+[22-Oct-2020 10:02:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 124
+[22-Oct-2020 10:02:23 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 185
+[22-Oct-2020 10:02:32 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 10:02:32 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 10:02:32 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 118
+[22-Oct-2020 10:02:32 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 10:02:32 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 121
+[22-Oct-2020 10:02:32 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 124
+[22-Oct-2020 10:02:32 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 185
+[22-Oct-2020 10:02:56 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 10:02:56 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 10:02:56 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 118
+[22-Oct-2020 10:02:56 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 10:02:56 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 121
+[22-Oct-2020 10:02:56 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:41) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 124
+[22-Oct-2020 10:05:36 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 185
+[22-Oct-2020 10:06:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 10:06:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 10:06:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 118
+[22-Oct-2020 10:06:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 10:06:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 121
+[22-Oct-2020 10:06:17 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 124
+[22-Oct-2020 10:06:17 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 185
+[22-Oct-2020 10:06:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 115
+[22-Oct-2020 10:06:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 117
+[22-Oct-2020 10:06:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 118
+[22-Oct-2020 10:06:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 119
+[22-Oct-2020 10:06:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 121
+[22-Oct-2020 10:06:39 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php:103) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 124
+[22-Oct-2020 15:41:51 America/New_York] PHP Parse error:  syntax error, unexpected ''0;'' (T_CONSTANT_ENCAPSED_STRING) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 241
+[22-Oct-2020 15:44:49 America/New_York] PHP Parse error:  syntax error, unexpected 'print' (T_PRINT) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 241
+[22-Oct-2020 21:11:05 America/New_York] PHP Parse error:  syntax error, unexpected 'print' (T_PRINT) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas_out.php on line 247
+[22-Oct-2020 22:01:17 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[22-Oct-2020 22:01:22 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[22-Oct-2020 22:01:30 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[27-Oct-2020 22:16:12 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[27-Oct-2020 22:16:18 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[27-Oct-2020 22:16:23 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[27-Oct-2020 22:18:10 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[27-Oct-2020 22:18:20 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[01-Nov-2020 22:13:00 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[01-Nov-2020 22:13:05 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[01-Nov-2020 22:13:09 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[02-Nov-2020 22:29:00 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[02-Nov-2020 22:29:06 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[02-Nov-2020 22:29:12 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[03-Nov-2020 21:14:12 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[03-Nov-2020 21:14:17 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[03-Nov-2020 21:14:21 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[04-Nov-2020 21:51:35 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[04-Nov-2020 21:51:41 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[17-Nov-2020 00:31:47 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[17-Nov-2020 00:31:54 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[17-Nov-2020 00:32:04 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[17-Nov-2020 00:32:16 America/Caracas] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Archivo_Banco.php on line 290
+[16-Jan-2021 13:01:34 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:21) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 84
+[16-Jan-2021 13:03:56 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:21) in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 85
+[21-Jan-2021 11:54:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 151
+[25-Jan-2021 11:14:39 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 151
+[21-Mar-2021 22:43:02 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 468
+[21-Mar-2021 22:43:18 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 22
+[21-Mar-2021 22:43:18 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 23
+[21-Mar-2021 22:43:18 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 150
+[21-Mar-2021 22:43:18 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 150
+[21-Mar-2021 22:43:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php:387
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 387
+[21-Mar-2021 22:45:59 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 22
+[21-Mar-2021 22:45:59 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 23
+[21-Mar-2021 22:45:59 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 150
+[21-Mar-2021 22:45:59 America/Caracas] PHP Warning:  Use of undefined constant banco - assumed 'banco' (this will throw an Error in a future version of PHP) in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 150
+[21-Mar-2021 22:45:59 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php:387
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 387
+[21-Mar-2021 22:47:00 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php:387
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 387
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 216
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 217
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 224
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:12 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:13 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 216
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 217
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 224
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[21-Mar-2021 22:49:47 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Sube_Arch_Banco.php on line 227
+[24-Mar-2021 00:27:45 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 17
+[05-Apr-2021 10:13:52 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[08-Apr-2021 09:51:06 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[13-Apr-2021 11:04:04 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[13-Apr-2021 11:27:22 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[13-Apr-2021 11:27:33 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[14-Apr-2021 12:13:54 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[21-Apr-2021 19:39:21 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[21-Apr-2021 19:44:57 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[21-Apr-2021 19:46:34 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[21-Apr-2021 20:12:54 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[21-Apr-2021 20:14:19 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[21-Apr-2021 21:03:35 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[21-Apr-2021 21:04:00 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[22-Apr-2021 10:05:44 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[23-Apr-2021 09:28:37 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[23-Apr-2021 12:01:38 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[23-Apr-2021 12:09:31 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[26-Apr-2021 00:55:33 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 17
+[27-Apr-2021 09:32:35 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[27-Apr-2021 09:32:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[27-Apr-2021 10:14:20 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Libro_Ventas.php on line 83
+[28-Apr-2021 11:23:14 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 17
+[02-May-2021 20:54:11 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Diario_de_Caja.php on line 17
+[05-May-2021 15:39:54 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php:95
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 95
+[06-May-2021 09:26:29 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php:95
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 95
+[06-May-2021 09:31:38 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 79
+[06-May-2021 09:31:57 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/inc/rutinas.php:2324
+Stack trace:
+#0 /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php(184): MenuCursos(NULL, 'Asignaciones.ph...', 'colegio_db', NULL)
+#1 {main}
+  thrown in /home/colegio/public_html/inc/rutinas.php on line 2324
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240
+[06-May-2021 09:33:10 America/Caracas] PHP Warning:  A non-numeric value encountered in /home/colegio/public_html/intranet/a/Contabilidad/Asignaciones.php on line 240

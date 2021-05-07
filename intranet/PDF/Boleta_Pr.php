@@ -42,8 +42,8 @@ $pdf = new FPDF('P', 'mm', 'Letter');
 $pdf->SetAutoPageBreak(1,10);
 $pdf->SetMargins(10,10,20);
 
-$LapsoG = 1;
-$Lapso = 1;
+$LapsoG = $Lapso_Actual;
+$Lapso = $Lapso_Actual;
 
 $Curso = new Curso();
 $Curso->id = $_GET['CodigoCurso'];

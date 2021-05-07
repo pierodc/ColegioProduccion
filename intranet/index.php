@@ -817,7 +817,7 @@ if ($totalRows_RS_Rp == 0) {  ?>
               <?php } else { ?>
               <?php do { ?><a href="PlanillaInscAutorizado.php?CodigoRepresentante=<?php echo $row_RS_Rp['CodigoRepresentante']; ?>&Nexo=Autorizado&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno'] ?>">
               <img src="../i/user.png" alt="" width="32" height="32" border="0" align="absmiddle"><?php echo $row_RS_Rp['Apellidos']; ?>, <?php echo $row_RS_Rp['Nombres']; ?> (<?php echo $row_RS_Rp['Ocupacion']; ?>)&nbsp;<img src="../i/vcard_edit.png" width="32" height="32" border="0" align="absmiddle"></a> - <a href="index.php?noAutorizano=1&CodigoAutorizado=<?php echo $row_RS_Rp['CodigoRepresentante']; ?>&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno'] ?>"> Eliminar</a><br>
-              <?php } while ($row_RS_Rp = mysql_fetch_assoc($RS_Rp)); ?></td>
+              <?php } while ($row_RS_Rp = $RS_Rp->fetch_assoc()); ?></td>
           </tr>
           <tr>
             <td colspan="4" class="FondoCampo">

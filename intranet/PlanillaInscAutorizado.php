@@ -1,8 +1,7 @@
 <?php 
 $MM_authorizedUsers = "2";
-require_once('../inc_login_ck.php'); 
-require_once('../Connections/bd.php'); 
-require_once('../inc/rutinas.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 
 $editFormAction = $_SERVER['PHP_SELF'];
@@ -28,11 +27,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['CodPostal'], "text"),
                        GetSQLValueString($_POST['Ocupacion'], "text"));
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+  //mysql_select_db($database_bd, $bd);
+  $Result1 = $mysqli->query($insertSQL); //mysql_query($insertSQL, $bd) or die(mysql_error());
 
 $CodigoAlumno = $_POST['CodigoAlumno'];
-$CodigoRepresentante = mysql_insert_id();
+$CodigoRepresentante = $mysqli->insert_id; //mysql_insert_id();
 $Nexo = $_POST['Nexo'];	
 $SWrepre='0';
  
@@ -40,7 +39,7 @@ $sql_insert = "INSERT INTO RepresentanteXAlumno
 				(CodigoAlumno, CodigoRepresentante, Nexo, SW_Representante) 
 				VALUES 
 				('$CodigoAlumno', '$CodigoRepresentante', '$Nexo', '$SWrepre')";
-$Result1 = mysql_query($sql_insert, $bd) or die(mysql_error());
+$Result1 = $mysqli->query($sql_insert); //mysql_query($sql_insert, $bd) or die(mysql_error());
 
   $insertGoTo = "index.php";
   /*if (isset($_SERVER['QUERY_STRING'])) {
@@ -69,8 +68,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['Ocupacion'], "text"),
                        GetSQLValueString($_POST['CodigoRepresentante'], "int"));
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+  //mysql_select_db($database_bd, $bd);
+  $Result1 = $mysqli->query($updateSQL); //mysql_query($updateSQL, $bd) or die(mysql_error());
 
   $updateGoTo = "index.php";
   /*if (isset($_SERVER['QUERY_STRING'])) {
@@ -80,25 +79,34 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   header(sprintf("Location: %s", $updateGoTo));
 }
 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_Recordset1 = "SELECT * FROM Representante";
-$Recordset1 = mysql_query($query_Recordset1, $bd) or die(mysql_error());
-$row_Recordset1 = mysql_fetch_assoc($Recordset1);
-$totalRows_Recordset1 = mysql_num_rows($Recordset1);
+$Recordset1 = $mysqli->query($query_Recordset1); //
+$row_Recordset1 = $Recordset1->fetch_assoc();
+$totalRows_Recordset1 = $Recordset1->num_rows;
+
+//$Recordset1 = mysql_query($query_Recordset1, $bd) or die(mysql_error());
+//$row_Recordset1 = mysql_fetch_assoc($Recordset1);
+//$totalRows_Recordset1 = mysql_num_rows($Recordset1);
 
 $Creador_RS_Repre = "0";
 if (isset($_COOKIE['MM_Username'])) {
-  $Creador_RS_Repre = (get_magic_quotes_gpc()) ? $_COOKIE['MM_Username'] : addslashes($_COOKIE['MM_Username']);
+  $Creador_RS_Repre = $_COOKIE['MM_Username'] ;
 }
 $colname_RS_Repre = "0";
 if (isset($_GET['CodigoRepresentante'])) {
-  $colname_RS_Repre = (get_magic_quotes_gpc()) ? $_GET['CodigoRepresentante'] : addslashes($_GET['CodigoRepresentante']);
+  $colname_RS_Repre = $_GET['CodigoRepresentante'] ;
 }
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_RS_Repre = sprintf("SELECT * FROM Representante WHERE CodigoRepresentante = '%s' AND Creador = '%s'", $colname_RS_Repre,$Creador_RS_Repre);
-$RS_Repre = mysql_query($query_RS_Repre, $bd) or die(mysql_error());
-$row_RS_Repre = mysql_fetch_assoc($RS_Repre);
-$totalRows_RS_Repre = mysql_num_rows($RS_Repre);
+$RS_Repre = $mysqli->query($query_RS_Repre); //
+$row_RS_Repre = $RS_Repre->fetch_assoc();
+$totalRows_RS_Repre = $RS_Repre->num_rows;
+
+
+//$RS_Repre = mysql_query($query_RS_Repre, $bd) or die(mysql_error());
+//$row_RS_Repre = mysql_fetch_assoc($RS_Repre);
+//$totalRows_RS_Repre = mysql_num_rows($RS_Repre);
 ?>
 <html>
 <head>

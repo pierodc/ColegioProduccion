@@ -147,10 +147,10 @@ $Etiqueta_Class =  ' class="Listado'.$In.'Par'.$Azul.'"';
 	
 	  ?></td>
   <td <?php //echo $Etiqueta_Class ?>><?  
-	  
+	  if($row_RS_ContableMov['SWiva'] > 0){
 		 	$IVA_Dolares = round($Total_Renglon  *  $row_RS_ContableMov['SWiva'] * $P_IVA_2/100 ,2);
 			echo ( $IVA_Dolares );
-		
+	  }
 	$Total_Renglon += $IVA_Dolares;
 	$SubTotal_Dolares += $Total_Renglon;
 		  

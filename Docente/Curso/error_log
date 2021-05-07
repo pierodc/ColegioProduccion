@@ -1,0 +1,163 @@
+[27-Sep-2020 18:39:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:10) in /home/colegio/public_html/inc/GetVar.php on line 14
+[27-Sep-2020 18:39:23 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:10) in /home/colegio/public_html/inc/GetVar.php on line 15
+[27-Sep-2020 18:40:34 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 16
+[27-Sep-2020 18:40:34 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 17
+[27-Sep-2020 18:41:19 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 16
+[27-Sep-2020 18:41:19 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 17
+[27-Sep-2020 18:41:27 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 7
+[27-Sep-2020 18:41:27 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 8
+[27-Sep-2020 18:41:57 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 7
+[27-Sep-2020 18:41:57 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 8
+[27-Sep-2020 18:42:16 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 7
+[27-Sep-2020 18:42:16 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 8
+[27-Sep-2020 18:43:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 7
+[27-Sep-2020 18:43:20 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 8
+[27-Sep-2020 18:43:27 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 7
+[27-Sep-2020 18:43:27 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/GetVar.php:2) in /home/colegio/public_html/inc/GetVar.php on line 8
+[27-Sep-2020 19:49:05 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/colegio/public_html/inc/rutinas.php on line 1698
+[10-Oct-2020 02:01:48 America/Caracas] PHP Warning:  getimagesize(/img/solcolegio.jpg): failed to open stream: No such file or directory in /home/colegio/public_html/inc/fpdf.php on line 1202
+[10-Oct-2020 02:02:14 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/Curso/Curso_pdf.php:16) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[10-Oct-2020 02:02:30 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/Docente/Curso/Curso_pdf.php:16) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[09-Dec-2020 22:40:43 America/Caracas] PHP Warning:  mysqli::query(): Empty query in /home/colegio/public_html/Models/Connection.php on line 49
+[09-Dec-2020 22:40:43 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/ContableMov.php on line 33
+[09-Dec-2020 22:41:17 America/Caracas] PHP Warning:  mysqli::query(): Empty query in /home/colegio/public_html/Models/Connection.php on line 49
+[09-Dec-2020 22:41:17 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/ContableMov.php on line 33
+[09-Dec-2020 22:41:21 America/Caracas] PHP Warning:  mysqli::query(): Empty query in /home/colegio/public_html/Models/Connection.php on line 49
+[09-Dec-2020 22:41:21 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/colegio/public_html/Models/ContableMov.php on line 33
+[10-Dec-2020 10:29:14 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/inc/rutinas.php on line 1709
+[10-Dec-2020 10:29:14 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/inc/rutinas.php on line 1714
+[10-Dec-2020 10:29:14 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/inc/rutinas.php on line 1715
+[10-Dec-2020 10:29:14 America/Caracas] PHP Warning:  mysqli::mysqli(): (HY000/1203): User colegio_colegio already has more than 'max_user_connections' active connections in /home/colegio/public_html/inc/rutinas.php on line 1709
+[10-Dec-2020 10:29:14 America/Caracas] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/colegio/public_html/inc/rutinas.php on line 1714
+[10-Dec-2020 10:29:14 America/Caracas] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/colegio/public_html/inc/rutinas.php on line 1715
+[04-May-2021 17:13:32 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:45
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(64): Conexion->consultaRetorno_row('SELECT COUNT id...')
+#1 /home/colegio/public_html/Docente/Curso/index.php(18): Consulta->Resultado(1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 45
+[04-May-2021 17:21:35 America/Caracas] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/colegio/public_html/Models/Consulta.php:66
+Stack trace:
+#0 /home/colegio/public_html/Docente/Curso/index.php(18): Consulta->Resultado(1)
+#1 {main}
+  thrown in /home/colegio/public_html/Models/Consulta.php on line 66
+[04-May-2021 17:21:44 America/Caracas] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/colegio/public_html/Models/Consulta.php:66
+Stack trace:
+#0 /home/colegio/public_html/Docente/Curso/index.php(18): Consulta->Resultado(1)
+#1 {main}
+  thrown in /home/colegio/public_html/Models/Consulta.php on line 66
+[04-May-2021 17:21:45 America/Caracas] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/colegio/public_html/Models/Consulta.php:66
+Stack trace:
+#0 /home/colegio/public_html/Docente/Curso/index.php(18): Consulta->Resultado(1)
+#1 {main}
+  thrown in /home/colegio/public_html/Models/Consulta.php on line 66
+[04-May-2021 17:21:55 America/Caracas] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/colegio/public_html/Models/Consulta.php:66
+Stack trace:
+#0 /home/colegio/public_html/Docente/Curso/index.php(18): Consulta->Resultado(1)
+#1 {main}
+  thrown in /home/colegio/public_html/Models/Consulta.php on line 66
+[04-May-2021 17:21:58 America/Caracas] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/colegio/public_html/Models/Consulta.php:66
+Stack trace:
+#0 /home/colegio/public_html/Docente/Curso/index.php(18): Consulta->Resultado(1)
+#1 {main}
+  thrown in /home/colegio/public_html/Models/Consulta.php on line 66
+[06-May-2021 00:01:15 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 05:28:09 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 05:28:25 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 05:28:53 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 05:29:09 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 05:30:12 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 05:30:53 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 05:30:57 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 06:57:11 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 06:59:06 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 06:59:11 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 06:59:19 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 06:59:27 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 06:59:34 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 07:00:03 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 07:06:25 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 07:42:08 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 08:34:07 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 08:34:11 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 08:34:12 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 08:34:19 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 08:34:38 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 09:09:56 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 09:10:04 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18
+[06-May-2021 09:10:18 America/Caracas] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/colegio/public_html/Docente/Curso/index.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/Docente/Curso/index.php on line 18

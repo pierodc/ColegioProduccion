@@ -213,6 +213,9 @@ class Alumno{
 		return $Listado;
 		}
 		
+		
+		
+		
 		function Foto ($nexo = "" , $Tipo = ""){
 			$Ano = date('Y');
 			$AnoRango = $Ano - 10;
@@ -221,18 +224,23 @@ class Alumno{
 			else{
 				$raiz = "http://".$_SERVER['SERVER_NAME']."";}	
 				
+			$Ruta = $_SERVER['DOCUMENT_ROOT'].'/f/solicitando/'.$this->id . $nexo.'.jpg';
+			if ( file_exists($Ruta) ){
+				$Ruta = '/f/solicitando/'.$this->id.$nexo.'.jpg';
+				}
+			else
 			for ($Ano_i = $Ano ; $Ano_i >= $AnoRango; $Ano_i--){
-				
-				
-				$Ruta = $_SERVER['DOCUMENT_ROOT'].'/f/'.$Ano_i.'/'.$this->id.$nexo.'.jpg';
+				$Ruta = $_SERVER['DOCUMENT_ROOT'].'/f/'.$Ano_i.'/'.$this->id . $nexo.'.jpg';
 				if ( file_exists($Ruta) ){
 					$Ruta = '/f/'.$Ano_i.'/'.$this->id.$nexo.'.jpg';
-					break;}
+					break;
+					}
 				else{	
 					$Ruta = $_SERVER['DOCUMENT_ROOT'].'/f/'.$Ano_i.'/'.$this->id . strtoupper($nexo).'.JPG';
 					if ( file_exists($Ruta) ){
-						$Ruta = '/f/'.$Ano_i.'/'.$this->id. strtoupper($nexo).'.JPG';
-						break;}
+						$Ruta = '/f/'.$Ano_i.'/'.$this->id.strtoupper($nexo).'.JPG';
+						break;
+						}
 					}
 				
 					

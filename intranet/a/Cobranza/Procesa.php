@@ -74,7 +74,18 @@ if (isset($_GET['AnularFactura'])) {
 					WHERE NumeroFactura='".$_GET['NumeroFactura']."' ";
 		$mysqli->query($query); 
 //		echo $query;
-		echo "<H1>NumeroFactura = 0 ".$_GET['NumeroFactura']." <br>$query</h1>"; }
+		echo "<H1>NumeroFactura = 0 ".$_GET['NumeroFactura']." <br>$query</h1>"; 
+		
+		$query = "UPDATE Factura_Control 
+					SET Factura_Numero = '0'
+					WHERE Factura_Numero='".$_GET['NumeroFactura']."' ";
+		$mysqli->query($query); 
+		echo "<H1>$query</h1>"; 
+		
+//		
+		
+		
+		}
 // Cambia ANULA FACTURA =0 
 
 

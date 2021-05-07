@@ -14,7 +14,8 @@ $mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 if(isset($_POST['WhatsappAlumno'])){
 	$sql = "UPDATE Alumno 
 			SET WhatsappAlumno = '".$_POST['WhatsappAlumno']."',
-			WhatsappRepre = '".$_POST['WhatsappRepre']."'
+			WhatsappRepre = '".$_POST['WhatsappRepre']."',
+			Email = '".$_POST['Email']."'
 			WHERE CodigoAlumno = '".$_POST['CodigoAlumno']."'";
 	$mysqli->query($sql);
 	}
@@ -84,7 +85,7 @@ while ($row_RS_Alumnos = $RS_Alumno->fetch_assoc()) {
           <form id="form1" name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']."?CodigoAl=".$row_RS_Alumnos['CodigoAlumno']."&CodigoCurso=".$_GET['CodigoCurso']."#".$row_RS_Alumnos['CodigoAlumno']; ?>">
             <input name="WhatsappAlumno" type="text" id="WhatsappAlumno" value="<?php echo $row_RS_Alumnos['WhatsappAlumno'] ; ?>" />
             <input name="WhatsappRepre" type="text" id="WhatsappRepre" value="<?php echo $row_RS_Alumnos['WhatsappRepre'] ; ?>" />
-            
+            <input name="Email" type="Email" id="Email" value="<?php echo $row_RS_Alumnos['Email'] ; ?>" />
             <input name="CodigoAlumno" type="hidden" id="CodigoAlumno" value="<?php echo $row_RS_Alumnos['CodigoAlumno'] ?>" />
             <input type="submit" name="button" id="button" value="G" />
             <?php 

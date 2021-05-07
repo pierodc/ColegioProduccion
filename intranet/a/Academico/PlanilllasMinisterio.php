@@ -1,5 +1,5 @@
 <?php 
-$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin";
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,secreBach";
 require_once('../../../inc_login_ck.php'); 
 
 require_once('../../../Connections/bd.php'); 

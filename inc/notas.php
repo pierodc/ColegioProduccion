@@ -19,6 +19,7 @@ $Lapsos = array(
 '3i;3er Lapso Inas.',
 '0; ',
 'Def;Definitiva',
+'Def_Ministerio;Def_Ministerio',
 'RevDef;Rev.Def.',
 'DefMatP;Def.Mat.Pend.',
 'Revision;Revisión',
@@ -70,18 +71,32 @@ function EnLetras ($Nota){
 	}
 
 function Posicion ($database_bd, $bd, $Campo, $Nota, $CodigoCurso, $Lapso, $AnoEscolar) {
+	
+	$hostname_bd = "localhost";
+	$database_bd = "colegio_db";
+	$username_bd = "colegio_colegio";
+	$password_bd = "kepler1971";
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+
+	
+	
 	if ($Nota > 0){
-	mysql_select_db($database_bd, $bd);
-	$query = "SELECT * FROM Nota 
+	//mysql_select_db($database_bd, $bd);
+	$sql = "SELECT * FROM Nota 
 				WHERE CodigoCurso = ".$CodigoCurso." 
 				AND Ano_Escolar='$AnoEscolar' 
 				AND Lapso = '$Lapso' 
 				AND ".$Campo." >' ' 
 				ORDER BY ".$Campo." DESC"; 
 	//echo $query;			
+	$RS = $mysqli->query($sql);
+	$row = $RS->fetch_assoc();
+	$totalRows = $RS->num_rows;
+
+		/*
 	$RS = mysql_query($query, $bd) or die(mysql_error());
 	$row = mysql_fetch_assoc($RS);
-	$totalRows = mysql_num_rows($RS);
+	$totalRows = mysql_num_rows($RS);*/
 	$Pos = 1;
 	//echo $query.$totalRows.'<br>';
 	if( $totalRows > 0 ){
@@ -89,10 +104,10 @@ function Posicion ($database_bd, $bd, $Campo, $Nota, $CodigoCurso, $Lapso, $AnoE
 		if($Nota == $row[$Campo]) {
 			//echo $Pos.'<br>';
 			return $Pos.'º';
-			mysql_free_result($RS);
+			//mysql_free_result($RS);
 			break;}
 		$Pos = $Pos + 1;
-		} while ($row = mysql_fetch_assoc($RS));}	
+		} while ($row = $RS->fetch_assoc());}	
 	} 
 	else { 
 	return '*';}
@@ -100,34 +115,40 @@ function Posicion ($database_bd, $bd, $Campo, $Nota, $CodigoCurso, $Lapso, $AnoE
 
 
 function CalcDefinitivaLapso($CodigoAlumno, $Lapso, $CodigoCurso, $AnoEscolar, $database_bd, $bd){
-	
+	$hostname_bd = "localhost";
+	$database_bd = "colegio_db";
+	$username_bd = "colegio_colegio";
+	$password_bd = "kepler1971";
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+
+
 	$Lapso=substr($Lapso,0,1);
 	
 	if($Lapso!='R' and $Lapso!='D'){
 	
-		mysql_select_db($database_bd, $bd);
+		//mysql_select_db($database_bd, $bd);
 		$query = "DELETE FROM Nota WHERE Ano_Escolar = '$AnoEscolar' AND Lapso = '$Lapso-Def' AND CodigoAlumno = '$CodigoAlumno'";
-		$RS_ = mysql_query($query, $bd) or die(mysql_error());
+		$RS_ = $mysqli->query($query); //mysql_query($query, $bd) or die(mysql_error());
 		
 		$query_RS_Notas30 = "SELECT * FROM Nota WHERE Lapso = '$Lapso-30' AND Ano_Escolar = '$AnoEscolar' AND CodigoAlumno = '$CodigoAlumno'";
-		$RS_Notas30 = mysql_query($query_RS_Notas30, $bd) or die(mysql_error());
-		$row_RS_Notas30 = mysql_fetch_assoc($RS_Notas30);
+		$RS_Notas30 = $mysqli->query($query_RS_Notas30); //mysql_query($query_RS_Notas30, $bd) or die(mysql_error());
+		$row_RS_Notas30 = $RS_Notas30->fetch_assoc();
 		
 		$query_RS_Notas70 = "SELECT * FROM Nota WHERE Lapso = '$Lapso-70' AND Ano_Escolar = '$AnoEscolar' AND CodigoAlumno = '$CodigoAlumno'";
-		$RS_Notas70 = mysql_query($query_RS_Notas70, $bd) or die(mysql_error());
-		$row_RS_Notas70 = mysql_fetch_assoc($RS_Notas70);
+		$RS_Notas70 = $mysqli->query($query_RS_Notas70); //mysql_query($query_RS_Notas70, $bd) or die(mysql_error());
+		$row_RS_Notas70 = $RS_Notas70->fetch_assoc();
 		
 		$query_RS_Notas_BConduc = "SELECT * FROM Nota WHERE Lapso = '$Lapso-BConduc' AND Ano_Escolar = '$AnoEscolar'  AND CodigoAlumno = '$CodigoAlumno'";
-		$RS_Notas_BConduc = mysql_query($query_RS_Notas_BConduc, $bd) or die(mysql_error());
-		$row_RS_Notas_BConduc = mysql_fetch_assoc($RS_Notas_BConduc);
+		$RS_Notas_BConduc = $mysqli->query($query_RS_Notas_BConduc); //mysql_query($query_RS_Notas_BConduc, $bd) or die(mysql_error());
+		$row_RS_Notas_BConduc = $RS_Notas_BConduc->fetch_assoc();
 		
 		foreach (array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12') as $fila_x) { // Notas
 			$n30 = $row_RS_Notas30['n'.$fila_x]; 
 			$n70 = $row_RS_Notas70['n'.$fila_x]; 
 			if($n30=='') 
 				$n30 = $n70;
-			$BConduc = $row_RS_Notas_BConduc['n'.$fila_x];
-			$promedio[$fila_x] = substr("00". round($n30 * 0.3 + $n70 * 0.7 + $BConduc, 0), -2);
+			$BConduc = $row_RS_Notas_BConduc['n'.$fila_x]*1;
+			$promedio[$fila_x] = substr("00". round((int)$n30 * 0.3 + (int)$n70 * 0.7 + (int)$BConduc, 0), -2);
 		}
 		
 		$query  = "INSERT INTO Nota (CodigoAlumno, CodigoCurso, Ano_Escolar, Lapso, n01, n02, n03, n04, n05, n06, n07, n08, n09, n10, n11, n12, n13) ";
@@ -135,7 +156,7 @@ function CalcDefinitivaLapso($CodigoAlumno, $Lapso, $CodigoCurso, $AnoEscolar, $
 		foreach (array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12') as $fila_x)
 			$query .= " '$promedio[$fila_x]',";
 		$query .= "'') ";
-		$RS_ = mysql_query($query, $bd) or die(mysql_error());
+		$RS_ = $mysqli->query($query); //mysql_query($query, $bd) or die(mysql_error());
 		//echo $query;
 	
 	
@@ -147,15 +168,15 @@ function CalcDefinitivaLapso($CodigoAlumno, $Lapso, $CodigoCurso, $AnoEscolar, $
 		$totalRows_ = 0;
 		foreach (array(1,2,3) as $Lapso){
 			$query = "SELECT * FROM Nota WHERE Ano_Escolar = '$AnoEscolar' AND Lapso = '$Lapso-Def' AND CodigoAlumno = '$CodigoAlumno'";
-			$RS_ = mysql_query($query, $bd) or die(mysql_error());
-			$row_ = mysql_fetch_assoc($RS_);
-			$totalRows_ += mysql_num_rows($RS_);
+			$RS_ = $mysqli->query($query); //mysql_query($query, $bd) or die(mysql_error());
+			$row_ = $RS_->fetch_assoc();
+			$totalRows_ += $RS_->num_rows;
 			$Definitiva[$Lapso] = $row_;
 		}
 		// Revision Difinitiva
 			$query = "SELECT * FROM Nota WHERE Ano_Escolar = '$AnoEscolar' AND Lapso = 'RevDef' AND CodigoAlumno = '$CodigoAlumno'";
-			$RS_ = mysql_query($query, $bd) or die(mysql_error());
-			$row_ = mysql_fetch_assoc($RS_);
+			$RS_ =$mysqli->query($query); //mysql_query($query, $bd) or die(mysql_error());
+			$row_ = $RS_->fetch_assoc();
 			$RevDefinitiva[$Lapso] = $row_;
 
 
@@ -186,7 +207,7 @@ function CalcDefinitivaLapso($CodigoAlumno, $Lapso, $CodigoCurso, $AnoEscolar, $
 			
 			$query = "DELETE FROM Nota WHERE Ano_Escolar = '$AnoEscolar' AND Lapso = 'Def' AND CodigoAlumno = '$CodigoAlumno'";
 			//echo $query;
-			$RS_ = mysql_query($query, $bd) or die(mysql_error());
+			$RS_ = $mysqli->query($query); //mysql_query($query, $bd) or die(mysql_error());
 
 			
 			$query  = "INSERT INTO Nota (CodigoAlumno, CodigoCurso, Ano_Escolar, Lapso, 
@@ -195,7 +216,7 @@ function CalcDefinitivaLapso($CodigoAlumno, $Lapso, $CodigoCurso, $AnoEscolar, $
 			foreach (array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12') as $fila_x){
 				$query .= " '$promedio[$fila_x]',"; }
 			$query .= "'') ";
-			$RS_ = mysql_query($query, $bd) or die(mysql_error());
+			$RS_ = $mysqli->query($query); // mysql_query($query, $bd) or die(mysql_error());
 
 				
 			//echo $query;

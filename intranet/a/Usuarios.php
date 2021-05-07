@@ -23,8 +23,11 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
                        GetSQLValueString($_POST['Usuario'], "text"),
                        GetSQLValueString($_POST['Codigo'], "int"));
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+  
+  $RS = $mysqli->query($updateSQL);
+
+  
+  // $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
 
   $updateGoTo = "Usuarios.php?g=1";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -39,23 +42,35 @@ $colname_RS_Usuarios = "xx-1";
 if (isset($_POST['UsuarioBuscar'])) {
   $colname_RS_Usuarios = $_POST['UsuarioBuscar'];
 }
-mysql_select_db($database_bd, $bd);
+
 $query_RS_Usuarios = sprintf("SELECT * FROM Usuario WHERE Usuario LIKE %s ORDER BY Usuario ASC", GetSQLValueString($colname_RS_Usuarios.'%', "text"));
 //echo $query_RS_Usuarios;
+$RS_Usuarios = $mysqli->query($query_RS_Usuarios);
+$row_RS_Usuarios = $RS_Usuarios->fetch_assoc();
+$totalRows_RS_Usuarios = $RS_Usuarios->num_rows;
+
+/*
 $RS_Usuarios = mysql_query($query_RS_Usuarios, $bd) or die(mysql_error());
 $row_RS_Usuarios = mysql_fetch_assoc($RS_Usuarios);
 $totalRows_RS_Usuarios = mysql_num_rows($RS_Usuarios);
-
+*/
 $colname_RS_Usuario = "-1";
 if (isset($_GET['Codigo'])) {
   $colname_RS_Usuario = $_GET['Codigo'];
 }
-mysql_select_db($database_bd, $bd);
+
 $query_RS_Usuario = sprintf("SELECT * FROM Usuario WHERE Codigo = %s", GetSQLValueString($colname_RS_Usuario, "int"));
 //echo $query_RS_Usuarios;
+
+$RS_Usuario = $mysqli->query($query_RS_Usuario);
+$row_RS_Usuario = $RS_Usuario->fetch_assoc();
+$totalRows_RS_Usuario = $RS_Usuario->num_rows;
+
+/*
 $RS_Usuario = mysql_query($query_RS_Usuario, $bd) or die(mysql_error());
 $row_RS_Usuario = mysql_fetch_assoc($RS_Usuario);
 $totalRows_RS_Usuario = mysql_num_rows($RS_Usuario);
+*/
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -120,7 +135,7 @@ a:active {
         <table width="95%"  border="0" align="center">
           <tr>
             <td width="50%" class="subtitle">Buscar</td>
-            <td width="50%" class="subtitle"><?php if( $totalRows_RS_Usuario > 0 and !isset($_GET[g])) { ?>Usuario<?php } ?></td>
+            <td width="50%" class="subtitle"><?php if( $totalRows_RS_Usuario > 0 and !isset($_GET["g"])) { ?>Usuario<?php } ?></td>
           </tr>
           <tr>
             <td valign="top" class="TextosSimples12"><form name="form2" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -136,18 +151,24 @@ a:active {
               <?php 
 			  // Cantidad de Alumnos bajo este login
 			  
-			  	mysql_select_db($database_bd, $bd);
+			  	
 				$query_RS_NAlum = sprintf("SELECT * FROM Alumno WHERE Creador = '%s'", $row_RS_Usuarios['Usuario']);
 				//echo $query_RS_NAlum;
+				$RS_NAlum = $mysqli->query($query_RS_NAlum);
+				$row_RS_NAlum = $RS_NAlum->fetch_assoc();
+				$totalRows_RS_NAlum = $RS_NAlum->num_rows;
+
+				/*
+				
 				$RS_NAlum = mysql_query($query_RS_NAlum, $bd) or die(mysql_error());
 				$row_RS_NAlum = mysql_fetch_assoc($RS_NAlum);
 				$totalRows_RS_NAlum = mysql_num_rows($RS_NAlum);
-				echo $totalRows_RS_NAlum;
+*/				echo $totalRows_RS_NAlum;
 
 			  ?>
 )<br>
 <br>
-<?php } while ($row_RS_Usuarios = mysql_fetch_assoc($RS_Usuarios)); ?>
+<?php } while ($row_RS_Usuarios = $RS_Usuarios->fetch_assoc()); ?>
 <?php } ?></td>
             <td valign="top" nowrap class="TextosSimples12"><?php if( $totalRows_RS_Usuario > 0) { ?>
 			<form name="form2" method="POST" action="<?php echo $editFormAction; ?>">
@@ -190,18 +211,24 @@ a:active {
                   <td class="FondoCampo"><?php 
 			// Lista Alumnos Bajo este login
 			  
-			  	mysql_select_db($database_bd, $bd);
+			  	
 				$query_RS_Alumnos = sprintf("SELECT * FROM Alumno WHERE Creador = '%s'", $row_RS_Usuario['Usuario']);
 				//echo $query_RS_Alumnos;
+				
+				$RS_Alumnos = $mysqli->query($query_RS_Alumnos);
+				$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+				$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+
+				/*
 				$RS_Alumnos = mysql_query($query_RS_Alumnos, $bd) or die(mysql_error());
 				$row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
 				$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
-				//echo $totalRows_RS_Alumnos;
+				//echo $totalRows_RS_Alumnos;*/
 
 			 do {
 			      echo $row_RS_Alumnos['Nombres'].", ".$row_RS_Alumnos['Apellidos']."<br>";
-              } while ($row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos)); 
- mysql_free_result($RS_Alumnos);
+              } while ($row_RS_Alumnos = $RS_Alumnos->fetch_assoc()); 
+// mysql_free_result($RS_Alumnos);
 ?></td>
                 </tr>
                 <tr>
@@ -231,8 +258,13 @@ a:active {
 				$sql = "SELECT * FROM Usuario_Logs
 								WHERE CodigoUsuario = ".$row_RS_Usuario['Codigo']."
 								ORDER BY Fecha_Registro_LogIn DESC"; 
+				$RS_Accesos = $mysqli->query($sql);
+				$row_RS_Accesos = $RS_Accesos->fetch_assoc();
+				//$Conteo = $RS_Accesos->num_rows;
+
+				/*
 				$RS_Accesos = mysql_query($sql, $bd) or die(mysql_error());
-				$row_RS_Accesos = mysql_fetch_assoc($RS_Accesos);
+				$row_RS_Accesos = mysql_fetch_assoc($RS_Accesos);*/
 				do{
 					$DateLogin  = strtotime($row_RS_Accesos['Fecha_Registro_LogIn']);
 					
@@ -267,7 +299,7 @@ a:active {
 				}
 				?></td>
 			    <td class="ListadoPar12">&nbsp;</td>
-			    </tr><?php } while($row_RS_Accesos = mysql_fetch_assoc($RS_Accesos)); ?></table><?php }} // fin despliega si voy a modificar?></td>
+			    </tr><?php } while($row_RS_Accesos = $RS_Accesos->fetch_assoc()); ?></table><?php }} // fin despliega si voy a modificar?></td>
           </tr>
           <tr>
             <td valign="top" class="TextosSimples12">&nbsp;</td>

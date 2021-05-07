@@ -73,7 +73,7 @@ while ($row = $RS->fetch_assoc()) {
 	else
 		$Verde = false;
 	?><tr <?php $sw=ListaFondo($sw,$Verde);?>><td nowrap="nowrap"><?php 
-    echo "$Ano";
+    echo substr($Ano,0,4);
 	?></td><td align="right" nowrap="nowrap"><?php 
 	echo Curso($CodigoCurso);
 	?></td>

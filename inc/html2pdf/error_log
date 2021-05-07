@@ -1,0 +1,29 @@
+[25-Apr-2021 23:49:57 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:49:57 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:49:57 America/New_York] PHP Fatal error:  require(): Failed opening required 'fpdf.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:50:40 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:50:40 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:50:40 America/New_York] PHP Fatal error:  require(): Failed opening required 'fpdf.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:50:42 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:50:42 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:50:42 America/New_York] PHP Fatal error:  require(): Failed opening required 'fpdf.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:51:16 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:51:16 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:51:16 America/New_York] PHP Fatal error:  require(): Failed opening required 'fpdf.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:52:40 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:52:40 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:52:40 America/New_York] PHP Fatal error:  require(): Failed opening required 'fpdf.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:54:35 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:54:35 America/New_York] PHP Warning:  require(fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[25-Apr-2021 23:54:35 America/New_York] PHP Fatal error:  require(): Failed opening required 'fpdf.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/colegio/public_html/inc/html2pdf/html2pdf.php on line 7
+[26-Apr-2021 00:01:39 America/New_York] PHP Warning:  getimagesize(img/index_01.jpg): failed to open stream: No such file or directory in /home/colegio/public_html/inc/fpdf.php on line 1237
+[26-Apr-2021 00:01:39 America/New_York] PHP Fatal error:  Uncaught Exception: FPDF error: Missing or incorrect image file: img/index_01.jpg in /home/colegio/public_html/inc/fpdf.php:271
+Stack trace:
+#0 /home/colegio/public_html/inc/fpdf.php(1239): FPDF->Error('Missing or inco...')
+#1 /home/colegio/public_html/inc/fpdf.php(885): FPDF->_parsejpg('img/index_01.jp...')
+#2 /home/colegio/public_html/inc/html2pdf/html2pdf.php(259): FPDF->Image('img/index_01.jp...', 17.409583333333, 170.00125, 10.936111111111, 67.380555555556)
+#3 /home/colegio/public_html/inc/html2pdf/html2pdf.php(182): PDF->OpenTag('IMG', Array)
+#4 /home/colegio/public_html/inc/html2pdf/html2pdf.php(92): PDF->WriteHTML('\r \r \r Colegio S...', true)
+#5 /home/colegio/public_html/inc/html2pdf/ex.php(18): createPDF->run()
+#6 {main}
+  thrown in /home/colegio/public_html/inc/fpdf.php on line 271

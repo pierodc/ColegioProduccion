@@ -12,12 +12,16 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 // $query_RS_Alumno = $query_RS_Alumno.' LIMIT 18,18'; // LIMIT   desde,cantidad
+$RS_Alumno = $mysqli->query($query_RS_Alumno);
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+/*$Conteo = $RS_Alumno->num_rows;
+
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
-
+*/
 $CodigoCurso = "-1";
 if (isset($row_RS_Alumno['CodigoCurso'])) {
   $CodigoCurso = $row_RS_Alumno['CodigoCurso'];
@@ -93,10 +97,14 @@ do {
 	$query_RS_Curso = "SELECT * FROM Curso, CursoMaterias 
 						WHERE concat( Curso.CodigoMaterias , 'n')  = CursoMaterias.CodigoMaterias 
 						AND Curso.CodigoCurso = ".$row_RS_Alumno['CodigoCurso'];
+	$RS_Curso = $mysqli->query($query_RS_Curso);
+	$row_RS_Curso = $RS_Curso->fetch_assoc();
+
+	/*
 	$RS_Curso = mysql_query($query_RS_Curso, $bd) or die(mysql_error());
-	$row_RS_Curso = mysql_fetch_assoc($RS_Curso);
+	$row_RS_Curso = mysql_fetch_assoc($RS_Curso);*/
 	foreach ($Sec_01_13 as $fila_x) {
-		$Matriz[materia][$fila_x] = $row_RS_Curso['Materia'.$fila_x];
+		$Matriz['materia'][$fila_x] = $row_RS_Curso['Materia'.$fila_x];
 	}
 	
 	// LLENA MATRIZ notas Trimestres
@@ -107,10 +115,15 @@ do {
 							WHERE CodigoAlumno = ". $row_RS_Alumno['CodigoAlumno']." 
 							AND Lapso= '$_Lapso"."$_Eval' 
 							AND Ano_Escolar='$AnoEscolar'";
-							
+			$_Nota = $mysqli->query($query_Nota);
+			$_row_Nota = $_Nota->fetch_assoc();
+			$_totalRows = $_Nota->num_rows;
+
+			
+			/*
 			$_Nota = mysql_query($query_Nota, $bd) or die(mysql_error());
 			$_row_Nota = mysql_fetch_assoc($_Nota);
-			$_totalRows = mysql_num_rows($_Nota);
+			$_totalRows = mysql_num_rows($_Nota);*/
 			
 			if($_totalRows == 0 and $_Eval=='-30'){
 				//echo $query_Nota.'<br>';
@@ -118,9 +131,14 @@ do {
 								WHERE CodigoAlumno = ". $row_RS_Alumno['CodigoAlumno']." 
 								AND Lapso= '$_Lapso"."-70' 
 								AND Ano_Escolar='$AnoEscolar'";
+				$_Nota = $mysqli->query($query_Nota);
+				$_row_Nota = $_Nota->fetch_assoc();
+				$_totalRows = $_Nota->num_rows;
+
+				/*
 				$_Nota = mysql_query($query_Nota, $bd) or die(mysql_error());
 				$_row_Nota = mysql_fetch_assoc($_Nota);
-				$_totalRows = mysql_num_rows($_Nota);
+				$_totalRows = mysql_num_rows($_Nota);*/
 				}
 			
 
@@ -129,26 +147,26 @@ do {
 				$Matriz[$_Lapso][$_Eval][$fila_x] = Nota($_row_Nota['n'.$fila_x]);
 				
 				if($_row_Nota['n'.$fila_x] > '' and $_row_Nota['n'.$fila_x] <> '*' and $_Eval == 'mp'){
-					$Matriz[$_Lapso][mp] = $_row_Nota['n'.$fila_x];
-					$Matriz[$_Lapso][mp]['n'.$fila_x] = $_row_Nota['n'.$fila_x];
+					$Matriz[$_Lapso]['mp'] = $_row_Nota['n'.$fila_x];
+					$Matriz[$_Lapso]['mp']['n'.$fila_x] = $_row_Nota['n'.$fila_x];
 					}
 					
 							
 				if(  $_row_Nota['n'.$fila_x] > 0 and 
 					 $_row_Nota['n'.$fila_x] <= 20 and 
-					 $Matriz[materia][$fila_x] > "" and 
+					 $Matriz['materia'][$fila_x] > "" and 
 					 $_Eval == '-Def' ) { 
-							$Matriz[$_Lapso][promedio][suma] += $_row_Nota['n'.$fila_x]; 
-							$Matriz[$_Lapso][promedio][cuenta]++;
-							$Matriz[definitiva][cuenta][$fila_x]++;
-		//					$Matriz[definitiva][suma][$fila_x] = $_row_Nota['n'.$fila_x];
+							$Matriz[$_Lapso]['promedio']['suma'] += $_row_Nota['n'.$fila_x]; 
+							$Matriz[$_Lapso]['promedio']['cuenta']++;
+							$Matriz['definitiva']['cuenta'][$fila_x]++;
+		//					$Matriz['definitiva']['suma'][$fila_x] = $_row_Nota['n'.$fila_x];
 					}
 					
 				if($_Eval=='-Def') 
-					$Matriz[$_Lapso][Pos][$fila_x] = Posicion ($database_bd, $bd, 'n'.$fila_x, $_row_Nota['n'.$fila_x], $CodigoCurso, $_Lapso."-Def", $AnoEscolar);
+					$Matriz[$_Lapso]['Pos'][$fila_x] = Posicion ($database_bd, $bd, 'n'.$fila_x, $_row_Nota['n'.$fila_x], $CodigoCurso, $_Lapso."-Def", $AnoEscolar);
 					
 				if($_Eval=='i'){ 
-					$Matriz[definitiva][i][$fila_x]+=$_row_Nota['n'.$fila_x]; }
+					$Matriz['definitiva']['i'][$fila_x]+=$_row_Nota['n'.$fila_x]; }
 			}
 		}
 	}
@@ -159,17 +177,22 @@ do {
 					WHERE CodigoAlumno = '". $row_RS_Alumno['CodigoAlumno']."' 
 					AND Lapso= 'Def' 
 					AND Ano_Escolar='$AnoEscolar'";
+	$_Nota = $mysqli->query($query_Nota);
+	$_row_Nota = $_Nota->fetch_assoc();
+	$_totalRows = $_Nota->num_rows;
+
+	/*
 	$_Nota = mysql_query($query_Nota, $bd) or die(mysql_error());
 	$_row_Nota = mysql_fetch_assoc($_Nota);
-	$_totalRows = mysql_num_rows($_Nota);
+	$_totalRows = mysql_num_rows($_Nota);*/
 	
 	if($_totalRows == 1 and ( date('m') >= '06'))
 	foreach ( $Sec_01_13 as $fila_x) { // Cada Materia
-		$Matriz[definitiva][$fila_x] = $_row_Nota['n'.$fila_x];
+		$Matriz['definitiva'][$fila_x] = $_row_Nota['n'.$fila_x];
 		if( $_row_Nota['n'.$fila_x] > 0 ){
-			$Matriz[definitiva][promedio][suma] += $_row_Nota['n'.$fila_x]; 
-			$Matriz[definitiva][promedio][cuenta]++;}
-			$Matriz[definitiva][Pos][$fila_x] = Posicion ($database_bd, $bd, 'n'.$fila_x, $_row_Nota['n'.$fila_x], $CodigoCurso, "Def", $AnoEscolar);
+			$Matriz['definitiva']['promedio']['suma'] += $_row_Nota['n'.$fila_x]; 
+			$Matriz['definitiva']['promedio']['cuenta']++;}
+			$Matriz['definitiva']['Pos'][$fila_x] = Posicion ($database_bd, $bd, 'n'.$fila_x, $_row_Nota['n'.$fila_x], $CodigoCurso, "Def", $AnoEscolar);
 
 
 	}
@@ -205,10 +228,10 @@ do {
 	// Nota Evaluaciones
 	foreach ( $Sec_01_13 as $fila_x ) { 
 		
-		if($Matriz[materia][$fila_x] > "" or true){
+		if($Matriz['materia'][$fila_x] > "" or true){
 		
 			$pdf->SetFont($tipologia, 'B' , 10);
-			$pdf->Cell(50,$linea, $Matriz[materia][$fila_x] ,1,0,'L'); // Materia
+			$pdf->Cell(50,$linea, $Matriz['materia'][$fila_x] ,1,0,'L'); // Materia
 			foreach (array(1, 2, 3) as $_Lapso) { // 
 				foreach (array('-70','-30','-Def','Pos','i') as $_Eval) {
 					$BConduc = '';
@@ -241,8 +264,8 @@ do {
 			} 
 
 
-			if($Matriz[definitiva][$fila_x]>0)
-				$Definitiva = $Matriz[definitiva][$fila_x];
+			if($Matriz['definitiva'][$fila_x]>0)
+				$Definitiva = $Matriz['definitiva'][$fila_x];
 			else 
 				$Definitiva = '';
 			if($Definitiva>0 and $Definitiva<10) 
@@ -257,11 +280,11 @@ do {
 			// Posicion final
 			$pdf->SetTextColor(0);
 			$pdf->SetFont($tipologia, '' , 10);
-			$pdf->Cell(8,$linea, $Matriz[definitiva][Pos][$fila_x] ,1,0,'C');	
+			$pdf->Cell(8,$linea, $Matriz['definitiva']['Pos'][$fila_x] ,1,0,'C');	
 
 
 			// Inasistencias final
-			$pdf->Cell(8,$linea, $Matriz[definitiva][i][$fila_x] ,1,0,'C'); 
+			$pdf->Cell(8,$linea, $Matriz['definitiva']['i'][$fila_x] ,1,0,'C'); 
 			$pdf->Ln();
 		}
 		else {
@@ -276,19 +299,19 @@ do {
 	// Promedios Lapsos    , '3'
 	$pdf->Cell(50,$linea, 'Promedio' ,1,0,'C');
 	foreach (array('1', '2', '3') as $_Lapso) { 
-			if($Matriz[$_Lapso][promedio][cuenta] > 0){
-				$aux = $Matriz[$_Lapso][promedio][suma].' / ';
-				$aux .= $Matriz[$_Lapso][promedio][cuenta].' = ';
-				$aux .= round($Matriz[$_Lapso][promedio][suma]/$Matriz[$_Lapso][promedio][cuenta],2);}
+			if($Matriz[$_Lapso]['promedio']['cuenta'] > 0){
+				$aux = $Matriz[$_Lapso]['promedio']['suma'].' / ';
+				$aux .= $Matriz[$_Lapso]['promedio']['cuenta'].' = ';
+				$aux .= round($Matriz[$_Lapso]['promedio']['suma']/$Matriz[$_Lapso]['promedio']['cuenta'],2);}
 				else {$aux='';}
 			$pdf->Cell(40,$linea,  $aux ,1,0,'C'); 		
 	}
 	
 	// Promedio final
-	if($Matriz[definitiva][promedio][cuenta] > 0){ 
-		$aux = $Matriz[definitiva][promedio][suma].'/';
-		$aux .= $Matriz[definitiva][promedio][cuenta].'= ';
-		$aux .= round($Matriz[definitiva][promedio][suma] / $Matriz[definitiva][promedio][cuenta],2);}
+	if($Matriz['definitiva']['promedio']['cuenta'] > 0){ 
+		$aux = $Matriz['definitiva']['promedio']['suma'].'/';
+		$aux .= $Matriz['definitiva']['promedio']['cuenta'].'= ';
+		$aux .= round($Matriz['definitiva']['promedio']['suma'] / $Matriz['definitiva']['promedio']['cuenta'],2);}
 	else {$aux='';}
 	$pdf->Cell(24,$linea, $aux ,1,0,'C'); // Promedio final de los tres lapsos		
 
@@ -302,8 +325,14 @@ do {
 					WHERE CodigoAlumno = '".$row_RS_Alumno['CodigoAlumno']."'
 					AND Ano = '$AnoEscolar'
 					AND Tipo_Inscripcion = 'Mp'";	
+	$RS_MatPend = $mysqli->query($sqlMatPend);
+	$row_RS_MatPend = $RS_MatPend->fetch_assoc();/*
+	$Conteo = $RS->num_rows;
+
+	
+	
 	$RS_MatPend = mysql_query($sqlMatPend, $bd) or die(mysql_error());
-	$row_RS_MatPend = mysql_fetch_assoc($RS_MatPend);
+	$row_RS_MatPend = mysql_fetch_assoc($RS_MatPend);*/
 				
 	if($row_RS_MatPend){ 
 		$posX = $pdf->GetX();
@@ -331,8 +360,14 @@ do {
 			
 			$query_RS_CursoAnterior =  "SELECT * FROM CursoMaterias 
 										WHERE CodigoMateriaPendiente = '".$CodigoCurso_aux."'";
+			
+			$RS_CursoAnterior = $mysqli->query($query_RS_CursoAnterior);
+			$row_RS_CursoAnterior = $RS_CursoAnterior->fetch_assoc();/*
+			$Conteo = $RS->num_rows;
+
+		
 			$RS_CursoAnterior = mysql_query($query_RS_CursoAnterior, $bd) or die(mysql_error());
-			$row_RS_CursoAnterior = mysql_fetch_assoc($RS_CursoAnterior);
+			$row_RS_CursoAnterior = mysql_fetch_assoc($RS_CursoAnterior);*/
 			
 		$fila_x = 'Materia0'.$Materias_Cursa[1];
 		$row_RS_Curso[$fila_x];
@@ -369,8 +404,8 @@ do {
 	$pdf->Cell(50);
 	
 	
-	if($Matriz[definitiva][promedio][cuenta] > 0)
-		$aux = round($Matriz[definitiva][promedio][suma] / $Matriz[definitiva][promedio][cuenta],0);
+	if($Matriz['definitiva']['promedio']['cuenta'] > 0)
+		$aux = round($Matriz['definitiva']['promedio']['suma'] / $Matriz['definitiva']['promedio']['cuenta'],0);
 	$pdf->SetFont($tipologia,'',8);	
 	$pdf->Cell(15,$linea, 'Leyenda:' ,0,0,'L'); 	
 	$pdf->Cell(65,$linea, 'I = Inasistencias (horas)' ,0,0,'L'); 		
@@ -414,11 +449,8 @@ do {
 		$pdf->Image($foto,180,8,0,25);}
 
 		
-	} while ($row_RS_Alumno = mysql_fetch_assoc($RS_Alumno)); 
+	} while ($row_RS_Alumno = $RS_Alumno->fetch_assoc()); 
 		
 	
 $pdf->Output();
-mysql_free_result($RS_Alumno);
-
-mysql_free_result($RS_Curso);
 ?>

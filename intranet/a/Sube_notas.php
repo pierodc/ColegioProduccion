@@ -1,8 +1,6 @@
 <?php 
-require_once('../../Connections/bd.php'); 
-require_once('archivo/Variables.php'); 
-require_once('../../inc/rutinas.php'); 
-require_once('../../inc/notas.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 if(isset($_GET['Eliminar']) and isset($_GET['archivo'])){
 	if(file_exists('archivo/nota/'.$_GET['archivo']))
@@ -62,8 +60,8 @@ function MM_showHideLayers() { //v9.0
           <td valign="top" class="NombreCampo">Lapso</td>
           <td valign="top" class="FondoCampo"><select name="Lapso" id="Lapso">
             <option value="0">Auto</option>
-            <option value="1"  selected="selected">1ro</option>
-            <option value="2">2do</option>
+            <option value="1">1ro</option>
+            <option value="2"  selected="selected">2do</option>
             <option value="3" >3er</option>
           </select> <?= $AnoEscolar ?></td>
         </tr>
@@ -101,8 +99,8 @@ B.Cond</label>
  <?php 
  
 $query_RS_Cursos = "SELECT * FROM Curso WHERE SW_activo=1 AND NivelCurso>=31  ORDER BY Curso,Seccion";
-$RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
-$row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
+$RS_Cursos =  $mysqli->query($query_RS_Cursos); // mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
+$row_RS_Cursos = $RS_Cursos->fetch_assoc();
 
 do{
 extract($row_RS_Cursos);	
@@ -112,8 +110,8 @@ echo " var KW_".$CodigoCurso."_Data = new Array();
 	
 
 $query_RS_Materias = "SELECT * FROM CursoMaterias WHERE CodigoMaterias = '".$CodigoMaterias."'"; 
-$RS_Materias = mysql_query($query_RS_Materias, $bd) or die(mysql_error());
-$row_RS_Materias = mysql_fetch_assoc($RS_Materias);
+$RS_Materias = $mysqli->query($query_RS_Materias); // mysql_query($query_RS_Materias, $bd) or die(mysql_error());
+$row_RS_Materias = $RS_Materias->fetch_assoc();
 	
 	echo "KW_".$CodigoCurso."_Data[KW_".$CodigoCurso."_Data.length]=\"00|Todas\"
 	";
@@ -126,7 +124,7 @@ $row_RS_Materias = mysql_fetch_assoc($RS_Materias);
 	}
 echo "
 ";	
-}while ($row_RS_Cursos = mysql_fetch_assoc($RS_Cursos));
+} while ($row_RS_Cursos = $RS_Cursos->fetch_assoc());
  
  ?>
  
@@ -171,7 +169,7 @@ echo "
 	<?php 
 
 function NotaAUX($nota){
-	//echo "array pos $nota ".in_array($nota , array("A","B","C","D","E") )."<br>";
+	echo "array pos $nota ".in_array($nota , array("A","B","C","D","E") )."<br>";
 	if(in_array($nota , array("A","B","C","D","E") )){
 		$nota;
 		//echo " existe $nota ";
@@ -187,16 +185,27 @@ function NotaAUX($nota){
 	return $nota;
 }
 	
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 
 function CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd){ 
+	
+	$hostname_bd = "localhost";
+	$database_bd = "colegio_db";
+	$username_bd = "colegio_colegio";
+	$password_bd = "kepler1971";
+
+
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	
+	
 	echo '<tr><td colspan="20">Ejecutando:  ';
 	echo "NombreArchivo: " . $NombreArchivo."</td></tr>";
 	$lineas = file( $NombreArchivo );
 	//$lineas = explode(';;',$lineas);
 	//$lineas = str_replace(";;", "\r\n", $lineas) ;
 	
+	//var_dump($lineas);
 	
 			$Lapso = substr($NombreArchivo,21,1);
 			//echo "<br>Lapso: ".$Lapso;
@@ -216,7 +225,7 @@ function CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd){
 				foreach ($lineas as $linea_num => $linea) { 
 				?><tr class="FondoCampo" ><?
 				echo "<td>". ++$f ."</td>";
-				//echo "<td>". $linea .PHP_EOL. "</td>";
+				echo "<td>". $linea . PHP_EOL. "</td>";
 				
 					
 					
@@ -322,23 +331,24 @@ function CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd){
 								AND Ano_Escolar = '$AnoEscolar' 
 								AND Lapso='$Lapso'";
 						//echo $sql."  6<br>";
-						$RS = mysql_query($sql, $bd) or die(mysql_error());
-						$row = mysql_fetch_assoc($RS);
+						
+						$RS =  $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
+						$row = $RS->fetch_assoc();
 						if($row['CodigoAlumno']!=''){ // EXISTE REGISTRO -> ACTUALIZAR
 							$sql = "UPDATE Nota 
 									SET $PosicionMateria = '$Nota' 
 									WHERE CodigoAlumno = '$CodigoAlumno' 
 									AND Ano_Escolar = '$AnoEscolar' 
 									AND Lapso='$Lapso'";
-								echo $sql."  7<br>";
+								//echo $sql."  7<br>";
 						}
 						else {
 							$sql = "INSERT INTO Nota 
 									(CodigoAlumno, CodigoCurso, Ano_Escolar, Lapso, $PosicionMateria) VALUES 
 									('$CodigoAlumno','$CodigoCurso','$AnoEscolar','$Lapso','$Nota')";
-								echo $sql."  8<br>";
+								//echo $sql."  8<br>";
 						}
-							$RS = mysql_query($sql, $bd) or die(mysql_error());
+							$RS =  $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
 							//echo '333  <br>';
 							//echo $sql."  9<br>";
 					} // FIN Una materia
@@ -347,7 +357,7 @@ function CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd){
 								WHERE CodigoAlumno = '$CodigoAlumno' 
 								AND Ano_Escolar = '$AnoEscolar' 
 								AND Lapso = '$Lapso'";	
-						$RS = mysql_query($sql, $bd) or die(mysql_error());
+						$RS =  $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
 						//echo $sql."<br>";
 						$sql = "INSERT INTO Nota 
 								(CodigoAlumno, CodigoCurso, Ano_Escolar, Lapso, 
@@ -356,7 +366,7 @@ function CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd){
 								('$CodigoAlumno','$CodigoCurso','$AnoEscolar','$Lapso',
 								'$n01','$n02','$n03','$n04','$n05','$n06','$n07',
 								'$n08','$n09','$n10','$n11','$n12','$n13')";
-						$RS = mysql_query($sql, $bd) or die(mysql_error());
+						$RS =  $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
 						echo "<td>&nbsp;</td><td>$CodigoAlumno</td><td>$Lapso</td>
 								<td>$n01</td><td>$n02</td><td>$n03</td><td>$n04</td><td>$n05</td>
 								<td>$n06</td><td>$n07</td><td>$n08</td><td>$n09</td><td>$n10</td>
@@ -364,12 +374,12 @@ function CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd){
 						
 						}
 						
-						//echo "CalcDefinitivaLapso $Lapso <br>";
+						// echo "CalcDefinitivaLapso $Lapso <br>";
 						CalcDefinitivaLapso($CodigoAlumno, $Lapso, $CodigoCurso, $AnoEscolar, $database_bd, $bd);
 						}
 					
 				echo "</tr>";
-				//echo "<tr><td colspan=9>".$sql."</td></tr>";
+				echo "<tr><td colspan=9>".$sql."</td></tr>";
 						
 						} // FIN foreach Linea
 			
@@ -395,7 +405,7 @@ if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {// and substr($_FILES['u
 	$NombreArchivo = "archivo/nota/20" .$Ano1.'_'.$CodigoCurso.'_'.$Lapso.'_'.$nota . $PosicionMateria.".csv";
 	
     copy($_FILES['userfile']['tmp_name'], $NombreArchivo );
-	//echo "<br>LLama Cargar Notas<br>";
+	echo "<br>LLama Cargar Notas<br>";
 	if($nota > "" and $CodigoCurso > "")
 		CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd);
 	
@@ -408,13 +418,13 @@ if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {// and substr($_FILES['u
 
 <?php 
 	
-if ($gestor = opendir('archivo/nota/.')) { 
-	//echo "Archivos:   <br>";
+if (false and $gestor = opendir('archivo/nota/.') ) { 
+	echo "Archivos:   <br>";
 	while (false !== ($archivo = readdir($gestor))) {
 		 if ($archivo != "." && $archivo != "..") { 
-			//echo ++$k.') Archivo: '.$archivo;
-			//echo "<a href=\"Sube_notas.php?Eliminar=1&archivo=$archivo\"> Eliminar</a>"."\n";
-			//echo "  <br>";
+			echo ++$k.') Archivo: '.$archivo;
+			echo "<a href=\"Sube_notas.php?Eliminar=1&archivo=$archivo\"> Eliminar</a>"."\n";
+			echo "  <br>";
 		 }
 	}
 closedir($gestor);

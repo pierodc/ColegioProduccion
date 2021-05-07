@@ -1,12 +1,7 @@
 <?php
 $MM_authorizedUsers = "99,91,95,90";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
 
 if (isset($_GET['CodigoCurso'])) {
@@ -26,7 +21,7 @@ $Listado = $Curso->ListaCurso();
 
 if($MM_Username == "piero"){
 	echo '<pre>';
-	var_dump($Listado);
+	//var_dump($Listado);
 	echo '</pre>';
 }
 
@@ -247,9 +242,14 @@ while ($row_ = $RS->fetch_assoc()) {
     <?php 
 	 $_sql = "SELECT * FROM ContableMov WHERE CodigoPropietario = ".$row_RS_Alumnos['CodigoAlumno']." AND ReferenciaMesAno = 'Ins ".$Ano1."' AND Descripcion = 'Matrícula' ";
 	 //  echo $_sql;
+	 
+$_RS = $mysqli->query($_sql); //
+$_row_RS = $_RS->fetch_assoc();
+$_totalRows = $_RS->num_rows;
+	/* 
 $_RS = mysql_query($_sql, $bd) or die(mysql_error());
 $_row_RS = mysql_fetch_assoc($_RS);
-$_totalRows = mysql_num_rows($_RS);
+$_totalRows = mysql_num_rows($_RS);*/
 if($_totalRows==0){
 	?>
     <a href="Agrega_Fact_Inscripcion.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno'] ?>" target="_blank">Fac.Ins.</a> <?php } ?><?php echo $row_RS_Alumnos['PrincipalFamilia'] ?><br />
@@ -266,9 +266,13 @@ $_sql = "SELECT * FROM ContableMov
 		   OR Descripcion LIKE 'Sociedad%' 
 		   OR Descripcion LIKE 'Cuaderno%') ";
 //echo $_sql."<br>";
+$_RS = $mysqli->query($_sql); //
+$_row_RS = $_RS->fetch_assoc();
+$_totalRows = $_RS->num_rows;
+	/*
 $_RS = mysql_query($_sql, $bd) or die(mysql_error());
 $_row_RS = mysql_fetch_assoc($_RS);
-$_totalRows = mysql_num_rows($_RS); 
+$_totalRows = mysql_num_rows($_RS); */
 if($_totalRows>0){
 	do{	
 		$desc = substr($_row_RS['Descripcion'],0,5);
@@ -278,7 +282,7 @@ if($_totalRows>0){
 		if($desc=='Ins. ' or $desc=='Ins.D')
 			echo '</span>';
 	
-	} while ($_row_RS = mysql_fetch_assoc($_RS));}
+	} while ($_row_RS = $_RS->fetch_assoc());}
 
 
 
@@ -395,7 +399,7 @@ $Mensualidad++;
 
 if($MontoMes > 1)
 	$Morosidad[$Mensualidad] = $Morosidad[$Mensualidad]+1;
-$MontoDeuda[$Mensualidad] += $MontoMes;
+$MontoDeuda[$Mensualidad] += (float)$MontoMes;
 //}
 
 

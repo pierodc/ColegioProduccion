@@ -1,12 +1,7 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,7 +19,7 @@ $_Mes = $_GET['Mes'];
 $_Ano = $_GET['Ano'];
 $FechaValor = $_GET['Ano'].$_GET['Mes']."01";
 $CodigoAsignacion = $_GET['CodigoAsignacion'];
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 if(isset($_GET['CodigoAlumno'])){
 	$query_RS_Alumno = "SELECT * FROM Alumno, AlumnoXCurso, Curso 
@@ -37,16 +32,24 @@ if(isset($_GET['CodigoAlumno'])){
 
 echo $query_RS_Alumno;
 
+$RS_Alumno = $mysqli->query($query_RS_Alumno); //
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+$totalRows_RS_Alumno = $RS_Alumno->num_rows;
+
+	/*
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 $totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
-
+*/
 // Busca la Aasignacione
 $query_RS_Asignacion = "SELECT * FROM Asignacion 
 						WHERE Codigo = '$CodigoAsignacion'";
-echo $query_RS_Factura.' = '.$totalRows_RS_Factura."<br>";						
+echo $query_RS_Factura.' = '.$totalRows_RS_Factura."<br>";		
+$RS_Asignacion = $mysqli->query($query_RS_Asignacion); //
+$row_RS_Asignacion = $RS_Asignacion->fetch_assoc();
+	/*
 $RS_Asignacion = mysql_query($query_RS_Asignacion, $bd) or die(mysql_error());
-$row_RS_Asignacion = mysql_fetch_assoc($RS_Asignacion);
+$row_RS_Asignacion = mysql_fetch_assoc($RS_Asignacion);*/
 $Descripcion = $row_RS_Asignacion['Descripcion'];
 $Monto = $row_RS_Asignacion['Monto']; 
 $Monto_Dolares = $row_RS_Asignacion['Monto_Dolares']; 	
@@ -56,7 +59,7 @@ if($SWiva == 1)
 
 do{
 	$CodigoAlumno = $row_RS_Alumno['CodigoAlumno'];
-	$FactorDescuento = round( 1-( $row_RS_Alumno['Descuentos'] / 100) , 2);	
+	$FactorDescuento = round( 1-( (float)$row_RS_Alumno['Descuentos'] / 100) , 2);	
 		
 			$ReferenciaMesAno = $_Mes."-".$_Ano;
 			$Referencia = $row_RS_Asignacion['Codigo'];
@@ -66,9 +69,14 @@ do{
 								 WHERE CodigoPropietario = $CodigoAlumno 
 								 AND ReferenciaMesAno = '$ReferenciaMesAno' 
 								 AND Referencia = '$Referencia'"; 
+			$RS_Factura = $mysqli->query($query_RS_Factura); //
+			$row_RS_Factura = $RS_Factura->fetch_assoc();
+			$totalRows_RS_Factura = $RS_Factura->num_rows;
+
+	/*
 			$RS_Factura = mysql_query($query_RS_Factura, $bd) or die(mysql_error());
 			$row_RS_Factura = mysql_fetch_assoc($RS_Factura);
-			$totalRows_RS_Factura = mysql_num_rows($RS_Factura);
+			$totalRows_RS_Factura = mysql_num_rows($RS_Factura);*/
 			echo $query_RS_Factura. ' = ' .$totalRows_RS_Factura."<br>";
 		    
 			
@@ -80,7 +88,8 @@ do{
 				
 				$sql = "";
 				$sql = "INSERT INTO ContableMov 
-				(CodigoPropietario, Fecha, FechaValor, SWValidado, RegistradoPor, Referencia, ReferenciaMesAno, Descripcion, MontoDebe, MontoDebe_Dolares, SWiva, P_IVA, Cambio_Dolar) VALUES ";
+				(CodigoPropietario, Fecha, FechaValor, SWValidado, RegistradoPor, Referencia, ReferenciaMesAno, Descripcion, MontoDebe, MontoDebe_Dolares, SWiva) VALUES ";
+				
 				
 				
 				$sql.= "(  
@@ -98,10 +107,10 @@ do{
 				
 				$Monto_Dolares, 
 				
-				'$SWiva', '$P_IVA' , '$Cambio_Dolar' )";   
+				'$SWiva')";   
 				echo $sql." ( $FactorDescuento )<br><br>";
 				
-				$RS_sql = mysql_query($sql, $bd) or die(mysql_error());
+				$RS_sql = $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
 			}
 			
 			else{
@@ -111,10 +120,8 @@ do{
 		
 	
 
-} while ($row_RS_Alumno = mysql_fetch_assoc($RS_Alumno));
+} while ($row_RS_Alumno = $RS_Alumno->fetch_assoc());
 
-mysql_free_result($RS_Asign_Alum);
-
-mysql_free_result($RS_Factura);
+	
 ?></body>
 </html>

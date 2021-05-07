@@ -1,17 +1,16 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
+$TituloPagina   = "Control Ingresos"; // <title>
+$TituloPantalla = "Control Ingresos"; // Titulo contenido
 
-$TituloPantalla = "Control Ingresos";
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
+header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
+
 
 // Conectar
-$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+//$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 
 // Ejecuta $sql
 if(isset($_GET['CodigoCurso']) and $_GET['CodigoCurso'] > '')
@@ -32,11 +31,16 @@ $sql_Aceptados = "SELECT * FROM Alumno, AlumnoXCurso
 $RS = $mysqli->query($sql_Aceptados);
 
  
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title><?php echo $TituloPantalla; ?></title>
+require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
+?><!doctype html>
+<html lang="es">
+  <head>
+	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
+    <title><?php echo $TituloPag; ?></title>
+</head>
+<body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
 <script type="text/javascript">
 <!--
 function MM_jumpMenu(targ,selObj,restore){ //v3.0
@@ -46,27 +50,8 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 //-->
 </script>
 
-<script src="../../../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-<link href="../../../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<link href="../../../SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
-<link href="../../../estilos.css" rel="stylesheet" type="text/css" />
-<link href="../../../estilos2.css" rel="stylesheet" type="text/css" />
-</head>
-<script type="text/javascript">
-<!--
-function MM_jumpMenu(targ,selObj,restore){ //v3.0
-  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-  if (restore) selObj.selectedIndex=0;
-}
-//-->
-</script>
-<body>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="5" align="center"><?php require_once('../TitAdmin.php'); ?>&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="5" align="center" valign="top"><table width="100%" border="0" cellpadding="5">
+
+    <table width="80%" border="0" cellpadding="5">
       <tr>
         <td colspan="6"><?php 
    $actual = $_GET['CodigoCurso'];
@@ -76,14 +61,14 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
       </tr>
       <tr>
         <td width="3" class="NombreCampo">No</td>
-        <td width="4" class="NombreCampo">&nbsp;</td>
-        <td width="9" class="NombreCampo">Cod</td>
-        <td width="98" colspan="2" class="NombreCampo">Alumno</td>
-        <td width="100" class="NombreCampo">&nbsp;</td>
-        <td class="NombreCampo">Hno</td>
+        <td width="4" class="NombreCampo">Cod</td>
+        <td width="9" class="NombreCampo">Alumno</td>
+        <td width="98" colspan="2" class="NombreCampo">&nbsp;</td>
+        <td width="100" class="NombreCampo">Hno</td>
         <td class="NombreCampo">Ex Alu</td>
+        <!--td class="NombreCampo">&nbsp;</td-->
+        <td align="center" class="NombreCampo">Fecha</td>
         <td align="center" class="NombreCampo">&nbsp;</td>
-        <td align="center" class="NombreCampo">Fecha_Registro</td>
         <td align="center" class="NombreCampo">&nbsp;</td>
         <td align="center" class="NombreCampo">&nbsp;</td>
       </tr>
@@ -146,14 +131,15 @@ $Fecha_Registro_Ante = date("W" , strtotime($row_RS_Alumnos['Fecha_Registro']));
 
      <tr <?php $sw = ListaFondo($sw,$Verde); ?>>
         <td nowrap="nowrap">&nbsp;<?php echo ++$No; ?></td>
-        <td nowrap="nowrap">&nbsp;<?php echo ++$No_Curso; ?></td>
+        <!--td nowrap="nowrap">&nbsp;<?php echo ++$No_Curso; ?></td-->
         <td nowrap="nowrap">
           <?php echo $row_RS_Alumnos['CodigoAlumno']; ?>
         </td>
-        <td nowrap="nowrap"><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" target="_blank"><span class="ListadoNotas"><b>
-          <?php Titulo( $row_RS_Alumnos['Apellidos']. " " .$row_RS_Alumnos['Apellidos2']); ?>
+        <td nowrap="nowrap"><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" target="_blank">
+        <span class="ListadoNotas"><b>
+          <?php echo $Alumno->Apellidos(); ?>
           ,</b> <em>
-          <?php Titulo( $row_RS_Alumnos['Nombres']. " " .$row_RS_Alumnos['Nombres2']) ?>
+          <?php echo $Alumno->Nombres(); ?>
           </em></span></a></td>
         <td nowrap="nowrap"> 
 		  <img src="<?php echo $Alumno->Foto("","h") ?>"   height="40" />
@@ -170,7 +156,7 @@ $Fecha_Registro_Ante = date("W" , strtotime($row_RS_Alumnos['Fecha_Registro']));
 			echo '<span class="SW_Verde">';}
 			echo $row_RS_Alumnos['HijoDeExalumno'].'</span>';
 			 ?></td>
-        <td align="left" nowrap="nowrap"><?php 
+        <!-- td align="left" nowrap="nowrap"><?php 
 		
 $sql_Reinscrito = "SELECT * FROM AlumnoXCurso
 					  WHERE CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'
@@ -183,8 +169,8 @@ if($row_RS = $RS_Reinscrito->fetch_assoc()){
 echo $totalRow_EnCurso;
 
 		
- ?></td>
-        <td align="left" nowrap="nowrap"><?php echo $row_RS_Alumnos['Fecha_Registro'] ?></td>
+ ?></td-->
+        <td align="left" nowrap="nowrap"><?php echo DDMMAAAA($row_RS_Alumnos['Fecha_Registro']) ?></td>
         <td align="left" nowrap="nowrap"><iframe src="Status_iFr.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" width="600" height="40" frameborder="0" scrolling="auto"></iframe></td>
         <td align="right" nowrap="nowrap"><?php 
 
@@ -204,18 +190,10 @@ if($totalRows_Observaciones > 0)
 		?></td>
       </tr>
 <?php }}} ?>
-    </table>     </td>
-  </tr>
-  <tr>
-    <td width="20%" align="center" valign="top">&nbsp;</td>
-    <td width="20%" align="center" valign="top">&nbsp;</td>
-    <td width="20%" align="center" valign="top">&nbsp;</td>
-    <td width="20%" align="center" valign="top">&nbsp;</td>
-    <td width="20%" valign="top"><img src="../../../i/coin_single_gold.png" width="32" height="32" />Pag&oacute;<br />
-    <img src="../../../i/coin_single_silver.png" width="32" height="32" />No ha pagado</td>
-  </tr>
-</table>
-<?php include getenv('DOCUMENT_ROOT')."/inc/Footer_info.php"; ?>
-
+    </table>    
+    
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>
 </body>
 </html>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/AfterHTML.php"); ?>

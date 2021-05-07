@@ -1,0 +1,58 @@
+[04-May-2021 10:56:55 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function Respuesta() in /home/colegio/public_html/intranet/Consulta/iFr_Voto.php:158
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/intranet/Consulta/iFr_Voto.php on line 158
+[04-May-2021 10:57:23 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(28): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(158): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 10:57:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(158): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 10:59:32 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(158): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 10:59:57 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(157): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 11:01:00 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(157): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 11:01:27 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(157): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 11:03:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(157): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 11:03:50 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:44
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(157): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 44
+[04-May-2021 11:04:33 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/colegio/public_html/Models/Connection.php:45
+Stack trace:
+#0 /home/colegio/public_html/Models/Consulta.php(29): Conexion->consultaRetorno_row('SELECT * FROM C...')
+#1 /home/colegio/public_html/intranet/Consulta/iFr_Voto.php(157): Consulta->Respuesta('14', 1)
+#2 {main}
+  thrown in /home/colegio/public_html/Models/Connection.php on line 45

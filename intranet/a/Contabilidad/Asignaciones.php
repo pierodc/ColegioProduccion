@@ -2,27 +2,7 @@
 $MM_authorizedUsers = "91,Contable";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-/**if (isset($_POST)){
-	echo var_dump($_POST);
-		foreach ($_POST as $clave => $valor) {
-			if((substr($clave,0,6)) == 'Codigo'){
-			$clave = substr($clave,7,10);
-			//echo "Clave: $clave; Valor: $valor<br />\n";
-			$sql = "UPDATE Asignacion
-					SET Monto = '$valor'
-					WHERE Codigo = $clave";
-			//echo $sql;	
-	   	    mysql_query($sql, $bd) or die(mysql_error());
-			}
-		}
-	}
-**/
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
@@ -41,8 +21,9 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['CodigoRelacionado'], "int"),
                        GetSQLValueString($_POST['ReferenciaMesAno'], "text"));//ReferenciaMesAno
 echo $insertSQL;
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+  //mysql_select_db($database_bd, $bd);
+	
+  $Result1 = $mysqli->query($insertSQL); // mysql_query($insertSQL, $bd) or die(mysql_error());
 }
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   $updateSQL = sprintf("UPDATE Asignacion SET SWActiva=%s, Orden=%s, Descripcion=%s, NivelCurso=%s, Periodo=%s, Monto=%s, Monto_Dolares=%s, Num_Cuotas=%s, 
@@ -68,8 +49,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 					   
 					   
 echo $updateSQL;
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+  //mysql_select_db($database_bd, $bd);
+  $Result1 = $mysqli->query($updateSQL); // mysql_query($updateSQL, $bd) or die(mysql_error());
 }
 if (isset($_POST["MM_update_Precio"])) {
   $updateSQL = sprintf("UPDATE Asignacion SET Monto=%s WHERE Descripcion=%s",
@@ -77,41 +58,52 @@ if (isset($_POST["MM_update_Precio"])) {
                        GetSQLValueString($_POST['Descripcion'], "text")
 					   );
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+ // mysql_select_db($database_bd, $bd);
+  $Result1 = $mysqli->query($updateSQL); // mysql_query($updateSQL, $bd) or die(mysql_error());
 }
 $add_sql = "";
 if (isset($_GET['Editar']))      { $add_sql = " AND Codigo=".$_GET['Codigo']; }
 
 if (isset($_GET['CodigoCurso'])) { 
 	$query_RS_Cursos = "SELECT * FROM Curso WHERE CodigoCurso = '".$_GET['CodigoCurso']."' ";
-	$RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
-	$row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
+	$RS_Cursos = $mysqli->query($query_RS_Cursos); //
+	$row_RS_Cursos = $RS_Cursos->fetch_assoc();
+	
+	//$RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
+	//$row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
 //echo $query_RS_Cursos;
 	$add_sql = " AND (NivelCurso LIKE '%".$row_RS_Cursos['NivelCurso']."%' OR NivelCurso = '00')"; 
 	}
 
 if (isset($_GET['Descripcion'])) { $add_sql = " AND Descripcion='".$_GET['Descripcion']."'" ; }
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_RS_Asignaciones = "SELECT * FROM Asignacion 
 							WHERE Asignacion.SWActiva = 1 
 							".$add_sql." 
 							ORDER BY Periodo, Orden, NivelCurso, Descripcion "; 
 //echo $query_RS_Asignaciones;
+$RS_Asignaciones = $mysqli->query($query_RS_Asignaciones); //
+$row_RS_Asignaciones = $RS_Asignaciones->fetch_assoc();
+$totalRows_RS_Asignaciones = $RS_Asignaciones->num_rows;
+/*
 $RS_Asignaciones = mysql_query($query_RS_Asignaciones, $bd) or die(mysql_error());
 $row_RS_Asignaciones = mysql_fetch_assoc($RS_Asignaciones);
 $totalRows_RS_Asignaciones = mysql_num_rows($RS_Asignaciones);
-
+*/
 
 $colname_RS_Asignacion = "-1";
 if (isset($_GET['Codigo'])) {
   $colname_RS_Asignacion = $_GET['Codigo'];
 }
 $query_RS_Asignacion = sprintf("SELECT * FROM Asignacion WHERE Codigo = %s", GetSQLValueString($colname_RS_Asignacion, "int"));
+$RS_Asignacion = $mysqli->query($query_RS_Asignacion); //
+$row_RS_Asignacion = $RS_Asignacion->fetch_assoc();
+$totalRows_RS_Asignacion = $RS_Asignacion->num_rows;
+/*
 $RS_Asignacion = mysql_query($query_RS_Asignacion, $bd) or die(mysql_error());
 $row_RS_Asignacion = mysql_fetch_assoc($RS_Asignacion);
 $totalRows_RS_Asignacion = mysql_num_rows($RS_Asignacion);
-
+*/
 
 
 ?>
@@ -189,7 +181,7 @@ a:active {
                         <?php 
 $CodigoCurso = $_GET['CodigoCurso'];			
 $Destino = "Asignaciones.php";		  
-MenuCursos ($CodigoCurso, $Destino ,$database_bd, $bd) ?>&nbsp;
+//MenuCursos ($CodigoCurso, $Destino ,$database_bd, $bd) ?>&nbsp;
                       </td>
                       <td colspan="2">&nbsp;</td>
                       <td>&nbsp;</td>
@@ -245,7 +237,7 @@ MenuCursos ($CodigoCurso, $Destino ,$database_bd, $bd) ?>&nbsp;
                       <td align="right" class="FondoCampo"><?php echo Fnum($row_RS_Asignaciones['Monto_Dolares']); ?></td>
                       <td align="right" class="FondoCampo"><?php 
 					  if ($row_RS_Asignaciones['Monto_Dolares'] > 0 and $row_RS_Asignaciones['Monto'] == 0){
-						    $Monto_aux = round($row_RS_Asignaciones['Monto_Dolares'] * $Cambio_Dolar, 2);
+						    $Monto_aux = round($row_RS_Asignaciones['Monto_Dolares'] * (float)$Cambio_Dolar, 2);
 						  }
 					  else{
 							$Monto_aux = round($row_RS_Asignaciones['Monto'] , 2);
@@ -259,7 +251,7 @@ MenuCursos ($CodigoCurso, $Destino ,$database_bd, $bd) ?>&nbsp;
                     <?php 
 					
 $PeriodoAnte = $row_RS_Asignaciones['Periodo'];		
-$row_RS_Asignaciones = mysql_fetch_assoc($RS_Asignaciones);			
+$row_RS_Asignaciones = $RS_Asignaciones->fetch_assoc();			
 
 if($PeriodoAnte <> $row_RS_Asignaciones['Periodo']) {?>
                     <tr>

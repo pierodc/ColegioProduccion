@@ -1,7 +1,7 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90";
-require_once('../../inc_login_ck.php'); 
-require_once('archivo/Variables.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -20,7 +20,7 @@ require_once('../../inc/rutinas.php');
 $_Mes = $_GET['Mes'];
 $_Ano = $_GET['Ano'];
 $FechaValor = $_GET['Ano'].$_GET['Mes']."01";
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 if(isset($_GET['CodigoAlumno'])){
 	$query_RS_Alumno = "SELECT * FROM Alumno, AlumnoXCurso, Curso 
@@ -32,11 +32,14 @@ if(isset($_GET['CodigoAlumno'])){
 }
 
 echo $query_RS_Alumno;
-
+$RS_Alumno = $mysqli->query($query_RS_Alumno); //
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+$totalRows_RS_Alumno = $RS_Alumno->num_rows;
+/*
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 $totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
-
+*/
 
 do{
 	$CodigoAlumno = $row_RS_Alumno['CodigoAlumno'];
@@ -55,9 +58,15 @@ do{
 										AND AsignacionXAlumno.CodigoAlumno = %s 
 										AND AsignacionXAlumno.CodigoAsignacion = Asignacion.Codigo 
 										ORDER BY Asignacion.Orden, AsignacionXAlumno.Codigo", GetSQLValueString($CodigoAlumno, "int"));
+		$RS_Asign_Alum = $mysqli->query($query_RS_Asign_Alum); //
+		$row_RS_Asign_Alum = $RS_Asign_Alum->fetch_assoc();
+		$totalRows_RS_Asign_Alum = $RS_Asign_Alum->num_rows;
+								
+			/*							
 		$RS_Asign_Alum = mysql_query($query_RS_Asign_Alum, $bd) or die(mysql_error());
 		$row_RS_Asign_Alum = mysql_fetch_assoc($RS_Asign_Alum);
-		$totalRows_RS_Asign_Alum = mysql_num_rows($RS_Asign_Alum);
+		$totalRows_RS_Asign_Alum = mysql_num_rows($RS_Asign_Alum);*/
+		
 		echo "1 ".$query_RS_Asign_Alum.$totalRows_RS_Asign_Alum."<br>";
 		
 		
@@ -83,9 +92,14 @@ do{
 								 WHERE CodigoPropietario = $CodigoAlumno 
 								 AND ReferenciaMesAno = '$ReferenciaMesAno' 
 								 AND Referencia = $Referencia"; 
+			$RS_Factura = $mysqli->query($query_RS_Factura); //
+			$row_RS_Factura = $RS_Factura->fetch_assoc();
+			$totalRows_RS_Factura = $RS_Factura->num_rows;
+					 
+			/*					 
 			$RS_Factura = mysql_query($query_RS_Factura, $bd) or die(mysql_error());
 			$row_RS_Factura = mysql_fetch_assoc($RS_Factura);
-			$totalRows_RS_Factura = mysql_num_rows($RS_Factura);
+			$totalRows_RS_Factura = mysql_num_rows($RS_Factura);*/
 			echo $query_RS_Factura.$totalRows_RS_Factura."<br>";
 		
 			if($totalRows_RS_Factura==0){ // si no existe la asignacion entonces se crea
@@ -130,47 +144,22 @@ do{
 				$add_sql
 				ORDER BY Asignacion.Orden, AsignacionXAlumno.Codigo )";   
 				echo $sql;
-				$RS_sql = mysql_query($sql, $bd) or die(mysql_error());
+				
+				$RS_sql = $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
 			}
 			
 			else{
 				echo "existe";
 			}
 		
-		} while ($row_RS_Asign_Alum = mysql_fetch_assoc($RS_Asign_Alum)); 
+		} while ($row_RS_Asign_Alum = $RS_Asign_Alum->fetch_assoc()); 
 		
-		echo $_SWAgostoFraccionado*$MontoFraccMensualidad; 
+	
 		
-		/*
-		if($_SWAgostoFraccionado!=0 and $_Mes!='09'){
-		
-			// Busca si existe la fraccion de agosto de la mensualidad
-			$query_RS_Factura = "SELECT * FROM ContableMov 
-									WHERE CodigoPropietario = $CodigoAlumno 
-									AND ReferenciaMesAno = '$ReferenciaMesAno' 
-									AND Referencia = 'FrA'"; //echo $query_RS_Factura;
-			$RS_Factura = mysql_query($query_RS_Factura, $bd) or die(mysql_error());
-			$row_RS_Factura = mysql_fetch_assoc($RS_Factura);
-			$totalRows_RS_Factura = mysql_num_rows($RS_Factura);
-		
-			if($totalRows_RS_Factura==0 and $_SWAgostoFraccionado!=0 and $_Mes!='09'){
-				// Agrega fraccion de AGOSTO
-				echo "generar";
-				$MontoFraccMensualidad = round ($MontoMensualidad/10 , 2);
-				$sql = "";
-				$sql = "INSERT INTO ContableMov (CodigoPropietario, Fecha, FechaValor, SWValidado, RegistradoPor, Referencia, ReferenciaMesAno, Descripcion, MontoDebe) ";
-				$sql.= "VALUES ($CodigoAlumno, '$FechaValor', '$FechaValor', 1, '$MM_Username', ";
-				$sql.= "'FrA' , '".$_Mes."-".$_Ano."', CONCAT( 'Fraccion de Agosto', ' ".$_Mes."-".$_Ano."')  , '$MontoFraccMensualidad' )"; //echo '<br><br>'.$sql;
-				$RS_sql = mysql_query($sql, $bd) or die(mysql_error());
-			}
-		}
-		*/
 	} //	if( !($Mes == '08' and $_SWAgostoFraccionado) ) {
 
-} while ($row_RS_Alumno = mysql_fetch_assoc($RS_Alumno));
+} while ($row_RS_Alumno = $RS_Alumno->fetch_assoc());
 
-mysql_free_result($RS_Asign_Alum);
-
-mysql_free_result($RS_Factura);
+	
 ?></body>
 </html>

@@ -1,11 +1,10 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+if (!isset($_GET['Status_Proceso_Ins'])) {
+	$SW_omite_trace = false;
+}
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 
 if(isset($_GET['Status_Proceso_Ins'])){
 	
@@ -35,7 +34,7 @@ $sql = "SELECT * FROM AlumnoXCurso
 $RS = $mysqli->query($sql);
 $row = $RS->fetch_assoc();
 
-
+echo "{".$row['Status']."}";
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -90,85 +89,17 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
    <option value="Status_iFr.php?CodigoAlumno=<?php echo $_GET['CodigoAlumno'] ?>&Status_Proceso_Ins="></option>
    
 <?php 
-
-$Fechas = array("2015-02-24",
-				"2015-02-25",
-				"2015-02-26",
-				"2015-03-03",
-				"2015-03-04",
-				
-				"2015-03-05 2:00pm 1er grado",
-				"2015-03-10 2:00pm 1er grado",
-				
-				
-				"2015-03-04 8:40am Preparatorio",
-				"2015-03-05 8:40am Preparatorio",
-				
-				"2015-03-16 8:40am III Grupo",
-				"2015-03-18 8:40am III Grupo",
-				
-				
-				"2015-03-02 7:30am II Grupo",
-				"2015-03-03 7:30am II Grupo",
-				"2015-03-09 7:30am II Grupo",
-				"2015-03-10 7:30am II Grupo",
-
-				"2015-03-06 7:30am I Grupo",
-				"2015-03-11 7:30am I Grupo",
-				"2015-03-12 7:30am I Grupo",
-				
-				"2015-04-14 7:30am",
-				"2015-04-14 2:00pm",
-				
-				"2015-04-15 8:00am",
-				"2015-04-15 2:00pm",
-				
-				"2015-04-16 7:30am",
-				"2015-04-16 2:00pm"
-				
-				
-				
-				
-				
-				);  
-				
-/*
-
-Preparatorio: 04-03-15   Hora 8:40 am
-              05-03-15   Hora 8:40 am
-
-III Grupo: 16-03-15    Hora 8:40 am
-           18-03-15    Hora 8:40 am
-
-II Grupo:  02-03-15    Hora 7:30 am
-           03-03-15    Hora 7:30 am
-           09-03-15    Hora 7:30 am
-           10-03-15    Hora 7:30 am
-
-I Grupo:   06-03-15    Hora 7:30 am
-           11-03-15    Hora 7:30 am
-           12-03-15    Hora 7:30 am
-
-*/				
-
-$Fechas = file('archivo/Fechas.php', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-//foreach ($lineas as $num_linea => $linea) {
-//	echo $linea."\r\n";
-//}
-
-
-				
-foreach($Fechas as $Fecha){
-?>   
-   
-    <option value="Status_iFr.php?CodigoAlumno=<?php echo $_GET['CodigoAlumno'] ?>&Status_Proceso_Ins=Cita:<?php echo $Fecha ?>" <?php
-				 if($row['Status_Proceso_Ins'] == "Cita:".$Fecha) echo ' selected="selected"'; ?>>Cita: <?php echo $Fecha ?></option>
-   
+$Fechas = file('archivo/Fechas.php', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);			
+foreach($Fechas as $Fecha){ ?>   
+<option value="Status_iFr.php?CodigoAlumno=<?php echo $_GET['CodigoAlumno'] ?>&Status_Proceso_Ins=Cita:<?php echo $Fecha ?>" <?php
+if($row['Status_Proceso_Ins'] == "Cita:".$Fecha) echo ' selected="selected"'; ?>>Cita: <?php echo $Fecha ?></option>
 <?php } ?>   
    
-   <option value="Status_iFr.php?CodigoAlumno=<?php echo $_GET['CodigoAlumno'] ?>&Status_Proceso_Ins="></option>
    
-    <option value="Status_iFr.php?CodigoAlumno=<?php echo $_GET['CodigoAlumno'] ?>&Status_Proceso_Ins=Aceptado" <?php
+   
+<option value="Status_iFr.php?CodigoAlumno=<?php echo $_GET['CodigoAlumno'] ?>&Status_Proceso_Ins="></option>
+   
+<option value="Status_iFr.php?CodigoAlumno=<?php echo $_GET['CodigoAlumno'] ?>&Status_Proceso_Ins=Aceptado" <?php
 				 if($row['Status_Proceso_Ins'] == "Aceptado") echo ' selected="selected"'; ?>>Aceptado <?php echo DDMMAAAA($row['Fecha_Aceptado']); echo " -> ".Dias_Dif ($row['Fecha_Aceptado'] , date('Y-m-d')); ?></option>
    
                  

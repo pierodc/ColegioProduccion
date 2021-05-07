@@ -116,6 +116,9 @@ $MM_UserGroup  = $_COOKIE['MM_UserGroup'];
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cursos<strong class="caret"></strong></a>
               <ul class="dropdown-menu">
                 <li>
+                  <a href="<?php echo $URLadmin ?>Curso/index.php">Lista Curso</a>
+                </li>
+                <li>
                   <a href="<?php echo $URLadmin ?>Academico/Curso_Materias.php">Curso_Materias</a>
                 </li>
                

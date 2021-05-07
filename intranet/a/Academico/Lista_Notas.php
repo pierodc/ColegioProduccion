@@ -1,13 +1,8 @@
 <?php
 $MM_authorizedUsers = "91,95,secreAcad,AsistDireccion,ce";
-//echo $MM_authorizedUsers;
-require_once('../../../inc_login_ck.php'); 
-
-require_once('../../../Connections/bd.php'); 
-require_once('../../../inc/rutinas.php'); 
-require_once('../archivo/Variables.php'); 
-
-require_once('../../../inc/notas.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
 
 
 $colname_RS_Curso = "0";

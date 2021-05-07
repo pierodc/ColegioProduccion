@@ -2,7 +2,7 @@
 // CAMBIO DOLAR
 $Cambio_Dolar = "NO USAR / ACTUALIZAR EN EDO DE CUENTA ALUMNO";
 $Cambio_Dolar_Forzado = "";
-$Cambio_Paralelo = "320000";
+$Cambio_Paralelo = "2874000";
 // Datos Colegio
 $Colegio_Nombre = "U.E.P. Colegio San Francisco de Asís";
 $Colegio_Codigo = "S0934D1507";
@@ -13,8 +13,8 @@ $Colegio_Dtto_Escolar = "7";
 $Colegio_Ent_Federal = "Estado Miranda";
 $Colegio_Zona_Educativa = "Miranda";
 // Datos Director
-$Director_Nombre = "CARMEN FIGUERA";
-$Director_CI = "V 14612085";
+$Director_Nombre = "MARIANELLA ZAMBRANO";
+$Director_CI = "V 4587661";
 // Datos Prof Revisor
 $Prof_Revisor_Nombre = "ANGELA REALE";
 $Prof_Revisor_CI = "V 5220494";
@@ -36,38 +36,39 @@ $Fecha_Resumen_Final_Regular = "Julio 2020";
 $Fecha_Resumen_Final_Revision = "Julio 2020";
 $Fecha_Remision_Revision = "30/09/2020";
 $Fecha_Remision = "28/07/2020";
+$Fecha_Nota_Certificada = "31/07/2019";
 $Fecha_Asamblea_1ra = "17 de Octubre de 2019";
 $Fecha_Asamblea_2da = "17 de Octubre de 2019";
 $Fecha_Fin_Ano_Escolar = "15-09-2015";
 $Fecha_Inicio_Solicitud_Cupo = "2015-01-18";
 // Variables Año
-$AnoEscolarAnteAnte = "2017-2018";
-$AnoEscolarAnte = "2018-2019";
-$AnoEscolar = "2019-2020";
-$AnoEscolarProx = "2020-2021";
+$AnoEscolarAnteAnte = "2018-2019";
+$AnoEscolarAnte = "2019-2020";
+$AnoEscolar = "2020-2021";
+$AnoEscolarProx = "2021-2022";
 $SW_Reinscripciones_Abiertas = "1";
 $SW_Inscripciones_Abiertas = "1";
 $Costo_Proceso_Sol_Cupo = "5";
 $Costo_Dolares_Proceso_Sol_Cupo = "5";
 $Costo_Reserva_Cupo = "";
 $Costo_Cuota_Familia = "";
-$Ano1 = "19";
-$Ano2 = "20";
+$Ano1 = "20";
+$Ano2 = "21";
 $Ano1prox = "2020";
 $Ano2prox = "2021";
-$AnoInscribiendo = "2020";
+$AnoInscribiendo = "2021";
 // Variables Administración
 $MontoParaSolvencia = "10000000";
-$MesAnoParaSolvencia = "08-20";
+$MesAnoParaSolvencia = "04-21";
 $FechaObjAntiguedad = "2019-12-31";
 $FechaObjAntiguedadVacacional = "2020-09-16";
-$SueldoMinimoMensual = "4500";
+$SueldoMinimoMensual = "1200000";
 $BsHrProf = "559.39";
 $BsAnoAntiguedad = "10";
 $BsBeneficioAdicional = "7200";
 $UnidadTributaria = "1";
 $CT_BonoAdicional = "";
-$CT_Mensual = "400000";
+$CT_Mensual = "1200000";
 $CT_PorcentajeDia = "";
 $CT_DiasMes = "30";
 $CT_HorasXDia = "8";
@@ -87,6 +88,6 @@ $Mes_1er_momento = "Octubre";
 $Mes_2do_momento = "Diciembre";
 $Mes_3er_momento = "Enero";
 $Mes_4to_momento = "Junio";
-$Lapso_Actual = "3";
+$Lapso_Actual = "2";
 
 ?>

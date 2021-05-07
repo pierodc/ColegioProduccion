@@ -3,7 +3,6 @@
 //EXIT;
 //var_dump($POST);
 $MM_authorizedUsers = "99,91,95,90,Contable";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 
@@ -148,17 +147,6 @@ if ($CodidoBuscando > 0){
 	$row_RS_sql = $RS_sql->fetch_assoc();
 	header("Location: ".$_SERVER['PHP_SELF']."?CodigoPropietario=".$row_RS_sql['CodigoClave']); 
 }
-
-
-
-// Apuntador misma pagina
-/*
-$editFormAction = $_SERVER['PHP_SELF'];
-if (isset($_SERVER['QUERY_STRING'])) {
-  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']); 
-}
-*/
-
 
 
 
@@ -392,7 +380,7 @@ if (isset($_POST['AgregaFactura'])) {
 		if ($_POST['ReferenciaMesAno'] > "0")
 			$ReferenciaMesAno = $_POST['ReferenciaMesAno'];
 		else	
-			$ReferenciaMesAno = "09-19";
+			$ReferenciaMesAno = "09-".date('y');
 		
 		$Referencia = '0';
 		$SWiva = $_POST['SWiva'];
@@ -433,7 +421,7 @@ if (isset($_POST['AgregaFactura'])) {
 		elseif ($row_RS_sql['MesAno'] > "")	
 			$ReferenciaMesAno = $row_RS_sql['MesAno'];
 		else	
-			$ReferenciaMesAno = "09-19";
+			$ReferenciaMesAno = "09-".date('y');
 	
 		
 		$UltimoCodigoAsignacion3 = $_POST['CodigoAsignacion3'];

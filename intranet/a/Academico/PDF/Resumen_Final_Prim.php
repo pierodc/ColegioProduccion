@@ -213,9 +213,9 @@ for ($i=1 ; $i<=20 ; $i++){
 	
 	
 	$sql="SELECT * FROM Nota 
-	WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
-	AND Ano_Escolar = '".$AnoEscolar."' 
-	AND Lapso='Def' ";  
+			WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
+			AND Ano_Escolar = '".$AnoEscolar."' 
+			AND Lapso='Def_Ministerio' ";  
 	$RS_notas = mysql_query($sql, $bd) or die(mysql_error());
 	$row_notas = mysql_fetch_assoc($RS_notas);
 
@@ -253,7 +253,10 @@ for ($i=1 ; $i<=20 ; $i++){
 	$pdf->Cell(10 , $Ln , substr( $row_RS_Alumnos['FechaNac'] , 0,4) , $borde , 0 , 'C', FaltaDato($CodigoAlumno,substr( $row_RS_Alumnos['FechaNac'] , 8,2))); 
 
 
-$query_RS_Nota_Al = "SELECT * FROM Nota WHERE CodigoAlumno = '". $row_RS_Alumnos['CodigoAlumno']."' AND Lapso= 'Def' AND Ano_Escolar='".$AnoEscolar."'";
+$query_RS_Nota_Al = "SELECT * FROM Nota 
+					WHERE CodigoAlumno = '". $row_RS_Alumnos['CodigoAlumno']."' 
+					AND Lapso= 'Def_Ministerio' 
+					AND Ano_Escolar='".$AnoEscolar."'";
 $RS_Nota_Al = mysql_query($query_RS_Nota_Al, $bd) or die(mysql_error());
 $row_RS_Nota_Al = mysql_fetch_assoc($RS_Nota_Al);
 //echo $query_RS_Nota_Al;

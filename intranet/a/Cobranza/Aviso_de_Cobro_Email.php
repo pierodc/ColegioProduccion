@@ -41,6 +41,7 @@ if(isset($_GET['Email'])){
 			$cabeceras = 'MIME-Version: 1.0' . "\r\n";
 			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 			$cabeceras .= 'From: Colegio San Francisco de A. <caja@sanfrancisco.e12.ve>' . "\r\n";
+			//$cabeceras .= 'From: Colegio San Francisco de A. <caja@colegiosanfrancisco.com>' . "\r\n";
 			$cabeceras .= 'Cco: Giampiero Di Campo <piero@sanfrancisco.e12.ve>' . "\r\n";
 				
 			$query_RS_Repre = "SELECT * FROM RepresentanteXAlumno, Representante 

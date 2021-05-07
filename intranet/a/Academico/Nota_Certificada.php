@@ -1,13 +1,7 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcadXXX,AsistDireccion,admin,secreBach";
-//$MM_authorizedUsers = "91";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php');
 
 header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
 header("Pragma: no-cache"); //HTTP 1.0  
@@ -83,9 +77,11 @@ if(isset($_POST['CambiaAlumno'])){
 if($_CodigoAlumno > 1){
 	$query_RS_Alumno = "SELECT * FROM Alumno 
 						WHERE CodigoAlumno = '$_CodigoAlumno' ";
-	
+	$RS = $mysqli->query($query_RS_Alumno); //
+	$row = $RS->fetch_assoc();
+	/*
 	$RS = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
-	$row = mysql_fetch_assoc($RS);
+	$row = mysql_fetch_assoc($RS);*/
 	extract($row);	
 
 

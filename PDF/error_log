@@ -1191,3 +1191,251 @@
 [14-Mar-2020 21:42:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/PDF/Horario.php on line 73
 [14-Mar-2020 21:42:25 America/Caracas] PHP Warning:  extract() expects parameter 1 to be array, boolean given in /home/colegio/public_html/PDF/Horario.php on line 96
 [14-Mar-2020 21:42:25 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/PDF/Horario.php:73) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[16-Mar-2021 12:06:22 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/colegio/public_html/Connections/bd.php:12
+Stack trace:
+#0 /home/colegio/public_html/PDF/Horario.php(2): require_once()
+#1 {main}
+  thrown in /home/colegio/public_html/Connections/bd.php on line 12
+[16-Mar-2021 18:41:20 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[16-Mar-2021 18:41:20 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[17-Mar-2021 16:12:01 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[17-Mar-2021 16:12:01 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[17-Mar-2021 16:12:06 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[17-Mar-2021 16:12:06 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[18-Mar-2021 21:55:11 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[18-Mar-2021 21:55:11 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[21-Mar-2021 11:25:07 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[21-Mar-2021 11:25:07 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[21-Mar-2021 11:53:19 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[21-Mar-2021 11:53:19 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[21-Mar-2021 12:39:04 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[21-Mar-2021 12:39:04 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[21-Mar-2021 19:40:11 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[21-Mar-2021 19:40:11 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[21-Mar-2021 21:25:04 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[21-Mar-2021 21:25:04 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[22-Mar-2021 10:04:16 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[22-Mar-2021 10:04:16 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[22-Mar-2021 13:53:23 America/Caracas] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/colegio/public_html/inc/fpdf.php on line 12
+[22-Mar-2021 13:53:23 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[25-Mar-2021 06:46:38 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[27-Mar-2021 00:31:33 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[27-Mar-2021 15:38:59 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[28-Mar-2021 03:06:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[28-Mar-2021 14:32:08 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[28-Mar-2021 16:46:19 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[28-Mar-2021 17:41:08 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[28-Mar-2021 18:57:28 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[29-Mar-2021 07:08:59 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[29-Mar-2021 09:35:38 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[30-Mar-2021 04:35:45 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[30-Mar-2021 09:26:36 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[30-Mar-2021 19:17:28 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[31-Mar-2021 21:38:55 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[31-Mar-2021 22:05:32 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[02-Apr-2021 09:28:39 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[02-Apr-2021 20:34:34 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[04-Apr-2021 10:47:47 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[05-Apr-2021 03:41:34 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[05-Apr-2021 08:33:20 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[05-Apr-2021 13:55:55 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[05-Apr-2021 20:36:45 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[06-Apr-2021 13:47:56 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[06-Apr-2021 23:23:20 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[07-Apr-2021 02:12:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[08-Apr-2021 04:01:56 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[09-Apr-2021 07:25:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[09-Apr-2021 09:17:17 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:18 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[10-Apr-2021 02:33:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[11-Apr-2021 11:29:19 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[17-Apr-2021 20:03:29 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[19-Apr-2021 13:02:39 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[19-Apr-2021 16:14:03 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[23-Apr-2021 00:54:39 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[27-Apr-2021 13:32:49 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[04-May-2021 19:44:17 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[05-May-2021 17:49:41 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8
+[06-May-2021 14:35:34 America/Caracas] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/colegio/public_html/PDF/Horario.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/colegio/public_html/PDF/Horario.php on line 8

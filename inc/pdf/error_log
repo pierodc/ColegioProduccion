@@ -1,0 +1,9 @@
+[10-Oct-2020 01:56:41 America/Caracas] PHP Fatal error:  Call to a member function Output() on null in /home/colegio/public_html/inc/pdf/Curso.php on line 42
+[10-Oct-2020 01:57:54 America/Caracas] PHP Fatal error:  Class 'RPDF' not found in /home/colegio/public_html/inc/pdf/Curso.php on line 12
+[10-Oct-2020 01:58:11 America/Caracas] PHP Fatal error:  Class 'FPDF' not found in /home/colegio/public_html/inc/pdf/Curso.php on line 12
+[10-Oct-2020 01:58:37 America/Caracas] PHP Warning:  require_once(../../../inc/fpdf.php): failed to open stream: No such file or directory in /home/colegio/public_html/inc/pdf/Curso.php on line 3
+[10-Oct-2020 01:58:37 America/Caracas] PHP Fatal error:  require_once(): Failed opening required '../../../inc/fpdf.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/colegio/public_html/inc/pdf/Curso.php on line 3
+[10-Oct-2020 02:00:11 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/pdf/Curso.php:16) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[10-Oct-2020 02:00:47 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/pdf/Curso.php:16) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[10-Oct-2020 02:00:49 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/pdf/Curso.php:16) in /home/colegio/public_html/inc/fpdf.php on line 1017
+[10-Oct-2020 02:01:01 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/colegio/public_html/inc/pdf/Curso.php:16) in /home/colegio/public_html/inc/fpdf.php on line 1017

@@ -55,19 +55,6 @@ tr.seleccionado {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hover:hover {	background-color: hsla(57,100%,93%,0.76);
 }
 
@@ -132,6 +119,19 @@ tr.seleccionado {
 
 .ancho{
 	 width: 95%;
-	
 }
 
+input[type=text] {
+
+	font-size:12px; 
+	padding:3px; 
+	border-radius:3px; 
+	border-style:inset; 
+	border-color:#e3e3e3; 
+	border-width:0px; 
+	box-shadow: 1px 1px 5px 0px rgba(42,42,42,.50); 
+
+}
+input[type=text]:focus {
+  background-color: lightblue;
+}

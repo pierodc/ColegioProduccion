@@ -252,9 +252,9 @@ for ($i=1 ; $i<=20 ; $i++){
 	
 	
 	$sql="SELECT * FROM Nota 
-	WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
-	AND Ano_Escolar = '".$AnoEscolar."' 
-	AND Lapso='Def' ";  
+			WHERE CodigoAlumno='".$row_RS_Alumnos['CodigoAlumno']."' 
+			AND Ano_Escolar = '".$AnoEscolar."' 
+			AND Lapso='Def_Ministerio' ";  
 	$RS_notas = mysql_query($sql, $bd) or die(mysql_error());
 	$row_notas = mysql_fetch_assoc($RS_notas);
 

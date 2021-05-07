@@ -3,7 +3,7 @@ $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 $ContableMov = new ContableMov($CodigoAlumno=0);
-
+$Consulta = new Consulta();
 
 
 
@@ -108,6 +108,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 </script>
 
     
+  <meta charset="ISO-8859-1">
 </head>
 <body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/_Template/NavBar.php');  ?>
@@ -348,15 +349,19 @@ if($Pendiente['resumen']['MontoDebe_Dolares'] > 20){
           <option value="../Constancia.php?CodigoClave=<?php echo $row_RS_Alumnos['CodigoClave']; ?>&ConstanciaDe=Retiro">Retiro</option>
           </select>
         </form>      
-      <?php 
+      <p>
+          <?php 
 	}
 	?>
-      <br />
-      <a href="../PlanillaInscripcion_pdf.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_blank"> Planilla Inscr</a><br /></td>
+          <br />
+          <a href="../PlanillaInscripcion_pdf.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_blank"> Planilla Inscr</a></p>
+      </td>
     <td align="center" nowrap="nowrap">
   <a href="Cobranza/Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" target="_self"><img src="../../i/cash_register.png" width="32" height="32" alt=""/>
    
     <img src="<?php echo $Alumno->Foto("","h") ?>" width="100" height="100"  border="0" /> </a>
+     <p>Consulta: <? echo $Consulta->Respuesta($row_RS_Alumnos['CodigoAlumno'] , 1) ?>
+      </p>
       <!--a href="Sube_Foto.php?Tipo=Alumno&Codigo=<?php //echo $row_RS_Alumnos['CodigoAlumno'] ?>" target="_blank"><br />
       Subir Foto</a--></td><?php
 	 
@@ -408,6 +413,36 @@ if($Pendiente['resumen']['MontoDebe_Dolares'] > 20){
 			?>
             <a href="Procesa.php?ActualizaFoto=1&Foto=<?php echo $row_RS_Alumnos['CodigoAlumno'].$id.'.jpg' ?>" target="_blank"><?php echo $Actualizar ?></a>
 			<?php } ?>
+           <br>
+           <?
+		
+		
+		if($id == "p")
+			$nexo = "Padre";
+		elseif($id == "m")
+			$nexo = "Madre";
+		else
+			$nexo = "";
+		$query_RS_Repre = "SELECT * FROM RepresentanteXAlumno , Representante 
+									WHERE RepresentanteXAlumno.CodigoRepresentante = Representante.CodigoRepresentante
+									AND RepresentanteXAlumno.Nexo = '$nexo'
+									AND RepresentanteXAlumno.CodigoAlumno = '".$row_RS_Alumnos['CodigoAlumno']."'";
+		//echo '<br>'.$query_RS_Repre.'<br>';
+		$RS_Repre = $mysqli->query($query_RS_Repre); //
+		$row_RS_Repre = $RS_Repre->fetch_assoc();
+
+		$Cel = "58" . substr(TelLimpia($row_RS_Repre['TelCel']) , 1 , 10);
+		echo ' '.substr($value,0,1);
+		echo "<a href='https://api.whatsapp.com/send/?phone=$Cel&text=Estimado+Sr.+Representante+Le+contacto+de+la+direccin+para+enviarle+el +link+de+la+circular+que+no+le+llego+por+el+email+" . $row_RS_Repre['Email1'].
+			"+puede+ingresar+por+el+siguiente+enlace".
+			"+https://colegiosanfrancisco.com/intranet/Consulta/Consulta.php?CodigoAlumno=".$Alumno->CodigoClave()."' target='_blank'>";
+		echo TelLimpia($row_RS_Repre['TelCel']);
+		echo '</a>';
+		echo "<br>" . $row_RS_Repre['Email1'];
+
+			
+			
+			?>
             </td><?php 
 		
     

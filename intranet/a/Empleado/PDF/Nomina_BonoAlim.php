@@ -46,7 +46,7 @@ function Header()
 	$this->Cell(250,$linea, $titulo ,0,1,'R'); 
 	
 	$this->SetFont('Times','',10);
-	$this->Cell(250,$linea, 'Bonificación en base a la U.T. de Bs.'.$UnidadTributaria.' decretada en la Gaceta Ofici. No.'.$GacetaNumUnidadTributaria.' de Fecha '.$GacetaFechaUnidadTributaria ." ( CT/Día = Bs." . Fnum(round( $UnidadTributaria * $CT_PorcentajeDia/100 , 2)) . " )" ,0,0,'R'); 
+	$this->Cell(250,$linea, 'Bonificación en base a la U.T. de Bs.'. (float)$UnidadTributaria.' decretada en la Gaceta Ofici. No.'.$GacetaNumUnidadTributaria.' de Fecha '.$GacetaFechaUnidadTributaria ." ( CT/Día = Bs." . Fnum(round( (float)$UnidadTributaria * (float)$CT_PorcentajeDia/100 , 2)) . " )" ,0,0,'R'); 
 	
 		
 	$this->Ln(7);
@@ -154,7 +154,7 @@ do {
 	$DiasXSemana = strlen($DiasSemana);
 	$DiasInasistencia = $row_RS_Empleados['DiasInasistencia'];
 	
-	$CestaTicket_Adicional = $row_RS_Empleados['SW_cestaT_Adicional']*$CT_BonoAdicional*$DiasXSemana/5;
+	$CestaTicket_Adicional = (float)$row_RS_Empleados['SW_cestaT_Adicional'] * (float)$CT_BonoAdicional * (float)$DiasXSemana/5;
 	if($DiasInasistencia > 0 and $CestaTicket_Adicional > 0)
 		$CestaTicket_Adicional = $CestaTicket_Adicional * (21-$DiasInasistencia)/21;
 	

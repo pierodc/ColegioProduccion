@@ -26,6 +26,7 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Inventario.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/ShopCart.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Banco.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Observaciones.php");
+require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Consulta.php");
 
 
 
@@ -45,6 +46,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
 
 
 ?>

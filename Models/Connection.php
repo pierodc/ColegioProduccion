@@ -41,6 +41,7 @@ class Conexion{
 
 	function consultaRetorno_row($sql){
 		$datos = $this->con->query($sql);
+		//echo $sql;
 		$row = $datos->fetch_assoc();
 		return $row;
 		}

@@ -1,8 +1,7 @@
 <?php 
-require_once('../../../Connections/bd.php'); 
-require_once('../archivo/Variables.php'); 
-require_once('../../../inc/rutinas.php'); 
-require_once('../../../inc/fpdf.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 $mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 
@@ -30,8 +29,8 @@ $pdf->AddPage();
 $pdf->Image('../../../img/solcolegio.jpg', 10, 5, 0, 16);
 $pdf->Image('../../../img/NombreCol.jpg' , 30, 5, 0, 12);
 $pdf->SetY( 22 );
-$pdf->Cell(50 , $Ln , $TituloPag , 0 , 1 , 'L'); 
 $pdf->SetFont('Arial','',10);
+$pdf->Cell(50 , $Ln , $TituloPag , 0 , 1 , 'L'); 
 $pdf->SetY( 30 );
 
 $NivelMencionAnte = $row_Curso['NivelMencion'];
@@ -283,14 +282,14 @@ while ($row_Curso = $RS->fetch_assoc()) { // Para cada Curso
 	
 		$total_Nuevos_Colegio += $total_Curso_Prox[$CodigoCurso]-$total_Alumnos_Ante[$CodigoCurso];
 		$total_Reinscritos_Colegio += $total_Curso_Reins[$CodigoCurso];
-		$total[$row_Curso['NivelCurso']][AlumnosNuevos] += $total_Curso_Prox[$CodigoCurso] - $total_Alumnos_Ante[$CodigoCurso];
-		$total[$row_Curso['NivelCurso']][AlumnosReinscritos] += $total_Alumnos_Ante[$CodigoCurso];
-		$total[$row_Curso['NivelCurso']][NombreNivel] = $NombreNivel;
-		$total[$row_Curso['NivelCurso']][AlumnosActuales] += $total_Curso[$CodigoCurso];
-		$total[$row_Curso['NivelCurso']][Capacidad] += $Capacidad_Max;
-		$total[$row_Curso['NivelCurso']][SeRetira] += $total_SeRetira[$CodigoCurso];
+		$total[$row_Curso['NivelCurso']]['AlumnosNuevos'] += $total_Curso_Prox[$CodigoCurso] - $total_Alumnos_Ante[$CodigoCurso];
+		$total[$row_Curso['NivelCurso']]['AlumnosReinscritos'] += $total_Alumnos_Ante[$CodigoCurso];
+		$total[$row_Curso['NivelCurso']]['NombreNivel'] = $NombreNivel;
+		$total[$row_Curso['NivelCurso']]['AlumnosActuales'] += $total_Curso[$CodigoCurso];
+		$total[$row_Curso['NivelCurso']]['Capacidad'] += $Capacidad_Max;
+		$total[$row_Curso['NivelCurso']]['SeRetira'] += $total_SeRetira[$CodigoCurso];
 		
-		$total[$row_Curso['NivelCurso']][Planilla_Imp] += $total_Curso_Planilla_Imp[$CodigoCurso];
+		$total[$row_Curso['NivelCurso']]['Planilla_Imp'] += $total_Curso_Planilla_Imp[$CodigoCurso];
 		
 
 		$pdf->Ln($Ln);}
@@ -432,22 +431,22 @@ $NivelCursoAnte = '0';
 while ($row_Curso = $RS->fetch_assoc()) { // Para cada Curso
 	extract($row_Curso);
 	//$pdf->Cell(50 , $Ln , 'Alumnos Reinscritos ' , 1 , 0 , 'L');
-	$Largo = strlen($total[$row_Curso['NivelCurso']][NombreNivel] ) - 2;
-	$pdf->Cell(30 , $Ln ,  substr($total[$row_Curso['NivelCurso']][NombreNivel] , 0, $Largo ) .' ' , 1 , 0 , 'R');
+	$Largo = strlen($total[$row_Curso['NivelCurso']]['NombreNivel'] ) - 2;
+	$pdf->Cell(30 , $Ln ,  substr($total[$row_Curso['NivelCurso']]['NombreNivel'] , 0, $Largo ) .' ' , 1 , 0 , 'R');
 	$pdf->Cell(1);
-	$pdf->Cell(12 , $Ln ,  $total[$row_Curso['NivelCurso']][Capacidad]  , 1 , 0 , 'C');
-	$pdf->Cell(12 , $Ln ,  $total[$row_Curso['NivelCurso']][AlumnosReinscritos]  , 1 , 0 , 'C'); // Reinscritos
+	$pdf->Cell(12 , $Ln ,  $total[$row_Curso['NivelCurso']]['Capacidad']  , 1 , 0 , 'C');
+	$pdf->Cell(12 , $Ln ,  $total[$row_Curso['NivelCurso']]['AlumnosReinscritos']  , 1 , 0 , 'C'); // Reinscritos
 
 	$pdf->Cell(1);
 	
-	$FaltanPorInscribir = $total[$NivelCursoAnte][AlumnosActuales] - $total[$row_Curso['NivelCurso']][AlumnosReinscritos];
+	$FaltanPorInscribir = $total[$NivelCursoAnte]['AlumnosActuales'] - $total[$row_Curso['NivelCurso']]['AlumnosReinscritos'];
 	
 	$pdf->Cell(60/3 , $Ln ,  $FaltanPorInscribir  ,  'LTB' , 0 , 'C'); // Vienen
-	$pdf->Cell(60/3 , $Ln ,  "- ".$total[$NivelCursoAnte][SeRetira]  ,  'TB' , 0 , 'C'); // Vienen
-	$pdf->Cell(60/3 , $Ln ,  "+ ".$total[$row_Curso['NivelCurso']][AlumnosNuevos]  ,  'RTB' , 0 , 'C');
+	$pdf->Cell(60/3 , $Ln ,  "- ".$total[$NivelCursoAnte]['SeRetira']  ,  'TB' , 0 , 'C'); // Vienen
+	$pdf->Cell(60/3 , $Ln ,  "+ ".$total[$row_Curso['NivelCurso']]['AlumnosNuevos']  ,  'RTB' , 0 , 'C');
 
 
-	$Disponible = $total[$row_Curso['NivelCurso']][Capacidad] - $total[$row_Curso['NivelCurso']][AlumnosNuevos] - $total[$NivelCursoAnte][AlumnosActuales] + $total[$row_Curso['NivelCurso']][SeRetira];
+	$Disponible = $total[$row_Curso['NivelCurso']]['Capacidad'] - $total[$row_Curso['NivelCurso']]['AlumnosNuevos'] - $total[$NivelCursoAnte]['AlumnosActuales'] + $total[$row_Curso['NivelCurso']]['SeRetira'];
 	
 	$pdf->Cell(1);
 	$pdf->Cell(12 , $Ln ,  $Disponible.'  '  , 1 , 0 , 'R');
@@ -473,9 +472,9 @@ while ($row_Curso = $RS->fetch_assoc()) { // Para cada Curso
 	
 	$pdf->Cell(1);
 	
-	//$pdf->Cell(20 , $Ln ,  $total[$NivelCursoAnte][AlumnosActuales] - $total[$NivelCursoAnte][SeRetira] - $total[$row_Curso['NivelCurso']][AlumnosReinscritos]  , 1 , 0 , 'C');
+	//$pdf->Cell(20 , $Ln ,  $total[$NivelCursoAnte]['AlumnosActuales'] - $total[$NivelCursoAnte]['SeRetira'] - $total[$row_Curso['NivelCurso']]['AlumnosReinscritos']  , 1 , 0 , 'C');
 	
-//	$pdf->Cell(20 , $Ln ,  $total[$row_Curso['NivelCurso']][AlumnosReinscritos]  , 1 , 0 , 'C');
+//	$pdf->Cell(20 , $Ln ,  $total[$row_Curso['NivelCurso']]['AlumnosReinscritos']  , 1 , 0 , 'C');
 	$pdf->Ln($Ln);
 	$NivelCursoAnte = $row_Curso['NivelCurso'];
 }
