@@ -56,6 +56,8 @@ class Consulta{
 		return $datos['Respuesta'];
 		}	
 
+
+
 	
 	public function Resultado($id_pregunta = 0){
 		$sql = "SELECT COUNT(CodigoAlumno) as Contar
@@ -93,7 +95,7 @@ class Consulta{
 		
 		
 		
-		$Resultado["Participaron"]["n"] = $Resultado["Si"]["n"]+$Resultado["No"]["n"]+$Resultado["Asistio"]["n"];
+		$Resultado["Participaron"]["n"] = $Resultado["Si"]["n"]+$Resultado["No"]["n"]+$Resultado["NoResp"]["n"];
 		$Resultado["Participaron"]["porc"] = round($Resultado["Participaron"]["n"]/$Resultado["Poblacion"]["n"]*100,2);
 		$Resultado["Si"]["porc"] = round($Resultado["Si"]["n"]/$Resultado["Participaron"]["n"]*100,2);
 		$Resultado["No"]["porc"] = round($Resultado["No"]["n"]/$Resultado["Participaron"]["n"]*100,2);
