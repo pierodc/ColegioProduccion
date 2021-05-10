@@ -94,7 +94,9 @@ while ( $row = $CodigoAlumnos->fetch_assoc() ){
 		//$row_RS_Repre = mysql_fetch_assoc($RS_Repre);
 		$Cel = "58" . substr(TelLimpia($row_RS_Repre['TelCel']) , 1 , 10);
 		echo '  <td>  '.substr($value,0,1).
-			"<a href='https://api.whatsapp.com/send/?phone=$Cel&text=Estimado+Sr.+Representante+Le+contacto+de+la+direccion+para+enviarle+el +link+de+la+circular+que+no+le+llego+por+email+https://colegiosanfrancisco.com/intranet/Consulta/Consulta.php?CodigoAlumno=".$Alumno->CodigoClave()."&app_absent=0' target='_blank'>";
+			"<a href='https://api.whatsapp.com/send/?phone=$Cel&text=Estimado+Sr.+Representante+Le+contacto+de+la+direccin+para+enviarle+el +link+de+la+circular+que+no+le+llego+por+el+email+" . $row_RS_Repre['Email1'].
+			"+puede+ingresar+por+el+siguiente+enlace".
+			"+https://colegiosanfrancisco.com/intranet/Consulta/Consulta.php?CodigoAlumno=".$Alumno->CodigoClave()."&app_absent=0' target='_blank'>";
 		echo TelLimpia($row_RS_Repre['TelCel']);
 		echo '</a>';
 		echo $row_RS_Repre['Email1'];
