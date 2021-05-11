@@ -17,6 +17,9 @@ if( Dif_Tiempo($Var['Fecha_Modificacion']) > 90 ){
 	$Variable->edit($Var_Name, $cambio_BCV,"auto intran");
 	$Var_Value = $cambio_BCV;
 }
+
+
+
 // FIN ACTUALIZA CAMBIO BCV
 
 /*
@@ -582,9 +585,15 @@ $rows = $RS_Asignacion->num_rows;
 
   
   </div>
-  
+ <?
+	echo cambio_BCV();
+	?> 
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
+
+
+	
+	
 </body>
 </html>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/AfterHTML.php"); ?>

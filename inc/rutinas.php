@@ -63,9 +63,35 @@ function cambio_BCV(){
 	$fin = strpos($sitioweb , "</strong>" , strpos($sitioweb , "Bs/USD"));	
 	$largo = $fin - $inicio;
 
-	$txt = substr($sitioweb,$inicio,$largo);	
-	return $txt;
+	$monto = substr($sitioweb,$inicio,$largo);	
+	$monto = trim(coma_punto($monto));
 	
+	
+	
+	$inicio = strpos($sitioweb , 'content=' , strpos($sitioweb , 'Fecha Valor:')) + 9 ;	
+	$fin = $inicio + 10;	
+	$largo = $fin - $inicio;
+	$fecha = substr($sitioweb,$inicio,$largo);	
+	
+	
+	$hostname_bd = "localhost";
+	$database_bd = "colegio_db";
+	$username_bd = "colegio_colegio";
+	$password_bd = "kepler1971";
+	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	
+	$sql = "SELECT * FROM CambioDolar
+			WHERE Fecha = '$fecha'";
+	$RS = $mysqli->query($sql); //
+	$Conteo = $RS->num_rows;
+
+	if($Conteo == 0){
+		$sql = "INSERT INTO CambioDolar
+				SET Fecha = '$fecha', Monto = '$monto'";
+		$mysqli->query($sql); //
+	}
+	
+	return $monto;
 	
 }
 
