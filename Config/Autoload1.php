@@ -11,9 +11,6 @@ $_IP = $_SERVER['REMOTE_ADDR'];
 
 $MM_Username = "";
 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Connection.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Usuario.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Alumno.php");
@@ -33,17 +30,23 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Consulta.php");
 
 
 
+
+
+//require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/db.php");
+//require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/worker.php");
+//require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/time_event.php");
+//require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/pay_time.php");
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/GetVar.php'); // GET Vars > id_Alumno id_Curso > set cookie
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
-
-
 
 
 ?>
