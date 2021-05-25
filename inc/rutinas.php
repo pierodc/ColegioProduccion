@@ -6,13 +6,6 @@ if(isset($_GET["AnoEscolar"]))
 	$AnoEscolar = $_GET["AnoEscolar"];
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/Classes.php'); 
-
-//$hostname_bd = "localhost";
-//$database_bd = "colegio_db";
-//$username_bd = "colegio_colegio";
-//$password_bd = "kepler";
-//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
-
 //print_r($_COOKIE);
 
 date_default_timezone_set('America/Caracas');
@@ -26,7 +19,6 @@ if (isset($_COOKIE['PantallaCompleta'])){
 else{
   $SW_PantallaCompleta = 1;
 }
-
 
 
 function object_to_array($data)
@@ -73,13 +65,9 @@ function cambio_BCV(){
 	$largo = $fin - $inicio;
 	$fecha = substr($sitioweb,$inicio,$largo);	
 	
-	
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-	
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
 	$sql = "SELECT * FROM CambioDolar
 			WHERE Fecha = '$fecha'";
 	$RS = $mysqli->query($sql); //
@@ -117,7 +105,6 @@ function IVA_inc($Monto,$porc){
 	}
 function IVA($Monto , $porc){
 	$porc = $porc / 100 ;
-	//echo "zzz $Monto , $porc zzz ";
 	return round( ( ( $Monto / 1.12) *  $porc) , 2);
 	}
 
@@ -159,26 +146,7 @@ if ($SWreinscripcion){
 	$ProxAno = "ProxAno";
 }
 
-$MesNum = array(1=>'01',2=>'02',3=>'03',4=>'04',5=>'05',6=>'06',7=>'07',8=>'08',9=>'09',10=>'10',11=>'11',12=>'12');
-$MesNom = array(1=>'Enero',2=>'Febrero',3=>'Marzo',4=>'Abril',5=>'Mayo',6=>'Junio',7=>'Julio',8=>'Agosto',9=>'Septiembre',10=>'Octubre',11=>'Noviembre',12=>'Diciembre');
 
-
-$ReferenciaMesAno_array = array(
-0=>'08-'.$Ano1,
-1=>'09-'.$Ano1,
-2=>'10-'.$Ano1,
-3=>'11-'.$Ano1,
-4=>'12-'.$Ano1,
-5=>'01-'.$Ano2,
-6=>'02-'.$Ano2,
-7=>'03-'.$Ano2,
-8=>'04-'.$Ano2,
-9=>'05-'.$Ano2,
-10=>'06-'.$Ano2,
-11=>'07-'.$Ano2,
-12=>'08-'.$Ano2,
-13=>'09-'.$Ano2,
-14=>'10-'.$Ano2);
 
 if (isset($_GET['Mes']))
 	$Mes = $_GET['Mes'];
@@ -203,9 +171,6 @@ if (isset($_GET['CodigoPropietario'])){
 
 	
 	}
-	
-
-$Sec_01_13 = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13');
 
 
 function Nexo ($Nexo){
@@ -338,13 +303,9 @@ function ProveedorNombre($Codigo){
 
 
 function ActulizaEdoCuentaDolar($CodigoAlumno ){  //, $CambioDolar
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-	
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
 	$Variable = new Variable();
 	$Var_Name = 'Cambio_Dolar';
 	$CambioDolar = $Variable->view($Var_Name);
@@ -463,10 +424,7 @@ function F_hum_bd($fecha){
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  //$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-
-  //$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
+  
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
@@ -489,72 +447,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-// SQL generico Alumno INICIO
-$add_SQL = '';
-if (isset($_GET['CodigoCurso'])) { 
-	$colname .= $_GET['CodigoCurso'];
-	$add_SQL = sprintf(' AND AlumnoXCurso.CodigoCurso = %s ', GetSQLValueString($colname, "int"));
-										  
-	if ($_GET['CodigoCurso']=='Pre'		) $add_SQL .= ' AND Curso.NivelCurso >=11 AND Curso.NivelCurso <=14 ' ;
-	if ($_GET['CodigoCurso']=='Pri'		) $add_SQL .= ' AND Curso.NivelCurso >=21 AND Curso.NivelCurso <=26 ' ;
-	if ($_GET['CodigoCurso']=='Pri123'	) $add_SQL .= ' AND Curso.NivelCurso >=21 AND Curso.NivelCurso <=23 ' ;
-	if ($_GET['CodigoCurso']=='Pri456'	) $add_SQL .= ' AND Curso.NivelCurso >=24 AND Curso.NivelCurso <=26 ' ;
-	if ($_GET['CodigoCurso']=='Bach'		) $add_SQL .= ' AND Curso.NivelCurso >=31 AND Curso.NivelCurso <=45 ' ;
-	if ($_GET['CodigoCurso']=='Bach123'	) $add_SQL .= ' AND Curso.NivelCurso >=31 AND Curso.NivelCurso <=33 ' ;
-	if ($_GET['CodigoCurso']=='Bach45' or $CodigoCurso=='Bach45' ) $add_SQL .= ' AND Curso.NivelCurso >=44 AND Curso.NivelCurso <=45 ' ;
-}
 
-if (isset($_POST['CodigoCurso'])		) $add_SQL .= " AND AlumnoXCurso.CodigoCurso ='".$_POST['CodigoCurso']."' " ;
-
-
-if (isset($_GET['CodigoAlumno'])) { $colname = $_GET['CodigoAlumno'];
-									  $add_SQL .= sprintf(' AND AlumnoXCurso.CodigoAlumno = %s ', GetSQLValueString($colname, "int"));}
-
-if (isset($_GET['Lapso']))
-if ( strrpos($_GET['Lapso'] , "mp") > 0) 
-									  $add_SQL .= " AND AlumnoXCurso.Tipo_Inscripcion  = 'Mp' " ;
-	else
-									  $add_SQL .= " AND AlumnoXCurso.Tipo_Inscripcion  <> 'Mp' " ;
-
-
-if (isset($_GET['CodigoClave']))  { 
-		$colname = $_GET['CodigoClave'];
-		$add_SQL .= sprintf(' AND Alumno.CodigoClave = %s ', GetSQLValueString($colname, "text"));}
-
-if (isset($_GET['CodigoPropietario']))  { 
-		$colname = $_GET['CodigoPropietario'];
-		$add_SQL .= sprintf(' AND Alumno.CodigoClave = %s ', GetSQLValueString($colname, "text"));}
-
-if (isset($_GET['Orden'])){
-if ($_GET['Orden']=='Cedula' or $_POST['Orden']=='Cedula' or $Orden == 'Cedula') 
-		$add_SQL .= ' ORDER BY Alumno.Cedula_int ';
-	elseif (isset($_GET['Desde']))
-		$add_SQL .= ' ORDER BY Curso.NivelCurso, Curso.Seccion, Alumno.Apellidos, Alumno.Apellidos2, Alumno.Nombres, Alumno.Nombres2 ASC ';
-	elseif (isset($_GET['ApellidosNombres']))
-		$add_SQL .= ' ORDER BY Alumno.Apellidos, Alumno.Apellidos2, Alumno.Nombres, Alumno.Nombres2 ASC ';
-	else
-		$add_SQL .= ' ORDER BY Curso.NivelCurso, Curso.Seccion, Alumno.Apellidos, Alumno.Apellidos2, Alumno.Nombres, Alumno.Nombres2 ASC ';
-}
-else {
-	$add_SQL .= ' ORDER BY Curso.NivelCurso, Curso.Seccion, Alumno.Apellidos, Alumno.Apellidos2, Alumno.Nombres, Alumno.Nombres2 ASC ';
-	}
-
-
-if (isset($_GET['LIMIT'])) {
-		$add_SQL .= ' LIMIT ' . $_GET['LIMIT']. ' , 1 '; }
-									  
-if (isset($_GET['Desde']) and isset($_GET['Cantidad'])) {
-		$add_SQL .= ' LIMIT ' . $_GET['Desde']. ' , ' . $_GET['Cantidad']. ' '; }
-	
-
-$query_RS_Alumno = "SELECT * FROM AlumnoXCurso, Alumno , Curso
-					WHERE AlumnoXCurso.CodigoAlumno = Alumno.CodigoAlumno 
-					AND AlumnoXCurso.CodigoCurso = Curso.CodigoCurso
-					AND AlumnoXCurso.Ano = '$AnoEscolar' 
-					AND AlumnoXCurso.Status = 'Inscrito'
-					$add_SQL ";
-//echo $query_RS_Alumno;					
-// SQL generico Alumno FIN 954 817 42 44
 
 function Mes_Ano ($Mes_Ano){
 	
@@ -820,12 +713,8 @@ function Ir_a_Dia($actFecha, $addVars) {
 } 
 
 function Repre($CodigoAlumno,$Nexo){
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 
 
 	$sql = "SELECT * FROM RepresentanteXAlumno, Representante
@@ -926,25 +815,13 @@ function Fnum_Letras($num){
 	$millones = intval($num/1000000);
 	
 	
-	
-	
 	$miles    = intval(($entero - $millones*1000000)/1000);
 	
 	
 	$centenas = intval(($entero - $miles*1000 - $millones*1000000)/100);
 	$unidades = $entero - $miles*1000 - $centenas*100 - $millones*1000000 ;
 	
-	$centimos = round(100 * ($num - $entero) ,0);   //  round(($num - $miles*1000 - $centenas*100 - $unidades)*100 , 0);
-/*
-	echo $num . " = ent :" . $entero . 
-				" /millones:" . $millones . 
-				" /miles:" . $miles . 
-				" /centenas:" . $centenas . 
-				" /unidades:" . $unidades . 
-				" /centimos:" . $centimos ."<br>" ;
-
-
-*/
+	$centimos = round(100 * ($num - $entero) ,0);  
 
 	if ($millones > 0){
 	
@@ -1105,30 +982,6 @@ function dddDDMMAAAA ($fecha){
 	$_ddd =  date("w", mktime(0, 0, 0, $_mes, $_dia, $_ano));
 	
 	$_ddd = DiaSemana($_ddd); 
-	/*
-	{
-		case 0:
-			$_ddd = "Dom";
-			break;
-		case 1:
-			$_ddd = "Lun";
-			break;
-		case 2:
-			$_ddd = "Mar";
-			break;
-		case 3:
-			$_ddd = "Mie";
-			break;
-		case 4:
-			$_ddd = "Jue";
-			break;
-		case 5:
-			$_ddd = "Vie";
-			break;
-		case 6:
-			$_ddd = "Sab";
-			break;
-	}*/
 	
 	$TimeStam = $_ddd. ' '. date("d-m-Y", mktime(0, 0, 0, $_mes, $_dia, $_ano));
 	return $TimeStam;
@@ -1142,31 +995,6 @@ function DDMMMM ($fecha){
 	$_ddd =  date("w", mktime(0, 0, 0, $_mes, $_dia, $_ano));
 	
 	$_ddd = DiaSemana($_ddd); 
-	/*
-	
-	switch ($_ddd) {
-		case 0:
-			$_ddd = "Dom";
-			break;
-		case 1:
-			$_ddd = "Lun";
-			break;
-		case 2:
-			$_ddd = "Mar";
-			break;
-		case 3:
-			$_ddd = "Mie";
-			break;
-		case 4:
-			$_ddd = "Jue";
-			break;
-		case 5:
-			$_ddd = "Vie";
-			break;
-		case 6:
-			$_ddd = "Sab";
-			break;
-	}*/
 	
 	$TimeStam = date("d-M", mktime(0, 0, 0, $_mes, $_dia, $_ano));
 	return $TimeStam;
@@ -1269,10 +1097,15 @@ function Dif_Tiempo ($fecha  ){
 
 
 function Dias_Dif ($Fecha_ini , $Fecha_fin){
+	if($Fecha_ini == "")
+		$Fecha_ini = $Fecha_fin;
+	//echo "Fecha_ini:$Fecha_ini , Fecha_ini:$Fecha_fin";
+	
+	
 	$ano_ini  = substr($Fecha_ini, 0, 4);
 	$mes_ini  = substr($Fecha_ini, 5, 2);
 	$dia_ini  = substr($Fecha_ini, 8, 2);
-	$Fecha_ini = mktime(0,0,0,$mes_ini,$dia_ini,$ano_ini);
+	$Fecha_ini = mktime(0,0,0, $mes_ini, $dia_ini, $ano_ini);
 
 	$ano_fin  = substr($Fecha_fin, 0, 4);
 	$mes_fin  = substr($Fecha_fin, 5, 2);
@@ -1336,143 +1169,143 @@ switch ($i) {
 }
 
 function Fecha($Nombre, $actual) { 
-$dia=substr($actual, 8, 2);
-$mes=substr($actual, 5, 2);
-$ano=substr($actual, 0, 4);
+		$dia=substr($actual, 8, 2);
+		$mes=substr($actual, 5, 2);
+		$ano=substr($actual, 0, 4);
 
-echo " <select name=\"FD_". $Nombre."\" class=\"TextosSimples\" id=\"select2\"   onchange=\"". $Nombre .".value=FY_". $Nombre .".value+'-'+FM_". $Nombre .".value+'-'+FD_". $Nombre .".value\">
-";
-echo "<option value=\"00\" >dd</option>
-";
-
-
-for ($i = 1; $i <= 31; $i++) {
-	$j = substr("0".$i , -2);
-    echo "<option value=\"" . $j ."\"";
-	if ($dia==$j){echo ' SELECTED ';}
-	echo " >".$j."</option>
-"; }
-
-echo "</select>
-";
+		echo " <select name=\"FD_". $Nombre."\" class=\"TextosSimples\" id=\"select2\"   onchange=\"". $Nombre .".value=FY_". $Nombre .".value+'-'+FM_". $Nombre .".value+'-'+FD_". $Nombre .".value\">
+		";
+		echo "<option value=\"00\" >dd</option>
+		";
 
 
+		for ($i = 1; $i <= 31; $i++) {
+			$j = substr("0".$i , -2);
+			echo "<option value=\"" . $j ."\"";
+			if ($dia==$j){echo ' SELECTED ';}
+			echo " >".$j."</option>
+		"; }
+
+		echo "</select>
+		";
 
 
-echo " <select name=\"FM_". $Nombre."\" class=\"TextosSimples\" id=\"FnacM\"   onchange=\"". $Nombre .".value=FY_". $Nombre .".value+'-'+FM_". $Nombre .".value+'-'+FD_". $Nombre .".value\">
-";
-echo "<option value=\"00\" >mm</option>
-";
-
-for ($i = 1; $i <= 12; $i++) {
-	$j = substr("0".$i , -2);
-    echo "<option value=\"" . $j ."\"";
-	if ($mes==$j){echo ' SELECTED ';}
-	echo " >".$j."</option>
-"; }
 
 
-echo "</select>
-";
+		echo " <select name=\"FM_". $Nombre."\" class=\"TextosSimples\" id=\"FnacM\"   onchange=\"". $Nombre .".value=FY_". $Nombre .".value+'-'+FM_". $Nombre .".value+'-'+FD_". $Nombre .".value\">
+		";
+		echo "<option value=\"00\" >mm</option>
+		";
+
+		for ($i = 1; $i <= 12; $i++) {
+			$j = substr("0".$i , -2);
+			echo "<option value=\"" . $j ."\"";
+			if ($mes==$j){echo ' SELECTED ';}
+			echo " >".$j."</option>
+		"; }
 
 
-echo " <select name=\"FY_". $Nombre."\" class=\"TextosSimples\" id=\"FnacM\"   onchange=\"". $Nombre .".value=FY_". $Nombre .".value+'-'+FM_". $Nombre .".value+'-'+FD_". $Nombre .".value\">
-";
-echo "<option value=\"0000\" >yyyy</option>
-";
+		echo "</select>
+		";
 
-	$min = 1940;
-	$max = date('Y')-1;
-	
-	$i = $max;
-	do {
-	echo "<option value='".$i."'";
-	if ($ano==$i)echo "SELECTED";
-	echo ">".$i."</option>\n";
-	$i -= 1 ;
-	} while ($i > $min);
-	
 
-echo "</select>
-";	
+		echo " <select name=\"FY_". $Nombre."\" class=\"TextosSimples\" id=\"FnacM\"   onchange=\"". $Nombre .".value=FY_". $Nombre .".value+'-'+FM_". $Nombre .".value+'-'+FD_". $Nombre .".value\">
+		";
+		echo "<option value=\"0000\" >yyyy</option>
+		";
+
+			$min = 1940;
+			$max = date('Y')-1;
+
+			$i = $max;
+			do {
+			echo "<option value='".$i."'";
+			if ($ano==$i)echo "SELECTED";
+			echo ">".$i."</option>\n";
+			$i -= 1 ;
+			} while ($i > $min);
+
+
+		echo "</select>
+		";	
 	}
 
 
 
 
 function FechaFutura($Nombre, $actual) { 
-$dia = substr($actual, 8, 2);
-$mes = substr($actual, 5, 2);
-$ano = substr($actual, 0, 4);
+		$dia = substr($actual, 8, 2);
+		$mes = substr($actual, 5, 2);
+		$ano = substr($actual, 0, 4);
 
-$onChange = "class=\"TextosSimples\"  onchange=\"Fecha.value=FY_Fecha.value+'-'+FM_Fecha.value+'-'+FD_Fecha.value\" ";
+		$onChange = "class=\"TextosSimples\"  onchange=\"Fecha.value=FY_Fecha.value+'-'+FM_Fecha.value+'-'+FD_Fecha.value\" ";
 
-echo '<script src="../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
-<link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
-<span id="diaxx">';
-
-
-echo '<select name="FD_'.$Nombre.'" id="FD_'.$Nombre.'" '; echo $onChange; echo ' >';
-
-for ($i = 0; $i <= 31; $i++) {
-	$dd = substr("0".$i,-2);
-	echo '<option value="'.$dd.'"';
-	if ($dia == $dd){
-		echo'SELECTED';}
-	echo " >$dd</option>
-	";
-}
-
-echo "</select>";
-echo '<span class="selectInvalidMsg">*</span>  <span class="selectRequiredMsg">*</span></span><span id="mesxx">';
+		echo '<script src="../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
+		<link href="../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
+		<span id="diaxx">';
 
 
-echo '<select name="FM_'.$Nombre.'" id="FM_'.$Nombre.'" '; echo $onChange; echo ' >';
+		echo '<select name="FD_'.$Nombre.'" id="FD_'.$Nombre.'" '; echo $onChange; echo ' >';
+
+		for ($i = 0; $i <= 31; $i++) {
+			$dd = substr("0".$i,-2);
+			echo '<option value="'.$dd.'"';
+			if ($dia == $dd){
+				echo'SELECTED';}
+			echo " >$dd</option>
+			";
+		}
+
+		echo "</select>";
+		echo '<span class="selectInvalidMsg">*</span>  <span class="selectRequiredMsg">*</span></span><span id="mesxx">';
 
 
-for ($i = 0; $i <= 12; $i++) {
-	$mm = substr("0".$i,-2);
-	echo '<option value="'.$mm.'"';
-	if ($mes == $mm){
-		echo ' SELECTED';}
-	echo " >$mm</option>
-	";
-}
-echo "</select>";
+		echo '<select name="FM_'.$Nombre.'" id="FM_'.$Nombre.'" '; echo $onChange; echo ' >';
 
 
-
-echo '<span class="selectInvalidMsg">*</span>  <span class="selectRequiredMsg">*</span></span><span id="a&ntilde;oxx">';
-
-
-echo '<select name="FY_'.$Nombre.'" id="FY_'.$Nombre.'" '; echo $onChange; echo ' >';
-
-$anoInic = $ano - 3;
-$anoFin = $ano + 3;
-
-for ($i = $anoInic; $i <= $anoFin; $i++) {
-	$aa = $i;
-	echo '<option value="'.$aa.'"';
-	if ($ano == $aa){
-		echo ' SELECTED';}
-	echo " >$aa</option>
-	";
-}
+		for ($i = 0; $i <= 12; $i++) {
+			$mm = substr("0".$i,-2);
+			echo '<option value="'.$mm.'"';
+			if ($mes == $mm){
+				echo ' SELECTED';}
+			echo " >$mm</option>
+			";
+		}
+		echo "</select>";
 
 
 
-echo "</select>";
-echo '
-    
-<span class="selectInvalidMsg">*</span><span class="selectRequiredMsg">*</span><span class="selectRequiredMsg">*</span></span>
-<script type="text/javascript">
-<!--
-var spryselect1diaxx = new Spry.Widget.ValidationSelect("diaxx", {invalidValue:"00", validateOn:["blur", "change"]});
-var spryselect2mesxx = new Spry.Widget.ValidationSelect("mesxx", {invalidValue:"00", validateOn:["blur", "change"]});
-var spryselect3añoxx = new Spry.Widget.ValidationSelect("añoxx", {invalidValue:"0000", validateOn:["blur", "change"]});
-//-->
-</script>
-';
+		echo '<span class="selectInvalidMsg">*</span>  <span class="selectRequiredMsg">*</span></span><span id="a&ntilde;oxx">';
+
+
+		echo '<select name="FY_'.$Nombre.'" id="FY_'.$Nombre.'" '; echo $onChange; echo ' >';
+
+		$anoInic = $ano - 3;
+		$anoFin = $ano + 3;
+
+		for ($i = $anoInic; $i <= $anoFin; $i++) {
+			$aa = $i;
+			echo '<option value="'.$aa.'"';
+			if ($ano == $aa){
+				echo ' SELECTED';}
+			echo " >$aa</option>
+			";
+		}
+
+
+
+		echo "</select>";
+		echo '
+
+		<span class="selectInvalidMsg">*</span><span class="selectRequiredMsg">*</span><span class="selectRequiredMsg">*</span></span>
+		<script type="text/javascript">
+		<!--
+		var spryselect1diaxx = new Spry.Widget.ValidationSelect("diaxx", {invalidValue:"00", validateOn:["blur", "change"]});
+		var spryselect2mesxx = new Spry.Widget.ValidationSelect("mesxx", {invalidValue:"00", validateOn:["blur", "change"]});
+		var spryselect3añoxx = new Spry.Widget.ValidationSelect("añoxx", {invalidValue:"0000", validateOn:["blur", "change"]});
+		//-->
+		</script>
+		';
 
 }
   
@@ -1486,26 +1319,17 @@ function Titulo_Mm($aux) {
   
 
 function MenuCurso( $actual = 0 , $extraScript="" ) { 
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 
 
-	//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
-	//mysql_select_db($database_bd, $bd);
 	$query_RS_Cur = "SELECT * FROM Curso 
 					WHERE SW_activo=1 
 					ORDER BY NivelMencion ASC, NivelCurso ASC, Curso, Seccion";
-	/*$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
-	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
-	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);*/
 	
 	$RS_Cur = $mysqli->query($query_RS_Cur);
 	$row_RS_Cur = $RS_Cur->fetch_assoc();
 	$totalRows_RS_Cur = $RS_Cur->num_rows;
-
 	
 	$Disp_SW_CupoDisp = false;
 
@@ -1557,21 +1381,9 @@ function MenuCurso( $actual = 0 , $extraScript="" ) {
 
 
 function MenuCurso2($actual = 0 ,$extraScript="") { 
-	/*$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-*/
-
-	//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
-	//mysql_select_db($database_bd, $bd);
 	$query_RS_Cur = "SELECT * FROM Curso 
 					WHERE SW_activo=1 
 					ORDER BY NivelMencion ASC, Curso.Curso, Curso.Seccion";
-	/*$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
-	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
-	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);*/
 	
 	$RS_Cur = $mysqli->query($query_RS_Cur);
 	$row_RS_Cur = $RS_Cur->fetch_assoc();
@@ -1630,94 +1442,93 @@ function MenuCurso2($actual = 0 ,$extraScript="") {
 
 
 function Ir_a_Curso($actual = 0 , $extraOpcion = "" , $MM_UserGroup ="" , $MM_Username="") {
-echo '	
-<script type="text/javascript">
-<!--
-function MM_jumpMenu(targ,selObj,restore){ //v3.0
-  eval(targ+".location=\'"+selObj.options[selObj.selectedIndex].value+"\'");
-  if (restore) selObj.selectedIndex=0;
-}
-//-->
-</script>
-';
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-
-	//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
-	//mysql_select_db($database_bd, $bd);
-	//$Docente = false;
-	if ($MM_UserGroup == "docente"){
-		$query_RS_Cur = "SELECT * FROM Curso 
-						WHERE SW_activo=1 
-						AND (Cedula_Prof_Guia LIKE '%$MM_Username%'
-						OR   Cedula_Prof_Aux  LIKE '%$MM_Username%'
-						OR   Cedula_Prof_Esp  LIKE '%$MM_Username%')
-						ORDER BY NivelMencion, NivelCurso , Curso, Seccion";
-		//$Docente = true;
+		echo '	
+		<script type="text/javascript">
+		<!--
+		function MM_jumpMenu(targ,selObj,restore){ //v3.0
+		  eval(targ+".location=\'"+selObj.options[selObj.selectedIndex].value+"\'");
+		  if (restore) selObj.selectedIndex=0;
 		}
-	else{
-		$query_RS_Cur = "SELECT * FROM Curso 
-						 WHERE SW_activo=1 
-						 ORDER BY NivelMencion , NivelCurso , Curso, Seccion";}
-	//echo $MM_UserGroup.$query_RS_Cur;					 
-	
-	
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-	$RS = $mysqli->query($query_RS_Cur);
-	$row_RS_Cur = $RS->fetch_assoc();
-	
-	$txt= '
-	<select name="CodigoCurso"  onchange="MM_jumpMenu(\'parent\',this,0)" >
-	<option value="">Seleccione...</option>';
-	do { 
-	
-		if ($NivelMencionAnterior != $row_RS_Cur['NivelMencion']){ // Separador en blanco
-			$txt.= '<option value="'.$extraOpcion.'" > </option>
-		';}
-		
-		$txt.= '<option value="'.$extraOpcion.$row_RS_Cur['CodigoCurso']. '" '; // Opcion base
-		if (!(strcmp($row_RS_Cur['CodigoCurso'] , $actual ))) // Seleccionar actual
-			$txt.= "SELECTED"; 
-		$txt.= ">";
-		$txt.= $row_RS_Cur['NombreCompleto']."</option> 
-		"; //Etiqueta Opcion
-		$NivelMencionAnterior = $row_RS_Cur['NivelMencion'];
-		
-		$CodigosCursos[++$i] = $row_RS_Cur['CodigoCurso'];
-		if ($row_RS_Cur['CodigoCurso'] == $actual) //Marca en matriz del curso actual 
-			$KesimoActual = $i; 
-		
-	} while ($row_RS_Cur = $RS->fetch_assoc());
-	$txt.= "</select>.";
+		//-->
+		</script>
+		';
+			global $datos_bd;
+			$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 
-	
-	
-	
-echo '<table>
-<tr>
-<td>';
-	
-	if ($KesimoActual > 1){
-		echo '<a href="'.$extraOpcion.$CodigosCursos[$KesimoActual-1].
-			'"><img src="http://www.colegiosanfrancisco.com/i/control_rewind_blue.png" width="32" height="32" border=0 /></a>';}
-	else
-		echo '<img src="http://www.colegiosanfrancisco.com/i/control_rewind.png" width="32" height="32" border=0 />';
-	
-	echo '</td><td>'.$txt.'</td><td>';
-	
-	if ($KesimoActual < $i){
-		echo '<a href="'.$extraOpcion.$CodigosCursos[$KesimoActual+1].
-			'"><img src="http://www.colegiosanfrancisco.com/i/control_fastforward_blue.png" width="32" height="32" border=0 /></a>';}
-	else
-		echo '<img src="http://www.colegiosanfrancisco.com/i/control_fastforward.png" width="32" height="32" border=0 />';
+			//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
+			//mysql_select_db($database_bd, $bd);
+			//$Docente = false;
+			if ($MM_UserGroup == "docente"){
+				$query_RS_Cur = "SELECT * FROM Curso 
+								WHERE SW_activo=1 
+								AND (Cedula_Prof_Guia LIKE '%$MM_Username%'
+								OR   Cedula_Prof_Aux  LIKE '%$MM_Username%'
+								OR   Cedula_Prof_Esp  LIKE '%$MM_Username%')
+								ORDER BY NivelMencion, NivelCurso , Curso, Seccion";
+				//$Docente = true;
+				}
+			else{
+				$query_RS_Cur = "SELECT * FROM Curso 
+								 WHERE SW_activo=1 
+								 ORDER BY NivelMencion , NivelCurso , Curso, Seccion";}
+			//echo $MM_UserGroup.$query_RS_Cur;					 
 
 
-echo '</td>
-</tr>
-</table>';	
+			global $datos_bd;
+			$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
+			$RS = $mysqli->query($query_RS_Cur);
+			$row_RS_Cur = $RS->fetch_assoc();
+
+			$txt= '
+			<select name="CodigoCurso"  onchange="MM_jumpMenu(\'parent\',this,0)" >
+			<option value="">Seleccione...</option>';
+			do { 
+
+				if ($NivelMencionAnterior != $row_RS_Cur['NivelMencion']){ // Separador en blanco
+					$txt.= '<option value="'.$extraOpcion.'" > </option>
+				';}
+
+				$txt.= '<option value="'.$extraOpcion.$row_RS_Cur['CodigoCurso']. '" '; // Opcion base
+				if (!(strcmp($row_RS_Cur['CodigoCurso'] , $actual ))) // Seleccionar actual
+					$txt.= "SELECTED"; 
+				$txt.= ">";
+				$txt.= $row_RS_Cur['NombreCompleto']."</option> 
+				"; //Etiqueta Opcion
+				$NivelMencionAnterior = $row_RS_Cur['NivelMencion'];
+
+				$CodigosCursos[++$i] = $row_RS_Cur['CodigoCurso'];
+				if ($row_RS_Cur['CodigoCurso'] == $actual) //Marca en matriz del curso actual 
+					$KesimoActual = $i; 
+
+			} while ($row_RS_Cur = $RS->fetch_assoc());
+			$txt.= "</select>.";
+
+
+
+
+		echo '<table>
+		<tr>
+		<td>';
+
+			if ($KesimoActual > 1){
+				echo '<a href="'.$extraOpcion.$CodigosCursos[$KesimoActual-1].
+					'"><img src="http://www.colegiosanfrancisco.com/i/control_rewind_blue.png" width="32" height="32" border=0 /></a>';}
+			else
+				echo '<img src="http://www.colegiosanfrancisco.com/i/control_rewind.png" width="32" height="32" border=0 />';
+
+			echo '</td><td>'.$txt.'</td><td>';
+
+			if ($KesimoActual < $i){
+				echo '<a href="'.$extraOpcion.$CodigosCursos[$KesimoActual+1].
+					'"><img src="http://www.colegiosanfrancisco.com/i/control_fastforward_blue.png" width="32" height="32" border=0 /></a>';}
+			else
+				echo '<img src="http://www.colegiosanfrancisco.com/i/control_fastforward.png" width="32" height="32" border=0 />';
+
+
+		echo '</td>
+		</tr>
+		</table>';	
 	
 } 
 
@@ -1737,11 +1548,8 @@ function Boton_Cursos( $actual = 0 ) {
 	//-->
 	</script>
 	';
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 	$sql = "SELECT * FROM Curso 
 			 WHERE SW_activo = 1 
 			 ORDER BY NivelMencion , NivelCurso , Curso, Seccion";
@@ -1779,30 +1587,30 @@ function Boton_Cursos( $actual = 0 ) {
 	
 	
 	
-echo '<table class="sombra" width="10">
-<caption class="RTitulo">Curso</caption>
-<tr><td>';
-	
-	if ($KesimoActual > 1){
-		echo '<a href="'.$php_self.$CodigosCursos[$KesimoActual-1].
-			'"><img src="/i/control_rewind_blue.png" width="32" height="32" border=0 /></a>';}
-	else
-		echo '<img src="/i/control_rewind.png" width="32" height="32" border=0 />';
-	
-	echo '</td><td>';
-	echo $txt; // incorpora el select
-	echo '</td><td>'; 
-	
-	if ($KesimoActual < $i){
-		echo '<a href="'.$php_self.$CodigosCursos[$KesimoActual+1].
-			'"><img src="http://www.colegiosanfrancisco.com/i/control_fastforward_blue.png" width="32" height="32" border=0 /></a>';}
-	else
-		echo '<img src="http://www.colegiosanfrancisco.com/i/control_fastforward.png" width="32" height="32" border=0 />';
+	echo '<table class="sombra" width="10">
+	<caption class="RTitulo">Curso</caption>
+	<tr><td>';
+
+		if ($KesimoActual > 1){
+			echo '<a href="'.$php_self.$CodigosCursos[$KesimoActual-1].
+				'"><img src="/i/control_rewind_blue.png" width="32" height="32" border=0 /></a>';}
+		else
+			echo '<img src="/i/control_rewind.png" width="32" height="32" border=0 />';
+
+		echo '</td><td>';
+		echo $txt; // incorpora el select
+		echo '</td><td>'; 
+
+		if ($KesimoActual < $i){
+			echo '<a href="'.$php_self.$CodigosCursos[$KesimoActual+1].
+				'"><img src="http://www.colegiosanfrancisco.com/i/control_fastforward_blue.png" width="32" height="32" border=0 /></a>';}
+		else
+			echo '<img src="http://www.colegiosanfrancisco.com/i/control_fastforward.png" width="32" height="32" border=0 />';
 
 
-echo '</td>
-</tr>
-</table>';
+	echo '</td>
+	</tr>
+	</table>';
 	
 } 
 
@@ -1904,11 +1712,8 @@ function NivelCurso($CodigoCurso) {
 
 
 function Curso($codigo) { 
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 
 	//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
 	//mysql_select_db($database_bd, $bd);
@@ -1931,14 +1736,9 @@ function Curso($codigo) {
 }
 
 function CodigoCursoProx($codigo) { 
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	
-	
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-	
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
 	$query_RS_Cur = "SELECT * FROM Curso WHERE CodigoCurso = $codigo "; //echo $query_RS_Cur;
 	
 	$RS_Cur = $mysqli->query($query_RS_Cur);
@@ -1956,19 +1756,14 @@ function CodigoCursoProx($codigo) {
 }
 
 
-function CursoConstancia($codigo) { 
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
-	
-	mysql_select_db($database_bd, $bd);
-	
+function CursoConstancia($codigo) { 	
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
 	$query_RS_Cur = "SELECT * FROM Curso WHERE CodigoCurso = $codigo "; //echo $query_RS_Cur;
-	$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
-	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
-	$totalRows_RS_Cur = mysql_num_rows($RS_Cur);
+	$RS_Cur = $mysqli->query($query_RS_Cur); // mysql_query($query_RS_Cur, $bd) or die(mysql_error());
+	$row_RS_Cur = $RS_Cur->fetch_assoc();
+	$totalRows_RS_Cur = $RS_Cur->num_rows;
 	
 	$NombreCursoConstancia = substr($row_RS_Cur['NombreCompleto'] , 0 , 3).'.';
 	
@@ -2029,12 +1824,9 @@ function CurSec($codigo) {
 
 
 function MenuEmpleado ($Codigo=0, $Destino, $Sort = "Cargo" ){ 
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-	
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
 	if($Sort == "Cargo")
 		$Sql_sort = " ORDER BY TipoEmpleado, TipoDocente, Apellidos, Nombres" ;
 	else
@@ -2206,20 +1998,20 @@ function DocenteGuia($CodigoCurso) {
 
 
 function CursoAlumno($CodigoAlumno, $Ano) { 
-$hostname_bd = "localhost";
-$database_bd = "colegio_db"; 
-$username_bd = "colegio_colegio";
-$password_bd = "kepler1971";
-$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
+	$hostname_bd = "localhost";
+	$database_bd = "colegio_db"; 
+	$username_bd = "colegio_colegio";
+	$password_bd = "kepler1971";
+	$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
 
-mysql_select_db($database_bd, $bd);
+	mysql_select_db($database_bd, $bd);
 
-$query_RS_Cur = "SELECT * FROM AlumnoXCurso WHERE CodigoAlumno = '$CodigoAlumno' AND Ano = '$Ano' "; //echo $query_RS_Cur;
-$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
-$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
+	$query_RS_Cur = "SELECT * FROM AlumnoXCurso WHERE CodigoAlumno = '$CodigoAlumno' AND Ano = '$Ano' "; //echo $query_RS_Cur;
+	$RS_Cur = mysql_query($query_RS_Cur, $bd) or die(mysql_error());
+	$row_RS_Cur = mysql_fetch_assoc($RS_Cur);
 
-if ($row_RS_Cur['CodigoCurso']>0)
-return Curso($row_RS_Cur['CodigoCurso']);
+	if ($row_RS_Cur['CodigoCurso']>0)
+	return Curso($row_RS_Cur['CodigoCurso']);
 
 }
 
@@ -2228,100 +2020,79 @@ return Curso($row_RS_Cur['CodigoCurso']);
 	  
 function Resumen2 ($ReferenciaMesAno, $CodigoPropietario, $database_bd, $bd, $SWAgostoFraccionado, $MontoMensualidad, $BB , $SW_Montos = false) {	
 
-$ReferenciaMesAno2 = str_replace("-"," ",$ReferenciaMesAno);
+	$ReferenciaMesAno2 = str_replace("-"," ",$ReferenciaMesAno);
 
-$hostname_bd = "localhost";
-$database_bd = "colegio_db";
-$username_bd = "colegio_colegio";
-$password_bd = "kepler1971";
-$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 
-$query_RS_Mov_Mes = "SELECT * FROM ContableMov 
-					WHERE  ContableMov.CodigoPropietario = $CodigoPropietario 
-					AND (ReferenciaMesAno = '$ReferenciaMesAno' OR ReferenciaMesAno = '$ReferenciaMesAno2')
-					AND Descripcion NOT LIKE '%ABONO%'
-					ORDER BY Codigo ASC"; 
-$RS_Mov_Mes = $mysqli->query($query_RS_Mov_Mes);
-//echo $query_RS_Mov_Mes;
+	$query_RS_Mov_Mes = "SELECT * FROM ContableMov 
+						WHERE  ContableMov.CodigoPropietario = $CodigoPropietario 
+						AND (ReferenciaMesAno = '$ReferenciaMesAno' OR ReferenciaMesAno = '$ReferenciaMesAno2')
+						AND Descripcion NOT LIKE '%ABONO%'
+						ORDER BY Codigo ASC"; 
+	$RS_Mov_Mes = $mysqli->query($query_RS_Mov_Mes);
 	
-//echo "Resumen2";
+		if ( $RS_Mov_Mes ) {
+			$totalM=0;
+		echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" >";
+			while ($row_RS_Mov_Mes = $RS_Mov_Mes->fetch_assoc()) {
+				if($row_RS_Mov_Mes['Descripcion'] > "" and $row_RS_Mov_Mes['MontoDebe'] > 0){ 
 
-	if ( $RS_Mov_Mes ) {
-		$totalM=0;
-	echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" >";
-		while ($row_RS_Mov_Mes = $RS_Mov_Mes->fetch_assoc()) {
-			if($row_RS_Mov_Mes['Descripcion'] > "" and $row_RS_Mov_Mes['MontoDebe'] > 0){ 
-			
-			echo "<tr><td nowrap >";
-			if ( $row_RS_Mov_Mes["Referencia"] == $_GET['CodigoRelacionado'] 
-						and isset($_GET['CodigoRelacionado']) ){
-				echo '<font color=orange size="+1">';}
-				
-			elseif ( $row_RS_Mov_Mes["Referencia"] == $_GET['CodigoAsignacion'] 
-						and isset($_GET['CodigoRelacionado'])){
-				echo '<font color=green size="+1">';}
-				
-			elseif ($row_RS_Mov_Mes["SWCancelado"] == 1 ) { //or $row_RS_Mov_Mes["MontoDebe"] < 1 
-				echo "<font color=#0000BB>";} 	
-						
-			else {
-				echo "<font color=#FF0000>";}
-			
-			//echo "<spam title='".$row_RS_Mov_Mes['Descripcion']."'>";
-			
-			//if ($SW_Montos)
-			//	echo substr($row_RS_Mov_Mes['Descripcion'],0,5).'';
-			//else	
-			if ($row_RS_Mov_Mes['Descripcion']=='Escolaridad')
-				echo 'e';
-				elseif ($row_RS_Mov_Mes['Descripcion']=='Actividades Extracurriculares')
-					echo 'a';
-					else {
-						$palabras = str_word_count($row_RS_Mov_Mes['Descripcion'],1);
-						echo substr($palabras[0],0,3)." ".substr($palabras[1],0,3)." "
-							.substr($palabras[2],0,3)." ".substr($palabras[3],0,3)." "
-							.substr($palabras[4],0,3)."";
-						}		
-			echo "</td>"; //.</font></spam>
-			
-			$SumatoriaMes += $row_RS_Mov_Mes['MontoDebe'];
-			
-			if ($SW_Montos){
-				echo "<td align=\"right\">";
-				if ($row_RS_Mov_Mes["SWCancelado"] == 1 ) { echo "<font color=#0000BB>";} 
-				else { echo "<font color=#FF0000>";}
-				echo $row_RS_Mov_Mes['MontoDebe'];
-			}
-			if ($row_RS_Mov_Mes["SWCancelado"] == 1 ) {
-				echo  "</b> " . substr($row_RS_Mov_Mes["FechaRecibo"],8,2)."".substr($row_RS_Mov_Mes["FechaRecibo"],5,2);} 
-			
-			echo "</td></tr>";
-			
-			$totalM = $totalM+$row_RS_Mov_Mes["MontoDebe"];		
-			if (!$row_RS_Mov_Mes["SWCancelado"]){
-				$SaldoPend += $row_RS_Mov_Mes["MontoDebe"] - $row_RS_Mov_Mes["MontoAbono"];
+				echo "<tr><td nowrap >";
+				if ( $row_RS_Mov_Mes["Referencia"] == $_GET['CodigoRelacionado'] 
+							and isset($_GET['CodigoRelacionado']) ){
+					echo '<font color=orange size="+1">';}
+
+				elseif ( $row_RS_Mov_Mes["Referencia"] == $_GET['CodigoAsignacion'] 
+							and isset($_GET['CodigoRelacionado'])){
+					echo '<font color=green size="+1">';}
+
+				elseif ($row_RS_Mov_Mes["SWCancelado"] == 1 ) { //or $row_RS_Mov_Mes["MontoDebe"] < 1 
+					echo "<font color=#0000BB>";} 	
+
+				else {
+					echo "<font color=#FF0000>";}
+
+				if ($row_RS_Mov_Mes['Descripcion']=='Escolaridad')
+					echo 'e';
+					elseif ($row_RS_Mov_Mes['Descripcion']=='Actividades Extracurriculares')
+						echo 'a';
+						else {
+							$palabras = str_word_count($row_RS_Mov_Mes['Descripcion'],1);
+							echo substr($palabras[0],0,3)." ".substr($palabras[1],0,3)." "
+								.substr($palabras[2],0,3)." ".substr($palabras[3],0,3)." "
+								.substr($palabras[4],0,3)."";
+							}		
+				echo "</td>"; 
+
+				$SumatoriaMes += $row_RS_Mov_Mes['MontoDebe'];
+
+				if ($SW_Montos){
+					echo "<td align=\"right\">";
+					if ($row_RS_Mov_Mes["SWCancelado"] == 1 ) { echo "<font color=#0000BB>";} 
+					else { echo "<font color=#FF0000>";}
+					echo $row_RS_Mov_Mes['MontoDebe'];
+				}
+				if ($row_RS_Mov_Mes["SWCancelado"] == 1 ) {
+					echo  "</b> " . substr($row_RS_Mov_Mes["FechaRecibo"],8,2)."".substr($row_RS_Mov_Mes["FechaRecibo"],5,2);} 
+
+				echo "</td></tr>";
+
+				$totalM = $totalM+$row_RS_Mov_Mes["MontoDebe"];		
+				if (!$row_RS_Mov_Mes["SWCancelado"]){
+					$SaldoPend += $row_RS_Mov_Mes["MontoDebe"] - $row_RS_Mov_Mes["MontoAbono"];
+				}
 			}
 		}
-	}
-	//if($SumatoriaMes>0)
-	//echo "<tr><td nowrap colspan=\"2\" align=\"right\" >Tot ".Fnum($SumatoriaMes).'</td></tr>';	
-	if($SaldoPend>0)
-		echo "<tr><td nowrap colspan=\"2\" align=\"right\">Pend ".Fnum($SaldoPend).'</td></tr>';	
-	
-	echo "</table>";
-	
-	} 
+		
+		if ($SaldoPend > 0)
+			echo "<tr><td nowrap colspan=\"2\" align=\"right\">Pend ".Fnum($SaldoPend).'</td></tr>';	
 
-/*
-echo Fnum($SaldoPend);
-//echo '.';
-if ($SaldoPend>0){
-    //echo "<br>11<br>";
-	return 1; }
-else
-	return 0.0001 * $RS_Mov_Mes->num_rows;
-*/
-return "";	
+		echo "</table>";
+
+		} 
+
+	return "";	
 	
 	
 }
@@ -2337,88 +2108,80 @@ function Nt($Nota) {
 }
 
 function Nota($Nota) {
-if ($Nota=='i' or $Nota=='I') $Nota = strtoupper($Nota);
-if ($Nota > 0 and $Nota <= 20) {
-$Nota = substr("0".$Nota , -2);}
-if ($Nota =='' or $Nota =='00') {
-$Nota = '*';}
-return $Nota;
+	if ($Nota=='i' or $Nota=='I') $Nota = strtoupper($Nota);
+	if ($Nota > 0 and $Nota <= 20) {
+	$Nota = substr("0".$Nota , -2);}
+	if ($Nota =='' or $Nota =='00') {
+	$Nota = '*';}
+	return $Nota;
 }
 
 
 function MenuCursos ($CodigoCurso, $Destino ,$database_bd, $bd){ 
-mysql_select_db($database_bd, $bd);
-$query_RS_Cursos = "SELECT * FROM Curso WHERE SW_activo = '1' ORDER BY NivelMencion, Curso, Seccion ASC";
-$RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
-$row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
-$totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);
+	mysql_select_db($database_bd, $bd);
+	$query_RS_Cursos = "SELECT * FROM Curso WHERE SW_activo = '1' ORDER BY NivelMencion, Curso, Seccion ASC";
+	$RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
+	$row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
+	$totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);
 
-echo '
-<script type="text/javascript">
-<!--
-function MM_jumpMenu(targ,selObj,restore){ //v3.0
-  eval(targ+".location=\'"+selObj.options[selObj.selectedIndex].value+"\'");
-  if (restore) selObj.selectedIndex=0;
-}
-//-->
-</script>
- 
-';
+	echo '
+	<script type="text/javascript">
+	<!--
+	function MM_jumpMenu(targ,selObj,restore){ //v3.0
+	  eval(targ+".location=\'"+selObj.options[selObj.selectedIndex].value+"\'");
+	  if (restore) selObj.selectedIndex=0;
+	}
+	//-->
+	</script>
 
-
-echo '
-<form name="form" id="form">
-  <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu(\'parent\',this,0)">
-    <option value="0">Seleccione...</option>
-    ';
-
-$Anterior = -1; $Anterior_OK = false; $Siguiente = '';
-do {   
-
-	echo '<option value="'.$Destino."?CodigoCurso=".$row_RS_Cursos['CodigoCurso'].'"'; 
-
-	if ($Siguiente == 0){ 
-		$Siguiente = $row_RS_Cursos['CodigoCurso']; }
-	if ($Siguiente == -1){ 
-		$Siguiente = 0; }
-	
-	if (!(strcmp($row_RS_Cursos['CodigoCurso'], $CodigoCurso))) {
-		echo "selected=\"selected\""; $Anterior_OK = true; }
-	else { 
-		if ( !$Anterior_OK ) {
-			$Anterior = $row_RS_Cursos['CodigoCurso']; 
-			$Siguiente = -1; } } 
-
-	echo '>';
-	echo $row_RS_Cursos['NombreCompleto'].'</option>';
-    
-} while ($row_RS_Cursos = mysql_fetch_assoc($RS_Cursos));
-  $rows = mysql_num_rows($RS_Cursos);
-  if ($rows > 0) {
-      mysql_data_seek($RS_Cursos, 0);
-	  $row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
-  }
-
-echo '</select>..
-</form>'; 
-
-mysql_free_result($RS_Cursos);
+	';
 
 
-//if ($Anterior>0){echo "<a href=";}
+	echo '
+	<form name="form" id="form">
+	  <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu(\'parent\',this,0)">
+		<option value="0">Seleccione...</option>
+		';
 
-//echo $Anterior . ' ' . $Siguiente;
+	$Anterior = -1; $Anterior_OK = false; $Siguiente = '';
+	do {   
+
+		echo '<option value="'.$Destino."?CodigoCurso=".$row_RS_Cursos['CodigoCurso'].'"'; 
+
+		if ($Siguiente == 0){ 
+			$Siguiente = $row_RS_Cursos['CodigoCurso']; }
+		if ($Siguiente == -1){ 
+			$Siguiente = 0; }
+
+		if (!(strcmp($row_RS_Cursos['CodigoCurso'], $CodigoCurso))) {
+			echo "selected=\"selected\""; $Anterior_OK = true; }
+		else { 
+			if ( !$Anterior_OK ) {
+				$Anterior = $row_RS_Cursos['CodigoCurso']; 
+				$Siguiente = -1; } } 
+
+		echo '>';
+		echo $row_RS_Cursos['NombreCompleto'].'</option>';
+
+	} while ($row_RS_Cursos = mysql_fetch_assoc($RS_Cursos));
+	  $rows = mysql_num_rows($RS_Cursos);
+	  if ($rows > 0) {
+		  mysql_data_seek($RS_Cursos, 0);
+		  $row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
+	  }
+
+	echo '</select>..
+	</form>'; 
+
+	mysql_free_result($RS_Cursos);
+
 }
 
 
 
-function dateDif ($startDate, $endDate) 
-        { 
+function dateDif ($startDate, $endDate) { 
             $startDate = strtotime($startDate); 
             $endDate = strtotime($endDate); 
-			
-            //if ($startDate === false || $startDate < 0 || $endDate === false || $endDate < 0 || $startDate > $endDate) 
-            //    return false; 
                 
             $years = date('Y', $endDate) - date('Y', $startDate); 
             
@@ -2431,26 +2194,11 @@ function dateDif ($startDate, $endDate)
                 $months += 12; 
                 //$years--; 
             } 
-            //if ($years < 0) 
-            //    return false; 
-            
-			
-			
-            // Calculate the days 
-						$endDay = date('z', $endDate); 
-            			$startDay = date('z', $startDate); 
-						
-                      //  $offsets = array(); 
-                      //  if ($years > 0) 
-                      //      $offsets[] = $years . (($years == 1) ? ' year' : ' years'); 
-                      //  if ($months > 0) 
-                      //      $offsets[] = $months . (($months == 1) ? ' month' : ' months'); 
-                      //  $offsets = count($offsets) > 0 ? '+' . implode(' ', $offsets) : 'now'; 
+			$endDay = date('z', $endDate); 
+			$startDay = date('z', $startDate); 
 
-                        $days = $endDay - $startDay + (365*$years);
-						
-						 
-                        //$days = date('z', $days);    
+			$days = $endDay - $startDay + (365*$years);
+
                         
             return $days; 
         } 
@@ -2491,10 +2239,10 @@ function Campo($Nombre,$Tipo,$Valor,$Largo=8,$extra=""){
 }
 
 function Boton_Submit(){
-	
 	echo '<input type="hidden" name="time" id="time" value="'.time().'" />';
 	echo '<input type="submit" value="submit"  onClick="this.disabled=true;this.form.submit();" />';
 }
+
 function selected($a,$b){
 	if ($a==$b)
 		echo ' selected="selected" ';
@@ -2573,31 +2321,37 @@ function SueldoIntDia($FechaIngreso , $FechaObjAntiguedad , $SueldoBase){
 
 function Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,$Campo,$Valor) {
 	if ($Valor < 1){$Valor = 0;}
-echo "<iframe width=\"20\" height=\"20\" src=\"http://www.colegiosanfrancisco.com/inc/onoff.php?ClaveCampo=$ClaveCampo&ClaveValor=$ClaveValor&Tabla=$Tabla&Campo=$Campo&Valor=$Valor\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
-"; }
+	echo "<iframe width=\"20\" height=\"20\" src=\"http://www.colegiosanfrancisco.com/inc/onoff.php?ClaveCampo=$ClaveCampo&ClaveValor=$ClaveValor&Tabla=$Tabla&Campo=$Campo&Valor=$Valor\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
+	"; 
+}
 	
 function Frame_Asistencia ($id_Alumno, $id_Asistencia = 0) {
-echo "<iframe width=\"32\" height=\"32\" src=\"/inc/plantilla/asistencia.php?CodigoAlumno=$id_Alumno&id_Asistencia=$id_Asistencia\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
-"; }
+	echo "<iframe width=\"32\" height=\"32\" src=\"/inc/plantilla/asistencia.php?CodigoAlumno=$id_Alumno&id_Asistencia=$id_Asistencia\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
+	"; 
+}
 	
 
 function Variable_OnOff ($Nombre) {
-echo "<iframe width=\"20\" height=\"20\" src=\"http://www.colegiosanfrancisco.com/inc/On-Off.php?Nombre=$Nombre\" frameborder=\"0\" id=\"SWframe\"  scrolling=\"no\" seamless  ></iframe>
-"; }
+	echo "<iframe width=\"20\" height=\"20\" src=\"http://www.colegiosanfrancisco.com/inc/On-Off.php?Nombre=$Nombre\" frameborder=\"0\" id=\"SWframe\"  scrolling=\"no\" seamless  ></iframe>
+	";
+}
 	
 
 function Var_Edit ($Var_Name) {
-echo "<iframe width=\"100\" height=\"25\" src=\"http://www.colegiosanfrancisco.com/inc/Var_Edit.php?Var_Name=".$Var_Name."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
-"; }
+	echo "<iframe width=\"100\" height=\"25\" src=\"http://www.colegiosanfrancisco.com/inc/Var_Edit.php?Var_Name=".$Var_Name."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
+	";
+}
 	
 function Campo_Edit ($Tabla,$Codigo,$Campo) {
-echo "<iframe width=\"100\" height=\"35\" src=\"http://www.colegiosanfrancisco.com/inc/Cell_Edit.php?Tabla=".$Tabla."&Codigo=".$Codigo."&Campo=".$Campo."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
-"; }
+	echo "<iframe width=\"100\" height=\"35\" src=\"http://www.colegiosanfrancisco.com/inc/Cell_Edit.php?Tabla=".$Tabla."&Codigo=".$Codigo."&Campo=".$Campo."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
+	"; 
+}
 	
 
 function Campo_Edit_Empleado ($Tabla,$Codigo,$Campo) {
-echo "<iframe width=\"100\" height=\"35\" src=\"http://www.colegiosanfrancisco.com/inc/Cell_Edit_Empleado.php?Tabla=".$Tabla."&Codigo=".$Codigo."&Campo=".$Campo."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
-"; }
+	echo "<iframe width=\"100\" height=\"35\" src=\"http://www.colegiosanfrancisco.com/inc/Cell_Edit_Empleado.php?Tabla=".$Tabla."&Codigo=".$Codigo."&Campo=".$Campo."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
+	"; 
+}
 	
 
 
@@ -2840,11 +2594,9 @@ function RutaFotoURL ($Codigo,$Medida){
 	
 
 function CodigoPropietario($CodigoAlumno){
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+	
 	$sql = "SELECT * FROM Alumno WHERE CodigoAlumno = $CodigoAlumno";
 	//echo $sql;
 	$RS = $mysqli->query($sql);
@@ -2853,11 +2605,9 @@ function CodigoPropietario($CodigoAlumno){
 	}
 
 function CodigoAlumno($CodigoAlumno){
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
 	$sql = "SELECT * FROM Alumno WHERE CodigoClave = '$CodigoAlumno'";
 	//echo $sql;
 	$RS = $mysqli->query($sql);
@@ -2867,11 +2617,9 @@ function CodigoAlumno($CodigoAlumno){
 
 
 function Status($CodigoAlumno, $AnoEscolar){
-	$hostname_bd = "localhost";
-	$database_bd = "colegio_db";
-	$username_bd = "colegio_colegio";
-	$password_bd = "kepler1971";
-	$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
 	$sql = "SELECT * FROM AlumnoXCurso WHERE CodigoAlumno = $CodigoAlumno AND Ano = '$AnoEscolar'";
 	$RS = $mysqli->query($sql);
 	$row = $RS->fetch_assoc();

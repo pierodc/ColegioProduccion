@@ -30,11 +30,22 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 <body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
 <? //require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
-<a href="ListaConsulta.php">Detalle</a>
-<? Boton_Cursos($_id_Curso ); ?>
-	
 
-<? if($CodigoAlumnos->num_rows > 0)	{ ?>
+
+<?
+	
+$CodigoAlumnos = $Consulta->Lista(1);
+/*
+	while ( $Res = $Resultado->fetch_assoc() ){
+	$Alumno->id = $Res["CodigoAlumno"];
+	echo $Alumno->id." ". $Alumno->ApellidoNombre() ." ". $Alumno->Curso();
+	echo ".<br>";
+}
+*/
+	
+	
+	
+if($CodigoAlumnos->num_rows > 0)	{ ?>
 <table  class="sombra" >
 <caption >Listado</caption>
 <thead>
@@ -59,55 +70,18 @@ while ( $row = $CodigoAlumnos->fetch_assoc() ){
 <tr class="hover <?php if($_id_Alumno == $CodigoAlumno) echo "seleccionado"; ?>" >
 	<td><? echo ++$No ?></td>
 	<td><? echo $CodigoAlumno; ?></td>
-	<td><a href="<? echo $php_self . "../../../Docente/Curso/?id_Alumno=" . $CodigoAlumno; ?>"><? echo $Alumno->Apellido() ." ". $Alumno->Nombre(); ?></a></td>
-	<td align="center"><? Frame_Asistencia($CodigoAlumno); ?></td>
-	<td align="center"><?= $Consulta->Respuesta($CodigoAlumno , 1); ?></td>
-	
-	
-	<!--td align="left"><? 
-	
-	foreach($ContableMov->PendienteXX() as $mes){
-		echo $mes . " / ";
-		
-	} 
-
-	?></td-->
-	
+	<td><? echo $Alumno->ApellidosNombres() ." "; ?></td>
+	<td><? 
+	if($CreadorAnterior != $Creador){
+		echo $Creador; 
+		$Num_Familia++;
+		$Num_Respuesta[$Consulta->Respuesta($CodigoAlumno , 1)]++;
+		}
+	$CreadorAnterior = $Creador;
+		?></td>
+	<td><?= $Consulta->Respuesta($CodigoAlumno , 1); ?></td>
 	 
-	<!--td><? echo Edad_Dif($Alumno->FechaNac() , date("Y-m-d")); ?></td-->
 	<td>
-	<?
-	//echo 'Al: '.TelLimpia($TelCel); 
-	
-	$arr = array('Padre','Madre');
-	foreach ($arr as $value) {
-
-		$query_RS_Repre = "SELECT * FROM RepresentanteXAlumno , Representante 
-									WHERE RepresentanteXAlumno.CodigoRepresentante = Representante.CodigoRepresentante
-									AND RepresentanteXAlumno.Nexo = '$value'
-									AND RepresentanteXAlumno.CodigoAlumno = '".$CodigoAlumno."'";
-		//echo '<br>'.$query_RS_Repre.'<br>';
-		$RS_Repre = $mysqli->query($query_RS_Repre); //
-		$row_RS_Repre = $RS_Repre->fetch_assoc();
-
-		//$RS_Repre = mysql_query($query_RS_Repre, $bd) or die(mysql_error());
-		//$row_RS_Repre = mysql_fetch_assoc($RS_Repre);
-		$Cel = "58" . substr(TelLimpia($row_RS_Repre['TelCel']) , 1 , 10);
-		echo '  <td>  '.substr($value,0,1).
-			"<a href='https://api.whatsapp.com/send/?phone=$Cel&text=Estimado+Sr.+Representante+Le+contacto+de+la+direccin+para+enviarle+el +link+de+la+circular+que+no+le+llego+por+el+email+" . $row_RS_Repre['Email1'].
-			"+puede+ingresar+por+el+siguiente+enlace".
-			"+https://colegiosanfrancisco.com/intranet/Consulta/Consulta.php?CodigoAlumno=".$Alumno->CodigoClave()."&app_absent=0' target='_blank'>";
-		echo TelLimpia($row_RS_Repre['TelCel']);
-		echo '</a>';
-		echo $row_RS_Repre['Email1'];
-		echo "</td>";
-		
-		
-		
-
-	}
-	 
-	 ?>
 	
 	</td>
 	
@@ -123,6 +97,20 @@ while ( $row = $CodigoAlumnos->fetch_assoc() ){
 
 
 
+<table>
+<tr>
+<?
+	
+
+echo "<tr><td>" .  "Num_Poblacion: " . 425 . " </td></tr> ";		
+echo "<tr><td>" .  "Participaron_Familia: " . $Num_Familia . " </td></tr> ";	
+foreach($Num_Respuesta as $clave => $valor)	{
+	echo "<tr><td>" . $clave . " " . $valor . " </td></tr> ";
+}
+	?>
+	
+	
+</table>
 
 
 <? } ?>

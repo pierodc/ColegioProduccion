@@ -30,16 +30,20 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/ShopCart.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Banco.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Observaciones.php");
 require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Consulta.php");
+require_once( $_SERVER['DOCUMENT_ROOT'] . "/Models/Seniat.php");
 
+
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Genericas.php');
 
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/GetVar.php'); // GET Vars > id_Alumno id_Curso > set cookie
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/notas.php'); 
 

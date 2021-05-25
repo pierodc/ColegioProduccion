@@ -1,8 +1,9 @@
 <?php
-require_once('../../../Connections/bd.php'); 
-require_once('../../../inc/rutinas.php'); 
-require('../../../inc/fpdf.php');
-require_once('../archivo/Variables.php'); 
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
+
 
 class PDF extends FPDF
 {
@@ -60,7 +61,7 @@ $pdf->AddPage();
 
 if( $_GET['Todo']==1 ){ // Asigna numero a las familias Y ASigna '1' a PrincipalFamilia
 	$sql="UPDATE Alumno SET CodigoFamilia = 0, PrincipalFamilia = 0 ";
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
+	$RS = $mysqli->query($sql); //mysql_query($sql, $bd) or die(mysql_error());
 
 	
 	$sql="SELECT * FROM Alumno , AlumnoXCurso , Curso
@@ -71,8 +72,8 @@ if( $_GET['Todo']==1 ){ // Asigna numero a las familias Y ASigna '1' a Principal
 			AND AlumnoXCurso.Status = 'Inscrito'   
 			ORDER BY Alumno.Apellidos, Alumno.Apellidos2, Curso.NivelCurso DESC";
 	//echo $sql.'<br>';		
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
-	$row = mysql_fetch_assoc($RS);
+	$RS = $mysqli->query($sql); //mysql_query($sql, $bd) or die(mysql_error());
+	$row = $RS->fetch_assoc();
 		do{
 			extract($row);
 			//echo '<br>'.$CodigoAlumno.' '.$Creador.' '.$Apellidos.' '.$Apellidos2.'<br>';
@@ -85,13 +86,13 @@ if( $_GET['Todo']==1 ){ // Asigna numero a las familias Y ASigna '1' a Principal
 					$sql_2="UPDATE Alumno SET PrincipalFamilia = '1' 
 							WHERE CodigoAlumno = '".$CodigoAlumno."'
 							AND PrincipalFamilia = '0'";
-					$RS_2 = mysql_query($sql_2, $bd);
+					$RS_2 = $mysqli->query($sql_2); //mysql_query($sql_2, $bd);
 					//echo $sql_2.'<br>';		
 					
 					$sql_2="UPDATE Alumno SET CodigoFamilia = '". ++$SigienteFamilia ."' 
 							WHERE Creador = '".$Creador."'
 							AND CodigoFamilia = '0'";
-					$RS_2 = mysql_query($sql_2, $bd);
+					$RS_2 = $mysqli->query($sql_2); //mysql_query($sql_2, $bd);
 					//echo $sql_2.'<br>';		
 				}
 			
@@ -100,11 +101,11 @@ if( $_GET['Todo']==1 ){ // Asigna numero a las familias Y ASigna '1' a Principal
 				
 			}
 			$Creador_Anterior = strtolower($Creador);
-		} while ($row = mysql_fetch_assoc($RS));
+		} while ($row = $RS->fetch_assoc());
 		
 	
 	$sql="UPDATE Alumno SET PrincipalFamilia = 0 ";
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
+	$RS = $mysqli->query($sql); //mysql_query($sql, $bd) or die(mysql_error());
 	
 	$sql="SELECT * FROM Alumno , AlumnoXCurso, Curso 
 			WHERE Alumno.CodigoAlumno = AlumnoXCurso.CodigoAlumno 
@@ -114,17 +115,17 @@ if( $_GET['Todo']==1 ){ // Asigna numero a las familias Y ASigna '1' a Principal
 			AND AlumnoXCurso.Status = 'Inscrito' 
 			AND Curso.NivelCurso <= '45' 
 			ORDER BY Alumno.CodigoFamilia, Curso.NivelCurso DESC";
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
+	$RS = $mysqli->query($sql); //mysql_query($sql, $bd) or die(mysql_error());
 	$CodigoFamiliaAnterior = 0;
 	$Creador_Anterior = "";
-	while ($row = mysql_fetch_assoc($RS)){
+	while ($row =  $RS->fetch_assoc()){
 		extract($row);
 		//echo $CodigoFamilia.'<br>';		
 		if($Creador_Anterior != strtolower($Creador)){
 			$sql_2="UPDATE Alumno SET PrincipalFamilia = '1' 
 							WHERE CodigoAlumno = '".$CodigoAlumno."'";
 			//echo $sql_2.' '.$CodigoFamilia.'<br>';		
-			mysql_query($sql_2, $bd);
+			$mysqli->query($sql_2); //mysql_query($sql_2, $bd);
 			}
 		
 		
@@ -152,8 +153,8 @@ $sql = "SELECT * FROM Alumno , AlumnoXCurso, Curso
 		$add_SQL_5
 		ORDER BY Alumno.CodigoFamilia, Alumno.PrincipalFamilia DESC";
 //echo $sql;		
-$RS = mysql_query($sql, $bd) or die(mysql_error());
-$row = mysql_fetch_assoc($RS);
+$RS = $mysqli->query($sql); //mysql_query($sql, $bd) or die(mysql_error());
+$row = $RS->fetch_assoc();
 //	AND AlumnoXCurso.CodigoCurso <= 42 
  
 
@@ -186,8 +187,8 @@ do{
 									AND RepresentanteXAlumno.CodigoAlumno = '".$CodigoAlumno."'";
 		
 		//echo $query_RS_Representates;
-		$RS_Representates = mysql_query($query_RS_Representates, $bd) or die(mysql_error());
-		$row_RS_Representates = mysql_fetch_assoc($RS_Representates);
+		$RS_Representates = $mysqli->query($query_RS_Representates); //mysql_query($query_RS_Representates, $bd) or die(mysql_error());
+		$row_RS_Representates = $RS_Representates->fetch_assoc();
 		$ci_papa = $row_RS_Representates['Cedula'];
 		//ucwords(strtolower($row_RS_Representates['Apellidos']." ".$row_RS_Representates['Nombres']))."<br>"; 
 		
@@ -197,8 +198,8 @@ do{
 									AND RepresentanteXAlumno.Nexo = 'Madre'
 									AND RepresentanteXAlumno.CodigoAlumno = '".$CodigoAlumno."'";
 		//// // echo $query_RS_Representates;
-		$RS_Representates = mysql_query($query_RS_Representates, $bd) or die(mysql_error());
-		$row_RS_Representates = mysql_fetch_assoc($RS_Representates);
+		$RS_Representates = $mysqli->query($query_RS_Representates); //mysql_query($query_RS_Representates, $bd) or die(mysql_error());
+		$row_RS_Representates = $RS_Representates->fetch_assoc();
 		$ci_mama = $row_RS_Representates['Cedula'];
 		//// // echo ucwords(strtolower($row_RS_Representates['Apellidos']." ".$row_RS_Representates['Nombres'])).""; 
 		
@@ -214,7 +215,7 @@ do{
 	$pdf->SetFont('Arial','',12);
 	
 	$Creador_Anterior = strtolower($Creador);
-}while ($row = mysql_fetch_assoc($RS));		  
+}while ($row = $RS->fetch_assoc());		  
 
 
 $pdf->Output();
