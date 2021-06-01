@@ -427,7 +427,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   
   switch ($theType) {
     case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      $theValue = ($theValue != "") ? "'" .  $theValue . "'" : "NULL";
       break;    
     case "long":
     case "int":

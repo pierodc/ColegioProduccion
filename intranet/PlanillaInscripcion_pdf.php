@@ -1,5 +1,6 @@
 <?php 
 $MM_authorizedUsers = "2,91,secre";
+$SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
@@ -281,8 +282,8 @@ if(file_exists($foto)){
 
 LetraGde($pdf);
 $pdf->Cell(30 , $Ln2 , $Sp.$row_RS_Alumno['CedulaLetra'].'-'.$row_RS_Alumno['Cedula'] , $borde2 , 0 , 'L'); 
-$pdf->Cell(65 , $Ln2 , $Sp.$row_RS_Alumno['Nombres'].' '.$row_RS_Alumno['Nombres2'] , $borde2 , 0 , 'L'); 
-$pdf->Cell(65 , $Ln2 , $Sp.$row_RS_Alumno['Apellidos'].' '.$row_RS_Alumno['Apellidos2'] , $borde2 , 1 , 'L'); 
+$pdf->Cell(65 , $Ln2 , $Sp.html_entity_decode($row_RS_Alumno['Nombres'].' '.$row_RS_Alumno['Nombres2'] ,ENT_COMPAT,"ISO-8859-1") , $borde2 , 0 , 'L'); 
+$pdf->Cell(65 , $Ln2 , $Sp.html_entity_decode($row_RS_Alumno['Apellidos'].' '.$row_RS_Alumno['Apellidos2'] ,ENT_COMPAT,"ISO-8859-1"), $borde2 , 1 , 'L'); 
 
 //
 if($MM_UserGroup == 91 or $Solvente){

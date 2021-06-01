@@ -1,9 +1,8 @@
 <?php 
 $MM_authorizedUsers = "2";
-require_once('../inc_login_ck.php'); 
-require_once('../Connections/bd.php'); 
-require_once('../inc/rutinas.php'); 
-require_once('a/archivo/Variables.php'); 
+//$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 
 $editFormAction = $_SERVER['PHP_SELF'];
@@ -43,7 +42,10 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['DireccionTra'], "text"),
 					   GetSQLValueString(date('Y-m-d'), "date"));
 
-  $Result1 = $mysqli->query($insertSQL) ; //mysql_query($insertSQL, $bd) or die(mysql_error());
+  $Result1 = $mysqli->query($insertSQL) ; 
+	
+	//echo $insertSQL;
+		//mysql_query($insertSQL, $bd) or die(mysql_error());
 
 $CodigoAlumno = $_POST['CodigoAlumno'];
 $CodigoRepresentante = $mysqli->insert_id;

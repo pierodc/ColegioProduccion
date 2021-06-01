@@ -1,12 +1,9 @@
 <?php 
 $MM_authorizedUsers = "99,91,95";
-require_once('../../inc_login_ck.php'); 
-
-require_once('../../Connections/bd.php'); 
-require_once('../../inc/rutinas.php'); 
-
-
-
+$SW_omite_trace = false;
+//echo 1;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+//echo 2;
 
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
@@ -14,7 +11,8 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
-  $updateSQL = sprintf("UPDATE Usuario SET Usuario=%s, Clave=%s, Nombres=%s, Apellidos=%s, Telefonos=%s, Email=%s WHERE Codigo=%s",
+ 	echo "MM_update";
+	$updateSQL = sprintf("UPDATE Usuario SET Usuario=%s, Clave=%s, Nombres=%s, Apellidos=%s, Telefonos=%s, Email=%s WHERE Codigo=%s",
                        GetSQLValueString($_POST['Usuario'], "text"),
                        GetSQLValueString($_POST['Clave'], "text"),
                        GetSQLValueString($_POST['Nombres'], "text"),
@@ -23,7 +21,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
                        GetSQLValueString($_POST['Usuario'], "text"),
                        GetSQLValueString($_POST['Codigo'], "int"));
 
-  
+  echo $updateSQL;
   $RS = $mysqli->query($updateSQL);
 
   
@@ -59,8 +57,9 @@ if (isset($_GET['Codigo'])) {
   $colname_RS_Usuario = $_GET['Codigo'];
 }
 
-$query_RS_Usuario = sprintf("SELECT * FROM Usuario WHERE Codigo = %s", GetSQLValueString($colname_RS_Usuario, "int"));
-//echo $query_RS_Usuarios;
+$query_RS_Usuario = "SELECT * FROM Usuario WHERE Codigo = '$colname_RS_Usuario'";
+
+//echo $query_RS_Usuario;
 
 $RS_Usuario = $mysqli->query($query_RS_Usuario);
 $row_RS_Usuario = $RS_Usuario->fetch_assoc();
@@ -176,7 +175,7 @@ a:active {
                 
                 <tr>
                   <td class="NombreCampo">
-                    <input name="Codigo" type="hidden" id="Codigo" value="<?php if($row_RS_Usuario['Usuario']!='piero'){echo $row_RS_Usuario['Codigo'];} ?>">
+                    <input name="Codigo" type="hidden" id="Codigo" value="<?php if(true or $row_RS_Usuario['Usuario']!='piero'){echo $row_RS_Usuario['Codigo'];} ?>">
                     Nombre                  </td>
                   <td class="FondoCampo"><input name="Nombres" type="text" id="Usuario3" value="<?php echo $row_RS_Usuario['Nombres']; ?>"></td>
                 </tr>
@@ -204,7 +203,7 @@ a:active {
                   <td class="NombreCampo">Clave</td>
                   <td class="FondoCampo">
                   <? if($MM_UserGroup = "91") $Tipo = "text"; else $Tipo = "password"; ?>
-                  <input name="Clave" type="<?= $Tipo ?>" id="Clave" value="<?php if($row_RS_Usuario['Usuario']!='piero'){echo $row_RS_Usuario['Clave']; } ?>"></td>
+                  <input name="Clave" type="<?= $Tipo ?>" id="Clave" value="<?php if(true or $row_RS_Usuario['Usuario'] != 'piero'){ echo $row_RS_Usuario['Clave']; } ?>"></td>
                 </tr>
                 <tr>
                   <td class="NombreCampo">Alumnos</td>
