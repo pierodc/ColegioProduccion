@@ -1,9 +1,8 @@
 <?php 
-//$MM_authorizedUsers = "99,91,95,90,Contable";
-//require_once('../../../inc_login_ck.php'); 
-require_once('../../../Connections/bd.php'); 
-require_once('../archivo/Variables.php'); 
-require_once('../../../inc/rutinas.php'); 
+//$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+
 $CodigoAlumno = $_GET['CodigoAlumno'];
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form8") and $_POST["Observacion"] > "") {
@@ -11,40 +10,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form8") and $_POST[
 					   GetSQLValueString($_POST['CodigoAlumno'], "int"),
 					   GetSQLValueString($_GET['Area'], "text"),
 					   GetSQLValueString($_POST['Observacion'], "text"),
-					   GetSQLValueString($_POST['Fecha'], "date"),
-					   GetSQLValueString($_POST['Hora'], "date"),
+					   GetSQLValueString(date('Y-m-d') , "text"),
+					   GetSQLValueString(date('H:i:s') , "text"),
 					   GetSQLValueString($_COOKIE['MM_Username'], "text"));
 	
 	$Result1 = $mysqli->query($insertSQL); 
-
-	$sql="SELECT * FROM Alumno WHERE CodigoAlumno = '$CodigoAlumno'";
-	$RS_Alumno = $mysqli->query($sql); 
-	$row_Alumno = $RS_Alumno->fetch_assoc();
-
-	$para .= 'piero@dicampo.com';
-	$asunto = 'Observacion Caja';
-	$contenido = '
-	<html>
-	<head>
-	  <title>Observacion Caja</title>
-	</head>
-	<body>
-	  <p><a href=http://www.colegiosanfrancisco.com/intranet/a/Estado_de_Cuenta_Alumno.php?CodigoPropietario='.$row_Alumno['CodigoClave'].'>'.$row_Alumno['CodigoAlumno'].'</a></p>
-	  <p>'.$_POST['Observacion'].'</p>
-	</body>
-	</html>
-	';
-	
-	$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-	$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-	
-	// Cabeceras adicionales
-	//$cabeceras .= 'To: María <maria@example.com>, Kelly <kelly@example.com>' . "\r\n";
-	$cabeceras .= 'From:Caja - Colegio<caja@sanfrancisco.e12.ve>' . "\r\n";
-	//$cabeceras .= 'Cc:colegiosanfrancisco.e12.ve' . "\r\n";
-	//$cabeceras .= 'Bcc:colegio@sanfrancisco.e12.ve' . "\r\n";
-	//mail($para, $asunto, $contenido, $cabeceras); 
-  
 }
 
 
@@ -85,8 +55,6 @@ $totalRows_Observaciones = $Observaciones->num_rows;
     <input type="hidden" name="Codigo_Observ" value="" />
     <input type="hidden" name="CodigoAlumno" value="<?php echo $_GET['CodigoAlumno']; ?>" />
     <input type="hidden" name="Area" value="Estado de Cuenta" />
-    <input type="hidden" name="Fecha" value="<?php echo date('Y-m-d') ?>" />
-    <input type="hidden" name="Hora" value="<?php echo date('H:i:s') ?>" />
     <input type="hidden" name="MM_insert" value="form8" /><input type="submit" value="Guardar" /></td>
 </tr>
 <?php

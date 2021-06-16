@@ -1,52 +1,53 @@
 <?php
+//require_once( $_SERVER['DOCUMENT_ROOT'] . "/Config/Autoload.php");
 # FileName="Connection_php_mysql.htm"
 # Type="MYSQL"
 # HTTP="true"
+
 $hostname_bd = "localhost";
 $database_bd = "colegio_db";
 $username_bd = "colegio_colegio";
 $password_bd = "kepler1971";
 
+//$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 
- 
-//$bd = mysql_pconnect($hostname_bd, $username_bd, $password_bd) or die(mysql_error());
+$datos_localhost = array(
+			"host" => "localhost",
+			"user" => "root",
+			"pass" => "",
+			"db" => "copaquin_db"
+			);
 
-// mysql_select_db($database_bd, $bd);
+$datos_sfa = array(
+			"host" => "localhost",
+			"user" => "colegio_colegio",
+			"pass" => "kepler1971",
+			"db"   => "colegio_db"
+			);
 
-$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+$datos_mypotedu = array(
+			"host" => "localhost",
+			"user" => "myspotedu_us",
+			"pass" => "piero1971",
+			"db"   => "myspotedu_db"
+			);
 
-/*
-// Conectar
+if (strpos("   ".$_SERVER['HTTP_HOST'] ,"myspotedu.com") > 1)  {
+			$datos_bd = $datos_mypotedu;
+			}
+		else{
+			$datos_bd = $datos_sfa;
+			}
 
-// Ejecuta $sql
-$RS = $mysqli->query($sql);
-$row = $RS->fetch_assoc();
 
-// Ejecuta $sql y While
-$RS = $mysqli->query($sql);
-while ($row = $RS->fetch_assoc()) {
-	extract($row);
-    echo "<br>";
+if(false and strpos("   ".$_SERVER['HTTP_HOST'] ,"myspotedu.com") > 1) {
+	echo "<pre>BD <br>";
+	echo $_SERVER['HTTP_HOST']."<br>";
+	var_dump( $datos_bd );
+	echo "autoload FIN<br></pre>";
 }
 
-$RS->data_seek(0);
-
-$AnoEscolarAnteAnte = "2010-2011";
-$AnoEscolarAnte = "2011-2012";
-
-$Ano1 = "12";
-$Ano2 = "13";
-$AnoEscolar = "2012-2013";
-
-$Ano1prox = "2012";
-$Ano2prox = "2013";
-$AnoEscolarProx = "2012-2013";
-
-$Ano1prox = "2013";
-$Ano2prox = "2014";
-$AnoEscolarProx = "2013-2014";
-
-*/
+$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 
 $SWreinscripcion = true;
 
@@ -58,7 +59,4 @@ $NoDiasSemana = array('1','2','3','4','5');
 $DirectorCI = "xxxxxV-6973243";
 $DirectorNombre = "xxxxVita María Di Campo";
 
-//date_default_timezone_set('America/Caracas');
-//$FechaRemision = date('30 / 07 / 2012');
-//echo 'MM_Username '.$_SESSION['MM_Username'];
 ?>

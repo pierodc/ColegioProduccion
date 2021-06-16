@@ -80,7 +80,7 @@ if(isset($_GET['Crear']) and isset($_GET['Nexo'])){
 
 ?>
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Colegio San Francisco de As&iacute;s</title>
 
 <link rel="shortcut icon" href="../img/favicon.ico">
@@ -312,8 +312,11 @@ if($AnoEscolar != $AnoEscolarProx){
 	$RS_Status = $mysqli->query($SQLstatus);
 	if($row_Status = $RS_Status->fetch_assoc()){
 		echo ' <br><span><p class=" RTitulo">('.$AnoEscolarProx.': '.$row_Status['Status'].' '. Curso($row_Status['CodigoCurso']) .')</p>';
-		if($totalRows_Pendiente == 0)
-			echo '<p class="SW_Verde RTitulo">LUEGO DE COMPLETAR TODOS LOS DATOS <br>Espere ser notificado por email (aprox en 5 días) para registrar el pago. En caso de no ser notificado su solicitud queda en espera de liberación de cupo.</p>';
+		if($totalRows_Pendiente == 0){
+			?><p class="SW_Verde RTitulo">LUEGO DE COMPLETAR TODOS LOS DATOS <br>
+                  Espere ser notificado por email (aprox en 5 d&iacute;as) para registrar el pago. En caso de no ser notificado su solicitud queda en espera de liberaci&oacute;n de cupo.</p>
+                  <?
+		}
 		
 		if($row_RS_Alumnos['Deuda_Actual'] > 0)
 			echo '<p class="SW_Verde RTitulo">Registre el pago en el link a la derecha --->>></p>';
@@ -523,7 +526,7 @@ Cargar Foto</a>
             <td colspan="4" class="NombreCampo">en caso padres divorciados</td>
             </tr>
           <tr>
-            <td colspan="2" nowrap="nowrap" class="FondoCampo">Cónyuge del Padre<br>
+            <td colspan="2" nowrap="nowrap" class="FondoCampo">C&oacute;nyuge del Padre<br>
               <?php 
 			
 			
@@ -572,7 +575,7 @@ if($CodigoAnterior[$Nexo] > 0){
 
 			  
 			   ?></td>
-            <td colspan="2" nowrap="nowrap" class="FondoCampo">Cónyuge de la Madre<br>
+            <td colspan="2" nowrap="nowrap" class="FondoCampo">C&oacute;nyuge de la Madre<br>
               <?php 
 			
 $Nexo = 'Conyuge Madre';

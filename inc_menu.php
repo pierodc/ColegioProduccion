@@ -2,11 +2,11 @@
 <p class="Menu_Niv_1"><a href="index.php" class="Menu_Link">Inicio</a></p>
 <?php if (isset($_COOKIE['MM_Username'])){ 
 
-	$Intranet = "http://www.colegiosanfrancisco.com/intranet/a/index.php";
+	$Intranet = "http://".$_SERVER['HTTP_HOST']."/intranet/a/index.php";
 	if($_COOKIE['Privilegios'] == '2')
- 		$Intranet = "http://www.colegiosanfrancisco.com/intranet/index.php";
+ 		$Intranet = "http://".$_SERVER['HTTP_HOST']."/intranet/index.php";
 	if($_COOKIE['Privilegios'] == 'docente')
-		$Intranet = "http://www.colegiosanfrancisco.com/Docente/index.php";
+		$Intranet = "http://".$_SERVER['HTTP_HOST']."/Docente/index.php";
 
 
 

@@ -28,7 +28,8 @@ class Consulta{
 		
 		$sql = "SELECT * FROM Voto_Respuesta 
 				WHERE id_alumno = '{$id_alumno}' 
-				AND id_pregunta = '{$id_pregunta}'";
+				AND id_pregunta = '{$id_pregunta}'
+				GROUP BY id_alumno";
 		$RS = $mysqli->query($sql);
 		if($row = $RS->fetch_assoc()){
 			$Respuesta = $row['Respuesta'];
@@ -108,6 +109,31 @@ class Consulta{
 
 
 	
+	
+	
+	
+	public function Lista($id_pregunta = 0){
+		$sql = "SELECT * FROM Voto_Respuesta , Alumno , AlumnoXCurso
+				WHERE Voto_Respuesta.id_alumno = Alumno.CodigoAlumno
+				AND Alumno.CodigoAlumno = AlumnoXCurso.CodigoAlumno
+				
+				AND Voto_Respuesta.id_pregunta = '{$id_pregunta}'
+				
+				AND AlumnoXCurso.Status = 'Inscrito' 
+				AND AlumnoXCurso.Ano = '2020-2021'
+				AND AlumnoXCurso.CodigoAlumno < 999999
+				
+				
+				ORDER BY Alumno.Creador
+				
+				";
+		//echo $sql."<br>";
+		$datos = $this->con->consultaSimple($sql);
+		
+		
+		return $datos;
+		}	
+
 	
 	
 	

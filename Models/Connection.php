@@ -2,6 +2,7 @@
 
 class Conexion{
 	private $sql;
+	/*
 	private $datos_localhost = array(
 				"host" => "localhost",
 				"user" => "root",
@@ -14,24 +15,13 @@ class Conexion{
 				"pass" => "kepler1971",
 				"db" => "colegio_db"
 				);
-			
+	*/
+	
 	private $con;
 		
 	function __construct(){
-		
-		if ($_SERVER['HTTP_HOST'] == "localhost" ) {
-				$this->con = new mysqli( $this->datos_localhost['host'],
-										$this->datos_localhost['user'],
-							   			$this->datos_localhost['pass'],
-										$this->datos_localhost['db']);
-			}
-			else{
-				$this->con = new mysqli($this->datos['host'],$this->datos['user'],
-							   $this->datos['pass'],$this->datos['db']);
-			}
-	
-		
-		
+		global $datos_bd;
+		$this->con = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
 		}
 
 	function consultaSimple($sql){

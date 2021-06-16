@@ -7,6 +7,23 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php');
 $TituloPantalla = "TituloPantalla";
 
 /*
+
+
+// BASE DE DATOS //
+global $datos_bd;
+$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
+$RS = $mysqli->query($sql); //
+$row = $RS->fetch_assoc();
+$Conteo = $RS->num_rows;
+
+$insert_id = $mysqli->insert_id; 
+// BASE DE DATOS //
+ 
+
+
+
+
 $Variable = new Variable();
 $Variable->view("nombrevar");
 $Alumno = new Alumno($CodigoAlumno, $AnoEscolar);
@@ -15,25 +32,13 @@ $Compra = new Compra(["Codigo" => 1]);
 if(!TieneAcceso($Acceso_US,"")){
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 	}
-	
-	
- onclick="this.disabled=true;this.form.submit();"
+
+onclick="this.disabled=true;this.form.submit();"
  
- <a href="delete.php?id=$res[id]"  onClick="return confirm('Esta seguro que desea eliminar?')">eliminar</a>
+<a href="delete.php?id=$res[id]"  onClick="return confirm('Esta seguro que desea eliminar?')">eliminar</a>
  
  
-// Ejecuta $sql
-$RS = $mysqli->query($query_RS_Alumno);
 
-$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-
-
-$RS = $mysqli->query($sql); //
-$row = $RS->fetch_assoc();
-$Conteo = $RS->num_rows;
-
-
-$insert_id = $mysqli->insert_id; 
  
 // Ejecuta $sql y While
 $RS = $mysqli->query($sql);

@@ -1,9 +1,7 @@
 <?php 
 //$MM_authorizedUsers = "99,91,95,90";
-//require_once('../../inc_login_ck.php'); 
-require_once('../../Connections/bd.php'); 
-require_once('archivo/Variables.php'); 
-require_once('../../inc/rutinas.php'); 
+$SW_omite_trace = true;
+require_once( $_SERVER['DOCUMENT_ROOT'] . "/Config/Autoload.php");
 
 if(isset($_POST['SMS_Caja'])){
 	$sql = "UPDATE Alumno 

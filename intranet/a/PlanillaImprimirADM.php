@@ -59,8 +59,8 @@ $sql_UPDATE = "UPDATE RepresentanteXAlumno
 				SET SW_Representante = '$SWrepre'
 				WHERE CodigoRepresentante = '".$_POST['CodigoRepresentante']."'
 				AND CodigoAlumno = '".$_POST['CodigoAlumno']."'";
-$Result1 = mysql_query($sql_UPDATE, $bd) or die(mysql_error());
-echo  $sql_UPDATE; 
+$Result1 = $mysqli->query($sql_UPDATE); // mysql_query($sql_UPDATE, $bd) or die(mysql_error());
+//echo  $sql_UPDATE; 
 
 
 }

@@ -241,6 +241,7 @@ if(true or $row_Login['Privilegios'] != '2' and $_SESSION['Ultima_Ruta'] != $_SE
 					 '" . $_SERVER['QUERY_STRING'] . "' )";
 		//echo $sql_Trace;	
 		//if($MM_Username <> "piero")
+	//echo $sql_Trace;
 			if(!$SW_omite_trace)
 				$mysqli->query($sql_Trace);
 

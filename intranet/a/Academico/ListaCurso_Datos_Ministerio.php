@@ -1,12 +1,14 @@
 <?php
 $MM_authorizedUsers = "91,95,AsistDireccion,secreAcad,secreBach";
-require_once('../../../inc_login_ck.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+$TituloPagina   = "Datos Ministerio"; // <title>
+$TituloPantalla = "Datos Ministerio"; // Titulo contenido
 
-require_once('../../../Connections/bd.php'); 
-require_once('../archivo/Variables.php'); 
-require_once('../../../inc/rutinas.php'); 
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
+header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 
-  mysql_select_db($database_bd, $bd);
+//  mysql_select_db($database_bd, $bd);
 
 
 $editFormAction = $_SERVER['PHP_SELF'];
@@ -74,106 +76,62 @@ switch ($Localidad) {
                        GetSQLValueString(trim($_POST['EscolaridadObserv']), "text"),
                        GetSQLValueString($_POST['CodigoAlumno'], "int"));
 
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+  $Result1 = $mysqli->query($updateSQL); // mysql_query($updateSQL, $bd) or die(mysql_error());
 }
 
 $colname_RS_Curso = "0";
 if (isset($_GET['CodigoCurso'])) {
-  $colname_RS_Curso = (get_magic_quotes_gpc()) ? $_GET['CodigoCurso'] : addslashes($_GET['CodigoCurso']);
+  $colname_RS_Curso = addslashes($_GET['CodigoCurso']);
 }
 $query_RS_Curso = sprintf("SELECT * FROM Curso WHERE CodigoCurso = %s", $colname_RS_Curso);
+$RS_Curso = $mysqli->query($query_RS_Curso); //
+$row_RS_Curso = $RS_Curso->fetch_assoc();
+$totalRows_RS_Curso = $RS_Curso->num_rows;
+/*
 $RS_Curso = mysql_query($query_RS_Curso, $bd) or die(mysql_error());
 $row_RS_Curso = mysql_fetch_assoc($RS_Curso);
 $totalRows_RS_Curso = mysql_num_rows($RS_Curso);
+*/
 
 
-
-$colname_RS_Alumno = "-1";
-if (isset($_GET['CodigoCurso'])) {
-  $colname_RS_Alumno = (get_magic_quotes_gpc()) ? $_GET['CodigoCurso'] : addslashes($_GET['CodigoCurso']);
-}
-
+$RS_Alumno = $mysqli->query($query_RS_Alumno); //
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+$totalRows_RS_Alumno = $RS_Alumno->num_rows;
+/*
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 $totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
-
+*/
 
 $query_RS_Cursos = "SELECT * FROM Curso ORDER BY NivelMencion ASC, Curso.Curso, Curso.Seccion";
+$RS_Cursos = $mysqli->query($query_RS_Cursos); //
+$row_RS_Cursos = $RS_Cursos->fetch_assoc();
+$totalRows_RS_Cursos = $RS_Cursos->num_rows;
+/*
 $RS_Cursos = mysql_query($query_RS_Cursos, $bd) or die(mysql_error());
 $row_RS_Cursos = mysql_fetch_assoc($RS_Cursos);
 $totalRows_RS_Cursos = mysql_num_rows($RS_Cursos);
+*/
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Administraci&oacute;n SFDA</title>
-<link href="../../../estilos.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">
-<!--
-function MM_jumpMenu(targ,selObj,restore){ //v3.0
-  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-  if (restore) selObj.selectedIndex=0;
-}
-//-->
-</script>
-<script src="../../../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-<link href="../../../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<script src="../../../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-<script src="../../../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
-<link href="../../../SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
-<link href="../../../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-<link href="../../../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
-<script src="../../../SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
-<link href="../../../SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
 
-<link href="../../../estilos2.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-<!--
-a:link {
-	color: #0000FF;
-	text-decoration: none;
-}
--->
-</style>
 
-<style type="text/css">
-<!--
-.style1 {
-	font-size: 18px;
-	font-family: "Times New Roman", Times, serif;
-	color: #000066;
-}
-.style3 {font-size: 12px}
-a:visited {
-	color: #0000FF;
-	text-decoration: none;
-}
-a:hover {
-	color: #CCCC00;
-	text-decoration: underline;
-}
-a:active {
-	color: #FF0000;
-	text-decoration: none;
-}
--->
-</style>
-<link href="../../../SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
+?><!doctype html>
+<html lang="es">
+  <head>
+	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
+    <title><?php echo $TituloPag; ?></title>
+  <meta charset="ISO-8859-1">
 </head>
+<body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
+ <div class="container-fluid">
+    <div class="row">
+		<div class="col-md-12">
+			<div>
 
-<body>
-<table width="100%" border="0" align="center">
-  <tr>
-    <td><?php 
-	$TituloPantalla = $row_RS_Curso['NombreCompleto'];
-	require_once('../TitAdmin.php'); ?></td>
-  </tr>
-  <tr>
-  <tr>
-    <td colspan="2" align="center"><table width="100%"  border="0" align="center" cellpadding="2">
-        <tr>
-          <td colspan="3" class="NombreCampoBIG"><?php 
+ <?php 
 		  
 		  $extraOpcion = $_SERVER['PHP_SELF'] ."?";
 		  if(isset($_GET['AnoEscolar']))
@@ -183,7 +141,25 @@ a:active {
 		  Ir_a_Curso($_GET['CodigoCurso'],$extraOpcion);
 		  
 		  
-		  ?>          </td>
+		  ?>    
+            </div>
+		</div>
+	</div>
+</div>
+ 
+  <div class="container-fluid">
+    <div class="row">
+		<div class="col-md-12">
+			<div>
+
+
+<table width="100%" border="0" align="center">
+  
+  <tr>
+  <tr>
+    <td colspan="2" align="center"><table width="100%"  border="0" align="center" cellpadding="2">
+        <tr>
+          <td colspan="3" class="NombreCampoBIG">      </td>
         </tr>
         <tr>
           <td colspan="2" class="NombreCampo"><p> 
@@ -198,8 +174,8 @@ a:active {
         </tr>
                 <tr>
           <td width="5" nowrap="nowrap" class="FondoCampo"><strong>No.</strong> </td>
-          <td align="left"  nowrap="nowrap" class="FondoCampo">00000 
-              <input name="CedulaLetra" type="text" id="CedulaLetra" value="V/E" size="1" />
+          <td align="left"  nowrap="nowrap" class="FondoCampo">000000 
+              <input name="CedulaLetra" type="text" id="CedulaLetra" value="V/E" size="1" /> &nbsp;
               <input name="Cedula" type="text" id="Cedula" value="Cedula" size="14" />
               <input name="Apellidos" type="text" id="Apellidos" value="Apellido 1" size="9" />
               <input name="Apellidos2" type="text" id="Apellidos2" value="Apellido 2" size="9" />
@@ -222,101 +198,23 @@ a:active {
               <td colspan="2" nowrap="nowrap" <?php ListaFondo($sw , $Verde) ;?>><iframe src="iFr/Datos_Ministerio.php?No=<?php echo ++$No; ?>&CodigoAlumno=<?php echo $row_RS_Alumno['CodigoAlumno'] ?>" seamless="seamless" frameborder="0" width="100%" height="27" scrolling="no"></iframe></td>
             </tr>
             
-            
-            
-            
-            
-            
-            <?php /* if (false){ ?>
-            <tr>
-          <td width="5" nowrap="nowrap" <?php ListaFondo($sw , $Verde) ;?>><strong><?php echo ++$i; echo ") "; ?></strong> </td>
-          <td  nowrap="nowrap"  <?php $sw = ListaFondo($sw , $Verde) ;?>>
-          <form id="form2" name="form2" method="POST" action="<?php echo $editFormAction; ?>&Linea=<?php echo $i-1; ?>#<?php echo $i; ?>">
-          
-<?php  
-
-$query_RS_Repre = "SELECT * FROM Representante WHERE Creador='".$row_RS_Alumno['Creador']."' AND Nexo LIKE '%%Ma%%'";//echo $query_RS_Repre;
-$RS_Repre = mysql_query($query_RS_Repre, $bd) or die(mysql_error());
-$row_RS_Repre = mysql_fetch_assoc($RS_Repre);
-$totalRows_RS_Repre = mysql_num_rows($RS_Repre);
-
-
-
- ?><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"><?php echo  $row_RS_Alumno['CodigoAlumno'] ?></a><a name="lista" id="<?php if($i > 15 ) {echo $i-1;} ?>"></a> 
-              <input name="CodigoAlumno" type="hidden" id="hiddenField" value="<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" />
-              <input name="Actualizar_FMP" type="hidden" id="hiddenField" value="1" />
-              <input name="Actualizado_el" type="hidden" id="hiddenField" value="<?php echo  date('Y-m-d'); ?>" />
-              <input name="Actualizado_por" type="hidden" id="hiddenField" value="<?php echo  $MM_Username ?>" />
-              <input name="CedulaLetra" type="text" id="CedulaLetra" value="<?php if($row_RS_Alumno['CedulaLetra']=='') echo "V"; else echo  $row_RS_Alumno['CedulaLetra'] ?>" size="1" /><?php if($row_RS_Alumno['CedulaLetra']=='') echo "*"; ?>
-              <input name="Cedula" type="text" id="Cedula" value="<?php 
-			  
-			  if($row_RS_Alumno['Cedula']=='')  {
-			  
-			  $ciMama = str_replace('.','', $row_RS_Repre['Cedula']);
-			  $ciMama = str_replace('-','', $ciMama);
-			  $ciMama = str_replace('v','', $ciMama);
-			  $ciMama = str_replace('V','', $ciMama);
-			  $ciMama = str_replace('e','', $ciMama);
-			  $ciMama = str_replace('E','', $ciMama);
-			  $ciMama = substr("000000000".$ciMama, -8);
-			  
-			  echo '1'.substr($row_RS_Alumno['FechaNac'],2,2).$ciMama;} else echo  $row_RS_Alumno['Cedula']; 
-			  
-			  
-			  ?>" size="14" />
-              <?php if($row_RS_Alumno['Cedula']=='')  {  echo '*';} ?>
-              <input name="Apellidos" type="text" id="Apellidos" value="<?php echo  $row_RS_Alumno['Apellidos'] ?>" size="9" />
-              <input name="Apellidos2" type="text" id="Apellidos2" value="<?php echo  $row_RS_Alumno['Apellidos2'] ?>" size="9" />
-              <input name="Nombres" type="text" id="Nombres" value="<?php echo  $row_RS_Alumno['Nombres'] ?>" size="9" />
-              <input name="Nombres2" type="text" id="Nombres2" value="<?php echo  $row_RS_Alumno['Nombres2'] ?>" size="9" />
-              <input name="Sexo" type="text" id="Sexo" value="<?php echo  $row_RS_Alumno['Sexo'] ?>" size="1" />
-              <input name="FechaNac" type="date" id="FechaNac" value="<?php echo  $row_RS_Alumno['FechaNac'] ?>" size="10" />
-              <input name="Nacionalidad" type="text" id="Nacionalidad" value="<?php echo  $row_RS_Alumno['Nacionalidad'] ?>" size="2" />
-              <input name="ClinicaDeNac" type="text" id="ClinicaDeNac" value="<?php echo  $row_RS_Alumno['ClinicaDeNac'] ?>" size="15" />
-              <input name="Localidad" type="text" id="Localidad" value="<?php echo  $row_RS_Alumno['Localidad'] ?>" size="15" />
-              <input name="Entidad" type="text" id="Entidad" value="<?php echo  $row_RS_Alumno['Entidad'] ?>" size="15" />
-              <input name="EntidadCorta" type="text" id="EntidadCorta" value="<?php echo  $row_RS_Alumno['EntidadCorta'] ?>" size="2" />
-              <input name="LocalidadPais" type="text" id="LocalidadPais" value="<?php echo  $row_RS_Alumno['LocalidadPais'] ?>" size="2" />
-              
-              <input name="Datos_Observaciones_Planilla" type="text" id="Datos_Observaciones" value="<?php echo  $row_RS_Alumno['Datos_Observaciones_Planilla'] ?>" size="15" />
-              
-              
-              <input name="Datos_Observaciones" type="text" id="Datos_Observaciones" value="<?php echo  $row_RS_Alumno['Datos_Observaciones'] ?>" size="5" />
-              <input name="EscolaridadObserv" type="hidden" id="EscolaridadObserv" value="<?php echo  $row_RS_Alumno['EscolaridadObserv'] ?>" size="10" />
-              <label>
-              <input name="Datos_Revisado_por" type="hidden" id="Datos_Revisado_por" value="<?php echo  $row_RS_Alumno['Datos_Revisado_por'] ?>" size="2" />
-              <?php echo  $row_RS_Alumno['Datos_Revisado_por'] ?>&nbsp;
-			  <?php echo $row_RS_Alumno['Datos_Revisado_Fecha'] ?>
-              <input type="submit" name="Guardar" id="Guardar" value="G" />
-              </label>
-
- <?php if ( $MM_UserGroup == 91 or $MM_UserGroup == 95 or $MM_UserGroup == "secreAcad" ){ ?>
-          <input type="hidden" name="MM_update" value="form2" />
-		  <?php } ?>
-              
-              <?php if ($row_RS_Alumno['Datos_Observaciones'] > " " and false) { ?><br /><b><?php echo $row_RS_Alumno['Datos_Observaciones']; } ?></b>
-          </form></td>
-          </tr>
-          <?php }  */ ?>
-          
-          
-          
-          
-          
           
         <?php } // Show if recordset not empty ?>
-        <?php } while ($row_RS_Alumno = mysql_fetch_assoc($RS_Alumno)); ?>
+        <?php } while ($row_RS_Alumno = $RS_Alumno->fetch_assoc()); ?>
     </table></td>
   </tr>
 </table>
-<script type="text/javascript">
-<!--
-var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown:"../SpryAssets/SpryMenuBarDownHover.gif", imgRight:"../SpryAssets/SpryMenuBarRightHover.gif"});
-//-->
-</script>
 
-<?php include getenv('DOCUMENT_ROOT')."/inc/Footer_info.php"; ?>
+				
+				
 
-
+            </div>
+		</div>
+	</div>
+</div>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>
 </body>
 </html>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/AfterHTML.php"); ?>				
+				

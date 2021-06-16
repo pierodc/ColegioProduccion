@@ -1,8 +1,7 @@
 <?php 
 $MM_authorizedUsers = "2";
-require_once('../inc_login_ck.php'); 
-require_once('../Connections/bd.php'); 
-require_once('../inc/rutinas.php'); 
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {

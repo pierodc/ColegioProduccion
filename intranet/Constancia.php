@@ -1,11 +1,8 @@
 <?php 
-//$MM_authorizedUsers = "";
-//require_once('../inc_login_ck.php'); 
-require_once('../Connections/bd.php'); 
-require_once('a/archivo/Variables.php'); 
-require_once('../inc/rutinas.php'); 
-
-require_once('../inc/fpdf.php'); 
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 $ConstanciaDe = $_GET['ConstanciaDe'];
 
@@ -13,18 +10,17 @@ $colname_RS_Alumno = "-1";
 if (isset($_GET['CodigoClave'])) {
   $colname_RS_Alumno = $_GET['CodigoClave'];
 }
-mysql_select_db($database_bd, $bd);
 $query_RS_Alumno = sprintf("SELECT * FROM Alumno WHERE CodigoClave = %s", GetSQLValueString($colname_RS_Alumno, "text"));
-$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
-$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
+$RS_Alumno = $mysqli->query($query_RS_Alumno); // mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
 extract($row_RS_Alumno);
 
 $sql = "SELECT * FROM AlumnoXCurso 
 		WHERE CodigoAlumno = '$CodigoAlumno' 
 		AND Ano = '$AnoEscolarAnte'
 		AND Status = 'Inscrito'";
-$RS_ = mysql_query($sql, $bd) or die(mysql_error());
-$row_Ante = mysql_fetch_assoc($RS_);
+$RS_ = $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
+$row_Ante = $RS_->fetch_assoc();
 if($row_Ante)
 	$CursoAnte = CursoConstancia($row_Ante['CodigoCurso']);
 
@@ -33,8 +29,8 @@ $sql = "SELECT * FROM AlumnoXCurso
 		AND Ano = '$AnoEscolarProx'
 		AND (Status = 'Inscrito' OR Status = 'Aceptado')";
 //echo $sql;		
-$RS_ = mysql_query($sql, $bd) or die(mysql_error());
-$row_Prox = mysql_fetch_assoc($RS_);
+$RS_ = $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
+$row_Prox = $RS_->fetch_assoc();
 if($row_Prox)
 	$CursoProx = CursoConstancia($row_Prox['CodigoCurso']);
 
@@ -42,8 +38,8 @@ $sql = "SELECT * FROM AlumnoXCurso
 		WHERE CodigoAlumno = '$CodigoAlumno' 
 		AND Ano = '$AnoEscolar'
 		AND Status = 'Inscrito'";
-$RS_ = mysql_query($sql, $bd) or die(mysql_error());
-$row_Actual = mysql_fetch_assoc($RS_);
+$RS_ = $mysqli->query($sql); // mysql_query($sql, $bd) or die(mysql_error());
+$row_Actual = $RS_->fetch_assoc();
 if($row_Actual)
 	$CursoActual = CursoConstancia($row_Actual['CodigoCurso']);
 
@@ -216,5 +212,5 @@ $pdf->Cell(0 , 5 , 'AR / '.$MM_Iniciales ,0,0,'L');
 $pdf->Output();
 
 
-mysql_free_result($RS_Alumno);
+//mysql_free_result($RS_Alumno);
 ?>

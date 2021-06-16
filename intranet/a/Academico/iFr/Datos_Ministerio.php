@@ -1,14 +1,12 @@
 <?php
 $MM_authorizedUsers = "91,95,secreAcad,AsistDireccion,secreBach";
+if (!(isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
+	$SW_omite_trace = true;
+}
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
 
@@ -78,15 +76,18 @@ else
 					   
                        GetSQLValueString($_POST['CodigoAlumno'], "int"));
 //echo $updateSQL;
-  $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
+  $Result1 = $mysqli->query($updateSQL); //mysql_query($updateSQL, $bd) or die(mysql_error());
 }
 
 $query_RS_Alumno = "SELECT * FROM Alumno WHERE CodigoAlumno = '".$_GET['CodigoAlumno']."'";
-
+$RS_Alumno = $mysqli->query($query_RS_Alumno); //
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+$totalRows_RS_Alumno = $RS_Alumno->num_rows;
+/*
 $RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
 $row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 $totalRows_RS_Alumno = mysql_num_rows($RS_Alumno);
-
+*/
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -148,13 +149,22 @@ if(isset($_POST['Apellidos']))
 <?php  
 
 $query_RS_Repre = "SELECT * FROM Representante WHERE Creador='".$row_RS_Alumno['Creador']."' AND Nexo LIKE '%%Ma%%'";//echo $query_RS_Repre;
+$RS_Repre = $mysqli->query($query_RS_Repre); //
+$row_RS_Repre = $RS_Repre->fetch_assoc();
+$totalRows_RS_Repre = $RS_Repre->num_rows;
+									 
+	/*								 
 $RS_Repre = mysql_query($query_RS_Repre, $bd) or die(mysql_error());
 $row_RS_Repre = mysql_fetch_assoc($RS_Repre);
 $totalRows_RS_Repre = mysql_num_rows($RS_Repre);
+*/
 
 
-
- ?><a href="../../PlanillaImprimirADM.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"><?php echo  $row_RS_Alumno['CodigoAlumno'] ?></a><a href="../PDF/Titulo_Bachiller.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"> | Titulo</a><a name="lista" id="<?php if($i > 15 ) {echo $i-1;} ?>"></a> 
+ ?><a href="../../PlanillaImprimirADM.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"><?php echo  $row_RS_Alumno['CodigoAlumno'] ?></a>
+             
+             <!--a href="../PDF/Titulo_Bachiller.php?CodigoAlumno=<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" target="_blank"> | Titulo</a-->
+             
+             <a name="lista" id="<?php if($i > 15 ) {echo $i-1;} ?>"></a> 
               <input name="CodigoAlumno" type="hidden" id="hiddenField" value="<?php echo  $row_RS_Alumno['CodigoAlumno'] ?>" />
               <input name="Actualizar_FMP" type="hidden" id="hiddenField" value="1" />
               <input name="Actualizado_el" type="hidden" id="hiddenField" value="<?php echo  date('Y-m-d'); ?>" />
