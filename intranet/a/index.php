@@ -6,7 +6,7 @@ $TituloPantalla = "INTRANET"; // Titulo contenido
 
 $_var = new Variable();
 
-
+//,,
 
 // ACTUALIZA CAMBIO BCV
 $Variable = new Variable();
@@ -17,6 +17,9 @@ if( Dif_Tiempo($Var['Fecha_Modificacion']) > 90 ){
 	$Variable->edit($Var_Name, $cambio_BCV,"auto intran");
 	$Var_Value = $cambio_BCV;
 }
+
+
+
 // FIN ACTUALIZA CAMBIO BCV
 
 /*
@@ -482,21 +485,14 @@ $rows = $RS_Asignacion->num_rows;
   </div>
  
  
- <?  if($MM_Username == "piero") { ?> 
+ 
   <div class="row">
       <div class="col-md-12 subtitle">
       		<img src="/i/b.png" alt="" width="32" height="32" />Ajustes
       </div>
   </div>
-  
-  <? if($MM_UserGroup == '91' or $MM_UserGroup == '95' ) { ?>
-  <div class="row">	
-	<div class="col-md-3">
-    	<img src="/i/b.png" alt="" width="32" height="32" />
-        Cambio BCV: &nbsp;<? $_var->form_edit("Cambio_Dolar"); ?>
-	</div>
-  </div>
-  
+    <? if($MM_UserGroup == '91' or $MM_UserGroup == '95' ) { ?>
+    
    <form id="form9" name="form9" method="post" action="Actualiza_Creador.php">
    <div class="row">	
 	<div class="col-md-3">
@@ -525,6 +521,22 @@ $rows = $RS_Asignacion->num_rows;
      </div>
    </div>  
 </form>
+ <? }  ?>
+  
+   <?  if($MM_Username == "piero") { ?> 
+
+  <div class="row">	
+	<div class="col-md-3">
+    	<img src="/i/b.png" alt="" width="32" height="32" />
+        Cambio BCV: &nbsp;<? $_var->form_edit("Cambio_Dolar"); ?>
+	</div>
+  </div>
+   
+   
+   
+   <? if($MM_UserGroup == '91' or $MM_UserGroup == '95' ) { ?>
+ 
+   
    
    
   <div class="row"> 
@@ -575,6 +587,90 @@ $rows = $RS_Asignacion->num_rows;
 	</div>
   </div>
   
+  
+ <div class="row">	
+	<div class="col-md-3">
+   		<img src="/i/b.png" alt="" width="32" height="32" />
+        Seniat <?
+			
+			
+	define('APPID_CEDULA', '461');
+	define('TOKEN_CEDULA', '98f8d7aec5d8d1e61d203fe76f5b6147');
+	function getCurlData($url)
+	{
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+		$curlData = curl_exec($curl);
+		curl_close($curl);
+		return $curlData;
+	}
+	function getCI($cedula, $return_raw = false) {
+		//echo "https://cuado.co:444/api/v1?app_id=".APPID_CEDULA."&token=".TOKEN_CEDULA."&cedula=".(int)$cedula;
+		$res = getCurlData("https://cuado.co:444/api/v1?app_id=".APPID_CEDULA."&token=".TOKEN_CEDULA."&cedula=".(int)$cedula);
+		var_dump($res);
+		if($return_raw)
+			return strlen($res)>3?$res:false;
+		
+		$res = json_decode($res, true);
+		return isset($res['data']) && $res['data']?$res['data']:$res['error_str'];
+	}
+									
+	$consulta = getCI(10863540);
+	var_dump($consulta);
+									
+									/*
+	if(is_array($consulta)) {
+		print_r($consulta);
+	}else{
+		echo "Ocurrio un error en la consulta: ".$consulta;
+	}
+
+*/
+									
+									
+		?>
+		<script>
+		
+		var request = require("request")
+var APPID_CEDULA = '461';
+var TOKEN_CEDULA = '98f8d7aec5d8d1e61d203fe76f5b6147';
+
+function getCI(cedula, cb) {
+	request({
+		url: 'https://cuado.co:444/api/v1?app_id='+APPID_CEDULA+'&token='+TOKEN_CEDULA+'&cedula='+cedula,
+		json: true,
+		rejectUnauthorized: false
+	}, function (error, response, body) {
+		if (!error && response.statusCode === 200) {
+			if(body.data)
+				return cb(true, body.data, false);
+			else 
+				return cb(true, false, body.error_str);
+		}else{
+			cb(false, false, false);
+		}
+	});
+}
+
+
+getCI('10863540', function(result, data, error_str){
+	if(result)
+		if(error_str)
+			console.log('Ocurrio un error: '+error_str);
+		else 
+			console.log(data);
+	else
+		console.log('Ocurrio un error en la consulta');
+});
+		
+		</script>
+	</div>
+  </div>
+  
  
 <? } ?>
 
@@ -582,9 +678,15 @@ $rows = $RS_Asignacion->num_rows;
 
   
   </div>
-  
+ <?
+	echo cambio_BCV();
+	?> 
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
+
+
+	
+	
 </body>
 </html>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/AfterHTML.php"); ?>
