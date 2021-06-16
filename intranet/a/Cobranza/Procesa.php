@@ -1,11 +1,7 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
-  
-require_once('../../../Connections/bd.php');
-require_once('../archivo/Variables.php');
-require_once('../../../inc/rutinas.php'); 
-$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 // Activa Inspeccion
 $Insp = false ;

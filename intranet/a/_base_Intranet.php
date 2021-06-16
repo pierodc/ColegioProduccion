@@ -2,7 +2,7 @@
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
 $SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 $TituloPantalla = "TituloPantalla";
 

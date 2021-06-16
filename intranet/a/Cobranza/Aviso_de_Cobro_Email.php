@@ -1,5 +1,6 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90";
+$SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 

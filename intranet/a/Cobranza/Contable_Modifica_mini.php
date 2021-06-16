@@ -1,14 +1,12 @@
 <?php
 $MM_authorizedUsers = "99,91,95,90";
+if (isset($_POST["MM_update"])) {
+	$SW_omite_trace = false;}
+else{
+	$SW_omite_trace = true;}
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-/*
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-*/
+
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
 	$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
