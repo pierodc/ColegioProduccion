@@ -41,9 +41,8 @@ $query_Solvente = "SELECT * FROM ContableMov
 					AND ReferenciaMesAno = '$MesAnoParaSolvencia'
 					AND MontoDebe_Dolares > 0
 					AND SWCancelado = '0'";
-//echo $query_Solvente; //query_Solvente
 $RS_Solvente = $mysqli->query($query_Solvente); // mysql_query($query_Solvente, $bd) or die(mysql_error());
-if($row_Solvente = $RS_Solvente->fetch_assoc()){
+if($row_Solvente = $RS_Solvente->fetch_assoc() and $MM_Username != "piero"){
 		//echo "ssss" . $row_Solvente["CodigoPropietario"];
 		echo " Por favor comuníquese con soporte o administración para solucionar ";
 		$Solvente = false;
@@ -62,16 +61,7 @@ if (isset($row_RS_Alumno['CodigoCurso'])) {
 $query_RS_Curso = "SELECT * FROM Curso WHERE CodigoCurso = ".$CodigoCurso; 
 $RS_Curso = $mysqli->query($query_RS_Curso); //
 $row_RS_Curso = $RS_Curso->fetch_assoc();
-/*
-$RS_Curso = mysql_query($query_RS_Curso, $bd) or die(mysql_error());
-$row_RS_Curso = mysql_fetch_assoc($RS_Curso);
-*/
-/*
-function Inas($Inas){
-	$Inas=$Inas*1;
-	if($Inas==0)$Inas='';
-	return $Inas;}
-*/
+
 
 $linea = 4.5;
 $tipologia = 'Arial';

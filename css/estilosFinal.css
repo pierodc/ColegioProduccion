@@ -135,3 +135,44 @@ input[type=text] {
 input[type=text]:focus {
   background-color: lightblue;
 }
+
+
+
+
+
+
+DIV.table 
+{
+    display:table;
+}
+DIV.tr:hover {	background-color: #EFEFEF;
+}
+FORM.tr, DIV.tr
+{
+    display:table-row;
+	/*background-color: #F5F5F5;*/
+}
+FORM.tr:nth-child(even) {
+	background-color: #F5F5F5;
+}	   
+FORM.tr:hover {	background-color: #FFF3CC;
+}	   
+	   
+SPAN.td
+{
+    display:table-cell;
+}
+
+
+.verde{
+   background: #C6FFC6;
+}	   
+
+.right{
+	text-align: right
+}
+
+.center{
+	text-align: center
+}
+

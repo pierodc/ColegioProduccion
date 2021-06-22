@@ -63,19 +63,16 @@ $Fecha = $row_RS_Contable_Mov['Fecha'];
 $Tipo = $row_RS_Contable_Mov['Tipo'];
 $CodigoCuenta = $row_RS_Contable_Mov['CodigoCuenta'];
 
-/*
-$RS_Contable_Mov = mysql_query($query_RS_Contable_Mov, $bd) or die(mysql_error());
-$row_RS_Contable_Mov = mysql_fetch_assoc($RS_Contable_Mov);
-$totalRows_RS_Contable_Mov = mysql_num_rows($RS_Contable_Mov);
-*/
+
 
 $Alumno = new Alumno($row_RS_Contable_Mov['CodigoPropietario']);
 
 
 $query_RS_Banco_Mov_Disponible = "SELECT * FROM Contable_Imp_Todo 
-									WHERE MontoHaber = $MontoHaber 
-									AND CodigoCuenta = $CodigoCuenta 
-									ORDER BY CodigoCuenta, Fecha DESC"; //echo $query_RS_Banco_Mov_Disponible;
+									WHERE MontoHaber = '$MontoHaber' 
+									AND CodigoCuenta = '$CodigoCuenta'
+									ORDER BY CodigoCuenta, Fecha DESC";
+echo $query_RS_Banco_Mov_Disponible;
 $RS_Banco_Mov_Disponible = $mysqli->query($query_RS_Banco_Mov_Disponible); //
 $row_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->fetch_assoc();
 $totalRows_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->num_rows;
@@ -169,10 +166,11 @@ $Tipo = $row_RS_Contable_Mov['Tipo'];
 
 if($row_RS_Contable_Mov['Referencia'] > ""){					
 $query_RS_Banco_Mov_aux = " SELECT * FROM Contable_Imp_Todo 
-        										WHERE Referencia = ".$row_RS_Contable_Mov['Referencia']." 
-        										AND CodigoCuenta = $CodigoCuenta 
+        										WHERE Referencia = '".$row_RS_Contable_Mov['Referencia']."'
+        										AND CodigoCuenta = '$CodigoCuenta'
         										AND MontoHaber = '$MontoHaber'
-        										ORDER BY CodigoCuenta, Fecha DESC"; //echo $query_RS_Banco_Mov_Disponible;
+        										ORDER BY CodigoCuenta, Fecha DESC"; 
+	echo $query_RS_Banco_Mov_Disponible;
 $RS_Banco_Mov_aux = $mysqli->query($query_RS_Banco_Mov_aux); //
 $row_RS_Banco_Mov_aux = $RS_Banco_Mov_aux->fetch_assoc();
 //$Conteo = $RS->num_rows;
@@ -307,6 +305,11 @@ echo "<br>Ref Original: ".$row_RS_Contable_Mov['ReferenciaOriginal'];
       <option value="5" <?php if ($row_RS_Contable_Mov['Tipo']==6) echo "SELECTED"; ?>>Ajuste</option>   
       <option value="6" <?php if ($row_RS_Contable_Mov['Tipo']==6) echo "SELECTED"; ?>>T. Debito</option>  
       <option value="7" <?php if ($row_RS_Contable_Mov['Tipo']==7) echo "SELECTED"; ?>>T. Credito</option>      
+      <option value="8" <?php if ($row_RS_Contable_Mov['Tipo']==8) echo "SELECTED"; ?>>Zelle</option>      
+      <option value="9" <?php if ($row_RS_Contable_Mov['Tipo']==9) echo "SELECTED"; ?>>Cash Dollares</option>      
+      <option value="10" <?php if ($row_RS_Contable_Mov['Tipo']==10) echo "SELECTED"; ?>>Cash Euro</option>      
+        
+        
         
         
         </select>
@@ -314,7 +317,9 @@ echo "<br>Ref Original: ".$row_RS_Contable_Mov['ReferenciaOriginal'];
 </tr>
 <tr valign="baseline">
 <td align="right" nowrap="nowrap" class="NombreCampo">En</td>
-<td align="left" nowrap="nowrap" class="FondoCampo"><select name="CodigoCuenta" id="CodigoCuenta">
+<td align="left" nowrap="nowrap" class="FondoCampo">
+<? echo $row_RS_Contable_Mov['CodigoCuenta']; ?>
+<select name="CodigoCuenta" id="CodigoCuenta">
 <option>Seleccione...</option>
 <option value="1" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==1) echo "SELECTED"; ?>>Mercantil</option>
 <option value="2" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==2) echo "SELECTED"; ?>>Provincial</option>
@@ -323,6 +328,13 @@ echo "<br>Ref Original: ".$row_RS_Contable_Mov['ReferenciaOriginal'];
 <option value="4" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==4) echo "SELECTED"; ?>>V. de Cred.</option>
  <option value="5" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==5) echo "SELECTED"; ?>>Activo</option>
 <option value="10" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==10) echo "SELECTED"; ?>>Caja</option>
+
+<option value="6" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==6) echo "SELECTED"; ?>>Zelle</option>
+<option value="7" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==7) echo "SELECTED"; ?>>Cash Dollares</option>
+<option value="8" <?php if ($row_RS_Contable_Mov['CodigoCuenta']==8) echo "SELECTED"; ?>>Cash Euro</option>
+
+
+
 <?php //} ?>
 </select></td>
 </tr>

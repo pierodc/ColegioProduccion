@@ -122,11 +122,28 @@ class Banco{
 		echo '<option value="0">Seleccione ...</option>';
 		echo '<option value="0"></option>';
 		while($row = $Zelles->fetch_assoc()){
-			echo "<option value='".$row['id']."'>";
-			echo DDMMAAAA($row['Fecha'])." | ".$row['Referencia']." | ".substr($row['Descripcion'],0,30)." | ".$row['Haber']."  ";
-			echo "</option>";
+			
+			$sql = "SELECT * FROM ContableMov 
+					WHERE Referencia = '".$row['Referencia']."'";
+			$datos = $this->con->consultaRetorno($sql);
+			while($row2 = $datos->fetch_assoc()){
+				$UsadoDolares += $row2['MontoHaber_Dolares'];
+			}
+			
+			
+			if($UsadoDolares < $row['Haber']){
+				if($UsadoDolares > 0){
+					$resta = $row['Haber'] - $UsadoDolares;
+					$UsadoDolares = " - ".$UsadoDolares . " = " . $resta;
+				}
+				echo "<option value='".$row['id']."'>";
+				echo DDMMAAAA($row['Fecha'])." | ".$row['Referencia']." | ".substr($row['Descripcion'],0,30)." | ".$row['Haber']."  ".$UsadoDolares;
+				echo "</option>";
+			}
+			$UsadoDolares = "";
 		}					
 		echo '</select>';
+		
 	}
 		
 

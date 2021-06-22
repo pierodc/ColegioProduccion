@@ -1,13 +1,18 @@
 <?php 
-//$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
+$SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
+$TituloPagina   = "Archivos Banco"; // <title>
+$TituloPantalla = "Archivos Banco"; // Titulo contenido
+
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php');
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 
-$TituloPantalla ="Archivos Banco";
 $banco = $_POST['banco'];
 //$Transaccion = array();
+
+
 
 function LimpiaStr($str){
 	$CharValidos = array('','0','1','2','3','4','5','6','7','8','9','.','/',';',' ','*');
@@ -22,7 +27,7 @@ function LimpiaStr($str){
 }
 
 // Sube Archivo al servidor
-if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST[time] > '') {
+if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST['time'] > '') {
 	//$NombreBanco = $_POST["banco"];
 	$NombreArchivo = $_SERVER['DOCUMENT_ROOT'] ."/archivo/".date('Y_m_d_h_i_s').".txt";
     //echo $NombreArchivo;
@@ -32,7 +37,7 @@ if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST[time] > '') {
 	if (stripos($_FILES['userfile']['name'] , "EPORTE")){
 		$NombreBanco = "prov" ;
 	}
-	elseif (stripos($_FILES['userfile']['name'] , "-".date(Y))){
+	elseif (stripos($_FILES['userfile']['name'] , "-".date('Y'))){
 		$NombreBanco = "merc" ;
 	}
 	elseif (stripos($_FILES['userfile']['name'] , "tmt ")){
@@ -86,12 +91,6 @@ if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST[time] > '') {
 
 
 
-
-/*
-echo  "<br><br><br><br> ---- INICIO ---- <br><br>";
-echo $NombreArchivo ."<br><br>";
-echo "Banco: " . $NombreBanco ."<br><br>";
-*/
 
 $Banco = new Banco();
 if($NombreArchivo > "" and $NombreBanco > "" ){
@@ -217,7 +216,7 @@ if($NombreArchivo > "" and $NombreBanco > "" ){
 			$Cuenta_id = 51;
 		}
 		
-		/* */
+		
 		//echo $linea . "<br>";
 		//echo "<b>Fecha: $_Fecha <br>Ref: $_Ref <br>Tipo: $_Tipo <br>Descripcion: $_Descripcion <br>Monto: $_Monto </b><br><br>";
 		
@@ -241,9 +240,9 @@ if($NombreArchivo > "" and $NombreBanco > "" ){
 			//echo "<b>ADD</b><br><br>";
 			$id = $Banco->Existe($Transaccion[$i]);
 			if($id > 0)
-				$Transaccion[$i][id] = $id ;
+				$Transaccion[$i]['id'] = $id ;
 			else
-				$Transaccion[$i][id] = 0 ;
+				$Transaccion[$i]['id'] = 0 ;
 		}
 		
 
@@ -260,18 +259,23 @@ if($NombreArchivo > "" and $NombreBanco > "" ){
 	
 }
 
+
+
+
+require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
 ?><!doctype html>
 <html lang="es">
   <head>
-    <!-- Required meta tags -->
-    
-<? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Head.php"); ?>
+	<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
     <title><?php echo $TituloPag; ?></title>
 </head>
 <body>
-<? require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/_Template/NavBar.php');  ?>
+<? //require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
-  
+
+
+
+
     		
             <form enctype="multipart/form-data" action="" method="post">
           <table width="600" border="0" align="center" cellpadding="2" cellspacing="2">
@@ -306,9 +310,9 @@ if($NombreArchivo > "" and $NombreBanco > "" ){
 		$i++;	
 		$Verde = 0;
 		
-		$Banco = new Banco($Tr[id]);
+		$Banco = new Banco($Tr['id']);
 		//var_dump($Tr);
-		if($Tr[id] > 0){
+		if($Tr['id'] > 0){
 			$Verde = 1;
 		}
 		

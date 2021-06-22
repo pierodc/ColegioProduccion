@@ -427,7 +427,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   
   switch ($theType) {
     case "text":
-      $theValue = ($theValue != "") ? "'" .  $theValue . "'" : "NULL";
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;    
     case "long":
     case "int":
@@ -2320,8 +2320,9 @@ function SueldoIntDia($FechaIngreso , $FechaObjAntiguedad , $SueldoBase){
 	}
 
 function Frame_SW ($ClaveCampo,$ClaveValor,$Tabla,$Campo,$Valor) {
+	//echo "$ClaveCampo,$ClaveValor,$Tabla,$Campo,$Valor";
 	if ($Valor < 1){$Valor = 0;}
-	echo "<iframe width=\"20\" height=\"20\" src=\"http://www.colegiosanfrancisco.com/inc/onoff.php?ClaveCampo=$ClaveCampo&ClaveValor=$ClaveValor&Tabla=$Tabla&Campo=$Campo&Valor=$Valor\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
+	echo "<iframe width=\"20\" height=\"20\" src=\"https://www.colegiosanfrancisco.com/inc/onoff.php?ClaveCampo=$ClaveCampo&ClaveValor=$ClaveValor&Tabla=$Tabla&Campo=$Campo&Valor=$Valor\" frameborder=\"0\" id=\"SWframe\"   scrolling=\"no\" seamless  ></iframe>
 	"; 
 }
 	

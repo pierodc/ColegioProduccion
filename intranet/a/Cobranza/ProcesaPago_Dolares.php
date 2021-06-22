@@ -49,7 +49,9 @@ if (isset($_GET['Procesar_Codigo'])) { // Cambiar OR por AND para produccion
 		// Asigna Numero de recibo al PAGO
 		$sql = "UPDATE ContableMov 
 				SET SWCancelado = '1', 
-				CodigoRecibo = ".$CodigoRecibo." 
+				CodigoRecibo = ".$CodigoRecibo." ,
+				ProcesadoPor = '".$MM_Username."',
+				FechaCancelacion  = NOW()
 				WHERE Codigo = ".$_GET['Procesar_Codigo']; 
 		//echo $sql. "<br>";	
 		$mysqli->query($sql);
@@ -94,7 +96,10 @@ if (isset($_GET['Procesar_Codigo'])) { // Cambiar OR por AND para produccion
 					$sql = "UPDATE ContableMov 
 							SET CodigoRecibo = ".$CodigoRecibo." , 
 							SWCancelado = '1' ,
-							P_IVA = '$P_IVA' 
+							P_IVA = '$P_IVA' ,
+							ProcesadoPor = '".$MM_Username."',
+							FechaCancelacion  = NOW()
+							
 							WHERE Codigo = ".$row_Pendiente['Codigo']; 
 					//echo $sql. "<br>";
 					$mysqli->query($sql);
@@ -123,7 +128,9 @@ if (isset($_GET['Procesar_Codigo'])) { // Cambiar OR por AND para produccion
 						// suma el monto abono (sin iva) al registro madre
 						// Para reversar el recibo restar a Abono fraccion de monto 
 						$sql = "UPDATE ContableMov 
-								SET MontoAbono_Dolares = MontoAbono_Dolares+".$MontoDisponible_sin_IVA." 
+								SET MontoAbono_Dolares = MontoAbono_Dolares+".$MontoDisponible_sin_IVA." ,
+								ProcesadoPor = '".$MM_Username."',
+								FechaCancelacion  = NOW()
 								WHERE Codigo = ".$row_Pendiente['Codigo']; 
 						//echo $sql. "<br>";
 						$mysqli->query($sql);
@@ -135,11 +142,14 @@ if (isset($_GET['Procesar_Codigo'])) { // Cambiar OR por AND para produccion
 						// Crea Registro de abono
 						// Para reversar el recibo elimina este registro 
 						$sql = "INSERT INTO ContableMov 
-								(SWCancelado, CodigoRecibo, MontoDebe_Dolares, SWiva, P_IVA, CodigoCuenta, 
+								(SWCancelado, CodigoRecibo, 
+								MontoDebe_Dolares, SWiva, 
+								P_IVA, CodigoCuenta, 
 								CodigoPropietario, Fecha, 
 								FechaIngreso, FechaValor, 
 								Referencia, ReferenciaMesAno, 
-								Descripcion, SWValidado, RegistradoPor) 
+								Descripcion, SWValidado, RegistradoPor, 
+								ProcesadoPor, FechaCancelacion) 
 
 								VALUES 
 
@@ -147,7 +157,8 @@ if (isset($_GET['Procesar_Codigo'])) { // Cambiar OR por AND para produccion
 								".$row_Pendiente['CodigoPropietario'].", '".$row_Pendiente['Fecha']."',
 								'".$row_Pendiente['FechaIngreso']."', '".$row_Pendiente['FechaValor']."',
 								'".$row_Pendiente['Referencia']."', '".$row_Pendiente['ReferenciaMesAno']."', 
-								'ABONO ".$row_Pendiente['Descripcion']."', '1', 'auto')";
+								'ABONO ".$row_Pendiente['Descripcion']."', '1', 'auto',
+								'".$MM_Username."', NOW())";
 						//echo $sql. "<br>";		
 						$mysqli->query($sql);
 						//echo "fin pago parcial y break<br>";

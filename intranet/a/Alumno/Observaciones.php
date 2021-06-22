@@ -40,10 +40,12 @@ body {
 <?php
 if($MM_Username != 'piero'){
 	$addSQL = "AND Area = '".$_GET['Area']."'"; }
+	  
 $query_Observaciones = "SELECT * FROM Observaciones 
 						WHERE CodigoAlumno = $CodigoAlumno 
 						$addSQL
 						ORDER BY Fecha DESC, Hora DESC";
+//echo $query_Observaciones;	  
 $Observaciones = $mysqli->query($query_Observaciones);
 $row_Observaciones = $Observaciones->fetch_assoc();
 $totalRows_Observaciones = $Observaciones->num_rows;

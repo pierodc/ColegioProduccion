@@ -75,6 +75,19 @@ class ContableMov{
 	}	
 	
 
+	
+	public function Diario($fecha){
+		$sql = "SELECT * FROM ContableMov
+				WHERE FechaCancelacion = '{$fecha}'
+				AND ( MontoHaber > 0 OR MontoHaber_Dolares > 0 )
+				AND SWCancelado = '1'
+				ORDER BY Fecha, ProcesadoPor, CodigoRecibo";
+		$datos = $this->con->consultaRetorno($sql);
+		$resultado = array();
+		return $datos;
+	}
+	
+	
 
 }
 
