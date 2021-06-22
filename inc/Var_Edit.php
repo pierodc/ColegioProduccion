@@ -1,10 +1,10 @@
 <?php 
-
+if (isset($_POST['Var_Name'])) {
+	$SW_omite_trace = false;}
+else{
+	$SW_omite_trace = true;}
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 
-//mysql_select_db($database_bd, $bd);
 
 
 $Variable = new Variable();

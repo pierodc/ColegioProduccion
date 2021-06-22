@@ -6,7 +6,7 @@ $TituloPantalla = "INTRANET"; // Titulo contenido
 
 $_var = new Variable();
 
-
+//,,
 
 // ACTUALIZA CAMBIO BCV
 $Variable = new Variable();

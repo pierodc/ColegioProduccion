@@ -113,11 +113,15 @@ if( isset($_GET['doLogout']) and $_GET['doLogout']='true'){
 <?php include('inc_menu.php'); ?></td>
             <td rowspan="3" align="center" valign="top" class="box1">
 <p>&nbsp;</p>
-<p><strong>N&uacute;meros de tel&eacute;fono activos: <br>
-0412.303.44.44<br>
-0414.303.44.44<br>
-<!-- (0212) 285.78.72 / 285.69.33 / 286.04.37 / 284.05.20  -->
-</strong></p>
+<p><span class="bg-warning"><strong>N&uacute;meros de tel&eacute;fono activos: <br>
+0412.303.44.44 Solo llamadas<br>
+0414.303.44.44 solo WhatsApp</strong></span><strong><br>
+<!-- (0212) 285.78.72 / 285.69.33 / 286.04.37 / 284.05.20  --></strong></p>
+<p><a href="https://www.dropbox.com/s/1a3o9sbx8qzbyo7/PasosParaIngresarEnElProceso.pdf?dl=0" class="xbig" target="_blank">Proceso de Ingreso de Nuevos Alumnos</a><br>
+  Para solicitar cupo: debe registrarse, ingresar y llenar los datos del alumno y la familia. <br>
+  En el trascurso de 5 d&iacute;as h&aacute;biles sera contactado.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p class="xbig " >Correo institucional Alumno </p>
 <p >    Las cuentas las crea el servidor del colegio, <strong>no debe crearla</strong><br>
@@ -125,12 +129,6 @@ if( isset($_GET['doLogout']) and $_GET['doLogout']='true'){
     <a href="http://correo.colegiosanfrancisco.com">correo.colegiosanfrancisco.com</a><br>
     Usuario: NombreApellido@ColegioSanFrancisco.com<br>
     Clave: DDMMAAAAsfa    (dia mes a&ntilde;o de naciemiento del alumno seguido de &quot;sfa&quot;)</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><a href="https://www.dropbox.com/s/1a3o9sbx8qzbyo7/PasosParaIngresarEnElProceso.pdf?dl=0" class="xbig" target="_blank">Proceso de Ingreso de Nuevos Alumnos</a><br>
-Para solicitar cupo: debe registrarse y llenar los datos del alumno y la familia.         <br>
-    En el trascurso de 5 d&iacute;as h&aacute;biles sera contactado.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p></td>
