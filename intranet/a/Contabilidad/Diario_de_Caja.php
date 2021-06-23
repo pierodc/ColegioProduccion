@@ -13,8 +13,25 @@ $ContableMov = new ContableMov();
 $Alumno = new Alumno($CodigoAlumno);
 $Caja = new Caja();
 
+
+if (isset($_GET['Tipo'])) {
+	$Tipo_ = $_GET['Tipo'];
+	setcookie("Tipo_",$Tipo_,time()+3600);
+}
+elseif(isset($_COOKIE["Tipo_"])){
+	$Tipo_ = $_COOKIE["Tipo_"];
+}
+else {
+	$Tipo_ = "";
+}
+
+
 if (isset($_POST['Fecha_'])) {
 	$Fecha_ = $_POST['Fecha_'];
+	setcookie("Fecha",$Fecha_,time()+3600);
+}
+elseif(isset($_COOKIE["Fecha_"])){
+	$Fecha_ = $_COOKIE["Fecha_"];
 }
 else {
 	$Fecha_ = date('Y-m-d');
@@ -23,7 +40,7 @@ else {
 //echo $Fecha_;
 
 //$Fecha_ = "2021-06-18";
-$Resultado = $ContableMov->Diario($Fecha_);
+$Resultado = $ContableMov->Diario($Fecha_,$Tipo_);
 
 
 require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php" );
@@ -48,6 +65,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
       <label><input name="Fecha_" type="date" value="<?php echo $Fecha_ ?>" onchange="form.submit();" />
         <input type="submit" name="button" id="button" class="button" value="Buscar" />
       </label>
+      <a href="Diario_de_Caja.php?Tipo=9">Cash</a> | <a href="Diario_de_Caja.php?Tipo=8">Zelle</a> | <a href="Diario_de_Caja.php?Tipo=all">Todo</a>
  </form>    
   </div>
 </div> 
@@ -67,19 +85,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 		
 		//Totales Usuario
 		if ($ProcesadoPor_ante != $res['ProcesadoPor'] and $ProcesadoPor_ante > "" or $Resultado->num_rows == $i ){ ?>
-		<div class="tr">
+		<!--div class="tr">
 			<span class="td FondoCampo">TOTALES: <?= $ProcesadoPor_ante ?></span>
 			<span class="td FondoCampo">&nbsp;</span>
 			<span class="td FondoCampo">&nbsp;</span>
 			<span class="td FondoCampo">&nbsp;</span>
-		</div>	
+		</div-->	
+        
 		<? foreach ($Total as $clave => $valor){ ?>
-		<div class="tr">
+		<!--div class="tr">
 			<span class="td FondoCampo">=></span>
 			<span class="td FondoCampo"><? echo FormaDePago($clave) ?></span>
 			<span class="td right FondoCampo"><? echo Fnum($valor) ?></span>
 			<span class="td FondoCampo">&nbsp;</span>
-		</div>
+		</div-->
 		<? 
 			$Caja->view($Fecha_ , $clave, $valor, $ProcesadoPor_ante);	
 
@@ -90,14 +109,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 		
 		//TITULO Usuario
 		if ($ProcesadoPor_ante != $res['ProcesadoPor']){ ?>
-		<div class="tr">
+		<!--div class="tr">
 		<span class="td NombreCampoTITULO">
 			<? echo $res['ProcesadoPor']; ?>
 		</span>
 		<span class="td NombreCampoTITULO">&nbsp;</span>
 		<span class="td NombreCampoTITULO">&nbsp;</span>
 		<span class="td NombreCampoTITULO">&nbsp;</span>
-		</div>
+		</div-->
 		<? } 
 		
 		
@@ -114,7 +133,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
     	<span class="td">
         <? echo ++$i; ?>
         </span>
-    	<span class="td">
+    	<span class="td" title="<?= $res['ProcesadoPor'] ?>">
         <? echo $Alumno->NombreApellidoCodigo($res['CodigoPropietario']); ?>
         </span>
         <span class="td right">
@@ -133,19 +152,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 	
 	
 	if ($ProcesadoPor_ante != $res['ProcesadoPor'] and $ProcesadoPor_ante > "" or $Resultado->num_rows == $i ){ ?>
-		<div class="tr">
+		<!--div class="tr">
 			<span class="td FondoCampo">TOTALES: <?= $ProcesadoPor_ante ?></span>
 			<span class="td FondoCampo">&nbsp;</span>
 			<span class="td FondoCampo">&nbsp;</span>
 			<span class="td FondoCampo">&nbsp;</span>
-		</div>	
+		</div-->	
 		<? foreach ($Total as $clave => $valor){ ?>
-		<div class="tr">
+		<!--div class="tr">
 			<span class="td FondoCampo">=></span>
 			<span class="td FondoCampo"><? echo FormaDePago($clave) ?></span>
 			<span class="td right FondoCampo"><? echo Fnum($valor) ?></span>
 			<span class="td FondoCampo">&nbsp;</span>
-		</div>
+		</div-->
 		<? } $Caja->view($Fecha_ , $clave, $valor, $ProcesadoPor_ante);
 			unset($Total);
 		} 

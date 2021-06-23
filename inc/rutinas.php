@@ -320,7 +320,7 @@ function ActulizaEdoCuentaDolar($CodigoAlumno ){  //, $CambioDolar
 
 	if( $totalRows_RS_busca_Dolares > 0 )	{								
 	while($row_busca_Dolares = $RS_busca_Dolares->fetch_assoc()){
-		$MontoDebe_Dolares = round(($row_busca_Dolares['MontoDebe_Dolares'] - $row_busca_Dolares['MontoAbono_Dolares']) * $CambioDolar ,2);
+		$MontoDebe_Dolares = round(((float)$row_busca_Dolares['MontoDebe_Dolares'] - (float)$row_busca_Dolares['MontoAbono_Dolares']) * (float)$CambioDolar ,2);
 		$sql_Upt_Dolares = "UPDATE ContableMov 
 							SET MontoDebe = '$MontoDebe_Dolares' 
 							WHERE Codigo = '".$row_busca_Dolares['Codigo']."'";
