@@ -227,6 +227,7 @@ function FormaDePago($Forma){
 	if ($Forma == 8){return "Zelle";}
 	if ($Forma == 9){return "Cash Dollares";}
 	if ($Forma == 10){return "Cash Euro";}
+	if ($Forma == "Total"){return "Total";}
 }
 
 function Acceso($Acceso_US,$Requerido_Pag){
