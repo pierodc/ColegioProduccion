@@ -258,7 +258,7 @@ $hnos='';
 if($totalRows_RS_hnos>0){
 	do{
 		$hnos .= Curso($row_RS_hnos['CodigoCurso']).' ('.$row_RS_hnos['CodigoAlumno'].') '.$row_RS_hnos['Apellidos'].' '.$row_RS_hnos['Nombres'].' ';
-	}while($row_RS_hnos = mysql_fetch_assoc($RS_sql_hnos));
+	}while($row_RS_hnos = $RS_sql_hnos->fetch_assoc());
 	
 
 	LetraPeq($pdf);
@@ -387,7 +387,7 @@ LetraPeq($pdf);
 $pdf->Cell(40 , $Ln1 , '' , $borde1 , 0 , 'L'); 
 $pdf->Cell(120 , $Ln1 , 'Email' , $borde1 , 1 , 'L'); 
 LetraGde($pdf);
-$pdf->Cell(40 , $Ln2 , $row_RS_Padre['CargoEmpresa'].' ('.round($row_RS_Padre['Remuneracion']/1000,2).'k)' , $borde2 , 0 , 'L');
+$pdf->Cell(40 , $Ln2 , $row_RS_Padre['CargoEmpresa'].' ('.$row_RS_Padre['Remuneracion'].' )' , $borde2 , 0 , 'L');
 $pdf->Cell(120 , $Ln2 , $row_RS_Padre['Email1'].' '.$row_RS_Padre['Email2'] , $borde2 , 1 , 'L');
  
 LetraPeq($pdf);
