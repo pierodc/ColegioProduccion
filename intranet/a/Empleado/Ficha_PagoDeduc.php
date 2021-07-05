@@ -55,13 +55,15 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2") and ($MM_Us
 	
 	if(isset($_GET['BC'])){
 		 	$CodigoQuincena = $Ano ." ". $Mes ." BC";
-			$insertSQL = sprintf("INSERT INTO Empleado_Pago (Codigo_Empleado, Codigo_Quincena, Concepto, Monto, Obs, Registro_Por) 
-							VALUES (%s, %s, %s, %s, %s, %s)",
+			$insertSQL = sprintf("INSERT INTO Empleado_Pago (Codigo_Empleado, Codigo_Quincena, Concepto, Monto, Obs, FormaDePago, TopeConcepto, Registro_Por) 
+							VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
 						   	GetSQLValueString($_POST['Codigo_Empleado'], "int"),
 							GetSQLValueString($CodigoQuincena, "text"),  
 							GetSQLValueString("+BC", "text"),
 							GetSQLValueString(coma_punto($_POST['Monto']), "double"), 
 							GetSQLValueString($_POST['Descripcion'], "text"),
+							GetSQLValueString($_POST['FormaDePago'], "text"),
+							GetSQLValueString($_POST['TopeConcepto'], "text"),
 							GetSQLValueString($MM_Username, "text"));
 	}
 	
@@ -208,7 +210,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 <body <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
-   
+   <div class="container-fluid">
  <div class="row">
 	<div class="col-md-3">
 <table class="sombra" >
@@ -278,9 +280,9 @@ while ($row = $RS->fetch_assoc()) {
 <table class="sombra ancho centro">
   <tr>
     <td width="25%" nowrap="nowrap"><a href="Ficha_Datos.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>"> <img src="../../../i/client_account_template.png" width="32" height="32" border="0" align="absmiddle" /> Ficha</a></td>
-    <td width="25%" nowrap="nowrap"><a href="Ficha_Asist.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>"><img src="../../../i/calendar_edit.png" width="32" height="32" border="0" align="absmiddle" />Asistencia</a></td>
-    <td width="25%" nowrap="nowrap"><a href="Ficha_Fidei.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>"><img src="../../../i/sallary_deferrais.png" width="32" height="32" border="0" align="absmiddle" /> Fideicomiso</a></td>
-    <td width="12%" nowrap="nowrap"><a href="Ficha_PagoDeduc.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>"><img src="../../../i/coins_in_hand.png" width="32" height="32" border="0" align="absmiddle" /> Pagos Deducciones</a></td>
+    <td width="25%" nowrap="nowrap"><a href="Ficha_Asist.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>"><img src="../../../i/calendar_edit.png" width="32" height="32" border="0" align="absmiddle" />Asist</a></td>
+    <td width="25%" nowrap="nowrap"><a href="Ficha_Fidei.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>"><img src="../../../i/sallary_deferrais.png" width="32" height="32" border="0" align="absmiddle" /> Fidei</a></td>
+    <td width="12%" nowrap="nowrap"><a href="Ficha_PagoDeduc.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>"><img src="../../../i/coins_in_hand.png" width="32" height="32" border="0" align="absmiddle" /> Pagos Deduc</a></td>
    
    
     <td width="13%" nowrap="nowrap"><a href="Ficha_PagoDeduc.php?CodigoEmpleado=<?php echo $_GET['CodigoEmpleado'] ?>&Salario=1"><img src="../../../i/coins_in_hand.png" width="32" height="32" border="0" align="absmiddle" /> Salario</a></td>
@@ -308,11 +310,15 @@ while ($row = $RS->fetch_assoc()) {
 <caption>Prestamos Devoluciones Deducciones BC</caption>
  
      <tr>
-	 <td colspan="3">
+	 <td>&nbsp;
 	 </td>
-	 <td colspan="7" valign="top">BC Mes: <?= Campo_Edit_Empleado ("Empleado",$row_RS_Empleados['CodigoEmpleado'],"BC"); ?></td>
-	 <td colspan="3">Depositar: <?= Campo_Edit_Empleado ("Empleado",$row_RS_Empleados['CodigoEmpleado'],"Pago_extra_dolares"); ?>
-		 Bs.<?= round($row_RS_Empleados['Pago_extra_dolares'] * $Cambio_Paralelo , 2) ?></td>
+	 <td>&nbsp;</td>
+	 <td>&nbsp;</td>
+	 <td>&nbsp;</td>
+	 <td>&nbsp;</td>
+	 <td>&nbsp;</td>
+	 <td><? Campo_Edit_Empleado("Empleado",$row_RS_Empleados['CodigoEmpleado'],"BC","BC"); ?></td>
+	 <td>&nbsp;</td>
 	 <td>&nbsp;</td>
 	 <td>&nbsp;</td>
      </tr>
@@ -323,8 +329,8 @@ while ($row = $RS->fetch_assoc()) {
   <td align="center" class="NombreCampo">Quincena  </td>
   <td align="center" class="NombreCampo">Tipo</td>
   <td align="center"  class="NombreCampo">Descipci&oacute;n</td>
-  <td colspan="5" align="center" class="NombreCampo">D.Aus</td>
-  <td colspan="2" align="center" class="NombreCampo">D. Reposo</td>
+  <td align="center" class="NombreCampo">&nbsp;</td>
+  <td align="center" class="NombreCampo">&nbsp;</td>
   <td align="center" class="NombreCampo">Monto</td>
   <td align="center" class="NombreCampo">&nbsp;</td>
   <td align="center" class="NombreCampo">&nbsp;</td>
@@ -332,7 +338,7 @@ while ($row = $RS->fetch_assoc()) {
 
 
 <tr>
-  <td colspan="4" align="center" class="FondoCampo"><select name="QuincenaCompleta" id="QuincenaCompleta">
+  <td colspan="4" align="center" nowrap="nowrap" class="FondoCampo"><select name="QuincenaCompleta" id="QuincenaCompleta">
       <option value="0">Seleccione</option>
       <?php 
 	$Selected=false; 
@@ -359,7 +365,8 @@ while ($row = $RS->fetch_assoc()) {
 			}}}
 	?>
       </select>      <select name="Tipo" id="Tipo">
-          <option value="0">Selecc..</option>
+      
+          <!--option value="0">Selecc..</option>
           <option value="AQ"<?php if ($_POST['Tipo']=='AQ' or $Tipo == 'AQ') echo ' selected="selected"'; ?>  name=Adelanto onmouseup="this.form.Monto.value=100;"  >(-) Adelanto Quincena</option>
           <option value="AU"<?php if ($_POST['Tipo']=='AU' or $_GET['Tipo']=="AU" or $Tipo == 'AU') echo ' selected="selected"'; ?>>(-) Ausencia</option>
           <option value="DE"<?php if ($_POST['Tipo']=='DE' or $Tipo == 'DE') echo ' selected="selected"'; ?>>(-) Deducción</option>
@@ -367,28 +374,22 @@ while ($row = $RS->fetch_assoc()) {
           <option value="BO"<?php if ($_POST['Tipo']=='BO' or $Tipo == 'BO') echo ' selected="selected"'; ?> >(+) Bonificación</option>
           <option value="PR"<?php if ($_POST['Tipo']=='PR' or $Tipo == 'PR') echo ' selected="selected"'; ?>>(+) Prestamo</option>
           <option value="RE"<?php if ($_POST['Tipo']=='RE' or $Tipo == 'RE') echo ' selected="selected"'; ?> >(+) Reintegro</option>
-          <option value="PA"<?php if ($_POST['Tipo']=='PA' or $Tipo == 'PA') echo ' selected="selected"'; ?> >(+) Pago</option>
+          <option value="PA"<?php if ($_POST['Tipo']=='PA' or $Tipo == 'PA') echo ' selected="selected"'; ?> >(+) Pago</option-->
           <option value="BC"<?php if ($_POST['Tipo']=='BC' or $Tipo == 'BC' or isset($_GET['BC'])) echo ' selected="selected"'; ?> >(+) BC</option>
           
       </select></td>
-  <td align="center" class="FondoCampo"><label for="Tipo"></label>
-      <?php if($_GET['Tipo']=="AU"){$Descripcion = $Dias_Aus;}
-		else {$Descripcion = $_POST['Descripcion'];} 
-		 ?>
-      <input name="Descripcion" type="text" id="Descripcion" value="<?php echo $Descripcion; ?>" size="25" onfocus="this.value='<?php echo $Descripcion; ?>'" /></td>
-  <td colspan="5" align="center" class="FondoCampo"><input name="Dias" type="text" id="Dias" size="5" 
-  onkeyup="this.form.Monto.value=this.form.Dias.value*<?php echo $SueldoDiario ?>"
-  onfocus="this.form.Monto.value=<?php echo $SueldoDiario*$N_Dias ?>;
-			this.value=<?php echo $N_Dias; ?>"
-  <?php if($_GET['Tipo']=="AU") echo ' value="'.$N_Dias.'"'; ?>   /></td>
-  <td colspan="2" align="center" class="FondoCampo"><input name="DiasR" type="text" id="DiasR" size="5" onkeyup="this.form.Monto.value=this.form.DiasR.value*<?php echo round($SueldoDiario*.6666 , 2) ?>" /></td>
+  <td align="center" class="FondoCampo">
+      <input name="Descripcion" type="text" required id="Descripcion" autocomplete="on" value="<?php echo $Descripcion; ?>" size="25" /></td>
+  <td colspan="2" align="center" class="FondoCampo">
+  <? input_select(array("name"=>"FormaDePago","values"=>$FormaDePago,"default"=>"9")); ?></td>
   <td align="right" class="FondoCampo">
-  <input name="Monto" type="text" id="Monto" required value="" >
+    <input name="Monto" type="text" required id="Monto" value="" >
   </td>
   <td align="center" class="FondoCampo"><input type="submit" name="button" id="button" value="G" class="button" />
    <input type="hidden" name="MM_insert" value="form2" />
-	<input name="Codigo_Empleado" type="hidden" id="Codigo_Empleado" value="<?php echo $row_RS_Empleados['CodigoEmpleado']; ?>" /></td>
-  <td align="center" class="FondoCampo">&nbsp;</td>
+   <input name="Codigo_Empleado" type="hidden" id="Codigo_Empleado" value="<?php echo $row_RS_Empleados['CodigoEmpleado']; ?>" />
+   <input name="TopeConcepto" type="hidden" id="TopeConcepto" value="<?php echo $row_RS_Empleados['BC']; ?>" /></td>
+  <td align="center" class="FondoCampo"></td>
 </tr>
 <?php if ($totalRows_RS_Empleados_Deduc>0){ ?>
 
@@ -397,56 +398,21 @@ while ($row = $RS->fetch_assoc()) {
 <tr  class="NombreCampo">
   <td colspan="4" align="center" class="NombreCampo">Quincena</td>
   <td class="NombreCampo">&nbsp;</td>
-	  <td align="right" class="NombreCampo">Deduc</td>
 	  <td align="right" class="NombreCampo">Pago</td>
-	  <td colspan="3" align="right" class="NombreCampo">Suma Mes</td>
-	  <td align="right" class="NombreCampo">Prest</td>
-	  <td align="right" class="NombreCampo">Pago</td>
+	  <td align="right" class="NombreCampo">Suma Mes</td>
 	  <td align="right" class="NombreCampo">Saldo</td>
 	  <td align="center" class="NombreCampo">&nbsp;</td>
 	  <td align="center" class="NombreCampo">&nbsp;</td>
 	</tr>
 
 
-<?php do { ?>
-	<?php 
-
-	/*if (date('d') <= 15) {
-				$QuincenaHoy = '1';}
-		else{
-				$QuincenaHoy = '2';}
-
-
-
-
-	if($row_RS_Empleados_Deduc['Mes'] == date('m') 
-			and $row_RS_Empleados_Deduc['Ano'] == date('Y')
-			and $row_RS_Empleados_Deduc['Quincena'] == $QuincenaHoy ) //
-		$Verde = true; 
-	else 
-		$Verde = false;
-
-*/
-
-
-	if($AnoAnte != $row_RS_Empleados_Deduc['Ano']){
-	?>
-	<tr>
-	  <td colspan="15" align="left" class="NombreCampoBIG" ><?php 
-	  echo $row_RS_Empleados_Deduc['Ano']; ?></td>
-	</tr><?php } ?>
-
-	<? 
+<?php do { 
 
 	$Verde = 0;
 	if( substr( $row_RS_Empleados_Deduc['Codigo_Quincena'] ,5,2) == date('m')  
 		and substr( $row_RS_Empleados_Deduc['Codigo_Quincena'] ,0,4) == date('Y')  ){
 		$Verde = 1;
 	}
-
-
-
-
 			 ?>
 	<tr  <?php 
 
@@ -464,7 +430,10 @@ while ($row = $RS->fetch_assoc()) {
 
   ?>>
   <td align="center" <?php ListaFondo($sw,$Verde); ?>><?php echo substr($row_RS_Empleados_Deduc['RegistradoPor'].$row_RS_Empleados_Deduc['Registro_por'],0,5); ?></td>
-  <td align="center" nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>><?php echo DDMM($row_RS_Empleados_Deduc['Fecha_Registro']); ?></td>
+  <td align="center" nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>><?php echo DDMM($row_RS_Empleados_Deduc['Fecha_Registro']);
+  $MesAnterio = DDMM($row_RS_Empleados_Deduc['Fecha_Registro']);
+  
+   ?></td>
   <td align="center" <?php ListaFondo($sw,$Verde); ?>><?php 
 
   if($Quincena_Anterior != $row_RS_Empleados_Deduc['Codigo_Quincena'])
@@ -483,54 +452,17 @@ while ($row = $RS->fetch_assoc()) {
  ?></td>
   <td align="left" <?php ListaFondo($sw,$Verde); ?>><?php 
 
-switch ($row_RS_Empleados_Deduc['Tipo']) {
-case 'PR':
-echo "Prestamo"; break;
-case 'PP':
-echo "Pago de prestamo"; break;
-case 'AU':
-echo "Ausencia"; break;
-case 'DE':
-echo "Otra Deducción"; break;
-case 'AQ':
-echo "Adelanto Quincena"; break;
-case 'BO':
-echo "Bonificación"; break;
-case 'PA':
-echo "Pago"; break;
-case 'RE':
-echo "Reintegro"; break;
 
-}
   ?></td>
-  <td <?php ListaFondo($sw,$Verde); ?>><?php 
+  <td nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>><?php 
   echo $row_RS_Empleados_Deduc['Descripcion']." "; 
   echo $row_RS_Empleados_Deduc['Concepto']; 
   echo ": ".$row_RS_Empleados_Deduc['Obs']; 
 
   ?></td>
-  <td colspan="2" align="right" <?php ListaFondo($sw,$Verde); ?>><?php 
+  <td align="right" nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>><?php 
 
-
-  if(isset($_GET['Salario']) or isset($_GET['Pagos']) ){
-	  echo Fnum($row_RS_Empleados_Deduc['Monto']);
-  }
-
-  if ( $row_RS_Empleados_Deduc['Tipo']=='AU' or 
-	   $row_RS_Empleados_Deduc['Tipo']=='DE' or 
-	   $row_RS_Empleados_Deduc['Tipo']=='AQ') { 
-			  echo '<span class="Rojo">'; 
-			  echo "-".Fnum($row_RS_Empleados_Deduc['Monto']); 
-			  echo '</span>'; 
-  }
-
-  if ( $row_RS_Empleados_Deduc['Tipo']=='BO' or 
-	   $row_RS_Empleados_Deduc['Tipo']=='PA' or 
-	   $row_RS_Empleados_Deduc['Tipo']=='RE') { 
-			  echo '<span class="Azul">'; 
-			  echo Fnum($row_RS_Empleados_Deduc['Monto']); 
-			  echo '</span>'; 
-  } 
+	//echo $FormaDePago[$row_RS_Empleados_Deduc['FormaDePago']];
 
 	if(isset($_GET['BC'])){
 	  echo Fnum($row_RS_Empleados_Deduc['Monto']);
@@ -542,69 +474,28 @@ echo "Reintegro"; break;
 		$PagoHoy += $row_RS_Empleados_Deduc['Monto'];
 	}
 	  ?></td>
-  <td align="right" <?php ListaFondo($sw,$Verde); ?>>&nbsp;</td>
-  <td align="right" <?php ListaFondo($sw,$Verde); ?>><?
+  <td align="right" nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>><?
 
-			if ($Codigo_Quincena_Ante != $row_RS_Empleados_Deduc['Codigo_Quincena']){
-				$SumaQuincena = $row_RS_Empleados_Deduc['Monto'];
-			}
-			else{
-				$SumaQuincena += $row_RS_Empleados_Deduc['Monto'];
-			}
-
-			//echo Fnum($SumaQuincena);
-
-			$Codigo_Quincena_Ante = $row_RS_Empleados_Deduc['Codigo_Quincena'];
-
-			if($MontoBCmes == $row_RS_Empleados['BC'])
+		    if($MontoBCmes == $row_RS_Empleados['BC'])
 				echo "<b>";
 			echo Fnum($MontoBCmes);
-
-
-
+			if($row_RS_Empleados_Deduc['TopeConcepto'] > 0)
+				$TopeConcepto = $row_RS_Empleados_Deduc['TopeConcepto'];
+			else
+				$TopeConcepto = $row_RS_Empleados['BC'];
+				
+			$Saldo = - $MontoBCmes + $TopeConcepto;
+			
 	  ?></td>
-  <td align="right" <?php ListaFondo($sw,$Verde); ?>>&nbsp;</td>
-  <td colspan="2" align="right" <?php ListaFondo($sw,$Verde); ?>><?php 
-  if ( $row_RS_Empleados_Deduc['Tipo']=='PR') {
-	  echo '<span class="Azul">'; 
-	  echo Fnum($row_RS_Empleados_Deduc['Monto']);
-	  $Pendiente +=$row_RS_Empleados_Deduc['Monto']; 
-	  $Saldo  	 +=$row_RS_Empleados_Deduc['Monto'];
-	  echo '</span>'; 
-  } 
-
-  elseif ( $row_RS_Empleados_Deduc['Tipo']=='PP') { 
-	  echo '<span class="Rojo">'; 
-	  echo "-".Fnum($row_RS_Empleados_Deduc['Monto']); 
-	  $Pendiente -=$row_RS_Empleados_Deduc['Monto']; 
-	  $Saldo  	 -=$row_RS_Empleados_Deduc['Monto'];
-	  echo '</span>'; 
-  } 
-
-
-
-
-	  ?></td>
-  <td align="right" <?php ListaFondo($sw,$Verde); ?>>&nbsp;<?php //echo Fnum($Saldo); 
-
-  if( $row_RS_Empleados_Deduc['Tipo'] == 'PP' ){
-	$sql = "UPDATE Empleado_Deducciones 
-			SET Descripcion = 'Resta: ".Fnum($Saldo)."'
-			WHERE Codigo = '".$row_RS_Empleados_Deduc['Codigo']."'";
-	mysql_query($sql, $bd);
-	//echo $sql;
-	}
-
-  //echo Fnum($row_RS_Empleados['BC']-$MontoBCmes) ;
-
-	$Pendiente_BC -= $row_RS_Empleados['BC'];
-
-  ?></td>
-  <td align="center" <?php ListaFondo($sw,$Verde); ?>><?php 
-		if (substr($row_RS_Empleados_Deduc['Fecha_Registro'],0,10) == date('Y-m-d') or $row_RS_Empleados_Deduc['Fecha_Registro']==date('Y-m-d') or $MM_Username=='piero' ){
-				?><a href="<?php echo $php_self ?>?CodigoEmpleado=<?php echo $row_RS_Empleados['CodigoEmpleado'].$add_url; ?>&Elimina=<?php echo $row_RS_Empleados_Deduc['Codigo']; ?>"><img src="../../../i/bullet_delete.png" width="16" height="16" border="0" /></a><?php 
+  <td align="right" nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>>&nbsp;
+  <?php 
+ echo Fnum($Saldo); 
+   ?></td>
+  <td align="center" nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>><?php 
+		if (substr($row_RS_Empleados_Deduc['Fecha_Registro'],0,10) == date('Y-m-d')  or $MM_Username=='piero' ){
+				?><a href="<?php echo $php_self ?>?CodigoEmpleado=<?php echo $row_RS_Empleados['CodigoEmpleado'].$add_url; ?>&Elimina=<?php echo $row_RS_Empleados_Deduc['Codigo']; ?>"><img src="/i/bullet_delete.png" width="16" height="16" border="0" /></a><?php 
 		} ?>&nbsp;</td>
-  <td align="center" <?php ListaFondo($sw,$Verde); ?>>&nbsp;<?= $row_RS_Empleados_Deduc['RegistradoPor'] ?></td>
+  <td align="center" nowrap="nowrap" <?php ListaFondo($sw,$Verde); ?>>&nbsp;<?= $row_RS_Empleados_Deduc['RegistradoPor'] ?></td>
     </tr>
 	<?php 
 
@@ -617,6 +508,8 @@ if(isset($_GET['BC']))
 	$QuincenaAnte = $row_RS_Empleados_Deduc['Codigo_Quincena'];
 
 $Pendiente_BC += $row_RS_Empleados['BC'];
+ 
+ 
  } while ($row_RS_Empleados_Deduc = $RS_Empleados_Deduc->fetch_assoc() ); ?>
 
 
@@ -633,7 +526,7 @@ $Pendiente_BC += $row_RS_Empleados['BC'];
 						   
 		  
 		  ?></td>
-	  <td colspan="7" align="right" class="FondoCampo">Pendiente </td>
+	  <td colspan="2" align="right" class="FondoCampo">Pendiente </td>
 	  <td align="right" class="FondoCampo"><?php echo Fnum($Pendiente+$Pendiente_BC); ?></td>
 	  <td align="center" class="FondoCampo">&nbsp;</td>
 	  <td align="center" class="FondoCampo">&nbsp;</td>
@@ -658,6 +551,7 @@ $Pendiente_BC += $row_RS_Empleados['BC'];
                	
      </div>
  </div>
+  </div>
             
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Footer.php"); ?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Footer_info.php"); ?>

@@ -1,11 +1,6 @@
 <?php 
-$MM_authorizedUsers = "99,91,95,90";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+//$MM_authorizedUsers = "99,91,95,90";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
 
 $Tabla  = $_GET['Tabla'];
 $Codigo = $_GET['Codigo'];
@@ -44,7 +39,7 @@ body {
     <tr>
       <td align="left" nowrap <?php if (isset($_POST['Campo'])) { ?> class="FondoCampoVerde"<?php } ?>  >
 <?php 
-
+echo $_GET['label'];
 if (isset($_POST['G'])) {
 	$Valor = coma_punto($_POST['Campo']);
 	
@@ -71,7 +66,7 @@ if (isset($_POST['G'])) {
 else{
 		 ?>	
        	<input name="Campo" type="text" value="<?= $Valor; ?>" size="8">
-        <input type="submit" name="G" id="button" value="G" onClick="this.value='..'" />
+        <input type="submit" name="G" id="button" value="G" class="boton" onClick="this.value='..'" />
         <?php 
 	}
 

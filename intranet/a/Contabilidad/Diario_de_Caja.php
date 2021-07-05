@@ -12,6 +12,8 @@ header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
 $ContableMov = new ContableMov();
 $Alumno = new Alumno($CodigoAlumno);
 $Caja = new Caja();
+$Empleado_Pago = new Empleado_Pago($CodigoEmpleado = 0);
+$Empleado = new Empleado($CodigoEmpleado = 0);
 
 if(isset($_GET["delete"])){
 	$Caja->delete($_GET["delete"]);
@@ -136,8 +138,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 ?>
 	       
 		       
-<div class="tr">
-    	<span class="td">
+<div class="tr ">
+    	<span class="td ">
         <? echo ++$i; ?>
         </span>
     	<span class="td" title="<?= $res['ProcesadoPor'] ?>">
@@ -174,7 +176,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 																					
 																									
 																													
-																																				
+<?
+
+$Resultado = $Caja->view($Fecha_ , "9"); // Extra de caja
+//var_dump($Resultado);
+if( $Resultado->num_rows > 0 ){
+
+?>																																				
 					
 	<div class="tr">
 			<span class="td NombreCampoTITULO">Extraordinario</span>
@@ -187,15 +195,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 		</div>					
 	<?		
 	
-	$Resultado = $Caja->view($Fecha_ , "9");
 	foreach($Resultado as $res){
 					
 ?>
-	<div class="tr">
-    	<span class="td">
+	<div class="tr ">
+    	<span class="td ">
         <? echo ++$i; ?>
         </span>
-    	<span class="td">
+    	<span class="td ">
         <? echo $res['Observaciones']; ?>
         </span>
         <span class="td right">
@@ -222,10 +229,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 	
 <?
 	} 
+$Extraordinario[9] = $SubTotal;
+$Totales["Extraordinario"] = $Extraordinario;
+		
 	
-	$Extraordinario[9] = $SubTotal;
-	//$Total[9] += $SubTotal;
-	//$Total[9] += $SubTotal;
+}
 	
 	?>	
 
@@ -234,6 +242,59 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 
 
 
+
+<?
+$SubTotal = 0;
+$Resultado = $Empleado_Pago->view_date($Fecha_,$Tipo_); // Matriz Pagos Personal
+//var_dump($Resultado);
+if( $Resultado->num_rows > 0 ){
+?>
+<div class="tr">
+			<span class="td NombreCampoTITULO">Pagos Personal</span>
+			<span class="td NombreCampoTITULO">Descripcion</span>
+			<span class="td NombreCampoTITULO center">Haber</span>
+			<span class="td NombreCampoTITULO center">Debe</span>
+			<span class="td NombreCampoTITULO center">SubTotal</span>
+			<span class="td NombreCampoTITULO center">Forma</span>
+			<span class="td NombreCampoTITULO center">Resp</span>
+		</div>					
+	<?		
+	foreach($Resultado as $res){
+		$Empleado->id = 	$res['Codigo_Empleado'];		
+?>
+	<div class="tr">
+    	<span class="td">
+        <? echo ++$i; ?>
+        </span>
+    	<span class="td">
+        <? echo $Empleado->ApellidoNombre() . " -> " . $res['Obs']; ?>
+        </span>
+        <span class="td right">
+        <?   ?>
+        </span>
+		<span class="td right">
+        <?  echo "-" . $res['Monto'];  
+			$SubTotal -= $res['Monto'];  ?>
+        </span>
+		<span class="td right">
+        <? echo Fnum($SubTotal) ?>
+        </span>
+		<span class="td center">
+        <? echo $FormaDePago[$res['FormaDePago']]; ?>
+        </span>
+		<span class="td center">
+        <? echo substr($res['Registro_por'],0,6); ?>
+        </span>
+</div>
+	
+<?
+	} 
+	$PagosPersonal[9] = $SubTotal;
+	$Totales["PagosPersonal"] = $PagosPersonal;
+	
+}	
+	
+	?>	
 
 
 
@@ -251,10 +312,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 		</div>	
  <? 
 	
-	$Totales["Extraordinario"] = $Extraordinario;
+	//$Totales["Extraordinario"] = $Extraordinario;
+	//$Totales["PagosPersonal"] = $PagosPersonal;
+	
 	$Totales["Total"] = $Total;
 	
-	$Totales["Total"][9] += $Totales["Extraordinario"][9];
+	$Totales["Total"][9] += $Totales["Extraordinario"][9] + $Totales["PagosPersonal"][9];
 	/*
 	echo "<pre>Totales:<br>";
 	var_dump($Totales);
@@ -277,15 +340,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 			<span class="td ">&nbsp;</span>
 			<span class="td ">&nbsp;</span>
 			<span class="td "><? echo FormaDePago($FormaDePago); ?></span>
-			<span class="td right"><? echo fnum($Monto); ?></span>
+			<span class="td right "><? echo fnum($Monto); ?></span>
 			<span class="td ">&nbsp;</span>
 			<span class="td ">&nbsp;</span>
 		</div>	
 <? 			//echo "$Fecha_ , $FormaDePago, $Monto, $Usuario<br>";
-			//if()											
-			//$Caja->add($Fecha_ , $FormaDePago, $Monto, $Usuario);
-			//add($Fecha, $FormaDePago = "" , $Monto = "", $Usuario = "", $Observaciones = "", $add = false ){									 
-												}} ?>        
+			}
+			
+			} ?>        
         
 	
 	

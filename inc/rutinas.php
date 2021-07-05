@@ -217,6 +217,26 @@ function Signo($num){
 	if ($num < 0)  return -1;
 }
 
+$FormaDePago = array(2=>"Transferencia",
+					3=>"Cheque",
+					4=>"Efectivo",
+					5=>"Ajuste",
+					6=>"T. Debito",
+					7=>"T. Credito",
+					8=>"Zelle",
+					9=>"Cash Dollares",
+					10=>"Cash Euro"
+					);
+
+$FormaDePago = array(2=>"Transferencia",
+					5=>"Ajuste",
+					6=>"T. Debito",
+					7=>"T. Credito",
+					8=>"Zelle",
+					9=>"Cash Dollares",
+					10=>"Cash Euro"
+					);
+
 function FormaDePago($Forma){
 	if ($Forma == 2){return "Transferencia";}
 	if ($Forma == 3){return "Cheque";}
@@ -2350,13 +2370,23 @@ function Campo_Edit ($Tabla,$Codigo,$Campo) {
 }
 	
 
-function Campo_Edit_Empleado ($Tabla,$Codigo,$Campo) {
-	echo "<iframe width=\"100\" height=\"35\" src=\"http://www.colegiosanfrancisco.com/inc/Cell_Edit_Empleado.php?Tabla=".$Tabla."&Codigo=".$Codigo."&Campo=".$Campo."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
+function Campo_Edit_Empleado ($Tabla,$Codigo,$Campo,$label="") {
+	echo "<iframe width=\"140\" height=\"35\" src=\"http://www.colegiosanfrancisco.com/inc/Cell_Edit_Empleado.php?Tabla=".$Tabla."&Codigo=".$Codigo."&Campo=".$Campo."&label=".$label."\" frameborder=\"0\" scrolling=\"no\" seamless ></iframe>
 	"; 
 }
 	
 
-
+function input_select($param){
+	echo "<select name=\"".$param['name']."\" required id=\"".$param['name']."\">\r\n";
+	echo "<option value=\"\" >Seleccione...</option>\r\n";
+    foreach($param['values'] as $clave => $valor){ 
+		echo "<option value=\"$clave\" ";
+		if($param['default'] == $clave)
+			echo " selected ";
+		echo " >$valor</option>\r\n";
+      }
+    echo "</select>\r\n";
+	}
 
 function Reticula($pdf){
 	$delta = 10;

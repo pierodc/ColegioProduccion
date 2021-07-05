@@ -1,5 +1,5 @@
 
-table {
+table{
   border-collapse: collapse;
   border: 1px solid #D1D1D1;	
   /*width: 95%;*/
@@ -10,6 +10,8 @@ table {
 	box-shadow: 10px 10px 10px 1px rgba(171,171,171,0.52);*/
 		
 }
+
+
 
 th {
   background-color: #D9E9EB;
@@ -36,8 +38,11 @@ caption{
 	text-align: left;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even), div.tr:nth-child(even) {
 	background-color: #F5F5F5;
+}
+tr:nth-child(odd), div.tr:nth-child(odd) {
+	background-color: #d5d5d5;
 }
 
 
@@ -46,6 +51,10 @@ tr.seleccionado {
 }
 
 
+tr:hover, div.tr:hover, span.tr:hover {	
+	background-color: hsla(57,100%,93%,0.76);
+	/*background-color: #FFF3CC;*/
+}	   
 
 
 
@@ -145,8 +154,10 @@ DIV.table
 {
     display:table;
 }
+/*
 DIV.tr:hover {	background-color: #EFEFEF;
 }
+*/
 FORM.tr, DIV.tr
 {
     display:table-row;
@@ -176,3 +187,45 @@ SPAN.td
 	text-align: center
 }
 
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
