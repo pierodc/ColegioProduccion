@@ -2,8 +2,15 @@
 //$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
 $SW_omite_trace = false;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+$Observaciones = new Observaciones();
+
 
 $CodigoAlumno = $_GET['CodigoAlumno'];
+
+if(isset($_GET["delete"])){
+	$Observaciones->delete($_GET["delete"]);
+	header("location: ".$php_self . "?Area=" . $_GET["Area"] . "&CodigoAlumno=" . $_GET["CodigoAlumno"]);
+}
 
 if (isset($_POST["MM_insert"]) and $_POST["Observacion"] > "") {
 	
@@ -72,7 +79,8 @@ body {
     <input type="hidden" name="MM_insert" value="form<?php echo time(); ?>" />
     <input type="submit" value="Agregar"  onclick="this.disabled=true;this.form.submit();" />
     </form></td>
-</tr> 
+  <td rowspan="2" valign="middle" class="FondoCampo">&nbsp;</td>
+ </tr> 
 <tr valign="baseline">
     <td align="center" valign="middle" nowrap="nowrap" class="NombreCampo">Fecha Hora</td>
     <td align="center" valign="middle" nowrap="nowrap" class="NombreCampo">Por</td>
@@ -105,17 +113,21 @@ if ($totalRows_Observaciones > 0)
     
     
     <td colspan="2" align="left" valign="top" class="FondoCampo"><?php echo $row_Observaciones['Observacion'] ?>
-      <? if (!$row_Observaciones['SW_Resuelto']){ ?>
-      <form action="<?php echo $editFormAction; ?>" method="post" name="form8" id="form8">
-        <input name="Observacion" type="text" value="" size="80" required="required" />
-        <input type="hidden" name="Codigo_Padre" value="<?php echo $row_Observaciones['Codigo_Observ'] ?>" />
-        <input type="hidden" name="CodigoAlumno" value="<?php echo $_GET['CodigoAlumno']; ?>" />
-        <input type="hidden" name="Area" value="<?php echo $row_Observaciones['Area'] ?>" />
-        <input type="hidden" name="Fecha" value="<?php echo date('Y-m-d') ?>" />
-        <input type="hidden" name="Hora" value="<?php echo date('H:i:s') ?>" />
-        <input type="hidden" name="MM_insert" value="form<?php echo time(); ?>" />
-        <input type="submit" value="Responder"  onclick="this.disabled=true;this.form.submit();" />
-      </form> <? } ?>   </td>
+        <? if (!$row_Observaciones['SW_Resuelto']){ ?>
+        <form action="<?php echo $editFormAction; ?>" method="post" name="form8" id="form8">
+            <input name="Observacion" type="text" value="" size="80" required="required" />
+            <input type="hidden" name="Codigo_Padre" value="<?php echo $row_Observaciones['Codigo_Observ'] ?>" />
+            <input type="hidden" name="CodigoAlumno" value="<?php echo $_GET['CodigoAlumno']; ?>" />
+            <input type="hidden" name="Area" value="<?php echo $row_Observaciones['Area'] ?>" />
+            <input type="hidden" name="Fecha" value="<?php echo date('Y-m-d') ?>" />
+            <input type="hidden" name="Hora" value="<?php echo date('H:i:s') ?>" />
+            <input type="hidden" name="MM_insert" value="form<?php echo time(); ?>" />
+            <input type="submit" value="Responder"  onclick="this.disabled=true;this.form.submit();" />
+        </form> <? } ?>   </td>
+    <td align="center" valign="middle" class="FondoCampo">
+       <? if( $row_Observaciones['Fecha'] == date("Y-m-d") and $row_Observaciones['Por'] == $MM_Username or $MM_Username == "piero") { ?>
+        <a href="?delete=<?= $row_Observaciones['Codigo_Observ'] . "&Area=" . $_GET["Area"] . "&CodigoAlumno=" . $_GET["CodigoAlumno"] ?>" onclick="return confirm('Desea eliminar:  <?= $row_Observaciones['Observacion'] ?>?');"><img src="/i/delete.png" width="16" height="16" alt=""/></a> 
+        <? } ?></td>
     </tr>
  
  
@@ -159,6 +171,10 @@ if ($totalRows_Observaciones > 0)
 				<input type="hidden" name="MM_insert" value="form<?php echo time(); ?>" />
 				<input type="submit" value="Responder"  onclick="this.disabled=true;this.form.submit();" />
 			  </form> <? } ?>   </td>
+			<td align="center" valign="middle" class="FondoCampo">
+       <? if( $row_Observaciones_HIJAS['Fecha'] == date("Y-m-d") and $row_Observaciones_HIJAS['Por'] == $MM_Username or $MM_Username == "piero") { ?>
+        <a href="?delete=<?= $row_Observaciones_HIJAS['Codigo_Observ'] . "&Area=" . $_GET["Area"] . "&CodigoAlumno=" . $_GET["CodigoAlumno"] ?>" onclick="return confirm('Desea eliminar:  <?= $row_Observaciones_HIJAS['Observacion'] ?>?');"><img src="/i/delete.png" width="16" height="16" alt=""/></a> 
+        <? } ?></td>
 			
       </tr>
 			<?php

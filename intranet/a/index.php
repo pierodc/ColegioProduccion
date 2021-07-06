@@ -72,9 +72,9 @@ if (isset($_POST["CodigoRecibo"])) {
 <html lang="es">
   <head>
    <? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Head.php");  ?>
-    <title><?php echo $TituloPag; ?></title>
+  <meta charset="UTF-8">
 </head>
-<body<? require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Body_tag.php");  ?>>
+<body>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/NavBar.php");  ?>
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/intranet/a/_Template/Header.php"); ?>
 
@@ -84,12 +84,23 @@ if (isset($_POST["CodigoRecibo"])) {
             <img src="/i/b.png" width="32" height="32" /> Buscar:
         </div>
        </div>
+       
+     
+       
+      <? if (isset($_POST['Buscar'])) { 
+			require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/Busca.php'); 
+		} ?>  
+       
+       
+       
+       
+       
      <div class="row">
         <div class="col-md-3">
             <img src="/i/user.png" width="32" height="32" alt=""/> Alumno:
         </div>
         <div class="col-md-9">
-            <form action="/intranet/a/ListaAlumnos.php" method="post" name="form3" id="form3">
+            <form action="/intranet/a/<?= $MM_Username=="piero"?"index":"ListaAlumnos"; ?>.php" method="post" name="form3" id="form3">
                 <input name="Buscar" type="text" id="Buscar" size="20" required />
                 <input name="SWinscrito" type="checkbox" id="SWinscrito" value="1" checked="checked" />
                   Ins
@@ -683,10 +694,6 @@ getCI('10863540', function(result, data, error_str){
 	?> 
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer_info.php"); ?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/Footer.php"); ?>
-
-
-	
-	
 </body>
 </html>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/AfterHTML.php"); ?>

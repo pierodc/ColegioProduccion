@@ -176,6 +176,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
 																					
 																									
 																													
+<<<<<<< Updated upstream
 <?
 
 $Resultado = $Caja->view($Fecha_ , "9"); // Extra de caja
@@ -183,6 +184,9 @@ $Resultado = $Caja->view($Fecha_ , "9"); // Extra de caja
 if( $Resultado->num_rows > 0 ){
 
 ?>																																				
+=======
+																																				
+>>>>>>> Stashed changes
 					
 	<div class="tr">
 			<span class="td NombreCampoTITULO">Extraordinario</span>
@@ -195,6 +199,7 @@ if( $Resultado->num_rows > 0 ){
 		</div>					
 	<?		
 	
+<<<<<<< Updated upstream
 	foreach($Resultado as $res){
 					
 ?>
@@ -262,11 +267,18 @@ if( $Resultado->num_rows > 0 ){
 	foreach($Resultado as $res){
 		$Empleado->id = 	$res['Codigo_Empleado'];		
 ?>
+=======
+	$Resultado = $Caja->view($Fecha_ , "9");
+	foreach($Resultado as $res){
+					
+?>
+>>>>>>> Stashed changes
 	<div class="tr">
     	<span class="td">
         <? echo ++$i; ?>
         </span>
     	<span class="td">
+<<<<<<< Updated upstream
         <? echo $Empleado->ApellidoNombre() . " -> " . $res['Obs']; ?>
         </span>
         <span class="td right">
@@ -275,24 +287,52 @@ if( $Resultado->num_rows > 0 ){
 		<span class="td right">
         <?  echo "-" . $res['Monto'];  
 			$SubTotal -= $res['Monto'];  ?>
+=======
+        <? echo $res['Observaciones']; ?>
+        </span>
+        <span class="td right">
+        <?  echo $res['Haber']; 
+			$SubTotal += $res['Haber']; ?>
+        </span>
+		<span class="td right">
+        <?  echo $res['Debe'];  
+			$SubTotal += $res['Debe'];  ?>
+>>>>>>> Stashed changes
         </span>
 		<span class="td right">
         <? echo Fnum($SubTotal) ?>
         </span>
 		<span class="td center">
+<<<<<<< Updated upstream
         <? echo $FormaDePago[$res['FormaDePago']]; ?>
         </span>
 		<span class="td center">
         <? echo substr($res['Registro_por'],0,6); ?>
+=======
+        <? echo "" ?>
+        </span>
+		<span class="td center">
+        <? echo substr($res['Usuario'],0,6); ?>
+        <? if( $res['Fecha'] == date("Y-m-d") and $res['Usuario'] == $MM_Username or $MM_Username == "piero") { ?>
+        <a href="?delete=<?= $res['id'] ?>" onclick="return confirm('Desea eliminar:  <?= $res['Observaciones'] ?>?');"><img src="/i/delete.png" width="16" height="16" alt=""/></a> 
+        <? } ?>
+>>>>>>> Stashed changes
         </span>
 </div>
 	
 <?
 	} 
+<<<<<<< Updated upstream
 	$PagosPersonal[9] = $SubTotal;
 	$Totales["PagosPersonal"] = $PagosPersonal;
 	
 }	
+=======
+	
+	$Extraordinario[9] = $SubTotal;
+	//$Total[9] += $SubTotal;
+	//$Total[9] += $SubTotal;
+>>>>>>> Stashed changes
 	
 	?>	
 
@@ -300,15 +340,28 @@ if( $Resultado->num_rows > 0 ){
 
 
 
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+
+>>>>>>> Stashed changes
 	
 		<div class="tr">
 			<span class="td NombreCampoTITULO">Sub Totales</span>
 			<span class="td NombreCampoTITULO">&nbsp;</span>
+<<<<<<< Updated upstream
+			<span class="td NombreCampoTITULO">&nbsp;</span>
+=======
+>>>>>>> Stashed changes
 			<span class="td NombreCampoTITULO">&nbsp;</span>
 			<span class="td NombreCampoTITULO">&nbsp;</span>
 			<span class="td NombreCampoTITULO">&nbsp;</span>
 			<span class="td NombreCampoTITULO">&nbsp;</span>
-			<span class="td NombreCampoTITULO">&nbsp;</span>
+<<<<<<< Updated upstream
 		</div>	
  <? 
 	
@@ -318,6 +371,16 @@ if( $Resultado->num_rows > 0 ){
 	$Totales["Total"] = $Total;
 	
 	$Totales["Total"][9] += $Totales["Extraordinario"][9] + $Totales["PagosPersonal"][9];
+=======
+			<span class="td NombreCampoTITULO">&nbsp;</span>
+		</div>	
+ <? 
+	
+	$Totales["Extraordinario"] = $Extraordinario;
+	$Totales["Total"] = $Total;
+	
+	$Totales["Total"][9] += $Totales["Extraordinario"][9];
+>>>>>>> Stashed changes
 	/*
 	echo "<pre>Totales:<br>";
 	var_dump($Totales);
@@ -340,14 +403,25 @@ if( $Resultado->num_rows > 0 ){
 			<span class="td ">&nbsp;</span>
 			<span class="td ">&nbsp;</span>
 			<span class="td "><? echo FormaDePago($FormaDePago); ?></span>
+<<<<<<< Updated upstream
 			<span class="td right "><? echo fnum($Monto); ?></span>
+=======
+			<span class="td right"><? echo fnum($Monto); ?></span>
+>>>>>>> Stashed changes
 			<span class="td ">&nbsp;</span>
 			<span class="td ">&nbsp;</span>
 		</div>	
 <? 			//echo "$Fecha_ , $FormaDePago, $Monto, $Usuario<br>";
+<<<<<<< Updated upstream
 			}
 			
 			} ?>        
+=======
+			//if()											
+			//$Caja->add($Fecha_ , $FormaDePago, $Monto, $Usuario);
+			//add($Fecha, $FormaDePago = "" , $Monto = "", $Usuario = "", $Observaciones = "", $add = false ){									 
+												}} ?>        
+>>>>>>> Stashed changes
         
 	
 	

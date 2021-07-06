@@ -13,7 +13,13 @@ class Empleado_Pago{
 		}
 	
 	public function view_date($fecha,$FormaDePago){
+<<<<<<< Updated upstream
 		$sql = "SELECT * FROM Empleado_Pago WHERE Fecha_Registro LIKE '{$fecha}%'";
+=======
+		$sql = "SELECT * FROM Empleado_Pago 
+				WHERE Fecha_Registro LIKE '{$fecha}%'
+				AND ToDelete = '0'";
+>>>>>>> Stashed changes
 		if($FormaDePago > "" and $FormaDePago != "all")
 			$sql .= " AND FormaDePago = '{$FormaDePago}'";
 		//echo $sql;

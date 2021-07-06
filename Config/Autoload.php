@@ -9,7 +9,7 @@ $_Session_id = session_id();
 $_IP = $_SERVER['REMOTE_ADDR'];
 
 
-$MM_Username = "";
+$MM_Username = ""; 
 
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
