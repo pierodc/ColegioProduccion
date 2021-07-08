@@ -93,7 +93,7 @@ if ($totalRows_RS_ContableMov > 0){
         
 <?php if($ReferenciaMesAno_Anterior <> $row_RS_ContableMov['ReferenciaMesAno'] 
 			and $ReferenciaMesAno_Anterior > "") { ?>
-<tr >
+<tr class="stripped hover" >
     <td colspan="13" align="center" <?php //echo $Etiqueta_Class ?>>&nbsp;</td>
     <td align="right" <?php //echo $Etiqueta_Class ?>><div onclick="form1.MontoHaber.value='<?php echo $SaldoMes ?>';form_divide1.Monto_divide.value='<?php echo $SaldoMes ?>';form_divide2.Monto_divide.value='<?php echo $SaldoMes ?>';form_divide3.Monto_divide.value='<?php echo $SaldoMes ?>';form_divide4.Monto_divide.value='<?php echo $SaldoMes ?>';"><?php echo Fnum($SaldoMes); ?></div></td>
     <td align="right" <?php //echo $Etiqueta_Class ?>>&nbsp;</td>
@@ -102,7 +102,7 @@ if ($totalRows_RS_ContableMov > 0){
 			
 if($ReferenciaMesAno_Anterior > ""){		
 ?>
-<tr >
+<tr  class="stripped hover">
 
   <?php 
   

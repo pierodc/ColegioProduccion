@@ -9,9 +9,7 @@ table{
 	-moz-box-shadow: 10px 10px 10px 1px rgba(171,171,171,0.52);
 	box-shadow: 10px 10px 10px 1px rgba(171,171,171,0.52);*/
 		
-} 
-
-
+}
 
 
 
@@ -38,33 +36,26 @@ caption{
 	background-color: #000066;
 	padding-left: 8px;
 	text-align: left;
-}
+} 
 
-tr:nth-child(even), div.tr:nth-child(even) {
-	background-color: #F5F5F5;
-}
-tr:nth-child(odd), div.tr:nth-child(odd) {
-	background-color: #d5d5d5;
-}
 
 
 tr.seleccionado {
 	background-color: rgba(152,255,33,0.53);
 }
 
-
-tr:hover, div.tr:hover, span.tr:hover {	
+/*
+tr:hover,  span.tr:hover, div.tr:hover   {	 
 	background-color: hsla(57,100%,93%,0.76);
-	/*background-color: #FFF3CC;*/
-}	   
+}
+*/
 
-
-
-
-
-
-
-
+.stripped:nth-child(even) { /* , div.tr:nth-child(even) */
+	background-color: #F5F5F5;
+}
+.stripped:nth-child(odd) {/* , div.tr:nth-child(odd) */
+	background-color: #d5d5d5;
+}
 
 .hover:hover {	background-color: hsla(57,100%,93%,0.76);
 }

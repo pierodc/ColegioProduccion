@@ -1,7 +1,5 @@
 <?php
 $MM_authorizedUsers = "99,91,95,90";
-//$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 $TituloPantalla ="Pagos Conciliar";
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
@@ -170,7 +168,7 @@ do {
 	$Fecha = strtotime($row_RS_x_Validar['FechaIngreso']);
 	if($FeahcAnterior != date('d-m-Y', $Fecha)){
 		?>
-		<tr>
+		<tr class="subtitle">
 			<td colspan="16" ><label><?php 
 			echo DiaSemana( date('N', $Fecha)).' '.date('d-m-Y', $Fecha);
 			$Dif = strtotime(date('Y-m-d'))-strtotime($row_RS_x_Validar['FechaIngreso']);
@@ -181,38 +179,14 @@ do {
 	$FeahcAnterior = date('d-m-Y', $Fecha); ?>
     
     
-    <!--div id="Pago_Cod_<?php echo $row_RS_x_Validar['Codigo']; ?>"-->
     
     
-    <?  
-	/*
-	    $CodigoAlumno = $row_RS_x_Validar['CodigoAlumno'];
-		$sql_Status = "SELECT * FROM AlumnoXCurso
-						WHERE Ano = '$AnoEscolar'
-						AND CodigoAlumno = '$CodigoAlumno'";
-		$RS_Status = $mysqli->query($sql_Status);
-		$row_Status = $RS_Status->fetch_assoc();
-	
-		$StatusActual = $row_Status['Status'];
-		
-		$sql_Status = "SELECT * FROM AlumnoXCurso
-						WHERE Ano = '$AnoEscolarProx'
-						AND CodigoAlumno = '$CodigoAlumno'";
-		$RS_Status = $mysqli->query($sql_Status);
-		$row_Status = $RS_Status->fetch_assoc();
-	
-		$StatusProx = $row_Status['Status'];
-		*/
-	
-	
-	?>
-    <!--div id="Hide_Pago_Cod_<?php echo $row_RS_x_Validar['Codigo']; ?>"-->
-	<tr>
-	  <td rowspan="3" align="right" ><?php echo $No; ?>&nbsp;</td>
-	  <td rowspan="3" align="center" ><?php 
+	<tr class="stripped hover">
+	  <td rowspan="2" align="right" ><?php echo $No; ?>&nbsp;</td>
+	  <td rowspan="2" align="center" ><?php 
 	  
 	  if ( $row_RS_x_Validar['CodigoRecibo'] < 1 or $MM_Username=="piero") { ?>
-  <iframe src="Procesa.php?bot_EliminarMov=1&Codigo=<?php echo $row_RS_x_Validar['Codigo']; ?>" seamless width="25" height="25" frameborder="0" ></iframe>
+  <iframe src="Procesa.php?bot_EliminarMov=1&Codigo=<?php echo $row_RS_x_Validar['Codigo']; ?>" seamless width="25" height="25" frameborder="0"  ></iframe>
   <?php }
 
 	  
@@ -220,7 +194,7 @@ do {
 	  
 		
 		 ?></td>
-	  <td rowspan="3" nowrap ><a href="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $row_RS_x_Validar['CodigoClave']; ?>" target="_blank"><img src="../../../i/coins_in_hand.png" width="16" height="16" />&nbsp;<?php 
+	  <td rowspan="2" nowrap ><a href="Estado_de_Cuenta_Alumno.php?CodigoPropietario=<?php echo $row_RS_x_Validar['CodigoClave']; ?>" target="_blank"><img src="../../../i/coins_in_hand.png" width="16" height="16" />&nbsp;<?php 
 	   echo $Alumno->NombreApellido();
 	   ?></a>
 	    
@@ -232,7 +206,7 @@ do {
 		?>
 	    
 	    </td>
-	  <td rowspan="3" nowrap ><?= $AnoEscolar. "<br>".$Alumno->Status($AnoEscolar); ?></td>
+	  <td rowspan="2" nowrap ><?= $AnoEscolar. "<br>".$Alumno->Status($AnoEscolar); ?></td>
 	  <td align="center" ><a href="../PlanillaImprimirADM.php?CodigoAlumno=<?php echo $row_RS_x_Validar['CodigoAlumno']; ?>"><img src="../../../i/participation_rate.png" width="16" height="16" /><br />
 	    <?php echo $row_RS_x_Validar['CodigoAlumno']; ?></a></td>
 	  <td align="right" class="ReciboRenglonMini" ><?php echo Fnum($row_RS_x_Validar['Deuda_Actual']); ?><br>	    &nbsp;<strong><?php echo Fnum($row_RS_x_Validar['MontoHaber']); ?></strong></td>
@@ -258,7 +232,7 @@ do {
         	echo "<br>(-".round($Dif/(3600*24) ,0).")";
         
         ?></td>
-	  <td >	  <!--div align="right"-->
+	  <td nowrap="nowrap" >	  <!--div align="right"-->
 	    <a href="Contable_Modifica.php?Codigo=<?php echo $row_RS_x_Validar['Codigo']; ?>" target="_blank">. 
 	      Editar&nbsp;</a> <? 
 		  
@@ -272,11 +246,8 @@ do {
         echo $row_RS_del_Banco['MontoHaber']."<br>-".$row_RS_x_Validar['MontoHaber']."<br>=";
         echo $row_RS_del_Banco['MontoHaber']-$row_RS_x_Validar['MontoHaber'];} 
          
-         
 		 
-		
-		 
-        ?><!--/div></td-->
+        ?><br><a href="../Email/index.php?CodigoAlumno=<?= $Alumno->Codigo(); ?>&CodigoPago=<?= $row_RS_x_Validar['Codigo']; ?>&Email=Pagos_a_Provincial" target="_blank">Email Pago a Prov</a>
 	    <td ><?php 
         
         if(strpos($row_RS_del_Banco['Descripcion'],"CH")>0){
@@ -290,28 +261,15 @@ do {
 	  <td><?php echo substr($row_RS_x_Validar['RegistradoPor'], 0 , 5 ); ?> : 
 	    <?php echo substr($row_RS_x_Validar['FechaIngreso'], 11 , 5 ); ?>        </td>
 	  <td colspan="3"><?= $row_RS_x_Validar['Observ'] ?></td>
-	  <td align="right" ><?php echo $No ?></td>
+	  <td align="right" ><?php echo $No ?><div id="Hide_Pago_Cod_<?php echo $row_RS_x_Validar['Codigo']; ?>"> 
+	          <iframe src="HidePago.php?Codigo=<?php echo $row_RS_x_Validar['Codigo']; ?>" seamless width="40" height="30" scrolling="no" frameborder="0"></iframe>
+            </div></td>
 	  </tr>
 	<tr>
-	  <td colspan="11" align="center" ><? //if ($MM_Username == 'piero'){ ?>
-	    <iframe src="Contable_Modifica_mini.php?Codigo=<?php echo $row_RS_x_Validar['Codigo']; ?>" height="25" width="100%" seamless scrolling="no" frameborder="0"></iframe>
-	    <? //} ?>	    </td>
-	  </tr>
-	<tr>
-	  <td colspan="5" align="left" ><a href="../Email/index.php?CodigoAlumno=<?= $Alumno->Codigo(); ?>&CodigoPago=<?= $row_RS_x_Validar['Codigo']; ?>&Email=Pagos_a_Provincial" target="_blank">Email Pago a Prov</a>
-	    <?  
-	  echo DDMM($row_RS_x_Validar['FechaSolicitud']); 
-	  ?>	    </td>
-	  <td >      
-	  <td >      
-	  <td colspan="4" align="right" ><?php 
-		//echo $row_RS_x_Validar['Referencia'] .' > '. $row_RS_del_Banco['Referencia'].'<br>';
-		//if($row_RS_x_Validar['Referencia'] == $row_RS_del_Banco['Referencia'] and $row_RS_x_Validar['Referencia'] > 0){
-		//if($valido){ ?>
-        <div id="Hide_Pago_Cod_<?php echo $row_RS_x_Validar['Codigo']; ?>"> 
-            <iframe src="HidePago.php?Codigo=<?php echo $row_RS_x_Validar['Codigo']; ?>" seamless width="40" height="30" scrolling="no" frameborder="0"></iframe>
-        </div>
-        <?php //} ?>	</tr>
+	    <td colspan="11" align="center" >
+	        <iframe src="Contable_Modifica_mini.php?Codigo=<?php echo $row_RS_x_Validar['Codigo']; ?>" height="25" width="100%" seamless scrolling="no" frameborder="0"></iframe>
+	        .	      </td>
+      </tr>
 	<!--/div-->
     
 	<?php 

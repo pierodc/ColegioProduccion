@@ -100,7 +100,7 @@ if (isset($_POST["CodigoRecibo"])) {
             <img src="/i/user.png" width="32" height="32" alt=""/> Alumno:
         </div>
         <div class="col-md-9">
-            <form action="/intranet/a/<?= $MM_Username=="piero"?"index":"ListaAlumnos"; ?>.php" method="post" name="form3" id="form3">
+            <form action="/intranet/a/<?= "ListaAlumnos"; // $MM_Username=="piero"?"index":"ListaAlumnos"; ?>.php" method="post" name="form3" id="form3">
                 <input name="Buscar" type="text" id="Buscar" size="20" required />
                 <input name="SWinscrito" type="checkbox" id="SWinscrito" value="1" checked="checked" />
                   Ins
