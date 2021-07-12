@@ -1,6 +1,5 @@
 <?php
 $MM_authorizedUsers = "99,91,95,90";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 $TituloPantalla ="Archivos Banco";
 
@@ -18,13 +17,14 @@ function LimpiaStr($str){
 	return $Resultado;
 }
 
+
+
 // Sube Archivo al servidor
 if (is_uploaded_file($_FILES['userfile']['tmp_name']) and $_POST["banco"]>'') {
 	$NombreBanco = $_POST["banco"];
 	$NombreArchivo = $_SERVER['DOCUMENT_ROOT'] ."/archivo/".$NombreBanco."/".date('Y_m_d_h_i_s').".txt";
     //echo $NombreArchivo;
 	copy($_FILES['userfile']['tmp_name'], $NombreArchivo );
-	
 	
 	
 	$lineas = file($_SERVER['DOCUMENT_ROOT'] .'/intranet/a/archivo/Variables_Privadas.php', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -118,7 +118,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .  "/intranet/a/_Template/BeforeHTML.php"
           </form>
    
      
-         <?php if($NombreArchivo > "" and $NombreBanco > "" ){
+<?php if($NombreArchivo > "" and $NombreBanco > "" ){
 
 $archivo = $NombreArchivo; 
 //echo "archivo ".$archivo;
@@ -375,7 +375,7 @@ $FechaAnterior = $Fecha;
 
 
 ?>
-<tr>
+<!--tr>
 <td colspan="10" class="NombreCampo">
 <?
 
@@ -413,13 +413,13 @@ if($totalRows_RS_Busca_Mov == 0){
 } 
 ?>
 </td>
-</tr>
+</tr-->
 
-            <tr <?php $sw=ListaFondo($sw,$Verde); ?>>
-              <td colspan="2" align="center" ><?php echo $linea_num; ?> </td>
-              <td align="center"><?php echo $Lote ." ". $Referencia;   ?> </td>
-              <td align="center"><?php echo $Tipo;   ?> </td>
-              <td><?
+            <tr>
+              <td <?php ListaFondo($sw,$Verde); ?> colspan="2" align="center" ><?php echo $linea_num; ?> </td>
+              <td align="center"  <?php ListaFondo($sw,$Verde); ?> ><?php echo $Lote ." ". $Referencia;   ?> </td>
+              <td align="center" <?php ListaFondo($sw,$Verde); ?> ><?php echo $Tipo;   ?> </td>
+              <td <?php ListaFondo($sw,$Verde); ?> ><?
               
 			  if($MontoDebe <> 0){
 			  ?>
@@ -429,20 +429,15 @@ if($totalRows_RS_Busca_Mov == 0){
 			  else{
 				echo $Descripcion;  
 				  }
-			  //if($Descripcion != "PAGO A PROVEEDORES EN LINEA"){
-			//	   
-			 // }
 			  
 			    ?></td>
-              <td><?php echo $ChNum; ?> </td>
-              <td align="right"><?php echo Fnum($MontoHaber); ?> </td>
-              <td align="right"><?php echo Fnum($MontoDebe); ?> </td>
+              <td <?php ListaFondo($sw,$Verde); ?> ><?php echo $ChNum; ?> </td>
+              <td align="right" <?php ListaFondo($sw,$Verde); ?> ><?php echo Fnum($MontoHaber); ?> </td>
+              <td align="right" <?php ListaFondo($sw,$Verde); ?> ><?php echo Fnum($MontoDebe); ?> </td>
               <?php // Verifica si no exite e inserta la fila
 ?>
-<td class="FondoCampo">
+<td  <?php $sw = ListaFondo($sw,$Verde); ?> >
 <?php 
-
-
 
 ?>
                 </td>
@@ -457,18 +452,6 @@ $SaldoMovAnterior = $Saldo;
 
 
 ?>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              </tr>
             </table>
           <?php } 
 

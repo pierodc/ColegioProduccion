@@ -31,6 +31,34 @@ class Alumno{
 		return $datos;
 		}
 	
+	public function Buscar($Buscando){
+		
+		if( is_numeric($Buscando) ){
+			$sql  = "SELECT * FROM Alumno WHERE CodigoAlumno = '$Buscando' ";
+		}
+		else{
+			$aux = explode(" ", $Buscando);// echo "1: ". $aux[0]. " 2: ". $aux[1];
+			$CamposBuscar = " CONCAT_WS(' ', CodigoAlumno, Cedula, Nombres, Nombres2, Apellidos, Apellidos2, SMS_Caja )  ";
+			$sql  = "SELECT * FROM Alumno WHERE Creador > ' ' ";
+			$sql .= " AND  ";
+			$sql .= "$CamposBuscar LIKE '%%$aux[0]%%'";
+			if($aux[1]!=""){
+				$sql .= "and $CamposBuscar LIKE '%%$aux[1]%%' ";}
+			if($aux[2]!=""){
+				$sql .= "and $CamposBuscar LIKE '%%$aux[2]%%' ";}
+			if($aux[3]!=""){
+				$sql .= "and $CamposBuscar LIKE '%%$aux[3]%%' ";}
+		}
+		
+		$sql .= " ORDER BY Apellidos, Apellidos2, Nombres, Nombres2 ASC";
+		$datos = $this->con->consultaRetorno($sql);
+		return $datos;
+		}
+	
+	
+	
+	
+	
 	
 	
 	public function Codigo(){
@@ -177,10 +205,12 @@ class Alumno{
 	
 	
 	
-	public function Inscrito(){
+	public function Inscrito( $AnoEscolar ){
+		if($AnoEscolar == "")
+			$AnoEscolar = $this->AnoEscolar;
 		$sql = "SELECT * FROM AlumnoXCurso 
 				WHERE CodigoAlumno = '{$this->id}'
-				AND Ano = '{$this->AnoEscolar}'";
+				AND Ano = '{$AnoEscolar}'";
 		$datos = $this->con->consultaRetorno_row($sql);
 		if ($datos['Status'] == "Inscrito")
 			return true;

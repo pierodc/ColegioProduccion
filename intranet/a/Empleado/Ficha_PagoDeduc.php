@@ -80,22 +80,25 @@ $RS = $mysqli->query($insertSQL);
 
 if (isset($_GET['Elimina']) and !isset($_GET['BC']) and ($MM_UserGroup == 'Contable' or $MM_UserGroup == 91)) {
   $Elimina = $_GET['Elimina'];
-  $CodigoEmpleado = $_GET['CodigoEmpleado']+10000;
-  $sql = 'UPDATE Empleado_Deducciones Set Codigo_Empleado='.$CodigoEmpleado.', Registro_Por='.$MM_Username.' WHERE Codigo = '.$Elimina ;
-  //echo "<br><br><br>" . $sql;
+  //$CodigoEmpleado = $_GET['CodigoEmpleado']+1000000;
+  $sql = 'UPDATE Empleado_Deducciones Set 
+			Registro_Por="'.$MM_Username.'" ,
+			ToDelete = "1"
+			WHERE Codigo = '.$Elimina ;
+  //echo "<br><br><br>".$sql;
   $mysqli->query($sql);
-//  $Result = mysql_query($sql, $bd) or die(mysql_error());
   $GoTo = $php_self."?CodigoEmpleado=".$_GET['CodigoEmpleado'].$add_url;
   header(sprintf("Location: %s", $GoTo));
 }
 
 if (isset($_GET['Elimina']) and isset($_GET['BC']) and ($MM_UserGroup == 'Contable' or $MM_UserGroup == 91)) {
   $Elimina = $_GET['Elimina'];
-  $CodigoEmpleado = $_GET['CodigoEmpleado']+10000;
-  $sql = 'UPDATE Empleado_Pago Set Codigo_Empleado='.$CodigoEmpleado.' WHERE Codigo = '.$Elimina ;
-  //echo "<br><br><br>" . $sql;
+  //$CodigoEmpleado = $_GET['CodigoEmpleado']+10000;
+  $sql = 'UPDATE Empleado_Pago Set 
+			ToDelete = "1"
+			WHERE Codigo = '.$Elimina ;
+  //echo "<br><br><br>".$sql;
   $mysqli->query($sql);
-//  $Result = mysql_query($sql, $bd) or die(mysql_error());
   $GoTo = $php_self."?CodigoEmpleado=".$_GET['CodigoEmpleado'].$add_url;
   header(sprintf("Location: %s", $GoTo));
 }
@@ -118,10 +121,6 @@ $RS_Empleados = $mysqli->query($query_RS_Empleados);
 $row_RS_Empleados = $RS_Empleados->fetch_assoc();
 $totalRows_RS_Empleados = $RS_Empleados->num_rows;
 
-/*
-$RS_Empleados = mysql_query($query_RS_Empleados, $bd) or die(mysql_error());
-	$row_RS_Empleados = mysql_fetch_assoc($RS_Empleados);
-	//$totalRows_RS_Empleados = mysql_num_rows($RS_Empleados);*/
 	
 	header("Location: ".$php_self."?CodigoEmpleado=".$row_RS_Empleados["CodigoEmpleado"].$add_url);
 
@@ -141,10 +140,6 @@ $query_RS_Empleados = sprintf("SELECT * FROM Empleado
 $RS_Empleados = $mysqli->query($query_RS_Empleados);
 $row_RS_Empleados = $RS_Empleados->fetch_assoc();
 $totalRows_RS_Empleados = $RS_Empleados->num_rows;
-/*
-$RS_Empleados = mysql_query($query_RS_Empleados, $bd) or die(mysql_error());
-$row_RS_Empleados = mysql_fetch_assoc($RS_Empleados);
-$totalRows_RS_Empleados = mysql_num_rows($RS_Empleados);*/
 $Monto = $row_RS_Empleados['SueldoBase_3']*3;
 
 $colname_RS_Empleados = $row_RS_Empleados["CodigoEmpleado"];
@@ -159,7 +154,6 @@ if(isset($_GET['Salario'])){
 								WHERE Codigo_Empleado = '$colname_RS_Empleados' 
 								AND Concepto = '+SueldoBase'
 								ORDER BY Codigo_Quincena";
- //echo $query_RS_Empleados_Deduc;
 }
 	
 if(isset($_GET['Pagos'])){
@@ -167,25 +161,18 @@ if(isset($_GET['Pagos'])){
 								WHERE Codigo_Empleado = '$colname_RS_Empleados' 
 								AND Monto > 0
 								ORDER BY Codigo_Quincena";
- //echo $query_RS_Empleados_Deduc;
 }
 if(isset($_GET['BC'])){
 	$query_RS_Empleados_Deduc = "SELECT * FROM Empleado_Pago 
 								WHERE Codigo_Empleado = '$colname_RS_Empleados' 
 								AND Concepto = '+BC'
+								AND ToDelete = '0'
 								ORDER BY Codigo_Quincena, Fecha_Registro";
- //echo $query_RS_Empleados_Deduc;
 }
 				
 $RS_Empleados_Deduc = $mysqli->query($query_RS_Empleados_Deduc);
 $row_RS_Empleados_Deduc = $RS_Empleados_Deduc->fetch_assoc();
 $totalRows_RS_Empleados_Deduc = $RS_Empleados_Deduc->num_rows;
-/*											
-$RS_Empleados_Deduc = mysql_query($query_RS_Empleados_Deduc, $bd) or die(mysql_error());
-$row_RS_Empleados_Deduc = mysql_fetch_assoc($RS_Empleados_Deduc);
-$totalRows_RS_Empleados_Deduc = mysql_num_rows($RS_Empleados_Deduc);
-*/
-
 
 // Para calculo de dias de ausencia
 $ivss = $row_RS_Empleados['SueldoBase'] * $row_RS_Empleados['SW_ivss'] * 0.04 ;

@@ -1,12 +1,18 @@
 <?php 
 if(true){
-$MM_authorizedUsers = "2,99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
-$SW_omite_trace = false;
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+
+$MM_authorizedUsers = "2";
+require_once('../inc_login_ck.php'); 
+require_once('../Connections/bd.php'); 
+require_once('a/archivo/Variables.php'); 
+require_once('../inc/rutinas.php'); 
+//echo $AnoEscolarProx;
 
 	
 	
 
+	
+	
 	
 	
 if(isset($_GET['CodigoAlumno'])){
@@ -14,8 +20,11 @@ if(isset($_GET['CodigoAlumno'])){
 				WHERE CodigoAlumno='".$_GET['CodigoAlumno']."' 
 				AND Ano='".$AnoEscolarProx."' ";
 		$RS_sql = $mysqli->query($sql);
-		$totalRows_RS = $RS_sql->num_rows;
-	
+		$totalRows_RS = $RS_sql->num_rows;/*
+		$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
+		$totalRows_RS = mysql_num_rows($RS_sql);*/
+		//echo $sql.'<br>';	
+		
 		if($totalRows_RS == 0){
 			$sql = "SELECT * FROM AlumnoXCurso 
 					WHERE CodigoAlumno='".$_GET['CodigoAlumno']."' 
@@ -27,6 +36,13 @@ if(isset($_GET['CodigoAlumno'])){
 			$RS_sql = $mysqli->query($sql);
 			$row_ = $RS_sql->fetch_assoc();
 			$totalRows_RS = $RS_sql->num_rows;
+			
+			
+			/*
+			$RS_sql = 	mysql_query($sql, $bd) or die(mysql_error());
+			$row_ = mysql_fetch_assoc($RS_sql);
+			$totalRows_RS = mysql_num_rows($RS_sql);*/
+		//echo $sql.'<br>';	
 			
 			
 			
@@ -189,8 +205,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['ReferenciasPersonales'], "text"),
 					   GetSQLValueString(date('Y-m-d'), "date"),
                        GetSQLValueString($_POST['CodigoAlumno'], "int"));
-	$Result1 = $mysqli->query($updateSQL);	
-	//echo $updateSQL;
+	$Result1 = $mysqli->query($updateSQL);			   
  // $Result1 = mysql_query($updateSQL, $bd) or die(mysql_error());
 
 
@@ -319,9 +334,8 @@ else{
 		
 		
 
-?><!doctype html>
-<head>
-<meta charset="ISO-8859-1">
+?><html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <title>Colegio San Francisco de As&iacute;s</title>
 
 <link rel="shortcut icon" href="../img/favicon.ico">
@@ -329,6 +343,8 @@ else{
 <style type="text/css">
 .style1 {color: #0000FF}
 </style>
+<link href="../estilos2.css" rel="stylesheet" type="text/css">
+<link href="../estilos.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 <!--
 body {
@@ -422,29 +438,29 @@ body {
   </tr>
 </table>
 
-<form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+<form method="POST" name="form1" action="<?php echo $editFormAction; ?>">
   <table border="0" align="center" width="95%">
         <tr valign="baseline">
-          <td colspan="4" align="left" nowrap="nowrap" class="subtitle">
+          <td colspan="4" align="left" nowrap class="subtitle">
             <div align="left">
               Datos personales
               <input name="Creador" type="hidden" id="Creador" value="<?php echo $_COOKIE['MM_Username']; ?>">       
               &nbsp;
               <input name="CodigoAlumno" type="hidden" id="CodigoAlumno" value="<?php echo $row_RS_Alumno['CodigoAlumno']; ?>">
             </div></td>
-        <td nowrap="nowrap" class="subtitle">
+        <td nowrap class="subtitle">
         <input name="CodigoFMP" type="hidden" class="TextosSimples" value="<?php echo $row_RS_Alumno['CodigoFMP']; ?>" size="8">
         <input name="SWinscritoAnoAnte" type="hidden" class="TextosSimples" value="<?php echo $row_RS_Alumno['SWinscritoAnoAnte']; ?>" size="8"></td>
       </tr>
         <tr valign="baseline">
-          <td colspan="2" align="right" valign="top" nowrap="nowrap"><table width="100%"  border="0">
+          <td colspan="2" align="right" valign="top" nowrap><table width="100%"  border="0">
             <tr>
               <td class="NombreCampo">C&eacute;dula            </td>
-            <td nowrap="nowrap" class="FondoCampo">
+            <td nowrap class="FondoCampo">
 			<?php  ?>
             <input name="CedulaLetra"  type="<?php echo $SW_mod_ME?'text':'hidden'; ?>" class="TextosSimples" value="<?php echo $row_RS_Alumno['CedulaLetra']; ?>" size="2">
               <span id="sprytextfield15">
-        <input name="Cedula" type="<?php echo $SW_mod_ME?'text':'hidden'; ?>"  onkeyup="return ValNumero(this);"  class="TextosSimples" value="<?php echo $row_RS_Alumno['Cedula']; ?>" size="12">
+        <input name="Cedula" type="<?php echo $SW_mod_ME?'text':'hidden'; ?>"  onKeyUp="return ValNumero(this);"  class="TextosSimples" value="<?php echo $row_RS_Alumno['Cedula']; ?>" size="12">
         <span class="textfieldInvalidFormatMsg">S&oacute;lo N&uacute;meros</span></span><?php if($SW_mod_ME){}else{ echo $row_RS_Alumno['CedulaLetra']."-".$row_RS_Alumno['Cedula'];} ?>        </td>
           </tr>
             <tr>
@@ -474,11 +490,11 @@ body {
               <span class="textfieldRequiredMsg">Requerido</span></span><?php if($SW_mod_ME){}else{echo $row_RS_Alumno['Nacionalidad'];} ?></td>
           </tr>
             </table></td>
-        <td colspan="3" align="right" valign="top" nowrap="nowrap"><table width="100%"  border="0">
+        <td colspan="3" align="right" valign="top" nowrap><table width="100%"  border="0">
           <tr>
             <td nowrap="nowrap" class="NombreCampo">Curso<br>
 (<?php echo $AnoEscolarProx ?>)</td>
-            <td nowrap="nowrap" class="FondoCampo">
+            <td nowrap class="FondoCampo">
 			<?php if($SW_mod_ME){ ?>
             <span id="spryselect1">
             <?php 
@@ -534,7 +550,7 @@ $row_RS = mysql_fetch_assoc($RS_sql);*/
 echo Curso($row_RS['CodigoCurso']);
 
 
- ?><input name="CodigoCurso" type="hidden" id="CodigoCurso" value="<?php echo '"'.$row_RS['CodigoCurso'].'"'; ?>"><?php }  ?>
+ ?><input name="CodigoCurso" type="hidden" id="CodigoCurso" value=<?php echo '"'.$row_RS['CodigoCurso'].'"'; ?>><?php }  ?>
  
  
 <?php  ?>
@@ -543,11 +559,11 @@ echo Curso($row_RS['CodigoCurso']);
           </tr>
           <tr>
             <td class="NombreCampo">Fecha de Nacimiento</td>
-            <td nowrap="nowrap" class="FondoCampo"><?php  ?><input name="FechaNac" type="hidden" id="FechaNac" value="<?php echo $row_RS_Alumno['FechaNac']; ?>">
+            <td nowrap class="FondoCampo"><?php  ?><input name="FechaNac" type="hidden" id="FechaNac" value="<?php echo $row_RS_Alumno['FechaNac']; ?>">
               <?php if($SW_mod_ME){ Fecha('FechaNac', $row_RS_Alumno['FechaNac']) ?><?php }else{echo DDMMAAAA($row_RS_Alumno['FechaNac']);} ?></td>
           </tr>
           <tr>
-            <td class="NombreCampo">Clinica Donde Naci&oacute;</td>
+            <td class="NombreCampo">Clinica Donde Nació</td>
             <td class="FondoCampo"><?php ?><input name="ClinicaDeNac"  type="<?php echo $SW_mod_ME?'text':'hidden'; ?>"  class="TextosSimples"  value="<?php echo $row_RS_Alumno['ClinicaDeNac']; ?>"  size="20"><?php if($SW_mod_ME){ }else{echo $row_RS_Alumno['ClinicaDeNac'];} ?></td>
           </tr>
           <tr>
@@ -570,28 +586,28 @@ echo Curso($row_RS['CodigoCurso']);
           </table></td>
         </tr>
         <tr valign="baseline">
-          <td colspan="5" align="right" valign="top" nowrap="nowrap" class="subtitle"><div align="left">Informaci&oacute;n de contacto </div></td>
+          <td colspan="5" align="right" valign="top" nowrap class="subtitle"><div align="left">Informaci&oacute;n de contacto </div></td>
         </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo"><div align="right">Direcci&oacute;n:</div></td>
-        <td align="right" nowrap="nowrap" class="FondoCampo"><div align="left"><span id="sprytextarea1">
+          <td align="right" valign="top" nowrap class="NombreCampo"><div align="right">Direcci&oacute;n:</div></td>
+        <td align="right" nowrap class="FondoCampo"><div align="left"><span id="sprytextarea1">
           <textarea name="Direccion" cols="20" rows="4" class="TextosSimples"><?php echo $row_RS_Alumno['Direccion']; ?></textarea>
           <span id="countsprytextarea1">&nbsp;</span> <span class="textareaRequiredMsg">Requerido</span></span></div></td>
-        <td colspan="3" align="right" valign="top" nowrap="nowrap"><table width="100%"  border="0">
+        <td colspan="3" align="right" valign="top" nowrap><table width="100%"  border="0">
           <tr>
-            <td width="50%" nowrap="nowrap" class="NombreCampo">Urbanizacion</td>
+            <td width="50%" nowrap class="NombreCampo">Urbanizacion</td>
             <td width="50%" class="FondoCampo"><span id="sprytextfield4">
               <input name="Urbanizacion" type="text" class="TextosSimples"  value="<?php echo $row_RS_Alumno['Urbanizacion']; ?>" size="20">
               <span class="textfieldRequiredMsg">Requerido</span></span></td>
           </tr>
           <tr>
-            <td nowrap="nowrap" class="NombreCampo">Ciudad</td>
+            <td nowrap class="NombreCampo">Ciudad</td>
             <td class="FondoCampo"><span id="sprytextfield5">
               <input name="Ciudad" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['Ciudad']; ?>" size="20">
               <span class="textfieldRequiredMsg">Requerido</span></span></td>
           </tr>
           <tr>
-            <td nowrap="nowrap" class="NombreCampo">Codigo Postal</td>
+            <td nowrap class="NombreCampo">Codigo Postal</td>
             <td class="FondoCampo"><span id="sprytextfield6">
               <input name="CodPostal" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['CodPostal']; ?>" size="20">
               </span></td>
@@ -600,107 +616,107 @@ echo Curso($row_RS['CodigoCurso']);
       </tr>
         <tr valign="baseline">
           <td align="right" valign="top" class="NombreCampo"><div align="right">Email alumno</div></td>
-        <td align="right" nowrap="nowrap" class="FondoCampo"><div align="left"><span id="sprytextfield13">
+        <td align="right" nowrap class="FondoCampo"><div align="left"><span id="sprytextfield13">
           <input name="Email1" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['Email1']; ?>" size="20">
           <span class="textfieldInvalidFormatMsg">Inv&aacute;lido</span></span></div></td>
         <td align="right" valign="top" class="NombreCampo">Email secundario</td>
-        <td colspan="2" nowrap="nowrap" class="FondoCampo"><span id="sprytextfield14">
+        <td colspan="2" nowrap class="FondoCampo"><span id="sprytextfield14">
           <input name="Email2" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['Email2']; ?>" size="20">
           <span class="textfieldInvalidFormatMsg">Inv&aacute;lido</span></span></td>
       </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo"><div align="right">Tel&eacute;fono Hab</div></td>
-        <td align="right" nowrap="nowrap" class="FondoCampo"><div align="left"><span id="sprytextfield7">
+          <td align="right" valign="top" nowrap class="NombreCampo"><div align="right">Tel&eacute;fono Hab</div></td>
+        <td align="right" nowrap class="FondoCampo"><div align="left"><span id="sprytextfield7">
           <input name="TelHab" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['TelHab']; ?>" size="20">
           <span class="textfieldRequiredMsg">Requerido</span></span></div></td>
-        <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Tel&eacute;fono Cel</td>
-        <td colspan="2" nowrap="nowrap" class="FondoCampo"><span id="sprytextfield8">
+        <td align="right" valign="top" nowrap class="NombreCampo">Tel&eacute;fono Cel</td>
+        <td colspan="2" nowrap class="FondoCampo"><span id="sprytextfield8">
           <input name="TelCel" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['TelCel']; ?>" size="20">
           <span class="textfieldRequiredMsg">Requerido</span></span></td>
       </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Con quien Vive</td>
-        <td nowrap="nowrap" class="FondoCampo"><span id="sprytextfield12">
+          <td align="right" valign="top" nowrap class="NombreCampo">Con quien Vive</td>
+        <td nowrap class="FondoCampo"><span id="sprytextfield12">
           <input type="text" name="ViveCon" value="<?php echo $row_RS_Alumno['ViveCon']; ?>"  class="TextosSimples"  size="20">
           <span class="textfieldRequiredMsg">Requerido</span></span></td>
-        <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">&nbsp;</td>
-        <td colspan="2" nowrap="nowrap" class="FondoCampo"></td>
+        <td align="right" valign="top" nowrap class="NombreCampo">&nbsp;</td>
+        <td colspan="2" nowrap class="FondoCampo"></td>
       </tr>
         <tr valign="baseline" >
-          <td colspan="5" align="right" valign="top" nowrap="nowrap" class="subtitle"><div align="left">En caso de emergencia llamar a: </div></td>
+          <td colspan="5" align="right" valign="top" nowrap class="subtitle"><div align="left">En caso de emergencia llamar a: </div></td>
         </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Nombre</td>
-        <td align="left" nowrap="nowrap" class="FondoCampo"><span id="sprytextfield9">
+          <td align="right" valign="top" nowrap class="NombreCampo">Nombre</td>
+        <td align="left" nowrap class="FondoCampo"><span id="sprytextfield9">
           <input name="PerEmergencia" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['PerEmergencia']; ?>" size="20">
           <span class="textfieldRequiredMsg">Requerido</span></span></td>
-        <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">&nbsp;</td>
-        <td colspan="2" align="right" valign="top" nowrap="nowrap" class="FondoCampo">&nbsp;</td>
+        <td align="right" valign="top" nowrap class="NombreCampo">&nbsp;</td>
+        <td colspan="2" align="right" valign="top" nowrap class="FondoCampo">&nbsp;</td>
         </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo"><div align="right">Tel&eacute;fono</div></td>
-        <td align="right" nowrap="nowrap" class="FondoCampo"><div align="left"><span id="sprytextfield10">
+          <td align="right" valign="top" nowrap class="NombreCampo"><div align="right">Teléfono</div></td>
+        <td align="right" nowrap class="FondoCampo"><div align="left"><span id="sprytextfield10">
           <input name="PerEmerTel" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['PerEmerTel']; ?>" size="20">
           <span class="textfieldRequiredMsg">Requerido</span></span></div></td>
-        <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">      Nexo</td>
-        <td colspan="2" valign="top" nowrap="nowrap" class="FondoCampo"><span id="sprytextfield11">
+        <td align="right" valign="top" nowrap class="NombreCampo">      Nexo</td>
+        <td colspan="2" valign="top" nowrap class="FondoCampo"><span id="sprytextfield11">
           <input name="PerEmerNexo" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['PerEmerNexo']; ?>" size="15">
           <span class="textfieldRequiredMsg">Requerido</span></span></td>
         </tr>
         <tr valign="baseline">
-          <td colspan="5" align="right" valign="top" nowrap="nowrap" class="subtitle"><div align="left">Informaci&oacute;n M&eacute;dica </div></td>
+          <td colspan="5" align="right" valign="top" nowrap class="subtitle"><div align="left">Informaci&oacute;n M&eacute;dica </div></td>
         </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo"><div align="right">Peso</div></td>
-        <td align="right" nowrap="nowrap" class="FondoCampo"><div align="left">
+          <td align="right" valign="top" nowrap class="NombreCampo"><div align="right">Peso</div></td>
+        <td align="right" nowrap class="FondoCampo"><div align="left">
           <input name="Peso" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['Peso']; ?>" size="20">
           </div></td>
-        <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Vacunas</td>
-        <td colspan="2" nowrap="nowrap" class="FondoCampo"><input name="Vacunas" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['Vacunas']; ?>" size="20"></td>
+        <td align="right" valign="top" nowrap class="NombreCampo">Vacunas</td>
+        <td colspan="2" nowrap class="FondoCampo"><input name="Vacunas" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['Vacunas']; ?>" size="20"></td>
       </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo"><div align="right">Enfermedades</div></td>
-        <td align="right" nowrap="nowrap" class="FondoCampo"><div align="left">
+          <td align="right" valign="top" nowrap class="NombreCampo"><div align="right">Enfermedades</div></td>
+        <td align="right" nowrap class="FondoCampo"><div align="left">
           <input name="Enfermedades" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['Enfermedades']; ?>" size="20">
           </div></td>
-        <td align="right" valign="top" class="NombreCampo">Tratamiento M&eacute;dico</td>
-        <td colspan="2" nowrap="nowrap" class="FondoCampo"><input name="TratamientoMed" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['TratamientoMed']; ?>" size="20"></td>
+        <td align="right" valign="top" class="NombreCampo">Tratamiento Médico</td>
+        <td colspan="2" nowrap class="FondoCampo"><input name="TratamientoMed" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['TratamientoMed']; ?>" size="20"></td>
       </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo"><div align="right">Alergico a</div></td>
-        <td align="right" nowrap="nowrap" class="FondoCampo"><div align="left">
+          <td align="right" valign="top" nowrap class="NombreCampo"><div align="right">Alergico a</div></td>
+        <td align="right" nowrap class="FondoCampo"><div align="left">
           <input name="AlergicoA" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['AlergicoA']; ?>" size="20">
           </div></td>
-        <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">&nbsp;</td>
-        <td colspan="2" nowrap="nowrap" class="FondoCampo">&nbsp;</td>
+        <td align="right" valign="top" nowrap class="NombreCampo">&nbsp;</td>
+        <td colspan="2" nowrap class="FondoCampo">&nbsp;</td>
       </tr>
         <tr>
-          <td colspan="5" nowrap="nowrap" class="subtitle">Colegio de procedencia</td>
+          <td colspan="5" nowrap class="subtitle">Colegio de procedencia</td>
                 </tr>
         <tr>
-          <td align="right" nowrap="nowrap" class="NombreCampo">Nombre</td>
-                        <td nowrap="nowrap" class="FondoCampo"><input name="ColegioProcedencia" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['ColegioProcedencia']; ?>" size="20"></td>
-                        <td align="right" nowrap="nowrap" class="NombreCampo">Urbanizaci&oacute;n</td>
-                        <td nowrap="nowrap" colspan="2" class="FondoCampo"><input name="CiudadColProc" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['CiudadColProc']; ?>" size="20"></td>
+          <td align="right" nowrap class="NombreCampo">Nombre</td>
+                        <td nowrap class="FondoCampo"><input name="ColegioProcedencia" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['ColegioProcedencia']; ?>" size="20"></td>
+                        <td align="right" nowrap class="NombreCampo">Urbanizaci&oacute;n</td>
+                        <td nowrap colspan="2" class="FondoCampo"><input name="CiudadColProc" type="text" class="TextosSimples" value="<?php echo $row_RS_Alumno['CiudadColProc']; ?>" size="20"></td>
                 </tr>
         <tr>
-          <td align="right" nowrap="nowrap" class="NombreCampo">Motivo de retiro</td>
-                        <td nowrap="nowrap" class="FondoCampo"><input name="MotivoRetiroColProced" type="text"  class="TextosSimples" value="<?php echo $row_RS_Alumno['MotivoRetiroColProced']; ?>" size="20"></td>
-                        <td align="right" nowrap="nowrap" class="NombreCampo">Tel&eacute;fono Col. anterior</td>
-                        <td nowrap="nowrap" colspan="2" class="FondoCampo"><input name="ColegioProcedenciaTelefono" type="text" class="TextosSimples" id="ColegioProcedenciaTelefono" value="<?php echo $row_RS_Alumno['CiudadColProc']; ?>" size="20"></td>
+          <td align="right" nowrap class="NombreCampo">Motivo de retiro</td>
+                        <td nowrap class="FondoCampo"><input name="MotivoRetiroColProced" type="text"  class="TextosSimples" value="<?php echo $row_RS_Alumno['MotivoRetiroColProced']; ?>" size="20"></td>
+                        <td align="right" nowrap class="NombreCampo">Tel&eacute;fono Col. anterior</td>
+                        <td nowrap colspan="2" class="FondoCampo"><input name="ColegioProcedenciaTelefono" type="text" class="TextosSimples" id="ColegioProcedenciaTelefono" value="<?php echo $row_RS_Alumno['CiudadColProc']; ?>" size="20"></td>
                 </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Observaciones</td>
-        <td colspan="4" nowrap="nowrap" class="FondoCampo"><p>
+          <td align="right" valign="top" nowrap class="NombreCampo">Observaciones</td>
+        <td colspan="4" nowrap class="FondoCampo"><p>
           <textarea name="Observaciones" cols="40" rows="3" class="TextosSimples" id="Observaciones"><?php echo $row_RS_Alumno['Observaciones']; ?></textarea>
         </p></td>
         </tr>
         <tr valign="baseline">
-          <td colspan="5" nowrap="nowrap" class="subtitle">Otros Datos</td>
+          <td colspan="5" nowrap class="subtitle">Otros Datos</td>
           </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Ha Solicitado Cupo en el colegio antes:</td>
-          <td valign="top" nowrap="nowrap" class="FondoCampo"><table width="150">
+          <td align="right" valign="top" nowrap class="NombreCampo">Ha Solicitado Cupo en el colegio antes:</td>
+          <td valign="top" nowrap class="FondoCampo"><table width="150">
             <tr>
               <td class="FondoCampo">
                 <label>
@@ -716,17 +732,17 @@ echo Curso($row_RS['CodigoCurso']);
               </span></td>
               </tr>
           </table></td>
-          <td colspan="3" valign="top" nowrap="nowrap" class="FondoCampo">Indique: Cuando y
+          <td colspan="3" valign="top" nowrap class="FondoCampo">Indique: Cuando y
             <label for="HaSolicitadoCuando"></label>
             razones por la que no ingreso:<br>
             <label for="HaSolicitadoObs"></label>
             <textarea name="HaSolicitadoObs" cols="40" rows="4" id="HaSolicitadoObs"><?php echo $row_RS_Alumno['HaSolicitadoObs']; ?></textarea></td>
           </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo"><p>Tiene seguimiento de alg&uacute;n especialista<br>
+          <td align="right" valign="top" nowrap class="NombreCampo"><p>Tiene seguimiento de alg&uacute;n especialista<br>
             (
 Psicologo, psicopedagogo, etc)</p></td>
-          <td valign="top" nowrap="nowrap" class="FondoCampo"><table width="150">
+          <td valign="top" nowrap class="FondoCampo"><table width="150">
             <tr>
               <td class="FondoCampo"><label>
                 <input type="radio" name="TienePsicologo" value="Si" id="TienePsicologo_0" <?php if( $row_RS_Alumno['TienePsicologo']=="Si") echo "checked"; ?> >
@@ -738,13 +754,13 @@ Psicologo, psicopedagogo, etc)</p></td>
                 No</label></td>
             </tr>
           </table></td>
-          <td colspan="3" valign="top" nowrap="nowrap" class="FondoCampo">Indique: Nombre del especialista, motivo, desde cuando:<br>
+          <td colspan="3" valign="top" nowrap class="FondoCampo">Indique: Nombre del especialista, motivo, desde cuando:<br>
             <label for="TienePsicologoObs"></label>
             <textarea name="TienePsicologoObs" cols="40" rows="4" id="TienePsicologoObs"><?php echo $row_RS_Alumno['TienePsicologoObs']; ?></textarea></td>
           </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Representante Administrativo</td>
-          <td nowrap="nowrap" class="FondoCampo"><table width="200">
+          <td align="right" valign="top" nowrap class="NombreCampo">Representante Administrativo</td>
+          <td nowrap class="FondoCampo"><table width="200">
             <tr>
               <td class="FondoCampo"><label>
                 <input type="radio" name="RepresentanteAdministrativo" value="Padre" id="RepresentanteAdministrativo_0" <?php if( $row_RS_Alumno['RepresentanteAdministrativo']=="Padre") echo "checked"; ?> >
@@ -761,17 +777,17 @@ Psicologo, psicopedagogo, etc)</p></td>
                 Otro</label></td>
             </tr>
           </table>            <label for="RepresentanteAdministrativo"></label></td>
-          <td colspan="3" valign="top" nowrap="nowrap" class="FondoCampo">Si es otro indique: Nombre, Nexo, Telefono, Email:<br>
+          <td colspan="3" valign="top" nowrap class="FondoCampo">Si es otro indique: Nombre, Nexo, Telefono, Email:<br>
             <textarea name="RepresentanteAdministrativoObs" cols="40" rows="4" id="RepresentanteAdministrativoObs"><?php echo $row_RS_Alumno['RepresentanteAdministrativoObs']; ?></textarea></td>
           </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Tiene Hermanos solicitando cupo</td>
-          <td colspan="4" valign="top" nowrap="nowrap" class="FondoCampo">Indique: Nombre y curso que solicitan:<br>
+          <td align="right" valign="top" nowrap class="NombreCampo">Tiene Hermanos solicitando cupo</td>
+          <td colspan="4" valign="top" nowrap class="FondoCampo">Indique: Nombre y curso que solicitan:<br>
             <textarea name="HermanoSolicitando" cols="60" rows="4" id="Hermano"><?php echo $row_RS_Alumno['HermanoSolicitando']; ?></textarea></td>
         </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Tiene Hermanos  cursando en el Colegio</td>
-          <td valign="top" nowrap="nowrap" class="FondoCampo"><table width="150">
+          <td align="right" valign="top" nowrap class="NombreCampo">Tiene Hermanos  cursando en el Colegio</td>
+          <td valign="top" nowrap class="FondoCampo"><table width="150">
             <tr>
               <td class="FondoCampo"><label>
                 <input type="radio" name="HermanoCursando" value="Si" id="HermanoCursando_2" <?php if( $row_RS_Alumno['HermanoCursando']=="Si") echo "checked"; ?> >
@@ -783,12 +799,12 @@ Psicologo, psicopedagogo, etc)</p></td>
                 No</label></td>
             </tr>
           </table></td>
-          <td colspan="3" valign="top" nowrap="nowrap" class="FondoCampo">Indique: Nombre y curso:<br>
+          <td colspan="3" valign="top" nowrap class="FondoCampo">Indique: Nombre y curso:<br>
             <textarea name="HermanoCursandoObs" cols="60" rows="4" id="HermanoCursando"><?php echo $row_RS_Alumno['HermanoCursandoObs']; ?></textarea></td>
           </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Es Hijo De Exalumno</td>
-          <td valign="top" nowrap="nowrap" class="FondoCampo"><table width="150">
+          <td align="right" valign="top" nowrap class="NombreCampo">Es Hijo De Exalumno</td>
+          <td valign="top" nowrap class="FondoCampo"><table width="150">
             <tr>
               <td class="FondoCampo"><label>
                 <input type="radio" name="HijoDeExalumno" value="Si" id="TienePsicologo_4" <?php if( $row_RS_Alumno['HijoDeExalumno']=="Si") echo "checked"; ?> >
@@ -805,14 +821,14 @@ Psicologo, psicopedagogo, etc)</p></td>
             <textarea name="HijoDeExalumnoObs" cols="60" rows="4" id="HijoDeExalumno"><?php echo $row_RS_Alumno['HijoDeExalumnoObs']; ?></textarea></td>
           </tr>
         <tr valign="baseline">
-          <td align="right" valign="top" nowrap="nowrap" class="NombreCampo">Indique los datos de 2 representantes<br>
+          <td align="right" valign="top" nowrap class="NombreCampo">Indique los datos de 2 representantes<br>
             de la familia Franciscana quienes<br>
             le otorgan cartas de referencia</td>
-          <td colspan="4" valign="top" nowrap="nowrap" class="FondoCampo">Indique: Nombre, tel&eacute;fono, Alumno y grado:<br>
+          <td colspan="4" valign="top" nowrap class="FondoCampo">Indique: Nombre, tel&eacute;fono, Alumno y grado:<br>
             <textarea name="ReferenciasPersonales" cols="60" rows="4" id="ReferenciasPersonales"><?php echo $row_RS_Alumno['ReferenciasPersonales']; ?></textarea></td>
         </tr>
         <tr valign="baseline">
-          <td colspan="5" align="right" nowrap="nowrap">
+          <td colspan="5" align="right" nowrap>
       <?php //if ( $row_RS_Alumno['SWinscrito']!=1 or $_COOKIE['MM_UserGroup']==99) { ?> 
             <div align="center">
               <input type="submit" value="Guardar">

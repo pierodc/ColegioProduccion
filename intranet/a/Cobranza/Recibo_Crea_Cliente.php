@@ -1,8 +1,7 @@
 <?php 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
@@ -17,8 +16,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['Direccion'], "text"),
                        GetSQLValueString($_POST['Telefono'], "text"));
 
-  mysql_select_db($database_bd, $bd);
-  $Result1 = mysql_query($insertSQL, $bd) or die(mysql_error());
+ $Result1 = $mysqli->query($insertSQL);
 header("Location: Estado_de_Cuenta_Alumno.php?CodigoPropietario=".$_GET['CodigoPropietario']);
 
 }
@@ -42,11 +40,6 @@ $sql = "SELECT * FROM ReciboCliente
 
 
 
-//echo $sql;		
-//$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
-//$RS = $mysqli->query($sql);
-//$row = $RS->fetch_assoc();
-//echo $row['Apellidos'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

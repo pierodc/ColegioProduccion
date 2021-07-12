@@ -64,6 +64,16 @@ class Observaciones{
 		}
 	return $Matriz;
 	}
+	
+	public function delete($id){ 
+		$sql = "DELETE FROM Observaciones 
+				WHERE Codigo_Observ = '{$id}'";
+		//echo "<br><br><br><br>" . $sql;
+		$datos = $this->con->consultaRetorno($sql);
+		return $datos;
+	}
+	
+	
 }
 		
 ?>

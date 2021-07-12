@@ -51,11 +51,6 @@ $Fecha = $row_RS_Contable_Mov['Fecha'];
 $Tipo = $row_RS_Contable_Mov['Tipo'];
 $CodigoCuenta = $row_RS_Contable_Mov['CodigoCuenta'];
 
-/*
-$RS_Contable_Mov = mysql_query($query_RS_Contable_Mov, $bd) or die(mysql_error());
-$row_RS_Contable_Mov = mysql_fetch_assoc($RS_Contable_Mov);
-$totalRows_RS_Contable_Mov = mysql_num_rows($RS_Contable_Mov);
-*/
 
 $Alumno = new Alumno($row_RS_Contable_Mov['CodigoPropietario']);
 
@@ -69,11 +64,6 @@ $row_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->fetch_assoc();
 $totalRows_RS_Banco_Mov_Disponible = $RS_Banco_Mov_Disponible->num_rows;
 
 
-/*
-$RS_Banco_Mov_Disponible = mysql_query($query_RS_Banco_Mov_Disponible, $bd) or die(mysql_error());
-$row_RS_Banco_Mov_Disponible = mysql_fetch_assoc($RS_Banco_Mov_Disponible);
-$totalRows_RS_Banco_Mov_Disponible = mysql_num_rows($RS_Banco_Mov_Disponible);
-*/
 
 
 $query_RS_Alumno_PPMM = "SELECT * FROM Representante 
@@ -132,8 +122,6 @@ if($row_RS_Contable_Mov['Referencia'] > ""){
 	$row_RS_Banco_Mov_aux = $RS_Banco_Mov_aux->fetch_assoc();
 	
 	
-	//$RS_Banco_Mov_aux = mysql_query($query_RS_Banco_Mov_aux, $bd) or die(mysql_error());
-	//$row_RS_Banco_Mov_aux = mysql_fetch_assoc($RS_Banco_Mov_aux);
 }
 
 ?>
@@ -157,10 +145,6 @@ $RS_sql = $mysqli->query($sql);
 $row_RS_sql = $RS_sql->fetch_assoc();
 $totalRows_RS_sql = $RS_sql->num_rows;
 
-	/*
-$RS_sql = mysql_query($sql, $bd) or die(mysql_error());
-$row_RS_sql = mysql_fetch_assoc($RS_sql);
-$totalRows_RS_sql = mysql_num_rows($RS_sql);*/
 
 if( $totalRows_RS_sql == 0 ) {
 
