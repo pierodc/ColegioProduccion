@@ -2386,6 +2386,17 @@ function input_select($param){
 		echo " >$valor</option>\r\n";
       }
     echo "</select>\r\n";
+	
+	/*
+	<? input_select(array(
+			"name" => "Separador",
+			"default" => $_POST["Separador"],
+			"values" => array("1" => "," , "2" => ";")
+			)); ?>
+	*/
+	
+	
+	
 	}
 
 function Reticula($pdf){
