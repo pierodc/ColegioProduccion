@@ -510,10 +510,6 @@ $RS_sql = $mysqli->query($sql);
 $row_RS = $RS_sql->fetch_assoc();
 $totalRows_RS = $RS_sql->num_rows;			
 			
-	/*		
-$RS_sql = mysql_query($sql, $bd) or die(mysql_error());
-$row_RS = mysql_fetch_assoc($RS_sql);
-$totalRows_RS = mysql_num_rows($RS_sql);*/
 if($totalRows_RS == 1 )
 	$CodigoCurso = $row_RS['CodigoCurso'];
 else

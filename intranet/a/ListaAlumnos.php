@@ -488,8 +488,8 @@ if($Pendiente['resumen']['MontoDebe_Dolares'] > 20){
 
 <tr>
   <td align="left" valign="top" nowrap="nowrap">&nbsp;</td>
-  <td colspan="2" align="left" valign="top" nowrap="nowrap"><iframe width="300" height="60" src="http://www.colegiosanfrancisco.com/intranet/a/Academico/iFr/Status.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" frameborder="1" id="SWframe"></iframe></td>
-  <td colspan="6" align="center" valign="top" nowrap="nowrap"><iframe width="500" height="60" src="http://www.colegiosanfrancisco.com/intranet/a/Observacion.php?Area=Lista&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" frameborder="1" id="SWframe2"></iframe></td>
+  <td colspan="2" align="left" valign="top" nowrap="nowrap"><iframe width="300" height="60" src="/intranet/a/Academico/iFr/Status.php?CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoAlumno']; ?>" frameborder="1" id="SWframe"></iframe></td>
+  <td colspan="6" align="center" valign="top" nowrap="nowrap"><iframe width="500" height="60" src="/intranet/a/Observacion.php?Area=Lista&CodigoAlumno=<?php echo $row_RS_Alumnos['CodigoClave']; ?>" frameborder="1" id="SWframe2"></iframe></td>
   </tr>
                   
                   <?php 

@@ -1,22 +1,20 @@
 <?php 
-
-require_once('../../../../Connections/bd.php'); 
-require_once('../../../../inc/rutinas.php'); 
-require_once('../../../../inc/fpdf.php'); 
-require_once('../../archivo/Variables.php'); 
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 if (isset($_POST['AnoEscolar'])) {
 
 
-mysql_select_db($database_bd, $bd);
 $CodigoCurso = "-1";
 if (isset($_POST['CodigoCurso'])) {
-  $CodigoCurso = (get_magic_quotes_gpc()) ? $_POST['CodigoCurso'] : addslashes($_POST['CodigoCurso']);
+  $CodigoCurso = $_POST['CodigoCurso'] ;
 }
 if (isset($_POST['AnoEscolar'])) {
-  $AnoEscolar = (get_magic_quotes_gpc()) ? $_POST['AnoEscolar'] : addslashes($_POST['AnoEscolar']);
+  $AnoEscolar = $_POST['AnoEscolar'] ;
 }
-mysql_select_db($database_bd, $bd);
+ 
 
 if ($_POST['Numero'] > " ") {
 	$query_RS_Alumno = sprintf("SELECT * FROM AlumnoXCurso, Alumno 
@@ -25,8 +23,11 @@ if ($_POST['Numero'] > " ") {
 									AND AlumnoXCurso.Ano = '%s' 
 									AND AlumnoXCurso.Status = 'Inscrito' 
 									ORDER BY Alumno.CedulaLetra DESC, Alumno.Cedula_int ASC", $CodigoCurso, $AnoEscolar);
-	$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
-	$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
+$RS_Alumno = $mysqli->query($query_RS_Alumno); 
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+
+//$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
+	//$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 	$Numero = $_POST['Numero'];
 }
 elseif($_POST['NumCert'] > " ") {
@@ -34,8 +35,12 @@ elseif($_POST['NumCert'] > " ") {
 	$CodigoAlumno = $_POST['CodigoAlumno'];
 	$query_RS_Alumno = "SELECT * FROM Alumno 
 						WHERE CodigoAlumno = '$CodigoAlumno'";
-	$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
-	$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
+	$RS_Alumno = $mysqli->query($query_RS_Alumno); 
+	$row_RS_Alumno = $RS_Alumno->fetch_assoc();
+
+	
+	//$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
+	//$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
 	$Numero = $_POST['NumCert']*1-1;
 }
 
@@ -129,7 +134,7 @@ $pdf->SetFont('Arial','',8);
 //$pdf->Cell(20 , 3 , 'Ministerio del Poder Popular' , $borde , 1 , 'L'); 
 //$pdf->Cell(20 , 3 , 'para la Educación' , $borde , 0 , 'L'); 
 
-}  while ($row_RS_Alumno = mysql_fetch_assoc($RS_Alumno)); 
+}  while ($row_RS_Alumno = $RS_Alumno->fetch_assoc()); 
 
 
 $pdf->Output();
