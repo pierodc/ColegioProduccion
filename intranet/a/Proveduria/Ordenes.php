@@ -1,6 +1,5 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,Contable,provee";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
@@ -72,20 +71,19 @@ SPAN.td
  
  <? 
 	
-		 	
 	 
 	$sql = "SELECT * FROM ShopCart 
 			GROUP BY id_user
 			ORDER BY id";
 	//echo $sql;
-	 $RS = $mysqli->query($sql);
+	 $RS = $ShopCart->view_all_carts();
 	
-	while ($row = $RS->fetch_assoc()){
-		extract($row);	
-		/*$Fondo = "";
-		if($_POST["id"] == $id) {
-			$Fondo = "verde"; }*/
-		$Usuario->id = $id_user; 
+	//var_dump($RS);
+	foreach ($RS as $row) {
+		//extract($row);
+		//var_dump($row);	
+		//echo $row['id_user'];
+		$Usuario->id = $row['id_user'];
 		$Usuario->Email = $Usuario->view()["Usuario"]; 
 		
 		?>

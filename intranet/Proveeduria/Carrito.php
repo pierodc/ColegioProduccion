@@ -1,9 +1,8 @@
 <? 
-$MM_authorizedUsers = "2,91,provee";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$MM_authorizedUsers = "2,91,99,provee";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 if (isset($_COOKIE['MM_Username'])) {
-  $MM_Username = (get_magic_quotes_gpc()) ? $_COOKIE['MM_Username'] : addslashes($_COOKIE['MM_Username']);
+  $MM_Username = $_COOKIE['MM_Username'];
 }
 
 if(isset($_GET["Usuario"]) and $_GET["Usuario"] > ""){
@@ -34,7 +33,7 @@ if(isset($_GET['Agregar'])){
 	if ($RS->num_rows == 0){
 		$sql =" INSERT INTO ShopCart
 				(id_user,id_inventario,Precio) VALUES
-				($Usuario->id,'$id_inventario','".$Producto_Agregar[Precio_Dolares]."')";
+				($Usuario->id,'$id_inventario','".$Producto_Agregar['Precio_Dolares']."')";
 		//echo $sql;
 		$mysqli->query($sql);
 	}

@@ -1,11 +1,10 @@
 <?php 
-$MM_authorizedUsers = "2,91,docente,provee";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
+$MM_authorizedUsers = "2,91,99,docente,provee";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 
 if (isset($_COOKIE['MM_Username'])) {
-  $MM_Username = (get_magic_quotes_gpc()) ? $_COOKIE['MM_Username'] : addslashes($_COOKIE['MM_Username']);
+  $MM_Username = $_COOKIE['MM_Username'] ;
 }
 
 if(isset($_GET["Usuario"]) and $_GET["Usuario"]>""){
@@ -74,7 +73,7 @@ $CambioParalelo = $Cambio_Paralelo;
 <table width="98%"  border="0" align="center" cellspacing="5" cellpadding="2">
   <tr>
     <td width="100%" colspan="2" align="center" class="NombreCampoBIG" ><p>Proveeduria</p>
-        <p>La fecha estimada de proxima entrega es el 20 de octubre</p></td>
+        <p>La fecha estimada de proxima entrega es el 20 de septiembre</p></td>
   </tr>
   
   
@@ -94,7 +93,7 @@ $CambioParalelo = $Cambio_Paralelo;
   
   <tr>
     <td align="center" valign="top" >
-       <? if (isset($_GET["CodigoCurso"]) and false) { ?>
+       <? if ((isset($_GET["CodigoCurso"]) and false) or $_COOKIE['MM_Username'] == "piero") { ?>
         <table width="100%" border="0">
             <tbody>
                 <tr class="subtitle">
@@ -116,6 +115,7 @@ $CambioParalelo = $Cambio_Paralelo;
 						WHERE ( Nivel_Curso LIKE '%$NivelCurso%'
 						OR Nivel_Curso LIKE '%00%' )
 						AND Precio_Dolares > 0
+						AND Cat1 = 'Texto'
 						ORDER BY Nivel_Curso DESC
 						";
 		
