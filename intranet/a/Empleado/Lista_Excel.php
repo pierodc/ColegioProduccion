@@ -3,17 +3,11 @@ $MM_authorizedUsers = "91,AsistDireccion,Contable";
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Connections/bd.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rutinas.php'); 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/intranet/a/archivo/Variables_Privadas.php');
-
-
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/xls/excel.php'); 
 
 // $FechaObjAntiguedad = "2017-09-30";
 
-$export_file = "xlsfile://tmp/example.xls";
+$export_file = "xlsfile://tmp/Emp_".time().".xls";
 header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header ("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
 header ("Cache-Control: no-cache, must-revalidate");
@@ -73,6 +67,8 @@ if(Acceso($Acceso_US,$Reuqerido_Pag)){
     <td align="center">Apellidos</td>
     <td align="center">Apellidos</td>
     <td align="center">Nombres</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
     <td colspan="3" align="center"><p>F NAc</p></td>
     <td>Email</td>
     <td>Sexo</td>
@@ -85,12 +81,12 @@ if(Acceso($Acceso_US,$Reuqerido_Pag)){
     <td>Cargo Corto</td>
     <td>Horas</td>
     <td>F. Ing</td>
-    <td>A&ntilde;os<br />
-    <?= DDMMAAAA($FechaObjAntiguedad); ?></td>
+    <td>A&ntilde;os
+    <? DDMMAAAA($FechaObjAntiguedad); ?></td>
     <td>S. Base 1</td>
     <td>S. Base 2</td>
     <td>S. Base 3</td>
-    <td>S. Base T</td>
+    <td>S. Base T</td> 
     <td>S. Base anterior</td>
     <td>Haberes Fidei</td>
   </tr>
@@ -127,7 +123,7 @@ while ($row = $RS->fetch_assoc()) {
     <td><?php echo "$TipoDocente"; ?></td>
     <td><?php echo "$CargoLargo"; ?></td>
     <td><?php echo "$CargoCorto"; ?></td>
-    <td><?php echo "". $HrAcad +$HrAdmi ; ?></td>
+    <td><?php //cho "". $HrAcad +$HrAdmi ; ?></td>
     <td>&nbsp;<?php echo DDMMAA($FechaIngreso); ?></td>
     <td><?php echo Fecha_Meses_Laborados($FechaIngreso , $FechaObjAntiguedad); ?></td>
     <td><?php echo $SueldoBase_1 ?></td>
