@@ -2,11 +2,8 @@
 if(true){
 
 $MM_authorizedUsers = "2";
-require_once('../inc_login_ck.php'); 
-require_once('../Connections/bd.php'); 
-require_once('a/archivo/Variables.php'); 
-require_once('../inc/rutinas.php'); 
-//echo $AnoEscolarProx;
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
 	
 	
