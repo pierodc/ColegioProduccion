@@ -61,8 +61,8 @@ function MM_showHideLayers() { //v9.0
           <td valign="top" class="FondoCampo"><select name="Lapso" id="Lapso">
             <option value="0">Auto</option>
             <option value="1">1ro</option>
-            <option value="2"  selected="selected">2do</option>
-            <option value="3" >3er</option>
+            <option value="2" >2do</option>
+            <option value="3"  selected="selected">3er</option>
           </select> <?= $AnoEscolar ?></td>
         </tr>
         <tr>
@@ -146,10 +146,14 @@ echo "
         </tr>
         <tr>
             <td valign="top" class="NombreCampo">Separador de nota</td>
-            <td valign="top" class="FondoCampo"><select name="Separador" id="Separador">
-                <option value=",">,</option>
-                <option value=";"   selected="selected">;</option>
-            </select></td>
+            <td valign="top" class="FondoCampo"><? input_select(array(
+			"name" => "Separador",
+			"default" => $_POST["Separador"],
+			"values" => array("1" => "," , "2" => ";")
+			)); ?><!--select name="Separador" id="Separador">
+                <option value="," selected="selected">,</option>
+                <option value=";"  >;</option>
+            </select--></td>
         </tr>
         <tr>
           <td valign="top" class="NombreCampo">Archivo</td>
@@ -169,7 +173,7 @@ echo "
 	<?php 
 
 function NotaAUX($nota){
-	echo "array pos $nota ".in_array($nota , array("A","B","C","D","E") )."<br>";
+	//echo "array pos $nota ".in_array($nota , array("A","B","C","D","E") )."<br>";
 	if(in_array($nota , array("A","B","C","D","E") )){
 		$nota;
 		//echo " existe $nota ";
@@ -223,38 +227,29 @@ function CargarNotas($NombreArchivo,$AnoEscolar,$database_bd,$bd){
 			//	$sql = "UPDATE Nota SET $PosicionMateria = '01'";
 			
 				foreach ($lineas as $linea_num => $linea) { 
+				echo $linea . "<br>";
+				
+				
+				
+				
 				?><tr class="FondoCampo" ><?
 				echo "<td>". ++$f ."</td>";
 				echo "<td>". $linea . PHP_EOL. "</td>";
 				
 					
 					
-					/*
-					$linea = str_replace("\"", "", $linea) ; // Elimina las comillas "
-					
-					
-					$tipo_Arch = substr_count($linea , ";");
-					
-					if($tipo_Arch > 7){
-						//WIN
-						$mas = 0; // para compensar la coma entre apellido y nombre
-						$linea = str_replace(",", ".", $linea) ;
-						$linea = str_replace(";", ",", $linea) ;
-					}
-					else{
-						//MAC
-						$mas = 1; // para compensar la coma entre apellido y nombre
-						//$linea = str_replace(",", ";", $linea) ;
-					}
-					*/
 					
 					echo '<td colspan="15">'.substr($linea,0,100).'</td></tr><tr class="NombreCampo">';
 					
+					if($_POST["Separador"] == "1")
+						$Separador = ",";
+					elseif($_POST["Separador"] == "2")
+						$Separador = ";";
 					
-					$parte = explode(";" , $linea);
+					$parte = explode($Separador , $linea);
 					
 					$CodigoAlumno = $parte[1];
-					
+					$mas = 1;
 					if(substr($NombreArchivo,23,1) == 'i'){
 						$n01 = 1*($parte[3+$mas]);
 						$n02 = 1*($parte[4+$mas]);

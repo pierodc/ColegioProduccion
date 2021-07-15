@@ -89,11 +89,7 @@ body {
 </style>
 
 <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
-<table >
-<tr valign="baseline">
 
- <td>
- 
  <?php 
 		//echo $row_RS_Banco_Mov_Disponible['Referencia'] .' > '. $ReferenciaActual.'';
 		if($row_RS_Banco_Mov_Disponible['Referencia'] == $ReferenciaActual and $row_RS_Banco_Mov_Disponible['Referencia'] > 0){
@@ -101,9 +97,6 @@ body {
  <a href="Estado_de_Cuenta_Alumno.php?CodigoAlumno=<?php echo $CodigoAlumno; ?>" target="_blank" class="ListadoPar12Verde" >Facturar</a> 
 <?php } ?>
  
- </td>   
-
-  <td align="left" nowrap="nowrap" class="FondoCampo">
   <select name="Referencia" id="select">
     <?
 
@@ -252,16 +245,11 @@ if( $row_RS_Contable_Mov['Referencia'] != $row_RS_Contable_Mov['ReferenciaOrigin
 	
 	
 	
-	?></td>
-  <td align="left" nowrap="nowrap" class="FondoCampo"><input type="submit" name="submit" id="submit" value="G">
+	?><input type="submit" name="submit" id="submit" value="G">
     <input name="Codigo" type="hidden" id="Codigo" value="<?php echo $row_RS_Contable_Mov['Codigo']; ?>" />
-    <input type="hidden" name="MM_update" value="form1" /></td>
+    <input type="hidden" name="MM_update" value="form1" />
  
  
-
-    
-</tr>
-</table>
 
 
 </form>

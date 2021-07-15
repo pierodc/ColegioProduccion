@@ -1359,7 +1359,7 @@ function MenuCurso( $actual = 0 , $extraScript="" ) {
 		$Disp_SW_CupoDisp = true;
 		}
 		
-	
+	echo "...";
 	echo "<select name=\"CodigoCurso\" $extraScript ><option value=\"\">Seleccione...</option>";
 	 do { 
 	 
@@ -1382,11 +1382,14 @@ function MenuCurso( $actual = 0 , $extraScript="" ) {
 				echo "SELECTED";
 			 echo ">";
 			 
+			 echo $row_RS_Cur['NombreCompleto'];
+			 /*
 			 if (!strcmp($row_RS_Cur['CodigoCurso'] , $actual )){
 			 		echo $row_RS_Cur['NombreCompleto'];}
 			 else {
-				 	echo $row_RS_Cur['NombreCorto']."&nbsp;".$row_RS_Cur['Seccion'];}
-			 
+				 	echo $row_RS_Cur['NombreCorto']."&nbsp;".$row_RS_Cur['Seccion'];
+					}
+			 */
 			 if ($Disp_SW_CupoDisp and !$row_RS_Cur['SW_CupoDisp']) 
 				echo "   -->> NO HAY DISPONIBILIDAD";
 			 echo "</option>
@@ -1410,7 +1413,7 @@ function MenuCurso2($actual = 0 ,$extraScript="") {
 	$row_RS_Cur = $RS_Cur->fetch_assoc();
 	$totalRows_RS_Cur = $RS_Cur->num_rows;
 
-	
+	echo ";;;.";
 	$Disp_SW_CupoDisp = false;
 
 	if ($extraScript == "SW_CupoDisp"){
@@ -1441,11 +1444,13 @@ function MenuCurso2($actual = 0 ,$extraScript="") {
 				echo "SELECTED";
 			 echo ">";
 			 
+			 echo $row_RS_Cur['NombreCompleto'];
+			 /*
 			 if (!strcmp($row_RS_Cur['CodigoCurso'] , $actual )){
 			 		echo $row_RS_Cur['NombreCompleto'];}
 			 else {
 				 	echo $row_RS_Cur['NombreCorto']."&nbsp;".$row_RS_Cur['Seccion'];}
-			 
+			 */
 			 if ($Disp_SW_CupoDisp and !$row_RS_Cur['SW_CupoDisp']) 
 				echo "   -->> NO HAY DISPONIBILIDAD";
 			 echo "</option>
@@ -2386,6 +2391,17 @@ function input_select($param){
 		echo " >$valor</option>\r\n";
       }
     echo "</select>\r\n";
+	
+	/*
+	<? input_select(array(
+			"name" => "Separador",
+			"default" => $_POST["Separador"],
+			"values" => array("1" => "," , "2" => ";")
+			)); ?>
+	*/
+	
+	
+	
 	}
 
 function Reticula($pdf){

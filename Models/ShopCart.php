@@ -23,7 +23,17 @@ class ShopCart{
 		return $datos;
 	}
 	
-	function view_pedidos($SW_pagado = "" , $id_user = ""){ // Pedidos = 0 //// Pagados = 1
+	function view_all_carts(){
+	// view basic data
+		$sql = "SELECT * FROM ShopCart 
+				GROUP BY id_user
+				ORDER BY id";
+		$datos = $this->con->consultaRetorno($sql);
+		return $datos;
+	}
+	
+	function view_pedidos($SW_pagado = "" , $id_user = ""){ 
+	// Pedidos = 0 //// Pagados = 1
 	// view basic data
 		if($SW_pagado > ""){
 			$add_sql .= "AND SW_pagado = '$SW_pagado' ";

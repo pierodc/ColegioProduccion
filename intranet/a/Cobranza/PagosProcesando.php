@@ -173,38 +173,18 @@ if ($row_RS_ContableMov_Procesando['Fecha']==date('Y-m-d')){
            
 <table class="sombra" >
           <tbody>
-              <tr>
-                  <td colspan="4"><?php 
-
-if($row_RS_del_Banco['Fecha'] <> $row_RS_ContableMov_Procesando['Fecha'])	
-	echo "<b>".DDMMAAAA($row_RS_ContableMov_Procesando['Fecha'])."</b> "; 
-else
-	echo "".DDMMAAAA($row_RS_ContableMov_Procesando['Fecha'])." "; 	
-
-echo FormaDePago($row_RS_ContableMov_Procesando['Tipo']).' '.$row_RS_ContableMov_Procesando['Tipo'];
-
-echo Banco ($row_RS_ContableMov_Procesando['CodigoCuenta']);
-
-$Banco_row = $Banco->view($row_RS_ContableMov_Procesando['id_Banco']);
-echo $Banco_row['Referencia'];	
-	
- ?>&nbsp;</td>
-                  </tr>
+             
               <tr>
                   <td nowrap="nowrap">Moneda&nbsp;</td>
                   <td nowrap="nowrap">Monto $&nbsp;</td>
                   <td nowrap="nowrap">Cambio&nbsp;</td>
-                  <td nowrap="nowrap">&nbsp;</td>
+                  <td nowrap="nowrap" align="center"><?= FormaDePAgo($row_RS_ContableMov_Procesando['Tipo']); ?>&nbsp;</td>
                   </tr>
               <tr>
-                  <td rowspan="2" valign="top"><? echo $row_RS_ContableMov_Procesando['SW_Moneda'] ?></td>
+                  <td valign="top"><? echo $row_RS_ContableMov_Procesando['SW_Moneda'] ?></td>
                   <td valign="top"><? Campo_Edit ("ContableMov",$row_RS_ContableMov_Procesando['Codigo'],"MontoHaber_Dolares");  ?>&nbsp;</td>
                   <td valign="top"><? Campo_Edit ("ContableMov",$row_RS_ContableMov_Procesando['Codigo'],"Cambio_Dolar"); ?>&nbsp;</td>
-                   <td valign="top"><?
-	
-				 
-				  ?>
-                       <? 
+                   <td valign="top" align="center"><? 
 	
 	
 	$Monto_Dolares_Pago = $row_RS_ContableMov_Procesando['MontoHaber_Dolares'] * $row_RS_ContableMov_Procesando['Cambio_Dolar'];
@@ -214,13 +194,6 @@ echo $Banco_row['Referencia'];
                        <? } 
 				 ?> 
                    </td>
-                  </tr>
-              <tr>
-                  <td colspan="3" align="right">&nbsp;Bs.<?
-					  
-echo Fnum($Monto_Dolares_Pago);
-					  
-					  ?></td>
                   </tr>
           </tbody>
 </table>

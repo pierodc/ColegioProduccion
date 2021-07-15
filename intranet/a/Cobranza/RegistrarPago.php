@@ -11,9 +11,9 @@ if ($totalRows_RS_ContableMov > 0){
 Fecha</td>
               <td width="40%" align="left" nowrap="nowrap" class="FondoCampo"><input name="Fecha" type="date" id="Fecha" value="<?php echo date('Y-m-d') ?>" />
               </td>
-              <td width="10%" align="right" class="NombreCampo">Cash $</td>
-              <td width="25%" class="FondoCampo"><input type="text" name="MontoHaber_Dolares" value="" size="15"  />
-              <input type="hidden" name="Cambio_Dolar" value="<? echo $Cambio_Dolar_Hoy ?>" size="15"  /></td>
+              <td width="10%" align="right" nowrap class="NombreCampo">Ajuste</td>
+              <td width="25%" align="left" class="FondoCampo"><input type="hidden" name="Cambio_Dolar" value="<? echo $Cambio_Dolar_Hoy ?>" size="15"  />
+                <input type="text" name="Monto_Ajuste" value="" size="15"  /></td>
             </tr>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">&nbsp;</td>
@@ -22,8 +22,8 @@ Fecha</td>
               	<? $Banco->Select_movimientos ($tipo = "ZLL"); ?>
               	
               </td>
-              <td width="10%" align="right" class="NombreCampo">Zelle $</td>
-              <td width="40%" class="FondoCampo"><input type="text" name="MontoHaber_Dolares_Zelle" value="" size="15"  /></td>
+              <td width="10%" align="right" nowrap class="NombreCampo">&nbsp;</td>
+              <td width="40%" align="left" class="FondoCampo">&nbsp;</td>
             </tr>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">Forma de Pago</td>
@@ -45,8 +45,8 @@ Fecha</td>
                 </select>
               </label>
               <span onClick="document.form1.Tipo.selectedIndex=4;document.form1.CodigoCuenta.selectedIndex=2;document.form1.Referencia.focus()"> Transf </span> | <span onClick="document.form1.Tipo.selectedIndex=5;document.form1.CodigoCuenta.selectedIndex=3"> Debito </span> | <span onClick="document.form1.Tipo.selectedIndex=6;document.form1.CodigoCuenta.selectedIndex=3"> Credito </span></td>
-              <td align="right" class="NombreCampo">Bs</td>
-              <td class="FondoCampo"><input type="text" name="MontoHaber" value="" size="15"  onFocus="this.value=<?php echo $UltimoMonto; ?>"   /></td>
+              <td align="right" nowrap class="NombreCampo">&nbsp;</td>
+              <td align="left" class="FondoCampo">&nbsp;</td>
             </tr>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">Pagado en</td>
@@ -63,22 +63,22 @@ Fecha</td>
                 </select>
               </label>
               <span onClick="document.form1.CodigoCuenta.selectedIndex=1"> Mercantil </span> | <span onClick="document.form1.CodigoCuenta.selectedIndex=2"> Provincial </span> | <span onClick="document.form1.CodigoCuenta.selectedIndex=3"> Activo </span></td>
-              <td class="NombreCampo">&nbsp;</td>
-              <td class="FondoCampo">&nbsp;</td>
+              <td align="right" nowrap class="NombreCampo">Cash $</td>
+              <td align="left" class="FondoCampo"><input type="text" name="MontoHaber_Dolares" value="" size="15"  /></td>
             </tr>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">Referencia</td>
               <td align="left" nowrap="nowrap" class="FondoCampo"><input type="text" name="Referencia" value="" size="15" onFocus="this.value=<?php echo $_SESSION['Referencia'] ?>" /> 
                 Banco Origen 
                 <input name="ReferenciaBanco" type="text" id="ReferenciaBanco" size="15" /></td>
-              <td class="NombreCampo">&nbsp;</td>
-              <td class="FondoCampo">&nbsp;</td>
+              <td align="right" nowrap class="NombreCampo">Zelle $</td>
+              <td align="left" class="FondoCampo"><input type="text" name="MontoHaber_Dolares_Zelle" value="" size="15"  /></td>
             </tr>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">Observaciones</td>
               <td align="left" nowrap="nowrap" class="FondoCampo"><input name="Observaciones" type="text" id="Observaciones" size="50" /></td>
-              <td class="NombreCampo">&nbsp;</td>
-          <td class="FondoCampo">&nbsp;</td>
+              <td align="right" nowrap class="NombreCampo">Bs</td>
+          <td align="left" class="FondoCampo"><input type="text" name="MontoHaber" value="" size="15"  onFocus="this.value=<?php echo $UltimoMonto; ?>"   /></td>
             </tr>
             <tr valign="baseline">
               <td align="right" nowrap="nowrap" class="NombreCampo">Facturar a:</td>
@@ -108,7 +108,7 @@ Fecha</td>
 <input type="hidden" name="FechaIngreso" value="<?php echo date('Y-m-d h:i:s'); ?>" />
 <input type="hidden" name="MM_insert" value="form1" />
 <input name="MontoDocOriginal" type="hidden" id="MontoDocOriginal" size="15" /></td>
-              <td class="NombreCampo">&nbsp;</td>
+              <td nowrap class="NombreCampo">&nbsp;</td>
               <td class="FondoCampo"><input type="submit" value="Guardar"  onClick="this.disabled=true;this.form.submit();" /></td>
             </tr>
             <tr valign="baseline">

@@ -154,6 +154,8 @@ if ($CodidoBuscando > 0){
 // Agrega Pago
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
+	//var_dump($_POST);
+
 	setcookie("UltimoTipo",$_POST["Tipo"],0);
 	setcookie("UltimoBanco",$_POST["Tipo"],0);
 	setcookie("UltimoMonto",$_POST["MontoHaber"],0);
@@ -192,11 +194,13 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 				$MontoHaber_Dolares = $zelle['Haber'];	
 			}
 		}
-		
-		
-		
-		
-	}				
+	}elseif ($_POST['Monto_Ajuste'] > 0) {
+		$SW_Moneda = "D";
+		$CodigoCuenta = "10";
+		$Tipo = "5";
+		$MontoHaber_Dolares = $_POST['Monto_Ajuste'];
+	}					
+					
 	
 	$MontoHaber = coma_punto($_POST['MontoHaber']);			 
 	if ($MontoHaber == ""){
