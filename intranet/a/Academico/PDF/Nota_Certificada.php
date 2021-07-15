@@ -365,8 +365,8 @@ foreach($CodigoMaterias as $CodigoMateria){
 		$pdf->SetFont('Arial','',10); 
 	
 		
-		if( $Renglon[$CodigoMateria][$i_mat]["Nota"]<' ' or 
-			$Renglon[$CodigoMateria][$i_mat]["Nota"]=='*' )	{
+		if( $Renglon[$CodigoMateria][$i_mat]["Nota"] < ' ' or 
+			$Renglon[$CodigoMateria][$i_mat]["Nota"] == '*'  )	{
 				
 					$Renglon[$CodigoMateria][$i_mat]["Nota"]='*';
 					$Renglon[$CodigoMateria][$i_mat]["TE"]='*';
@@ -382,6 +382,9 @@ foreach($CodigoMaterias as $CodigoMateria){
 					$IndiceAcademico += $Renglon[$CodigoMateria][$i_mat]["Nota"];	
 					$IndiceAcademicoFactor++;	}
 			}
+			
+			
+			
 		
 		$NotaRenglon = $Renglon[$CodigoMateria][$i_mat]["Nota"];
 		if($Renglon[$CodigoMateria][$i_mat]["Materia"] > ''){
@@ -418,7 +421,7 @@ foreach($CodigoMaterias as $CodigoMateria){
 		}
 		else {
 			$pdf->Cell($_Col[2] , $Ln , 'Exonerada' , 1 , 0 , 'C');
-			$pdf->Cell($_Col[3] , $Ln , "E" , 1 , 0 , 'C');
+			$pdf->Cell($_Col[3] , $Ln , "*" , 1 , 0 , 'C');
 			$pdf->Cell($_Col[4] , $Ln , "*" , 1 , 0 , 'C');
 			$pdf->Cell($_Col[5] , $Ln , "*" , 1 , 0 , 'C');
 			$pdf->Cell($_Col[6] , $Ln , "*" , 1 , 0 , 'C'); 

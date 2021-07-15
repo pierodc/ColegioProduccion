@@ -27,11 +27,11 @@ switch ($Localidad) {
          $Entidad = "Estado Miranda";
 		 $EntidadCorta = "Mi";
          break;
-   case "Sucre":
+   case "xxxSucre":
          $Entidad = "Estado Miranda";
 		 $EntidadCorta = "Mi";
          break;
-   case "Libertador":
+   case "xxxLibertador":
          $Entidad = "Distrito Capital";
 		 $EntidadCorta = "DC";
          break;

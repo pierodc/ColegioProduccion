@@ -2485,7 +2485,7 @@ function Entidad($Entidad){
 			$Entidad_Larga = "Amazonas" ;
 			break;
 		case "An":
-			$Entidad_Larga = "Anzoátegui" ;
+			$Entidad_Larga = "Anzoategui" ;
 			break;
 		case "Ap":
 			$Entidad_Larga = "Apure" ;
@@ -2497,7 +2497,7 @@ function Entidad($Entidad){
 			$Entidad_Larga = "Barinas" ;
 			break;
 		case "Bo":
-			$Entidad_Larga = "Bolívar" ;
+			$Entidad_Larga = "Bolivar" ;
 			break;
 		case "Ca":
 			$Entidad_Larga = "Carabobo" ;
@@ -2515,7 +2515,7 @@ function Entidad($Entidad){
 			$Entidad_Larga = "Distrito Federal" ;
 			break;
 		case "Fa":
-			$Entidad_Larga = "Falcón" ;
+			$Entidad_Larga = "Falcon" ;
 			break;
 		case "Gu":
 			$Entidad_Larga = "Guarico" ;
@@ -2542,7 +2542,7 @@ function Entidad($Entidad){
 			$Entidad_Larga = "Sucre" ;
 			break;
 		case "Ta":
-			$Entidad_Larga = "Táchira" ;
+			$Entidad_Larga = "Tachira" ;
 			break;
 		case "Tr":
 			$Entidad_Larga = "Trujillo" ;
