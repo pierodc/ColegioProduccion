@@ -1,10 +1,8 @@
 <?php 
-require_once('../../../../Connections/bd.php'); 
-require_once('../../archivo/Variables.php'); 
-require_once('../../../../inc/rutinas.php'); 
-require_once('../../../../inc/fpdf.php'); 
-
-mysql_select_db($database_bd, $bd);
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee,secreBach";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 if (isset($_GET['CodigoAlumno']))  
 	$query_RS_Alumno = "SELECT * FROM Alumno WHERE CodigoAlumno='".$_GET['CodigoAlumno']."' ";
@@ -14,40 +12,18 @@ else{
 	else
 		$Fecha_Aux = "Julio20".$Ano2;
 
-	//$Fecha_Aux ='';
-
 	$query_RS_Alumno = sprintf("SELECT * FROM AlumnoXCurso, Alumno 
 								WHERE AlumnoXCurso.CodigoAlumno = Alumno.CodigoAlumno 
 								AND AlumnoXCurso.Ano = '%s' 
 								AND AlumnoXCurso.Status = 'Inscrito'  
 								AND (AlumnoXCurso.CodigoCurso = '43' OR AlumnoXCurso.CodigoCurso = '44') 
-								ORDER BY AlumnoXCurso.CodigoCurso, Alumno.Apellidos, Alumno.Apellidos2",   $AnoEscolar );
-								
-								
-								
-								// AlumnoXCurso.CodigoCurso ASC, Alumno.CedulaLetra DESC, Alumno.Cedula_int ASC
-								
-								
-	/*
-								AND AlumnoXCurso.FechaGrado = '$Fecha_Aux' 
-	$query_RS_Alumno = "SELECT * FROM AlumnoXCurso, Alumno 
-						WHERE AlumnoXCurso.FechaGrado = '$Fecha_Aux' 
-						AND AlumnoXCurso.CodigoAlumno = Alumno.CodigoAlumno 
-						AND AlumnoXCurso.Tipo_Inscripcion = 'Rg' 
-						ORDER BY AlumnoXCurso.CodigoCurso, Alumno.CedulaLetra DESC, Alumno.Cedula_int ASC";
-	
-	echo $query_RS_Alumno;	
-	*/
-								
-								
-								
-							
-								}
+								ORDER BY AlumnoXCurso.CodigoCurso, Alumno.Apellidos, Alumno.Apellidos2, Alumno.Nombres, Alumno.Nombres2",   $AnoEscolar );
+	}
 
 								
-//echo $query_RS_Alumno;								
-$RS_Alumno = mysql_query($query_RS_Alumno, $bd) or die(mysql_error());
-$row_RS_Alumno = mysql_fetch_assoc($RS_Alumno);
+//echo $query_RS_Alumno;	
+$RS_Alumno = $mysqli->query($query_RS_Alumno); //
+$row_RS_Alumno = $RS_Alumno->fetch_assoc();
 
 //echo $query_RS_Alumno;
 
@@ -103,7 +79,11 @@ $pdf->Cell(28+$x); $pdf->Cell(70 , $Ln , Titulo_($FechaNac) , $borde , 1 , 'L');
 
 $pdf->Cell(100 , $Ln , '' , $borde , 1 , 'L'); 
 
-if($_GET['Revision']=='1')  $FechaGrado = $Fecha_Tit_Bach_Revision; else $FechaGrado = $Fecha_Tit_Bach;
+if($_GET['Revision'] == '1')  
+    $FechaGrado = $Fecha_Tit_Bach_Revision; 
+else 
+    $FechaGrado = $Fecha_Tit_Bach;
+    
 
 //$pdf->Cell(70+$x); $pdf->Cell(100 , $Ln , Titulo_('Chacao, '.$DiaGrado.' de Julio de '.date('Y')) , $borde , 1 , 'L'); 
 $pdf->Cell(70+$x); $pdf->Cell(100 , $Ln , $FechaGrado , $borde , 1 , 'L'); 
@@ -124,7 +104,7 @@ $pdf->Cell(90 , $Ln , $Prof_Revisor_CI , $borde , 0 , 'L');
 $pdf->Cell(95 , $Ln , $Supervisor_CI , $borde , 1 , 'L'); 
 
 
-}  while ($row_RS_Alumno = mysql_fetch_assoc($RS_Alumno)); 
+}  while ($row_RS_Alumno = $RS_Alumno->fetch_assoc()); 
 
 
 $pdf->Output();

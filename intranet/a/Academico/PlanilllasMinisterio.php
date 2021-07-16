@@ -1,47 +1,12 @@
 <?php 
-$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,secreBach";
-require_once('../../../inc_login_ck.php'); 
-
-require_once('../../../Connections/bd.php'); 
-require_once('../archivo/Variables.php');
-require_once('../../../inc/rutinas.php'); 
+$MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,provee,secreBach";
+$SW_omite_trace = false;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 $TituloPantalla = "Planillas Ministerio";
 
-/*
-// Conectar
-$mysqli = new mysqli($hostname_bd, $username_bd, $password_bd, $database_bd);
 
-// Ejecuta $sql
-$RS = $mysqli->query($query_RS_Alumno);
-
-$RS = $mysqli->query($sql);
-$row = $RS->fetch_assoc();
-
-
-// Ejecuta $sql y While
-while ($row = $RS->fetch_assoc()) {
-	extract($row);
-    echo "<br>";
-}
-
-$RS->data_seek(0);
-
-if(isset($_POST['button'])){
-	$sql = "INSERT INTO Table (Codigo) VALUES
-			('".$_POST['Codigo']."')";
-	$mysqli->query($sql);
-}
-
-echo $sw=ListaFondo($sw,$Verde); 
-
-header("Location: ".$php_self."?CodigoPropietario=".$_GET['CodigoPropietario']);
-
-if(Acceso($Acceso_US,$Reuqerido_Pag)){
-	echo "$Acceso_US permitido en Reuqerido_Pag"; }
-
-
-*/
  
 if(isset($_POST['NumeroTitulo'])){
 	$NumeroTitulo = $_POST['NumeroTitulo'];
@@ -65,17 +30,23 @@ if(isset($_POST['NumeroTitulo'])){
 } 
 
 
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 $query_RS_Tit = "SELECT * FROM AlumnoXCurso, Alumno WHERE 
 					AlumnoXCurso.FechaGrado = 'Julio20".$Ano2."' AND 
 					AlumnoXCurso.CodigoAlumno = Alumno.CodigoAlumno AND
 					AlumnoXCurso.Tipo_Inscripcion = 'Rg' 
 					ORDER BY AlumnoXCurso.NumeroTitulo,  AlumnoXCurso.CodigoCurso ASC, Alumno.CedulaLetra DESC, Alumno.Cedula_int ASC";
 //echo $query_RS_Tit;
+$RS_Tit = $mysqli->query($query_RS_Tit); //
+$row_RS_Tit = $RS_Tit->fetch_assoc();
+$totalRows_RS_Tit = $RS_Tit->num_rows;
 
+
+
+/*
 $RS_Tit = mysql_query($query_RS_Tit, $bd) or die(mysql_error());
 $row_RS_Tit = mysql_fetch_assoc($RS_Tit);
-$totalRows_RS_Tit = mysql_num_rows($RS_Tit);
+$totalRows_RS_Tit = mysql_num_rows($RS_Tit);*/
 
 $query_RS_TitR = "SELECT * FROM AlumnoXCurso, Alumno WHERE 
 					AlumnoXCurso.FechaGrado = 'Julio20".$Ano2."R' AND 
@@ -90,11 +61,14 @@ $query_RS_TitR = "SELECT * FROM AlumnoXCurso, Alumno WHERE
 					GROUP BY Alumno.Cedula_int 
 					ORDER BY AlumnoXCurso.CodigoCurso ASC, Alumno.CedulaLetra DESC, Alumno.Cedula_int ASC
 					";
-					
+$RS_TitR = $mysqli->query($query_RS_TitR); //
+$row_RS_TitR = $RS_TitR->fetch_assoc();
+$totalRows_RS_TitR = $RS_TitR->num_rows;
+		/*			
 $RS_TitR = mysql_query($query_RS_TitR, $bd) or die(mysql_error());
 $row_RS_TitR = mysql_fetch_assoc($RS_TitR);
 $totalRows_RS_TitR = mysql_num_rows($RS_TitR);
- 
+ */
  
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -177,7 +151,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                       <input type="submit" name="button" id="button" value="G" />
                     </form></td>
                   </tr>
-<?php } while ($row_RS_Tit = mysql_fetch_assoc($RS_Tit)); ?>
+<?php } while ($row_RS_Tit = $RS_Tit->fetch_assoc()); ?>
                 </table>
                 </td>
               <td colspan="2" valign="top">
@@ -192,7 +166,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                       <input type="submit" name="button" id="button" value="G" />
                     </form></td>
       </tr>
-  <?php } while ($row_RS_TitR = mysql_fetch_assoc($RS_TitR)); ?>
+  <?php } while ($row_RS_TitR = $RS_TitR->fetch_assoc()  ); ?>
                   </table>
               </td>
             </tr>
