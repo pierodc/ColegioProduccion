@@ -1,16 +1,12 @@
 <?php 
 $MM_authorizedUsers = "91,95,AsistDireccion";
-require_once('../../../inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
 
-require_once('../../../Connections/bd.php'); 
-require_once('../../../inc/rutinas.php'); 
 
 
 
 
-
-mysql_select_db($database_bd, $bd);
+//mysql_select_db($database_bd, $bd);
 
 if (isset($_POST['CodigoMaterias'])){
 	
@@ -39,7 +35,7 @@ if (isset($_POST['CodigoMaterias'])){
 			$sql2 .= "Profesor$Var[2]  =  $Valor "; 
 			$sql2 .= " WHERE CodigoMaterias = '$Var[1]'"	;
 			//echo $sql2;
-			$RS = mysql_query($sql2, $bd) or die(mysql_error());
+			$RS = $mysqli->query($sql2); //mysql_query($sql2, $bd) or die(mysql_error());
 			}
 			
 			}
@@ -49,17 +45,23 @@ if (isset($_POST['CodigoMaterias'])){
 
 
 $query_CursoMaterias = "SELECT * FROM CursoMaterias";
-$CursoMaterias = mysql_query($query_CursoMaterias, $bd) or die(mysql_error());
-$row_CursoMaterias = mysql_fetch_assoc($CursoMaterias);
-$totalRows_CursoMaterias = mysql_num_rows($CursoMaterias);
+$CursoMaterias = $mysqli->query($query_CursoMaterias); //
+$row_CursoMaterias = $CursoMaterias->fetch_assoc();
+$totalRows_CursoMaterias = $CursoMaterias->num_rows;
+
 
 function Profesor_($bd, $nombre_campo ,$actual){ // AND CargoLargo LIKE '%pro%' // SW_activo=1 AND
+	global $datos_bd;
+	$mysqli = new mysqli($datos_bd['host'], $datos_bd['user'] , $datos_bd['pass'] , $datos_bd['db']);
+
+	
 	$sql = "SELECT * FROM Empleado 
 			WHERE 
 			 (TipoEmpleado LIKE '%1.%' OR TipoEmpleado LIKE '%2.%') 
 			ORDER BY Apellidos, Nombres";
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
-	$row_ = mysql_fetch_assoc($RS);
+	$RS = $mysqli->query($sql); //
+	$row_ = $RS->fetch_assoc();
+
 	
 	echo '
 	<select name="'.$nombre_campo.'" id="select">
@@ -71,15 +73,19 @@ function Profesor_($bd, $nombre_campo ,$actual){ // AND CargoLargo LIKE '%pro%' 
 			echo ' selected="selected" ';
 		echo "> ".$row_['Apellidos']." ".$row_['Nombres']."</option>
 		";
-	} while ($row_ = mysql_fetch_assoc($RS));
+	} while ($row_ = $RS->fetch_assoc());
 	echo '</select>';
 }
 
 function Maestra_($bd, $nombre_campo ,$actual){
 	$sql = "SELECT * FROM Empleado WHERE SW_activo=1 ORDER BY Apellidos, Nombres";
 	//echo $sql.'<br>';
+	$RS = $mysqli->query($sql); //
+	$row_ = $RS->fetch_assoc();
+
+	/*
 	$RS = mysql_query($sql, $bd) or die(mysql_error());
-	$row_ = mysql_fetch_assoc($RS);
+	$row_ = mysql_fetch_assoc($RS);*/
 	
 		
 	echo '<select name="'.$nombre_campo.'" id="select">
@@ -95,7 +101,7 @@ function Maestra_($bd, $nombre_campo ,$actual){
 	echo $row_['Apellidos'].' '.$row_['Nombres'];
 	echo '</option>
 	';
-	} while ($row_ = mysql_fetch_assoc($RS));
+	} while ($row_ = $RS->fetch_assoc());
 	
 	echo '</select>';
 }
@@ -134,12 +140,9 @@ do { ?>
 </form><br>
 
 <br>
-<?php } while ($row_CursoMaterias = mysql_fetch_assoc($CursoMaterias)); ?>
+<?php } while ($row_CursoMaterias = $CursoMaterias->fetch_assoc()); ?>
 
 <?php include getenv('DOCUMENT_ROOT')."/inc/Footer_info.php"; ?>
 
 </body>
 </html>
-<?php
-mysql_free_result($CursoMaterias);
-?>

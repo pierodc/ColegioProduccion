@@ -1,9 +1,6 @@
 <?php 
 $MM_authorizedUsers = "99,91,95,90,secre,secreAcad,AsistDireccion,admin,Contable,secreBach";
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc_login_ck.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Config/Autoload.php'); 
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/rotation.php'); 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/fpdf.php'); 
 
 
@@ -30,7 +27,7 @@ $array_Mat["CI"] = array("","15432897","12071337","3250116","4587661","13030852"
 
 $CodigoCurso_URL = "0";
 if (isset($_GET['CodigoCurso'])) {
-  $CodigoCurso_URL = (get_magic_quotes_gpc()) ? $_GET['CodigoCurso'] : addslashes($_GET['CodigoCurso']);}
+  $CodigoCurso_URL = $_GET['CodigoCurso'];}
 
 if (isset($_GET['AnoEscolar'])) {
 	$AnoEscolar = $_GET['AnoEscolar'];}
@@ -76,7 +73,7 @@ $w = 5.5;
 $Mats = array('01','02','03','04','05','06','07','08','09','10','11','12','13','14');
 $Alum = array('01','02','03','04','05','06','07','08','09','10','11','12','13');
 
-
+/*
 class PDF extends PDF_Rotate
 {
 function RotatedText($x,$y,$txt,$angle)
@@ -95,9 +92,9 @@ function RotatedImage($file,$x,$y,$w,$h,$angle)
     $this->Rotate(0);
 }
 }
+*/
 
-
-$pdf=new PDF('P', 'mm', 'Legal');
+$pdf=new FPDF('P', 'mm', 'Legal');
 $pdf->SetFillColor(255);
 			
 
@@ -111,26 +108,34 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 		$CodigoCurso_aux = $CodigoCurso;   // Materias del curso actual
 
 		
-	$sql="SELECT * FROM Curso 
+	$sql = "SELECT * FROM Curso 
 					WHERE CodigoCurso = ".$CodigoCurso_aux;
-	$RS = mysql_query($sql, $bd) or die(mysql_error());
-	$row_mat = mysql_fetch_assoc($RS);
+	$RS = $mysqli->query($sql); //mysql_query($sql, $bd) or die(mysql_error());
+	$row_mat = $RS->fetch_assoc(); // mysql_fetch_assoc($RS);
+	
+	
 	$Grado = $row_mat['CodigoMaterias'];
 	$sql_base = "SELECT * FROM Notas_Certificadas 
 							WHERE CodigoAlumno = 1 
 							AND Grado = '$Grado'
 							ORDER BY Orden";
 	//echo $sql_base;
+	/*
 	$RSnotas_base = mysql_query($sql_base, $bd) or die(mysql_error());
 	$row_notas_base = mysql_fetch_assoc($RSnotas_base);
+	*/
+	$RSnotas_base = $mysqli->query($sql_base); //
+	$row_notas_base = $RSnotas_base->fetch_assoc();
+
+	
 	unset($NotaCertificada);
 	$k=0;
 	do{ $k++;
-		$NotaCertificada[$k][Orden]   = $row_notas_base['Orden'];
-		$NotaCertificada[$k][Materia] = $row_notas_base['Materia'];
-		$NotaCertificada[$k][TE] 	  = $row_notas_base['TE'];
-		$NotaCertificada[$k][Mes] 	  = $row_notas_base['Mes'];
-	}while($row_notas_base = mysql_fetch_assoc($RSnotas_base));
+		$NotaCertificada[$k]['Orden']   = $row_notas_base['Orden'];
+		$NotaCertificada[$k]['Materia'] = $row_notas_base['Materia'];
+		$NotaCertificada[$k]['TE'] 	  = $row_notas_base['TE'];
+		$NotaCertificada[$k]['Mes'] 	  = $row_notas_base['Mes'];
+	} while ($row_notas_base = $RSnotas_base->fetch_assoc());
 
 
 
@@ -141,9 +146,12 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 	/*$sql2="SELECT * FROM Curso, CursoMaterias 
 			WHERE Curso.CodigoMaterias = CursoMaterias.CodigoMaterias
 			AND Curso.CodigoCurso = ".$CodigoCurso_aux;		*/	
+	$RS = $mysqli->query($sql); //
+	$row_mat = $RS->fetch_assoc();
+/*
 	$RS = mysql_query($sql, $bd) or die(mysql_error());
 	$row_mat = mysql_fetch_assoc($RS);
-
+*/
 
 
 
@@ -164,15 +172,15 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 	$Pos_Orientacion = 0;
 	$Num_Materias = 0;
 	while ($row = $RS_Materias->fetch_assoc()) {
-		$Materia[++$i] = $row[Materia];
-		$Mat[$i] = $row[Mat];
-		$Formula[$i] =  explode('-', $row[NotaOrigen]);
+		$Materia[++$i] = $row['Materia'];
+		$Mat[$i] = $row['Mat'];
+		$Formula[$i] =  explode('-', $row['NotaOrigen']);
 				
-		if ($row[Materia] == "Orientación y Convivencia"){
+		if ($row['Materia'] == "Orientación y Convivencia"){
 			$Pos_Orientacion = $i;
 			}
 		
-		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '". $row[CiProf]."'";
+		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '". $row['CiProf']."'";
 		$Recordset_Prof = $mysqli->query($sql_Prof);
 		$row_ = $Recordset_Prof->fetch_assoc();
 		
@@ -198,7 +206,7 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 	
 	
 	if($Grado == "V"){
-		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '12470147'";
+		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '7884498'";
 		}
 	elseif($Grado == "IV"){
 		$sql_Prof = "SELECT * FROM Empleado WHERE Cedula = '5217757'";
@@ -257,9 +265,15 @@ for($CodigoCurso = $CodigoCurso_ini; $CodigoCurso <= $CodigoCurso_fin ; $CodigoC
 	
 	//echo $query_RS_Alumnos ."<br>";
 	echo $test?$query_RS_Alumnos.'<br>':'';
+	$RS_Alumnos = $mysqli->query($query_RS_Alumnos); //
+	$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+	$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+
+	/*
+	
 	$RS_Alumnos = mysql_query($query_RS_Alumnos, $bd) or die(mysql_error());
 	$row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
-	$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
+	$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);*/
 	$num_Alum_Seccion = $totalRows_RS_Alumnos;
 
 
@@ -284,9 +298,16 @@ foreach(array(1,2) as $grupo){
 		$maxRows_RS_Alumno  = 35;
 		$query_limit_RS_Alumno = sprintf("%s LIMIT %d, %d", $query_RS_Alumnos, $startRow_RS_Alumno, $maxRows_RS_Alumno);
 		echo $test?$query_limit_RS_Alumno.'<br>':'';
+		$RS_Alumnos = $mysqli->query($query_limit_RS_Alumno); //
+		$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+		$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+
+		
+		/*
 		$RS_Alumnos = mysql_query($query_limit_RS_Alumno, $bd) or die(mysql_error());
 		$row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
 		$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
+		*/
 	}
 	
 	
@@ -1002,10 +1023,15 @@ foreach(array(1,2) as $grupo){
 			$startRow_RS_Alumno = $startRow_RS_Alumno + $maxRows_RS_Alumno;
 			$maxRows_RS_Alumno  = 13;
 			$query_limit_RS_Alumno = sprintf("%s LIMIT %d, %d", $query_RS_Alumnos, $startRow_RS_Alumno, $maxRows_RS_Alumno);
+			
+			$RS_Alumnos = $mysqli->query($query_limit_RS_Alumno); //
+			$row_RS_Alumnos = $RS_Alumnos->fetch_assoc();
+			$totalRows_RS_Alumnos = $RS_Alumnos->num_rows;
+/*
 			$RS_Alumnos = mysql_query($query_limit_RS_Alumno, $bd) or die(mysql_error());
 			$row_RS_Alumnos = mysql_fetch_assoc($RS_Alumnos);
 			$totalRows_RS_Alumnos = mysql_num_rows($RS_Alumnos);
-			
+			*/
 			
 			
 			
